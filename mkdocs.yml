@@ -1,0 +1,19 @@
+site_name: Practice site
+site_description: test site 
+site_author: Princess 
+
+theme:
+  name: material 
+  features:
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Chapters:
+    - Chapter1:
+      - Introduction: ch01/index.md
+      - unit1: ch01/unit01.md
+      - unit2: ch01/unit02.md
+    - Chapter2: ch02/index.md
+  - R:
+    - Why R?: R/whyR.md
