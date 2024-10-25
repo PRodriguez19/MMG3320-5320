@@ -1,6 +1,7 @@
 site_name: Practice site
 site_description: test site 
 site_author: Princess 
+site_url: https://prodriguez19.github.io/doc_check/
 
 theme:
   name: material 
