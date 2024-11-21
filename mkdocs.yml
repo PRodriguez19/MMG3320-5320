@@ -24,7 +24,7 @@ theme:
 
 nav:
   - Home: index.md
-  - Unit 1
+  - Unit 1: 
     - Week 1:
       - Introduction: ch01/index.md
       - unit1: ch01/unit01.md
