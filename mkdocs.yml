@@ -30,7 +30,7 @@ nav:
       - Overview: ch01/index.md
       - Introducing the Shell: ch01/01_week1_mmg3320.md
       - Navigating the Shell: ch01/02_week1_mmg3320.md
-    - Week 2: ch02/index.md
+    - Week 2:
       - Overview: ch02/index.md
       - Wild Cards: ch02/03_week2_mmg3320.md
       - Writing and editing files: ch02/04_week3_mmg3320.md
