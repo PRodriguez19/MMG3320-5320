@@ -1,0 +1,1104 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="test site">
+      
+      
+        <meta name="author" content="Princess Rodriguez">
+      
+      
+        <link rel="canonical" href="https://prodriguez19.github.io/doc_check/ch01/01_week1_mmg3320/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02_week1_mmg3320/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Introducing the Shell - MMG:3320/5320 Advanced Bioinformatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#learning-objectives-for-todays-lesson" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG:3320/5320 Advanced Bioinformatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducing the Shell
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Unit 1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../R/whyR/" class="md-tabs__link">
+          
+  
+  R
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MMG:3320/5320 Advanced Bioinformatics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Unit 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unit 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Week 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introducing the Shell
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navigating the Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Week 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/03_week2_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wild Cards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/04_week3_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writing and editing files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    R
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            R
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/whyR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why R?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="learning-objectives-for-todays-lesson">Learning Objectives for Today's Lesson</h1>
+<ul>
+<li>Log into the VACC, a high-performance computing cluster </li>
+<li>Basics in navigation in CLI </li>
+<li>Copy data into your home directory </li>
+<li>List files in a directory</li>
+</ul>
+<hr />
+<h1 id="introduction-to-command-line">Introduction to Command Line</h1>
+<p>Command line interface (CLI) and graphical user interface (GUI) are
+different ways of interacting with a computer's operating system. Most
+people are familiar with the GUI as it is the default interface for most
+software. When using a GUI, you see visual representations of files,
+folders, applications, etc. However, when using the CLI, you will work
+largely with text representation of files, folders, input, and output.</p>
+<p align="center"> 
+<img src ="../img/GUI-vs-CUI-min.jpg" width="500">
+</p>
+
+<h3 id="what-is-a-shell">What is a shell?</h3>
+<p>The shell is a program where users can type commands. With the shell, it’s possible to invoke complicated programs like climate modeling software or simple commands that create an empty directory with only one line of code. The most popular Unix shell is Bash (the Bourne Again SHell — so-called because it’s derived from a shell written by Stephen Bourne). 
+Using the shell will take some effort and some time to learn. While a GUI presents you with choices to select, CLI choices are not automatically presented to you, so you must learn a few commands like new vocabulary in a language you’re studying. </p>
+<h3 id="benefits-of-using-shell">Benefits of using shell</h3>
+<p>Working this way gives you access to internal  controls, remote servers, and the
+ability to  customize workflows (scripts). So it gives you the ability
+to create new files, edit the contents of those files, delete files, and
+much more. </p>
+<p>In addition, the command line is often the easiest way to interact with remote machines and supercomputers. Familiarity with the shell is near essential to run a variety of specialized tools and resources including high-performance computing systems. As clusters and cloud computing systems become more popular for scientific data crunching, being able to interact with the shell is becoming a necessary skill. We can build on the command-line skills covered here to tackle a wide range of scientific questions and computational challenges.</p>
+<h3 id="how-to-access-the-shell">How to access the shell</h3>
+<p>On a Mac or Linux machine, you can access a shell through a program
+called "Terminal" locally on your laptop. But to make things easier, we
+will be using terminal on the open source web portal called Vermont
+Advance Computing Center - Open OnDemand (VACC-OOD). Once on terminal,
+you will be learning the basics of shell programming available under the
+Bourne Again Shell (bash).</p>
+<hr />
+<h1 id="working-with-remote-machines-vermont-advance-computing-center-cluster-vacc">Working with Remote Machines: Vermont Advance Computing Center Cluster (VACC)</h1>
+<h3 id="why-work-on-the-vacc">Why work on the VACC?</h3>
+<p>Most data-processing tasks in bioinformatics require more computing power than we have on our workstations. For all bioinformatics projects performed in this course, you will work over a network connection with the VACC. </p>
+<p><strong>Cluster Basics</strong></p>
+<p align="center"> 
+<img src ="../img/compute_cluster.png" width="500"> 
+</p>
+
+<p>The image above reflects the many computers that make up a cluster. Each
+individual computer in the cluster is a lot more powerful than any
+laptop or desktop computer we are used to working with, and is referred
+to as a <strong>"node"</strong> (instead of computer). Therefore, a "cluster" is a
+large system consisting of 100s-1000s of nodes. Each node has a
+designated role, either for logging in or for performing computational
+analysis/work. A given cluster will usually have a few login nodes and
+several compute nodes.</p>
+<p><strong>Common characteristics of a Cluster:</strong></p>
+<ul>
+<li>Large memory </li>
+<li>Storage shared across nodes </li>
+<li>High speed
+interconnection network; suitable for high-throughput applications </li>
+<li>Shared by many users</li>
+</ul>
+<hr />
+<p><strong>As of March 2022, the VACC provides three Clusters:</strong></p>
+<ul>
+<li>BlackDiamond </li>
+<li>Bluemoon </li>
+<li>DeepGreen</li>
+</ul>
+<p>We will primarily use the <strong>Bluemoon</strong> cluster for any downstream
+analysis.</p>
+<p align="center"> 
+<img src ="../img/bluemoon-logo.png" width="500"> 
+</p>
+
+<p>Please note that more information can always be found at the <a href="https://www.uvm.edu/vacc">Vermont
+Advanced Computing Center website</a>.</p>
+<hr />
+<h1 id="vacc-ood-overview">VACC-OOD Overview</h1>
+<p>Each student has been provided with their own personal VACC account that
+they can use to access VACC-Open OnDemand (OOD).</p>
+<h3 id="what-is-open-ondemand-ood">What is Open OnDemand (OOD)?</h3>
+<p>Open OnDemand (OOD) is an open source web portal for high performance
+computing (HPC) that provides users with an <em>easy-to-use</em> web interface
+to HPC clusters.</p>
+<p><strong>Benefits of using OOD:</strong></p>
+<ol>
+<li>
+<p>Web-based, no additional software needs to be installed on your local
+machine</p>
+</li>
+<li>
+<p>The easiest way to run graphical user interface (GUI) applications
+remotely on a cluster</p>
+</li>
+<li>
+<p>Typical computing with command-line requires a <em>high learning curve</em>
+whereas OOD is easy to use and simple to learn</p>
+</li>
+</ol>
+<p><strong>GUI applications offered by VACC-OOD:</strong></p>
+<ul>
+<li>Equipped with <strong>Terminal</strong>: this is used to perform tasks on the
+command line (shell), both locally and on remote machines.</li>
+</ul>
+<p align="center"> 
+<img src ="../img/terminal.png" width="500"> 
+</p>
+
+<ul>
+<li>RStudio: an integrated development environment for R</li>
+</ul>
+<p align="center"> 
+<img src ="../img/RStudio-Logo.png" width="300"> 
+</p>
+
+<h3 id="how-to-log-in-to-vacc-ood-you-should-always-do-this">How to log-in to VACC-OOD (You should always do this!):</h3>
+<ol>
+<li>
+<p>Use the <a href="https://vacc-ondemand.uvm.edu">VACC-OOD</a> link to access the
+site https://vacc-ondemand.uvm.edu</p>
+</li>
+<li>
+<p>Add your uvm netid and password</p>
+</li>
+<li>
+<p>You should be viewing the following dashboard</p>
+</li>
+</ol>
+<p align="center"> 
+<img src ="../img/dashboard.png" width="700"> 
+</p>
+
+<ol>
+<li>To access the Terminal Go to <button>Clusters</button>  and click
+<code>&gt;_VACC Shell Access</code></li>
+</ol>
+<p align="center"> 
+<img src ="../img/terminal_dashboard.png" width="700">
+</p>
+
+<h3 id="connecting-to-vacc-with-ssh">Connecting to VACC with SSH</h3>
+<p>If you already had a VACC account and/or are currently working towards
+generating and analyzing your own data, you may want to learn to log-in
+without VACC-OOD.</p>
+<p>To do so, first open your terminal locally on your computer.</p>
+<p align="center"> 
+<img src="../img/terminal1.png" width="300"> 
+</p>
+
+<p>Once you open your terminal, your screen should look similar to below: </p>
+<p align="center"> 
+<img src="../img/login7.png" width="700"> 
+</p>
+
+<p>You see the "$" symbol?</p>
+<p>That is where you write the "commands" that will be executed by shell
+(bash in this case) and your computer's kernel.</p>
+<p>The "$" is called the <strong>"command prompt"</strong>.</p>
+<h3 id="what-is-ssh">What is SSH?</h3>
+<p>There are many ways to connect to another machine over a network, but by far the most common is through the secure shell (SSH). We use SSH because its encrypted. This makes it secure to send passwords and edit private data files. </p>
+<h3 id="step-by-step-instructions-to-connect-to-the-login-node-on-vacc">Step-by-step instructions to connect to the login node on VACC:</h3>
+<ol>
+<li>Type in the <code>ssh</code> command at the command prompt followed by a space, and then type your username (e.g. uvm net id) plus the address of the cluster <code>@vacc-user1.uvm.edu</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>username@vacc-user1.uvm.edu<span class="w"> </span>
+</code></pre></div>
+<ol>
+<li>Press the return/enter key and you should receive a prompt for your password. Type in your password and note that <strong>the cursor will not move as you type</strong> it in! This is normal and know that the computer is receiving and  transmitting your typed password to the remote system, i.e. the VACC cluster.</li>
+</ol>
+<p align="center"> 
+  <img src="../img/login2.png" width="700"> 
+  </p>
+
+<ol>
+<li>If this is the first time you are connecting to the cluster, <strong>a warning will pop up</strong> and will ask you if you are sure you want to do this; <strong>type <code>Yes</code> or <code>Y</code></strong>.</li>
+</ol>
+<blockquote>
+<p><strong>Tip</strong> - Syntax for all commands on the command-line interface is the
+command followed by space and then     optionally a few arguments.
+</p>
+</blockquote>
+<p>Once logged in, you should see a new command prompt:</p>
+<p align="center"> 
+<img src="../img/login.png" width="700"> 
+</p>
+
+<h3 id="using-vacc-ood-off-campus">Using VACC-OOD OFF-campus</h3>
+<p>To use OFF-campus you will need to VPN first. See (install-cisco-vpn)[https://www.uvm.edu/it/kb/article/install-cisco-vpn/] for more information!</p>
+<hr />
+<h2 id="copying-example-data-folder">Copying example data folder</h2>
+<p>Now that we are logged-in to the VACC, lets explore terminal. Your
+screen should look similar to the following:</p>
+<p align="center"> 
+<img src="../img/login5.png" width="700"> 
+</p>
+
+<p>The "$" is called the <strong>"command prompt"</strong>.</p>
+<p>The command prompt on VACC will have some characters before the <code>$</code>,
+something like <code>[username@vacc-user1 ~]</code>, this is telling you your
+username and the name of the login node you have connected to.</p>
+<p><strong><em>The dollar sign is a prompt which shows us that the shell is waiting
+for input. Moving forward, when typing commands, either from these
+lessons or from other sources, do not type in the command prompt $, only
+the command that follows it.</em></strong></p>
+<p>The first thing to do is to check if there are any files in the data
+folder we are currently in. When you log in to a cluster, you will land
+within a folder designated specifically for your use, and is referred to
+as your "home directory". We will begin by listing the contents of our home directory using a command called <code>ls</code>.</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>
+</code></pre></div>
+<blockquote>
+<p><strong>Tip</strong> - <code>ls</code> stands for "<strong>l</strong>i<strong>s</strong>t" and it lists the contents of
+a directory. 
+</p>
+</blockquote>
+<p>First let's remove this directory from last semester: </p>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-r<span class="w"> </span>unix_lesson
+</code></pre></div>
+<p>Now let's bring in a data folder from a different location on the
+cluster to our home directory by using the <code>cp</code> command. <strong>Copy and
+paste the following command</strong> all the way from <code>cp</code> and including the
+period symbol at the end <code>.</code></p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>/gpfs1/cl/mmg3320/course_materials/tutorials/unit1_unix<span class="w"> </span>.
+</code></pre></div>
+<blockquote>
+<p>Let's break this down.<br />
+'cp' is the command for copy. This command required you to specify the
+location of the item you want to copy
+(/gpfs1/cl/mmg3320/course_materials/tutorials/unit1_unix) and the
+location of the destination (.); please note the space between the two
+in the command. The “-r” is an option that modifies the copy command to
+do something slightly different than usual. The "." means "here", i.e.
+the destination location is where you currently are.</p>
+</blockquote>
+<p>Now, you should see "unit1_unix" show up as the output of <code>ls</code>. This is
+a folder we should all have in our home directory.</p>
+<div class="highlight"><pre><span></span><code>ls 
+</code></pre></div>
+<h2 id="listing-contents-of-data-folder">Listing contents of data folder</h2>
+<p>Let's look at what is inside the folder "unit1_unix" and explore this
+further. We are use to clicking on a folder name to open it, however,
+now we are forced to change our mindset and open a folder or "directory"
+differently within the shell environment.</p>
+<p>To look inside the <code>unit1_unix</code> directory, we need to change which
+directory we are <em>in</em>. To do this we can use the <code>cd</code> command, which
+stands for "change directory".</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>unit1_unix
+</code></pre></div>
+<p>Notice the change in your command prompt. The "~" symbol from before
+should have been replaced by the string <code>unit1_unix</code>. This means that
+our <code>cd</code> command ran successfully and we are now <em>in</em> the new directory.
+Let's see what is in here by listing the contents:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>
+</code></pre></div>
+<p>You should see:</p>
+<div class="highlight"><pre><span></span><code>genomics_data  other  raw_fastq  README.txt  reference_data 
+</code></pre></div>
+<p>Notice that <code>ls</code> has printed the name of the files and directories in
+the current directory in alphabetical order, arranged neatly into
+columns.</p>
+<h3 id="arguments">Arguments</h3>
+<p>There are five items listed when you run <code>ls</code>, but how do you know if
+these are files or directories with more items inside?</p>
+<p>To answer this question, we can modify the default behavior of <code>ls</code> by
+adding an <strong>"argument"</strong> to get more information.</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-F<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>genomics_data/  other/  raw_fastq/  README.txt  reference_data/ 
+</code></pre></div>
+<p>Anything with a "/" after its name is a directory. Things with an
+asterisk "*" after them are programs.  If there are no "decorations"
+after the name, it's a normal text file.</p>
+<p>Each line of output represents a file or a directory. The directory
+lines start with <code>d</code>.</p>
+<h3 id="how-to-get-more-information-on-arguments">How to get more information on Arguments</h3>
+<p>Most commands will take additional arguments that control their
+behavior. How do we know what arguments are available for a particular
+command? The most commonly used shell commands have a manual available
+that can be accessed using the <code>man</code> command. Let's try this command
+with <code>ls</code>:</p>
+<div class="highlight"><pre><span></span><code>man<span class="w"> </span>ls<span class="w"> </span>
+</code></pre></div>
+<p>This will open the manual page for <code>ls</code> and you will lose the command
+prompt. It will bring you to a so-called "buffer" page, a page you can
+navigate with your mouse or if you want to use your keyboard we have
+listed some basic key strokes:</p>
+<ul>
+<li>'spacebar' to go forward * 'b' to go backward * Up or down arrows to
+go forward or backward, respectively</li>
+</ul>
+<p><strong>To get out of the <code>man</code> "buffer" page and to be able to type commands
+again on the command prompt, press the <code>q</code> key!</strong></p>
+<hr />
+<h2 id="class-exercise">Class Exercise</h2>
+<ul>
+<li>Use the <code>-l</code> option for the <code>ls</code> command to display more information
+for each item in the <code>unit1_unix</code> folder. What additional information
+is provided that you didn't see with the bare <code>ls</code> command?</li>
+</ul>
+<p align="center"> 
+<img src="../img/login6.png" width="700"> 
+</p>
+
+<hr />
+<h2 id="commands">Commands</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w">          </span>
++<span class="w"> </span>Change<span class="w"> </span>Directory<span class="w"> </span>
+<span class="w">    </span>+<span class="w">   </span>used<span class="w"> </span>to<span class="w"> </span>move<span class="w"> </span>throughout<span class="w"> </span>the<span class="w"> </span>filesystem<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>computer
+
+ls<span class="w">          </span>
++<span class="w"> </span>List<span class="w"> </span>
+<span class="w">    </span>+<span class="w">   </span>list<span class="w"> </span>the<span class="w"> </span>contents<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>directory
+
+rm<span class="w"> </span>
++<span class="w"> </span>Remove<span class="w"> </span>
+<span class="w">    </span>+<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>remove<span class="w"> </span>a<span class="w"> </span>file<span class="w"> </span>
+</code></pre></div>
+<hr />
+<h2 id="citation">Citation</h2>
+<p><em>This lesson has been developed by members of the teaching team at the
+<a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core
+(HBC)</a>. These are open access
+materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+Attribution license</a> (CC
+BY 4.0), which permits unrestricted use, distribution, and reproduction
+in any medium, provided the original author and source are credited.</em></p>
+<ul>
+<li><em>The materials used in this lesson were derived from work that is
+Copyright © Data Carpentry (http://datacarpentry.org/). All Data
+Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative
+Commons Attribution
+license</a> (CC BY 4.0).</em> *
+<em>Adapted from the lesson by Tracy Teal. Original contributors: Paul
+Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for Software
+Carpentry (http://software-carpentry.org/)</em> <em>authors: Sheldon  McKay,
+Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu</em> <em>date posted:
+September 28, 2020</em></li>
+</ul>
+<p><em>Other parts of this lesson were derived from:</em> Erin Alison Becker,
+Anita Schürch, Tracy Teal, Sheldon John McKay, Jessica Elizabeth Mizzi,
+François Michonneau, et al. (2019, June). datacarpentry/shell-genomics:
+Data Carpentry: Introduction to the shell for genomics data, June 2019
+(Version v2019.06.1). Zenodo. http://doi.org/10.5281/zenodo.3260560</p>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

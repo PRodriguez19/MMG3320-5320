@@ -1,0 +1,1108 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="test site">
+      
+      
+        <meta name="author" content="Princess Rodriguez">
+      
+      
+        <link rel="canonical" href="https://prodriguez19.github.io/doc_check/ch02/03_week2_mmg3320/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../04_week3_mmg3320/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Wild Cards - MMG:3320/5320 Advanced Bioinformatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#learning-objectives" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG:3320/5320 Advanced Bioinformatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wild Cards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ch01/" class="md-tabs__link">
+          
+  
+  Unit 1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../R/whyR/" class="md-tabs__link">
+          
+  
+  R
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MMG:3320/5320 Advanced Bioinformatics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Unit 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unit 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Week 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/01_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing the Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/02_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navigating the Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Week 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Wild Cards
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_week3_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writing and editing files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    R
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            R
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/whyR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why R?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Implement tab completion when writing paths</li>
+<li>Use of the asterisk <code>*</code> wildcard to select multiple items</li>
+<li>List a few shortcuts </li>
+<li>View the contents of a file</li>
+</ul>
+<hr />
+<h1 id="recap-from-last-week">Recap from last week</h1>
+<h2 id="commands">Commands</h2>
+<div class="highlight"><pre><span></span><code>cd          # Change Directory
+               +   used to move throughout the filesystem of a computer 
+
+ls          # List 
+              +   list the contents of a directory
+
+pwd         # Print Working Directory   
+              +  displays the file path from the root directory to the current working directory 
+
+cp          # Copy
+              +   used to copy files or directories 
+
+mkdir       # Make Directory
+              +   used to make a new directory 
+
+mv          # Move 
+              +   move a file into a directory 
+
+rm          # Remove
+              +   used to delete files and directories 
+</code></pre></div>
+<h2 id="home-directory-or">Home directory or "~"</h2>
+<p>Dealing with the home directory is very common. In shell, the tilde character "~" is a shortcut for your home directory. Let's navigate to the <code>raw_fastq</code> directory: </p>
+<p>Then enter the command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~
+</code></pre></div>
+<p>This allows you to easily navigate to your home directory. The tilde "~" is equivalent to "/gpfs1/home/p/d/pdrodrig" as we had mentioned in the previous lesson.</p>
+<h2 id="parent-directory-or">Parent directory or ".."</h2>
+<p>Another shortcut you encountered in the previous lesson is ".."</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..
+</code></pre></div>
+<p>The shortcut <code>..</code> always refers to the parent directory of whatever directory you are in currently. Let navigate to <code>reference_data</code> to test <code>..</code> once again. </p>
+<p>We can also chain <code>..</code> together and separate them by <code>/</code> to navigate to two directories above. </p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>../..
+</code></pre></div>
+<h2 id="current-directory-or">Current directory or "."</h2>
+<p>Finally, <code>.</code> always refers to your current directory. Recall that we use <code>.</code> a number of times, when copying data to your home directory.</p>
+<hr />
+<p><strong>Class Activity #1</strong></p>
+<p>Before moving on, please complete the following class activity below. You will have ~5 minutes. </p>
+<p><a href="https://forms.gle/gCuupcxiKYkgBAiq8">Class-activity1</a></p>
+<hr />
+<h1 id="saving-time-with-wildcards-and-other-shortcuts">Saving time with wildcards and other shortcuts</h1>
+<p><em>Remember to use <kbd>tab</kbd> completion!</em> </p>
+<h2 id="wild-cards">Wild cards</h2>
+<p><strong>The "*" wildcard:</strong></p>
+<p>Navigate to the <code>~/unit1_unix/raw_fastq</code> directory. This directory contains FASTQ files and these files contain the sequencing reads (nucleotide sequences) output from a high throughput sequencer. </p>
+<p align="center">
+<img src="../img/mkfastq.png" width="600">
+</p>
+
+<p>Let's see what is inside:  </p>
+<p><div class="highlight"><pre><span></span><code>ls
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Irrel_kd_1.subset.fq    Irrel_kd_3.subset.fq    Mov10_oe_2.subset.fq
+Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
+</code></pre></div></p>
+<p>Let's take a moment to point a few things out: 
++ .fq vs .fastq 
++ .gz </p>
+<blockquote>
+<p>.gz is a file format used for compressed files. This is especially important when dealing with large data. 
+/gpfs1/home/p/d/pdrodrig/class_data/GSE164713_Tcf1/ChIPseq </p>
+</blockquote>
+<hr />
+<p><strong>Class Activity #2</strong> </p>
+<p>Create a directory within <code>raw_fastq</code> and call it <strong>fastq</strong> and another file called <strong>data</strong>. Then list the contents. 
+Your output should look like below: </p>
+<div class="highlight"><pre><span></span><code>data   Irrel_kd_1.subset.fq  Irrel_kd_3.subset.fq  Mov10_oe_2.subset.fq
+fastq  Irrel_kd_2.subset.fq  Mov10_oe_1.subset.fq  Mov10_oe_3.subset.fq
+</code></pre></div>
+<hr />
+<p>The "*" or wildcard character is a shortcut for "everything". You can use it by typing in shift + 8.  Now try this command:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>*.fq
+</code></pre></div>
+<blockquote>
+<p>Notice, this lists every file that ends with a <code>fq</code> and our newly made directory <strong>fastq</strong> is missing. </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>Irrel_kd_1.subset.fq    Irrel_kd_3.subset.fq    Mov10_oe_2.subset.fq
+Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
+</code></pre></div>
+<hr />
+<p><strong>Class Activity #3</strong> </p>
+<p>Remove the newly created folders <strong>fastq</strong> and <strong>data</strong>. </p>
+<hr />
+<p>Now try a more complicated command to list every file in <code>/usr/bin</code> directory that ends in the characters <code>.sh</code>. The <code>bin</code> directory is where some built-in programs are stored. </p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/usr/bin/*.sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/usr/bin/gettext.sh  /usr/bin/lesspipe.sh  /usr/bin/rescan-scsi-bus.sh   /usr/bin/unix-lpr.sh
+/usr/bin/gvmap.sh    /usr/bin/lprsetup.sh  /usr/bin/setup-nsssysinit.sh
+</code></pre></div>
+<p>Let's quickly try it without <code>*.sh</code> - notice that you have so many more options! </p>
+<hr />
+<h2 id="command-history">Command History</h2>
+<p>You can easily access previous commands by hitting the <button>up</button> arrow key on your keyboard, this way you can step backwards through your command history. On the other hand, the <button>down</button> arrow key takes you forward in the command history.</p>
+<p><strong><em>Try it out! While on the command prompt hit the <button>up</button> arrow a few times, and then hit the <button>down</button> arrow a few times until you are back to where you started.</em></strong></p>
+<p>You can also review your recent commands with the <code>history</code> command. Just enter:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">history</span>
+</code></pre></div>
+<p>You should see a numbered list of commands, including the <code>history</code> command you just ran! </p>
+<blockquote>
+<p><strong>NOTE:</strong> So far we have only run very short commands that have very few or no arguments. It would be faster to just retype it than to check the history. However, as you start to run analyses on the command-line you will find that the commands are longer and more complex, and the <code>history</code> command will be very useful then!</p>
+</blockquote>
+<hr />
+<p>The wildcard "*" can be placed anywhere in your pattern. For example:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>Mov10*fq
+</code></pre></div>
+<p>This lists only the files that begin with 'Mov10' and end with <code>fq</code>.</p>
+<div class="highlight"><pre><span></span><code>Mov10_oe_1.subset.fq  Mov10_oe_2.subset.fq  Mov10_oe_3.subset.fq
+</code></pre></div>
+<p>So how does this actually work? The Shell (bash) considers an asterisk * to be a wildcard character that can match one or more occurrences of any character, including no character. In the example above the * took place of 13 characters! </p>
+<blockquote>
+<p><strong>Tip</strong> - An asterisk/star is only one of the many wildcards in Unix, but this is the most powerful one and we will be using this one the most for our exercises.</p>
+</blockquote>
+<p><strong>The "?" wildcard:</strong></p>
+<p>Another wildcard that is sometimes helpful is <code>?</code>  <br />
++ <code>?</code> is similar to <code>*</code> except that it is a placeholder for exactly one position. 
++ Recall that <code>*</code> can represent any number of following positions, including no positions. 
++ To highlight this distinction lets look at a few examples. First, try this command:</p>
+<p><code>ls /bin/d*</code></p>
+<p>This will display all files in <code>/bin/</code> that start with "d" regardless of length. However, if you only wanted the things in <code>/bin/</code> that start with "d" and are two characters long then you can use:</p>
+<p><code>ls /bin/d?</code></p>
+<p>Lastly, you can chain together multiple "?" marks to help specify a length. In the example below, you would be looking for all things in <code>/bin/</code> that start with a "d" and have a name length of three characters.  </p>
+<p><code>ls /bin/d??</code> </p>
+<hr />
+<p><strong>Class Activity #4</strong> </p>
+<p>Perform each of the following tasks using a single <code>ls</code> command <em>without</em> navigating to a different directory.</p>
+<ol>
+<li>
+<p>List all of the files in <code>/bin</code> that start with the letter 'c'</p>
+</li>
+<li>
+<p>List all of the files in <code>/bin</code> that contain the letter 'a'</p>
+</li>
+<li>
+<p>List all of the files in <code>/bin</code> that end with the letter 'o'</p>
+</li>
+<li>
+<p>BONUS: List all of the files in <code>/bin</code> that start with 'ch' and are only 5 letters in length. </p>
+<p><details>
+  <summary><b><i>Answers</i></b></summary>
+  <p><br>Click each question below to reveal the answer.</p>
+  <details>
+    <summary><i>Question 1</i></summary>
+    <code>ls /bin/c<em></code>
+  </details>
+  <details>
+    <summary><i>Question 2</i></summary>
+    <code>ls /bin/</em>a<em></code>
+  </details>
+  <details>
+    <summary><i>Question 3</i></summary>
+    <code>ls /bin/</em>o</code>
+  </details>
+  <details>
+  <summary><i>BONUS</i></summary>
+  <code>ls /bin/ch???</code>
+  </details>
+</details></p>
+</li>
+</ol>
+<hr />
+<h2 id="cancel-a-command">Cancel a command</h2>
+<p>Sometimes as you enter a command, you realize that you don't want to continue or run the current line. Instead of deleting everything you have entered (which could be very long), you could quickly cancel the current line and start a fresh prompt with <button>Ctrl</button> + <button>C</button>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/users/p/d/pdrodrig/class_data/GSE164713_Tcf1/ChIPseq
+fastqc<span class="w"> </span>SRR13416485_1.fastq.gz
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Started analysis of SRR13416485_1.fastq.gz
+Approx 5% complete for SRR13416485_1.fastq.gz
+</code></pre></div>
+<p>then I hit <button>Ctrl</button> + <button>C</button></p>
+<hr />
+<h1 id="examining-files">Examining Files</h1>
+<p>Now let's explore a few more commands to examine files. </p>
+<h2 id="cat-command"><code>cat</code> command</h2>
+<p>The easiest way to examine a file is to print out all of its contents using the command <code>cat</code>. We can test this out by printing the contents of <code>~/unit1_unix/other/sequences.fa</code></p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>sequences.fa
+</code></pre></div>
+<p>The <code>cat</code> command prints out the all the contents of <code>sequences.fa</code> to the screen.</p>
+<blockquote>
+<p><code>cat</code> stands for catenate; it has many uses and printing the contents of a files onto the terminal is one of them.</p>
+</blockquote>
+<p><strong>What does this file contain?</strong></p>
+<div class="highlight"><pre><span></span><code>&gt;SRR014849.1<span class="w"> </span>EIXKN4201CFU84<span class="w"> </span><span class="nv">length</span><span class="o">=</span><span class="m">93</span><span class="w"> </span>
+GGGGGGGGGGGGGGGGCTTTTTTTGTTTGGAACCGAAAGGGTTTTGAATTTCAAACCCTTTTCGGTTTCCAACCTTCCAAAGCAATGCCAATA
+
+&gt;gi<span class="p">|</span><span class="m">340780744</span><span class="p">|</span>ref<span class="p">|</span>NC_015850.1<span class="p">|</span><span class="w"> </span>Acidithiobacillus<span class="w"> </span>caldus<span class="w"> </span>SM-1<span class="w"> </span>chromosome,<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>genome
+ATGAGTAGTCATTCAGCGCCGACAGCGTTGCAAGATGGAGCCGCGCTGTGGTCCGCCCTATGCGTCCAACTGGAGCTCGTCACGAG
+TCCGCAGCAGTTCAATACCTGGCTGCGGCCCCTGCGTGGCGAATTGCAGGGTCATGAGCTGCGCCTGCTCGCCCCCAATCCCTTCG
+TCCGCGACTGGGTGCGTGAACGCATGGCCGAACTCGTCAAGGAACAGCTGCAGCGGATCGCTCCGGGTTTTGAGCTGGTCTTCGCT
+CTGGACGAAGAGGCAGCAGCGGCGACATCGGCACCGACCGCGAGCATTGCGCCCGAGCGCAGCAGCGCACCCGGTGGTCACCGCCT
+CAACCCAGCCTTCAACTTCCAGTCCTACGTCGAAGGGAAGTCCAATCAGCTCGCCCTGGCGGCAGCCCGCCAGGTTGCCCAGCATC
+CAGGCAAATCCTACAACCCACTGTACATTTATGGTGGTGTGGGCCTCGGCAAGACGCACCTCATGCAGGCCGTGGGCAACGATATC
+CTGCAGCGGCAACCCGAGGCCAAGGTGCTCTATATCAGCTCCGAAGGCTTCATCATGGATATGGTGCGCTCGCTGCAACACAATAC
+CATCAACGACTTCAAACAGCGTTATCGCAAGCTGGACGCCCTGCTCATCGACGACATCCAGTTCTTTGCGGGCAAGGACCGCACCC
+
+&gt;gi<span class="p">|</span><span class="m">129295</span><span class="p">|</span>sp<span class="p">|</span>P01013<span class="p">|</span>OVAX_CHICK<span class="w"> </span>GENE<span class="w"> </span>X<span class="w"> </span>PROTEIN<span class="w"> </span><span class="o">(</span>OVALBUMIN-RELATED<span class="o">)</span>
+QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAE
+</code></pre></div>
+<blockquote>
+<p>This is a FASTA file. FASTA format is a text-based format for representing either nucleotide or peptide sequences. The structure of a FASTA file is represented below where the header row always begins with the "&gt;" symbol. </p>
+</blockquote>
+<p align="center">
+<img src="../img/fasta.png" width="600">
+</p>
+
+<hr />
+<p>Question: What command would I use to clear my terminal screen? </p>
+<details>
+      <summary><b><i>Answer</i></b></summary>
+      <p><br><button>Ctrl</button> + <button>L</button> </p>
+</details>
+
+<hr />
+<h2 id="less-command"><code>less</code> command</h2>
+<p><code>cat</code> is a terrific command, but notice what it is doing. It is <strong>PRINTING</strong> the file contents on the screen. </p>
+<p>When the file is really big and has a ton of lines, this can be cumbersome to use. In practice, when you are running your analyses on the command-line you will most likely be dealing with large files so you need to learn how to view them. </p>
+<p>Instead, we will use the <code>less</code> command </p>
+<p><div class="highlight"><pre><span></span><code>less<span class="w"> </span>Mov10_oe_1.subset.fq
+</code></pre></div>
+Rather than printing to screen, the <code>less</code> command opens the file in a new buffer allowing you to navigate through it. Does this look familiar? You might remember encountering a similar interface when you used the <code>man</code> command. This is because <code>man</code> is using the <code>less</code> command to open up the documentation files! The keys used to move around the file are identical to the <code>man</code> command. Below we have listed some additional shortcut keys for navigating through your file when using <code>less</code>.</p>
+<p><span class="caption">Shortcuts for <code>less</code></span></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>SPACE</kbd></td>
+<td>to go forward</td>
+</tr>
+<tr>
+<td><kbd>b</kbd></td>
+<td>to go backwards</td>
+</tr>
+<tr>
+<td><kbd>g</kbd></td>
+<td>to go to the beginning of the file</td>
+</tr>
+<tr>
+<td><kbd>G</kbd></td>
+<td>to go to the end of a file</td>
+</tr>
+<tr>
+<td><kbd>q</kbd></td>
+<td>to quit or exit <code>less</code></td>
+</tr>
+</tbody>
+</table>
+<p>Use the shortcut keys to move through your FASTQ file, we will explore these files in more detail later in the workshop. </p>
+<h3 id="searching-files-with-less">Searching files with <code>less</code></h3>
+<p><code>less</code> also gives you a way of searching through files. </p>
+<p>Just type in <kbd>/</kbd> to begin a search, you will see that the <code>/</code> will show up at the  bottom of the <code>less</code> buffer. Let's say you are interested in searching for the following 8-letter adapter sequence: </p>
+<div class="highlight"><pre><span></span><code>/GGCGAATT
+</code></pre></div>
+<p>Enter the name of the string of characters you would like to search for and hit the enter key. The interface will move to show you the location where that string is found, and highlight the string. </p>
+<p>If you hit <kbd>/</kbd> then <kbd>ENTER</kbd>, <code>less</code> will just repeat the previous search. </p>
+<p><code>less</code> searches from the current location and works its way forward. For instance, the sequence <code>GGCGAATT</code> was found in our file, but if we started the search at the end of the file, <code>less</code> will not find it. You need to go to the beginning of the file and search.</p>
+<p>To exit hit <kbd>q</kbd>. </p>
+<h2 id="head-and-tail-commands"><code>head</code> and <code>tail</code> commands</h2>
+<p>There is another way that we can peek inside files. In particular, if we just want to see the beginning or end of the file to see how it's formatted.</p>
+<p>The commands are <code>head</code> and <code>tail</code> and they just let you look at the beginning and end of a file respectively.</p>
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>Mov10_oe_1.subset.fq
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>Mov10_oe_1.subset.fq
+</code></pre></div>
+<p>By default, the first or last 10 lines will be printed to screen. The <code>-n</code> option can be used with either of these commands to specify the number <code>n</code> lines of a file to display. For example, let's print the first/last line of the file:</p>
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>-n<span class="w"> </span><span class="m">20</span><span class="w"> </span>Mov10_oe_1.subset.fq
+
+tail<span class="w"> </span>-n<span class="w"> </span><span class="m">20</span><span class="w"> </span>Mov10_oe_1.subset.fq
+</code></pre></div>
+<hr />
+<h2 id="summary-commands-options-and-keystrokes-covered">Summary: Commands, options, and keystrokes covered</h2>
+<p>The wildcard *
++ can represent zero or more other characters
++ can be placed anywhere in your pattern</p>
+<div class="highlight"><pre><span></span><code>~           # home dir
+.           # current dir
+..          # parent dir
+*           # wildcard
+ctrl + c    # cancel current command
+ctrl + a    # start of line
+ctrl + e    # end of line
+ctrl + l    # clear your terminal screen
+history
+cat         # prints out the all the contents of file 
+less        # allows you to view and move through file content 
+head        # allows you to view beginning of file 
+tail        # allows you to view end of file 
+</code></pre></div>
+<hr />
+<h2 id="homework-assignment-2-50-points">Homework Assignment #2 (50 points)</h2>
+<p><strong>This "mini" assignment is due on Tuesday, January 30th anytime before class start. Late assignments will not be accepted.</strong>  </p>
+<h3 id="directions-for-students">Directions for Students:</h3>
+<p>Open a new Microsoft Word Document and submit answers to the questions below. The first four lines of your document should contain the following:<br />
++ Your name
++ MMG3320/5320
++ Today's date
++ Homework Assignment #2</p>
+<ol>
+<li>
+<p>Type <code>ls'</code> then type <code>history</code> then hit <button>return</button></p>
+<p>The output should look something like this: </p>
+<div class="highlight"><pre><span></span><code>$ ls&#39; 
+&gt;history
+&gt;
+</code></pre></div>
+<p>Oh no! How would you escape this so you are able to move on to Question 2? 
+Submit a screenshot of your terminal screen.</p>
+</li>
+<li>
+<p>This is a multi-part question: <br />
+    a. Change directories into <code>genomics_data</code>. You can do this using a full or relative path.<br />
+    b. Use the <code>less</code> command to open up the file <code>Encode-hesc-Nanog.bed</code>.<br />
+    c. Search for the string <code>chr11</code>; you'll see all instances in the file highlighted.<br />
+    d. Staying in the <code>less</code> buffer, use the shortcut to get to the end of the file.   <br />
+    &gt; <strong>Report</strong> three rows starting with <code>chr11</code>.   Exit the <code>less</code> buffer and come back to the command prompt.  </p>
+</li>
+<li>
+<p>Print to screen the last 5 lines of the file <code>Encode-hesc-Nanog.bed</code>. Submit a screenshot of the output of Terminal.</p>
+</li>
+<li>
+<p>How many commands have you typed after going through this exercise? Submit a screenshot of the output of Terminal.</p>
+</li>
+</ol>
+<hr />
+<h2 id="citation">Citation</h2>
+<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
+<ul>
+<li><em>The materials used in this lesson were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
+All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></li>
+<li><em>Adapted from the lesson by Tracy Teal. Original contributors: Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for Software Carpentry (http://software-carpentry.org/)</em>  </li>
+<li><em>Other Authors include: Sheldon  McKay, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu, Mary Piper, Meeta Mistry, Jihe Liu, &amp; Will Gammerdinger</em></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

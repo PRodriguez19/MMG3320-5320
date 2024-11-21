@@ -1,0 +1,1607 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="test site">
+      
+      
+        <meta name="author" content="Princess Rodriguez">
+      
+      
+        <link rel="canonical" href="https://prodriguez19.github.io/doc_check/ch01/02_week1_mmg3320/">
+      
+      
+        <link rel="prev" href="../01_week1_mmg3320/">
+      
+      
+        <link rel="next" href="../../ch02/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Navigating the Shell - MMG:3320/5320 Advanced Bioinformatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#learning-objectives-for-todays-lesson" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG:3320/5320 Advanced Bioinformatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Navigating the Shell
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Unit 1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../R/whyR/" class="md-tabs__link">
+          
+  
+  R
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MMG:3320/5320 Advanced Bioinformatics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Unit 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unit 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Week 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing the Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Navigating the Shell
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Navigating the Shell
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives-for-todays-lesson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives for Today's Lesson
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigating-the-filesystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating the Filesystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigating the Filesystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shortcut-tab-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shortcut: Tab Completion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-paths-with-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using paths with commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Exercise:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Names
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relative paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synopsis-of-full-versus-relative-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synopsis of Full versus Relative paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synopsis of Full versus Relative paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-using-full-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example using Full Paths:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-creating-moving-and-removing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copying, creating, moving and removing data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copying, creating, moving and removing data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copying
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renaming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homework-assignment-1-50-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework Assignment #1 (50 points)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework Assignment #1 (50 points)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directions-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directions for Students:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 1:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 2:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Week 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/03_week2_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wild Cards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/04_week3_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Writing and editing files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    R
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            R
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/whyR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why R?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives-for-todays-lesson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives for Today's Lesson
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigating-the-filesystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating the Filesystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigating the Filesystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shortcut-tab-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shortcut: Tab Completion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-paths-with-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using paths with commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Exercise:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Names
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relative-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relative paths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synopsis-of-full-versus-relative-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synopsis of Full versus Relative paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synopsis of Full versus Relative paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-using-full-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example using Full Paths:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-creating-moving-and-removing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copying, creating, moving and removing data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copying, creating, moving and removing data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copying
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renaming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homework-assignment-1-50-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework Assignment #1 (50 points)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework Assignment #1 (50 points)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directions-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directions for Students:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 1:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 2:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<hr />
+<h2 id="learning-objectives-for-todays-lesson">Learning Objectives for Today's Lesson</h2>
+<ul>
+<li>Understand the organization of the Filesystem </li>
+<li>Distinguish between Full versus Relative paths</li>
+<li>listing, copying, creating, moving and removing data</li>
+</ul>
+<hr />
+<h1 id="navigating-the-filesystem">Navigating the Filesystem</h1>
+<p>A filesystem organizes a computer's files and directories into a tree structure. </p>
+<p align="center">
+<img src="../img/directory_structure1.png" width="600">
+</p>
+
+<ul>
+<li>The first directory in the filesystem is the <strong>root directory</strong>. It is the parent of all other directories and files in the filesystem. That <code>/</code> or root is the 'top' level.</li>
+<li>Each parent directory contains child directories and/or files. </li>
+<li>Each child directory can also contain more files</li>
+</ul>
+<blockquote>
+<p>Note: When you log in to a remote computer you land on one of the branches of that tree, i.e. your pre-designated "home" directory that usually has your login name as its name (e.g. <code>/users/username</code>).</p>
+</blockquote>
+<p align="center">
+<img src="../img/home.png" width="300">
+</p>
+
+<p>To navigate the file system with ease we will now introduce the concept of <strong>tab completion</strong>. </p>
+<h2 id="shortcut-tab-completion">Shortcut: Tab Completion</h2>
+<p><kbd>tab</kbd>  <br />
+<kbd>caps lock</kbd></p>
+<p>Typing out file or directory names can waste a lot of time and its easy to make typing mistakes. Instead we should get in the habit of using tab complete as a shortcut. The <code>tab</code> key is located on the left side of your keyboard, right above the <code>caps lock</code> key. When you start typing out the first few characters of a directory name, then hit the <code>tab</code> key, Shell will try to fill in the rest of the directory name. Let's put this into practice now. </p>
+<p>Navigate into the <code>raw_fastq</code> directory and see what's inside. <strong>Remember to use tab!</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>raw_fastq/
+</code></pre></div>
+<hr />
+<h2 id="class-exercise">Class Exercise:</h2>
+<ul>
+<li>List the file sizes of raw_fastq/ folder. </li>
+</ul>
+<hr />
+<h2 id="paths">Paths</h2>
+<p>Where is <code>raw_fastq</code> folder in relation to our home directory?
+To answer this, let's learn more about the "addresses" of directories, called <strong>"path"</strong> and move around the file system.</p>
+<p>Let's check to see what directory we currently are in. The command prompt tells us which directory we are in, but it doesn't give information about where the <code>raw_fastq</code> directory is with respect to our "home" directory. </p>
+<p>The command to check our current location is <code>pwd</code>, this command does not take any arguments and it returns the path or address of your <strong>p</strong>resent <strong>w</strong>orking <strong>d</strong>irectory (the folder you are in currently).</p>
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
+</code></pre></div>
+<p align="center">
+<img src="../img/pwd.png" width="600">
+</p>
+
+<p>In the output above, each folder is separated from its "parent" or "child" folder by a "/", and the output starts with the root <code>/</code> directory. So, now you are able to determine the location of <code>raw_fastq</code> directory relative to the root directory. </p>
+<p>But what if you would like to navigate back to your home directory? To do so, one way would be to type <code>cd ~</code> and this will bring you back to your home directory. The "~" is an abbreviation for the current user's home folder. </p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~
+</code></pre></div>
+<p>After doing this what is your present working directory now?</p>
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
+</code></pre></div>
+<p>It should look something like this: </p>
+<div class="highlight"><pre><span></span><code>/users/p/d/pdrodrig
+</code></pre></div>
+<p>This should display a shorter string of directories starting with root. This is the full address to your <em>home directory</em>, also referred to as "<strong>full path</strong>". </p>
+<h3 id="using-paths-with-commands">Using paths with commands</h3>
+<p>You can do a lot more with the idea of stringing together <em>parent/child</em> directories. Let's say we want to look at the contents of the <code>raw_fastq</code> folder, but do it from our current directory (the home directory). We can use the list command and follow it up with the path to the folder we want to list!</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span>
+
+ls<span class="w"> </span>~/unit1_unix/reference_data
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>chr1.fa  chr1-hg19_genes.gtf
+</code></pre></div>
+<p>Remember that these two scripts indicate the same path:</p>
+<div class="highlight"><pre><span></span><code>/users/p/d/pdrodrig/unit1_unix/reference_data
+
+EQUALS 
+
+~/unit1_unix/reference_data
+</code></pre></div>
+<hr />
+<h2 id="class-exercise_1">Class Exercise:</h2>
+<ul>
+<li>Change directories from <code>~</code> (home) to <code>raw_fastq</code> in a single step then print working directory. </li>
+</ul>
+<blockquote>
+<p><details>
+    <summary>Answer</summary>
+    <P>cd ~/unit1_unix/raw_fastq</P>
+  </details></p>
+</blockquote>
+<hr />
+<p>Now, what if we want to move back up a level back into the <code>unix_lesson</code> directory? <br />
+Type <code>cd unix_lesson</code> and see what happens.</p>
+<div class="highlight"><pre><span></span><code>unix_lesson/: No such file or directory
+</code></pre></div>
+<p><em>Unfortunately, that won't work because when you say <code>cd unix_lesson</code>, shell is looking for a folder called <code>unix_lesson</code> within your current directory, i.e. <code>raw_fastq</code>.</em></p>
+<p>Can you think of an alternative? </p>
+<ul>
+<li>You can use the full path to <code>unix_lesson</code></li>
+<li>You can do cd .. (allows you to move one folder up)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..<span class="w"> </span>
+</code></pre></div>
+<h3 id="file-names">File Names</h3>
+<p>Probably one of the most frustrating parts of bioinformatics is the lack of consistency with how files are labeled. Files often have obscure names that is only relevant to the researcher, or have names that are <strong>very</strong> similar to one another. But nonetheless we will persevere! </p>
+<p>Let's go into the <code>raw_fastq</code>, then type <code>ls Mov10_oe_</code>, followed by pressing the <code>tab</code> key once:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>raw_fastq/
+ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;
+</code></pre></div>
+<p><strong>Notice that nothing happens!!</strong></p>
+<p>The reason is there are multiple files in the <code>raw_fastq</code> directory that start with <code>Mov10_oe_</code>. As a result, shell does not know which one to fill in. When you hit <code>tab</code> a second time again, the shell will then list all the possible choices.</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;&lt;tab&gt;
+
+Mov10_oe_1.subset.fq<span class="w">  </span>Mov10_oe_2.subset.fq<span class="w">  </span>Mov10_oe_3.subset.fq
+</code></pre></div>
+<p>Now you can select the one you are interested in listed, and enter the number and hit tab again to fill in the complete name of the file.</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>Mov10_oe_1&lt;tab&gt;
+</code></pre></div>
+<p><strong>Tab completion is your friend!</strong> It helps prevent spelling mistakes, and speeds up the process of typing in the full command. We encourage you to use this when working on the command line. </p>
+<h2 id="relative-paths">Relative paths</h2>
+<p>We have talked about <strong>full</strong> paths so far, but there are other ways to specify paths to folders and files without having to worry about the root directory. </p>
+<p>Let's <strong>create</strong> a folder in raw_fastq using the <code>mkdir</code> command. </p>
+<div class="highlight"><pre><span></span><code>syntax: `mkdir  name-of-folder-to-be-created`
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>data
+</code></pre></div>
+<p>Now let's navigate back into <code>unit1_unix</code> </p>
+<hr />
+<h2 id="class-exercise_2">Class Exercise:</h2>
+<ul>
+<li>Change directories from <code>unit1_unix</code> to <code>data</code> in a single step. </li>
+</ul>
+<blockquote>
+<p><details>
+    <summary>Answer</summary>
+    <P>cd raw_fastq/data/</P>
+  </details></p>
+</blockquote>
+<hr />
+<p>In this case we are using a relative path, relative to our current location - wherein we know that the <code>raw_fastq</code> folder is within <code>unit1_unix</code> and <code>data</code> is within the <code>raw_fastq</code> folder. </p>
+<h2 id="synopsis-of-full-versus-relative-paths">Synopsis of Full versus Relative paths</h2>
+<p><strong>A full path always starts with a <code>/</code>, a relative path does not.</strong></p>
+<p>A relative path is like getting directions from someone on the street. They tell you to "go right at the Stop sign, and then turn left on Main Street". That works great if you're standing there together, but not so well if you're trying to tell someone how to get there from another country. A full path is like GPS coordinates. It tells you exactly where something is no matter where you are right now.</p>
+<p>You can usually use either a full path or a relative path depending on what is most convenient. If we are in the home directory, it is more convenient to just enter the relative path since it involves less typing. However, when using some programs, full paths are required. </p>
+<p align="center">
+<img src="../img/city-map.png" width="600">
+</p>
+
+<h3 id="example-using-full-paths">Example using Full Paths:</h3>
+<p>It can get really complex, real fast!  </p>
+<div class="highlight"><pre><span></span><code>samtools merge WT_Ikaros_rep2_merged.bam 
+/gpfs2/scratch/jrboyd/pipelines/cutruntools/output_mm10_cutnrun_bcell_stim_032621/aligned.aug10/sorted/WTU_Ikaros_H100_rep1_2_S23_L002_aligned_reads.bam 
+/users/p/d/pdrodrig/cutnrun_bcell/unmerged_bams/WT_H100_IK_rep1.IK2_S2_L001_aligned_reads.bam;
+</code></pre></div>
+<blockquote>
+<p>Lets break this down! </p>
+</blockquote>
+<ul>
+<li>Program + argument = samtools merge  </li>
+<li>New file to be created = merge WT_Ikaros_rep2_merged.bam </li>
+<li>1st file = WTU_Ikaros_H100_rep1_2_S23_L002_aligned_reads.bam</li>
+<li>2nd file = WT_H100_IK_rep1.IK2_S2_L001_aligned_reads.bam</li>
+</ul>
+<p>Over time, it will become easier for you to keep a mental note of the structure of the directories that you are using and how to quickly navigate among them.</p>
+<hr />
+<h1 id="copying-creating-moving-and-removing-data">Copying, creating, moving and removing data</h1>
+<p>Now we can move around within the directory structure using the command line. But what if we want to do things like copy files or move them from one directory to another, or rename them? </p>
+<p>Let's move into the <code>raw_fastq</code> directory, this contains some fastq files which are the output of sequencing. </p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/unit1_unix/raw_fastq
+</code></pre></div>
+<blockquote>
+<p><strong>Tip</strong> - These files are referred to as "raw" data since it has not been changed or analyzed after being generated.</p>
+</blockquote>
+<h2 id="copying">Copying</h2>
+<p>Let's use the copy (<code>cp</code>) command to make a copy of one of the files in this folder, <code>Mov10_oe_1.subset.fq</code>, and call the copied file <code>Mov10_oe_1.subset-copy.fq</code>. 
+The copy command has the following syntax: </p>
+<p><code>cp  path/to/item-being-copied  path/to/new-copied-item</code></p>
+<p>In this case the files are in our current directory, so we just have to specify the name of the file being copied, followed by whatever we want to call the newly copied file.</p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>Mov10_oe_1.subset-copy.fq
+
+ls<span class="w"> </span>-l
+</code></pre></div>
+<p>The copy command can also be used for copying over whole directories, but the <code>-r</code> argument has to be added after the <code>cp</code> command. The <code>-r</code> stands for "recursively copy everything from the directory and its sub-directories". We used it earlier when we copied over the <code>unit1_unix</code> directory to our home directories.</p>
+<hr />
+<h2 id="creating">Creating</h2>
+<p>Next, let's create a directory called <code>fastq_backup</code> and we can move the copy of the fastq file into that directory. </p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>fastq_backup
+</code></pre></div>
+<blockquote>
+<p><strong>Tip</strong> - File/directory/program names with spaces in them do not work well in Unix, use characters like hyphens or underscores instead. Using underscores instead of spaces is called "snake_case". Alternatively, some people choose to skip spaces and rather just capitalize the first letter of each new word (i.e. MyNewFile). This alternative technique is called "CamelCase".</p>
+</blockquote>
+<h2 id="moving">Moving</h2>
+<p>We can now move our copied fastq file in to the new directory. We can move files around using the move command, <code>mv</code>, syntax: </p>
+<p><code>mv  path/to/item-being-moved  path/to/destination</code> </p>
+<p>In this case we can use relative paths and just type the name of the file and folder.</p>
+<div class="highlight"><pre><span></span><code>mv<span class="w">  </span>Mov10_oe_1.subset-copy.fq<span class="w">  </span>fastq_backup
+</code></pre></div>
+<p>Let's check if the move command worked like we wanted:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l<span class="w"> </span>fastq_backup
+</code></pre></div>
+<h2 id="renaming">Renaming</h2>
+<p>The <code>mv</code> command has a second functionality. You can use <code>mv</code> to rename files too. The syntax is identical to when we used <code>mv</code> for moving, but this time instead of giving a directory as its destination, we just give a new name as its destination. </p>
+<p>Let's try out this functionality!</p>
+<p>The name Mov10_oe_1.subset-copy.fq is not very informative, we want to make sure that we have the word "backup" in it so we don't accidentally delete it.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>fastq_backup
+
+mv<span class="w">  </span>Mov10_oe_1.subset-copy.fq<span class="w">   </span>Mov10_oe_1.subset-backup.fq
+
+ls
+</code></pre></div>
+<blockquote>
+<p><strong>Tip</strong> - You can use move to move a file and rename it at the same time!</p>
+</blockquote>
+<p><strong>Important notes about <code>mv</code></strong>:
+* When using <code>mv</code>, shell will <strong>not</strong> ask if you are sure that you want to "replace existing file" or similar unless you use the -i option. 
+* Once replaced, it is not possible to get the replaced file back!</p>
+<h2 id="removing">Removing</h2>
+<p>We found out that we did not need to create backups of our fastq files manually as backups were already generated by our collaborator. So in the interest of saving space on the cluster, we want to delete the contents of the <code>fastq-backup</code> folder and the folder itself. </p>
+<div class="highlight"><pre><span></span><code>rm<span class="w">  </span>Mov10_oe_1.subset-backup.fq
+</code></pre></div>
+<p>Important notes about <code>rm</code>
+* <code>rm</code> permanently removes/deletes the file/folder. 
+* There is no concept of "Trash" or "Recycle Bin" on the command-line. When you use <code>rm</code> to remove/delete they're really gone. 
+* <strong>Be careful with this command!</strong>
+* You can use the <code>-i</code> argument if you want it to ask before removing, <code>rm -i file-name</code>.</p>
+<p>Let's delete the fastq_backup folder too. First, we'll have to navigate our way to the parent directory (we can't delete the folder we are currently in/using). </p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..
+
+rm<span class="w">  </span>fastq_backup<span class="w"> </span>
+</code></pre></div>
+<p>Did that work? Did you get an error?</p>
+<details>
+  <summary><i>Explanation</i></summary>
+  <P>By default, <code>rm</code>, will NOT delete directories, but you use the <code>-r</code> flag if you are sure that you want to delete the directories and everything within them. To be safe, let's use it with the <code>-i</code> flag.</P>
+</details>
+<p><br></p>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-ri<span class="w"> </span>fastq_backup
+</code></pre></div>
+<ul>
+<li><code>-r</code>: recursive, commonly used as an option when working with directories, e.g. with <code>cp</code>. </li>
+<li><code>-i</code>: prompt before every removal.</li>
+</ul>
+<hr />
+<h2 id="commands">Commands</h2>
+<div class="highlight"><pre><span></span><code>cd          # Change Directory
+               +   used to move throughout the filesystem of a computer 
+
+ls          # List 
+              +   list the contents of a directory
+
+pwd         # Print Working Directory   
+              +  displays the file path from the root directory to the current working directory 
+
+tree        # prints a tree of the file structure
+
+cp          # Copy
+              +   used to copy files or directories 
+
+mkdir       # Make Directory
+              +   used to make a new directory 
+
+mv          # Move 
+              +   move a file into a directory 
+
+rm          # Remove
+              +   used to delete files and directories 
+</code></pre></div>
+<hr />
+<h2 id="homework-assignment-1-50-points">Homework Assignment #1 (50 points)</h2>
+<p><strong>For this assignment you will have until 10AM on Tuesday, January 23rd to submit. Late assignments will not be accepted.</strong>  </p>
+<h3 id="directions-for-students">Directions for Students:</h3>
+<p>Open a new Microsoft Word Document, the first four lines of your document should contain the following:<br />
++ Your name
++ MMG3320/5320
++ Today's date
++ Homework Assignment # 1</p>
+<h3 id="task-1">Task 1:</h3>
+<ul>
+<li>On Terminal, open the manual page for the <code>rm</code> command. Skim through the information. </li>
+</ul>
+<p>1)  What happens if you add the <code>-f</code> argument? <br />
+2)  Is there any argument available to "undelete" a file?   </p>
+<ul>
+<li>Quit the <code>man</code> buffer page and come back to your command prompt.  </li>
+</ul>
+<blockquote>
+<p><strong>Tip</strong> - Shell commands can get extremely complicated. No one can possibly learn all of these arguments, of course. So you will probably find yourself referring to the manual page frequently.</p>
+<p><strong>Tip</strong> - If the manual page within the Terminal is hard to read , the manual exists online too. For example, here is the linux manual page for <code>cp</code>. https://man7.org/linux/man-pages/man1/cp.1.html In addition to the arguments, you can also find good examples online; <strong><em>Google is your friend.</em></strong></p>
+</blockquote>
+<h3 id="task-2">Task 2:</h3>
+<ul>
+<li>Use the <code>-lh</code> option for the <code>ls</code> command to display more information for each item in the <code>unit1_unix</code> folder. </li>
+</ul>
+<p>3) Submit a screenshot of your terminal screen and underneath describe what additional information is provided that you didn't see with the bare <code>ls</code> command. </p>
+<p><strong>For #4-6, submit a screenshot of your terminal screen. Be sure to clear your terminal screen using <button>control</button> + L before proceeding</strong>  </p>
+<p>4) Create a new folder in <code>unit1_unix</code> called <code>selected_fastq</code><br />
+5) Copy over the Irrel_kd_2.subset.fq and Mov10_oe_2.subset.fq from <code>raw_fastq</code> to the <code>selected_fastq</code> folder<br />
+6) Rename the <code>selected_fastq</code> folder and call it <code>exercise1</code> </p>
+<h2 id="citation">Citation</h2>
+<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
+<ul>
+<li><em>The materials used in this lesson were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
+All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></li>
+<li><em>Adapted from the lesson by Tracy Teal. Original contributors: Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for Software Carpentry (http://software-carpentry.org/)</em>
+<em>authors: Sheldon  McKay, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu</em>
+<em>date posted: September 28, 2020</em></li>
+</ul>
+<p><em>Other parts of this lesson were derived from:</em><br />
+Erin Alison Becker, Anita Schürch, Tracy Teal, Sheldon John McKay, Jessica Elizabeth Mizzi, 
+François Michonneau, et al. (2019, June). datacarpentry/shell-genomics: Data Carpentry: Introduction to the shell for genomics data, 
+June 2019 (Version v2019.06.1). Zenodo. http://doi.org/10.5281/zenodo.3260560</p>
+<hr />
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
