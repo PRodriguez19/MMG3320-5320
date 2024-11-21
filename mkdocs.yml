@@ -1,12 +1,26 @@
-site_name: Practice site
+site_name: MMG:3320/5320 Advanced Bioinformatics
 site_description: test site 
-site_author: Princess 
+site_author: Princess Rodriguez 
 site_url: https://prodriguez19.github.io/doc_check/
 
 theme:
   name: material 
   features:
     - content.code.copy
+    - navigation.tabs
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
 nav:
   - Home: index.md
@@ -18,3 +32,8 @@ nav:
     - Chapter2: ch02/index.md
   - R:
     - Why R?: R/whyR.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences

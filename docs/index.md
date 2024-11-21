@@ -19,6 +19,8 @@ This repository contains all teaching materials for Unit 1: Introduction to Comm
 ### Installation Requirements
 All students will be using Vermont Advanced Computing Core - Open OnDemand Website [VACC-OOD](https://vacc-ondemand.uvm.edu)   
 
+!!! info 
+
 Full link: https://vacc-ondemand.uvm.edu 
 
 ## To begin: Click on Class schedule 
@@ -27,7 +29,7 @@ Full link: https://vacc-ondemand.uvm.edu
 
 ---
 
-### Citation
+#### Citation
 
 To cite material from this course in your publications, please use:
 
