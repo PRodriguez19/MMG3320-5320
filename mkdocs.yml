@@ -7,7 +7,6 @@ theme:
   name: material 
   features:
     - content.code.copy
-    - navigation.tabs
   palette: 
 
     # Palette toggle for light mode
@@ -24,12 +23,12 @@ theme:
 
 nav:
   - Home: index.md
-  - Chapters:
-    - Chapter1:
+  - Unit 1
+    - Week 1:
       - Introduction: ch01/index.md
       - unit1: ch01/unit01.md
       - unit2: ch01/unit02.md
-    - Chapter2: ch02/index.md
+    - Week 2: ch02/index.md
   - R:
     - Why R?: R/whyR.md
 

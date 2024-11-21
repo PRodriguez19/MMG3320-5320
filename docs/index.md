@@ -4,28 +4,12 @@
 
 This repository contains teaching materials from [hbctraining](https://github.com/hbctraining) but has been modified to support students enrolled in MMG3320/5320: Advanced Bioinformatics at the University of Vermont. The full citation for this work is provided below. 
 
-## Unit 1: Introduction to the command line interface 
-
-### Description
-
-This repository contains all teaching materials for Unit 1: Introduction to Command Line. We will focus on understanding the basic skills required to use the command line interface, specifically `bash` shell scripting. 
-
-### Learning Objectives
-
-1.	Navigate around the command line interface (bash/shell)
-2.	Create and manipulate files and/or folders 
-3.	Get comfortable with using the VACC, an high-performance computing cluster (HPC)
-
 ### Installation Requirements
 All students will be using Vermont Advanced Computing Core - Open OnDemand Website [VACC-OOD](https://vacc-ondemand.uvm.edu)   
 
-!!! info 
+!!! info "Link to VACC-OOD"
 
-Full link: https://vacc-ondemand.uvm.edu 
-
-## To begin: Click on Class schedule 
-* [Class schedule](schedule/) 
-
+    https://vacc-ondemand.uvm.edu 
 
 ---
 
