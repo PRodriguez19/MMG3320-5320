@@ -27,10 +27,13 @@ nav:
   - Home: index.md
   - Unit 1: 
     - Week 1:
-      - Introduction: ch01/index.md
-      - unit1: ch01/unit01.md
-      - unit2: ch01/unit02.md
+      - Overview: ch01/index.md
+      - Introducing the Shell: ch01/01_week1_mmg3320.md
+      - Navigating the Shell: ch01/02_week1_mmg3320.md
     - Week 2: ch02/index.md
+      - Overview: ch01/index.md
+      - Wild Cards: 03_week2_mmg3320.md
+      - Writing and editing files: 04_week3_mmg3320.md
   - R:
     - Why R?: R/whyR.md
 
