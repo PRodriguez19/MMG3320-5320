@@ -717,7 +717,7 @@ people are familiar with the GUI as it is the default interface for most
 software. When using a GUI, you see visual representations of files,
 folders, applications, etc. However, when using the CLI, you will work
 largely with text representation of files, folders, input, and output.</p>
-<p><img alt="GUI-vs-CUI" src="/img/GUI-vs-CUI-min.jpg" /></p>
+<p><img alt="GUI-vs-CUI" src="../../img/GUI-vs-CUI-min.jpg" /></p>
 <h3 id="what-is-a-shell">What is a shell?</h3>
 <p>The shell is a program where users can type commands. With the shell, it’s possible to invoke complicated programs like climate modeling software or simple commands that create an empty directory with only one line of code. The most popular Unix shell is Bash (the Bourne Again SHell — so-called because it’s derived from a shell written by Stephen Bourne). 
 Using the shell will take some effort and some time to learn. While a GUI presents you with choices to select, CLI choices are not automatically presented to you, so you must learn a few commands like new vocabulary in a language you’re studying. </p>
@@ -739,7 +739,7 @@ Bourne Again Shell (bash).</p>
 <h3 id="why-work-on-the-vacc">Why work on the VACC?</h3>
 <p>Most data-processing tasks in bioinformatics require more computing power than we have on our workstations. For all bioinformatics projects performed in this course, you will work over a network connection with the VACC. </p>
 <p><strong>Cluster Basics</strong></p>
-<p><img alt="compute cluster" src="/img/compute_cluster.png" /></p>
+<p><img alt="compute cluster" src="../../img/compute_cluster.png" /></p>
 <p>The image above reflects the many computers that make up a cluster. Each
 individual computer in the cluster is a lot more powerful than any
 laptop or desktop computer we are used to working with, and is referred
@@ -765,7 +765,7 @@ interconnection network; suitable for high-throughput applications </li>
 </ul>
 <p>We will primarily use the <strong>Bluemoon</strong> cluster for any downstream
 analysis.</p>
-<p><img alt="bluemoon cluster" src="/img/bluemoon-logo.png" /></p>
+<p><img alt="bluemoon cluster" src="../../img/bluemoon-logo.png" /></p>
 <p>Please note that more information can always be found at the <a href="https://www.uvm.edu/vacc">Vermont
 Advanced Computing Center website</a>.</p>
 <hr />
@@ -796,11 +796,11 @@ whereas OOD is easy to use and simple to learn</p>
 <li>Equipped with <strong>Terminal</strong>: this is used to perform tasks on the
 command line (shell), both locally and on remote machines.</li>
 </ul>
-<p><img alt="terminal" src="/img/terminal.png" /></p>
+<p><img alt="terminal" src="../../img/terminal.png" /></p>
 <ul>
 <li>RStudio: an integrated development environment for R</li>
 </ul>
-<p><img alt="RStudio-Logo" src="/img/RStudio-Logo.png" /></p>
+<p><img alt="RStudio-Logo" src="../../img/RStudio-Logo.png" /></p>
 <h3 id="how-to-log-in-to-vacc-ood-you-should-always-do-this">How to log-in to VACC-OOD (You should always do this!):</h3>
 <ol>
 <li>
@@ -814,20 +814,20 @@ site https://vacc-ondemand.uvm.edu</p>
 <p>You should be viewing the following dashboard</p>
 </li>
 </ol>
-<p><img alt="dashboard" src="/img/dashboard.png" /></p>
+<p><img alt="dashboard" src="../../img/dashboard.png" /></p>
 <ol>
 <li>To access the Terminal Go to <button>Clusters</button>  and click
 <code>&gt;_VACC Shell Access</code></li>
 </ol>
-<p><img alt="terminal dashboard" src="/img/terminal_dashboard.png" /></p>
+<p><img alt="terminal dashboard" src="../../img/terminal_dashboard.png" /></p>
 <h3 id="connecting-to-vacc-with-ssh">Connecting to VACC with SSH</h3>
 <p>If you already had a VACC account and/or are currently working towards
 generating and analyzing your own data, you may want to learn to log-in
 without VACC-OOD.</p>
 <p>To do so, first open your terminal locally on your computer.</p>
-<p><img alt="terminal-2" src="/img/terminal1.png" /></p>
+<p><img alt="terminal-2" src="../../img/terminal1.png" /></p>
 <p>Once you open your terminal, your screen should look similar to below: </p>
-<p><img alt="login" src="/img/login7.png" /></p>
+<p><img alt="login" src="../../img/login7.png" /></p>
 <p>You see the "$" symbol?</p>
 <p>That is where you write the "commands" that will be executed by shell
 (bash in this case) and your computer's kernel.</p>
@@ -843,7 +843,7 @@ without VACC-OOD.</p>
 <ol>
 <li>Press the return/enter key and you should receive a prompt for your password. Type in your password and note that <strong>the cursor will not move as you type</strong> it in! This is normal and know that the computer is receiving and  transmitting your typed password to the remote system, i.e. the VACC cluster.</li>
 </ol>
-<p><img alt="login" src="/img/login2.png" /></p>
+<p><img alt="login" src="../../img/login2.png" /></p>
 <ol>
 <li>If this is the first time you are connecting to the cluster, <strong>a warning will pop up</strong> and will ask you if you are sure you want to do this; <strong>type <code>Yes</code> or <code>Y</code></strong>.</li>
 </ol>
@@ -853,14 +853,14 @@ command followed by space and then     optionally a few arguments.
 </p>
 </blockquote>
 <p>Once logged in, you should see a new command prompt:</p>
-<p><img alt="login" src="/img/login.png" /></p>
+<p><img alt="login" src="../../img/login.png" /></p>
 <h3 id="using-vacc-ood-off-campus">Using VACC-OOD OFF-campus</h3>
 <p>To use OFF-campus you will need to VPN first. See (install-cisco-vpn)[https://www.uvm.edu/it/kb/article/install-cisco-vpn/] for more information!</p>
 <hr />
 <h2 id="copying-example-data-folder">Copying example data folder</h2>
 <p>Now that we are logged-in to the VACC, lets explore terminal. Your
 screen should look similar to the following:</p>
-<p><img alt="login" src="/img/login5.png" /></p>
+<p><img alt="login" src="../../img/login5.png" /></p>
 <p>The "$" is called the <strong>"command prompt"</strong>.</p>
 <p>The command prompt on VACC will have some characters before the <code>$</code>,
 something like <code>[username@vacc-user1 ~]</code>, this is telling you your
@@ -964,7 +964,7 @@ again on the command prompt, press the <code>q</code> key!</strong></p>
 for each item in the <code>unit1_unix</code> folder. What additional information
 is provided that you didn't see with the bare <code>ls</code> command?</li>
 </ul>
-<p><img alt="login" src="/img/login6.png" /></p>
+<p><img alt="login" src="../../img/login6.png" /></p>
 <hr />
 <h2 id="commands">Commands</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w">          </span>
