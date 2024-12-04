@@ -8,7 +8,7 @@ theme:
   features:
     - content.code.copy
     - navigation.tabs
-    - navigation.tabs.sticky
+    - navigation.top
   palette: 
 
     # Palette toggle for light mode
