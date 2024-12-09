@@ -1268,8 +1268,8 @@ To answer this, let's learn more about the "addresses" of directories, called <s
 <h3 id="using-paths-with-commands">Using paths with commands</h3>
 <p>You can do a lot more with the idea of stringing together <em>parent/child</em> directories. Let's say we want to look at the contents of the <code>raw_fastq</code> folder, but do it from our current directory (the home directory). We can use the list command and follow it up with the path to the folder we want to list!</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span>
-
-ls<span class="w"> </span>~/unit1_unix/reference_data
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>~/unit1_unix/reference_data
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>## chr1.fa  chr1-hg19_genes.gtf
 </code></pre></div>
@@ -1313,8 +1313,8 @@ ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;
 <p><strong>Notice that nothing happens!!</strong></p>
 <p>The reason is there are multiple files in the <code>raw_fastq</code> directory that start with <code>Mov10_oe_</code>. As a result, shell does not know which one to fill in. When you hit <code>tab</code> a second time again, the shell will then list all the possible choices.</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;&lt;tab&gt;
-
-<span class="c1">## Mov10_oe_1.subset.fq  Mov10_oe_2.subset.fq  Mov10_oe_3.subset.fq</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## Mov10_oe_1.subset.fq  Mov10_oe_2.subset.fq  Mov10_oe_3.subset.fq
 </code></pre></div>
 <p>Now you can select the one you are interested in listed, and enter the number and hit tab again to fill in the complete name of the file.</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>Mov10_oe_1&lt;tab&gt;
@@ -1377,8 +1377,8 @@ The copy command has the following syntax: </p>
 <p><code>cp  path/to/item-being-copied  path/to/new-copied-item</code></p>
 <p>In this case the files are in our current directory, so we just have to specify the name of the file being copied, followed by whatever we want to call the newly copied file.</p>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>Mov10_oe_1.subset-copy.fq
-
-ls<span class="w"> </span>-l
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l
 </code></pre></div>
 <p>The copy command can also be used for copying over whole directories, but the <code>-r</code> argument has to be added after the <code>cp</code> command. The <code>-r</code> stands for "recursively copy everything from the directory and its sub-directories". We used it earlier when we copied over the <code>unit1_unix</code> directory to our home directories.</p>
 <hr />
@@ -1402,12 +1402,12 @@ ls<span class="w"> </span>-l
 <p>The <code>mv</code> command has a second functionality. You can use <code>mv</code> to rename files too. The syntax is identical to when we used <code>mv</code> for moving, but this time instead of giving a directory as its destination, we just give a new name as its destination. </p>
 <p>Let's try out this functionality!</p>
 <p>The name Mov10_oe_1.subset-copy.fq is not very informative, we want to make sure that we have the word "backup" in it so we don't accidentally delete it.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>fastq_backup
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>fastq_backup
 mv<span class="w">  </span>Mov10_oe_1.subset-copy.fq<span class="w">   </span>Mov10_oe_1.subset-backup.fq
-
 ls
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <blockquote>
 <p><strong>Tip</strong> - You can use move to move a file and rename it at the same time!</p>
 </blockquote>
@@ -1566,7 +1566,7 @@ June 2019 (Version v2019.06.1). Zenodo. http://doi.org/10.5281/zenodo.3260560</p
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
