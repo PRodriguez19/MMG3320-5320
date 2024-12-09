@@ -605,9 +605,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-log-in-to-vacc-ood-you-should-always-do-this" class="md-nav__link">
+  <a href="#how-to-log-in-to-vacc-ood" class="md-nav__link">
     <span class="md-ellipsis">
-      How to log-in to VACC-OOD (You should always do this!):
+      How to log-in to VACC-OOD:
     </span>
   </a>
   
@@ -698,22 +698,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#class-exercise" class="md-nav__link">
+  <a href="#summary-of-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Exercise
+      Summary of Commands
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Commands">
+    <nav class="md-nav" aria-label="Summary of Commands">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1074,9 +1065,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-log-in-to-vacc-ood-you-should-always-do-this" class="md-nav__link">
+  <a href="#how-to-log-in-to-vacc-ood" class="md-nav__link">
     <span class="md-ellipsis">
-      How to log-in to VACC-OOD (You should always do this!):
+      How to log-in to VACC-OOD:
     </span>
   </a>
   
@@ -1167,22 +1158,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#class-exercise" class="md-nav__link">
+  <a href="#summary-of-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Exercise
+      Summary of Commands
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Commands
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Commands">
+    <nav class="md-nav" aria-label="Summary of Commands">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1267,9 +1249,10 @@ interconnection network; suitable for high-throughput applications </li>
 <li>Bluemoon </li>
 <li>DeepGreen</li>
 </ul>
-<p>We will primarily use the <strong>Bluemoon</strong> cluster for any downstream
-analysis.</p>
-<p><img alt="bluemoon cluster" src="../../img/bluemoon-logo.png" /></p>
+<figure>
+  <img alt="bluemoon cluster" src="../../img/bluemoon-logo.png" width="300" />
+  <figcaption>We will primarily use the **Bluemoon** cluster for any downstream analysis.</figcaption>
+</figure>
 <p>Please note that more information can always be found at the <a href="https://www.uvm.edu/vacc">Vermont
 Advanced Computing Center website</a>.</p>
 <hr />
@@ -1304,32 +1287,34 @@ command line (shell), both locally and on remote machines.</li>
 <ul>
 <li>RStudio: an integrated development environment for R</li>
 </ul>
-<p><img alt="RStudio-Logo" src="../../img/RStudio-Logo.png" /></p>
-<h3 id="how-to-log-in-to-vacc-ood-you-should-always-do-this">How to log-in to VACC-OOD (You should always do this!):</h3>
+<figure>
+  <img alt="RStudio-Logo" src="../../img/RStudio-Logo.png" width="300" />
+</figure>
+<h3 id="how-to-log-in-to-vacc-ood">How to log-in to VACC-OOD:</h3>
 <ol>
 <li>
-<p>Use the <a href="https://vacc-ondemand.uvm.edu">VACC-OOD</a> link to access the
-site https://vacc-ondemand.uvm.edu</p>
+<p>Use the <a href="https://vacc-ondemand.uvm.edu">VACC-OOD</a> link to access the site </p>
 </li>
 <li>
-<p>Add your uvm netid and password</p>
+<p>Add your UVM netid and password</p>
 </li>
 <li>
 <p>You should be viewing the following dashboard</p>
+<p><img alt="dashboard" src="../../img/dashboard.png" /></p>
+</li>
+<li>
+<p>To access the Terminal Go to <button>Clusters</button>  and click <code>&gt;_VACC Shell Access</code></p>
+<p><img alt="terminal dashboard" src="../../img/terminal_dashboard.png" /></p>
 </li>
 </ol>
-<p><img alt="dashboard" src="../../img/dashboard.png" /></p>
-<ol>
-<li>To access the Terminal Go to <button>Clusters</button>  and click
-<code>&gt;_VACC Shell Access</code></li>
-</ol>
-<p><img alt="terminal dashboard" src="../../img/terminal_dashboard.png" /></p>
 <h3 id="connecting-to-vacc-with-ssh">Connecting to VACC with SSH</h3>
 <p>If you already had a VACC account and/or are currently working towards
 generating and analyzing your own data, you may want to learn to log-in
 without VACC-OOD.</p>
 <p>To do so, first open your terminal locally on your computer.</p>
-<p><img alt="terminal-2" src="../../img/terminal1.png" /></p>
+<figure>
+  <img alt="terminal-2" src="../../img/terminal1.png" width="300" />
+</figure>
 <p>Once you open your terminal, your screen should look similar to below: </p>
 <p><img alt="login" src="../../img/login7.png" /></p>
 <p>You see the "$" symbol?</p>
@@ -1340,21 +1325,23 @@ without VACC-OOD.</p>
 <p>There are many ways to connect to another machine over a network, but by far the most common is through the secure shell (SSH). We use SSH because its encrypted. This makes it secure to send passwords and edit private data files. </p>
 <h4 id="step-by-step-instructions">Step-by-step instructions:</h4>
 <ol>
-<li>Type in the <code>ssh</code> command at the command prompt followed by a space, and then type your username (e.g. uvm net id) plus the address of the cluster <code>@vacc-user1.uvm.edu</code>.</li>
-</ol>
+<li>
+<p>Type in the <code>ssh</code> command at the command prompt followed by a space, and then type your username (e.g. uvm net id) plus the address of the cluster <code>@vacc-user1.uvm.edu</code>.</p>
 <div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>username@vacc-user1.uvm.edu<span class="w"> </span>
 </code></pre></div>
-<ol>
-<li>Press the return/enter key and you should receive a prompt for your password. Type in your password and note that <strong>the cursor will not move as you type</strong> it in! This is normal and know that the computer is receiving and  transmitting your typed password to the remote system, i.e. the VACC cluster.</li>
-</ol>
+</li>
+<li>
+<p>Press the return/enter key and you should receive a prompt for your password. Type in your password and note that <strong>the cursor will not move as you type</strong> it in! This is normal and know that the computer is receiving and  transmitting your typed password to the remote system, i.e. the VACC cluster.</p>
 <p><img alt="login" src="../../img/login2.png" /></p>
-<ol>
-<li>If this is the first time you are connecting to the cluster, <strong>a warning will pop up</strong> and will ask you if you are sure you want to do this; <strong>type <code>Yes</code> or <code>Y</code></strong>.</li>
+</li>
+<li>
+<p>If this is the first time you are connecting to the cluster, <strong>a warning will pop up</strong> and will ask you if you are sure you want to do this; <strong>type <code>Yes</code> or <code>Y</code></strong>.</p>
+</li>
 </ol>
 <p>Once logged in, you should see a new command prompt:</p>
 <p><img alt="login" src="../../img/login.png" /></p>
 <h3 id="using-vacc-ood-off-campus">Using VACC-OOD OFF-campus</h3>
-<p>To use OFF-campus you will need to VPN first. See (install-cisco-vpn)[https://www.uvm.edu/it/kb/article/install-cisco-vpn/] for more information!</p>
+<p>To use OFF-campus you will need to VPN first. See <a href="https://www.uvm.edu/it/kb/article/install-cisco-vpn/">install-cisco-vpn</a> for more information!</p>
 <hr />
 <h2 id="copying-example-data-folder">Copying example data folder</h2>
 <p>Now that we are logged-in to the VACC, lets explore terminal. Your
@@ -1431,7 +1418,7 @@ these are files or directories with more items inside?</p>
 adding an <strong>"argument"</strong> to get more information.</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-F<span class="w"> </span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>##genomics_data/  other/  raw_fastq/  README.txt  reference_data/ 
+<div class="highlight"><pre><span></span><code>## genomics_data/  other/  raw_fastq/  README.txt  reference_data/ 
 </code></pre></div>
 <p>Anything with a "/" after its name is a directory. Things with an
 asterisk "*" after them are programs.  If there are no "decorations"
@@ -1451,21 +1438,22 @@ prompt. It will bring you to a so-called "buffer" page, a page you can
 navigate with your mouse or if you want to use your keyboard we have
 listed some basic key strokes:</p>
 <ul>
-<li>'spacebar' to go forward * 'b' to go backward * Up or down arrows to
-go forward or backward, respectively</li>
+<li>'spacebar' to go forward </li>
+<li>'b' to go backward </li>
+<li>Up or down arrows to go forward or backward, respectively</li>
 </ul>
 <p><strong>To get out of the <code>man</code> "buffer" page and to be able to type commands
 again on the command prompt, press the <code>q</code> key!</strong></p>
 <hr />
-<h2 id="class-exercise">Class Exercise</h2>
-<ul>
-<li>Use the <code>-l</code> option for the <code>ls</code> command to display more information
-for each item in the <code>unit1_unix</code> folder. What additional information
-is provided that you didn't see with the bare <code>ls</code> command?</li>
-</ul>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
+</div>
+<p>Use the <code>-l</code> option for the <code>ls</code> command to display more information
+  for each item in the <code>unit1_unix</code> folder. What additional information
+  is provided that you didn't see with the bare <code>ls</code> command?</p>
 <p><img alt="login" src="../../img/login6.png" /></p>
 <hr />
-<h2 id="commands">Commands</h2>
+<h2 id="summary-of-commands">Summary of Commands</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w">          </span>
 +<span class="w"> </span>Change<span class="w"> </span>Directory<span class="w"> </span>
 <span class="w">    </span>+<span class="w">   </span>used<span class="w"> </span>to<span class="w"> </span>move<span class="w"> </span>throughout<span class="w"> </span>the<span class="w"> </span>filesystem<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>computer
