@@ -1,10 +1,9 @@
-## Quick Start
 
-### Logging in to VACC-OOD:  
+## Logging in to VACC-OOD:  
 
 1. Use the [VACC-OOD](https://vacc-ondemand.uvm.edu) link to access the site
 
-2. Add your uvm netid and password
+2. Add your UVM netid and password
 
 3. You should be viewing the following dashboard
 
@@ -16,7 +15,7 @@
     ![terminal dashboard](../img/terminal_dashboard.png)
 
 
-### Connecting to VACC with SSH 
+## Connecting to VACC with SSH 
  
 If you already had a VACC account and/or are currently working towards
 generating and analyzing your own data, you may want to learn to log-in
@@ -40,11 +39,11 @@ The "$" is called the **"command prompt"**.
 
 #### Step-by-step instructions
 
-1. Type in the `ssh` command at the command prompt followed by a space, and then type your username (e.g. uvm net id) plus the address of the cluster `@vacc-user1.uvm.edu`.
+1. Type in the `ssh` command at the command prompt followed by a space, and then type **your** username (e.g. uvm net id) plus the address of the cluster `@vacc-user1.uvm.edu`.
 
-  ```bash 
-  ssh username@vacc-user1.uvm.edu 
-  ```
+    ```bash 
+    ssh username@vacc-user1.uvm.edu 
+    ```
 
 2. Press the return/enter key and you should receive a prompt for your password. Type in your password and note that **the cursor will not move as you type** it in! This is normal and know that the computer is receiving and  transmitting your typed password to the remote system, i.e. the VACC cluster.
 
