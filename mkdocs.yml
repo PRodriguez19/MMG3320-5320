@@ -7,6 +7,8 @@ theme:
   name: material 
   features:
     - content.code.copy
+    - content.code.annotate 
+    - content.code.select
     - navigation.tabs
     - navigation.top
   palette: 
