@@ -1267,10 +1267,10 @@ To answer this, let's learn more about the "addresses" of directories, called <s
 <p>This should display a shorter string of directories starting with root. This is the full address to your <em>home directory</em>, also referred to as "<strong>full path</strong>". </p>
 <h3 id="using-paths-with-commands">Using paths with commands</h3>
 <p>You can do a lot more with the idea of stringing together <em>parent/child</em> directories. Let's say we want to look at the contents of the <code>raw_fastq</code> folder, but do it from our current directory (the home directory). We can use the list command and follow it up with the path to the folder we want to list!</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>~/unit1_unix/reference_data
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span>
+ls<span class="w"> </span>~/unit1_unix/reference_data
+</code></pre></div></td></tr></table></div>
 <div class="highlight"><pre><span></span><code>## chr1.fa  chr1-hg19_genes.gtf
 </code></pre></div>
 <p>Remember that these two scripts indicate the same path:</p>
@@ -1307,9 +1307,10 @@ Type <code>cd unix_lesson</code> and see what happens.</p>
 <h3 id="file-names">File Names</h3>
 <p>Probably one of the most frustrating parts of bioinformatics is the lack of consistency with how files are labeled. Files often have obscure names that is only relevant to the researcher, or have names that are <strong>very</strong> similar to one another. But nonetheless we will persevere! </p>
 <p>Let's go into the <code>raw_fastq</code>, then type <code>ls Mov10_oe_</code>, followed by pressing the <code>tab</code> key once:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>raw_fastq/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>raw_fastq/
 ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>Notice that nothing happens!!</strong></p>
 <p>The reason is there are multiple files in the <code>raw_fastq</code> directory that start with <code>Mov10_oe_</code>. As a result, shell does not know which one to fill in. When you hit <code>tab</code> a second time again, the shell will then list all the possible choices.</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;&lt;tab&gt;
@@ -1376,10 +1377,10 @@ ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;
 The copy command has the following syntax: </p>
 <p><code>cp  path/to/item-being-copied  path/to/new-copied-item</code></p>
 <p>In this case the files are in our current directory, so we just have to specify the name of the file being copied, followed by whatever we want to call the newly copied file.</p>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>Mov10_oe_1.subset-copy.fq
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>cp<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>Mov10_oe_1.subset-copy.fq
+ls<span class="w"> </span>-l
+</code></pre></div></td></tr></table></div>
 <p>The copy command can also be used for copying over whole directories, but the <code>-r</code> argument has to be added after the <code>cp</code> command. The <code>-r</code> stands for "recursively copy everything from the directory and its sub-directories". We used it earlier when we copied over the <code>unit1_unix</code> directory to our home directories.</p>
 <hr />
 <h2 id="creating">Creating</h2>
@@ -1428,18 +1429,19 @@ ls
 <li>You can use the <code>-i</code> argument if you want it to ask before removing, <code>rm -i file-name</code>.</li>
 </ul>
 <p>Let's delete the fastq_backup folder too. First, we'll have to navigate our way to the parent directory (we can't delete the folder we are currently in/using). </p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>rm<span class="w">  </span>fastq_backup<span class="w"> </span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..
+rm<span class="w">  </span>fastq_backup<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
 <p>Did that work or did you get an error?</p>
 <details>
   <summary><i>Explanation</i></summary>
   <P>By default, <code>rm</code>, will NOT delete directories, but you use the <code>-r</code> flag if you are sure that you want to delete the directories and everything within them. To be safe, let's use it with the <code>-i</code> flag.</P>
 </details>
 <p><br></p>
+<p>Try this instead: 
 <div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-ri<span class="w"> </span>fastq_backup
-</code></pre></div>
+</code></pre></div></p>
 <ul>
 <li><code>-r</code>: recursive, commonly used as an option when working with directories, e.g. with <code>cp</code>. </li>
 <li><code>-i</code>: prompt before every removal.</li>
@@ -1455,7 +1457,6 @@ ls<span class="w">          </span><span class="c1"># List </span>
 <span class="nb">pwd</span><span class="w">         </span><span class="c1"># Print Working Directory   </span>
 <span class="w">              </span>+<span class="w">  </span>displays<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>path<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>root<span class="w"> </span>directory<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>working<span class="w"> </span>directory<span class="w"> </span>
 
-tree<span class="w">        </span><span class="c1"># prints a tree of the file structure</span>
 
 cp<span class="w">          </span><span class="c1"># Copy</span>
 <span class="w">              </span>+<span class="w">   </span>used<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>files<span class="w"> </span>or<span class="w"> </span>directories<span class="w"> </span>
