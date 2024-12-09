@@ -25,6 +25,8 @@ theme:
 
 nav:
   - Home: index.md
+  - Learning Goals: ch01/learning-goals.md
+  - Quick Start: ch01/quick-start.md
   - Unit 1: 
     - Week 1:
       - Overview: ch01/index.md

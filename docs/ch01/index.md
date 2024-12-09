@@ -4,13 +4,6 @@
 
 In this unit, we will focus on building foundational skills for using the command-line interface (CLI), specifically the `bash` shell. The `bash` shell is a versatile scripting environment widely used on Unix-based systems for file management, task automation, and software interaction. By the end of this unit, you will be able to execute basic commands, write simple scripts, and grasp the core principles of shell scripting, equipping you to perform a variety of computational tasks efficiently.
 
-
-### Learning Objectives
-
-1.	Navigate the command line interface (CLI) using the `bash` shell. 
-2.	Create, organize, and manipulate files and directories.  
-3.	Gain familiarity with using the VACC, an high-performance computing (HPC) cluster. 
-
 ### How to use these materials 
 
 This guide is intended for the reader to follow along step by step in chronological order. As you read, make sure to practice your UNIX skills by completing the exercises and examples in each days' lesson. While the code is already written out in the text, typing out the code manually (rather than copy and pasting) will help speed up the learning process – practice makes progress!
