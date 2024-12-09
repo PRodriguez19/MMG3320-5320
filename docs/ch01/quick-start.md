@@ -1,20 +1,19 @@
-## Computer Setup 
+## Quick Start
 
-### How to log-in to VACC-OOD (You should always do this!):  
+### Logging in to VACC-OOD:  
 
-1. Use the [VACC-OOD](https://vacc-ondemand.uvm.edu) link to access the
-site https://vacc-ondemand.uvm.edu
+1. Use the [VACC-OOD](https://vacc-ondemand.uvm.edu) link to access the site
 
 2. Add your uvm netid and password
 
 3. You should be viewing the following dashboard
 
-![dashboard](../img/dashboard.png)
+    ![dashboard](../img/dashboard.png)
 
 4. To access the Terminal Go to <button>Clusters</button>  and click
 `>_VACC Shell Access`
 
-![terminal dashboard](../img/terminal_dashboard.png)
+    ![terminal dashboard](../img/terminal_dashboard.png)
 
 
 ### Connecting to VACC with SSH 
@@ -25,12 +24,12 @@ without VACC-OOD.
 
 To do so, first open your terminal locally on your computer.
 
-![terminal-2](../img/terminal1.png)
+    ![terminal-2](../img/terminal1.png)
 
 
 Once you open your terminal, your screen should look similar to below: 
 
-![login](../img/login7.png)
+    ![login](../img/login7.png)
 
 You see the "$" symbol?
 
@@ -49,20 +48,17 @@ The "$" is called the **"command prompt"**.
 
 2. Press the return/enter key and you should receive a prompt for your password. Type in your password and note that **the cursor will not move as you type** it in! This is normal and know that the computer is receiving and  transmitting your typed password to the remote system, i.e. the VACC cluster.
 
-![login](../img/login2.png)
+    ![login](../img/login2.png)
 
 
 3. If this is the first time you are connecting to the cluster, **a warning will pop up** and will ask you if you are sure you want to do this; **type `Yes` or `Y`**.
 
-> **Tip** - Syntax for all commands on the command-line interface is the
-> command followed by space and then     optionally a few arguments.
-> 
 
-Once logged in, you should see a new command prompt:
+    Once logged in, you should see a new command prompt:
 
-![login](../img/login.png)
+    ![login](../img/login.png)
 
 
 ### Using VACC-OOD OFF-campus
 
-To use OFF-campus you will need to VPN first. See (install-cisco-vpn)[https://www.uvm.edu/it/kb/article/install-cisco-vpn/] for more information!
+To use OFF-campus you will need to VPN first. See [install-cisco-vpn](https://www.uvm.edu/it/kb/article/install-cisco-vpn/) for more information!
