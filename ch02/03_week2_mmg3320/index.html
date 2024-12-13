@@ -738,12 +738,12 @@
 
 
 <h1 id="learning-objectives">Learning Objectives</h1>
-<ul>
-<li>Implement tab completion when writing paths</li>
-<li>Use of the asterisk <code>*</code> wildcard to select multiple items</li>
-<li>List a few shortcuts </li>
-<li>View the contents of a file</li>
-</ul>
+<ol>
+<li>Learn to use tab completion to simplify typing file and directory paths.  </li>
+<li>Use of the asterisk <code>*</code> wildcard to match and select multiple files in a directory. </li>
+<li>View the contents of a file using commands such as <code>less</code>, <code>head</code>, or <code>cat</code>. </li>
+<li>Use Nano, a simple text editor, to create and edit files directly from terminal. </li>
+</ol>
 <hr />
 <h1 id="recap-from-last-week">Recap from last week</h1>
 <h2 id="commands">Commands</h2>
@@ -794,10 +794,9 @@ rm          # Remove
 <h2 id="wild-cards">Wild cards</h2>
 <p><strong>The "*" wildcard:</strong></p>
 <p>Navigate to the <code>~/unit1_unix/raw_fastq</code> directory. This directory contains FASTQ files and these files contain the sequencing reads (nucleotide sequences) output from a high throughput sequencer. </p>
-<p align="center">
-<img src="../img/mkfastq.png" width="600">
-</p>
-
+<figure>
+  <img alt="home" src="../../img/mkfastq.png" width="600" />
+</figure>
 <p>Let's see what is inside:  </p>
 <p><div class="highlight"><pre><span></span><code>ls
 </code></pre></div>
@@ -949,10 +948,9 @@ QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAE
 <blockquote>
 <p>This is a FASTA file. FASTA format is a text-based format for representing either nucleotide or peptide sequences. The structure of a FASTA file is represented below where the header row always begins with the "&gt;" symbol. </p>
 </blockquote>
-<p align="center">
-<img src="../img/fasta.png" width="600">
-</p>
-
+<figure>
+  ![home](../img/fasta.png{ width="600"}
+</figure>
 <hr />
 <p>Question: What command would I use to clear my terminal screen? </p>
 <details>
