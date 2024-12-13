@@ -768,6 +768,7 @@ mv          # Move
 rm          # Remove
               +   used to delete files and directories 
 </code></pre></div>
+<hr />
 <h2 id="home-directory-or">Home directory or "~"</h2>
 <p>Dealing with the home directory is very common. In shell, the tilde character "~" is a shortcut for your home directory. Let's navigate to the <code>raw_fastq</code> directory: </p>
 <p>Then enter the command:</p>
@@ -785,9 +786,11 @@ rm          # Remove
 <h2 id="current-directory-or">Current directory or "."</h2>
 <p>Finally, <code>.</code> always refers to your current directory. Recall that we use <code>.</code> a number of times, when copying data to your home directory.</p>
 <hr />
-<p><strong>Class Activity #1</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
 <p>Before moving on, please complete the following class activity below. You will have ~5 minutes. </p>
 <p><a href="https://forms.gle/gCuupcxiKYkgBAiq8">Class-activity1</a></p>
+</div>
 <hr />
 <h1 id="saving-time-with-wildcards-and-other-shortcuts">Saving time with wildcards and other shortcuts</h1>
 <p><em>Remember to use <kbd>tab</kbd> completion!</em> </p>
@@ -800,7 +803,7 @@ rm          # Remove
 <p>Let's see what is inside:  </p>
 <p><div class="highlight"><pre><span></span><code>ls
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Irrel_kd_1.subset.fq    Irrel_kd_3.subset.fq    Mov10_oe_2.subset.fq
+<div class="highlight"><pre><span></span><code>## Irrel_kd_1.subset.fq Irrel_kd_3.subset.fq    Mov10_oe_2.subset.fq
 Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 </code></pre></div></p>
 <p>Let's take a moment to point a few things out: 
@@ -811,10 +814,12 @@ Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 /gpfs1/home/p/d/pdrodrig/class_data/GSE164713_Tcf1/ChIPseq </p>
 </blockquote>
 <hr />
-<p><strong>Class Activity #2</strong> </p>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
 <p>Create a directory within <code>raw_fastq</code> and call it <strong>fastq</strong> and another file called <strong>data</strong>. Then list the contents. 
 Your output should look like below: </p>
-<div class="highlight"><pre><span></span><code>data   Irrel_kd_1.subset.fq  Irrel_kd_3.subset.fq  Mov10_oe_2.subset.fq
+</div>
+<div class="highlight"><pre><span></span><code>## data   Irrel_kd_1.subset.fq  Irrel_kd_3.subset.fq  Mov10_oe_2.subset.fq
 fastq  Irrel_kd_2.subset.fq  Mov10_oe_1.subset.fq  Mov10_oe_3.subset.fq
 </code></pre></div>
 <hr />
@@ -828,8 +833,10 @@ fastq  Irrel_kd_2.subset.fq  Mov10_oe_1.subset.fq  Mov10_oe_3.subset.fq
 Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 </code></pre></div>
 <hr />
-<p><strong>Class Activity #3</strong> </p>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
 <p>Remove the newly created folders <strong>fastq</strong> and <strong>data</strong>. </p>
+</div>
 <hr />
 <p>Now try a more complicated command to list every file in <code>/usr/bin</code> directory that ends in the characters <code>.sh</code>. The <code>bin</code> directory is where some built-in programs are stored. </p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/usr/bin/*.sh
@@ -871,7 +878,8 @@ Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 <p>Lastly, you can chain together multiple "?" marks to help specify a length. In the example below, you would be looking for all things in <code>/bin/</code> that start with a "d" and have a name length of three characters.  </p>
 <p><code>ls /bin/d??</code> </p>
 <hr />
-<p><strong>Class Activity #4</strong> </p>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
 <p>Perform each of the following tasks using a single <code>ls</code> command <em>without</em> navigating to a different directory.</p>
 <ol>
 <li>
@@ -885,35 +893,37 @@ Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 </li>
 <li>
 <p>BONUS: List all of the files in <code>/bin</code> that start with 'ch' and are only 5 letters in length. </p>
-<p><details>
+</li>
+</ol>
+</div>
+<details>
   <summary><b><i>Answers</i></b></summary>
   <p><br>Click each question below to reveal the answer.</p>
   <details>
     <summary><i>Question 1</i></summary>
-    <code>ls /bin/c<em></code>
+    <code>ls /bin/c*</code>
   </details>
   <details>
     <summary><i>Question 2</i></summary>
-    <code>ls /bin/</em>a<em></code>
+    <code>ls /bin/*a*</code>
   </details>
   <details>
     <summary><i>Question 3</i></summary>
-    <code>ls /bin/</em>o</code>
+    <code>ls /bin/*o</code>
   </details>
   <details>
-  <summary><i>BONUS</i></summary>
-  <code>ls /bin/ch???</code>
+    <summary><i>BONUS</i></summary>
+    <code>ls /bin/ch???</code>
   </details>
-</details></p>
-</li>
-</ol>
+</details>
+
 <hr />
 <h2 id="cancel-a-command">Cancel a command</h2>
 <p>Sometimes as you enter a command, you realize that you don't want to continue or run the current line. Instead of deleting everything you have entered (which could be very long), you could quickly cancel the current line and start a fresh prompt with <button>Ctrl</button> + <button>C</button>.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/users/p/d/pdrodrig/class_data/GSE164713_Tcf1/ChIPseq
 fastqc<span class="w"> </span>SRR13416485_1.fastq.gz
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Started analysis of SRR13416485_1.fastq.gz
+<div class="highlight"><pre><span></span><code>## Started analysis of SRR13416485_1.fastq.gz
 Approx 5% complete for SRR13416485_1.fastq.gz
 </code></pre></div>
 <p>then I hit <button>Ctrl</button> + <button>C</button></p>
@@ -1042,12 +1052,14 @@ tail        # allows you to view end of file
 <h2 id="homework-assignment-2-50-points">Homework Assignment #2 (50 points)</h2>
 <p><strong>This "mini" assignment is due on Tuesday, January 30th anytime before class start. Late assignments will not be accepted.</strong>  </p>
 <h3 id="directions-for-students">Directions for Students:</h3>
-<p>Open a new Microsoft Word Document and submit answers to the questions below. The first four lines of your document should contain the following:<br />
-+ Your name
-+ MMG3320/5320
-+ Today's date
-+ Homework Assignment #2</p>
-<ol>
+<p>Open a new Microsoft Word Document and submit answers to the questions below. The first four lines of your document should contain the following:  </p>
+<ul>
+<li>Your name</li>
+<li>MMG3320/5320</li>
+<li>Today's date</li>
+<li>
+<p>Homework Assignment #2</p>
+</li>
 <li>
 <p>Type <code>ls'</code> then type <code>history</code> then hit <button>return</button></p>
 <p>The output should look something like this: </p>
@@ -1072,7 +1084,7 @@ Submit a screenshot of your terminal screen.</p>
 <li>
 <p>How many commands have you typed after going through this exercise? Submit a screenshot of the output of Terminal.</p>
 </li>
-</ol>
+</ul>
 <hr />
 <h2 id="citation">Citation</h2>
 <p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
