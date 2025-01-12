@@ -1,7 +1,7 @@
 site_name: MMG:3320/5320 Advanced Bioinformatics
 site_description: test site 
 site_author: Princess Rodriguez 
-site_url: https://prodriguez19.github.io/doc_check/
+site_url: https://prodriguez19.github.io/MMG3320-5320/
 
 theme:
   name: material 
@@ -26,7 +26,9 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Home: index.md
+  - About: index.md
+    - Introduction: index.md
+    - Syllabus: MMG3320-Spring-2025-Syllabus.pdf
   - Quick Start: ch01/quick-start.md
   - Unit 1: 
     - Week 1:
