@@ -29,7 +29,12 @@ nav:
   - About:
       - Introduction: index.md
       - Syllabus: MMG3320-Spring-2025-Syllabus.pdf
-  - Quick Start: ch01/quick-start.md
+      - Schedule: MMG3320-5320-Spring-2025-Schedule.pdf
+      - Quick Start: ch01/quick-start.md
+  - Slides: 
+      - Week 1: pdf_materials/01_week1_mmg3320-slides.pdf
+  - PDF Printouts: 
+    - Week 1: pdf_materials/01_week1_mmg3320-printout.pdf
   - Unit 1: 
       - Week 1:
           - Overview: ch01/index.md
@@ -39,6 +44,7 @@ nav:
           - Overview: ch02/index.md
           - Wild Cards: ch02/03_week2_mmg3320.md
           - Writing and editing files: ch02/04_week3_mmg3320.md
+  - Assignments: 
 
 
 markdown_extensions:
