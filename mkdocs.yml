@@ -33,8 +33,10 @@ nav:
       - Quick Start: ch01/quick-start.md
   - Slides: 
       - Slides: slides/index.md
+        - Introducing the Shell: 01-IntroducingtheShell-slides.md
   - Printouts: 
       - Printouts: pdf_materials/index.md
+        - Introducing the Shell: 01-IntroducingtheShell-pdf.md
   - Unit 1: 
       - Week 1:
           - Overview: ch01/index.md
