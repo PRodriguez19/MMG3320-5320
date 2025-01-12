@@ -44,7 +44,9 @@ nav:
           - Overview: ch02/index.md
           - Wild Cards: ch02/03_week2_mmg3320.md
           - Writing and editing files: ch02/04_week3_mmg3320.md
-  - Assignments: 
+  - Assignments:
+      - Week 1: assignments/week1_assignment.md
+      - Week 2: assignments/week2_assignment.md
 
 markdown_extensions:
   - admonition
