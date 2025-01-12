@@ -32,9 +32,9 @@ nav:
       - Schedule: MMG3320-5320-Spring-2025-Schedule.pdf
       - Quick Start: ch01/quick-start.md
   - Slides: 
-      - Slides: index.md
+      - Slides: slides/index.md
   - Printouts: 
-      - Printouts: index.md
+      - Printouts: pdf_materials/index.md
   - Unit 1: 
       - Week 1:
           - Overview: ch01/index.md
