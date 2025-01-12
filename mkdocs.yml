@@ -26,18 +26,20 @@ theme:
         name: Switch to light mode
 
 nav:
-  - About: index.md
-    - Syllabus: MMG3320-Spring-2025-Syllabus.pdf
+  - About:
+      - Introduction: index.md
+      - Syllabus: MMG3320-Spring-2025-Syllabus.pdf
   - Quick Start: ch01/quick-start.md
   - Unit 1: 
-    - Week 1:
-      - Overview: ch01/index.md
-      - Introducing the Shell: ch01/01_week1_mmg3320.md
-      - Navigating the Shell: ch01/02_week1_mmg3320.md
-    - Week 2:
-      - Overview: ch02/index.md
-      - Wild Cards: ch02/03_week2_mmg3320.md
-      - Writing and editing files: ch02/04_week3_mmg3320.md
+      - Week 1:
+          - Overview: ch01/index.md
+          - Introducing the Shell: ch01/01_week1_mmg3320.md
+          - Navigating the Shell: ch01/02_week1_mmg3320.md
+      - Week 2:
+          - Overview: ch02/index.md
+          - Wild Cards: ch02/03_week2_mmg3320.md
+          - Writing and editing files: ch02/04_week3_mmg3320.md
+
 
 markdown_extensions:
   - admonition
