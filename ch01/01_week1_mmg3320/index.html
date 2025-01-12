@@ -150,43 +150,6 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
   
@@ -1481,46 +1444,46 @@
                   
 
 
-<h2 id="learning-objectives-for-todays-lesson">Learning Objectives for Today's Lesson</h2>
+<div><h2 id="learning-objectives-for-todays-lesson">Learning Objectives for Today's Lesson</h2>
 <ul>
 <li>Log in to the VACC, a high-performance computing (HPC) cluster. </li>
 <li>Learn basic command-line navigation.   </li>
 <li>Copy data into your home directory. </li>
 <li>List files within a directory. </li>
 </ul>
-<hr />
+<hr>
 <h1 id="introduction-to-command-line">Introduction to Command Line</h1>
 <p>The command-line interface (CLI) and graphical user interface (GUI) are
 two different ways of interacting with a computer's operating system. Most
 people are familiar with the GUI, as it is the default interface for most
 software. In a GUI, you interact with visual representations of files,
 folders, applications, and other elements. In contrast, the CLI involves working primarily with text-based representations of files, folders, input, and output.</p>
-<p><img alt="GUI-vs-CUI" src="../../img/GUI-vs-CUI-min.jpg" /></p>
+<p><img alt="GUI-vs-CUI" src="../../img/GUI-vs-CUI-min.jpg"></p>
 <h2 id="what-is-a-shell">What is a Shell?</h2>
 <p>Most data processing and remote access will be command-line based. For this we need an <strong>interpreter</strong>. </p>
 <p>A shell is a command-line interpreter that allows users to type commands to launch programs. </p>
 <p>The most popular UNIX shell is BASH (the Bourne Again SHell) — so named because it is derived from a shell written by Stephen Bourne. Learning to use the shell requires time and effort. </p>
 <figure>
-  <img alt="shells" src="../../img/shells.png" width="600" />
+  <img alt="shells" src="../../img/shells.png" width="600">
   <figcaption>A shell is a command-line interpreter. </figcaption>
 </figure>
 <p><strong>While a GUI presents you with choices to select, CLI does not automatically display these options to you. Instead, you will need to learn specific commands. This will resemble learning a new language!</strong></p>
-<hr />
+<hr>
 <h2 id="benefits-of-using-the-shell">Benefits of Using the Shell</h2>
 <p>Using the shell provides access to internal system controls, remote servers, and customizable workflows through scripting. With the shell, you can create, edit, and delete files, as well as perform many other tasks efficiently.</p>
 <figure>
-  <img alt="Shell-benefits" src="../../img/benefits-shells.png" width="600" />
+  <img alt="Shell-benefits" src="../../img/benefits-shells.png" width="600">
 </figure>
 <p>The command line is often the easiest and most effective way to interact with remote machines and supercomputers. Familiarity with the shell is essential for running specialized tools and accessing high-performance computing (HPC) resources. As clusters and cloud computing systems become increasingly important for scientific data analysis, proficiency in the shell has become a critical skill. The command-line skills introduced here will enable you to address a wide range of scientific questions and computational challenges.</p>
 <h2 id="how-to-access-the-shell">How to access the shell</h2>
 <p>On Mac or Linux machines, you can access the shell locally through a program called <strong>Terminal</strong>. However, for simplicity and convenience, we will use the shell through the open-source web portal <strong>Vermont Advanced Computing Center - Open OnDemand (VACC-OOD)</strong>. Once you open the terminal, you will begin learning the basics of shell programming with the Bourne Again Shell (Bash).</p>
-<hr />
+<hr>
 <h1 id="working-with-remote-machines-vermont-advance-computing-center-cluster-vacc">Working with Remote Machines: Vermont Advance Computing Center Cluster (VACC)</h1>
 <h3 id="why-work-on-the-vacc">Why work on the VACC?</h3>
 <p>Most data-processing tasks in bioinformatics require more computing power than we have on our workstations. For all bioinformatics projects performed in this course, you will work over a network connection with the VACC. </p>
 <p><strong>Cluster Basics</strong></p>
 <figure>
-  <img alt="Cluster" src="../../img/compute_cluster.png" width="300" />
+  <img alt="Cluster" src="../../img/compute_cluster.png" width="300">
   <figcaption>The image above illustrates the multiple computers that make up a cluster. Each individual computer in the cluster, referred to as a "node", is significantly more powerful than a typical laptop or desktop computer. A "cluster" is a large system composed of hundreds to thousands of nodes, each serving a specific purpose.</figcaption>
 </figure>
 <p>Nodes are generally classified by their roles: login nodes and compute nodes. Login nodes are used for accessing the cluster, setting up jobs, and managing workflows, while compute nodes handle the actual computational analysis or work. Most clusters have a few login nodes and many compute nodes to efficiently handle diverse workloads.</p>
@@ -1532,7 +1495,7 @@ folders, applications, and other elements. In contrast, the CLI involves working
 interconnection network; suitable for high-throughput applications </li>
 <li>Shared by many users</li>
 </ul>
-<hr />
+<hr>
 <p><strong>As of March 2022, the VACC provides three Clusters:</strong></p>
 <ul>
 <li>BlackDiamond </li>
@@ -1540,15 +1503,15 @@ interconnection network; suitable for high-throughput applications </li>
 <li>DeepGreen</li>
 </ul>
 <figure>
-  <img alt="bluemoon cluster" src="../../img/bluemoon-logo.png" width="300" />
+  <img alt="bluemoon cluster" src="../../img/bluemoon-logo.png" width="300">
   <figcaption>We will primarily use the **Bluemoon** cluster for any downstream analysis.</figcaption>
 </figure>
 <p>Please note that more information can always be found at the <a href="https://www.uvm.edu/vacc">Vermont
 Advanced Computing Center website</a>.</p>
-<hr />
+<hr>
 <h1 id="connecting-to-the-vacc">Connecting to the VACC</h1>
 <figure>
-  <img alt="cluster-connect" src="../../img/connect-to-remote.png" width="800" />
+  <img alt="cluster-connect" src="../../img/connect-to-remote.png" width="800">
   <figcaption>To connect to the VACC cluster you can either use SSH or VACC-OOD.</figcaption>
 </figure>
 <h1 id="vacc-ood-overview">VACC-OOD Overview</h1>
@@ -1578,12 +1541,12 @@ whereas OOD is easy to use and simple to learn</p>
 <li>Equipped with <strong>Terminal</strong>: this is used to perform tasks on the
 command line (shell), both locally and on remote machines.</li>
 </ul>
-<p><img alt="terminal" src="../../img/terminal.png" /></p>
+<p><img alt="terminal" src="../../img/terminal.png"></p>
 <ul>
 <li>RStudio: an integrated development environment for R</li>
 </ul>
 <figure>
-  <img alt="RStudio-Logo" src="../../img/RStudio-Logo.png" width="300" />
+  <img alt="RStudio-Logo" src="../../img/RStudio-Logo.png" width="300">
 </figure>
 <h3 id="how-to-log-in-to-vacc-ood">How to log-in to VACC-OOD:</h3>
 <ol>
@@ -1595,11 +1558,11 @@ command line (shell), both locally and on remote machines.</li>
 </li>
 <li>
 <p>You should be viewing the following dashboard</p>
-<p><img alt="dashboard" src="../../img/dashboard.png" /></p>
+<p><img alt="dashboard" src="../../img/dashboard.png"></p>
 </li>
 <li>
 <p>To access the Terminal Go to <button>Clusters</button>  and click <code>&gt;_VACC Shell Access</code></p>
-<p><img alt="terminal dashboard" src="../../img/terminal_dashboard.png" /></p>
+<p><img alt="terminal dashboard" src="../../img/terminal_dashboard.png"></p>
 </li>
 </ol>
 <h3 id="connecting-to-vacc-with-ssh">Connecting to VACC with SSH</h3>
@@ -1608,10 +1571,10 @@ generating and analyzing your own data, you may want to learn to log-in
 without VACC-OOD.</p>
 <p>To do so, first open your terminal locally on your computer.</p>
 <figure>
-  <img alt="terminal-2" src="../../img/terminal1.png" width="200" />
+  <img alt="terminal-2" src="../../img/terminal1.png" width="200">
 </figure>
 <p>Once you open your terminal, your screen should look similar to below: </p>
-<p><img alt="login" src="../../img/login7.png" /></p>
+<p><img alt="login" src="../../img/login7.png"></p>
 <p>You see the "$" symbol?</p>
 <p>That is where you write the "commands" that will be executed by shell
 (bash in this case) and your computer's kernel.</p>
@@ -1627,25 +1590,25 @@ without VACC-OOD.</p>
 </li>
 <li>
 <p>Press the return/enter key and you should receive a prompt for your password. Type in your password and note that <strong>the cursor will not move as you type</strong> it in! This is normal and know that the computer is receiving and  transmitting your typed password to the remote system, i.e. the VACC cluster.</p>
-<p><img alt="login" src="../../img/login2.png" /></p>
+<p><img alt="login" src="../../img/login2.png"></p>
 </li>
 <li>
 <p>If this is the first time you are connecting to the cluster, <strong>a warning will pop up</strong> and will ask you if you are sure you want to do this; <strong>type <code>Yes</code> or <code>Y</code></strong>.</p>
 </li>
 </ol>
 <p>Once logged in, you should see a new command prompt:</p>
-<p><img alt="login" src="../../img/login.png" /></p>
+<p><img alt="login" src="../../img/login.png"></p>
 <h3 id="using-vacc-ood-off-campus">Using VACC-OOD OFF-campus</h3>
 <p>To use OFF-campus you will need to VPN first. See <a href="https://www.uvm.edu/it/kb/article/install-cisco-vpn/">install-cisco-vpn</a> for more information!</p>
-<hr />
+<hr>
 <h2 id="running-programs">Running Programs</h2>
 <p>Now that we are logged-in to the VACC, lets explore terminal. Your
 screen should look similar to the following:</p>
-<p><img alt="login" src="../../img/login5.png" /></p>
+<p><img alt="login" src="../../img/login5.png"></p>
 <p>To run a program, we will follow these basic steps: 
-<img alt="running-program1" src="../../img/running-programs1.png" /></p>
+<img alt="running-program1" src="../../img/running-programs1.png"></p>
 <p>The "$" is called the <strong>"command prompt"</strong>.</p>
-<p><img alt="running-program2" src="../../img/running-programs2.png" /></p>
+<p><img alt="running-program2" src="../../img/running-programs2.png"></p>
 <p>The command prompt on VACC will have some characters before the <code>$</code>,
 something like <code>[username@vacc-user1 ~]</code>, this is telling you your
 username and the name of the login node you have connected to.</p>
@@ -1674,7 +1637,7 @@ period symbol at the end <code>.</code></p>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>/gpfs1/cl/mmg3320/course_materials/tutorials/unit1_unix<span class="w"> </span>.
 </code></pre></div>
 <blockquote>
-<p>Let's break this down.<br />
+<p>Let's break this down.<br>
 'cp' is the command for copy. This command required you to specify the
 location of the item you want to copy
 (/gpfs1/cl/mmg3320/course_materials/tutorials/unit1_unix) and the
@@ -1731,7 +1694,7 @@ that can be accessed using the <code>man</code> command. Let's try this command
 with <code>ls</code>:</p>
 <div class="highlight"><pre><span></span><code>man<span class="w"> </span>ls<span class="w"> </span>
 </code></pre></div>
-<p><img alt="figure-out" src="../../img/figure-out.png" /></p>
+<p><img alt="figure-out" src="../../img/figure-out.png"></p>
 <p>This will open the manual page for <code>ls</code> and you will lose the command
 prompt. It will bring you to a so-called "buffer" page, a page you can
 navigate with your mouse or if you want to use your keyboard we have
@@ -1743,15 +1706,15 @@ listed some basic key strokes:</p>
 </ul>
 <p><strong>To get out of the <code>man</code> "buffer" page and to be able to type commands
 again on the command prompt, press the <code>q</code> key!</strong></p>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>Use the <code>-l</code> option for the <code>ls</code> command to display more information
 for each item in the <code>unit1_unix</code> folder. What additional information
 is provided that you didn't see with the bare <code>ls</code> command?</p>
 </div>
-<p><img alt="login" src="../../img/login6.png" /></p>
-<hr />
+<p><img alt="login" src="../../img/login6.png"></p>
+<hr>
 <h2 id="summary-of-commands">Summary of Commands</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w">          </span>
 <span class="w">  </span>+<span class="w"> </span>Change<span class="w"> </span>Directory<span class="w"> </span>
@@ -1765,7 +1728,7 @@ rm<span class="w"> </span>
 <span class="w">  </span>+<span class="w"> </span>Remove<span class="w"> </span>
 <span class="w">      </span>+<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>remove<span class="w"> </span>a<span class="w"> </span>file<span class="w"> </span>
 </code></pre></div>
-<hr />
+<hr>
 <h3 id="citation">Citation</h3>
 <p><em>This lesson has been developed by members of the teaching team at the
 <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core
@@ -1799,7 +1762,7 @@ Data Carpentry: Introduction to the shell for genomics data, June 2019
 <p>Babraham Bioinformatics - Training Courses. (n.d.). https://www.bioinformatics.babraham.ac.uk/training.html#unix</p>
 </li>
 </ul>
-<hr />
+<hr></div>
 
 
 

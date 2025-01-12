@@ -150,43 +150,6 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
   
@@ -1469,17 +1432,17 @@
                   
 
 
-<h2 id="learning-objectives-for-todays-lesson">Learning Objectives for Today's Lesson</h2>
+<div><h2 id="learning-objectives-for-todays-lesson">Learning Objectives for Today's Lesson</h2>
 <ul>
 <li>Understand the organization of the Filesystem </li>
 <li>Distinguish between Full versus Relative paths</li>
 <li>listing, copying, creating, moving and removing data</li>
 </ul>
-<hr />
+<hr>
 <h1 id="navigating-the-filesystem">Navigating the Filesystem</h1>
 <p>A filesystem organizes a computer's files and directories into a tree structure. </p>
 <figure>
-  <img alt="directory_structure" src="../../img/directory_structure1.png" width="600" />
+  <img alt="directory_structure" src="../../img/directory_structure1.png" width="600">
   <figcaption>The image above illustrates the Filesystem. </figcaption>
 </figure>
 <ul>
@@ -1491,31 +1454,31 @@
 <p><strong>Note: When you log in to a remote computer you land on one of the branches of that tree, i.e. your pre-designated "home" directory that usually has your login name as its name (e.g. <code>/users/username</code>).</strong></p>
 </blockquote>
 <figure>
-  <img alt="home" src="../../img/home.png" width="300" />
+  <img alt="home" src="../../img/home.png" width="300">
 </figure>
 <p>To navigate the file system with ease we will now introduce the concept of <strong>tab completion</strong>. </p>
-<hr />
+<hr>
 <h2 id="shortcut-tab-completion">Shortcut: Tab Completion</h2>
-<p><kbd>tab</kbd>  <br />
+<p><kbd>tab</kbd>  <br>
 <kbd>caps lock</kbd></p>
 <p>Typing out file or directory names can waste a lot of time and its easy to make typing mistakes. Instead we should get in the habit of using tab complete as a shortcut. The <code>tab</code> key is located on the left side of your keyboard, right above the <code>caps lock</code> key. When you start typing out the first few characters of a directory name, then hit the <code>tab</code> key, Shell will try to fill in the rest of the directory name. Let's put this into practice now. </p>
 <p>Navigate into the <code>raw_fastq</code> directory and see what's inside. <strong>Remember to use tab!</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>raw_fastq/
 </code></pre></div>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>List the file sizes of raw_fastq/ folder. </p>
 </div>
-<hr />
+<hr>
 <h2 id="paths">Paths</h2>
 <p>Where is the <code>raw_fastq</code> folder in relation to our home directory?
 To answer this, let's learn more about the "addresses" of directories, called <strong>"paths"</strong> and move around the file system.</p>
 <p>Let's check to see what directory we currently are in. The command prompt tells us which directory we are in, but it doesn't give information about where the <code>raw_fastq</code> directory is with respect to our "home" directory. </p>
 <p>The command to check our current location is <code>pwd</code>, this command does not take any arguments and it returns the path or address of your <strong>p</strong>resent <strong>w</strong>orking <strong>d</strong>irectory (the folder you are in currently).</p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
+<p></p><div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
 </code></pre></div>
-<img alt="pwd" src="../../img/pwd.png" /></p>
+<img alt="pwd" src="../../img/pwd.png">
 <p>In the output above, each folder is separated from its "parent" or "child" folder by a "/", and the output starts with the root <code>/</code> directory. So, now you are able to determine the location of <code>raw_fastq</code> directory relative to the root directory. </p>
 <p>But what if you would like to navigate back to your home directory? To do so, one way would be to type <code>cd ~</code> and this will bring you back to your home directory. The "~" is an abbreviation for the current user's home folder. </p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~
@@ -1542,7 +1505,7 @@ EQUALS
 
 ~/unit1_unix/reference_data
 </code></pre></div>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>Change directories from <code>~</code> (home) to <code>raw_fastq</code> in a single step then print working directory. </p>
@@ -1550,11 +1513,11 @@ EQUALS
 <blockquote>
 <p><details>
     <summary>Answer</summary>
-    <P>cd ~/unit1_unix/raw_fastq</P>
+    <p>cd ~/unit1_unix/raw_fastq</p>
   </details></p>
 </blockquote>
-<hr />
-<p>Now, what if we want to move back up a level back into the <code>unix_lesson</code> directory? <br />
+<hr>
+<p>Now, what if we want to move back up a level back into the <code>unix_lesson</code> directory? <br>
 Type <code>cd unix_lesson</code> and see what happens.</p>
 <div class="highlight"><pre><span></span><code>unix_lesson/: No such file or directory
 </code></pre></div>
@@ -1591,7 +1554,7 @@ ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>data
 </code></pre></div>
 <p>Now let's navigate back into <code>unit1_unix</code> </p>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>Change directories from <code>unit1_unix</code> to <code>data</code> in a single step. </p>
@@ -1599,16 +1562,16 @@ ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;
 <blockquote>
 <p><details>
     <summary>Answer</summary>
-    <P>cd raw_fastq/data/</P>
+    <p>cd raw_fastq/data/</p>
   </details></p>
 </blockquote>
-<hr />
+<hr>
 <p>In this case we are using a relative path, relative to our current location - wherein we know that the <code>raw_fastq</code> folder is within <code>unit1_unix</code> and <code>data</code> is within the <code>raw_fastq</code> folder. </p>
 <h2 id="synopsis-of-full-versus-relative-paths">Synopsis of Full versus Relative paths</h2>
 <p><strong>A full path always starts with a <code>/</code>, a relative path does not.</strong></p>
 <p>A relative path is like getting directions from someone on the street. They tell you to "go right at the Stop sign, and then turn left on Main Street". That works great if you're standing there together, but not so well if you're trying to tell someone how to get there from another country. A full path is like GPS coordinates. It tells you exactly where something is no matter where you are right now.</p>
 <p>You can usually use either a full path or a relative path depending on what is most convenient. If we are in the home directory, it is more convenient to just enter the relative path since it involves less typing. However, when using some programs, full paths are required. </p>
-<p><img alt="citymap" src="../../img/city-map.png" /></p>
+<p><img alt="citymap" src="../../img/city-map.png"></p>
 <h3 id="example-using-full-paths">Example using Full Paths:</h3>
 <p>It can get really complex, real fast!  </p>
 <div class="highlight"><pre><span></span><code>samtools merge WT_Ikaros_rep2_merged.bam 
@@ -1625,7 +1588,7 @@ ls<span class="w"> </span>Mov10_oe_&lt;tab&gt;
 <li>2nd file = WT_H100_IK_rep1.IK2_S2_L001_aligned_reads.bam</li>
 </ul>
 <p>Over time, it will become easier for you to keep a mental note of the structure of the directories that you are using and how to quickly navigate among them.</p>
-<hr />
+<hr>
 <h1 id="copying-creating-moving-and-removing-data">Copying, creating, moving and removing data</h1>
 <p>Now we can move around within the directory structure using the command line. But what if we want to do things like copy files or move them from one directory to another, or rename them? </p>
 <p>Let's move into the <code>raw_fastq</code> directory, this contains some fastq files which are the output of sequencing. </p>
@@ -1644,7 +1607,7 @@ The copy command has the following syntax: </p>
 ls<span class="w"> </span>-l
 </code></pre></div></td></tr></table></div>
 <p>The copy command can also be used for copying over whole directories, but the <code>-r</code> argument has to be added after the <code>cp</code> command. The <code>-r</code> stands for "recursively copy everything from the directory and its sub-directories". We used it earlier when we copied over the <code>unit1_unix</code> directory to our home directories.</p>
-<hr />
+<hr>
 <h2 id="creating">Creating</h2>
 <p>Next, let's create a directory called <code>fastq_backup</code> and we can move the copy of the fastq file into that directory. </p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>fastq_backup
@@ -1698,17 +1661,17 @@ rm<span class="w">  </span>fastq_backup<span class="w"> </span>
 <p>Did that work or did you get an error?</p>
 <details>
   <summary><i>Explanation</i></summary>
-  <P>By default, <code>rm</code>, will NOT delete directories, but you use the <code>-r</code> flag if you are sure that you want to delete the directories and everything within them. To be safe, let's use it with the <code>-i</code> flag.</P>
+  <p>By default, <code>rm</code>, will NOT delete directories, but you use the <code>-r</code> flag if you are sure that you want to delete the directories and everything within them. To be safe, let's use it with the <code>-i</code> flag.</p>
 </details>
 <p><br></p>
 <p>Try this instead: 
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-ri<span class="w"> </span>fastq_backup
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-ri<span class="w"> </span>fastq_backup
+</code></pre></div>
 <ul>
 <li><code>-r</code>: recursive, commonly used as an option when working with directories, e.g. with <code>cp</code>. </li>
 <li><code>-i</code>: prompt before every removal.</li>
 </ul>
-<hr />
+<hr>
 <h2 id="summary-of-commands">Summary of Commands</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w">          </span><span class="c1"># Change Directory</span>
 <span class="w">               </span>+<span class="w">   </span>used<span class="w"> </span>to<span class="w"> </span>move<span class="w"> </span>throughout<span class="w"> </span>the<span class="w"> </span>filesystem<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>computer<span class="w"> </span>
@@ -1732,7 +1695,7 @@ mv<span class="w">          </span><span class="c1"># Move </span>
 rm<span class="w">          </span><span class="c1"># Remove</span>
 <span class="w">              </span>+<span class="w">   </span>used<span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>files<span class="w"> </span>and<span class="w"> </span>directories<span class="w"> </span>
 </code></pre></div>
-<hr />
+<hr>
 <h2 id="homework-assignment-1-50-points">Homework Assignment #1 (50 points)</h2>
 <p><strong>For this assignment you will have until 2PM on Monday, January 20th to submit. Late assignments will NOT be accepted.</strong>  </p>
 <h3 id="directions-for-students">Directions for Students:</h3>
@@ -1747,7 +1710,7 @@ rm<span class="w">          </span><span class="c1"># Remove</span>
 <ul>
 <li>On Terminal, open the manual page for the <code>rm</code> command. Skim through the information. </li>
 </ul>
-<p>1)  What happens if you add the <code>-f</code> argument? <br />
+<p>1)  What happens if you add the <code>-f</code> argument? <br>
 2)  Is there any argument available to "undelete" a file?   </p>
 <ul>
 <li>Quit the <code>man</code> buffer page and come back to your command prompt.  </li>
@@ -1762,8 +1725,8 @@ rm<span class="w">          </span><span class="c1"># Remove</span>
 </ul>
 <p>3) Submit a screenshot of your terminal screen and underneath describe what additional information is provided that you didn't see with the bare <code>ls</code> command. </p>
 <p><strong>For #4-6, submit a screenshot of your terminal screen. Be sure to clear your terminal screen using <button>control</button> + L before proceeding</strong>  </p>
-<p>4) Create a new folder in <code>unit1_unix</code> called <code>selected_fastq</code><br />
-5) Copy over the Irrel_kd_2.subset.fq and Mov10_oe_2.subset.fq from <code>raw_fastq</code> to the <code>selected_fastq</code> folder<br />
+<p>4) Create a new folder in <code>unit1_unix</code> called <code>selected_fastq</code><br>
+5) Copy over the Irrel_kd_2.subset.fq and Mov10_oe_2.subset.fq from <code>raw_fastq</code> to the <code>selected_fastq</code> folder<br>
 6) Rename the <code>selected_fastq</code> folder and call it <code>exercise1</code> </p>
 <h3 id="citation">Citation</h3>
 <p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
@@ -1774,11 +1737,11 @@ All Data Carpentry instructional material is made available under the <a href="h
 <em>authors: Sheldon  McKay, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu</em>
 <em>date posted: September 28, 2020</em></li>
 </ul>
-<p><em>Other parts of this lesson were derived from:</em><br />
+<p><em>Other parts of this lesson were derived from:</em><br>
 Erin Alison Becker, Anita Schürch, Tracy Teal, Sheldon John McKay, Jessica Elizabeth Mizzi, 
 François Michonneau, et al. (2019, June). datacarpentry/shell-genomics: Data Carpentry: Introduction to the shell for genomics data, 
 June 2019 (Version v2019.06.1). Zenodo. http://doi.org/10.5281/zenodo.3260560</p>
-<hr />
+<hr></div>
 
 
 

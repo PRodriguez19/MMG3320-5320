@@ -150,43 +150,6 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
   
@@ -1343,11 +1306,11 @@
                   
 
 
-<h2 id="learning-objectives">Learning Objectives</h2>
+<div><h2 id="learning-objectives">Learning Objectives</h2>
 <ul>
 <li>Use nano and/or vim to create and edit files </li>
 </ul>
-<hr />
+<hr>
 <h1 id="recap-from-last-class">Recap from last class:</h1>
 <div class="highlight"><pre><span></span><code>~           # home dir
 .           # current dir
@@ -1379,7 +1342,7 @@ Stick with letters in the beginning and then use numbers, . (period), - (dash), 
 <p>You may have noticed by now that all the files we are using are named ‘something dot something’. 
 + This is just a convention; we can call a file mythesis or almost anything else we want. However, most people use two-part names most of the time to help them (and their programs) tell different kinds of files apart. </p>
 <figure>
-  <img alt="home" src="../../img/thesis.png" width="300" />
+  <img alt="home" src="../../img/thesis.png" width="300">
 </figure>
 <ul>
 <li>The second part of such a name is called the filename extension and indicates what type of data the file holds: .txt signals a plain text file, .pdf indicates a PDF document, .cfg is a configuration file full of parameters for some program or other, .png is a PNG image, and so on.</li>
@@ -1387,9 +1350,9 @@ Stick with letters in the beginning and then use numbers, . (period), - (dash), 
 <li>However, naming a PNG image of a whale as whale.mp3 doesn’t somehow magically turn it into a recording of whale song, though it might cause the operating system to associate the file with a music player program. In this case, if someone double-clicked whale.mp3 in a file explorer program,the music player will automatically (and erroneously) attempt to open the whale.mp3 file.</li>
 </ul>
 <figure>
-  <img alt="home" src="../../img/whale.jpg" width="300" />
+  <img alt="home" src="../../img/whale.jpg" width="300">
 </figure>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>Before moving on, please complete the following class activity below. You will have ~5 minutes to answer all questions except the final one! </p>
@@ -1399,7 +1362,7 @@ Stick with letters in the beginning and then use numbers, . (period), - (dash), 
 </ul>
 <p><a href="https://forms.gle/J9tg4mP3NdeaNf6K6">Class-activity</a></p>
 </div>
-<hr />
+<hr>
 <h1 id="writing-files">Writing files</h1>
 <p>We've been able to do a lot of work with files that already exist, but what if we want to create our own files? </p>
 <p>In order to create or edit files we will need to use a <strong>text editor</strong>. When we say, "text editor," we really do mean "text". These editors can only work with plain character data, not tables, images, or any other media. Text editors can generally be grouped into two categories:  <strong>command-line editors</strong> and <strong>graphical user interface editors</strong>. </p>
@@ -1424,7 +1387,7 @@ Stick with letters in the beginning and then use numbers, . (period), - (dash), 
 + the 3rd line from the bottom indicates the status of the file you're editing; it shows that color.txt is a "New File" 
 + the last two lines of the screen present a menu of useful shortcuts for nano. They all will require you to use the <button>control</button> button on your laptop. </p>
 <figure>
-  <img alt="home" src="../../img/nano.png" width="600" />
+  <img alt="home" src="../../img/nano.png" width="600">
 </figure>
 <p>At this point we can begin typing: </p>
 <div class="highlight"><pre><span></span><code>red
@@ -1433,7 +1396,7 @@ yellow
 </code></pre></div>
 <p>Notice that after your first keystroke, the word "Modified appears in the upper-right corner. This shows that you have changed the contents of your file but it has not been saved yet. </p>
 <figure>
-  <img alt="home" src="../../img/nano2.png" width="600" />
+  <img alt="home" src="../../img/nano2.png" width="600">
 </figure>
 <ul>
 <li>
@@ -1444,7 +1407,7 @@ yellow
 </li>
 </ul>
 <figure>
-  <img alt="home" src="../../img/nano3.png" width="600" />
+  <img alt="home" src="../../img/nano3.png" width="600">
 </figure>
 <blockquote>
 <h3 id="summary-basic-nano-commands">Summary Basic nano commands</h3>
@@ -1487,7 +1450,7 @@ yellow
 </tbody>
 </table>
 </blockquote>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p><strong>You will have ~5 minutes to complete</strong></p>
@@ -1498,14 +1461,14 @@ yellow
 <li>Exit and return to terminal </li>
 </ol>
 </div>
-<hr />
+<hr>
 <h2 id="gui-text-editors">GUI text editors</h2>
 <p>A GUI is an interface that has buttons and menus that you can click on to issue commands to the computer and you can move about the interface just by pointing and clicking. These include <a href="http://www.barebones.com/products/bbedit/">BBEdit</a> and <a href="https://code.visualstudio.com/">Visual Studio Code</a>, which allow you to write and edit plain text documents. These editors often have features to easily search text, extract text, and highlight syntax from multiple programming languages. They are great tools, and indeed you should download one to use to create your own scripts in the future! </p>
-<hr />
+<hr>
 <h2 id="homework-assignment-3-50-points">Homework Assignment #3 (50 points)</h2>
 <h3 id="please-note-that-you-will-have-until-next-class-thursday-february-1st-10am-to-submit-this-assignment-late-submissions-will-not-be-accepted">Please note that you will have until next class (Thursday, February 1st - 10AM) to submit this assignment. Late submissions will not be accepted.</h3>
 <h3 id="directions-for-students">Directions for Students:</h3>
-<p>Open a new Microsoft Word Document and submit two screenshot (Part A, B, and C). The first four lines of your document should contain the following:<br />
+<p>Open a new Microsoft Word Document and submit two screenshot (Part A, B, and C). The first four lines of your document should contain the following:<br>
 + Your name
 + MMG3320/5320
 + Today's date
@@ -1553,7 +1516,7 @@ You got the following line of codes from a trusted source but need to modify it 
 <li><em>The materials used in this lesson were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
 All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em> </li>
 <li><em>Original Authors: Sheldon  McKay, Bob Freeman, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu, Will Gammerdinger</em></li>
-</ul>
+</ul></div>
 
 
 

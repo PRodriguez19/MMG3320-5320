@@ -150,43 +150,6 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
   
@@ -1433,14 +1396,14 @@
                   
 
 
-<h2 id="learning-objectives">Learning Objectives</h2>
+<div><h2 id="learning-objectives">Learning Objectives</h2>
 <ul>
 <li>Learn to use tab completion to simplify typing file and directory paths.  </li>
 <li>Use of the asterisk <code>*</code> wildcard to match and select multiple files in a directory. </li>
 <li>View the contents of a file using commands such as <code>less</code>, <code>head</code>, or <code>cat</code>. </li>
 <li>Use Nano, a simple text editor, to create and edit files directly from terminal. </li>
 </ul>
-<hr />
+<hr>
 <h1 id="recap-from-last-week">Recap from last week</h1>
 <h2 id="commands">Commands</h2>
 <div class="highlight"><pre><span></span><code>cd          # Change Directory
@@ -1464,7 +1427,7 @@ mv          # Move
 rm          # Remove
               +   used to delete files and directories 
 </code></pre></div>
-<hr />
+<hr>
 <h2 id="home-directory-or">Home directory or <code>~</code></h2>
 <p>Dealing with the home directory is very common. In shell, the tilde character <code>~</code> is a shortcut for your home directory. Let's navigate to the <code>raw_fastq</code> directory: </p>
 <p>Then enter the command:</p>
@@ -1481,27 +1444,27 @@ rm          # Remove
 </code></pre></div>
 <h2 id="current-directory-or">Current directory or <code>.</code></h2>
 <p>Finally, <code>.</code> always refers to your current directory. Recall that we use <code>.</code> a number of times, when copying data to your home directory.</p>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>Before moving on, please complete the following class activity below. You will have ~5 minutes. </p>
 <p><a href="https://forms.gle/gCuupcxiKYkgBAiq8">Class-activity1</a></p>
 </div>
-<hr />
+<hr>
 <h1 id="saving-time-with-wildcards-and-other-shortcuts">Saving time with wildcards and other shortcuts</h1>
 <p><em>Remember to use <kbd>tab</kbd> completion!</em> </p>
 <h2 id="wild-cards">Wild cards</h2>
 <p><strong>The "*" wildcard:</strong></p>
 <p>Navigate to the <code>~/unit1_unix/raw_fastq</code> directory. This directory contains FASTQ files and these files contain the sequencing reads (nucleotide sequences) output from a high throughput sequencer. </p>
 <figure>
-  <img alt="home" src="../../img/mkfastq.png" width="600" />
+  <img alt="home" src="../../img/mkfastq.png" width="600">
 </figure>
 <p>Let's see what is inside:  </p>
-<p><div class="highlight"><pre><span></span><code>ls
+<p></p><div class="highlight"><pre><span></span><code>ls
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>## Irrel_kd_1.subset.fq Irrel_kd_3.subset.fq    Mov10_oe_2.subset.fq
    Irrel_kd_2.subset.fq Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
-</code></pre></div></p>
+</code></pre></div>
 <p>Let's take a moment to point a few things out: </p>
 <ul>
 <li>.fq vs .fastq </li>
@@ -1511,7 +1474,7 @@ rm          # Remove
 <p>.gz is a file format used for compressed files. This is especially important when dealing with large data. </p>
 <p>example in - /gpfs1/home/p/d/pdrodrig/class_data/GSE164713_Tcf1/ChIPseq </p>
 </blockquote>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>Create a directory within <code>raw_fastq</code> and call it <strong>fastq</strong> and another file called <strong>data</strong>. Then list the contents. 
@@ -1520,7 +1483,7 @@ Your output should look like below: </p>
 <div class="highlight"><pre><span></span><code>## data   Irrel_kd_1.subset.fq  Irrel_kd_3.subset.fq  Mov10_oe_2.subset.fq
 fastq  Irrel_kd_2.subset.fq  Mov10_oe_1.subset.fq  Mov10_oe_3.subset.fq
 </code></pre></div>
-<hr />
+<hr>
 <p>The "*" or wildcard character is a shortcut for "everything". You can use it by typing in shift + 8.  Now try this command:</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>*.fq
 </code></pre></div>
@@ -1530,12 +1493,12 @@ fastq  Irrel_kd_2.subset.fq  Mov10_oe_1.subset.fq  Mov10_oe_3.subset.fq
 <div class="highlight"><pre><span></span><code>Irrel_kd_1.subset.fq    Irrel_kd_3.subset.fq    Mov10_oe_2.subset.fq
 Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 </code></pre></div>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>Remove the newly created folders <strong>fastq</strong> and <strong>data</strong>. </p>
 </div>
-<hr />
+<hr>
 <p>Now try a more complicated command to list every file in <code>/usr/bin</code> directory that ends in the characters <code>.sh</code>. The <code>bin</code> directory is where some built-in programs are stored. </p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/usr/bin/*.sh
 </code></pre></div>
@@ -1543,7 +1506,7 @@ Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 /usr/bin/gvmap.sh    /usr/bin/lprsetup.sh  /usr/bin/setup-nsssysinit.sh
 </code></pre></div>
 <p>Let's quickly try it without <code>*.sh</code> - notice that you have so many more options! </p>
-<hr />
+<hr>
 <h2 id="command-history">Command History</h2>
 <p>You can easily access previous commands by hitting the <button>up</button> arrow key on your keyboard, this way you can step backwards through your command history. On the other hand, the <button>down</button> arrow key takes you forward in the command history.</p>
 <p><strong><em>Try it out! While on the command prompt hit the <button>up</button> arrow a few times, and then hit the <button>down</button> arrow a few times until you are back to where you started.</em></strong></p>
@@ -1554,7 +1517,7 @@ Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 <blockquote>
 <p><strong>NOTE:</strong> So far we have only run very short commands that have very few or no arguments. It would be faster to just retype it than to check the history. However, as you start to run analyses on the command-line you will find that the commands are longer and more complex, and the <code>history</code> command will be very useful then!</p>
 </blockquote>
-<hr />
+<hr>
 <p>The wildcard "*" can be placed anywhere in your pattern. For example:</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>Mov10*fq
 </code></pre></div>
@@ -1566,7 +1529,7 @@ Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 <p><strong>Tip</strong> - An asterisk/star is only one of the many wildcards in Unix, but this is the most powerful one and we will be using this one the most for our exercises.</p>
 </blockquote>
 <p><strong>The "?" wildcard:</strong></p>
-<p>Another wildcard that is sometimes helpful is <code>?</code>  <br />
+<p>Another wildcard that is sometimes helpful is <code>?</code>  <br>
 + <code>?</code> is similar to <code>*</code> except that it is a placeholder for exactly one position. 
 + Recall that <code>*</code> can represent any number of following positions, including no positions. 
 + To highlight this distinction lets look at a few examples. First, try this command:</p>
@@ -1575,7 +1538,7 @@ Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
 <p><code>ls /bin/d?</code></p>
 <p>Lastly, you can chain together multiple "?" marks to help specify a length. In the example below, you would be looking for all things in <code>/bin/</code> that start with a "d" and have a name length of three characters.  </p>
 <p><code>ls /bin/d??</code> </p>
-<hr />
+<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>Perform each of the following tasks using a single <code>ls</code> command <em>without</em> navigating to a different directory.</p>
@@ -1615,7 +1578,7 @@ Irrel_kd_2.subset.fq    Mov10_oe_1.subset.fq    Mov10_oe_3.subset.fq
   </details>
 </details>
 
-<hr />
+<hr>
 <h2 id="cancel-a-command">Cancel a command</h2>
 <p>Sometimes as you enter a command, you realize that you don't want to continue or run the current line. Instead of deleting everything you have entered (which could be very long), you could quickly cancel the current line and start a fresh prompt with <button>Ctrl</button> + <button>C</button>.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/users/p/d/pdrodrig/class_data/GSE164713_Tcf1/ChIPseq
@@ -1625,7 +1588,7 @@ fastqc<span class="w"> </span>SRR13416485_1.fastq.gz
 Approx 5% complete for SRR13416485_1.fastq.gz
 </code></pre></div>
 <p>then I hit <button>Ctrl</button> + <button>C</button></p>
-<hr />
+<hr>
 <h1 id="examining-files">Examining Files</h1>
 <p>Now let's explore a few more commands to examine files. </p>
 <h2 id="cat-command"><code>cat</code> command</h2>
@@ -1659,21 +1622,21 @@ QIKDLLVSSSTDLDTTLVLVNAIYFKGMWKTAFNAEDTREMPFHVTKQESKPVQMMCMNNSFNVATLPAE
 <figure>
   ![home](../img/fasta.png{ width="600"}
 </figure>
-<hr />
+<hr>
 <p>Question: What command would I use to clear my terminal screen? </p>
 <details>
       <summary><b><i>Answer</i></b></summary>
       <p><br><button>Ctrl</button> + <button>L</button> </p>
 </details>
 
-<hr />
+<hr>
 <h2 id="less-command"><code>less</code> command</h2>
 <p><code>cat</code> is a terrific command, but notice what it is doing. It is <strong>PRINTING</strong> the file contents on the screen. </p>
 <p>When the file is really big and has a ton of lines, this can be cumbersome to use. In practice, when you are running your analyses on the command-line you will most likely be dealing with large files so you need to learn how to view them. </p>
 <p>Instead, we will use the <code>less</code> command </p>
-<p><div class="highlight"><pre><span></span><code>less<span class="w"> </span>Mov10_oe_1.subset.fq
+<p></p><div class="highlight"><pre><span></span><code>less<span class="w"> </span>Mov10_oe_1.subset.fq
 </code></pre></div>
-Rather than printing to screen, the <code>less</code> command opens the file in a new buffer allowing you to navigate through it. Does this look familiar? You might remember encountering a similar interface when you used the <code>man</code> command. This is because <code>man</code> is using the <code>less</code> command to open up the documentation files! The keys used to move around the file are identical to the <code>man</code> command. Below we have listed some additional shortcut keys for navigating through your file when using <code>less</code>.</p>
+Rather than printing to screen, the <code>less</code> command opens the file in a new buffer allowing you to navigate through it. Does this look familiar? You might remember encountering a similar interface when you used the <code>man</code> command. This is because <code>man</code> is using the <code>less</code> command to open up the documentation files! The keys used to move around the file are identical to the <code>man</code> command. Below we have listed some additional shortcut keys for navigating through your file when using <code>less</code>.
 <p><span class="caption">Shortcuts for <code>less</code></span></p>
 <table>
 <thead>
@@ -1727,7 +1690,7 @@ Rather than printing to screen, the <code>less</code> command opens the file in 
 
 tail<span class="w"> </span>-n<span class="w"> </span><span class="m">20</span><span class="w"> </span>Mov10_oe_1.subset.fq
 </code></pre></div>
-<hr />
+<hr>
 <h2 id="summary-commands-options-and-keystrokes-covered">Summary: Commands, options, and keystrokes covered</h2>
 <p>The wildcard *
 + can represent zero or more other characters
@@ -1746,7 +1709,7 @@ less        # allows you to view and move through file content
 head        # allows you to view beginning of file 
 tail        # allows you to view end of file 
 </code></pre></div>
-<hr />
+<hr>
 <h2 id="homework-assignment-2-50-points">Homework Assignment #2 (50 points)</h2>
 <p><strong>This "mini" assignment is due on Tuesday, January 30th anytime before class start. Late assignments will not be accepted.</strong>  </p>
 <h3 id="directions-for-students">Directions for Students:</h3>
@@ -1761,7 +1724,7 @@ tail        # allows you to view end of file
 <li>
 <p>Type <code>ls'</code> then type <code>history</code> then hit <button>return</button></p>
 <p>The output should look something like this: </p>
-<div class="highlight"><pre><span></span><code>$ ls&#39; 
+<div class="highlight"><pre><span></span><code>$ ls' 
 &gt;history
 &gt;
 </code></pre></div>
@@ -1769,11 +1732,11 @@ tail        # allows you to view end of file
 Submit a screenshot of your terminal screen.</p>
 </li>
 <li>
-<p>This is a multi-part question: <br />
-    a. Change directories into <code>genomics_data</code>. You can do this using a full or relative path.<br />
-    b. Use the <code>less</code> command to open up the file <code>Encode-hesc-Nanog.bed</code>.<br />
-    c. Search for the string <code>chr11</code>; you'll see all instances in the file highlighted.<br />
-    d. Staying in the <code>less</code> buffer, use the shortcut to get to the end of the file.   <br />
+<p>This is a multi-part question: <br>
+    a. Change directories into <code>genomics_data</code>. You can do this using a full or relative path.<br>
+    b. Use the <code>less</code> command to open up the file <code>Encode-hesc-Nanog.bed</code>.<br>
+    c. Search for the string <code>chr11</code>; you'll see all instances in the file highlighted.<br>
+    d. Staying in the <code>less</code> buffer, use the shortcut to get to the end of the file.   <br>
     &gt; <strong>Report</strong> three rows starting with <code>chr11</code>.   Exit the <code>less</code> buffer and come back to the command prompt.  </p>
 </li>
 <li>
@@ -1783,7 +1746,7 @@ Submit a screenshot of your terminal screen.</p>
 <p>How many commands have you typed after going through this exercise? Submit a screenshot of the output of Terminal.</p>
 </li>
 </ul>
-<hr />
+<hr>
 <h2 id="citation">Citation</h2>
 <p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
 <ul>
@@ -1791,7 +1754,7 @@ Submit a screenshot of your terminal screen.</p>
 All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></li>
 <li><em>Adapted from the lesson by Tracy Teal. Original contributors: Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for Software Carpentry (http://software-carpentry.org/)</em>  </li>
 <li><em>Other Authors include: Sheldon  McKay, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu, Mary Piper, Meeta Mistry, Jihe Liu, &amp; Will Gammerdinger</em></li>
-</ul>
+</ul></div>
 
 
 
