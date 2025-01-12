@@ -55,3 +55,5 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.critic
+plugins:
+  - mkdocs-pdf
