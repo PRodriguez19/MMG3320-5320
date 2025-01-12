@@ -34,7 +34,7 @@ nav:
   - Slides: 
       - Week 1: pdf_materials/01_week1_mmg3320-slides.pdf
   - PDF Printouts: 
-    - Week 1: pdf_materials/01_week1_mmg3320-printout.pdf
+      - Week 1: pdf_materials/01_week1_mmg3320-printout.pdf
   - Unit 1: 
       - Week 1:
           - Overview: ch01/index.md
@@ -45,7 +45,6 @@ nav:
           - Wild Cards: ch02/03_week2_mmg3320.md
           - Writing and editing files: ch02/04_week3_mmg3320.md
   - Assignments: 
-
 
 markdown_extensions:
   - admonition
