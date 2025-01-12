@@ -27,7 +27,6 @@ theme:
 
 nav:
   - About: index.md
-    - Introduction: index.md
     - Syllabus: MMG3320-Spring-2025-Syllabus.pdf
   - Quick Start: ch01/quick-start.md
   - Unit 1: 
