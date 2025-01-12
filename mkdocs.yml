@@ -32,11 +32,9 @@ nav:
       - Schedule: MMG3320-5320-Spring-2025-Schedule.pdf
       - Quick Start: ch01/quick-start.md
   - Slides: 
-      - Slides: slides/index.md
-          - Introducing the Shell: slides/01-IntroducingtheShell-slides.md
+      - Overview: slides/index.md
   - Printouts: 
-      - Printouts: pdf_materials/index.md
-          - Introducing the Shell: pdf_materials/01-IntroducingtheShell-pdf.md
+      - Overview: pdf_materials/index.md
   - Unit 1: 
       - Week 1:
           - Overview: ch01/index.md
