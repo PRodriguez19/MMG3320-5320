@@ -5,7 +5,7 @@
 This course is intended for students in the biological sciences who have already completed the introductory course, Survey to Bioinformatic Databases. The advent of next-generation sequencing (NGS) platforms has made sequencing more accessible, faster, and less expensive, resulting in over 150,000 publicly available datasets that can be utilized to support research findings or testing hypotheses. In this course, students will learn and execute key steps in the bioinformatic workflow by processing a publicly available genomics dataset. By the end of the course, students will have accessed, processed, analyzed, visualized, and interpreted an NGS dataset of their choosing. The course covers several topics, including an introduction to UNIX, data processing, R programming basics (including data frames, cleaning, and fundamentals with ggplot2), as well as an in-depth overview of selected genomics analysis. Throughout the course, best practices for reproducible data and data management will be emphasized. The course uses a direct, hands-on approach, as such most classes are interactive and require student participation.
 
 ## Required platforms and software: 
-Each student will be provided with an account on the Vermont Advanced Computing Cluster (VACC). Students will use [VACC - Open OnDemand (OOD)](https://vacc-ondemand.uvm.edu/pun/sys/dashboard) to access their VACC account, command line, and R/RStudio.
+Each student will be provided with an account on the Vermont Advanced Computing Cluster (VACC). Students will use [VACC - Open OnDemand (OOD)](https://ondemand.vacc.uvm.edu/) to access their VACC account, command line, and R/RStudio.
 
 
 
