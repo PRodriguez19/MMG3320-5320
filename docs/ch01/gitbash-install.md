@@ -15,7 +15,7 @@ Git Bash is a command-line interface that provides a Unix-like environment on Wi
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yo7Z-BEG62A?si=Gy3YvjBOsBOUlRmL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-This is also another very nice [tutorial](https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows)that will show you the installation process. 
+This is also another very nice [tutorial](https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows) that will show you the installation process. 
 
 #### Step 2: Download and run the installer 
 
@@ -54,7 +54,10 @@ Download and run the git installer from here: https://gitforwindows.org/
         
 1. If your “HOME” environment variable is not set (or you don’t know what this is):
     1. Open command prompt (Open Start Menu, then type cmd and press [Enter])
-    1. Type the following line into the command prompt window exactly as shown: setx HOME "%USERPROFILE%"
+    1. Type the following line into the command prompt window exactly as shown: 
+    ```bash
+    setx HOME "%USERPROFILE%"
+    ```
     1.  Press [Enter], and you should see SUCCESS: Specified value was saved.
     1. Quit the command prompt by typing exit and then pressing [Enter]
         
