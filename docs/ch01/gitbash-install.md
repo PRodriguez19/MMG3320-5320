@@ -11,11 +11,11 @@ Git Bash is a command-line interface that provides a Unix-like environment on Wi
 
 ### Installation 
 
-#### Step 1: Watch this YouTube Video first: https://youtu.be/yo7Z-BEG62A?si=Gy3YvjBOsBOUlRmL 
+#### Step 1: Watch this YouTube Video first: 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yo7Z-BEG62A?si=Gy3YvjBOsBOUlRmL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-This is also another very nice tutorial that will show you the installation process: https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows 
+This is also another very nice [tutorial](https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows)that will show you the installation process. 
 
 #### Step 2: Download and run the installer 
 
@@ -23,37 +23,38 @@ Download and run the git installer from here: https://gitforwindows.org/
 
 #### Step 3: Run the installer and follow the steps below 
     
-    + Click on “Next” four times (two times if you’ve previously installed Git). You don’t need to change anything in the information, location, components, and start menu screens.
+
+1. Click on “Next” four times (two times if you’ve previously installed Git). You don’t need to change anything in the information, location, components, and start menu screens.
         
-    + Select **“Use the nano editor by default”** and click on “Next”.
+1. Select **“Use the nano editor by default”** and click on “Next”.
 
-    + Select "Let Git decide" and click on "Next"
+1. Select "Let Git decide" and click on "Next"
 
-    + Select "Git from the command line and also from 3rd party software" and click on "Next"
+1. Select "Git from the command line and also from 3rd party software" and click on "Next"
    
-    + Select “Use bundled OpenSSH” and click on “Next”.
+1. Select “Use bundled OpenSSH” and click on “Next”.
 
-    + Select “Use the OpenSSL Library” and click “Next”.
+1. Select “Use the OpenSSL Library” and click “Next”.
 
-    + Keep “Checkout Windows-style, commit Unix-style line endings” selected and click on “Next”.
+1. Keep “Checkout Windows-style, commit Unix-style line endings” selected and click on “Next”.
         
-    + Select “Use Windows’ default console window” and click on “Next”.
+1. Select “Use Windows’ default console window” and click on “Next”.
         
-    + Select “Default (fast-forward on merge)” and click on “Next”.
+1. Select “Default (fast-forward on merge)” and click on “Next”.
         
-    + Select “None” (Do not use a credential helper) and click on “Next”.
+1. Select “None” (Do not use a credential helper) and click on “Next”.
         
-    + Select “Enable file system caching” and click on “Next”.
+1. Select “Enable file system caching” and click on “Next”.
 
-    + Ignore “Configuring experimental options” and click on “Install”.
+1. Ignore “Configuring experimental options” and click on “Install”.
         
-    + Click on “Install”.
+1. Click on “Install”.
         
-    + Click on “Finish”.
+1.  Click on “Finish”.
         
-    + If your “HOME” environment variable is not set (or you don’t know what this is):
-        + Open command prompt (Open Start Menu, then type cmd and press [Enter])
-        + Type the following line into the command prompt window exactly as shown: setx HOME "%USERPROFILE%"
-        + Press [Enter], and you should see SUCCESS: Specified value was saved.
-        + Quit the command prompt by typing exit and then pressing [Enter]
+1. If your “HOME” environment variable is not set (or you don’t know what this is):
+    1. Open command prompt (Open Start Menu, then type cmd and press [Enter])
+    1. Type the following line into the command prompt window exactly as shown: setx HOME "%USERPROFILE%"
+    1.  Press [Enter], and you should see SUCCESS: Specified value was saved.
+    1. Quit the command prompt by typing exit and then pressing [Enter]
         
