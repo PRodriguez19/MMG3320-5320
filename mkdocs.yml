@@ -39,15 +39,15 @@ nav:
   - Unit 1: 
       - Week 1:
           - Overview: ch01/index.md
-          - Introducing the Shell: ch01/01_week1_mmg3320.md
-          - Navigating the Shell: ch01/02_week1_mmg3320.md
+          - Introducing the Shell (L1): ch01/01_week1_mmg3320.md
+          - Navigating the Shell (L2): ch01/02_week1_mmg3320.md
       - Week 2:
           - Overview: ch02/index.md
-          - Wild Cards: ch02/03_week2_mmg3320.md
-          - Writing and editing files: ch02/04_week3_mmg3320.md
+          - Wild Cards (L3): ch02/03_week2_mmg3320.md
+          - Writing and editing files (L4): ch02/04_week3_mmg3320.md
   - Assignments:
-      - Week 1: assignments/week1_assignment.md
-      - Week 2: assignments/week2_assignment.md
+      - Week 1 (L1): assignments/week1_assignment.md
+      - Week 2 (L2): assignments/week2_assignment.md
 
 markdown_extensions:
   - admonition

@@ -11,11 +11,7 @@ Open a new Microsoft Word Document, the first four lines of your document should
  
 
 ### Task 1: 
-* On Terminal, open the manual page for the `rm` command. Skim through the information. What does the addition of the `-i` argument to `rm` do?   
-    
-* Quit the `man` buffer page and come back to your command prompt.  
-
-> **Tip** - If the manual page within the Terminal is hard to read , the manual exists online too. For example, here is the linux manual page for `cp`. https://man7.org/linux/man-pages/man1/cp.1.html In addition to the arguments, you can also find good examples online; ***Google is your friend.***
+* In the terminal, open the manual page for the `rm` command and skim through the information. What effect does adding the `-i` option to `rm` have?  
 
 
 ### Task 2: 
