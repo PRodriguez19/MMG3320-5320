@@ -30,6 +30,7 @@ nav:
       - Introduction: index.md
       - Syllabus: MMG3320-Spring-2025-Syllabus.pdf
       - Schedule: MMG3320-5320-Spring-2025-Schedule.pdf
+      - Git Bash Install: ch01/gitbash-install.md
       - Quick Start: ch01/quick-start.md
   - Slides: 
       - Overview: slides/index.md
