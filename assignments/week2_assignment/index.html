@@ -24,7 +24,7 @@
     
     
       
-        <title>Week 2 (L2) - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>Week 2 (L3) - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#homework-assignment-2-50-points" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Week 2 (L2)
+              Week 2 (L3)
             
           </span>
         </div>
@@ -870,7 +875,7 @@
         
   
   <span class="md-ellipsis">
-    Week 1 (L1)
+    Week 1 (L2)
   </span>
   
 
@@ -894,15 +899,67 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Week 2 (L3)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Week 2 (L2)
+    Week 2 (L3)
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#homework-assignment-2-50-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework Assignment #2 (50 points)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework Assignment #2 (50 points)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directions-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directions for Students:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -934,6 +991,38 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#homework-assignment-2-50-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework Assignment #2 (50 points)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework Assignment #2 (50 points)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directions-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directions for Students:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -947,10 +1036,74 @@
                   
 
 
-  <h1>Week 2 (L2)</h1>
+  <h1>Week 2 (L3)</h1>
 
-<p>test
-dd</p>
+<div><h2 id="homework-assignment-2-50-points">Homework Assignment #2 (50 points)</h2>
+<p><strong>For this assignment you will have until 5PM on Monday, January 27th to submit on Brightspace. Late assignments will NOT be accepted.</strong></p>
+<h3 id="directions-for-students">Directions for Students:</h3>
+<p>Open a new Microsoft Word Document and submit answers to the questions below. The first four lines of your document should contain the following:  </p>
+<ul>
+<li>Your name</li>
+<li>MMG3320/5320</li>
+<li>Today's date</li>
+<li>Homework Assignment #2</li>
+</ul>
+<p>Part A: Navigating <code>Less</code> </p>
+<ol>
+<li>
+<p>This is a multi-part question: <br>
+    a. Change directories into <code>genomics_data</code>. You can do this using a full or relative path.<br>
+    b. Use the <code>less</code> command to open up the file <code>Encode-hesc-Nanog.bed</code>.<br>
+    c. Search for the string <code>chr11</code>; you'll see all instances in the file highlighted.<br>
+    d. Staying in the <code>less</code> buffer, use the shortcut to get to the end of the file.   <br>
+    &gt; <strong>Report</strong> three rows starting with <code>chr11</code>.   Exit the <code>less</code> buffer and come back to the command prompt.  </p>
+</li>
+<li>
+<p>Print to screen the last 5 lines of the file <code>Encode-hesc-Nanog.bed</code>. Submit a screenshot of the output of Terminal.</p>
+</li>
+<li>
+<p>How many commands have you typed after going through this exercise? Submit a screenshot of the output of Terminal.</p>
+</li>
+</ol>
+<p>Part B: Generating your own script</p>
+<p>You got the following line of codes from a trusted source but need to modify it so you can submit it to the VACC-Bluemoon server. You decide its time to make your own script. Follow the steps below: </p>
+<ol>
+<li>
+<p>Create a new file called <code>script.sh</code> in Nano. </p>
+</li>
+<li>
+<p>The ".sh" file extension typically indicates that a file is a <strong>shell script</strong>. </p>
+</li>
+<li>
+<p>In Unix-like operating systems (such as Linux and macOS), shell scripts are plain text files containing a sequence of commands that can be executed by a shell.</p>
+</li>
+<li>
+<p>Paste in the code below to <code>script.sh</code>. </p>
+<div class="highlight"><pre><span></span><code>STAR --runThreadN 4 \
+--runMode genomeGenerate \
+--genomeDir /username/chr1_hg19_STAR_index/ \
+--genomeFastaFiles /username/reference_data_ensembl/Homo_sapiens.GRCh19.dna.chromosome.1.fa \
+--sjdbGTFfile /username/reference_data_ensembl/Homo_sapiens.GRCh19.gtf 
+</code></pre></div>
+</li>
+<li>
+<p>Replace every occurrence of "username" with your home directory. </p>
+</li>
+<li>Delete the line containing --runMode</li>
+<li>Change the --runThreadN from 4 to 6  </li>
+<li>You would also like to use the newest genome assembly, human reference 38. Change this as well in your script. </li>
+<li>Save the file. </li>
+<li>Submit a screenshot of your final script as homework Part B. </li>
+</ol>
+<p><strong>Please Take Note:</strong> </p>
+<ul>
+<li>
+<p>The argument --genomeDir is pointing to an entire directory while --genomeFastaFiles is pointing to a specific file. This is really important as the program is looking for "specific" files or entire directories (with files in them!) to run successfully. </p>
+</li>
+<li>
+<p>Each line here ends with a <code>\</code>. This is also an escape character that signals that the character following it has a special meaning in this case its a continuation. </p>
+</li>
+</ul></div>
 
 
 
