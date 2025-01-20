@@ -9,24 +9,26 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
 + Today's date
 + Homework Assignment #2
 
-Part A: Navigating `Less` 
+Part A: Practice using `Less` 
 
 1. This is a multi-part question:   
-	a. Change directories into `genomics_data`. You can do this using a full or relative path.  
+	a. Navigate into the `genomics_data` folder. 
 	b. Use the `less` command to open up the file `Encode-hesc-Nanog.bed`.  
-	c. Search for the string `chr11`; you'll see all instances in the file highlighted.  
-	d. Staying in the `less` buffer, use the shortcut to get to the end of the file.     
-	> **Report** three rows starting with `chr11`.   Exit the `less` buffer and come back to the command prompt.  
+    c. Use the shortcut to get to the end of the file.  
+	c. Search for the string `chr11`.     
+	d. **Report** two rows that start with `chr11`. Include the start and end position in your answer. 
+    
+    > Exit the `less` buffer.  
 
-2. Print to screen the last 5 lines of the file `Encode-hesc-Nanog.bed`. Submit a screenshot of the output of Terminal.
+2. Print to screen the last 5 lines of the file `Encode-hesc-Nanog.bed`. Submit a screenshot of the output as your answer.
 
-3. How many commands have you typed after going through this exercise? Submit a screenshot of the output of Terminal.
+3. How many commands have you typed after going through this exercise? Submit a screenshot of the output as your answer.
 
 Part B: Generating your own script
 
 You got the following line of codes from a trusted source but need to modify it so you can submit it to the VACC-Bluemoon server. You decide its time to make your own script. Follow the steps below: 
 
-1. Create a new file called `script.sh` in Nano. 
+1. Create a new file in the `other` directory called `script.sh`. 
 
 + The ".sh" file extension typically indicates that a file is a **shell script**. 
 
@@ -34,23 +36,28 @@ You got the following line of codes from a trusted source but need to modify it 
 
 2. Paste in the code below to `script.sh`. 
 
-	```
-	STAR --runThreadN 4 \
-	--runMode genomeGenerate \
-	--genomeDir /username/chr1_hg19_STAR_index/ \
-	--genomeFastaFiles /username/reference_data_ensembl/Homo_sapiens.GRCh19.dna.chromosome.1.fa \
-	--sjdbGTFfile /username/reference_data_ensembl/Homo_sapiens.GRCh19.gtf 
-	```
+```
+STAR --runThreadN 4 \
+--runMode genomeGenerate \
+--genomeDir /username/chr1_hg19_STAR_index/ \
+--genomeFastaFiles /username/reference_data_ensembl/Homo_sapiens.GRCh19.dna.chromosome.1.fa \
+--sjdbGTFfile /username/reference_data_ensembl/Homo_sapiens.GRCh19.gtf 
+```
 	
-3. Replace every occurrence of "username" with your home directory. 
+3. Replace every occurrence of "username" with your netid. 
+
 4. Delete the line containing --runMode
+
 5. Change the --runThreadN from 4 to 6  
-6. You would also like to use the newest genome assembly, human reference 38. Change this as well in your script. 
-7. Save the file. 
-8. Submit a screenshot of your final script as homework Part B. 
+
+6. You would also like to use the newest genome assembly, human reference 38 (hg38/GRCh38). Change this as well in your script. 
+
+7. Submit a screenshot of your script in the **Nano buffer** as homework Part B. 
+
+Save the file and EXIT. 
 
 **Please Take Note:** 
 
 + The argument --genomeDir is pointing to an entire directory while --genomeFastaFiles is pointing to a specific file. This is really important as the program is looking for "specific" files or entire directories (with files in them!) to run successfully. 
 
-+ Each line here ends with a `\`. This is also an escape character that signals that the character following it has a special meaning in this case its a continuation. 
++ Each line here ends with a `\`. The `\` can also be used as an escape character that signals that the character following it has a special meaning in this case its a continuation. 
