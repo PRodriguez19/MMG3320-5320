@@ -14,7 +14,7 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
 1. This is a multi-part question:   
 	a. Navigate into the `genomics_data` folder. 
 	b. Use the `less` command to open up the file `Encode-hesc-Nanog.bed`.  
-    c. Use the shortcut to get to the end of the file.  
+    b. Use the shortcut to get to the end of the file.  
 	c. Search for the string `chr11`.     
 	d. **Report** two rows that start with `chr11`. Include the start and end position in your answer. 
     
@@ -46,9 +46,9 @@ You got the following line of codes from a trusted source but need to modify it 
 	
 3. Replace every occurrence of "username" with your netid. 
 
-4. Delete the line containing --runMode
+4. Delete the line containing `--runMode`
 
-5. Change the --runThreadN from 4 to 6  
+5. Change the `--runThreadN` from 4 to 6  
 
 6. You would also like to use the newest genome assembly, human reference 38 (hg38/GRCh38). Change this as well in your script. 
 
