@@ -47,7 +47,7 @@ nav:
   - Assignments:
       - Week 1 (L2): assignments/week1_assignment.md
       - Week 2 (L3): assignments/week2_assignment.md
-  -Final Project:
+  - Final Project:
       - Overview: final-project/index.md
 
 markdown_extensions:
