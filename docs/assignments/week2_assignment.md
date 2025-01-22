@@ -12,11 +12,16 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
 ### Part A: Practice using `Less` 
 
 1. This is a multi-part question:   
-	a. Navigate into the `genomics_data` folder. 
+	
+	a. Navigate into the `genomics_data` folder.
+
 	b. Use the `less` command to open up the file `Encode-hesc-Nanog.bed`.  
-    b. Use the shortcut to get to the end of the file.  
-	c. Search for the string `chr11`.     
-	d. **Report** two rows that start with `chr11`. Include the start and end position in your answer. 
+    
+	c. Use the shortcut to get to the end of the file.  
+	
+	d. Search for the string `chr11`.     
+	
+	e. **Report** two rows that start with `chr11`. Include the start and end position in your answer. 
     
     > Exit the `less` buffer.  
 
@@ -30,7 +35,7 @@ You got the following line of codes from a trusted source but need to modify it 
 
 1. Create a new file in the `other` directory called `script.sh`. 
 
-	+ The ".sh" file extension typically indicates that a file is a **shell script**. 
+	+ The *.sh* file extension typically indicates that a file is a **shell script**. 
 
 	+ In Unix-like operating systems (such as Linux and macOS), shell scripts are plain text files containing a sequence of commands that can be executed by a shell.
 
