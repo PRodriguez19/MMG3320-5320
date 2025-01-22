@@ -5,3 +5,6 @@ Slides will be made available as a PDF printout document. These lessons can be r
 [Introducing the Shell (L1)](01_week1_mmg3320-slides.pdf)
 
 [Navigating the Shell (L2)](02_week1_mmg3320-slides.pdf)
+
+[Wildcards & Nano (L3)](03_week2_mmg3320-slides.pdf)
+

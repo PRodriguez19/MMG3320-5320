@@ -5,3 +5,5 @@ Each tutorial will also be made available as PDF printout document. These lesson
 [Introducing the Shell (L1)](01_week1_mmg3320-printout.pdf)
 
 [Navigating the Shell (L2)](02_week1_mmg3320-printout.pdf)
+
+[Wildcards & Nano (L3)](03_week2_mmg3320-printout.pdf)
