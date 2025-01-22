@@ -9,7 +9,7 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
 + Today's date
 + Homework Assignment #2
 
-Part A: Practice using `Less` 
+### Part A: Practice using `Less` 
 
 1. This is a multi-part question:   
 	a. Navigate into the `genomics_data` folder. 
@@ -24,7 +24,7 @@ Part A: Practice using `Less`
 
 3. How many commands have you typed after going through this exercise? Submit a screenshot of the output as your answer.
 
-Part B: Generating your own script
+### Part B: Generating your own script
 
 You got the following line of codes from a trusted source but need to modify it so you can submit it to the VACC-Bluemoon server. You decide its time to make your own script. Follow the steps below: 
 
@@ -58,6 +58,6 @@ Save the file and EXIT.
 
 **Please Take Note:** 
 
-+ The argument --genomeDir is pointing to an entire directory while --genomeFastaFiles is pointing to a specific file. This is really important as the program is looking for "specific" files or entire directories (with files in them!) to run successfully. 
++ The argument `--genomeDir` is pointing to an entire directory while `--genomeFastaFiles` is pointing to a specific file. This is really important as the program is looking for specific files or entire directories (with files in them!) to run successfully. 
 
 + Each line here ends with a `\`. The `\` can also be used as an escape character that signals that the character following it has a special meaning in this case its a continuation. 
