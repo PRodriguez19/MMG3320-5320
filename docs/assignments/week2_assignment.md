@@ -30,19 +30,19 @@ You got the following line of codes from a trusted source but need to modify it 
 
 1. Create a new file in the `other` directory called `script.sh`. 
 
-+ The ".sh" file extension typically indicates that a file is a **shell script**. 
+	+ The ".sh" file extension typically indicates that a file is a **shell script**. 
 
-+ In Unix-like operating systems (such as Linux and macOS), shell scripts are plain text files containing a sequence of commands that can be executed by a shell.
+	+ In Unix-like operating systems (such as Linux and macOS), shell scripts are plain text files containing a sequence of commands that can be executed by a shell.
 
 2. Paste in the code below to `script.sh`. 
 
-```
-STAR --runThreadN 4 \
---runMode genomeGenerate \
---genomeDir /username/chr1_hg19_STAR_index/ \
---genomeFastaFiles /username/reference_data_ensembl/Homo_sapiens.GRCh19.dna.chromosome.1.fa \
---sjdbGTFfile /username/reference_data_ensembl/Homo_sapiens.GRCh19.gtf 
-```
+	```
+	STAR --runThreadN 4 \
+	--runMode genomeGenerate \
+	--genomeDir /username/chr1_hg19_STAR_index/ \
+	--genomeFastaFiles /username/reference_data_ensembl/Homo_sapiens.GRCh19.dna.chromosome.1.fa \
+	--sjdbGTFfile /username/reference_data_ensembl/Homo_sapiens.GRCh19.gtf 
+	```
 	
 3. Replace every occurrence of "username" with your netid. 
 
