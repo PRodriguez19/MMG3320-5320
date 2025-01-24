@@ -1127,7 +1127,7 @@
         <li class="md-nav__item">
   <a href="#cut-sort" class="md-nav__link">
     <span class="md-ellipsis">
-      Cut &amp; sort
+      Cut &amp; Sort
     </span>
   </a>
   
@@ -1529,7 +1529,7 @@
         <li class="md-nav__item">
   <a href="#cut-sort" class="md-nav__link">
     <span class="md-ellipsis">
-      Cut &amp; sort
+      Cut &amp; Sort
     </span>
   </a>
   
@@ -1818,6 +1818,7 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 <span class="m">861956</span>-?@@DDDDDB1@?:E?<span class="p">;</span>3A:1?9?E9?&lt;?DGCDGBBDBF@<span class="p">;</span>8DF#########################################################
 </code></pre></div>
 <p>A small thing you should note is that when using the <code>-n</code> option, lines that have a <code>:</code> after the line number correspond to the lines with the match (e.g <code>861214:CACTTGTAAGGGCAGGCCCCCTTCACCCTCCCGCTCCTGGGGGANNNNNNNNNNANNN...</code>), while lines with a <code>-</code> after the line number are the surrounding lines retrieved when using the <code>-A</code> and/or <code>-B</code> options (e.g. <code>861213-@HWI-ST330:304:H045HADXX:1:1101:1111:61397</code>).</p>
+<hr>
 <h2 id="redirection">Redirection</h2>
 <p>When we use <code>grep</code>, the matching lines print to the Terminal (also called Standard Output or "stdout"). If the result of the <code>grep</code> search is a few lines, we can view them easily, but if the output is very long, the lines will just keep printing and we won't be able to see anything except the last few lines. You have experienced this when you searched for the pattern <code>NNNNNNNNNN</code>. So how can we capture them instead and create a new document? </p>
 <p>We can do this with "redirection". The idea is that we're redirecting the output from the Terminal to something else. In this case, we want to save it to a file so that we can look at it later.</p>
@@ -1848,6 +1849,7 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 <figure>
   <img alt="home" src="../../img/append.png" width="500">
 </figure>
+<hr>
 <h2 id="passing-output-to-another-command-with-or-pipe">Passing output to another command with <code>|</code> (or pipe)</h2>
 <p>The vertical bar or <strong>pipe key</strong> <button>|</button> is very likely not something you use very often. It is on the same key as the back slash (), right above the (Enter/Return)key. </p>
 <p>What <code>|</code> does is take the output from one command and runs it through the command specified after it. </p>
@@ -1960,7 +1962,8 @@ chr1    unknown exon    24738   24891   .       -       .       gene_id "WASH7P
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span>PLEKHN1<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>less<span class="w"> </span>-S
 </code></pre></div>
 <p>This search returns two different transcripts of the same gene, NM_001160184 and NM_032129, that contain the same exon.</p>
-<h2 id="cut-sort">Cut &amp; sort</h2>
+<hr>
+<h2 id="cut-sort">Cut &amp; Sort</h2>
 <ul>
 <li><strong><code>cut</code> is a command that extracts columns from files.</strong> </li>
 </ul>
