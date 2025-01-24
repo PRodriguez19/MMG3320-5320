@@ -1,0 +1,1659 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="test site">
+      
+      
+        <meta name="author" content="Princess Rodriguez">
+      
+      
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch03/05_week3_mmg3320/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>05 week3 mmg3320 - MMG:3320/5320 Advanced Bioinformatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#learning-objectives" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG:3320/5320 Advanced Bioinformatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              05 week3 mmg3320
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../slides/" class="md-tabs__link">
+          
+  
+  Slides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pdf_materials/" class="md-tabs__link">
+          
+  
+  Printouts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ch01/" class="md-tabs__link">
+          
+  
+  Unit 1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../assignments/week1_assignment/" class="md-tabs__link">
+          
+  
+  Assignments
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../final-project/" class="md-tabs__link">
+          
+  
+  Final Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MMG:3320/5320 Advanced Bioinformatics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MMG3320-Spring-2025-Syllabus.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MMG3320-5320-Spring-2025-Schedule.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/gitbash-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git Bash Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Printouts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Printouts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pdf_materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unit 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unit 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Week 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/01_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing the Shell (L1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/02_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navigating the Shell (L2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Week 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/03_week2_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wild Cards & Nano (L3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Week 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_week3_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Searching and Redirection (L4)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Assignments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/week1_assignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 1 (L2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/week2_assignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 2 (L3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Final Project
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Final Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../final-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell scripts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-can-shell-scripts-be-used-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      What can shell scripts be used for?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-simple-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      A simple script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bash-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bash variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bash variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the $
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-variables-as-input-to-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use variables as input to commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assigning-the-output-from-a-command-to-a-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assigning the output from a command to a variable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assigning the output from a command to a variable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-the-basename-output-in-a-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storing the basename output in a variable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storing the basename output in a variable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-basename-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      The basename command
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell-scripting-with-bash-variables-using-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell scripting with bash variables using Jupyter Notebook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell scripting with bash variables using Jupyter Notebook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homework-assignment-5-50-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework Assignment #5 (50 points)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework Assignment #5 (50 points)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#please-note-that-you-will-have-until-thursday-february-8th-10am-to-submit-this-homework-assignment-late-submissions-will-not-be-accepted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Please note that you will have until Thursday, February 8th - 10AM to submit this homework assignment. Late submissions will not be accepted.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directions-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directions for Students:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>05 week3 mmg3320</h1>
+
+<div><h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Capture commands into a shell script</li>
+<li>Implement variables in a shell script</li>
+</ul>
+<h2 id="recap">Recap</h2>
+<ul>
+<li><code>wc</code> counts lines, words, and characters in its inputs </li>
+<li><code>sort</code> sorts its inputs</li>
+<li>command <code>&gt;</code> [file] redirects a command's output to a file (overwriting any exisiting content)</li>
+<li>command <code>&gt;&gt;</code> [file] appends a command's output to a file </li>
+<li>[first] <code>|</code> [second] is a pipeline: the output of the first command is used as the input to the second</li>
+</ul>
+<hr>
+<p><strong>Class Activity #1</strong></p>
+<p>Before moving on, please complete the following class activity below. You will have ~5 minutes to answer all questions.</p>
+<p><a href="https://forms.gle/RngANE9ZGVfSb2fL8">Class-activity</a></p>
+<hr>
+<h2 id="shell-scripts">Shell scripts</h2>
+<p>Over the past few weeks, you have been introduced to a number of commands to explore data files. To demonstrate the function of each command we have run them one at a time at the command prompt. The command prompt is useful for testing out commands and also performing simple tasks like exploring and organizing the file system. However, when we are running analyses which require a series of tasks to be run, there is a more efficient way to do this. </p>
+<p>Shell scripts are <strong>text files that contain commands we know we want to run</strong>. In today's lesson, you will be introduced to both a simple and an advanced shell script example.</p>
+<h3 id="what-can-shell-scripts-be-used-for">What can shell scripts be used for?</h3>
+<ul>
+<li>for creating, maintaining and implementing system-wide scripts</li>
+<li>automating tedious repetitive tasks</li>
+<li>scheduling and executing system tasks</li>
+<li>for automating the installation process for new software or for new software updates across the organization</li>
+<li>for scheduling data backup process</li>
+</ul>
+<h2 id="a-simple-script">A simple script</h2>
+<p>We are finally ready to see what makes the shell such a powerful programming environment. To create our first script, we are going to take some of the commands we have run previously and save them into a file so that we can <strong>re-run all those operations</strong> again later, by typing just <strong>one single command</strong>. For historical reasons, a bunch of commands saved in a file is referred to as shell script, but make no mistake, this is actually a small program! </p>
+<p>Interestingly, when working with Shell or on the command line you can give files any extension (.txt, .tsv, .csv, etc.). Similarly, for a shell script you don't need a specific extension. However, it is <strong>best practice to give shell scripts the extension <code>.sh</code></strong> (bash shell script file). </p>
+<p align="center">
+<img src="../img/SH.jpg" width="300">
+</p>
+
+<p>Navigate into the <code>raw_fastq</code> directory and create a new file using Nano. </p>
+<p>Call the script <code>practice.sh</code>: </p>
+<hr>
+<p><strong>Class Exercise #2</strong></p>
+<p>You will have ~5-10 minutes to complete.<br>
+<strong>NOTE: It is never my intention to rush you. If you do find you need more time to participate, please let me know.</strong></p>
+<p>Create a script that is three lines: </p>
+<ul>
+<li>First line: You will write on your own. This line should: <ul>
+<li>"Grab" all lines from Mov10_oe_1.subset.fq that contain 10 consecutive N's </li>
+<li>Be sure to use the appropriate arguments to output all (4) lines contained within a FASTQ read </li>
+<li>Then redirect the output to a file called redirect.txt </li>
+</ul>
+</li>
+<li>
+<p>Second line: You will copy and paste. </p>
+<ul>
+<li>You are adding some verbosity to your script by using the <code>echo</code> command. The <code>echo</code> command is used to display a line of text that is passed in as an argument. This is a bash command that is used to output status to the screen or file. Add the following line: </li>
+</ul>
+<p></p><div class="highlight"><pre><span></span><code>echo "The word count for redirect.txt is:" 
+</code></pre></div>
++ Third line: You will write on your own. This line should:
++  Give a word count for redirect.txt 
+</li>
+</ul>
+<blockquote>
+<p>To run the shell script you can use the <code>sh</code> command, followed by the name of your script:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>sh<span class="w"> </span>practice.sh
+</code></pre></div>
+<hr>
+<h2 id="bash-variables">Bash variables</h2>
+<p>A <em>variable</em> is a common concept shared by many programming languages. <strong>Think of variables as a temporary store or "bucket" for a simple piece of information.</strong> This bucket will have a name associated with it therefore when referring to the information inside the bucket, we can use the name of the bucket instead! </p>
+<p>First, to create a variable in bash, you will provide the name of the variable, followed by the equals sign and finish with the value we want to assign to the variable. </p>
+<div class="highlight"><pre><span></span><code>name_of_variable=value_of_variable
+</code></pre></div>
+<ul>
+<li>
+<p>Note that the variable name cannot contain spaces, nor can there be spaces on either side of the equals sign.</p>
+</li>
+<li>
+<p>The variable name can have only letters (a to z or A to Z), numbers (0 to 9), or the underscore character (_). The wrong character usage in the variable name will cause a syntax error.</p>
+</li>
+<li>
+<p>By convention, the variable names in UNIX are in UPPERCASE.</p>
+</li>
+</ul>
+<p>Let's start by creating a variable called <code>num</code> that has the number 25 stored inside it:</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="nv">num</span><span class="o">=</span><span class="m">25</span>
+</code></pre></div>
+If we are using our bucket analogy - You can think of the variable <code>num</code> like this: 
+<p align="center">
+<img src="../img/images_created-1.png" width="600">
+</p>
+
+<p>Once you press return, you will find yourself back at the command prompt. But nothing happened... so how do we know that we actually created a variable? </p>
+<p>One way to see the variable created is by using the <code>echo</code> command. As we learned earlier, this command takes the argument provided and prints it to the terminal. If we provide <code>num</code> as an argument it will be simply interpreted as a character string "num". We want <code>echo</code> to display the contents of the variable and not its name. To do this we need to <strong>explicitly use a <code>$</code> in front of the variable name</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$num</span>
+</code></pre></div>
+<p>You should see the number 25 returned to you. Notice that when we created the variable, we did not use the <code>$</code>. </p>
+<h3 id="what-is-the">What is the <code>$</code></h3>
+<p>The <code>$</code> is a standard shell notation for defining and using variables. The <code>$</code> tells the shell interpreter to treat the variable as a variable name and substitute its value in its place, rather than treat it as text or an external command.</p>
+<p><strong>Therefore, when defining a variable (i.e. setting the value) you can just type it as is, but when retrieving the value of a variable you must use the <code>$</code>!</strong> </p>
+<blockquote>
+<p><strong>NOTE:</strong> Variables are not physical entities like files. When you create files you can use <code>ls</code> to list contents and see if the file exists. To list all variables in your environment you can use the command <code>declare</code> with the <code>-p</code> option. You will notice that while you only have created one variable so far, the output of <code>declare -p</code> will be more than just one variable. These other variables are called environment variables. To remove a variable you can use <code>unset</code>. </p>
+</blockquote>
+<h2 id="use-variables-as-input-to-commands">Use variables as input to commands</h2>
+<p>So far, it is hard to see the utility of a variable and why we need it. One important aspect of the variable is that the value stored inside can be used as input to commands. </p>
+<p>Let's solidify this important concept. </p>
+<hr>
+<p><strong>Class Exercise #3</strong></p>
+<ol>
+<li>
+<p>Create a new variable called <code>file</code>. Use the name of one of the fastq files in the <code>raw_fastq</code> directory as the value of the variable.</p>
+</li>
+<li>
+<p>Recall the variable with <code>echo</code> </p>
+</li>
+<li>
+<p>Check the number of lines in the <code>file</code> variable. </p>
+</li>
+</ol>
+<blockquote>
+<p><strong>NOTE:</strong> The variables we create in a session are system-wide, and independent of where you are in the filesystem. This is why we can reference it from any directory. However, it is only available for your current session. If you exit the cluster and login again at a later time, the variables you have created will no longer exist.</p>
+</blockquote>
+<hr>
+<h2 id="assigning-the-output-from-a-command-to-a-variable">Assigning the output from a command to a variable</h2>
+<p>When creating shell scripts variables are used to store information that can be used later in the script (once or many times over). The value stored can be hard-coded in as we have done above, assigning the variable a numeric or character value. Alternatively, the value stored can be the output of another command. We will demonstrate this using a new command called <code>basename</code>.</p>
+<p>The <strong><code>basename</code> command</strong> is used for extracting the base name from a file path, which is accomplished using <strong>string splitting</strong>. </p>
+<blockquote>
+<p>String splitting is a way to break a larger string into smaller parts based on a specified delimiter. The delimiter is a character or a sequence of characters that indicates where the string should be split. For example, if you have the string "apple,banana,orange" and use a comma as the delimiter, you can split it into three separate strings: "apple", "banana", and "orange". It's a handy technique often used in programming for data manipulation and analysis.</p>
+</blockquote>
+<p align="center">
+<img src="../img/string_split.png" width="300">
+</p>
+
+<blockquote>
+<p>Other "common" strings include: </p>
+</blockquote>
+<pre><code>+ Space: Useful for splitting words in a sentence.
++ Tab (\t): Often used in tab-delimited data files.
++ Semicolon (;): Another popular choice for separating values in data.
++ Colon (:): Commonly used in key-value pairs.
++ Pipe (|): Used in various data formats, such as CSV files.
++ Hyphen (-): Can be used to split ranges or parts of a string.
++ Underscore (_): Frequently used in variable or function names.
+</code></pre>
+<p><strong>Put more simply, a basename refers to the file or directory name without its path information.</strong> It essentially provides the core name of the file or directory by removing the directory path and any leading prefixes or extensions. </p>
+<blockquote>
+<p>For example, if you have the file path "/home/user/documents/report.txt," the basename would be "report.txt."</p>
+</blockquote>
+<p>Let's try an example together by first moving back to your home directory:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span>
+</code></pre></div>
+<p>Then we will run the <code>basename</code> command on one of the FASTQ files. Be sure to specify the path to the file:</p>
+<div class="highlight"><pre><span></span><code>basename<span class="w"> </span>~/unit1_unix/raw_fastq/Mov10_oe_1.subset.fq
+</code></pre></div>
+<p><strong>What is returned to you?</strong></p>
+<p>The path was split into all text leading up to the last <code>/</code> (which is <code>~/unit1_unix/raw_fastq/</code>) and everything after the <code>/</code> which is the file name <code>Mov10_oe_1.subset.fq</code>. The command <strong>returns only the file name</strong>. </p>
+<p>Now, suppose we wanted to also <strong>trim off the file extension</strong> (i.e. remove <code>.fq</code> leaving only the file <em>base name</em>). We can do this by <strong>adding a parameter</strong> to the command to specify what string of characters we want trimmed.</p>
+<div class="highlight"><pre><span></span><code>basename<span class="w"> </span>~/unit1_unix/raw_fastq/Mov10_oe_1.subset.fq<span class="w"> </span>.fq
+</code></pre></div>
+<p>You should now see that only <code>Mov10_oe_1.subset</code> is returned. </p>
+<hr>
+<p><strong>Class Exercise #4</strong></p>
+<p>Use <code>basename</code> with the file <code>Irrel_kd_1.subset.fq</code> as input. Return only <code>Irrel_kd_1</code> to the terminal.</p>
+<hr>
+<h3 id="storing-the-basename-output-in-a-variable">Storing the <code>basename</code> output in a variable</h3>
+<p>The <code>basename</code> command returns a character string and this too can be stored inside a variable. To do this without error, we need to add another special syntax because when we run the command we will generate spaces. If you remember earlier, one of the rules of creating variables is that there cannot be any spaces. </p>
+<blockquote>
+<p><strong>NOTE:</strong> The special syntax involves a key that is probably not used much on your keyboard, it is <strong>the backtick key</strong> <kbd>`</kbd>. On most keyboards this character is located just underneath the <kbd>esc</kbd> key. If you have trouble finding it you can also just copy and paste it from the materials.</p>
+</blockquote>
+<p>The command that we are running is wrapped in backticks (one at the beginning and one at the end), and then we assign it to the variable as we would any other value. Let's try this with the <code>Mov10_oe_1.subset.fq</code> example from above:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">samplename</span><span class="o">=</span><span class="sb">`</span>basename<span class="w"> </span>~/unit1_unix/raw_fastq/Mov10_oe_1.subset.fq<span class="w"> </span>.fq<span class="sb">`</span>
+</code></pre></div>
+<p>Once you press return you should be back at the command prompt. Check to see what got stored in the <code>samplename</code> variable:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$samplename</span>
+</code></pre></div>
+<blockquote>
+<h4 id="the-basename-command">The <code>basename</code> command</h4>
+<p>It is hard to see the utility of this command by just running it at command-line, but it is very useful command when creating scripts for analysis. Within a script it is common to create an output file and the <code>basename</code> allows us to easily create a prefix to use for naming the output files. This utility will be demonstrated in more detail next. </p>
+</blockquote>
+<h2 id="shell-scripting-with-bash-variables-using-jupyter-notebook">Shell scripting with bash variables using Jupyter Notebook</h2>
+<p>Now it's time to put all of these concepts together to create a more advanced version of the script. This script will allow the user to get information on any given directory. These are the steps you will code into a shell script using Jupyter Notebook:</p>
+<ol>
+<li>Assign the path of the directory to a variable</li>
+<li>Create a variable that stores only the directory name (and no path information)</li>
+<li>Move from the current location in the filesystem into the directory we selected in 1.</li>
+<li>List the contents of the directory</li>
+<li>List the total number of files in the directory</li>
+</ol>
+<p>It seems like a lot, but you are equipped with all the necessary concepts and commands to do this quite easily!</p>
+<h3 id="what-is-jupyter-notebook">What is Jupyter Notebook</h3>
+<p>Jupyter Notebook is an open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text. It's widely used in data science, scientific research, and education. The term "Jupyter" is derived from the combination of three core programming languages it supports: Julia, Python, and R.</p>
+<p>Slurm Account: mmg3320 </p>
+<p align="center">
+<img src="../img/Jupyter_logo.png" width="300">
+</p>
+
+<hr>
+<p><strong>Class Exercise #5 and Homework Assignment</strong></p>
+<p>This is a self-paced assignment. This is also the final assignment for today. If you would like to do this from home feel free! </p>
+<ol>
+<li>
+<p>To get started move into the <code>other</code> directory. This system is user-friendly. You should be able to click from <code>unit1_unix</code> into <code>other</code> easily. </p>
+</li>
+<li>
+<p>Press New (Right-side) -&gt; Text file -&gt; and create a script called <code>directory_info.sh</code>. </p>
+<p>In this script, we will be adding <strong>comments by using the hashtag symbol <code>#</code></strong>. Lines in your script that begin with <code>#</code> will <strong>not</strong> be interpreted as code by Shell. Comments are crucial for proper documentation of your scripts. This will allow your future self to know what each line of code is doing!</p>
+<p>We will begin with a first comment describing the <strong>usage of this script</strong>. This lets anyone who is using the script know what it does and what they need to provide (if anything). In our case we need the user to provide a path to the directory of interest. </p>
+</li>
+<li>
+<p>Copy and paste the line below as line 1. </p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1">## USAGE: Provide the full path to the directory you want information on</span>
+</code></pre></div>
+4. Create a variable called <code>dirPath</code>. Assign this variable as the relative path to <code>raw_fastq</code> <strong>Hint: You can find the path within this lesson!</strong>. This will be line 2. 
+</li>
+<li>
+<p>Next copy and paste the line below to line 4. Yes, it is okay to skip a line to increase read-ability! </p>
+<div class="highlight"><pre><span></span><code># Get only the directory name
+</code></pre></div>
+</li>
+<li>
+<p>Create another variable called <code>dirName</code>. Use this variable to store the directory name using the <code>basename</code> command and extract it from <code>dirPath</code>. <em>Make use of the <code>$</code> to retrieve the value stored inside the variable!</em> This will be line 5. </p>
+<p>The next few tasks will require simple commands for changing directories and listing contents of the <code>raw_fastq</code> directory specified.</p>
+</li>
+<li>
+<p>Copy and paste the line below to line 7. </p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"Reporting on the directory"</span><span class="w"> </span><span class="nv">$dirName</span><span class="w"> </span><span class="s2">"..."</span>
+</code></pre></div>
+</li>
+<li>
+<p>Write a command to change directories into <code>dirPath</code>. <em>Make use of the <code>$</code> to retrieve the value stored inside the variable!</em>. This will be line 8. </p>
+</li>
+<li>
+<p>Copy and paste the lines below to lines 10-11. </p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"These are the contents of"</span><span class="w"> </span><span class="nv">$dirName</span>
+ls<span class="w"> </span>-l<span class="w"> </span>
+</code></pre></div>
+<blockquote>
+<p>Note: The command <code>ls -l</code> will give you the file contents of every file already specified in <code>dirPath</code>. There is no need to specify the location because it has already been provided in line 2 by you! </p>
+</blockquote>
+<p>The final task of reporting the total number of files will require piping (<code>|</code>) together multiple commands:</p>
+</li>
+<li>
+<p>Copy and paste the lines below starting at line 13. </p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"The total number of files contained in"</span><span class="w"> </span><span class="nv">$dirName</span>
+ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Report complete!"</span>
+</code></pre></div>
+<p>After adding in a final <code>echo</code> statement, you are all set with script! Hit file Save.</p>
+</li>
+<li>
+<p>Run the script <code>directory_info.sh</code> </p>
+</li>
+</ol>
+<hr>
+<h2 id="homework-assignment-5-50-points">Homework Assignment #5 (50 points)</h2>
+<h3 id="please-note-that-you-will-have-until-thursday-february-8th-10am-to-submit-this-homework-assignment-late-submissions-will-not-be-accepted"><strong>Please note that you will have until Thursday, February 8th - 10AM to submit this homework assignment. Late submissions will not be accepted.</strong></h3>
+<h3 id="directions-for-students">Directions for Students:</h3>
+<p>Open a new Microsoft Word Document and submit answers to questions below. The first four lines of your document should contain the following:<br>
++ Your name
++ MMG3320/5320
++ Today's date
++ Homework Assignment #5</p>
+<p><strong>Directions:</strong> Submit two screenshots. One of your final script (output from #10 above). The second screenshot will be of your terminal screen after running your script (output from #11 above).  </p>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>In today's lesson, we described shell scripts and introduced a few related concepts that are helpful when you are starting out. It is important to understand each of the indvidual concepts, but also to see how they all come together to add flexibility and efficency to your script. Later on we will further illustrate the power of scripts and how they can make our lives (when coding) much easier. Any type of data you will want to analyze will inevitably involve not just one step, but many steps and perhaps many different tools/software programs. Compiling these into a shell script is the first step in creating your analysis workflow!</p>
+<hr>
+<h2 id="citation">Citation</h2>
+<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
+<ul>
+<li><em>The materials used in this lesson were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
+All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></li>
+<li>
+<p><em>Adapted from the lesson by Tracy Teal. Original contributors: Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for Software Carpentry (http://software-carpentry.org/)</em></p>
+</li>
+<li>
+<p><em>Other Authors: Meeta Mistry, Bob Freeman, Mary Piper, Radhika Khetani, Jihe Liu, Will Gammerdinger</em></p>
+</li>
+</ul></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

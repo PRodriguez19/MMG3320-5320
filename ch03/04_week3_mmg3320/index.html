@@ -1740,7 +1740,9 @@ B?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF;FCGGI#####################################
 </blockquote>
 <p>So what happens if the sequencer is unable to make a decision on which base it is? In this case, the sequencer will designate an <code>N</code>. </p>
 <hr>
-<p><strong>Class Exercise #3</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
+</div>
 <p>Let's suppose we want to see how many reads in our file <code>Mov10_oe_1.subset.fq</code> contain "bad" data, i.e. reads with 10 consecutive Ns (<code>NNNNNNNNNN</code>). Go ahead and perform the command for this. </p>
 <hr>
 <p>Notice, that this output will only return the lines that contain the <code>NNNNNNNNNN</code>. However, each read in the FASTQ file is made up of 4 lines (as discussed above).   </p>
@@ -1759,7 +1761,9 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 ?@@DDDDDB1@?:E?<span class="p">;</span>3A:1?9?E9?&lt;?DGCDGBBDBF@<span class="p">;</span>8DF#########################################################
 </code></pre></div>
 <hr>
-<p><strong>Class exercise #4</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
+</div>
 <ol>
 <li>
 <p>Using <code>grep</code> search for the sequence CTCAATGAGCCA in <code>Mov10_oe_1.subset.fq</code>. How many sequences do you find? Use the <code>-n</code> argument to distinguish the number of reads that contain this sequence. </p>
@@ -1816,10 +1820,9 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 <h2 id="redirection">Redirection</h2>
 <p>When we use <code>grep</code>, the matching lines print to the Terminal (also called Standard Output or "stdout"). If the result of the <code>grep</code> search is a few lines, we can view them easily, but if the output is very long, the lines will just keep printing and we won't be able to see anything except the last few lines. You have experienced this when you searched for the pattern <code>NNNNNNNNNN</code>. So how can we capture them instead and create a new document? </p>
 <p>We can do this with "redirection". The idea is that we're redirecting the output from the Terminal to something else. In this case, we want to save it to a file so that we can look at it later.</p>
-<p align="center">
-<img src="../img/redirect.png" width="500">
-</p>
-
+<figure>
+  <img alt="home" src="../../img/redirect.png" width="500">
+</figure>
 <h3 id="redirecting-with-aka-greater-than-sign">Redirecting with "&gt;" AKA "Greater-than sign"</h3>
 <p><strong>The redirection command for writing something to file is <code>&gt;</code>.</strong></p>
 <p>Let's try it out and put all the sequences that contain 'NNNNNNNNNN' from the <code>Mov10_oe_1.subset.fq</code> into another file called <code>bad_reads.txt</code>.</p>
@@ -1840,10 +1843,9 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 <span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>
 </code></pre></div>
 <p>Did the size of the <code>bad_reads.txt</code> file change? How do we explain this? </p>
-<p align="center">
-<img src="../img/append.png" width="500">
-</p>
-
+<figure>
+  <img alt="home" src="../../img/append.png" width="500">
+</figure>
 <h3 id="passing-output-to-another-command-with-or-pipe">Passing output to another command with "|" (or pipe)</h3>
 <p>The vertical bar or <strong>pipe key</strong> <button>|</button> is very likely not something you use very often. It is on the same key as the back slash (), right above the (Enter/Return)key. </p>
 <p>What <code>|</code> does is take the output from one command and runs it through the command specified after it. </p>
@@ -1874,10 +1876,9 @@ There are a total of 148 lines that are shown as the output.
 <li>The pipe is a very important/powerful concept in Shell</li>
 <li>You can string along as many commands together as you like</li>
 </ul>
-<p align="center">
-<img src="../img/commands-without-pipes.png" width="500">
-</p>
-
+<figure>
+  <img alt="home" src="../../img/commands-without-pipes.png" width="500">
+</figure>
 <p>The philosophy behind the three redirection operators (<code>&gt;</code>, <code>&gt;&gt;</code>, <code>|</code>) you have learned so far is that none of them by themselves do a lot. BUT when you start chaining them together, you can do some really powerful things really efficiently. </p>
 <p><strong>To be able to use the shell effectively, becoming proficient in the use of the pipe and redirection operators is essential.</strong></p>
 <hr>
