@@ -1,0 +1,2088 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="test site">
+      
+      
+        <meta name="author" content="Princess Rodriguez">
+      
+      
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch03/04_week3_mmg3320/">
+      
+      
+        <link rel="prev" href="../../ch02/">
+      
+      
+        <link rel="next" href="../../assignments/week1_assignment/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Searching and Redirection (L4) - MMG:3320/5320 Advanced Bioinformatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#learning-objectives" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG:3320/5320 Advanced Bioinformatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Searching and Redirection (L4)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../slides/" class="md-tabs__link">
+          
+  
+  Slides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pdf_materials/" class="md-tabs__link">
+          
+  
+  Printouts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ch01/" class="md-tabs__link">
+          
+  
+  Unit 1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../assignments/week1_assignment/" class="md-tabs__link">
+          
+  
+  Assignments
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../final-project/" class="md-tabs__link">
+          
+  
+  Final Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MMG:3320/5320 Advanced Bioinformatics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MMG3320-Spring-2025-Syllabus.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MMG3320-5320-Spring-2025-Schedule.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/gitbash-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git Bash Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Printouts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Printouts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pdf_materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Unit 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unit 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Week 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/01_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing the Shell (L1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/02_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navigating the Shell (L2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Week 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/03_week2_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wild Cards & Nano (L3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Week 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Searching and Redirection (L4)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Searching and Redirection (L4)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-from-last-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap from last week
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-files-with-grep-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching files with grep command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Searching files with grep command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Discussion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-useful-options-for-grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other useful options for grep
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-within-fastq-files-in-the-raw_fastq-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching within FASTQ files in the raw_fastq directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-about-searching-text-files-with-grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      More about searching text files with grep
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More about searching text files with grep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-separators-and-how-to-remove-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group separators (--), and how to remove them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-line-number-has-a-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which line number has a match?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirecting-with-aka-greater-than-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirecting with "&gt;" AKA "Greater-than sign"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirecting-and-appending-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirecting (and appending) with "&gt;&gt;"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redirecting (and appending) with ">>"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passing-output-to-another-command-with-or-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing output to another command with "|" (or pipe)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-power-of-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Pipes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-with-searching-and-pipingredirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice with searching and piping/redirection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice with searching and piping/redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-the-gtf-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to the GTF file format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cut-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cut &amp; sort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Assignments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/week1_assignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 1 (L2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/week2_assignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 2 (L3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Final Project
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Final Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../final-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-from-last-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap from last week
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-files-with-grep-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching files with grep command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Searching files with grep command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Discussion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-useful-options-for-grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other useful options for grep
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-within-fastq-files-in-the-raw_fastq-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching within FASTQ files in the raw_fastq directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-about-searching-text-files-with-grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      More about searching text files with grep
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More about searching text files with grep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-separators-and-how-to-remove-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group separators (--), and how to remove them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-line-number-has-a-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which line number has a match?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirecting-with-aka-greater-than-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirecting with "&gt;" AKA "Greater-than sign"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirecting-and-appending-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirecting (and appending) with "&gt;&gt;"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redirecting (and appending) with ">>"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passing-output-to-another-command-with-or-pipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing output to another command with "|" (or pipe)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-power-of-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Pipes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-with-searching-and-pipingredirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice with searching and piping/redirection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice with searching and piping/redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-the-gtf-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to the GTF file format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cut-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cut &amp; sort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Searching and Redirection (L4)</h1>
+
+<div><h2 id="learning-objectives">Learning objectives</h2>
+<ul>
+<li>Search for characters or patterns in a text file using the <code>grep</code> command</li>
+<li>Write to and append a file using output redirection </li>
+<li>Use of pipe (<code>|</code>) character  <ul>
+<li>How can I combine existing commands to do new things? </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="recap-from-last-week">Recap from last week</h2>
+<ul>
+<li><code>*</code> matches zero or more characters in a filename, so *.txt matches ALL files ending in .txt </li>
+<li>? matches a single character in a filename, so ?.txt matches a.txt or b.txt but not ab.txt </li>
+<li>Use of the <button>control</button> key may be described in many ways, including Ctrl-X, Control-X, or ^X. </li>
+<li>The shell does not have a trash bin, once something is deleted it is really gone. </li>
+<li>Most file names are <code>something.extension</code>. The extension is not required, but does help bioinformatic programs find required files (ex. FASTQC)</li>
+<li>Depending on the type of work you do, you may need a more powerful text editor than Nano. </li>
+</ul>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise: Participation Grade</p>
+</div>
+<p>Before moving on, please complete the following class activity below. You will have ~5 minutes to answer all questions. Please submit the quiz without answering the last question. </p>
+<p><a href="https://forms.gle/jfEXWCkfBo5oPa4R7">Class-activity</a></p>
+<hr>
+<h2 id="searching-files-with-grep-command">Searching files with <code>grep</code> command</h2>
+<p>In the same way that many of us now use ‘Google’ as a verb meaning ‘to find’, UNIX programmers often use the word ‘grep’. </p>
+<ul>
+<li>
+<p>‘grep’ is a contraction of ‘<strong>g</strong>lobal/<strong>r</strong>egular <strong>e</strong>xpression/<strong>p</strong>rint’, a common sequence of operations in early Unix text editors. It is also the name of a very useful command-line program.</p>
+</li>
+<li>
+<p>‘grep’ allows you to search plain-text files without opening them. </p>
+</li>
+</ul>
+<p>The syntax for <code>grep</code> is as follows: </p>
+<div class="highlight"><pre><span></span><code>grep<span class="w">  </span>search-term<span class="w">  </span>filename
+</code></pre></div>
+<p>The pattern that we want to search is specified in the <code>search-term</code> slot, and the file we want to search within is specified in the <code>filename</code> slot. Let's generate a file to try this on first!  </p>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
+</div>
+<p>You will have ~5 minutes to complete.<br>
+<strong>NOTE: It is never my intention to rush you. If you do find you need more time to participate, please let me know.</strong></p>
+<ol>
+<li>
+<p>Copy the following text into a text file. Name the text file haiku.txt. </p>
+<blockquote>
+<p>It might be good to make a folder called <em>class-exercises</em> or something like that for activities like this moving forward!  </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>The<span class="w"> </span>Tao<span class="w"> </span>that<span class="w"> </span>is<span class="w"> </span>seen
+Is<span class="w"> </span>not<span class="w"> </span>the<span class="w"> </span><span class="nb">true</span><span class="w"> </span>Tao,<span class="w"> </span><span class="k">until</span>
+You<span class="w"> </span>bring<span class="w"> </span>fresh<span class="w"> </span>toner.
+
+With<span class="w"> </span>searching<span class="w"> </span>comes<span class="w"> </span>loss
+and<span class="w"> </span>the<span class="w"> </span>presence<span class="w"> </span>of<span class="w"> </span>absence:
+<span class="s2">"My Thesis"</span><span class="w"> </span>not<span class="w"> </span>found.
+
+Yesterday<span class="w"> </span>it<span class="w"> </span>worked
+Today<span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>working
+Software<span class="w"> </span>is<span class="w"> </span>like<span class="w"> </span>that.
+</code></pre></div>
+</li>
+<li>
+<p>Now that you have haiku.txt created save and exit the text editor. </p>
+</li>
+<li>
+<p>On your terminal try the following command: </p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>not<span class="w"> </span>haiku.txt
+</code></pre></div>
+</li>
+<li>
+<p>Copy-and-paste the output from this command as an answer in the class-activity quiz. </p>
+</li>
+<li>
+<p>Now try the following command: </p>
+<p></p><div class="highlight"><pre><span></span><code>grep<span class="w"> </span>Not<span class="w"> </span>haiku.txt
+</code></pre></div>
+6. Finally, try the following command: 
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>The<span class="w"> </span>haiku.txt
+</code></pre></div>
+</li>
+</ol>
+<hr>
+<h3 id="class-exercise-discussion">Class Exercise Discussion</h3>
+<p>In the above exercise, <em>not</em> was the pattern we were searching for. The <code>grep</code> command searches through the file, and then looks for matches to the pattern specified. To use it you typed <code>grep</code>, then the pattern you were searching for and finally the name of the file (or files) you were searching in. </p>
+<ul>
+<li>
+<p>You also would have noticed that by default, <code>grep</code> searches for a pattern in a <em>case-sensitive way</em>. </p>
+</li>
+<li>
+<p>Finally, you would have saw upon completing #6, the search pattern we have selected does not have to form a <em>complete word or phrase</em>. </p>
+<ul>
+<li>
+<p>The Tao</p>
+</li>
+<li>
+<p>My <strong>The</strong>sis</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>To restrict matches to lines containing the word <strong>The</strong> on its own, we can give <code>grep</code> the <code>-w</code> option. This will limit matches to word boundaries.</p>
+<hr>
+<h3 id="other-useful-options-for-grep">Other useful options for grep</h3>
+<ul>
+<li><code>grep -w</code> to limit the matches </li>
+</ul>
+<p>Sometimes we don’t want to search for a single word, but for a phrase. We can also do this with <code>grep</code> by putting the phrase in quotes.</p>
+<p></p><div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"is not"</span><span class="w"> </span>haiku.txt
+</code></pre></div>
+We’ve now seen that you don’t have to have quotes around single words, but it is useful to use quotes when searching for multiple words. 
+<p>Another useful option is <code>-n</code>, which numbers the lines that match</p>
+<p></p><div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"it"</span><span class="w"> </span>haiku.txt
+</code></pre></div>
+Here, we can see that lines 5, 9, and 10 contain the letters ‘it’.
+<p><code>grep</code> has lots of other options. To find out what they are, we can type: </p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>--help
+</code></pre></div>
+<hr>
+<h2 id="searching-within-fastq-files-in-the-raw_fastq-directory">Searching within FASTQ files in the <code>raw_fastq</code> directory</h2>
+<p>The next-generation sequencing technologies all rely on a complex interplay of chemistry, hardware and optical sensors. Adding to this complexity is software to analyze the sensor data to predict the individual bases. This last step in the process is referred to as <strong>base-calling</strong>.</p>
+<figure>
+  <img alt="Basecalling" src="basecalling.jpg" width="600">
+  <figcaption>Basecalling algorithms process the raw signal to decode the sequence of bases within strands of DNA or RNA into data stored in BAM or FASTQ files. </figcaption>
+</figure>
+<p><img alt="Basecalling" src="https://nanoporetech.com/sites/default/files/s3/publications-images/ONT_Graphic7_Basecall_020921_ml.gif"></p>
+<p>FASTQ files contain the sequencing reads (nucleotide sequences) output from a high throughput sequencer. Each sequencing read in a FASTQ file is associated with four lines, with the first line (header line) always starting with an <code>@</code> symbol. A whole FASTQ record for a single read should appear similar to the following:</p>
+<pre><code>@HWI-ST330:304:H045HADXX:1:1101:1111:61397
+CACTTGTAAGGGCAGGCCCCCTTCACCCTCCCGCTCCTGGGGGANNNNNNNNNNANNNCGAGGCCCTGGGGTAGAGGGNNNNNNNNNNNNNNGATCTTGG
++
+B?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF;FCGGI#########################################################
+</code></pre>
+<blockquote>
+<p><strong>More information about the FASTQ file format</strong></p>
+<table>
+<thead>
+<tr>
+<th>Line</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Read name preceded by '@'</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The actual DNA sequence</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Read name (same as line 1) preceded by a '+' or just a '+' sign</td>
+</tr>
+<tr>
+<td>4</td>
+<td>String of characters which represent the quality score of each nucleotide in line 2; must have same number of characters as line 2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>So what happens if the sequencer is unable to make a decision on which base it is? In this case, the sequencer will designate an <code>N</code>. </p>
+<hr>
+<p><strong>Class Exercise #3</strong></p>
+<p>Let's suppose we want to see how many reads in our file <code>Mov10_oe_1.subset.fq</code> contain "bad" data, i.e. reads with 10 consecutive Ns (<code>NNNNNNNNNN</code>). Go ahead and perform the command for this. </p>
+<hr>
+<p>Notice, that this output will only return the lines that contain the <code>NNNNNNNNNN</code>. However, each read in the FASTQ file is made up of 4 lines (as discussed above).   </p>
+<p>So what if we wanted to see the whole FASTQ record for each of the reads? We would need to modify the default behavior of <code>grep</code> and specify additional argument/options. </p>
+<p>The <code>-B</code> and <code>-A</code> arguments are useful to return the matched line plus one before (<code>-B 1</code>) and two lines after (<code>-A 2</code>). Therefore, using these arguments will return the whole read record. </p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>@HWI-ST330:304:H045HADXX:1:1101:1111:61397
+CACTTGTAAGGGCAGGCCCCCTTCACCCTCCCGCTCCTGGGGGANNNNNNNNNNANNNCGAGGCCCTGGGGTAGAGGGNNNNNNNNNNNNNNGATCTTGG
++
+@?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF<span class="p">;</span>FCGGI#########################################################
+--
+@HWI-ST330:304:H045HADXX:1:1101:1106:89824
+CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNNNNNNNNNNNNNNNNNGTTGG
++
+?@@DDDDDB1@?:E?<span class="p">;</span>3A:1?9?E9?&lt;?DGCDGBBDBF@<span class="p">;</span>8DF#########################################################
+</code></pre></div>
+<hr>
+<p><strong>Class exercise #4</strong></p>
+<ol>
+<li>
+<p>Using <code>grep</code> search for the sequence CTCAATGAGCCA in <code>Mov10_oe_1.subset.fq</code>. How many sequences do you find? Use the <code>-n</code> argument to distinguish the number of reads that contain this sequence. </p>
+</li>
+<li>
+<p>How can you modify the command you typed above so that your search also returns the  of the sequence? Remember the name of sequence is Line 1 of the FASTQ only. </p>
+</li>
+<li>
+<p>If you want to search for that sequence in <strong>all</strong> Mov10 replicate fastq files, what command would you use?</p>
+<p><details>
+    <summary><b><i>Answers</i></b></summary>
+    <p><i>Question 1</i><br>
+    <code>grep -n CTCAATGAGCCA Mov10_oe_1.subset.fq</code><br>
+    The output returns 5 sequences.</p>
+    <p><i>Question 2</i><br>
+        <code>grep -B 1 CTCAATGAGCCA Mov10_oe_1.subset.fq</code></p>
+    <p><i>Question 3</i><br>
+    <code>grep CTCAATGAGCCA Mov10*</code><br>
+    The output returns 5 sequences for Mov10_oe_1 and 3 sequences for Mov10_oe_2.</p>
+</details></p>
+</li>
+</ol>
+<hr>
+<h2 id="more-about-searching-text-files-with-grep">More about searching text files with <code>grep</code></h2>
+<h3 id="group-separators-and-how-to-remove-them">Group separators (<code>--</code>), and how to remove them</h3>
+<p>You will notice that when we use the <code>-B</code> and/or <code>-A</code> arguments with the <code>grep</code> command, the output has some additional lines with dashes (<code>--</code>), these dashes work to separate your returned "groups" of lines and are referred to as "group separators". This might be problematic if you are trying to maintain the FASTQ file structure or if you simply do not want them in your output. Using the argument <code>--no-group-separator</code> with <code>grep</code> will disable this behavior:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>--no-group-separator<span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq
+</code></pre></div>
+<p>Now your output should be returned as:</p>
+<div class="highlight"><pre><span></span><code>@HWI-ST330:304:H045HADXX:1:1101:1111:61397
+CACTTGTAAGGGCAGGCCCCCTTCACCCTCCCGCTCCTGGGGGANNNNNNNNNNANNNCGAGGCCCTGGGGTAGAGGGNNNNNNNNNNNNNNGATCTTGG
++
+@?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF<span class="p">;</span>FCGGI#########################################################
+@HWI-ST330:304:H045HADXX:1:1101:1106:89824
+CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNNNNNNNNNNNNNNNNNGTTGG
++
+?@@DDDDDB1@?:E?<span class="p">;</span>3A:1?9?E9?&lt;?DGCDGBBDBF@<span class="p">;</span>8DF#########################################################
+</code></pre></div>
+<h3 id="which-line-number-has-a-match">Which line number has a match?</h3>
+<p>A useful option is the <code>-n</code> option which will print out the line number from the file for the match. Add this option to the previous command:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>--no-group-separator<span class="w"> </span>-n<span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq
+</code></pre></div>
+<p>This would return the output:</p>
+<div class="highlight"><pre><span></span><code><span class="m">861213</span>-@HWI-ST330:304:H045HADXX:1:1101:1111:61397
+<span class="m">861214</span>:CACTTGTAAGGGCAGGCCCCCTTCACCCTCCCGCTCCTGGGGGANNNNNNNNNNANNNCGAGGCCCTGGGGTAGAGGGNNNNNNNNNNNNNNGATCTTGG
+<span class="m">861215</span>-+
+<span class="m">861216</span>-@?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF<span class="p">;</span>FCGGI#########################################################
+<span class="m">861953</span>-@HWI-ST330:304:H045HADXX:1:1101:1106:89824
+<span class="m">861954</span>:CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNNNNNNNNNNNNNNNNNGTTGG
+<span class="m">861955</span>-+
+<span class="m">861956</span>-?@@DDDDDB1@?:E?<span class="p">;</span>3A:1?9?E9?&lt;?DGCDGBBDBF@<span class="p">;</span>8DF#########################################################
+</code></pre></div>
+<p>A small thing you should note is that when using the <code>-n</code> option, lines that have a <code>:</code> after the line number correspond to the lines with the match (e.g <code>861214:CACTTGTAAGGGCAGGCCCCCTTCACCCTCCCGCTCCTGGGGGANNNNNNNNNNANNN...</code>), while lines with a <code>-</code> after the line number are the surrounding lines retrieved when using the <code>-A</code> and/or <code>-B</code> options (e.g. <code>861213-@HWI-ST330:304:H045HADXX:1:1101:1111:61397</code>).</p>
+<h2 id="redirection">Redirection</h2>
+<p>When we use <code>grep</code>, the matching lines print to the Terminal (also called Standard Output or "stdout"). If the result of the <code>grep</code> search is a few lines, we can view them easily, but if the output is very long, the lines will just keep printing and we won't be able to see anything except the last few lines. You have experienced this when you searched for the pattern <code>NNNNNNNNNN</code>. So how can we capture them instead and create a new document? </p>
+<p>We can do this with "redirection". The idea is that we're redirecting the output from the Terminal to something else. In this case, we want to save it to a file so that we can look at it later.</p>
+<p align="center">
+<img src="../img/redirect.png" width="500">
+</p>
+
+<h3 id="redirecting-with-aka-greater-than-sign">Redirecting with "&gt;" AKA "Greater-than sign"</h3>
+<p><strong>The redirection command for writing something to file is <code>&gt;</code>.</strong></p>
+<p>Let's try it out and put all the sequences that contain 'NNNNNNNNNN' from the <code>Mov10_oe_1.subset.fq</code> into another file called <code>bad_reads.txt</code>.</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>&gt;<span class="w"> </span>bad_reads.txt
+</code></pre></div>
+<p>Now you should have a new file called <code>bad_reads.txt</code> in the raw_fastq directory. </p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>
+</code></pre></div>
+<p>Take a look at the file and see if it contains what you think it should. </p>
+<blockquote>
+<p>NOTE: If we already had a file named <code>bad_reads.txt</code> in our directory, it would have overwritten it without any warning!</p>
+</blockquote>
+<h2 id="redirecting-and-appending-with">Redirecting (and appending) with "&gt;&gt;"</h2>
+<p><strong>The redirection command for appending something to an existing file is <code>&gt;&gt;</code>.</strong></p>
+<p>If we use <code>&gt;&gt;</code>, it will <strong>append</strong> to the existing content in a file rather than overwrite it. This can be useful for saving more than one search. For example, the following command will append the bad reads from <strong>Mov10_oe_2</strong> to the bad_reads.txt file that we just generated.</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_2.subset.fq<span class="w"> </span>&gt;&gt;<span class="w"> </span>bad_reads.txt
+
+<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>
+</code></pre></div>
+<p>Did the size of the <code>bad_reads.txt</code> file change? How do we explain this? </p>
+<p align="center">
+<img src="../img/append.png" width="500">
+</p>
+
+<h3 id="passing-output-to-another-command-with-or-pipe">Passing output to another command with "|" (or pipe)</h3>
+<p>The vertical bar or <strong>pipe key</strong> <button>|</button> is very likely not something you use very often. It is on the same key as the back slash (), right above the (Enter/Return)key. </p>
+<p>What <code>|</code> does is take the output from one command and runs it through the command specified after it. </p>
+<p>First, to really see the benefit let's type the following command again: </p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>
+</code></pre></div>
+<blockquote>
+<p>Notice that we are at the <strong>end</strong> of the document automatically. It just whizzed on by! And if we wanted to find the first line, it get's messy and "jumpy" - there are even gaps! </p>
+</blockquote>
+<p>Now let's <strong>pipe the output of <code>grep</code> command</strong> to <code>less</code>. This will allow us to slowly scroll through the entire document using the up and down arrows! </p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<blockquote>
+<p>Remember to use <code>q</code> to get out of less</p>
+</blockquote>
+<p>Or let's say we are interested in the first few lines, we could do the following:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span>
+</code></pre></div>
+<p>Another thing we can also do is count the number of lines output by <code>grep</code>. </p>
+<p>We will introduce another command called <code>wc</code>. The <code>wc</code> command stands for <strong><em>w</em>*ord </strong>c*<em>ount</em>. This command counts the number of lines, words and characters in the text input given to it. The <code>-l</code> argument will only count the number of lines instead of counting everything.</p>
+<p></p><div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</code></pre></div>
+There are a total of 148 lines that are shown as the output. 
+<p>How many lines contain <code>NNNNNNNNNN</code> in the document Mov10_oe_1.subset.fq?  </p>
+<hr>
+<h3 id="the-power-of-pipes">The Power of Pipes</h3>
+<ul>
+<li>The pipe is a very important/powerful concept in Shell</li>
+<li>You can string along as many commands together as you like</li>
+</ul>
+<p align="center">
+<img src="../img/commands-without-pipes.png" width="500">
+</p>
+
+<p>The philosophy behind the three redirection operators (<code>&gt;</code>, <code>&gt;&gt;</code>, <code>|</code>) you have learned so far is that none of them by themselves do a lot. BUT when you start chaining them together, you can do some really powerful things really efficiently. </p>
+<p><strong>To be able to use the shell effectively, becoming proficient in the use of the pipe and redirection operators is essential.</strong></p>
+<hr>
+<h2 id="practice-with-searching-and-pipingredirection">Practice with searching and piping/redirection</h2>
+<p>Let's use the new commands in our toolkit and a few new ones to examine the "gene annotation" file, <strong>chr1-hg19_genes.gtf</strong>. We will be using this file to find the genomic coordinates of all known exons on chromosome 1. This file is located in the following directory: </p>
+<div class="highlight"><pre><span></span><code>~/unix_lesson/reference_data/
+</code></pre></div>
+<h3 id="introduction-to-the-gtf-file-format">Introduction to the GTF file format</h3>
+<p>Let's explore our <code>chr1-hg19_genes.gtf</code> file a bit. What information does it contain?</p>
+<p></p><div class="highlight"><pre><span></span><code>head<span class="w"> </span>-10<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>less<span class="w"> </span>-S<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>chr1    unknown exon    14362   14829   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    14970   15038   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    15796   15947   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    16607   16765   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    16858   17055   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    17233   17368   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    17606   17742   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    17915   18061   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    18268   18366   .       -       .       gene_id "WASH7P"
+chr1    unknown exon    24738   24891   .       -       .       gene_id "WASH7P
+</code></pre></div>
+<blockquote>
+<p><strong>The GTF (Gene Transfer Format) file</strong> is a tab-delimited file with information arranged in a very specific manner, usually for NGS analysis. That information is specifically about all the various entities or features found in a genome; in this case, on chromosome 1. </p>
+</blockquote>
+<p>The columns in the <strong>GTF file contain the genomic coordinates (location) of gene features (exon, start_codon, stop_codon, CDS) along with the associated gene_names, transcript_ids and protein_ids (p_id)</strong>. </p>
+<table>
+<thead>
+<tr>
+<th>Line</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>chromosome number</td>
+</tr>
+<tr>
+<td>2</td>
+<td>source, name of program that generated the feature - its "unknown" above</td>
+</tr>
+<tr>
+<td>3</td>
+<td>feature type name</td>
+</tr>
+<tr>
+<td>4</td>
+<td>start position of feature</td>
+</tr>
+<tr>
+<td>5</td>
+<td>end position of feature</td>
+</tr>
+<tr>
+<td>6</td>
+<td>score</td>
+</tr>
+<tr>
+<td>7</td>
+<td>strand, defined at + (forward) or - (reverse)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>frame</td>
+</tr>
+<tr>
+<td>9</td>
+<td>attribute, provides additional information about each feature</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>For more information on this file format, check out the <a href="http://useast.ensembl.org/info/website/upload/gff.html">Ensembl site</a>. </p>
+</blockquote>
+<p>Given our understanding of splice isoforms, we know that a given exon can be part of 2 or more different transcripts generated from the same gene. In a GTF file, this exon will be represented multiple times, once for each transcript (or splice isoform). For example, </p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>PLEKHN1<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>less<span class="w"> </span>-S
+</code></pre></div>
+<p>This search returns two different transcripts of the same gene, NM_001160184 and NM_032129, that contain the same exon.</p>
+<h2 id="cut-sort">Cut &amp; sort</h2>
+<ul>
+<li><strong><code>cut</code> is a command that extracts columns from files.</strong> </li>
+</ul>
+<p>We will use <code>cut</code> with the <code>-f</code> argument to specify which specific fields or columns from the dataset we want to extract. Let's say we want to get the 1st column (chromosome number) and the 4th column (starting genomic position) and 5th column (ending genomic position) from <code>chr1-hg19_genes.gtf</code> file, we can say:</p>
+<p></p><div class="highlight"><pre><span></span><code>grep<span class="w"> </span>PLEKHN1<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4,5<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</code></pre></div>
+How can we output this to a different document? 
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>PLEKHN1<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4,5<span class="w"> </span>&gt;<span class="w"> </span>coordinates_PLEKHN1.txt
+</code></pre></div>
+<blockquote>
+<p>Note: The <code>cut</code> command assumes our data columns are separated by tabs (i.e. tab-delimited). The <code>chr1-hg19_genes.gtf</code> is a tab-delimited file, so the default <code>cut</code> command works for us. However, data can be separated by other types of delimiters like "," or ";". If your data is not tab delimited, there is an argument you can add to your <code>cut</code> command, <code>-d</code> to specify the delimiter (e.g. <code>-d ","</code> with a .csv file).</p>
+</blockquote>
+<ul>
+<li><strong><code>sort</code> is a command used to sort the contents of a file in a particular order.</strong> It has arguments that let you pick which column to sort by (<code>-k</code>), what kind of sorting you want to do (numeric <code>n</code>) and also if the result of the sorting should only return unique (<code>-u</code>) values. These are just 2 of the many features of the sort command. </li>
+</ul>
+<p>Let's run the following command first: </p>
+<p></p><div class="highlight"><pre><span></span><code>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</code></pre></div>
+<em>How many lines are returned to you?</em>
+<details>
+    <summary><b><i>Click here to check your output</i></b></summary>
+    <p>Your command should have returned 76,767 lines.</p>
+</details>
+
+<p>Pipe the output to less - notice all the duplicates! </p>
+<div class="highlight"><pre><span></span><code>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div>
+<p>Now apply the <code>sort -u</code> command before counting the lines.</p>
+<p></p><div class="highlight"><pre><span></span><code>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</code></pre></div>
+<em>How many lines do you see now? Also be sure to actually look at the output!</em>
+<details>
+    <summary><b><i>Click here to check your output</i></b></summary>
+    <p>Your command should have returned 27,852 lines.</p>
+</details>
+
+<hr>
+<h2 id="summary">Summary</h2>
+<div class="highlight"><pre><span></span><code>grep          # Allows for searching within files without opening them
+               +   grep search_term filename 
+
+&gt;             # Redirect output to another file  
+
+&gt;&gt;            # append to an existing file rather than overwrite it  
+
+|             # Pipe key 
+                + takes the output and runs it through the command specified after it 
+
+cut           # used to extract specific columns from a tab-delimited file 
+
+sort          # used to sort a specific column within a tab-delimited file
+</code></pre></div>
+<hr>
+<hr>
+<h2 id="citation">Citation</h2>
+<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
+<ul>
+<li>
+<p><em>The materials used in this lesson were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
+All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></p>
+</li>
+<li>
+<p><em>Adapted from the lesson by Tracy Teal. Contributors: Paul Wilson, Milad Fatenejad, Sasha Wood, and Radhika Khetani for Software Carpentry (http://software-carpentry.org/)</em></p>
+</li>
+<li>
+<p><em>Original Authors: Sheldon  McKay, Bob Freeman, Mary Piper, Radhika Khetani, Meeta Mistry, Jihe Liu, Will Gammerdinger</em></p>
+</li>
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
