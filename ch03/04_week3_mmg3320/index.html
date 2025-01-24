@@ -1582,11 +1582,11 @@
 <hr>
 <h2 id="recap-from-last-week">Recap from last week</h2>
 <ul>
-<li><code>*</code> matches zero or more characters in a filename, so *.txt matches ALL files ending in .txt </li>
-<li>? matches a single character in a filename, so ?.txt matches a.txt or b.txt but not ab.txt </li>
+<li><code>*</code> matches zero or more characters in a filename</li>
+<li><code>?</code> matches a single character in a filename </li>
 <li>Use of the <button>control</button> key may be described in many ways, including Ctrl-X, Control-X, or ^X. </li>
 <li>The shell does not have a trash bin, once something is deleted it is really gone. </li>
-<li>Most file names are <code>something.extension</code>. The extension is not required, but does help bioinformatic programs find required files (ex. FASTQC)</li>
+<li>Most file names are <strong>something.extension</strong>. The extension is not required, but does help bioinformatic programs find required files for downstream processing. </li>
 <li>Depending on the type of work you do, you may need a more powerful text editor than Nano. </li>
 </ul>
 <hr>
@@ -1597,13 +1597,13 @@
 </div>
 <hr>
 <h2 id="searching-files-with-grep-command">Searching files with <code>grep</code> command</h2>
-<p>In the same way that many of us now use ‘Google’ as a verb meaning ‘to find’, UNIX programmers often use the word ‘grep’. </p>
+<p>In the same way that many of us now use ‘Google’ as a verb meaning ‘to find’, UNIX programmers often use the word <code>grep</code>. </p>
 <ul>
 <li>
-<p>‘grep’ is a contraction of ‘<strong>g</strong>lobal/<strong>r</strong>egular <strong>e</strong>xpression/<strong>p</strong>rint’, a common sequence of operations in early Unix text editors. It is also the name of a very useful command-line program.</p>
+<p><code>grep</code> is a contraction of ‘<strong>g</strong>lobal/<strong>r</strong>egular <strong>e</strong>xpression/<strong>p</strong>rint’, a common sequence of operations in early UNIX text editors. It is also the name of a very useful command-line program.</p>
 </li>
 <li>
-<p>‘grep’ allows you to search plain-text files without opening them. </p>
+<p><code>grep</code> allows you to search plain-text files without opening them. </p>
 </li>
 </ul>
 <p>The syntax for <code>grep</code> is as follows: </p>
@@ -1659,13 +1659,13 @@ Software<span class="w"> </span>is<span class="w"> </span>like<span class="w"> <
 </div>
 <hr>
 <h3 id="class-exercise-discussion">Class Exercise Discussion</h3>
-<p>In the above exercise, <em>not</em> was the pattern we were searching for. The <code>grep</code> command searches through the file, and then looks for matches to the pattern specified. To use it you typed <code>grep</code>, then the pattern you were searching for and finally the name of the file (or files) you were searching in. </p>
+<p>In the above exercise, <em>not</em> was the first pattern we were searching for. The <code>grep</code> command searches through the file, and then looks for matches to the pattern specified. To use it you typed <code>grep</code>, then the pattern you were searching for and finally the name of the file (or files) you were searching in. </p>
 <ul>
 <li>
-<p>You also would have noticed that by default, <code>grep</code> searches for a pattern in a <em>case-sensitive way</em>. </p>
+<p>You also would have noticed that by default <code>grep</code> searches for a pattern in a <em>case-sensitive way</em>. </p>
 </li>
 <li>
-<p>Finally, you would have saw upon completing #6, the search pattern we have selected does not have to form a <em>complete word or phrase</em>. </p>
+<p>Finally, you would have saw upon completing #6, the search pattern we have selected does not have to form a <em>complete word or phrase</em> as the following where two results: </p>
 <ul>
 <li>
 <p>The Tao</p>
@@ -1676,29 +1676,27 @@ Software<span class="w"> </span>is<span class="w"> </span>like<span class="w"> <
 </ul>
 </li>
 </ul>
-<p>To restrict matches to lines containing the word <strong>The</strong> on its own, we can give <code>grep</code> the <code>-w</code> option. This will limit matches to word boundaries.</p>
 <hr>
 <h3 id="other-useful-options-for-grep">Other useful options for grep</h3>
-<p>To limit the matches use: </p>
-<div class="highlight"><pre><span></span><code><span class="sb">`</span>grep<span class="w"> </span>-w<span class="sb">`</span>
+<p>To restrict matches to lines containing the word <strong>The</strong> on its own, we can give <code>grep</code> the <code>-w</code> option. This will limit matches to word boundaries.</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-w
 </code></pre></div>
-<p>Sometimes we don’t want to search for a single word, but for a phrase. We can also do this with <code>grep</code> by putting the phrase in quotes.</p>
-<p></p><div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"is not"</span><span class="w"> </span>haiku.txt
+<p>Sometimes we don’t want to search for a single word, but for a phrase. We can also do this by putting the phrase in quotes: </p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"is not"</span><span class="w"> </span>haiku.txt
 </code></pre></div>
-We’ve now seen that you don’t have to have quotes around single words, but it is useful to use quotes when searching for multiple words. 
-<p>Another useful option is <code>-n</code>, which numbers the lines that match</p>
+<p>Another useful option is <code>-n</code> which numbers the lines that match:</p>
 <p></p><div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"it"</span><span class="w"> </span>haiku.txt
 </code></pre></div>
-Here, we can see that lines 5, 9, and 10 contain the letters ‘it’.
+Here, we can see that lines 5, 9, and 10 contain the letters ‘it’. 
 <p><code>grep</code> has lots of other options. To find out what they are, we can type: </p>
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span>--help
 </code></pre></div>
 <hr>
 <h2 id="searching-within-fastq-files">Searching within FASTQ files</h2>
-<p>The next-generation sequencing technologies all rely on a complex interplay of chemistry, hardware and optical sensors. Adding to this complexity is software to analyze the sensor data to predict the individual bases. This last step in the process is referred to as <strong>base-calling</strong>.</p>
+<p>The Next-Generation Sequencing (NGS) technologies all rely on a complex interplay of chemistry, hardware and optical sensors. Adding to this complexity is software to analyze the sensor data to predict the individual bases. This last step in the process is referred to as <strong>base-calling</strong>. Below is figure from <a href="https://www.cancerbiomed.org/content/13/1/3">Cancer Biology &amp; Medicine</a> which shows the importance of base-calling in variant analysis. Base-calling algorithms process the raw signal to decode the sequence of bases within strands of DNA or RNA into data stored in BAM or FASTQ files. </p>
 <figure>
   <img alt="Basecalling" src="../../img/basecalling.jpg" width="600">
-  <figcaption>Basecalling algorithms process the raw signal to decode the sequence of bases within strands of DNA or RNA into data stored in BAM or FASTQ files. </figcaption>
+  <figcaption>Summary of technical validity and clinical utility assessment for cancer NGS. (A) NGS basecalling, wherein a DNA sequence and corresponding confidence score is generated from a nuclear genomic DNA template. (B) The next step, which compares all available data to the reference and each other. Variant calling is then performed (underlined bases in panel B), comparing base calls across many reads; many false positive variant calls (x'ed out bases) can be filtered, while true positives (circled bases) should generate a strong signal. (C) Multiple quality metrics are generated during variant calling, which can be compared to cutoffs established during assay validation (dashed lines). (D) Detailed review of available databases and literature (left side) and comparison to clinical history and tumor pathology (right side) to assess clinical utility. VAF, variant allele frequency; QUAL, variant call quality; COSMIC, Catalogue of Somatic Mutations in Cancer; TKIs, tyrosine kinase inhibitor therapies. </figcaption>
 </figure>
 <p>FASTQ files contain the sequencing reads (nucleotide sequences) output from a high throughput sequencer. Each sequencing read in a FASTQ file is associated with four lines, with the first line (header line) always starting with an <code>@</code> symbol. A whole FASTQ record for a single read should appear similar to the following:</p>
 <pre><code>@HWI-ST330:304:H045HADXX:1:1101:1111:61397
@@ -1739,7 +1737,7 @@ B?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF;FCGGI#####################################
 </tbody>
 </table>
 </blockquote>
-<p>So what happens if the sequencer is unable to make a decision on which base it is? In this case, the sequencer will designate an <code>N</code>. </p>
+<p>So what happens if the sequencer is unable to make a decision on which base (A, Gis the correct one? In this case, the sequencer will designate an <code>N</code>. </p>
 <hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
