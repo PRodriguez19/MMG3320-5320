@@ -1002,22 +1002,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#searching-within-fastq-files" class="md-nav__link">
+  <a href="#searching-within-fastq-files-with-grep" class="md-nav__link">
     <span class="md-ellipsis">
-      Searching within FASTQ files
+      Searching within FASTQ files with grep
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-about-searching-text-files-with-grep" class="md-nav__link">
-    <span class="md-ellipsis">
-      More about searching text files with grep
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="More about searching text files with grep">
+    <nav class="md-nav" aria-label="Searching within FASTQ files with grep">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1404,22 +1395,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#searching-within-fastq-files" class="md-nav__link">
+  <a href="#searching-within-fastq-files-with-grep" class="md-nav__link">
     <span class="md-ellipsis">
-      Searching within FASTQ files
+      Searching within FASTQ files with grep
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-about-searching-text-files-with-grep" class="md-nav__link">
-    <span class="md-ellipsis">
-      More about searching text files with grep
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="More about searching text files with grep">
+    <nav class="md-nav" aria-label="Searching within FASTQ files with grep">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1692,7 +1674,7 @@ Here, we can see that lines 5, 9, and 10 contain the letters ‘it’.
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span>--help
 </code></pre></div>
 <hr>
-<h2 id="searching-within-fastq-files">Searching within FASTQ files</h2>
+<h2 id="searching-within-fastq-files-with-grep">Searching within FASTQ files with <code>grep</code></h2>
 <p>The Next-Generation Sequencing (NGS) technologies all rely on a complex interplay of chemistry, hardware and optical sensors. Adding to this complexity is software to analyze the sensor data to predict the individual bases. This last step in the process is referred to as <strong>base-calling</strong>. Below is figure from <a href="https://www.cancerbiomed.org/content/13/1/3">Cancer Biology &amp; Medicine</a> which shows the importance of base-calling in variant analysis. Base-calling algorithms process the raw signal to decode the sequence of bases within strands of DNA or RNA into data stored in BAM or FASTQ files. </p>
 <figure>
   <img alt="Basecalling" src="../../img/basecalling.jpg" width="600">
@@ -1737,7 +1719,7 @@ B?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF;FCGGI#####################################
 </tbody>
 </table>
 </blockquote>
-<p>So what happens if the sequencer is unable to make a decision on which base (A, Gis the correct one? In this case, the sequencer will designate an <code>N</code>. </p>
+<p>So what happens if the sequencer is unable to make a decision on which base (A, G, C, T) is the correct one? In this case, the sequencer will designate an <strong>N</strong>. </p>
 <hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
@@ -1760,33 +1742,6 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 ?@@DDDDDB1@?:E?<span class="p">;</span>3A:1?9?E9?&lt;?DGCDGBBDBF@<span class="p">;</span>8DF#########################################################
 </code></pre></div>
 <hr>
-<div class="admonition example">
-<p class="admonition-title">Class Exercise</p>
-<ol>
-<li>
-<p>Using <code>grep</code> search for the sequence CTCAATGAGCCA in <code>Mov10_oe_1.subset.fq</code>. How many sequences do you find? Use the <code>-n</code> argument to distinguish the number of reads that contain this sequence. </p>
-</li>
-<li>
-<p>How can you modify the command you typed above so that your search also returns the  of the sequence? Remember the name of sequence is Line 1 of the FASTQ only. </p>
-</li>
-<li>
-<p>If you want to search for that sequence in <strong>all</strong> Mov10 replicate fastq files, what command would you use?</p>
-<p><details>
-    <summary><b><i>Answers</i></b></summary>
-    <p><i>Question 1</i><br>
-    <code>grep -n CTCAATGAGCCA Mov10_oe_1.subset.fq</code><br>
-    The output returns 5 sequences.</p>
-    <p><i>Question 2</i><br>
-        <code>grep -B 1 CTCAATGAGCCA Mov10_oe_1.subset.fq</code></p>
-    <p><i>Question 3</i><br>
-    <code>grep CTCAATGAGCCA Mov10*</code><br>
-    The output returns 5 sequences for Mov10_oe_1 and 3 sequences for Mov10_oe_2.</p>
-</details></p>
-</li>
-</ol>
-</div>
-<hr>
-<h2 id="more-about-searching-text-files-with-grep">More about searching text files with <code>grep</code></h2>
 <h3 id="group-separators-and-how-to-remove-them">Group separators (<code>--</code>), and how to remove them</h3>
 <p>You will notice that when we use the <code>-B</code> and/or <code>-A</code> arguments with the <code>grep</code> command, the output has some additional lines with dashes (<code>--</code>), these dashes work to separate your returned "groups" of lines and are referred to as "group separators". This might be problematic if you are trying to maintain the FASTQ file structure or if you simply do not want them in your output. Using the argument <code>--no-group-separator</code> with <code>grep</code> will disable this behavior:</p>
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>--no-group-separator<span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq
@@ -1817,15 +1772,42 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 </code></pre></div>
 <p>A small thing you should note is that when using the <code>-n</code> option, lines that have a <code>:</code> after the line number correspond to the lines with the match (e.g <code>861214:CACTTGTAAGGGCAGGCCCCCTTCACCCTCCCGCTCCTGGGGGANNNNNNNNNNANNN...</code>), while lines with a <code>-</code> after the line number are the surrounding lines retrieved when using the <code>-A</code> and/or <code>-B</code> options (e.g. <code>861213-@HWI-ST330:304:H045HADXX:1:1101:1111:61397</code>).</p>
 <hr>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
+<ol>
+<li>
+<p>Using <code>grep</code> search for the sequence CTCAATGAGCCA in <code>Mov10_oe_1.subset.fq</code>. How many sequences do you find? Use the <code>-n</code> argument to distinguish the number of reads that contain this sequence. </p>
+</li>
+<li>
+<p>How can you modify the command you typed above so that your search also returns the name of the sequence?</p>
+</li>
+<li>
+<p>If you want to search for the above sequence in <strong>all</strong> Mov10 replicate fastq files, what command would you use?</p>
+<p><details>
+    <summary><b><i>Answers</i></b></summary>
+    <p><i>Question 1</i><br>
+    <code>grep -n CTCAATGAGCCA Mov10_oe_1.subset.fq</code><br>
+    The output returns 5 sequences.</p>
+    <p><i>Question 2</i><br>
+        <code>grep -B 1 CTCAATGAGCCA Mov10_oe_1.subset.fq</code></p>
+    <p><i>Question 3</i><br>
+    <code>grep CTCAATGAGCCA Mov10*</code><br>
+    The output returns 5 sequences for Mov10_oe_1 and 3 sequences for Mov10_oe_2.</p>
+</details></p>
+</li>
+</ol>
+</div>
+<hr>
 <h2 id="redirection">Redirection</h2>
-<p>When we use <code>grep</code>, the matching lines print to the Terminal (also called Standard Output or "stdout"). If the result of the <code>grep</code> search is a few lines, we can view them easily, but if the output is very long, the lines will just keep printing and we won't be able to see anything except the last few lines. You have experienced this when you searched for the pattern <code>NNNNNNNNNN</code>. So how can we capture them instead and create a new document? </p>
-<p>We can do this with "redirection". The idea is that we're redirecting the output from the Terminal to something else. In this case, we want to save it to a file so that we can look at it later.</p>
+<p>When we use <code>grep</code>, the matching lines are displayed in the Terminal (also called <strong>Standard Output</strong> or stdout). If the result of the <code>grep</code> search contains only a few lines, we can easily read them. However, if the output is very long, the lines will keep scrolling, and we’ll only be able to see the last few lines on the screen. You might have experienced this when searching for the pattern <code>NNNNNNNNNN</code>.</p>
+<p>So, how can we capture this output and save it for later review instead of letting it scroll past in the Terminal?</p>
+<p>We can achieve this using redirection. Redirection allows us to send the output from the Terminal to another destination. In this case, we can save the output to a file, which lets us examine it at our convenience.</p>
 <figure>
-  <img alt="home" src="../../img/redirect.png" width="500">
+  <img alt="home" src="../../img/redirect.png" width="600">
 </figure>
 <h3 id="redirecting-with-aka-greater-than-sign">Redirecting with <code>&gt;</code> AKA "Greater-than sign"</h3>
-<p><strong>The redirection command for writing something to file is <code>&gt;</code>.</strong></p>
-<p>Let's try it out and put all the sequences that contain 'NNNNNNNNNN' from the <code>Mov10_oe_1.subset.fq</code> into another file called <code>bad_reads.txt</code>.</p>
+<p><strong>The redirection command for writing something into a file is <code>&gt;</code>.</strong></p>
+<p>Let's put all the sequences that contain <code>NNNNNNNNNN</code> from the <code>Mov10_oe_1.subset.fq</code> into another file called <code>bad_reads.txt</code>.</p>
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>&gt;<span class="w"> </span>bad_reads.txt
 </code></pre></div>
 <p>Now you should have a new file called <code>bad_reads.txt</code> in the raw_fastq directory. </p>
@@ -1838,9 +1820,8 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 <hr>
 <h3 id="redirecting-and-appending-with">Redirecting (and appending) with <code>&gt;&gt;</code></h3>
 <p><strong>The redirection command for appending something to an existing file is <code>&gt;&gt;</code>.</strong></p>
-<p>If we use <code>&gt;&gt;</code>, it will <strong>append</strong> to the existing content in a file rather than overwrite it. This can be useful for saving more than one search. For example, the following command will append the bad reads from <strong>Mov10_oe_2</strong> to the bad_reads.txt file that we just generated.</p>
+<p>If we use <code>&gt;&gt;</code> it will <strong>append</strong> to the existing content in a file rather than overwrite it. This can be useful for saving more than one search. For example, the following command will append the bad reads from <strong>Mov10_oe_2</strong> to the <code>bad_reads.txt</code> file that we just generated.</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_2.subset.fq<span class="w"> </span>&gt;&gt;<span class="w"> </span>bad_reads.txt
-
 <span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>
 </code></pre></div>
 <p>Did the size of the <code>bad_reads.txt</code> file change? How do we explain this? </p>
@@ -1849,7 +1830,7 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 </figure>
 <hr>
 <h2 id="passing-output-to-another-command-with-or-pipe">Passing output to another command with <code>|</code> (or pipe)</h2>
-<p>The vertical bar or <strong>pipe key</strong> <button>|</button> is very likely not something you use very often. It is on the same key as the back slash (), right above the (Enter/Return)key. </p>
+<p>The vertical bar or <strong>pipe key</strong> <button>|</button> is very likely not something you use very often. It is on the same key as the back slash, right above the (Enter/Return)key. </p>
 <p>What <code>|</code> does is take the output from one command and runs it through the command specified after it. </p>
 <p>First, to really see the benefit let's type the following command again: </p>
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-B<span class="w"> </span><span class="m">1</span><span class="w"> </span>-A<span class="w"> </span><span class="m">2</span><span class="w"> </span>NNNNNNNNNN<span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>
@@ -1879,13 +1860,13 @@ There are a total of 148 lines that are shown as the output.
 <li>You can string along as many commands together as you like</li>
 </ul>
 <figure>
-  <img alt="home" src="../../img/commands-without-pipes.png" width="500">
+  <img alt="home" src="../../img/commands-without-pipes.png" width="600">
 </figure>
 <p>The philosophy behind the three redirection operators (<code>&gt;</code>, <code>&gt;&gt;</code>, <code>|</code>) you have learned so far is that none of them by themselves do a lot. BUT when you start chaining them together, you can do some really powerful things really efficiently. </p>
 <p><strong>To be able to use the shell effectively, becoming proficient in the use of the pipe and redirection operators is essential.</strong></p>
 <hr>
 <h2 id="practice-with-searching-and-pipingredirection">Practice with searching and piping/redirection</h2>
-<p>Let's use the new commands in our toolkit and a few new ones to examine the "gene annotation" file, <strong>chr1-hg19_genes.gtf</strong>. We will be using this file to find the genomic coordinates of all known exons on chromosome 1. This file is located in the following directory: </p>
+<p>Let's use the new commands in our toolkit and a few new ones to examine the gene annotation file <strong>chr1-hg19_genes.gtf</strong>. We will be using this file to find the genomic coordinates of all known exons on chromosome 1. This file is located in the following directory: </p>
 <div class="highlight"><pre><span></span><code>~/unix_lesson/reference_data/
 </code></pre></div>
 <h3 id="introducing-the-gtf-file-format">Introducing the GTF file format</h3>
@@ -1977,7 +1958,7 @@ How can we output this to a different document?
 <ul>
 <li><strong><code>sort</code> is a command used to sort the contents of a file in a particular order.</strong> It has arguments that let you pick which column to sort by (<code>-k</code>), what kind of sorting you want to do (numeric <code>n</code>) and also if the result of the sorting should only return unique (<code>-u</code>) values. These are just 2 of the many features of the sort command. </li>
 </ul>
-<p>Let's run the following command first: </p>
+<p>Let's run the following command first before using <code>sort</code>: </p>
 <p></p><div class="highlight"><pre><span></span><code>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </code></pre></div>
 <em>How many lines are returned to you?</em>
@@ -1986,7 +1967,7 @@ How can we output this to a different document?
     <p>Your command should have returned 76,767 lines.</p>
 </details>
 
-<p>Pipe the output to less - notice all the duplicates! </p>
+<p>Pipe the output to <code>less</code> - notice all the duplicates! </p>
 <div class="highlight"><pre><span></span><code>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
 </code></pre></div>
 <p>Now apply the <code>sort -u</code> command before counting the lines.</p>
