@@ -47,6 +47,7 @@ nav:
       - Week 3:
           - Overview: ch03/index.md
           - Searching and Redirection (L4): ch03/04_week3_mmg3320.md
+          - Intro to Shell Scripting (L5): ch03/05_week3_mmg3320.md
   - Assignments:
       - Week 1 (L2): assignments/week1_assignment.md
       - Week 2 (L3): assignments/week2_assignment.md
