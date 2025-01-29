@@ -9,53 +9,39 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
 + Today's date
 + Homework Assignment #3
 
-**Assignment**  
-Now that we know what type of information is inside the GTF file, let's use the commands we have learned so far to answer a simple question about our data: **how many unique exons are present on chromosome 1 using `chr1-hg19_genes.gtf`?**
+## Part A: Find the number of unique exons in Chromosome 1 of Humans (25 points)
 
-To determine the number of unique exons on chromosome 1 you are going to perform a series of steps as shown below. For this homework, you need to figure out the command line for each step. 
+**We will be using `chr1-hg19_genes.gtf`?**
+ 
+To determine the number of unique exons in chromosome 1 you will write and perform a series of steps that will: 
 	
-1. Extract only the genomic coordinates of exon features
-2. Subset dataset to only keep genomic coordinates
+1. Extract only exon features from the GTF file
+2. Subset dataset to keep only genomic coordinates
 3. Remove duplicate exons
-4. Count the total number of exons
+4. Redirect and check 
 
-Your end goal is to have a single line of code, wherein you have strung together multiple commands using the pipe operator. But, I recommend that you do it in a stepwise manner as detailed below.
+Your end goal is to have a single line of code, wherein you have strung together multiple commands using the pipe operator. These steps are detailed a little more below:
 
-#### 1. Extract only the genomic coordinates of exon features
+#### 1. Extract only exon features from GTF file
 
-We only want the exons (not CDS or start_codon features), so let's use `grep` to search for the word "exon". You should do a sanity check on the first few lines of the output of `grep` by piping the result to the `head` command for the first 10 lines. 
-
-***Report the entire command you have at this stage*** in your homework as an answer to question #1. 
+We only want the exons (not CDS or start_codon features), so let's use the command to search for the word "exon". You can perform a "sanity check" first by piping the result to the `head` command for the first 10 lines. 
 
 #### 2. Subset the extracted information from step 1 to only keep genomic coordinates
 
-We will define the uniqueness of an exon by its genomic coordinates, both start and end, and strand (positive or negative). Therefore, from the step 1 output, we would like to keep 4 columns (chr, start, stop, and strand). 
-
-Go ahead and extract those columns from the output of step 1. 
-
-***Report the entire command you have at this stage*** in your homework as an answer to question #2. 
+We will define the uniqueness of an exon by its genomic coordinates (start and end position) and strand (positive or negative). Therefore, we would like to keep 4 columns (chr, start, stop, and strand). 
 
 #### 3. Remove duplicate exons
 
-Now, we need to remove those exons that show up multiple times for different transcripts. We can use the `sort` command with the `-u` option. 
+Now, we need to remove exons that show up multiple times for different transcripts.
 
-***Report the entire command you have at this stage*** in your homework as an answer to question #3. 
+#### 4. Redirect and check 
+Finally, redirect the output to a new file and call it `chr1-hg19_exons.txt`. Do a final check on the number of lines and file size for this newly created file. 
 
-Do you see a change in how the sorting has changed? Check with `less`. 
+***Report the entire command you have at this stage, the number of lines output, and the file size*** in your homework as an answer for Part 1. 
 
-We will use step 4 to check if `sort -u` worked.
+## Part B: Jupiter Notebook Class Exercise #6 (25 points)
+**Directions for Part 2:** Submit two screenshots. 
 
-#### 4. Count the total number of exons
++ One of your final script (output from #11). 
 
-First, check how many lines we would have without using `sort -u` by piping the output to `wc -l`.
-
-***Report the entire command you have at this stage and the number of lines output*** in your homework as an answer to question #4a. 
-
-Now, to count how many unique exons are on chromosome 1, we will add back the `sort -u` and pipe the output to `wc -l`. Do you observe a difference in number of lines?
-
-***Report the entire command you have at this stage and the number of lines output*** in your homework as an answer to question #4b.
-
-#### 5. Redirect output into a new file 
-Finally, redirect the output of step 4b to a new file and call it chr1-hg19_exons.txt. After outputing, do a final check on the number of lines and file size for this newly created file. 
-
-***Report the entire command you have at this stage, the number of lines output, and the file size*** in your homework as an answer to question #5.
++ The second screenshot will be of your terminal screen after running your script (output from #12).  
