@@ -1970,14 +1970,14 @@ Press Launch</p>
 </li>
 <li>
 <p>Copy and paste the line below as line 1. </p>
-<div class="highlight"><pre><span></span><code><span class="c1">## USAGE: Provide the relative path to the directory you want information on</span>
+<div class="highlight"><pre><span></span><code><span class="c1">## USAGE: Provide a full path to the directory you want information on</span>
 </code></pre></div>
 </li>
 <li>
 <p>Have your script create a variable called <code>dirPath</code>. Assign this variable as the full path to <code>raw_fastq\</code>. This will be line 2. </p>
 </li>
 <li>
-<p>Skip a line and then copy and paste the line below to line 4. Yes, it is okay to skip a line to increase read-ability! </p>
+<p>Skip a line and then copy and paste the line below to line 4. <em>Yes, it is okay to skip a line to increase read-ability!</em> </p>
 <div class="highlight"><pre><span></span><code># Get only the directory name
 </code></pre></div>
 </li>
@@ -1991,10 +1991,10 @@ Press Launch</p>
 </code></pre></div>
 </li>
 <li>
-<p>Write a command to change directories into <code>dirPath</code>. <em>Make use of the <code>$</code> to retrieve the value stored inside the variable!</em>. This will be line 8. </p>
+<p>Write a command to change directories into <code>dirPath</code>. This will be line 8. </p>
 </li>
 <li>
-<p>Copy and paste the lines below to line 10-11. Modify to make sure contents are human-readable. </p>
+<p>Copy and paste the lines below to line 10-11. Modify to make sure the sizes listed are human-readable. </p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"These are the contents of"</span><span class="w"> </span><span class="nv">$dirName</span><span class="w"> </span>
 ls<span class="w"> </span>-l
 </code></pre></div>
