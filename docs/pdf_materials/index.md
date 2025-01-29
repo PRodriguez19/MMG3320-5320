@@ -10,4 +10,4 @@ Each tutorial will also be made available as PDF printout document. These lesson
 
 [Searching & Navigation (L4)](04_week3_mmg3320-printout.pdf)
 
-[Intro to Shell Scripting (L5)](04_week3_mmg3320-printout.pdf)
+[Intro to Shell Scripting (L5)](05_week3_mmg3320-printout.pdf)

@@ -10,3 +10,4 @@ Slides will be made available as a PDF printout document. These lessons can be r
 
 [Searching & Redirection (L4)](04_week3_mmg3320-slides.pdf)
 
+[Intro to Shell Scripting (L5)](05_week3_mmg3320-slides.pdf)
