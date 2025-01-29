@@ -1960,18 +1960,21 @@ Press Launch</p>
 <p>This is a self-paced assignment. This is also the final assignment for today. If you would like to do this from home feel free! You will need to submit (2) screenshots with your homework for this week. </p>
 <ol>
 <li>
-<p>To get started move into the <code>other</code> directory. This system is user-friendly. You should be able to click from <code>unit1_unix</code> into <code>other</code> easily. </p>
+<p>To get started move into the <code>other</code> directory. Jupyter Notebook is user-friendly. You should be able to click from <code>unit1_unix</code> into <code>other</code> easily. </p>
 </li>
 <li>
 <p>Press New (Right-side) -&gt; New file -&gt; and create a script called <code>directory_info.sh</code>. </p>
-<p>In this script, we will be adding <strong>comments by using the hashtag symbol <code>#</code></strong>. Lines in your script that begin with <code>#</code> will <strong>not</strong> be interpreted as code by command-line. Comments are crucial for proper documentation of your scripts. This will allow your future self to know what each line of code is doing!</p>
-<p>We will begin with a first comment describing the <strong>usage of this script</strong>. This lets anyone who is using the script know what it does and what they need to provide (if anything). </p>
+<ul>
+<li>In this script, we will be adding <strong>comments by using the hashtag symbol <code>#</code></strong>. Lines in your script that begin with <code>#</code> will <strong>not</strong> be interpreted as code by command-line. Comments are crucial for proper documentation of your scripts. This will allow your future self to know what each line of code is doing!</li>
+</ul>
 </li>
 <li>
 <p>Copy and paste the line below as line 1. </p>
-<p></p><div class="highlight"><pre><span></span><code><span class="c1">## USAGE: Provide the relative path to the directory you want information on</span>
+<div class="highlight"><pre><span></span><code><span class="c1">## USAGE: Provide the relative path to the directory you want information on</span>
 </code></pre></div>
-4. Have your script create a variable called <code>dirPath</code>. Assign this variable as the relative path to <code>raw_fastq</code> <strong>Hint: You can find the path within this lesson!</strong>. This will be line 2. 
+</li>
+<li>
+<p>Have your script create a variable called <code>dirPath</code>. Assign this variable as the full path to <code>raw_fastq\</code>. This will be line 2. </p>
 </li>
 <li>
 <p>Skip a line and then copy and paste the line below to line 4. Yes, it is okay to skip a line to increase read-ability! </p>
@@ -1979,11 +1982,9 @@ Press Launch</p>
 </code></pre></div>
 </li>
 <li>
-<p>Next have your script create another variable called <code>dirName</code>. Use this variable to store the directory name using the <code>basename</code> command and extract it from <code>dirPath</code>. <em>Make use of the <code>$</code> to retrieve the value stored inside the variable!</em> This will be line 5. </p>
-</li>
-</ol>
+<p>Next have your script create another variable called <code>dirName</code>. Use this variable to store the directory name extracting it from <code>dirPath</code>. <em>Make use of the <code>$</code> to retrieve the value stored inside the variable!</em> This will be line 5. </p>
 <p><strong>The next few tasks will require simple commands for changing directories and listing contents of the <code>raw_fastq</code> directory.</strong></p>
-<ol>
+</li>
 <li>
 <p>Copy and paste the line below to line 7. </p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"Reporting on the directory"</span><span class="w"> </span><span class="nv">$dirName</span><span class="w"> </span><span class="s2">"..."</span>
