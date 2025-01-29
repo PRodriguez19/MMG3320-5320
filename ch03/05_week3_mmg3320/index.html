@@ -1035,17 +1035,17 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-script" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#writing-a-simple-shell-script" class="md-nav__link">
     <span class="md-ellipsis">
-      A simple script
+      Writing a simple shell script
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1455,17 +1455,17 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-script" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#writing-a-simple-shell-script" class="md-nav__link">
     <span class="md-ellipsis">
-      A simple script
+      Writing a simple shell script
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1659,7 +1659,7 @@
 <hr>
 <h2 id="sort">Sort</h2>
 <ul>
-<li><strong><code>sort</code> is a command is used to sort lines in text files in a particular order.</strong> The sort command comes with many options, some of them are further explained below: </li>
+<li><strong><code>sort</code> is a command used to sort lines in text files in a particular order.</strong> The sort command comes with many options, some of them are further explained below: </li>
 </ul>
 <table>
 <thead>
@@ -1690,14 +1690,19 @@
 <hr>
 <h2 id="bed-file-structure">BED File Structure</h2>
 <p>A BED file is a widely used format in genomics to store genomics regions and associated annotations. It is primarily used for specifying intervals or features on a reference genome such as genes, exons, or regulatory elements. A BED file consists of at least three required columns but can include additional optional columns. </p>
-<p>Required Columns:
-1. Chromosome: The name of the chromosome (<code>chr1</code>)
-2. Start: The start position of a feature 
-3. End: The end position of a feature</p>
+<p>Required Columns:</p>
+<ol>
+<li>Chromosome: The name of the chromosome (<code>chr1</code>)</li>
+<li>Start: The start position of a feature </li>
+<li>End: The end position of a feature</li>
+</ol>
+<figure>
+  <img alt="Bed File" src="../../img/bed.png" width="400">
+</figure>
 <hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #2</p>
-<p><strong>Dr.Patel:</strong> "Emma I noticed that the file <code>coordinates_PLEKHN1.txt</code> contained a number of duplicates. Can you please modify this file and save it as a BED file so I can upload it to UCSC Genome Browser. The file extension is <code>.bed</code>. Thanks." </p>
+<p><strong>Dr.Patel: "Emma I noticed that the file <code>coordinates_PLEKHN1.txt</code> contained a number of duplicates. Can you please modify this file and save it as a BED file so I can upload it to UCSC Genome Browser. The file extension is <code>.bed</code>. Thanks."</strong></p>
 </div>
 <hr>
 <h2 id="shell-scripts">Shell scripts</h2>
@@ -1711,62 +1716,58 @@
 <li>for automating the installation process for new software or for new software updates across the organization</li>
 <li>for scheduling data backup process</li>
 </ul>
-<h2 id="a-simple-script">A simple script</h2>
+<h3 id="writing-a-simple-shell-script">Writing a simple shell script</h3>
 <p>We are ready to see what makes the shell such a powerful programming environment. To create our first script, we are going to take some of the commands we have run previously and save them into a file so that we can <strong>re-run all those operations</strong> again later, by typing just <strong>one single command</strong>. For historical reasons, a bunch of commands saved in a file is referred to as shell script, but make no mistake, this is actually a small program! </p>
 <p>Interestingly, when working on the command line you can give files any extension (.txt, .tsv, .csv, etc.). Similarly, for a shell script you don't need a specific extension. However, it is <strong>best practice to give shell scripts the extension <code>.sh</code></strong> (bash shell script file). </p>
 <figure>
-  <img alt="home" src="../../img/SH.jpg" width="300">
+  <img alt="SH extension" src="../../img/SH.jpg" width="300">
 </figure>
-<p>Navigate into the <code>raw_fastq</code> directory and create a new file using Nano. </p>
-<p>Call the script <code>practice.sh</code>: </p>
 <hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #3</p>
-<p>You will have ~5-10 minutes to complete.<br>
-<strong>NOTE: It is never my intention to rush you. If you do find you need more time to participate, please let me know.</strong></p>
+<p><strong>You will have ~5 minutes to complete. NOTE: It is never my intention to rush you. If you do find you need more time to participate, please let me know.</strong></p>
 <p>Objective: Create a script that contains 3 lines: </p>
-<ul>
+<ol>
 <li>
-<p>Navigate into the <code>raw_fastq</code> directory and create a new file using Nano. </p>
+<p>Navigate into the <code>raw_fastq</code> directory and create a new file, call it <code>practice.sh</code>. </p>
 </li>
 <li>
-<p>Call the script <code>practice.sh</code></p>
-</li>
-<li>
-<p>First line: You will write this line on your own. This line should: </p>
+<p>Write the First line. This line should: </p>
 <ul>
-<li>"Grab" all reads from <code>Mov10_oe_1.subset.fq</code> that contain 10 consecutive N's </li>
+<li>Grab all reads from <code>Mov10_oe_1.subset.fq</code> that contain 10 consecutive N's </li>
 <li>Be sure to use the appropriate arguments to output all (4) lines contained within a FASTQ read </li>
 <li>Then redirect the output to a new file called <code>redirect.txt</code> </li>
 </ul>
 </li>
 <li>
-<p>Second line: You will copy and paste the <code>echo</code> line below: </p>
-<ul>
-<li>
-<p>You are adding some verbosity to your script by using the <code>echo</code> command. The <code>echo</code> command is used to display a line of text that is passed in as an argument. This is a bash command that is used to output status to the screen or file. </p>
-</li>
-<li>
-<p>Add the following line: 
-</p><div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"The word count for redirect.txt is:"</span><span class="w"> </span>
+<p>Copy and paste the <code>echo</code> line below: </p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"The number of lines in redirect.txt is:"</span><span class="w"> </span>
 </code></pre></div>
-</li>
+<ul>
+<li>You are adding some verbosity to your script by using the <code>echo</code> command. The <code>echo</code> command is used to display a line of text that is passed in as an argument. </li>
 </ul>
 </li>
 <li>
-<p>Third line: You will write this line on your own. This line should:</p>
+<p>Write the Third line. This line should:</p>
 <ul>
-<li>Give a word count for redirect.txt </li>
+<li>Count the number of lines in redirect.txt </li>
 </ul>
 </li>
-</ul>
+</ol>
 <blockquote>
 <p>To run the shell script you can use the <code>sh</code> command, followed by the name of your script:</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code>sh<span class="w"> </span>practice.sh
 </code></pre></div>
+<ol>
+<li><em>Dr.Patel: "Emma thanks for carrying out that exercise. How many FASTQ reads in <code>Mov10_oe_1.subset.fq</code> contained consecutive N's or more?</em>
+<strong>Submit your answer in Class Participation survey.</strong></li>
+</ol>
+<p><figure markdown="span">
+  <img alt="One FASTQ Read" src="../../img/fastq_fig.jpg" width="400">
+  <figcaption> One FASTQ Read </figcaption>
+</figure></p>
 </div>
-<hr>
 <h2 id="executing-scripts">Executing Scripts</h2>
 <p>There are two main ways to execute a script: </p>
 <p><strong>1. Direct Invocation by the Shell:</strong> When you use <code>sh script-name.sh</code>, the shell (<em>i.e. way to interact with kernel</em>) reads and executes the script file. The executable permissions of the script file is not checked because we are directly passing it as an argument to the shell interpreter. </p>
