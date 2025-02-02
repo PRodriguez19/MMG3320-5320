@@ -56,7 +56,7 @@ nav:
       - Week 1 (L2): assignments/week1_assignment.md
       - Week 2 (L3): assignments/week2_assignment.md
       - Week 3 (L5): assignments/week3_assignment.md
-      - Week 4 (L6): assignments/week4_assignment.md
+      #- Week 4 (L6): assignments/week4_assignment.md
   - Final Project:
       - Overview: final-project/index.md
 

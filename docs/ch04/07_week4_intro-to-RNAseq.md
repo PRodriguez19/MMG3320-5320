@@ -304,41 +304,7 @@ If *any* of the answers is **‘No’**, then you have batches.
         ![Metadata](../img/metadata_batch.png){ width="300"}
       </figure>
 
-  
- ***
-
-!!! example "Class Exercise" 
-    Your experiment includes three treatment groups: A, B, and C. Each group has four biological replicates, for a total of 12 samples. Because RNA isolation is a lengthy process, you can only isolate RNA from two samples at a time. This means you will need to complete six batches of RNA isolation.
     
-    Instructions:
-
-    Fill in the RNA isolation column of the metadata table.
-        + Since only two samples can be processed at a time, RNA isolation will be performed in six batches.
-          + Label each sample with one of the following batch names: group1, group2, group3, group4, group5, or group6.
-          + Assign batches carefully to avoid confounding due to batch effects.
-
-    Assign researchers to each RNA isolation batch.
-        + Two researchers will perform the RNA extractions:
-            + Researcher AB
-            + Researcher CD
-        + In the researcher column, write either AB or CD for each sample, based on who performs the RNA isolation. 
-
-    | sample | treatment | sex | replicate | RNA isolation | Researcher|
-    | --- | --- | --- | --- | --- |--- |
-    | sample1 | A | F | 1 | 
-    | sample2 | A | F | 2 |
-    | sample3 | A | M | 3 |
-    | sample4 | A | M | 4 |
-    | sample5 | B | F | 1 |
-    | sample6 | B | F | 2 |
-    | sample7 | B | M | 3 |
-    | sample8 | B | M | 4 |
-    | sample9 | C | F | 1 |
-    | sample10 | C | F | 2 |
-    | sample11 | C | M | 3 |
-    | sample12 | C | M | 4 |
-
-***    
 
 
 ---
