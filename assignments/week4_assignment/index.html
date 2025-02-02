@@ -1,0 +1,1440 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="test site">
+      
+      
+        <meta name="author" content="Princess Rodriguez">
+      
+      
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/assignments/week4_assignment/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Week4 assignment - MMG:3320/5320 Advanced Bioinformatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#homework-assignment-3-50-points" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMG:3320/5320 Advanced Bioinformatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Week4 assignment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../slides/" class="md-tabs__link">
+          
+  
+  Slides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pdf_materials/" class="md-tabs__link">
+          
+  
+  Printouts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ch01/" class="md-tabs__link">
+          
+  
+  Unit 1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../week1_assignment/" class="md-tabs__link">
+          
+  
+  Assignments
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../final-project/" class="md-tabs__link">
+          
+  
+  Final Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MMG:3320/5320 Advanced Bioinformatics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MMG3320-Spring-2025-Syllabus.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MMG3320-5320-Spring-2025-Schedule.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/gitbash-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git Bash Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/quick-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Slides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Printouts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Printouts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pdf_materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unit 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unit 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Week 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/01_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing the Shell (L1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01/02_week1_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Navigating the Shell (L2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Week 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02/03_week2_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wild Cards & Nano (L3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Week 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/04_week3_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Searching and Redirection (L4)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03/05_week3_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro to Shell Scripting (L5)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Assignments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week1_assignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 1 (L2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week2_assignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 2 (L3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week3_assignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 3 (L4)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Final Project
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Final Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../final-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#homework-assignment-3-50-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homework Assignment #3 (50 points)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework Assignment #3 (50 points)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directions-for-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directions for Students:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions-submit-two-screenshots-one-of-your-final-script-output-from-14-above-the-second-screenshot-will-be-of-your-terminal-screen-after-opening-badreadscountsummary-with-nano" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions: Submit two screenshots. One of your final script (output from #14 above). The second screenshot will be of your terminal screen after opening badreads.count.summary with Nano.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions: Submit two screenshots. One of your final script (output from #14 above). The second screenshot will be of your terminal screen after opening badreads.count.summary with Nano.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-do-you-need-a-shebang-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why do you need a shebang line?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#now-you-are-ready-to-move-on-to-create-a-prefix-for-all-6-fastq-files-these-prefixes-will-be-stored-in-a-second-variable-called-samplename-to-write-this-line-of-code-successfully-remember-the-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      Now you are ready to move on to create a prefix for all (6) fastq files. These prefixes will be stored in a second variable called samplename. To write this line of code successfully, remember the following:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-command-above" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of command above
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-are-we-using-curly-brackets-with-the-variable-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why are we using curly brackets with the variable name?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-command-above_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of command above
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-we-know-if-your-script-worked" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do we know if your script worked?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Week4 assignment</h1>
+
+<div><h2 id="homework-assignment-3-50-points">Homework Assignment #3 (50 points)</h2>
+<p><strong>For this assignment you will have until 5PM on Monday, February 3rd to submit on Brightspace. Late assignments will NOT be accepted.</strong></p>
+<h3 id="directions-for-students">Directions for Students:</h3>
+<p>Open a new Microsoft Word Document and submit answers to the questions below. The first four lines of your document should contain the following:  </p>
+<ul>
+<li>Your name</li>
+<li>MMG3320/5320</li>
+<li>Today's date</li>
+<li>Homework Assignment #4</li>
+</ul>
+<h2 id="instructions-submit-two-screenshots-one-of-your-final-script-output-from-14-above-the-second-screenshot-will-be-of-your-terminal-screen-after-opening-badreadscountsummary-with-nano">Instructions: Submit two screenshots. One of your final script (output from #14 above). The second screenshot will be of your terminal screen after opening <code>badreads.count.summary</code> with Nano.</h2>
+<ol>
+<li>
+<p>Create a directory called <code>badreads</code> in <code>unit1_unix</code></p>
+</li>
+<li>
+<p>Use Jupyter Notebook to create a new script called <code>generate_bad_reads_summary.sh</code>. </p>
+</li>
+<li>
+<p>At the beginning of your script add a <strong>shebang line</strong>. </p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+</code></pre></div>
+<p>This line is the absolute path to the Bash interpreter. The shebang line ensures that the bash shell interprets the script even if it is executed using a different shell.</p>
+<blockquote>
+<h4 id="why-do-you-need-a-shebang-line">Why do you need a shebang line?</h4>
+<p>Having a shebang line is best practice. While your script will run fine without it in environments where bash is the default shell, it won't if the user of this script is using a different shell. To avoid any issues, we explicitly state that this script needs to executed using the bash shell.</p>
+</blockquote>
+</li>
+<li>
+<p>After the shebang line, skip a line and copy-and-paste the following in Line 3: </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># enter directory with raw FASTQs</span>
+</code></pre></div>
+</li>
+<li>
+<p>In line 4 write a command to change directories into the <code>raw_fastq</code> directory. </p>
+<blockquote>
+<p>Why? Because this is where the fastq files are located! </p>
+<p><em>Note the use of comments using the <code>#</code> symbol. Always practice commenting liberally when creating your scripts!</em></p>
+</blockquote>
+</li>
+<li>
+<p>Add the following comment as Line 6. </p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1"># loop over each FASTQ file</span>
+</code></pre></div>
+7. Now you are ready to begin writing the for loop. To create the first line of your for loop use the following: 
+<table>
+<thead>
+<tr>
+<th>Loop component</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><em>variable_name</em></strong></td>
+<td><code>filename</code></td>
+</tr>
+<tr>
+<td><strong>list</strong></td>
+<td><strong>all</strong> FASTQ files</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Type <code>do</code> in Line 8. </p>
+</li>
+<li>
+<p>Skip a line. On line 10 copy-and-paste the following comment. </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># create a prefix for all output files</span>
+</code></pre></div>
+<blockquote>
+<h4 id="now-you-are-ready-to-move-on-to-create-a-prefix-for-all-6-fastq-files-these-prefixes-will-be-stored-in-a-second-variable-called-samplename-to-write-this-line-of-code-successfully-remember-the-following">Now you are ready to move on to create a prefix for all (6) fastq files. These prefixes will be stored in a second variable called <code>samplename</code>. To write this line of code successfully, remember the following:</h4>
+<pre><code>variable_name=value_of_variable
+</code></pre>
+</blockquote>
+<p><strong>You can do this!</strong></p>
+</li>
+<li>
+<p>On line 11 create the variable <code>samplename</code></p>
+<ul>
+<li>The value of the variable should be equal to the <code>basename</code> of the variable you created above!</li>
+<li>Be sure to trim off the file extension <code>.subset.fq</code></li>
+</ul>
+<blockquote>
+<p>Why are we doing this? Storing the prefixes in <code>samplename</code> will allow us to uniquely label our output files later on. </p>
+</blockquote>
+</li>
+<li>
+<p>Copy-and-paste the following into lines 12 and 13. The <code>echo</code> statement will keep the user informed on which file is being processed in real-time. </p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1"># tell us what file we're working on</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$filename</span>
+</code></pre></div>
+12. Now you will finish writing the command below that will "dump" the bad reads to an output file. Below you have been given the right side of the command. You will need to finish writing the command on the left side! This will be line 15 and 16 of your script. 
+<p></p><div class="highlight"><pre><span></span><code># grab all the bad read records into new file
+WRITE-THE-COMMAND-HERE &gt; ~/unit1_unix/badreads/${samplename}_badreads.fq
+</code></pre></div>
++ Write the command on the left side using <code>grep</code> 
++ We will continue to define bad reads as those with 10 consecutive N's 
++ Be sure to extract the <strong>four lines</strong> associated with each sequence read 
+<h4 id="explanation-of-command-above">Explanation of command above</h4>
+<p>You are using <code>grep</code> to find all the bad reads (in this case, bad reads are defined as those with 10 consecutive N's), and then extracting the four lines associated with each sequence read and writing them to a file. The output file is named using the <code>samplename</code> variable you created earlier in the loop. You will also notice we are adding a path to redirect the output into the <code>badreads</code> directory.</p>
+<h4 id="why-are-we-using-curly-brackets-with-the-variable-name">Why are we using curly brackets with the variable name?</h4>
+<p>When we append a variable to some other free text, we need shell to know where our variable name ends. By encapsulating the variable name in curly brackets we are letting shell know that everything inside it is the variable name. This way when we reference it, shell knows to print the variable <code>$base</code> and not to look for a variable called <code>$base_badreads.fq</code>.</p>
+</li>
+<li>
+<p>Okay you are almost finished! Just copy and paste the lines below in lines 18-20. </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># grab the number of bad reads and write it to a summary file</span>
+grep<span class="w"> </span>-cH<span class="w"> </span>NNNNNNNNNN<span class="w"> </span><span class="nv">$filename</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/unit1_unix/badreads/badreads.count.summary
+<span class="k">done</span>
+</code></pre></div>
+<h4 id="explanation-of-command-above_1">Explanation of command above</h4>
+<p>Above, you are counting the number of identified bad reads using the count flag of <code>grep</code>, <code>-c</code>, which will return the number of matches rather than the actual matching lines. Here, you are using the <code>-H</code> flag; this will report the filename along with the count value. This is useful because you are writing this information to a running summary file. So rather than just reporting a count value you will also know which file it is associated with. You then closed the loop with <code>done</code>. </p>
+</li>
+<li>
+<p>Save and exit, and voila! You now have a script you can use to assess the quality of all your new datasets. </p>
+</li>
+</ol>
+<p>To run this script simply enter the following command:</p>
+<div class="highlight"><pre><span></span><code>sh<span class="w"> </span>generate_bad_reads_summary.sh
+</code></pre></div>
+<h4 id="how-do-we-know-if-your-script-worked">How do we know if your script worked?</h4>
+<p>Take a look inside the <code>badreads</code> directory. You should see that for every one of the original FASTQ files, one bad read file was created. You should also have a summary file documenting the total number of bad reads from each file.</p>
+<div class="highlight"><pre><span></span><code>badreads.count.summary  Irrel_kd_2_badreads.fq  Mov10_oe_1_badreads.fq  Mov10_oe_3_badreads.fq
+Irrel_kd_1_badreads.fq  Irrel_kd_3_badreads.fq  Mov10_oe_2_badreads.fq
+</code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
