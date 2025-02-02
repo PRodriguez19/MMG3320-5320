@@ -36,8 +36,6 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
 
     > Why? Because this is where the fastq files are located! 
 
-    > *Note the use of comments using the `#` symbol. Always practice commenting liberally when creating your scripts!*
-
 6. Add the following comment as Line 6. 
     
     ```bash
@@ -62,7 +60,6 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
     > #### Now you are ready to move on to create a prefix for all (6) fastq files. These prefixes will be stored in a second variable called `samplename`. To write this line of code successfully, remember the following:
         variable_name=value_of_variable
 
-    **You can do this!**
 
 10. On line 11 create the variable `samplename`
     + The value of the variable should be equal to the `basename` of the variable you created above!
@@ -76,15 +73,18 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
     # tell us what file we're working on
     echo $filename
     ```
-12. Now you will finish writing the command below that will "dump" the bad reads to an output file. Below you have been given the right side of the command. You will need to finish writing the command on the left side! This will be line 15 and 16 of your script. 
+12. Now, you will complete the command below to extract and save all "bad reads" into an output file. A read is considered "bad" if it contains 10 consecutive N's.
+
+Below, you are given the right side of the command, which specifies the output file location. Your task is to complete the left side of the command using `grep`.
+
+This will be lines 15 and 16 of your script.
     
-    ```
-    # grab all the bad read records into new file
-    WRITE-THE-COMMAND-HERE > ~/unit1_unix/badreads/${samplename}_badreads.fq
+    ```bash
+    # Extract all bad read records and save them to a new file  
+    WRITE-THE-COMMAND-HERE > ~/unit1_unix/badreads/${samplename}_badreads.fq  
     ``` 
-    + Write the command on the left side using `grep` 
-    + We will continue to define bad reads as those with 10 consecutive N's 
-    + Be sure to extract the **four lines** associated with each sequence read 
+    Requirements: 
+    + Ensure that all four lines of each matching sequence read are included in the output. 
 
     #### Explanation of command above
      You are using `grep` to find all the bad reads (in this case, bad reads are defined as those with 10 consecutive N's), and then extracting the four lines associated with each sequence read and writing them to a file. The output file is named using the `samplename` variable you created earlier in the loop. You will also notice we are adding a path to redirect the output into the `badreads` directory.

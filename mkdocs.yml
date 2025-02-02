@@ -50,8 +50,8 @@ nav:
           - Intro to Shell Scripting (L5): ch03/05_week3_mmg3320.md
       - Week 4:
           - Overview: ch04/index.md
-          - Experimental Design for RNA-Seq (L6a): ch04/06a_week4_intro-to-RNAseq.md
-          - Loops (L6b): ch04/06b_week4_mmg3320.md
+          - RNA-Seq Overview (L6): ch04/07_week4_intro-to-RNAseq.md
+          - Loops (L7): ch04/06_week4_mmg3320.md
   - Assignments:
       - Week 1 (L2): assignments/week1_assignment.md
       - Week 2 (L3): assignments/week2_assignment.md
