@@ -1776,6 +1776,9 @@ Mov10_oe_3.subset.fq
 <li>Get the count of the number of bad reads and report it to a running log file</li>
 </ul>
 <p>It might seem daunting, but everything outlined above is something that you know how to do. Let's get started...</p>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
 <ol>
 <li>
 <p>Create a directory called <code>badreads</code> in <code>unit1_unix</code></p>
@@ -1849,10 +1852,12 @@ Mov10_oe_3.subset.fq
 </li>
 <li>
 <p>Copy-and-paste the following into lines 12 and 13. The <code>echo</code> statement will keep the user informed on which file is being processed in real-time. </p>
-<p></p><div class="highlight"><pre><span></span><code><span class="c1"># tell us what file we're working on</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># tell us what file we're working on</span>
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$filename</span>
 </code></pre></div>
-12. Complete the command below to extract and save all "bad reads" into an output file. A read is considered "bad" if it contains 10 consecutive N's. Below, you are given the right side of the command, which specifies the output file location. Your task is to complete the left side of the command using <code>grep</code>. These will be lines 15 and 16 of your script.
+</li>
+<li>
+<p>Complete the command below to extract and save all "bad reads" into an output file. A read is considered "bad" if it contains 10 consecutive N's. Below, you are given the right side of the command, which specifies the output file location. Your task is to complete the left side of the command using <code>grep</code>. These will be lines 15 and 16 of your script.</p>
 <p></p><div class="highlight"><pre><span></span><code><span class="c1"># Extract all bad read records and save them to a new file  </span>
 WRITE-THE-COMMAND-HERE<span class="w"> </span>&gt;<span class="w"> </span>~/unit1_unix/badreads/<span class="si">${</span><span class="nv">samplename</span><span class="si">}</span>_badreads.fq<span class="w">  </span>
 </code></pre></div>
@@ -1883,6 +1888,7 @@ grep<span class="w"> </span>-cH<span class="w"> </span>NNNNNNNNNN<span class="w"
 <div class="highlight"><pre><span></span><code>badreads.count.summary  Irrel_kd_2_badreads.fq  Mov10_oe_1_badreads.fq  Mov10_oe_3_badreads.fq
 Irrel_kd_1_badreads.fq  Irrel_kd_3_badreads.fq  Mov10_oe_2_badreads.fq
 </code></pre></div>
+</div>
 <hr>
 <hr>
 <p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
