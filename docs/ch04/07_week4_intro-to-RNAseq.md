@@ -158,10 +158,6 @@ Typically, charges for sequencing are per lane of the flow cell and you will be 
   - Use of an HiSeq or NextSeq, or NovaSeq for sequencing 
 
 
-<figure markdown="span">
-  ![Summary](../img/summary-slide.png){ width="800"}
-</figure>
-
 ## Differential gene expression
 
 Differential gene expression analysis allows us to explore the gene expression changes that occur in disease or between different conditions, by measuring the quantity of RNA expressed by all genes in each of the different conditions. 
@@ -192,16 +188,10 @@ Using this analysis we can answer questions such as:
 
 *Citation: https://elifesciences.org/articles/63003* 
 
-### Steps Required to Perform DE analysis 
-
 To perform differential gene expression analysis, we perform the following steps:
 
 <figure markdown="span">
-  ![DE Workflow](../img/de_workflow2019.png){ width="400"}
-</figure>
-
-<figure markdown="span">
-  ![Non Confounded Design](../img/RNAseq-pipeline-2025.png){ width="800"}
+  ![DE Workflow](../img/de_workflow2019.png){ width="300"}
 </figure>
 
 ## Experimental Design 
@@ -220,7 +210,7 @@ These important considerations include:
 Experimental replicates can be performed as **technical replicates** or **biological replicates**. 
 
 <figure markdown="span">
-  ![Biological Replicates](../img/replicates.png){ width="400"}
+  ![Biological Replicates](../img/replicates.png){ width="350"}
 </figure>
 
 *Image credit: [Klaus B., EMBO J (2015) **34**: 2727-2730](https://dx.doi.org/10.15252%2Fembj.201592958)*
@@ -318,11 +308,20 @@ If *any* of the answers is **‘No’**, then you have batches.
  ***
 
 !!! example "Class Exercise" 
-    Your experiment has three different treatment groups, A, B, and C. Due to the lengthy process of tissue extraction, you can only isolate the RNA from two samples at the same time. You plan to have 4 replicates per group.
+    Your experiment includes three treatment groups: A, B, and C. Each group has four biological replicates, for a total of 12 samples. Because RNA isolation is a lengthy process, you can only isolate RNA from two samples at a time. This means you will need to complete six batches of RNA isolation.
+    
+    Instructions:
 
-    1. Fill in the `RNA isolation` column of the metadata table. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the `RNA isolation` column, enter one of the following values for each sample: `group1`, `group2`, `group3`, `group4`, `group5`, `group6`. Make sure to fill in the table so as to avoid confounding by batch of `RNA isolation`. 
+    Fill in the RNA isolation column of the metadata table.
+        + Since only two samples can be processed at a time, RNA isolation will be performed in six batches.
+          + Label each sample with one of the following batch names: group1, group2, group3, group4, group5, or group6.
+          + Assign batches carefully to avoid confounding due to batch effects.
 
-    2. To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the `researcher` column for the samples they will prepare: use initials `AB` or `CD`.
+    Assign researchers to each RNA isolation batch.
+        + Two researchers will perform the RNA extractions:
+            + Researcher AB
+            + Researcher CD
+        + In the researcher column, write either AB or CD for each sample, based on who performs the RNA isolation. 
 
     | sample | treatment | sex | replicate | RNA isolation | Researcher|
     | --- | --- | --- | --- | --- |--- |
