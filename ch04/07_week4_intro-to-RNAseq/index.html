@@ -1159,21 +1159,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Differential gene expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#steps-required-to-perform-de-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps Required to Perform DE analysis
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1615,21 +1600,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Differential gene expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#steps-required-to-perform-de-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps Required to Perform DE analysis
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1846,9 +1816,6 @@
 <p>Use of an HiSeq or NextSeq, or NovaSeq for sequencing </p>
 </li>
 </ul>
-<figure>
-  <img alt="Summary" src="../../img/summary-slide.png" width="800">
-</figure>
 <h2 id="differential-gene-expression">Differential gene expression</h2>
 <p>Differential gene expression analysis allows us to explore the gene expression changes that occur in disease or between different conditions, by measuring the quantity of RNA expressed by all genes in each of the different conditions. </p>
 <figure>
@@ -1879,13 +1846,9 @@
   <img alt="Pathways DE" src="../../img/de-path.jpg" width="600">
 </figure>
 <p><em>Citation: https://elifesciences.org/articles/63003</em> </p>
-<h3 id="steps-required-to-perform-de-analysis">Steps Required to Perform DE analysis</h3>
 <p>To perform differential gene expression analysis, we perform the following steps:</p>
 <figure>
-  <img alt="DE Workflow" src="../../img/de_workflow2019.png" width="400">
-</figure>
-<figure>
-  <img alt="Non Confounded Design" src="../../img/RNAseq-pipeline-2025.png" width="800">
+  <img alt="DE Workflow" src="../../img/de_workflow2019.png" width="300">
 </figure>
 <h2 id="experimental-design">Experimental Design</h2>
 <p>Understanding the steps in the experimental process of RNA extraction and preparation of RNA-Seq libraries is helpful for designing an RNA-Seq experiment and important to consider when selecting a dataset to analyze. There are special considerations that should be highlighted which can greatly affect the quality of a differential expression analysis. </p>
@@ -1898,7 +1861,7 @@
 <h3 id="replicates">Replicates</h3>
 <p>Experimental replicates can be performed as <strong>technical replicates</strong> or <strong>biological replicates</strong>. </p>
 <figure>
-  <img alt="Biological Replicates" src="../../img/replicates.png" width="400">
+  <img alt="Biological Replicates" src="../../img/replicates.png" width="350">
 </figure>
 <p><em>Image credit: <a href="https://dx.doi.org/10.15252%2Fembj.201592958">Klaus B., EMBO J (2015) <strong>34</strong>: 2727-2730</a></em></p>
 <ul>
@@ -1991,15 +1954,17 @@
 <hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
-<p>Your experiment has three different treatment groups, A, B, and C. Due to the lengthy process of tissue extraction, you can only isolate the RNA from two samples at the same time. You plan to have 4 replicates per group.</p>
-<ol>
-<li>
-<p>Fill in the <code>RNA isolation</code> column of the metadata table. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the <code>RNA isolation</code> column, enter one of the following values for each sample: <code>group1</code>, <code>group2</code>, <code>group3</code>, <code>group4</code>, <code>group5</code>, <code>group6</code>. Make sure to fill in the table so as to avoid confounding by batch of <code>RNA isolation</code>. </p>
-</li>
-<li>
-<p>To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the <code>researcher</code> column for the samples they will prepare: use initials <code>AB</code> or <code>CD</code>.</p>
-</li>
-</ol>
+<p>Your experiment includes three treatment groups: A, B, and C. Each group has four biological replicates, for a total of 12 samples. Because RNA isolation is a lengthy process, you can only isolate RNA from two samples at a time. This means you will need to complete six batches of RNA isolation.</p>
+<p>Instructions:</p>
+<p>Fill in the RNA isolation column of the metadata table.
+    + Since only two samples can be processed at a time, RNA isolation will be performed in six batches.
+      + Label each sample with one of the following batch names: group1, group2, group3, group4, group5, or group6.
+      + Assign batches carefully to avoid confounding due to batch effects.</p>
+<p>Assign researchers to each RNA isolation batch.
+    + Two researchers will perform the RNA extractions:
+        + Researcher AB
+        + Researcher CD
+    + In the researcher column, write either AB or CD for each sample, based on who performs the RNA isolation. </p>
 <table>
 <thead>
 <tr>
