@@ -1009,11 +1009,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ch04/06a_week4_intro-to-RNAseq/" class="md-nav__link">
+      <a href="../../ch04/07_week4_intro-to-RNAseq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Experimental Design for RNA-Seq (L6a)
+    RNA-Seq Overview (L6)
   </span>
   
 
@@ -1030,11 +1030,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ch04/06b_week4_mmg3320/" class="md-nav__link">
+      <a href="../../ch04/06_week4_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Loops (L6b)
+    Loops (L7)
   </span>
   
 
@@ -1275,24 +1275,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-are-we-using-curly-brackets-with-the-variable-name" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why are we using curly brackets with the variable name?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation-of-command-above_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation of command above
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#how-do-we-know-if-your-script-worked" class="md-nav__link">
     <span class="md-ellipsis">
       How do we know if your script worked?
@@ -1474,24 +1456,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-are-we-using-curly-brackets-with-the-variable-name" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why are we using curly brackets with the variable name?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation-of-command-above_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation of command above
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#how-do-we-know-if-your-script-worked" class="md-nav__link">
     <span class="md-ellipsis">
       How do we know if your script worked?
@@ -1559,7 +1523,6 @@
 <p>In line 4 write a command to change directories into the <code>raw_fastq</code> directory. </p>
 <blockquote>
 <p>Why? Because this is where the fastq files are located! </p>
-<p><em>Note the use of comments using the <code>#</code> symbol. Always practice commenting liberally when creating your scripts!</em></p>
 </blockquote>
 </li>
 <li>
@@ -1598,7 +1561,6 @@
 <pre><code>variable_name=value_of_variable
 </code></pre>
 </blockquote>
-<p><strong>You can do this!</strong></p>
 </li>
 <li>
 <p>On line 11 create the variable <code>samplename</code></p>
@@ -1615,25 +1577,32 @@
 <p></p><div class="highlight"><pre><span></span><code><span class="c1"># tell us what file we're working on</span>
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$filename</span>
 </code></pre></div>
-12. Now you will finish writing the command below that will "dump" the bad reads to an output file. Below you have been given the right side of the command. You will need to finish writing the command on the left side! This will be line 15 and 16 of your script. 
-<p></p><div class="highlight"><pre><span></span><code># grab all the bad read records into new file
-WRITE-THE-COMMAND-HERE &gt; ~/unit1_unix/badreads/${samplename}_badreads.fq
-</code></pre></div>
-+ Write the command on the left side using <code>grep</code> 
-+ We will continue to define bad reads as those with 10 consecutive N's 
-+ Be sure to extract the <strong>four lines</strong> associated with each sequence read 
-<h4 id="explanation-of-command-above">Explanation of command above</h4>
-<p>You are using <code>grep</code> to find all the bad reads (in this case, bad reads are defined as those with 10 consecutive N's), and then extracting the four lines associated with each sequence read and writing them to a file. The output file is named using the <code>samplename</code> variable you created earlier in the loop. You will also notice we are adding a path to redirect the output into the <code>badreads</code> directory.</p>
-<h4 id="why-are-we-using-curly-brackets-with-the-variable-name">Why are we using curly brackets with the variable name?</h4>
-<p>When we append a variable to some other free text, we need shell to know where our variable name ends. By encapsulating the variable name in curly brackets we are letting shell know that everything inside it is the variable name. This way when we reference it, shell knows to print the variable <code>$base</code> and not to look for a variable called <code>$base_badreads.fq</code>.</p>
+12. Now, you will complete the command below to extract and save all "bad reads" into an output file. A read is considered "bad" if it contains 10 consecutive N's.
 </li>
+</ol>
+<p>Below, you are given the right side of the command, which specifies the output file location. Your task is to complete the left side of the command using <code>grep</code>.</p>
+<p>This will be lines 15 and 16 of your script.</p>
+<pre><code>```bash
+# Extract all bad read records and save them to a new file  
+WRITE-THE-COMMAND-HERE &gt; ~/unit1_unix/badreads/${samplename}_badreads.fq  
+``` 
+Requirements: 
++ Ensure that all four lines of each matching sequence read are included in the output.
+
+#### Explanation of command above
+ You are using `grep` to find all the bad reads (in this case, bad reads are defined as those with 10 consecutive N's), and then extracting the four lines associated with each sequence read and writing them to a file. The output file is named using the `samplename` variable you created earlier in the loop. You will also notice we are adding a path to redirect the output into the `badreads` directory.
+
+#### Why are we using curly brackets with the variable name?
+When we append a variable to some other free text, we need shell to know where our variable name ends. By encapsulating the variable name in curly brackets we are letting shell know that everything inside it is the variable name. This way when we reference it, shell knows to print the variable `$base` and not to look for a variable called `$base_badreads.fq`.
+</code></pre>
+<ol>
 <li>
 <p>Okay you are almost finished! Just copy and paste the lines below in lines 18-20. </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># grab the number of bad reads and write it to a summary file</span>
 grep<span class="w"> </span>-cH<span class="w"> </span>NNNNNNNNNN<span class="w"> </span><span class="nv">$filename</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/unit1_unix/badreads/badreads.count.summary
 <span class="k">done</span>
 </code></pre></div>
-<h4 id="explanation-of-command-above_1">Explanation of command above</h4>
+<h4 id="explanation-of-command-above">Explanation of command above</h4>
 <p>Above, you are counting the number of identified bad reads using the count flag of <code>grep</code>, <code>-c</code>, which will return the number of matches rather than the actual matching lines. Here, you are using the <code>-H</code> flag; this will report the filename along with the count value. This is useful because you are writing this information to a running summary file. So rather than just reporting a count value you will also know which file it is associated with. You then closed the loop with <code>done</code>. </p>
 </li>
 <li>

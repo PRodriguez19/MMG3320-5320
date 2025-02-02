@@ -12,13 +12,13 @@
         <meta name="author" content="Princess Rodriguez">
       
       
-        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch04/06b_week4_mmg3320/">
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch04/07_week4_intro-to-RNAseq/">
       
       
-        <link rel="prev" href="../06a_week4_intro-to-RNAseq/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../assignments/week1_assignment/">
+        <link rel="next" href="../06_week4_mmg3320/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Loops (L6b) - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>RNA-Seq Overview (L6) - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Loops (L6b)
+              RNA-Seq Overview (L6)
             
           </span>
         </div>
@@ -1015,27 +1015,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../06a_week4_intro-to-RNAseq/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Experimental Design for RNA-Seq (L6a)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1050,7 +1029,7 @@
           
   
   <span class="md-ellipsis">
-    Loops (L6b)
+    RNA-Seq Overview (L6)
   </span>
   
 
@@ -1061,7 +1040,7 @@
         
   
   <span class="md-ellipsis">
-    Loops (L6b)
+    RNA-Seq Overview (L6)
   </span>
   
 
@@ -1083,54 +1062,26 @@
         <li class="md-nav__item">
   <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      Learning Objectives
+      Learning Objectives:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recap" class="md-nav__link">
+  <a href="#overview-of-rna-seq" class="md-nav__link">
     <span class="md-ellipsis">
-      Recap
+      Overview of RNA-seq
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loops" class="md-nav__link">
-    <span class="md-ellipsis">
-      Loops
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Loops">
+    <nav class="md-nav" aria-label="Overview of RNA-seq">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-do-loops-work" class="md-nav__link">
+  <a href="#transcriptomics" class="md-nav__link">
     <span class="md-ellipsis">
-      How do loops work?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loopsh-explained" class="md-nav__link">
-    <span class="md-ellipsis">
-      Loop.sh explained
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Loop.sh explained">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#running-loops-at-the-command-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running loops at the command prompt
+      Transcriptomics
     </span>
   </a>
   
@@ -1140,37 +1091,59 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-loops-using-best-practices" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#illumina-sequencing" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating loops using best practices
+      Illumina Sequencing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Creating loops using best practices">
+    <nav class="md-nav" aria-label="Illumina Sequencing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#meaningful-variable-names" class="md-nav__link">
+  <a href="#illumina-library-preparation" class="md-nav__link">
     <span class="md-ellipsis">
-      Meaningful variable names
+      Illumina Library preparation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-wildcard-to-define-the-list" class="md-nav__link">
+  <a href="#strandedness" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the wildcard to define the list
+      Strandedness
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#single-end-versus-paired-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-end versus Paired-end
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-sequencing-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Different sequencing platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplexing
+    </span>
+  </a>
   
 </li>
         
@@ -1180,9 +1153,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automating-more-with-scripts" class="md-nav__link">
+  <a href="#differential-gene-expression" class="md-nav__link">
     <span class="md-ellipsis">
-      Automating more with Scripts
+      Differential gene expression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Differential gene expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-required-to-perform-de-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps Required to Perform DE analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experimental Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#replicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replicates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confounding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confounding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch effects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-know-whether-you-have-batches" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to know whether you have batches?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-regarding-batches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best practices regarding batches:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
     </span>
   </a>
   
@@ -1192,6 +1255,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_week4_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loops (L7)
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1434,54 +1518,26 @@
         <li class="md-nav__item">
   <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      Learning Objectives
+      Learning Objectives:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recap" class="md-nav__link">
+  <a href="#overview-of-rna-seq" class="md-nav__link">
     <span class="md-ellipsis">
-      Recap
+      Overview of RNA-seq
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loops" class="md-nav__link">
-    <span class="md-ellipsis">
-      Loops
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Loops">
+    <nav class="md-nav" aria-label="Overview of RNA-seq">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-do-loops-work" class="md-nav__link">
+  <a href="#transcriptomics" class="md-nav__link">
     <span class="md-ellipsis">
-      How do loops work?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loopsh-explained" class="md-nav__link">
-    <span class="md-ellipsis">
-      Loop.sh explained
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Loop.sh explained">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#running-loops-at-the-command-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running loops at the command prompt
+      Transcriptomics
     </span>
   </a>
   
@@ -1491,37 +1547,59 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-loops-using-best-practices" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#illumina-sequencing" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating loops using best practices
+      Illumina Sequencing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Creating loops using best practices">
+    <nav class="md-nav" aria-label="Illumina Sequencing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#meaningful-variable-names" class="md-nav__link">
+  <a href="#illumina-library-preparation" class="md-nav__link">
     <span class="md-ellipsis">
-      Meaningful variable names
+      Illumina Library preparation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-wildcard-to-define-the-list" class="md-nav__link">
+  <a href="#strandedness" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the wildcard to define the list
+      Strandedness
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#single-end-versus-paired-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-end versus Paired-end
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-sequencing-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Different sequencing platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplexing
+    </span>
+  </a>
   
 </li>
         
@@ -1531,9 +1609,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automating-more-with-scripts" class="md-nav__link">
+  <a href="#differential-gene-expression" class="md-nav__link">
     <span class="md-ellipsis">
-      Automating more with Scripts
+      Differential gene expression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Differential gene expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-required-to-perform-de-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps Required to Perform DE analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experimental Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#replicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replicates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confounding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confounding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch effects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-know-whether-you-have-batches" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to know whether you have batches?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-regarding-batches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best practices regarding batches:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citation
     </span>
   </a>
   
@@ -1554,154 +1722,401 @@
                   
 
 
-  <h1>Loops (L6b)</h1>
+  <h1>RNA-Seq Overview (L6)</h1>
 
-<div><h2 id="learning-objectives">Learning Objectives</h2>
+<div><h2 id="learning-objectives">Learning Objectives:</h2>
 <ul>
-<li>Describe the concept of 'looping' to iterate commands over multiple items</li>
-<li>Automate a task by using a loop inside of a shell script</li>
+<li>Understand applications of RNA sequencing</li>
+<li>Introduce the overall differential expression workflow</li>
+<li>Understand experimental design concepts such as replicates and batch effects </li>
+<li>Understand different types of library preps, their requirements and uses. </li>
 </ul>
-<h2 id="recap">Recap</h2>
+<h2 id="overview-of-rna-seq">Overview of RNA-seq</h2>
+<p>RNA-seq is an exciting experimental technique that is utilized to explore and/or quantify gene expression within or between conditions. </p>
+<p>As we know, genes provide instructions to make proteins, which perform some function within the cell. Although <strong>all cells contain the same DNA sequence</strong>, muscle cells are different from nerve cells and other types of cells because of the <strong>different genes that are turned on in these cells and the different RNAs and proteins produced</strong>. </p>
+<figure>
+  <img alt="Gene Expression in Cells" src="../../img/gene_expression_cells.png" width="600">
+</figure>
+<p>Different biological processes, as well as mutations, can affect which genes are turned on and which are turned off, in addition to, <em>how much</em> specific genes are turned on/off.</p>
+<p>To make proteins, the DNA is transcribed into messenger RNA, or mRNA, which is translated by the ribosome into protein. However, some genes encode RNA that does not get translated into protein; these RNAs are called non-coding RNAs, or ncRNAs. Often these RNAs have a function in and of themselves and include rRNAs, tRNAs, and siRNAs, among others. All RNAs transcribed from genes are called transcripts.</p>
+<figure>
+  <img alt="Gene Products" src="../../img/Gene_products.png" width="400">
+</figure>
+<p>To be translated into proteins, the RNA must undergo processing to generate the mRNA. In the figure below, the top strand in the image represents a gene in the DNA, comprised of the untranslated regions (UTRs) and the open read frame. Genes are transcribed into pre-mRNA, which still contains the intronic sequences.  After post-transciptional processing, a 5' cap and polyA tail are added and the introns are spliced out to yield mature mRNA transcripts, which can be translated into proteins.</p>
+<figure>
+  <img alt="Gene Structure" src="../../img/Gene_structure.png" width="600">
+</figure>
+<p><strong>While mRNA transcripts have a polyA tail, many of the non-coding RNA transcripts do not.</strong></p>
+<h3 id="transcriptomics">Transcriptomics</h3>
+<p>The transcriptome is defined as a collection of all the transcript readouts present in a cell. RNA-seq data can be used to explore and/or quantify the transcriptome of an organism, which can be utilized for the following types of experiments:</p>
 <ul>
-<li>You can save commands in files (usually called shell scripts) for re-use.</li>
-<li><code>sh</code> [filename] will run the command saved within the shell script</li>
-<li>shell script end in <code>.sh</code></li>
-<li>You should place variables in backticks (`) if the values might have spaces in them</li>
+<li><strong>Differential Gene Expression</strong>: <em>quantitative</em> evaluation and comparison of transcript levels between conditions</li>
+<li><strong>Transcriptome assembly</strong>: building the profile of transcribed regions of the genome, a <em>qualitative</em> evaluation</li>
+<li><strong>Refinement of gene models</strong>: building better gene models and verifying them using transcriptome assembly</li>
+<li><strong>Metatranscriptomics</strong>: community transcriptome analysis</li>
+</ul>
+<h2 id="illumina-sequencing">Illumina Sequencing</h2>
+<h3 id="illumina-library-preparation">Illumina Library preparation</h3>
+<p>The general workflow for library preparation is detailed in the step-by-step images below.</p>
+<p><strong>Briefly, the RNA is isolated from the sample and contaminating DNA is removed with DNase.</strong></p>
+<figure>
+  <img alt="Library Prep" src="../../img/libraryprep_step1-2.png" width="400">
+</figure>
+<p><strong>The RNA sample then undergoes either selection of the mRNA (polyA selection) or depletion of the rRNA. The resulting RNA is fragmented.</strong> </p>
+<blockquote>
+<p>Generally, ribosomal RNA represents the majority of the RNAs present in a cell, while messenger RNAs represent a small percentage of total RNA, ~2% in humans. Therefore, if we want to study the protein-coding genes, we need to enrich for mRNA or deplete the rRNA. </p>
+</blockquote>
+<figure>
+  <img alt="PolyA Tail" src="../../img/polyA.png" width="450">
+</figure>
+<blockquote>
+<p><em>The size of the target fragments in the final library is a key parameter for library construction. DNA fragmentation is typically done by physical methods (i.e., acoustic shearing and sonication) or enzymatic methods (i.e., non-specific endonuclease cocktails and transposase tagmentation reactions.</em></p>
+</blockquote>
+<figure>
+  <img alt="Library Prep" src="../../img/libraryprep_step3.png" width="450">
+</figure>
+<p><strong>The RNA is then reverse transcribed into double-stranded cDNA and sequence adapters are then added to the ends of the fragments.</strong></p>
+<blockquote>
+<p>The cDNA libraries can be generated in a way to retain information about which strand of DNA the RNA was transcribed from. Libraries that retain this information are called stranded libraries, which are now standard with Illumina’s TruSeq stranded RNA-Seq kits. Stranded libraries should not be any more expensive than unstranded, so there is not really any reason not to acquire this additional information. </p>
+<p>There are 3 types of cDNA libraries available:</p>
+<ul>
+<li>Forward (secondstrand) – reads resemble the gene sequence or the secondstrand cDNA sequence</li>
+<li>Reverse (firststrand) – reads resemble the complement of the gene sequence or firststrand cDNA sequence (TruSeq)</li>
+<li>Unstranded</li>
+</ul>
+</blockquote>
+<figure>
+  <img alt="Library Prep Continued" src="../../img/libraryprep_step4-5.png" width="450">
+</figure>
+<p><strong>Finally, the fragments are PCR amplified if needed, and the fragments are size selected (usually ~300-500bp) to finish the library.</strong></p>
+<figure>
+  <img alt="Library Prep Final Step" src="../../img/libraryprep_step6.png" width="450">
+</figure>
+<p><em>Image credit: <a href="https://www.nature.com/articles/nrg3068">Martin J.A. and Wang Z., Nat. Rev. Genet. (2011) 12:671–682</a></em></p>
+<h3 id="strandedness">Strandedness</h3>
+<p>The implication of <strong>stranded</strong> libraries is that one could distinguish whether the reads are derived from the forward or reverse-encoded transcripts. </p>
+<figure>
+  <img alt="Strandedness" src="../../img/strandedness.png" width="800">
+</figure>
+<ul>
+<li>Red = positive strand </li>
+<li>Blue = negative strand </li>
+</ul>
+<h3 id="single-end-versus-paired-end">Single-end versus Paired-end</h3>
+<p>After preparation of the libraries, sequencing can be performed to generate the nucleotide sequences of the ends of the fragments, which are called <strong>reads</strong>. You will have the choice of sequencing a single end of the cDNA fragments (single-end reads) or both ends of the fragments (paired-end reads).</p>
+<figure>
+  <img alt="Paired End Reads" src="../../img/paired_end_reads.png" width="500">
+</figure>
+<ul>
+<li>SE - Single end dataset =&gt; Only Read1</li>
+<li>PE - Paired-end dataset =&gt; Read1 + Read2<ul>
+<li>often are 2 separate FastQ files! </li>
+</ul>
+</li>
+</ul>
+<p>Generally single-end sequencing is sufficient unless it is expected that the reads will match multiple locations on the genome (e.g. organisms with many paralogous genes), assemblies are being performed, or for splice isoform differentiation. </p>
+<h3 id="different-sequencing-platforms">Different sequencing platforms</h3>
+<p>There are a variety of Illumina platforms to choose from to sequence the cDNA libraries.</p>
+<figure>
+  <img alt="Illumina Platforms" src="../../img/illumina_platforms.png" width="600">
+</figure>
+<p><em>Image credit: Adapted from Illumina</em></p>
+<p>Differences in platform can alter the length of reads generated, the quality of reads, as well as the total number of reads sequenced per run and the amount of time required to sequence the libraries. The different platforms each use a different flow cell, which is a glass surface coated with an arrangement of paired oligos that are complementary to the adapters added to your template molecules. <strong>The flow cell is where the sequencing reactions take place</strong>.</p>
+<figure>
+  <img alt="Flow Cell" src="../../img/flow_cell_oligos.png" width="600">
+</figure>
+<p><em>Image credit: Adapted from Illumina</em></p>
+<h3 id="multiplexing">Multiplexing</h3>
+<p>Depending on the Illumina platform (MiSeq, HiSeq, NextSeq), the number of lanes per flow cell, and the number of reads that can be obtained per lane varies widely. <strong>The researcher will need to decide on how many reads they would like per sample</strong> (i.e. the sequencning depth) and then based on the platform you choose calculate how many total lanes you will require for your set of samples. </p>
+<p>Typically, charges for sequencing are per lane of the flow cell and you will be able to run multiple samples per lane. Illumina has therefore devised a nice multiplexing method which allows libraries from several samples to be pooled and sequenced simultaneously in the same lane of a flow cell. This method requires <strong>the addition of indices</strong> (within the Illumina adapter) or special barcodes (outside the Illumina adapter) as described in the schematic below.</p>
+<figure>
+  <img alt="Demultiplexing" src="../../img/demultiplexing.png" width="800">
+</figure>
+<ul>
+<li>
+<p><strong>General gene-level differential expression:</strong></p>
+</li>
+<li>
+<p>ENCODE guidelines suggest 30 million SE reads per sample (stranded).</p>
+</li>
+<li>
+<p>15 million reads per sample is often sufficient, if there are a good number of replicates (&gt;3). </p>
+</li>
+<li>
+<p>Use of an HiSeq or NextSeq, or NovaSeq for sequencing </p>
+</li>
+</ul>
+<figure>
+  <img alt="Summary" src="../../img/summary-slide.png" width="800">
+</figure>
+<h2 id="differential-gene-expression">Differential gene expression</h2>
+<p>Differential gene expression analysis allows us to explore the gene expression changes that occur in disease or between different conditions, by measuring the quantity of RNA expressed by all genes in each of the different conditions. </p>
+<figure>
+  <img alt="Differential Gene Expression" src="../../img/diff.png" width="600">
+</figure>
+<p>Using this analysis we can answer questions such as:</p>
+<ul>
+<li>
+<p>What genes are differentially expressed between conditions?</p>
+</li>
+<li>
+<p>Are there any trends in gene expression over time or across conditions?</p>
+</li>
+</ul>
+<figure>
+  <img alt="Trends DE" src="../../img/de-trends.png" width="600">
+</figure>
+<p><em>Citation: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138236</em> </p>
+<ul>
+<li>
+<p>Which groups of genes change similarly over time or across conditions?</p>
+</li>
+<li>
+<p>What processes or pathways are important for my condition of interest?</p>
+</li>
+</ul>
+<figure>
+  <img alt="Pathways DE" src="../../img/de-path.jpg" width="600">
+</figure>
+<p><em>Citation: https://elifesciences.org/articles/63003</em> </p>
+<h3 id="steps-required-to-perform-de-analysis">Steps Required to Perform DE analysis</h3>
+<p>To perform differential gene expression analysis, we perform the following steps:</p>
+<figure>
+  <img alt="DE Workflow" src="../../img/de_workflow2019.png" width="400">
+</figure>
+<figure>
+  <img alt="Non Confounded Design" src="../../img/RNAseq-pipeline-2025.png" width="800">
+</figure>
+<h2 id="experimental-design">Experimental Design</h2>
+<p>Understanding the steps in the experimental process of RNA extraction and preparation of RNA-Seq libraries is helpful for designing an RNA-Seq experiment and important to consider when selecting a dataset to analyze. There are special considerations that should be highlighted which can greatly affect the quality of a differential expression analysis. </p>
+<p>These important considerations include:</p>
+<ol>
+<li>Number and type of <strong>replicates</strong></li>
+<li>Avoiding <strong>confounding</strong> variables </li>
+<li>Addressing <strong>batch effects</strong></li>
+</ol>
+<h3 id="replicates">Replicates</h3>
+<p>Experimental replicates can be performed as <strong>technical replicates</strong> or <strong>biological replicates</strong>. </p>
+<figure>
+  <img alt="Biological Replicates" src="../../img/replicates.png" width="400">
+</figure>
+<p><em>Image credit: <a href="https://dx.doi.org/10.15252%2Fembj.201592958">Klaus B., EMBO J (2015) <strong>34</strong>: 2727-2730</a></em></p>
+<ul>
+<li>
+<p><strong>Technical replicates:</strong> use the same biological sample to repeat the technical or experimental steps in order to accurately measure technical variation and remove it during analysis. </p>
+</li>
+<li>
+<p><strong>Biological replicates</strong> use different biological samples of the same condition to measure the biological variation between samples. </p>
+</li>
+</ul>
+<p><strong>Biological replicates are absolutely essential for differential expression analysis</strong>. In fact, the more biological replicates, the better for estimates of biological variation and the more precise our estimates of the mean expression levels. This leads to more accurate modeling of our data and identification of more differentially expressed genes.</p>
+<figure>
+  <img alt="DE Replicates" src="../../img/de_replicates_img.png" width="500">
+</figure>
+<p><em>Image credit: <a href="https://doi.org/10.1093/bioinformatics/btt688">Liu, Y., et al., Bioinformatics (2014) <strong>30</strong>(3): 301–304</a></em></p>
+<p>As the figure above illustrates, <strong>biological replicates are of greater importance than sequencing depth</strong>. The figure shows the relationship between sequencing depth and number of replicates on the number of differentially expressed genes identified [<a href="https://academic.oup.com/bioinformatics/article/30/3/301/228651/RNA-seq-differential-expression-studies-more">1</a>]. Note that an <strong>increase in the number of replicates tends to return more DE genes than increasing the sequencing depth</strong>. Therefore, generally more replicates are better than higher sequencing depth, with the caveat that higher depth is required for detection of lowly expressed DE genes and for performing isoform-level differential expression. </p>
+<p>Replicates are almost always preferred to greater sequencing depth for bulk RNA-Seq. </p>
+<h2 id="confounding">Confounding</h2>
+<p>A confounded RNA-Seq experiment is one where you <strong>cannot distinguish the separate effects of two different sources of variation</strong> in the data. </p>
+<p>For example, we know that sex has large effects on gene expression, and if all of our <em>control</em> mice were female and all of the <em>treatment</em> mice were male, then our treatment effect would be confounded by sex. <strong>We could not differentiate the effect of treatment from the effect of sex.</strong></p>
+<figure>
+  <img alt="Confounding Variables" src="../../img/confounded_design.png" width="500">
+</figure>
+<p><strong>To AVOID confounding:</strong></p>
+<ul>
+<li>
+<p>Ensure animals in each condition are all the <strong>same sex, age, litter, and batch</strong>, if possible.</p>
+</li>
+<li>
+<p>If not possible, then ensure to split the animals equally between conditions</p>
+</li>
+</ul>
+<figure>
+  <img alt="Non Confounded Design" src="../../img/non_confounded_design.png" width="400">
+</figure>
+<h2 id="batch-effects">Batch effects</h2>
+<p>Batch effects are a significant issue for RNA-Seq analyses, since you can see significant differences in expression due solely to the batch effect.</p>
+<figure>
+  <img alt="Non Confounded Design" src="../../img/batch_effect_pca.png" width="600">
+</figure>
+<p><em>Image credit: <a href="https://www.biorxiv.org/content/early/2015/08/25/025528">Hicks SC, et al., bioRxiv (2015)</a></em></p>
+<h3 id="how-to-know-whether-you-have-batches">How to know whether you have batches?</h3>
+<ul>
+<li>
+<p>Were all RNA isolations performed on the same day and with the same kit?</p>
+</li>
+<li>
+<p>Were all library preparations performed on the same day?</p>
+</li>
+<li>
+<p>Did the same person perform the RNA isolation/library preparation for all samples?</p>
+</li>
+<li>
+<p>Did you use the same reagents for all samples?</p>
+</li>
+<li>
+<p>Did you perform the RNA isolation/library preparation in the same location?</p>
+</li>
+</ul>
+<p>If <em>any</em> of the answers is <strong>‘No’</strong>, then you have batches.</p>
+<h3 id="best-practices-regarding-batches">Best practices regarding batches:</h3>
+<ul>
+<li>
+<p>Design the experiment in a way to <strong>avoid batches</strong>, if possible.</p>
+</li>
+<li>
+<p>If unable to avoid batches:</p>
+</li>
+<li>
+<p><strong>Do NOT confound</strong> your experiment by batch:</p>
+<p><figure markdown="span">
+  <img alt="Confounded Batch" src="../../img/confounded_batch.png" width="300">
+</figure></p>
+<p><em>Image credit: <a href="https://www.biorxiv.org/content/early/2015/08/25/025528">Hicks SC, et al., bioRxiv (2015)</a></em></p>
+</li>
+<li>
+<p><strong>DO</strong> split replicates of the different sample groups across batches. The more replicates the better!</p>
+<p><figure markdown="span">
+    <img alt="Batch Effect" src="../../img/batch_effect.png" width="300">
+  </figure></p>
+<p><em>Image credit: <a href="https://www.biorxiv.org/content/early/2015/08/25/025528">Hicks SC, et al., bioRxiv (2015)</a></em></p>
+</li>
+<li>
+<p><strong>DO</strong> include batch information in your <strong>experimental metadata</strong>. During the analysis, we can regress out the variation due to batch so it doesn’t affect our results if we have that information.</p>
+<p><figure markdown="span">
+    <img alt="Metadata" src="../../img/metadata_batch.png" width="300">
+  </figure></p>
+</li>
 </ul>
 <hr>
-<p><strong>Class Activity #1</strong></p>
-<p>Before moving on, please complete the following class activity below. You will have ~5 minutes to answer both questions.</p>
-<p><a href="https://forms.gle/vng9b1HvgabFr8Y66">Class-activity</a></p>
-<hr>
-<h2 id="loops">Loops</h2>
-<p>Typically, when you are running analyses on the cluster, you are running multiple commands which correspond to individual steps in your workflow. We learned earlier that we can compile these commands into a single shell script to make this process more efficient. What if we could further increase our efficiency so that the same series of commands could be easily repeated for each sample in our dataset? We can do this with the use of loops in Shell!</p>
-<p>Looping is a concept shared by several programming languages, and its implementation in bash is very similar to other languages. </p>
-<p>The structure or the syntax of (<em>for</em>) loops in bash is as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="o">(</span>variable_name<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>list<span class="o">)</span>
-<span class="k">do</span>
-<span class="w"> </span><span class="o">(</span>command1<span class="w"> </span><span class="nv">$variable_name</span><span class="o">)</span>
-<span class="w"> </span><span class="o">(</span>command2<span class="w"> </span><span class="nv">$variable_name</span><span class="o">)</span>
-<span class="k">done</span>
-</code></pre></div>
-<p>The text that is <strong>bold, are parts of the loop structure that remain constant</strong>. That is, for every loop your create you will need to have the words: <code>for</code>, <code>in</code>, <code>do</code> and <code>done</code>. <em>This syntax/structure is virtually set in stone.</em> The text that goes in between those words will change depending on what it is you want your loop to do.</p>
-<p align="center">
-<img src="../img/for_loop.png" width="400">
-</p>
-
-<h3 id="how-do-loops-work">How do loops work?</h3>
-<p>Let's use the example below to go through step-by-step how a loop is actually working.</p>
-<p><strong>Class Exercise #2</strong>  </p>
-<p>Open a Jupyter Notebook session and create a script in <code>unit1_unix</code> called <code>loop.sh</code>. Type the following below. After you are done run the script! </p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>raw_fastq/
-
-<span class="k">for</span><span class="w"> </span>x<span class="w"> </span><span class="k">in</span><span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>Mov10_oe_2.subset.fq<span class="w"> </span>Mov10_oe_3.subset.fq
-<span class="k">do</span>
-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$x</span>
-<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="nv">$x</span>
-<span class="k">done</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>Mov10_oe_1.subset.fq
- 1223600 Mov10_oe_1.subset.fq
-Mov10_oe_2.subset.fq
- 1110016 Mov10_oe_2.subset.fq
-Mov10_oe_3.subset.fq
-  690816 Mov10_oe_3.subset.fq
-</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
+<p>Your experiment has three different treatment groups, A, B, and C. Due to the lengthy process of tissue extraction, you can only isolate the RNA from two samples at the same time. You plan to have 4 replicates per group.</p>
+<ol>
+<li>
+<p>Fill in the <code>RNA isolation</code> column of the metadata table. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the <code>RNA isolation</code> column, enter one of the following values for each sample: <code>group1</code>, <code>group2</code>, <code>group3</code>, <code>group4</code>, <code>group5</code>, <code>group6</code>. Make sure to fill in the table so as to avoid confounding by batch of <code>RNA isolation</code>. </p>
+</li>
+<li>
+<p>To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the <code>researcher</code> column for the samples they will prepare: use initials <code>AB</code> or <code>CD</code>.</p>
+</li>
+</ol>
 <table>
 <thead>
 <tr>
-<th>Loop component</th>
-<th>Value</th>
+<th>sample</th>
+<th>treatment</th>
+<th>sex</th>
+<th>replicate</th>
+<th>RNA isolation</th>
+<th>Researcher</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong><em>variable_name</em></strong></td>
-<td><code>x</code></td>
+<td>sample1</td>
+<td>A</td>
+<td>F</td>
+<td>1</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>list</strong></td>
-<td><code>Mov10_oe</code> FASTQ files</td>
+<td>sample2</td>
+<td>A</td>
+<td>F</td>
+<td>2</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td><strong><em>body (commands to be executed)</em></strong></td>
-<td><code>echo</code> and <code>wc -l</code></td>
+<td>sample3</td>
+<td>A</td>
+<td>M</td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample4</td>
+<td>A</td>
+<td>M</td>
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample5</td>
+<td>B</td>
+<td>F</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample6</td>
+<td>B</td>
+<td>F</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample7</td>
+<td>B</td>
+<td>M</td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample8</td>
+<td>B</td>
+<td>M</td>
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample9</td>
+<td>C</td>
+<td>F</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample10</td>
+<td>C</td>
+<td>F</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample11</td>
+<td>C</td>
+<td>M</td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sample12</td>
+<td>C</td>
+<td>M</td>
+<td>4</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3 id="loopsh-explained">Loop.sh explained</h3>
-<ol>
-<li>
-<p>When we start the loop, the temporary variable is initialized by taking the value of the first item in the list. </p>
-<blockquote>
-<p><strong>We don't explicitly see this, but the variable has been defined as <code>x=Mov10_oe_1.subset.fq</code>.</strong></p>
-</blockquote>
-</li>
-<li>
-<p>Next, all of the commands in the body of the loop (between the <code>do</code> and <code>done</code>) are executed. Usually, the commands placed here will be using the temporary variable as input. <strong>Remember, if you are using the value stored in the variable you need to use $ to reference it!</strong> In the example, we are running two commands:</p>
-<ul>
-<li><code>echo $x</code>: print out the value stored in <code>x</code></li>
-<li><code>wc -l $x</code>: count/report the number of lines in <code>x</code></li>
-</ul>
-</li>
-<li>
-<p>Once those two commands are complete, the temporary variable is assigned a new value. It now takes the value of the second item in the list.</p>
-<blockquote>
-<p><strong>The variable is reassigned a value <code>x=Mov10_oe_2.subset.fq</code>.</strong></p>
-</blockquote>
-</li>
-<li>
-<p>Once again, all of the commands in between the <code>do</code> and <code>done</code> are executed. This time they are using the new value stored in <code>x</code> as input.</p>
-</li>
-<li>
-<p>The temporary variable then takes on the value of the third item in the list.</p>
-<blockquote>
-<p><strong>The variable is reassigned a value <code>x=Mov10_oe_3.subset.fq</code>.</strong></p>
-</blockquote>
-</li>
-<li>
-<p>Once again, all of the commands in between the <code>do</code> and <code>done</code> are executed using the new value stored in <code>x</code>. </p>
-</li>
-<li>
-<p>Now that we have gone through every item in the list, the loop is <code>done</code> and it exits. </p>
-</li>
-</ol>
-<p>Essentially, <strong>the number of items in the list = number of times the code will loop through</strong>. So in our case, we had three files listed and so the series of commands in the body of the loop were repeated three times. If we had provided all six files, the series of commands would be repeated six times.</p>
-<blockquote>
-<h4 id="running-loops-at-the-command-prompt">Running loops at the command prompt</h4>
-<p>In our materials, the for loop is written out using multiple lines rather than the single line commands we have been running so far. When running this at the command prompt begin by typing out the <code>for</code> statement, then press the return key. You will notice that you are not back at your command prompt. Rather than a <code>$</code>, you should see a <code>&gt;</code>. The shell has acknowledged that you have started a for loop and is waiting for you to complete it. Continue to type code line by line. Once you type in <code>done</code> and press return the shell will know you are done and will run the loop. </p>
-</blockquote>
-<h3 id="creating-loops-using-best-practices">Creating loops using best practices</h3>
-<h4 id="meaningful-variable-names">Meaningful variable names</h4>
-<p>It doesn't matter what variable name we use, but it is advisable to make it something more intuitive. In the long run, it's best to use a name that will help point out a variable's functionality, so your future self will understand what you are thinking now.</p>
-<h4 id="using-the-wildcard-to-define-the-list">Using the wildcard to define the list</h4>
-<p>In the example above, we typed out each item in the list leaving a space in between each item. This is usually fine for one or two items, but with larger lists this can become tedious and error-prone. If the list you are iterating over share some similarities in the naming we recommend using the wildcard shortcut to specify the list. </p>
-<hr>
-<p><strong>Class Exercise #3</strong><br>
-+ Rewrite the for loop above using a more meaningful variable name and using the wildcard.
-+ Change the for loop example above so that it runs on all six FASTQ files.
-+ Change the for loop example above so that it prints out the first line of all six files.</p>
-<blockquote>
-<p><strong>Don't forget to change the name of the variable being referenced inside of the loop!</strong></p>
-</blockquote>
-<hr>
-<h2 id="automating-more-with-scripts">Automating more with Scripts</h2>
-<p>Imagine, if you will, a script that would do the following for us each time we get a new data set:</p>
-<ul>
-<li>Use for loop to iterate over each FASTQ file</li>
-<li>Generate a prefix to use for naming our output files</li>
-<li>Dump out bad reads into a new file</li>
-<li>Get the count of the number of bad reads and report it to a running log file</li>
-</ul>
-<p>It might seem daunting, but everything outlined above is something that you know how to do. Let's get started...</p>
+</div>
 <hr>
 <hr>
-<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
-<ul>
-<li><em>The materials used in this lesson were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
-All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></li>
-<li><em>Adapted from the lesson by Tracy Teal. Original contributors: Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for Software Carpentry (http://software-carpentry.org/)</em></li>
-</ul></div>
+<h2 id="citation">Citation</h2>
+<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em><br>
+<em>Authors: Mary Piper, Meeta Mistry, Radhika Khetani</em><br>
+<em>Other sources - https://umich-brcf-bioinf.github.io/rnaseq_demystified_workshop/site/Module3a_Design_Prep_Seq#2_Experimental_Design_and_Practicalities</em> </p></div>
 
 
 
