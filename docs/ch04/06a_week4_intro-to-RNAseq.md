@@ -1,18 +1,12 @@
----
-Week: "5" 
-Lesson: "Intro to RNA-Seq"
-Date: "Tuesday, February 13, 2024"
----
 
-# Learning Objectives:
+## Learning Objectives:
 
-* Understand some applications of RNA sequencing
+* Understand applications of RNA sequencing
 * Introduce the overall differential expression workflow
 * Understand experimental design concepts such as replicates and batch effects 
 * Understand different types of library preps, their requirements and uses. 
-* Understand how sequencing works 
 
-## Introduction to RNA-seq
+## Overview of RNA-seq
 
 RNA-seq is an exciting experimental technique that is utilized to explore and/or quantify gene expression within or between conditions. 
 
@@ -38,7 +32,7 @@ To be translated into proteins, the RNA must undergo processing to generate the 
   ![Gene Structure](../img/Gene_structure.png){ width="600"}
 </figure>
 
-**While mRNA transcripts have a polyA tail, many of the non-coding RNA transcripts do not as the post-transcriptional processing is different for these transcripts.**
+**While mRNA transcripts have a polyA tail, many of the non-coding RNA transcripts do not.**
 
 ### Transcriptomics
 
@@ -49,17 +43,156 @@ The transcriptome is defined as a collection of all the transcript readouts pres
 - **Refinement of gene models**: building better gene models and verifying them using transcriptome assembly
 - **Metatranscriptomics**: community transcriptome analysis
 
-#### Differential gene expression
+## Illumina Sequencing
 
-We will be focused on the application of differential gene expression analysis for this unit. Differential gene expression analysis allows us to explore the gene expression changes that occur in disease or between different conditions, by measuring the quantity of RNA expressed by all genes in each of the different conditions. Using this analysis we can answer questions such as:
+### Illumina Library preparation
+
+ The general workflow for library preparation is detailed in the step-by-step images below.
+
+**Briefly, the RNA is isolated from the sample and contaminating DNA is removed with DNase.**
+
+<figure markdown="span">
+  ![Library Prep](../img/libraryprep_step1-2.png){ width="400"}
+</figure>
+
+**The RNA sample then undergoes either selection of the mRNA (polyA selection) or depletion of the rRNA. The resulting RNA is fragmented.** 
+
+> Generally, ribosomal RNA represents the majority of the RNAs present in a cell, while messenger RNAs represent a small percentage of total RNA, ~2% in humans. Therefore, if we want to study the protein-coding genes, we need to enrich for mRNA or deplete the rRNA. 
+
+<figure markdown="span">
+  ![PolyA Tail](../img/polyA.png){ width="450"}
+</figure>
+
+
+> *The size of the target fragments in the final library is a key parameter for library construction. DNA fragmentation is typically done by physical methods (i.e., acoustic shearing and sonication) or enzymatic methods (i.e., non-specific endonuclease cocktails and transposase tagmentation reactions.*
+
+<figure markdown="span">
+  ![Library Prep](../img/libraryprep_step3.png){ width="450"}
+</figure>
+
+
+**The RNA is then reverse transcribed into double-stranded cDNA and sequence adapters are then added to the ends of the fragments.**
+
+> The cDNA libraries can be generated in a way to retain information about which strand of DNA the RNA was transcribed from. Libraries that retain this information are called stranded libraries, which are now standard with Illumina’s TruSeq stranded RNA-Seq kits. Stranded libraries should not be any more expensive than unstranded, so there is not really any reason not to acquire this additional information. 
+> 
+> There are 3 types of cDNA libraries available:
+> 
+> * Forward (secondstrand) – reads resemble the gene sequence or the secondstrand cDNA sequence
+> * Reverse (firststrand) – reads resemble the complement of the gene sequence or firststrand cDNA sequence (TruSeq)
+> * Unstranded
+
+<figure markdown="span">
+  ![Library Prep Continued](../img/libraryprep_step4-5.png){ width="450"}
+</figure>
+ 
+**Finally, the fragments are PCR amplified if needed, and the fragments are size selected (usually ~300-500bp) to finish the library.**
+
+<figure markdown="span">
+  ![Library Prep Final Step](../img/libraryprep_step6.png){ width="450"}
+</figure>
+
+ *Image credit: [Martin J.A. and Wang Z., Nat. Rev. Genet. (2011) 12:671–682](https://www.nature.com/articles/nrg3068)*
+
+### Strandedness 
+
+The implication of **stranded** libraries is that one could distinguish whether the reads are derived from the forward or reverse-encoded transcripts. 
+
+<figure markdown="span">
+  ![Strandedness](../img/strandedness.png){ width="800"}
+</figure>
+
++ Red = positive strand 
++ Blue = negative strand 
+
+### Single-end versus Paired-end
+
+After preparation of the libraries, sequencing can be performed to generate the nucleotide sequences of the ends of the fragments, which are called **reads**. You will have the choice of sequencing a single end of the cDNA fragments (single-end reads) or both ends of the fragments (paired-end reads).
+
+<figure markdown="span">
+  ![Paired End Reads](../img/paired_end_reads.png){ width="500"}
+</figure>
+
+- SE - Single end dataset => Only Read1
+- PE - Paired-end dataset => Read1 + Read2
+	- often are 2 separate FastQ files! 
+
+Generally single-end sequencing is sufficient unless it is expected that the reads will match multiple locations on the genome (e.g. organisms with many paralogous genes), assemblies are being performed, or for splice isoform differentiation. 
+
+### Different sequencing platforms
+
+There are a variety of Illumina platforms to choose from to sequence the cDNA libraries.
+
+<figure markdown="span">
+  ![Illumina Platforms](../img/illumina_platforms.png){ width="600"}
+</figure>
+
+*Image credit: Adapted from [Illumina](www.illumina.com)*
+
+Differences in platform can alter the length of reads generated, the quality of reads, as well as the total number of reads sequenced per run and the amount of time required to sequence the libraries. The different platforms each use a different flow cell, which is a glass surface coated with an arrangement of paired oligos that are complementary to the adapters added to your template molecules. **The flow cell is where the sequencing reactions take place**.
+
+<figure markdown="span">
+  ![Flow Cell](../img/flow_cell_oligos.png){ width="600"}
+</figure>
+
+ *Image credit: Adapted from [Illumina](www.illumina.com)*
+ 
+
+### Multiplexing
+
+Depending on the Illumina platform (MiSeq, HiSeq, NextSeq), the number of lanes per flow cell, and the number of reads that can be obtained per lane varies widely. **The researcher will need to decide on how many reads they would like per sample** (i.e. the sequencning depth) and then based on the platform you choose calculate how many total lanes you will require for your set of samples. 
+
+
+Typically, charges for sequencing are per lane of the flow cell and you will be able to run multiple samples per lane. Illumina has therefore devised a nice multiplexing method which allows libraries from several samples to be pooled and sequenced simultaneously in the same lane of a flow cell. This method requires **the addition of indices** (within the Illumina adapter) or special barcodes (outside the Illumina adapter) as described in the schematic below.
+
+<figure markdown="span">
+  ![Demultiplexing](../img/demultiplexing.png){ width="800"}
+</figure>
+
+
+- **General gene-level differential expression:**
+
+  - ENCODE guidelines suggest 30 million SE reads per sample (stranded).
+  
+  - 15 million reads per sample is often sufficient, if there are a good number of replicates (>3). 
+
+  - Use of an HiSeq or NextSeq, or NovaSeq for sequencing 
+
+
+<figure markdown="span">
+  ![Summary](../img/summary-slide.png){ width="800"}
+</figure>
+
+## Differential gene expression
+
+Differential gene expression analysis allows us to explore the gene expression changes that occur in disease or between different conditions, by measuring the quantity of RNA expressed by all genes in each of the different conditions. 
+
+<figure markdown="span">
+  ![Differential Gene Expression](../img/diff.png){ width="600"}
+</figure>
+
+Using this analysis we can answer questions such as:
 
 - What genes are differentially expressed between conditions?
 
 - Are there any trends in gene expression over time or across conditions?
 
+<figure markdown="span">
+  ![Trends DE](de-trends.png){ width="600"}
+</figure>
+
+*Citation: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138236* 
+
 - Which groups of genes change similarly over time or across conditions?
 
 - What processes or pathways are important for my condition of interest?
+
+<figure markdown="span">
+  ![Pathways DE](de-path.jpg){ width="600"}
+</figure>
+
+*Citation: https://elifesciences.org/articles/63003* 
+
+### Steps Required to Perform DE analysis 
 
 To perform differential gene expression analysis, we perform the following steps:
 
@@ -67,7 +200,11 @@ To perform differential gene expression analysis, we perform the following steps
   ![DE Workflow](../img/de_workflow2019.png){ width="400"}
 </figure>
 
-# Experimental Design 
+<figure markdown="span">
+  ![Non Confounded Design](../img/RNAseq-pipeline-2025.png){ width="800"}
+</figure>
+
+## Experimental Design 
 
 Understanding the steps in the experimental process of RNA extraction and preparation of RNA-Seq libraries is helpful for designing an RNA-Seq experiment and important to consider when selecting a dataset to analyze. There are special considerations that should be highlighted which can greatly affect the quality of a differential expression analysis. 
 
@@ -78,7 +215,7 @@ These important considerations include:
 3. Addressing **batch effects**
 
 
-## Replicates
+### Replicates
 
 Experimental replicates can be performed as **technical replicates** or **biological replicates**. 
 
@@ -124,7 +261,6 @@ For example, we know that sex has large effects on gene expression, and if all o
 <figure markdown="span">
   ![Non Confounded Design](../img/non_confounded_design.png){ width="400"}
 </figure>
-
 
 ## Batch effects
 
@@ -181,151 +317,29 @@ If *any* of the answers is **‘No’**, then you have batches.
   
  ***
 
-!!! example "Class Exercise #3" 
+!!! example "Class Exercise" 
+    Your experiment has three different treatment groups, A, B, and C. Due to the lengthy process of tissue extraction, you can only isolate the RNA from two samples at the same time. You plan to have 4 replicates per group.
 
-  Your experiment has three different treatment groups, A, B, and C. Due to the lengthy process of tissue extraction, you can only isolate the RNA from two samples at the same time. You plan to have 4 replicates per group.
+    1. Fill in the `RNA isolation` column of the metadata table. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the `RNA isolation` column, enter one of the following values for each sample: `group1`, `group2`, `group3`, `group4`, `group5`, `group6`. Make sure to fill in the table so as to avoid confounding by batch of `RNA isolation`. 
 
-  1. Fill in the `RNA isolation` column of the metadata table. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the `RNA isolation` column, enter one of the following values for each sample: `group1`, `group2`, `group3`, `group4`, `group5`, `group6`. Make sure to fill in the table so as to avoid confounding by batch of `RNA isolation`. 
+    2. To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the `researcher` column for the samples they will prepare: use initials `AB` or `CD`.
 
-  2. To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the `researcher` column for the samples they will prepare: use initials `AB` or `CD`.
-
-  | sample | treatment | sex | replicate | RNA isolation | Researcher|
-  | --- | --- | --- | --- | --- |--- |
-  | sample1 | A | F | 1 | 
-  | sample2 | A | F | 2 |
-  | sample3 | A | M | 3 |
-  | sample4 | A | M | 4 |
-  | sample5 | B | F | 1 |
-  | sample6 | B | F | 2 |
-  | sample7 | B | M | 3 |
-  | sample8 | B | M | 4 |
-  | sample9 | C | F | 1 |
-  | sample10 | C | F | 2 |
-  | sample11 | C | M | 3 |
-  | sample12 | C | M | 4 |
+    | sample | treatment | sex | replicate | RNA isolation | Researcher|
+    | --- | --- | --- | --- | --- |--- |
+    | sample1 | A | F | 1 | 
+    | sample2 | A | F | 2 |
+    | sample3 | A | M | 3 |
+    | sample4 | A | M | 4 |
+    | sample5 | B | F | 1 |
+    | sample6 | B | F | 2 |
+    | sample7 | B | M | 3 |
+    | sample8 | B | M | 4 |
+    | sample9 | C | F | 1 |
+    | sample10 | C | F | 2 |
+    | sample11 | C | M | 3 |
+    | sample12 | C | M | 4 |
 
 ***    
-
-
-
-## Library preparation
-
- The general workflow for library preparation is detailed in the step-by-step images below.
-
-**Briefly, the RNA is isolated from the sample and contaminating DNA is removed with DNase.**
-
-<figure markdown="span">
-  ![Library Prep](../img/libraryprep_step1-2.png){ width="400"}
-</figure>
-
-**The RNA sample then undergoes either selection of the mRNA (polyA selection) or depletion of the rRNA. The resulting RNA is fragmented.** 
-
-> Generally, ribosomal RNA represents the majority of the RNAs present in a cell, while messenger RNAs represent a small percentage of total RNA, ~2% in humans. Therefore, if we want to study the protein-coding genes, we need to enrich for mRNA or deplete the rRNA. 
-
-<figure markdown="span">
-  ![PolyA Tail](../img/polyA.png){ width="450"}
-</figure>
-
-
-> *The size of the target fragments in the final library is a key parameter for library construction. DNA fragmentation is typically done by physical methods (i.e., acoustic shearing and sonication) or enzymatic methods (i.e., non-specific endonuclease cocktails and transposase tagmentation reactions.*
-
-<figure markdown="span">
-  ![Library Prep](../img/libraryprep_step3.png){ width="450"}
-</figure>
-
-
-**The RNA is then reverse transcribed into double-stranded cDNA and sequence adapters are then added to the ends of the fragments.**
-
-> The cDNA libraries can be generated in a way to retain information about which strand of DNA the RNA was transcribed from. Libraries that retain this information are called stranded libraries, which are now standard with Illumina’s TruSeq stranded RNA-Seq kits. Stranded libraries should not be any more expensive than unstranded, so there is not really any reason not to acquire this additional information. 
-> 
-> There are 3 types of cDNA libraries available:
-> 
-> * Forward (secondstrand) – reads resemble the gene sequence or the secondstrand cDNA sequence
-> * Reverse (firststrand) – reads resemble the complement of the gene sequence or firststrand cDNA sequence (TruSeq)
-> * Unstranded
-
-<figure markdown="span">
-  ![Library Prep Continued](../img/libraryprep_step4-5.png){ width="450"}
-</figure>
- 
-**Finally, the fragments are PCR amplified if needed, and the fragments are size selected (usually ~300-500bp) to finish the library.**
-
-<figure markdown="span">
-  ![Library Prep Final Step](../img/libraryprep_step6.png){ width="450"}
-</figure>
-
- *Image credit: [Martin J.A. and Wang Z., Nat. Rev. Genet. (2011) 12:671–682](https://www.nature.com/articles/nrg3068)*
-
-## Strandedness 
-
-Another consideration is whether to generate strand-preserving libraries as libraries can be either stranded or unstranded. The implication of **stranded** libraries is that one could distinguish whether the reads are derived from the forward or reverse-endoded transcripts. 
-
-<figure markdown="span">
-  ![Strandedness](../img/strandedness.png){ width="800"}
-</figure>
-
-+ Red = positive strand 
-+ Blue = negative strand 
-
-# Illumina Sequencing
-
-## Single-end versus Paired-end
-
-After preparation of the libraries, sequencing can be performed to generate the nucleotide sequences of the ends of the fragments, which are called **reads**. You will have the choice of sequencing a single end of the cDNA fragments (single-end reads) or both ends of the fragments (paired-end reads).
-
-<figure markdown="span">
-  ![Paired End Reads](../img/paired_end_reads.png){ width="500"}
-</figure>
-
-- SE - Single end dataset => Only Read1
-- PE - Paired-end dataset => Read1 + Read2
-	- often are 2 separate FastQ files! 
-
-Generally single-end sequencing is sufficient unless it is expected that the reads will match multiple locations on the genome (e.g. organisms with many paralogous genes), assemblies are being performed, or for splice isoform differentiation. Be aware that paired-end reads are generally 2x more expensive.
-
-## Different sequencing platforms
-
-There are a variety of Illumina platforms to choose from to sequence the cDNA libraries.
-
-<figure markdown="span">
-  ![Illumina Platforms](../img/illumina_platforms.png){ width="600"}
-</figure>
-
-*Image credit: Adapted from [Illumina](www.illumina.com)*
-
-Differences in platform can alter the length of reads generated, the quality of reads, as well as the total number of reads sequenced per run and the amount of time required to sequence the libraries. The different platforms each use a different flow cell, which is a glass surface coated with an arrangement of paired oligos that are complementary to the adapters added to your template molecules. **The flow cell is where the sequencing reactions take place**.
-
-<figure markdown="span">
-  ![Flow Cell](../img/flow_cell_oligos.png){ width="600"}
-</figure>
-
- *Image credit: Adapted from [Illumina](www.illumina.com)*
- 
-
-## Multiplexing
-
-Depending on the Illumina platform (MiSeq, HiSeq, NextSeq), the number of lanes per flow cell, and the number of reads that can be obtained per lane varies widely. **The researcher will need to decide on how many reads they would like per sample** (i.e. the sequencning depth) and then based on the platform you choose calculate how many total lanes you will require for your set of samples. 
-
-
-Typically, charges for sequencing are per lane of the flow cell and you will be able to run multiple samples per lane. Illumina has therefore devised a nice multiplexing method which allows libraries from several samples to be pooled and sequenced simultaneously in the same lane of a flow cell. This method requires **the addition of indices** (within the Illumina adapter) or special barcodes (outside the Illumina adapter) as described in the schematic below.
-
-<figure markdown="span">
-  ![Demultiplexing](../img/demultiplexing.png){ width="800"}
-</figure>
-
-
-- **General gene-level differential expression:**
-
-  - ENCODE guidelines suggest 30 million SE reads per sample (stranded).
-  
-  - 15 million reads per sample is often sufficient, if there are a good number of replicates (>3). 
-
-  - Use of an HiSeq or NextSeq, or NovaSeq for sequencing 
-
-
-<figure markdown="span">
-  ![Summary](../img/summary-slide.png){ width="800"}
-</figure>
 
 
 ---
