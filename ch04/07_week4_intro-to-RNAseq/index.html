@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch04/07_week4_intro-to-RNAseq/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../06_week4_mmg3320/">
       
       
-        <link rel="next" href="../06_week4_mmg3320/">
+        <link rel="next" href="../../assignments/week1_assignment/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>RNA-Seq Overview (L6) - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>RNA-Seq Overview (L7) - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RNA-Seq Overview (L6)
+              RNA-Seq Overview (L7)
             
           </span>
         </div>
@@ -1015,6 +1015,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_week4_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loops (L6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1029,7 +1050,7 @@
           
   
   <span class="md-ellipsis">
-    RNA-Seq Overview (L6)
+    RNA-Seq Overview (L7)
   </span>
   
 
@@ -1040,7 +1061,7 @@
         
   
   <span class="md-ellipsis">
-    RNA-Seq Overview (L6)
+    RNA-Seq Overview (L7)
   </span>
   
 
@@ -1245,27 +1266,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06_week4_mmg3320/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Loops (L7)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1373,27 +1373,6 @@
   
   <span class="md-ellipsis">
     Week 3 (L5)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/week4_assignment/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Week 4 (L6)
   </span>
   
 
@@ -1692,7 +1671,7 @@
                   
 
 
-  <h1>RNA-Seq Overview (L6)</h1>
+  <h1>RNA-Seq Overview (L7)</h1>
 
 <div><h2 id="learning-objectives">Learning Objectives:</h2>
 <ul>
@@ -1951,132 +1930,6 @@
   </figure></p>
 </li>
 </ul>
-<hr>
-<div class="admonition example">
-<p class="admonition-title">Class Exercise</p>
-<p>Your experiment includes three treatment groups: A, B, and C. Each group has four biological replicates, for a total of 12 samples. Because RNA isolation is a lengthy process, you can only isolate RNA from two samples at a time. This means you will need to complete six batches of RNA isolation.</p>
-<p>Instructions:</p>
-<p>Fill in the RNA isolation column of the metadata table.
-    + Since only two samples can be processed at a time, RNA isolation will be performed in six batches.
-      + Label each sample with one of the following batch names: group1, group2, group3, group4, group5, or group6.
-      + Assign batches carefully to avoid confounding due to batch effects.</p>
-<p>Assign researchers to each RNA isolation batch.
-    + Two researchers will perform the RNA extractions:
-        + Researcher AB
-        + Researcher CD
-    + In the researcher column, write either AB or CD for each sample, based on who performs the RNA isolation. </p>
-<table>
-<thead>
-<tr>
-<th>sample</th>
-<th>treatment</th>
-<th>sex</th>
-<th>replicate</th>
-<th>RNA isolation</th>
-<th>Researcher</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>sample1</td>
-<td>A</td>
-<td>F</td>
-<td>1</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample2</td>
-<td>A</td>
-<td>F</td>
-<td>2</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample3</td>
-<td>A</td>
-<td>M</td>
-<td>3</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample4</td>
-<td>A</td>
-<td>M</td>
-<td>4</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample5</td>
-<td>B</td>
-<td>F</td>
-<td>1</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample6</td>
-<td>B</td>
-<td>F</td>
-<td>2</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample7</td>
-<td>B</td>
-<td>M</td>
-<td>3</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample8</td>
-<td>B</td>
-<td>M</td>
-<td>4</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample9</td>
-<td>C</td>
-<td>F</td>
-<td>1</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample10</td>
-<td>C</td>
-<td>F</td>
-<td>2</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample11</td>
-<td>C</td>
-<td>M</td>
-<td>3</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>sample12</td>
-<td>C</td>
-<td>M</td>
-<td>4</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
 <hr>
 <h2 id="citation">Citation</h2>
 <p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em><br>
