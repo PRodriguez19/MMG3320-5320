@@ -126,7 +126,7 @@ There are a variety of Illumina platforms to choose from to sequence the cDNA li
   ![Illumina Platforms](../img/illumina_platforms.png){ width="600"}
 </figure>
 
-*Image credit: Adapted from [Illumina](www.illumina.com)*
+*Image credit: Adapted from Illumina*
 
 Differences in platform can alter the length of reads generated, the quality of reads, as well as the total number of reads sequenced per run and the amount of time required to sequence the libraries. The different platforms each use a different flow cell, which is a glass surface coated with an arrangement of paired oligos that are complementary to the adapters added to your template molecules. **The flow cell is where the sequencing reactions take place**.
 
@@ -134,7 +134,7 @@ Differences in platform can alter the length of reads generated, the quality of 
   ![Flow Cell](../img/flow_cell_oligos.png){ width="600"}
 </figure>
 
- *Image credit: Adapted from [Illumina](www.illumina.com)*
+ *Image credit: Adapted from Illumina*
  
 
 ### Multiplexing
@@ -177,7 +177,7 @@ Using this analysis we can answer questions such as:
 - Are there any trends in gene expression over time or across conditions?
 
 <figure markdown="span">
-  ![Trends DE](de-trends.png){ width="600"}
+  ![Trends DE](../img/de-trends.png){ width="600"}
 </figure>
 
 *Citation: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138236* 
@@ -187,7 +187,7 @@ Using this analysis we can answer questions such as:
 - What processes or pathways are important for my condition of interest?
 
 <figure markdown="span">
-  ![Pathways DE](de-path.jpg){ width="600"}
+  ![Pathways DE](../img/de-path.jpg){ width="600"}
 </figure>
 
 *Citation: https://elifesciences.org/articles/63003* 
