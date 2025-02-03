@@ -1763,7 +1763,7 @@ Mov10_oe_3.subset.fq
 <p>Change the for loop above so that:</p>
 <pre><code>1) `x` variable is given a more meaningful name
 2) the script runs on all six FASTQ files 
-3) and it prints out the first four lines of all six files
+3) and it prints out the first two lines of all six files
 </code></pre>
 </div>
 <hr>
@@ -1778,13 +1778,13 @@ Mov10_oe_3.subset.fq
 <p>It might seem daunting, but everything outlined above is something that you know how to do. Let's get started...</p>
 <hr>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise</p>
+<p class="admonition-title">Class Exercise and Homework Assignment #4</p>
 <ol>
 <li>
 <p>Create a directory called <code>badreads</code> in <code>unit1_unix</code></p>
 </li>
 <li>
-<p>Use Jupyter Notebooks/Nano to create a new script called <code>generate_bad_reads_summary.sh</code>. </p>
+<p>Use Jupyter Notebooks/Nano to create a new script called <code>generate_bad_reads_summary.sh</code> in <code>badreads/</code></p>
 </li>
 <li>
 <p>At the beginning of your script add a <strong>shebang line</strong>. </p>
@@ -1834,7 +1834,7 @@ Mov10_oe_3.subset.fq
 <p>Type <code>do</code> in Line 8. </p>
 </li>
 <li>
-<p>Skip a line. On line 10 copy-and-paste the following comment. </p>
+<p>Skip a line. On line 10 copy-and-paste the following comment. Yes it is okay to skip a line! </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># create a prefix for all output files</span>
 </code></pre></div>
 </li>
@@ -1843,7 +1843,7 @@ Mov10_oe_3.subset.fq
 <div class="highlight"><pre><span></span><code>variable_name=value_of_variable
 </code></pre></div>
 <ul>
-<li>The value of the variable should be equal to the <code>basename</code> of the fastq files. </li>
+<li>The value_of_variable should be equal to the <code>basename</code> of <code>filename</code>. </li>
 <li>Be sure to trim off the file extension <code>.subset.fq</code></li>
 </ul>
 <blockquote>
