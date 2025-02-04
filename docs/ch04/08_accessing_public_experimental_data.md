@@ -10,17 +10,13 @@
   ![Overview](../img/overview.png){ width="800"}
 </figure>
 
-<p align="center">
-<img src="../img/overview.png" width="800">
-</p>
-
 ## Accessing genomic reference data
 
 ### FASTA
 During an NGS experiment, the nucleotide sequences stored inside the raw FASTQ files, or "sequence reads", need to be mapped or aligned to the reference genome to determine from where these sequences originated. Therefore, we need a reference genome (in FASTA format) in which to align our sequences.
 
 <figure markdown="span">
-  ![FASTA](../img/FASTA.png){ width="600"}
+  ![FASTA](../img/fasta.png){ width="600"}
 </figure>
 
 ### GTF 
@@ -118,7 +114,8 @@ Navigate to the [Ensembl website](http://useast.ensembl.org/index.html) to view 
   ![Downloading from ENSEMBL](../img/download_ensembl.png){ width="800"}
 </figure>
 
-# Accessing public NGS sequencing data 
+
+***
 
 ## Gene Expression Omnibus (GEO)
 
@@ -266,6 +263,7 @@ Next, let's download the **Metadata** and **Accession List** in text format.
 + The **Metadata** is a very useful text summary of all metadata for all runs in the study
 + The **Accession List** is a list of all the SRR accession numbers for the study. We will need this list to download the data with the script below. 
 
+***
 
 ## SRA-Toolkit
 
@@ -275,6 +273,8 @@ The SRA Toolkit is a set of utilities developed by the National Center for Biote
 Fastq-dump is a command-line tool included in the SRA Toolkit developed by the National Center for Biotechnology Information (NCBI). It's used to extract data from the Sequence Read Archive (SRA) and convert it into the FASTQ format, which is a standard file format used to store biological sequences and their corresponding quality scores from high-throughput sequencing experiments.
 
 When you download sequencing data from the SRA using fastq-dump, it retrieves the raw sequencing reads along with quality information and saves them into one or more FASTQ files, making it easier for researchers to perform downstream analyses such as alignment, assembly, and variant calling. Fastq-dump is a crucial tool in bioinformatics pipelines for processing sequencing data stored in the SRA.
+
+***
 
 ### Using `fastq-dump` with the environmental module system 
 Now, we would like to run `fastq-dump` to download the fastq files. Let's type the following command: 
@@ -335,6 +335,8 @@ INPUT
   --table <table-name>             Table name within cSRA object, default is 
                                    "SEQUENCE"
 ```
+
+***
 
 ## Using SRA-toolkit to download multiple SRR files 
 Unfortunately, SRA-toolkit doesn't have its own methods for downloading multiple SRR files at once in parallel. Lucky for us, the people at Harvard wrote a two scripts to do this for us. Before we write these scripts, lets discuss how to submit a job using the SLURM batch system. 
@@ -577,3 +579,5 @@ Another important consideration when downloading large datasets to the server, i
 ## Citation 
 
 *This lesson has been developed by members of the teaching team at the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.*
+
+*This lesson was developed using materials from the [Vermont Advanced Computing Center](https://www.uvm.edu/vacc). These materials are freely available.*
