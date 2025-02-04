@@ -1102,13 +1102,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sequence-formats" class="md-nav__link">
+  <a href="#sequence-file-formats" class="md-nav__link">
     <span class="md-ellipsis">
-      Sequence formats
+      Sequence file formats
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Sequence formats">
+    <nav class="md-nav" aria-label="Sequence file formats">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1144,14 +1144,23 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#downloading-file-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloading file formats
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Downloading file formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#general-biological-databases" class="md-nav__link">
     <span class="md-ellipsis">
       General biological databases
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="General biological databases">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#ensembl" class="md-nav__link">
@@ -1183,16 +1192,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finding-and-accessing-data-on-geo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finding and accessing data on GEO
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Finding and accessing data on GEO">
+    <nav class="md-nav" aria-label="Gene Expression Omnibus (GEO)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1700,13 +1700,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sequence-formats" class="md-nav__link">
+  <a href="#sequence-file-formats" class="md-nav__link">
     <span class="md-ellipsis">
-      Sequence formats
+      Sequence file formats
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Sequence formats">
+    <nav class="md-nav" aria-label="Sequence file formats">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1742,14 +1742,23 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#downloading-file-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloading file formats
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Downloading file formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#general-biological-databases" class="md-nav__link">
     <span class="md-ellipsis">
       General biological databases
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="General biological databases">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#ensembl" class="md-nav__link">
@@ -1781,16 +1790,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finding-and-accessing-data-on-geo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finding and accessing data on GEO
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Finding and accessing data on GEO">
+    <nav class="md-nav" aria-label="Gene Expression Omnibus (GEO)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2046,7 +2046,16 @@
 <figure>
   <img alt="Overview" src="../../img/overview.png" width="800">
 </figure>
-<h2 id="sequence-formats">Sequence formats</h2>
+<h2 id="sequence-file-formats">Sequence file formats</h2>
+<p>Below is a cartoon displaying the (3) file types required to perform an RNA-Seq analysis. </p>
+<ul>
+<li>FASTQ files will contain the raw sequence reads</li>
+<li>The reference genome will be in the form of a FASTA file</li>
+<li>Gene annotations will be in the form of a GTF file </li>
+</ul>
+<figure>
+  <img alt="File Inputs" src="../../img/inputs.png" width="600">
+</figure>
 <h3 id="fasta">FASTA</h3>
 <p>During an NGS experiment, the nucleotide sequences stored inside the raw FASTQ files, or "sequence reads", need to be mapped or aligned to the reference genome to determine from where these sequences originated. Therefore, we need a reference genome (in FASTA format) in which to align our sequences.</p>
 <figure>
@@ -2057,19 +2066,16 @@
 <figure>
   <img alt="GTF" src="../../img/GTF_file_example.jpg" width="800">
 </figure>
-<p>To download reference data, there are a few different sources available:</p>
+<h3 id="fastq">FASTQ</h3>
+<p>These are the extension of FASTA files which contain quality scores and are output from the NGS technologies. </p>
+<h2 id="downloading-file-formats">Downloading file formats</h2>
+<p>To find and download NGS experimental data and associated reference data we will explore a few key repositories. For <strong>finding reference data</strong>, we will navigate the <a href="http://useast.ensembl.org/index.html">Ensembl database</a>. For <strong>accessing experimental data</strong>, we will explore the <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus</a> and the <a href="https://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a> repositories. </p>
 <ul>
 <li><strong>General biological databases:</strong> Ensembl, NCBI, and UCSC</li>
 <li><strong>Organism-specific biological databases:</strong> Wormbase, Flybase, Cryptodb, etc. (often updated more frequently, so may be more comprehensive)</li>
 </ul>
 <p>*Note that these reference data sources are relevant to most types of genomic analyses not just NGS analyses.</p>
-<p>To find and download NGS experimental data and associated reference data we will explore a few key repositories. For <strong>finding reference data</strong>, we will navigate the <a href="http://useast.ensembl.org/index.html">Ensembl database</a>. For <strong>accessing experimental data</strong>, we will explore the <a href="https://www.ncbi.nlm.nih.gov/geo/">Gene Expression Omnibus</a> and the <a href="https://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a> repositories. </p>
-<figure>
-  <img alt="GTF" src="../../img/inputs.png" width="600">
-</figure>
-<h3 id="fastq">FASTQ</h3>
-<p>These are the extension of FASTA files which contain quality scores and are output from the NGS technologies. </p>
-<h2 id="general-biological-databases">General biological databases</h2>
+<h3 id="general-biological-databases">General biological databases</h3>
 <p>Biological databases for gene expression data store genome assemblies and provide annotations regarding where the genes, transcripts, and other genomic features are located on the genome. </p>
 <p>Genome assemblies give us the <strong>nucleotide sequence of the reference genome</strong>. Although the Human Genome Project was "completed" in 2003, small gaps in the sequence remained (estimated 1% of gene-containing portions). As technology improves and more genomes are sequenced, these gaps are filled, mistakes are corrected and alternate alleles are provided. Therefore, every several years a <strong>new genome build</strong> is released that contains these improvements. </p>
 <p>The <strong>current genome build</strong> is GRCh38/hg38 for the human, which was released in 2013 and is maintained by the Genome Reference Consortium (GRC). </p>
@@ -2158,8 +2164,11 @@
 </div>
 <hr>
 <h2 id="gene-expression-omnibus-geo">Gene Expression Omnibus (GEO)</h2>
-<p>To find public experimental sequencing data, the NCBI's Gene Expression Omnibus (GEO) website is a useful place to search. The requirement for many grants is that experimental data be uploaded to GEO and the sequence read archive (SRA); therefore, there are quite a few datasets on GEO available to search. The interface for finding data on GEO is relatively user-friendly and easily searchable.</p>
-<h2 id="finding-and-accessing-data-on-geo">Finding and accessing data on GEO</h2>
+<p>GEO is a database for curated functional genomics data, including gene expression datasets from microarrays, RNA-Seq, and other transcriptomic studies. It stores processed and analyzed data, such as gene expression matrices and differential expression results. This database provides access to data for tens of thousands of studies as it is a requirement for publication. For datasets containing sequencing data, GEO often links to the Sequence Read Archive (SRA) (also maintained by NCBI). Users can access the SRA database to download raw sequencing data files in the FASTQ format. </p>
+<p>To download FASTQ from GEO, you need the following: </p>
+<p>a) A list of accession numbers (SRRXXXXXX format) for the files to download
+b) Knowledge of how to access and use <code>fastq-dump</code> 
+c) An understanding of how to submit a script using SLURM batch system </p>
 <h3 id="searching-geo">Searching GEO</h3>
 <p>To search GEO for particular types of data is relatively straight forward. Once on the <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO website</a> there are multiple different options for searching datasets. </p>
 <figure>
