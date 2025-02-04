@@ -13,3 +13,5 @@ Each tutorial will also be made available as PDF printout document. These lesson
 [Intro to Shell Scripting (L5)](05_week3_mmg3320-printout.pdf)
 
 [RNA-Seq Overview (L7)](07_week4_intro-to-RNAseq-printout.pdf)
+
+[Accessing Public Data (L8)]
