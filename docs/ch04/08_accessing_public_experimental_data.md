@@ -1,16 +1,22 @@
 
 ## Learning Objectives
 
-* Understand the types of data that is accessible from Gene Expression Omnibus (GEO)
-* Use the command-line interface to copy over data from GEO
+**We spent the last few weeks introducing UNIX, navigating the file system, and working on a high performance cluster. Now we will proceed with:**
 
-## Overview
+* Understand the types of data that are accessible from Gene Expression Omnibus (GEO)
+* Learning how to use SRA-toolkit to retrieve data from the Sequence Reads Archive 
+  * Download data from the SRA with `fastq-dump`
+  * split files into forward and reverse reads 
+  * Download part, not all, the data 
+
+
+## Where we are going? 
 
 <figure markdown="span">
   ![Overview](../img/overview.png){ width="800"}
 </figure>
 
-## Accessing genomic reference data
+## Sequence formats 
 
 ### FASTA
 During an NGS experiment, the nucleotide sequences stored inside the raw FASTQ files, or "sequence reads", need to be mapped or aligned to the reference genome to determine from where these sequences originated. Therefore, we need a reference genome (in FASTA format) in which to align our sequences.
@@ -38,6 +44,9 @@ To find and download NGS experimental data and associated reference data we will
 <figure markdown="span">
   ![GTF](../img/inputs.png){ width="600"}
 </figure>
+
+### FASTQ 
+These are the extension of FASTA files which contain quality scores and are output from the NGS technologies. 
 
 ## General biological databases
 
@@ -114,6 +123,10 @@ Navigate to the [Ensembl website](http://useast.ensembl.org/index.html) to view 
   ![Downloading from ENSEMBL](../img/download_ensembl.png){ width="800"}
 </figure>
 
+*** 
+!!! example "Class Exercise" 
+
+    Amanda is an graduate student studying optimal breeding practices for cattle. They are interested in investigating transcriptional differences in cattle raised in tropical versus temperate conditions. To do this, Amanda needs to download the Bos taurus FASTA file to set up their pipeline on the VACC. Amanda comes to you for help. How would you download the Bos taurus FASTA file from Ensembl to use on the VACC?
 
 ***
 
@@ -277,13 +290,13 @@ When you download sequencing data from the SRA using fastq-dump, it retrieves th
 ***
 
 ### Using `fastq-dump` with the environmental module system 
-Now, we would like to run `fastq-dump` to download the fastq files. Let's type the following command: 
+
+We would like to run `fastq-dump` to download the fastq files. Let's type the following command: 
 
 ```
 fastq-dump --help
 ```
-
-This is due to the fact that this program is not available in your current environment. However, a great work-around to downloading and configuring programs is to first check if they are available as library packages through the VACC environmental module system. 
+If this does not work, it means that this program is not available in your current environment. However, a great work-around to downloading and configuring programs is to first check if they are available as library packages through the VACC environmental module system. 
 
 Environmental Modules provide a convenient way for VACC users to load and unload packages. These packages are maintained and updated by the VACC. 
 The following commands are necessary to work with modules: 
@@ -297,15 +310,10 @@ The following commands are necessary to work with modules:
 | `module purge` | Unload all loaded modules |
 | `module help` | Displays general help/information about modules |
 
-Before we start using software, we have to load the module for each tool. 
+**Before we start using software, we have to load the module for each tool.** To load sratools 
 
-If we check which modules we currently have loaded, we should not see `sratoolkit` listed. 
 
-```bash
-module list
-```
-
-Let's load fastqc 
+Let's load  
 
 ```bash
 module load sratoolkit-2.9.6-gcc-7.3.0-65lpczt
