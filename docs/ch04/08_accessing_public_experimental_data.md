@@ -143,45 +143,20 @@ GEO is a database for curated functional genomics data, including gene expressio
 
 To download FASTQ from GEO, you need the following: 
 
-a) A list of accession numbers (SRRXXXXXX format) for the files to download
+a) A list of accession numbers (SRRXXXXXX format) for the files to download using **Run Selector**
 b) Knowledge of how to access and use `fastq-dump` 
-c) An understanding of how to submit a script using SLURM batch system 
+c) An understanding of how to submit a script using **SLURM** batch system 
 
-### Searching GEO
-
-To search GEO for particular types of data is relatively straight forward. Once on the [GEO website](https://www.ncbi.nlm.nih.gov/geo/) there are multiple different options for searching datasets. 
-
-<figure markdown="span">
-  ![GEO website](../img/geo_web.png){ width="700"}
-</figure>
-
-The most straight-forward method can be found by clicking on 'Datasets' under the 'Browse Content' column. 
-
-<figure markdown="span">
-  ![GEO dataset](../img/geo_dataset.png){ width="400"}
-</figure>
-
-The 'Datasets' link will open the GEO Dataset Browser; click on 'Advanced Search'.
-
-<figure markdown="span">
-  ![GEO Browser](../img/geo_browser.png){ width="600"}
-</figure>
-
-All results will appear in a new window with clickable filters on the left-hand side. You can choose the filters, such as 'Organism' (human, mouse), 'Study type' (Expression profiling by high throughput sequencing), 'Publication dates' (1 year), etc. to filter the data for the desired attributes.
-
-<figure markdown="span">
-  ![GEO Filter](../img/geo_filter.png){ width="700"}
-</figure>
 
 ### Finding GEO data for a particular publication
 
-However, you will be finding data from a published paper on GEO. **The paper will provide the GEO accession number.** For example, let's find the data associated with the paper, "MOV10 and FRMP regulate AGO2 association with microRNA recognition elements". First, we can navigate to the [article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268400/).
+**The publication will provide the GEO accession number.** Let's find the data associated with the paper, "MOV10 and FRMP regulate AGO2 association with microRNA recognition elements". First, we can navigate to the [article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268400/).
 
 <figure markdown="span">
   ![MOV10 dataset](../img/mov10_paper.png){ width="600"}
 </figure>
 
-Then we can search for the term **"GEO"**; different papers have different requirements for where this information is located. In this article, it is available in a separate section entitled "Accession Numbers".
+We can search for the term **"GEO"**; different papers have different requirements for where this information is located. In this article, it is available in a separate section called **Accession Numbers**.
 
 <figure markdown="span">
   ![MOV10 Accession](../img/mov10_accession.png){ width="600"}
@@ -190,7 +165,7 @@ Then we can search for the term **"GEO"**; different papers have different requi
 
 By clicking on the GEO accession number for the experiment of interest, the GEO page for this experiment will open.
 
-**Note: You may select a paper with multiple GEO accession numbers.** The authors may be analyzing multiple different types of data (RNA-Seq, Exome-Seq, WGS, etc). It is your responsibility to read the GEO page carefully to ensure you are downloading data for the desired experiment type.**  
+**Please Note: Many paper have multiple GEO accession numbers. Each will correspond to a specific dataset**  
 
 <figure markdown="span">
   ![MOV10 GEO](../img/mov10_geo.png){ width="700"}
@@ -198,22 +173,14 @@ By clicking on the GEO accession number for the experiment of interest, the GEO 
 
 The GEO page contains information about the experiment, including:
 	
-- an experimental summary: gives you an understanding of *how* the experiment was performed. 
-- literature citation
-- contact information
-- links to the Sample GEO pages: each sample will have its own page with additional information regarding how the sample was generated and analyzed 
-- link to the SRA project containing the raw FASTQ files
+  - an experimental summary: gives you an understanding of *how* the experiment was performed. 
+  - literature citation
+  - contact information
+  - links to the Sample GEO pages: each sample will have its own page with additional information regarding how the sample was generated and analyzed 
+  - link to the SRA project containing the raw FASTQ files
 
 
 In addition, if we were interested in **downloading the raw counts matrix (`GSE50499_GEO_Ceman_counts.txt.gz`)**, which gives the number of reads/sequences aligning to each gene we could scroll down to **supplementary data** at the bottom of the page. 
-
-You could download this file by clicking on the `ftp` link. In addition to the counts matrix file, you may want the metadata for the file to know which sample belongs to which conditions by clicking on the "Series Matrix File(s)" link if available. 
-
-So yes, technically - you can skip the processing steps and just proceed with using the counts matrix created for you. But beware of the following: 
-
-- This assumes the authors have aligned to the latest reference genome 
-- It assumes you completely understand the bioinformatic pipeline used and that it is still acceptable to current standards 
-- You will be missing out on the experience to process the dataset yourself and troubleshoot as you go. This experience is very valuable for *bioinformaticians-in-training* and gives you a space to troubleshoot with someone. Don't waste it because this may be the only time you will have to work with someone through data processing. 
 
 <figure markdown="span">
   ![MOV10 Download](../img/mov10_download.png){ width="600"}
@@ -221,7 +188,7 @@ So yes, technically - you can skip the processing steps and just proceed with us
 
 ## Downloading data from SRA 
 
-The Sequence Read Archive (SRA) is an archive for high throughput sequencing data, publically accessible, for the purpose of enhancing reproducibility in the scientific community.
+The Sequence Read Archive (SRA) is an archive for high throughput sequencing data, publicly accessible, for the purpose of enhancing reproducibility in the scientific community.
 
 There are four hierarchical levels of SRA entities and their accessions:  
 
@@ -243,27 +210,32 @@ Since most studies include multiple samples and a high number of replicates, it 
 </figure>
 
 
-Towards the bottom of the page you will find a link for "SRA" under the heading "Relations".
+Towards the bottom of the page you will find a link for **SRA** under the heading **Relations**.
 
 <figure markdown="span">
   ![SRA Relations](../img/relations.png){ width="600"}
 </figure>
 
-Clicking on this link takes you to a page that lists all the biological samples for the study - each with a link to their specific runs and files. If we were only interested in one sample, we could follow the relevant link and find its runs. But generally we want the files for all samples and their replicates, and to find this in one comprehensive list, we use the **run selector**. Navigate to the bottom of the page and click "send to" and click the radio button for "run selector", and then press "go".
+Clicking on this link takes you to a page listing all the biological samples for the study, each with links to their specific sequencing runs and files. If we were only interested in one sample, we could follow the relevant link and find its associated sequencing runs. However, since we typically need files for multiple samples and their replicates, we will use **Run Selector** to obtain a comprehensive list. 
+
+
+To do this, scrolls to the bottom of the page and click **Send to**, select the radio button for **Run Selector**, and then press **Go**.
 
 <figure markdown="span">
   ![Run Selector](../img/selector.png){ width="600"}
 </figure>
 
+***
 
 ## Run selector
 You'll notice that the run selector has aggregated all the information for the study samples, including a table of metadata at the top, giving information on: 
-+ LibraryLayout - whether the reads were sequenced using single or paired end sequencing
-+ Platform - which sequencing technology was used 
-+ Organism 
-+ Instrument 
-+ Cell type/ tissue type
-... and other useful information that should be noted for downstream analysis.
+ 
+  + LibraryLayout - whether the reads were sequenced using single or paired end sequencing
+  + Platform - which sequencing technology was used 
+  + Organism 
+  + Instrument 
+  + Cell type/ tissue type
+  ... and other useful information that should be noted for downstream analysis.
 
 <figure markdown="span">
   ![Run Selector Table](../img/table.png){ width="600"}
@@ -275,17 +247,21 @@ Below this there is also a summary line detailing the total number of runs in th
   ![Run Selector Samples](../img/samples-found.png){ width="600"}
 </figure>
 
-Another way to view this:   
+
+To fully understand what this means, we need to go back to the [sample](https://www.ncbi.nlm.nih.gov/sra?term=SRX342247) page for a sample. Notice that this sample was submitted for sequencing either twice or on two separate lanes. Therefore, for a single sample, there will be double the amount of sequencing files to process. 
 
 <figure markdown="span">
-  ![Run Selector Samples](../img/samplename_run.png){ width="600"}
+  ![Run Selector Samples](../img/two-lanes.png){ width="600"}
 </figure>
 
-To fully understand what this means, we need to go back to the GEO page for this [sample](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1220262) and then navigate to the SRA page. Notice that these samples were submitted for sequencing twice. Therefore, for a single sample, there will be double the amount of sequencing files to process. 
+<figure markdown="span">
+  ![Run Selector Samples](../img/more-files.png){ width="600"}
+</figure>
 
 Next, let's download the **Metadata** and **Accession List** in text format. 
-+ The **Metadata** is a very useful text summary of all metadata for all runs in the study
-+ The **Accession List** is a list of all the SRR accession numbers for the study. We will need this list to download the data with the script below. 
+  
+  + The **Metadata** is a very useful text summary of all metadata for all runs in the study
+  + The **Accession List** is a list of all the SRR accession numbers for the study. We will need this list to download the data with the script below. 
 
 ***
 
