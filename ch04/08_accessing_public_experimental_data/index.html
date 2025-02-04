@@ -1196,15 +1196,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#searching-geo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Searching GEO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#finding-geo-data-for-a-particular-publication" class="md-nav__link">
     <span class="md-ellipsis">
       Finding GEO data for a particular publication
@@ -1794,15 +1785,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#searching-geo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Searching GEO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#finding-geo-data-for-a-particular-publication" class="md-nav__link">
     <span class="md-ellipsis">
       Finding GEO data for a particular publication
@@ -2166,37 +2148,20 @@
 <h2 id="gene-expression-omnibus-geo">Gene Expression Omnibus (GEO)</h2>
 <p>GEO is a database for curated functional genomics data, including gene expression datasets from microarrays, RNA-Seq, and other transcriptomic studies. It stores processed and analyzed data, such as gene expression matrices and differential expression results. This database provides access to data for tens of thousands of studies as it is a requirement for publication. For datasets containing sequencing data, GEO often links to the Sequence Read Archive (SRA) (also maintained by NCBI). Users can access the SRA database to download raw sequencing data files in the FASTQ format. </p>
 <p>To download FASTQ from GEO, you need the following: </p>
-<p>a) A list of accession numbers (SRRXXXXXX format) for the files to download
+<p>a) A list of accession numbers (SRRXXXXXX format) for the files to download using <strong>Run Selector</strong>
 b) Knowledge of how to access and use <code>fastq-dump</code> 
-c) An understanding of how to submit a script using SLURM batch system </p>
-<h3 id="searching-geo">Searching GEO</h3>
-<p>To search GEO for particular types of data is relatively straight forward. Once on the <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO website</a> there are multiple different options for searching datasets. </p>
-<figure>
-  <img alt="GEO website" src="../../img/geo_web.png" width="700">
-</figure>
-<p>The most straight-forward method can be found by clicking on 'Datasets' under the 'Browse Content' column. </p>
-<figure>
-  <img alt="GEO dataset" src="../../img/geo_dataset.png" width="400">
-</figure>
-<p>The 'Datasets' link will open the GEO Dataset Browser; click on 'Advanced Search'.</p>
-<figure>
-  <img alt="GEO Browser" src="../../img/geo_browser.png" width="600">
-</figure>
-<p>All results will appear in a new window with clickable filters on the left-hand side. You can choose the filters, such as 'Organism' (human, mouse), 'Study type' (Expression profiling by high throughput sequencing), 'Publication dates' (1 year), etc. to filter the data for the desired attributes.</p>
-<figure>
-  <img alt="GEO Filter" src="../../img/geo_filter.png" width="700">
-</figure>
+c) An understanding of how to submit a script using <strong>SLURM</strong> batch system </p>
 <h3 id="finding-geo-data-for-a-particular-publication">Finding GEO data for a particular publication</h3>
-<p>However, you will be finding data from a published paper on GEO. <strong>The paper will provide the GEO accession number.</strong> For example, let's find the data associated with the paper, "MOV10 and FRMP regulate AGO2 association with microRNA recognition elements". First, we can navigate to the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268400/">article</a>.</p>
+<p><strong>The publication will provide the GEO accession number.</strong> Let's find the data associated with the paper, "MOV10 and FRMP regulate AGO2 association with microRNA recognition elements". First, we can navigate to the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268400/">article</a>.</p>
 <figure>
   <img alt="MOV10 dataset" src="../../img/mov10_paper.png" width="600">
 </figure>
-<p>Then we can search for the term <strong>"GEO"</strong>; different papers have different requirements for where this information is located. In this article, it is available in a separate section entitled "Accession Numbers".</p>
+<p>We can search for the term <strong>"GEO"</strong>; different papers have different requirements for where this information is located. In this article, it is available in a separate section called <strong>Accession Numbers</strong>.</p>
 <figure>
   <img alt="MOV10 Accession" src="../../img/mov10_accession.png" width="600">
 </figure>
 <p>By clicking on the GEO accession number for the experiment of interest, the GEO page for this experiment will open.</p>
-<p><strong>Note: You may select a paper with multiple GEO accession numbers.</strong> The authors may be analyzing multiple different types of data (RNA-Seq, Exome-Seq, WGS, etc). It is your responsibility to read the GEO page carefully to ensure you are downloading data for the desired experiment type.**  </p>
+<p><strong>Please Note: Many paper have multiple GEO accession numbers. Each will correspond to a specific dataset</strong>  </p>
 <figure>
   <img alt="MOV10 GEO" src="../../img/mov10_geo.png" width="700">
 </figure>
@@ -2209,18 +2174,11 @@ c) An understanding of how to submit a script using SLURM batch system </p>
 <li>link to the SRA project containing the raw FASTQ files</li>
 </ul>
 <p>In addition, if we were interested in <strong>downloading the raw counts matrix (<code>GSE50499_GEO_Ceman_counts.txt.gz</code>)</strong>, which gives the number of reads/sequences aligning to each gene we could scroll down to <strong>supplementary data</strong> at the bottom of the page. </p>
-<p>You could download this file by clicking on the <code>ftp</code> link. In addition to the counts matrix file, you may want the metadata for the file to know which sample belongs to which conditions by clicking on the "Series Matrix File(s)" link if available. </p>
-<p>So yes, technically - you can skip the processing steps and just proceed with using the counts matrix created for you. But beware of the following: </p>
-<ul>
-<li>This assumes the authors have aligned to the latest reference genome </li>
-<li>It assumes you completely understand the bioinformatic pipeline used and that it is still acceptable to current standards </li>
-<li>You will be missing out on the experience to process the dataset yourself and troubleshoot as you go. This experience is very valuable for <em>bioinformaticians-in-training</em> and gives you a space to troubleshoot with someone. Don't waste it because this may be the only time you will have to work with someone through data processing. </li>
-</ul>
 <figure>
   <img alt="MOV10 Download" src="../../img/mov10_download.png" width="600">
 </figure>
 <h2 id="downloading-data-from-sra">Downloading data from SRA</h2>
-<p>The Sequence Read Archive (SRA) is an archive for high throughput sequencing data, publically accessible, for the purpose of enhancing reproducibility in the scientific community.</p>
+<p>The Sequence Read Archive (SRA) is an archive for high throughput sequencing data, publicly accessible, for the purpose of enhancing reproducibility in the scientific community.</p>
 <p>There are four hierarchical levels of SRA entities and their accessions:  </p>
 <ol>
 <li><strong>STUDY</strong> with accessions in the form of SRP, ERP, or DRP  </li>
@@ -2236,22 +2194,26 @@ c) An understanding of how to submit a script using SLURM batch system </p>
 <figure>
   <img alt="SRA Structure" src="../../img/mov10_geo.png" width="600">
 </figure>
-<p>Towards the bottom of the page you will find a link for "SRA" under the heading "Relations".</p>
+<p>Towards the bottom of the page you will find a link for <strong>SRA</strong> under the heading <strong>Relations</strong>.</p>
 <figure>
   <img alt="SRA Relations" src="../../img/relations.png" width="600">
 </figure>
-<p>Clicking on this link takes you to a page that lists all the biological samples for the study - each with a link to their specific runs and files. If we were only interested in one sample, we could follow the relevant link and find its runs. But generally we want the files for all samples and their replicates, and to find this in one comprehensive list, we use the <strong>run selector</strong>. Navigate to the bottom of the page and click "send to" and click the radio button for "run selector", and then press "go".</p>
+<p>Clicking on this link takes you to a page listing all the biological samples for the study, each with links to their specific sequencing runs and files. If we were only interested in one sample, we could follow the relevant link and find its associated sequencing runs. However, since we typically need files for multiple samples and their replicates, we will use <strong>Run Selector</strong> to obtain a comprehensive list. </p>
+<p>To do this, scrolls to the bottom of the page and click <strong>Send to</strong>, select the radio button for <strong>Run Selector</strong>, and then press <strong>Go</strong>.</p>
 <figure>
   <img alt="Run Selector" src="../../img/selector.png" width="600">
 </figure>
+<hr>
 <h2 id="run-selector">Run selector</h2>
-<p>You'll notice that the run selector has aggregated all the information for the study samples, including a table of metadata at the top, giving information on: 
-+ LibraryLayout - whether the reads were sequenced using single or paired end sequencing
-+ Platform - which sequencing technology was used 
-+ Organism 
-+ Instrument 
-+ Cell type/ tissue type
-... and other useful information that should be noted for downstream analysis.</p>
+<p>You'll notice that the run selector has aggregated all the information for the study samples, including a table of metadata at the top, giving information on: </p>
+<ul>
+<li>LibraryLayout - whether the reads were sequenced using single or paired end sequencing</li>
+<li>Platform - which sequencing technology was used </li>
+<li>Organism </li>
+<li>Instrument </li>
+<li>Cell type/ tissue type
+  ... and other useful information that should be noted for downstream analysis.</li>
+</ul>
 <figure>
   <img alt="Run Selector Table" src="../../img/table.png" width="600">
 </figure>
@@ -2259,14 +2221,18 @@ c) An understanding of how to submit a script using SLURM batch system </p>
 <figure>
   <img alt="Run Selector Samples" src="../../img/samples-found.png" width="600">
 </figure>
-<p>Another way to view this:   </p>
+<p>To fully understand what this means, we need to go back to the <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRX342247">sample</a> page for a sample. Notice that this sample was submitted for sequencing either twice or on two separate lanes. Therefore, for a single sample, there will be double the amount of sequencing files to process. </p>
 <figure>
-  <img alt="Run Selector Samples" src="../../img/samplename_run.png" width="600">
+  <img alt="Run Selector Samples" src="../../img/two-lanes.png" width="600">
 </figure>
-<p>To fully understand what this means, we need to go back to the GEO page for this <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1220262">sample</a> and then navigate to the SRA page. Notice that these samples were submitted for sequencing twice. Therefore, for a single sample, there will be double the amount of sequencing files to process. </p>
-<p>Next, let's download the <strong>Metadata</strong> and <strong>Accession List</strong> in text format. 
-+ The <strong>Metadata</strong> is a very useful text summary of all metadata for all runs in the study
-+ The <strong>Accession List</strong> is a list of all the SRR accession numbers for the study. We will need this list to download the data with the script below. </p>
+<figure>
+  <img alt="Run Selector Samples" src="../../img/more-files.png" width="600">
+</figure>
+<p>Next, let's download the <strong>Metadata</strong> and <strong>Accession List</strong> in text format. </p>
+<ul>
+<li>The <strong>Metadata</strong> is a very useful text summary of all metadata for all runs in the study</li>
+<li>The <strong>Accession List</strong> is a list of all the SRR accession numbers for the study. We will need this list to download the data with the script below. </li>
+</ul>
 <hr>
 <h2 id="sra-toolkit">SRA-Toolkit</h2>
 <p>The SRA Toolkit is a set of utilities developed by the National Center for Biotechnology Information (NCBI) for accessing data in the Sequence Read Archive (SRA), a database that stores raw sequencing data from various high-throughput sequencing platforms. The toolkit provides command-line tools for downloading, manipulating, and converting sequencing data stored in the SRA format, making it easier for researchers to work with large-scale genomic data. It's widely used in bioinformatics and genomics research for tasks such as sequence alignment, quality control, and data analysis.</p>
