@@ -1093,22 +1093,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#where-we-are-going" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Where we are going?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#accessing-genomic-reference-data" class="md-nav__link">
+  <a href="#sequence-formats" class="md-nav__link">
     <span class="md-ellipsis">
-      Accessing genomic reference data
+      Sequence formats
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Accessing genomic reference data">
+    <nav class="md-nav" aria-label="Sequence formats">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1124,6 +1124,15 @@
   <a href="#gtf" class="md-nav__link">
     <span class="md-ellipsis">
       GTF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTQ
     </span>
   </a>
   
@@ -1691,22 +1700,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#where-we-are-going" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Where we are going?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#accessing-genomic-reference-data" class="md-nav__link">
+  <a href="#sequence-formats" class="md-nav__link">
     <span class="md-ellipsis">
-      Accessing genomic reference data
+      Sequence formats
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Accessing genomic reference data">
+    <nav class="md-nav" aria-label="Sequence formats">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1722,6 +1731,15 @@
   <a href="#gtf" class="md-nav__link">
     <span class="md-ellipsis">
       GTF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTQ
     </span>
   </a>
   
@@ -2032,15 +2050,19 @@
   <h1>Accessing Public Data (L8)</h1>
 
 <div><h2 id="learning-objectives">Learning Objectives</h2>
+<p><strong>We spent the last few weeks introducing UNIX, navigating the file system, and working on a high performance cluster. Now we will proceed with:</strong></p>
 <ul>
-<li>Understand the types of data that is accessible from Gene Expression Omnibus (GEO)</li>
-<li>Use the command-line interface to copy over data from GEO</li>
+<li>Understand the types of data that are accessible from Gene Expression Omnibus (GEO)</li>
+<li>Learning how to use SRA-toolkit to retrieve data from the Sequence Reads Archive </li>
+<li>Download data from the SRA with <code>fastq-dump</code></li>
+<li>split files into forward and reverse reads </li>
+<li>Download part, not all, the data </li>
 </ul>
-<h2 id="overview">Overview</h2>
+<h2 id="where-we-are-going">Where we are going?</h2>
 <figure>
   <img alt="Overview" src="../../img/overview.png" width="800">
 </figure>
-<h2 id="accessing-genomic-reference-data">Accessing genomic reference data</h2>
+<h2 id="sequence-formats">Sequence formats</h2>
 <h3 id="fasta">FASTA</h3>
 <p>During an NGS experiment, the nucleotide sequences stored inside the raw FASTQ files, or "sequence reads", need to be mapped or aligned to the reference genome to determine from where these sequences originated. Therefore, we need a reference genome (in FASTA format) in which to align our sequences.</p>
 <figure>
@@ -2061,6 +2083,8 @@
 <figure>
   <img alt="GTF" src="../../img/inputs.png" width="600">
 </figure>
+<h3 id="fastq">FASTQ</h3>
+<p>These are the extension of FASTA files which contain quality scores and are output from the NGS technologies. </p>
 <h2 id="general-biological-databases">General biological databases</h2>
 <p>Biological databases for gene expression data store genome assemblies and provide annotations regarding where the genes, transcripts, and other genomic features are located on the genome. </p>
 <p>Genome assemblies give us the <strong>nucleotide sequence of the reference genome</strong>. Although the Human Genome Project was "completed" in 2003, small gaps in the sequence remained (estimated 1% of gene-containing portions). As technology improves and more genomes are sequenced, these gaps are filled, mistakes are corrected and alternate alleles are provided. Therefore, every several years a <strong>new genome build</strong> is released that contains these improvements. </p>
@@ -2143,6 +2167,11 @@
 <figure>
   <img alt="Downloading from ENSEMBL" src="../../img/download_ensembl.png" width="800">
 </figure>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise</p>
+<p>Amanda is an graduate student studying optimal breeding practices for cattle. They are interested in investigating transcriptional differences in cattle raised in tropical versus temperate conditions. To do this, Amanda needs to download the Bos taurus FASTA file to set up their pipeline on the VACC. Amanda comes to you for help. How would you download the Bos taurus FASTA file from Ensembl to use on the VACC?</p>
+</div>
 <hr>
 <h2 id="gene-expression-omnibus-geo">Gene Expression Omnibus (GEO)</h2>
 <p>To find public experimental sequencing data, the NCBI's Gene Expression Omnibus (GEO) website is a useful place to search. The requirement for many grants is that experimental data be uploaded to GEO and the sequence read archive (SRA); therefore, there are quite a few datasets on GEO available to search. The interface for finding data on GEO is relatively user-friendly and easily searchable.</p>
@@ -2253,10 +2282,10 @@
 <p>When you download sequencing data from the SRA using fastq-dump, it retrieves the raw sequencing reads along with quality information and saves them into one or more FASTQ files, making it easier for researchers to perform downstream analyses such as alignment, assembly, and variant calling. Fastq-dump is a crucial tool in bioinformatics pipelines for processing sequencing data stored in the SRA.</p>
 <hr>
 <h3 id="using-fastq-dump-with-the-environmental-module-system">Using <code>fastq-dump</code> with the environmental module system</h3>
-<p>Now, we would like to run <code>fastq-dump</code> to download the fastq files. Let's type the following command: </p>
-<div class="highlight"><pre><span></span><code>fastq-dump --help
+<p>We would like to run <code>fastq-dump</code> to download the fastq files. Let's type the following command: </p>
+<p></p><div class="highlight"><pre><span></span><code>fastq-dump --help
 </code></pre></div>
-<p>This is due to the fact that this program is not available in your current environment. However, a great work-around to downloading and configuring programs is to first check if they are available as library packages through the VACC environmental module system. </p>
+If this does not work, it means that this program is not available in your current environment. However, a great work-around to downloading and configuring programs is to first check if they are available as library packages through the VACC environmental module system. 
 <p>Environmental Modules provide a convenient way for VACC users to load and unload packages. These packages are maintained and updated by the VACC. 
 The following commands are necessary to work with modules: </p>
 <table>
@@ -2293,11 +2322,8 @@ The following commands are necessary to work with modules: </p>
 </tr>
 </tbody>
 </table>
-<p>Before we start using software, we have to load the module for each tool. </p>
-<p>If we check which modules we currently have loaded, we should not see <code>sratoolkit</code> listed. </p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>list
-</code></pre></div>
-<p>Let's load fastqc </p>
+<p><strong>Before we start using software, we have to load the module for each tool.</strong> To load sratools </p>
+<p>Let's load  </p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>sratoolkit-2.9.6-gcc-7.3.0-65lpczt
 </code></pre></div>
 <p>Once a module for a tool is loaded, you have essentially made it directly available to you like any other basic shell command.</p>
