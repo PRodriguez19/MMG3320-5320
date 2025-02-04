@@ -1,5 +1,5 @@
-## Homework Assignment #3 (50 points)
-**For this assignment you will have until 5PM on Monday, February 3rd to submit on Brightspace. Late assignments will NOT be accepted.**
+## Homework Assignment #4 (50 points)
+**For this assignment you will have until 5PM on Friday, February 7th to submit on Brightspace. Late assignments will NOT be accepted.**
 
 ### Directions for Students: 
 Open a new Microsoft Word Document and submit answers to the questions below. The first four lines of your document should contain the following:  
@@ -9,7 +9,7 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
 + Today's date
 + Homework Assignment #4
 
-## Instructions: Submit two screenshots. One of your final script (output from #14 above). The second screenshot will be of your terminal screen after opening `badreads.count.summary` with Nano.  
+## Instructions: Submit two screenshots. One of your final script (output from #14). The second screenshot will be of your terminal screen after opening `badreads.count.summary`.  
 
 1. Create a directory called `badreads` in `unit1_unix`
 
