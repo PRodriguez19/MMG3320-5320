@@ -5,12 +5,12 @@
 
 * Understand the types of data that are accessible from Gene Expression Omnibus (GEO)
 * Learning how to use SRA-toolkit to retrieve data from the Sequence Reads Archive 
-  * Download data from the SRA with `fastq-dump`
-  * split files into forward and reverse reads 
-  * Download part, not all, the data 
+    + Download data from the SRA with `fastq-dump`
+    + split files into forward and reverse reads 
+    + Download part, not all, the data 
 
 
-## Where we are going? 
+## Where are we going? 
 
 <figure markdown="span">
   ![Overview](../img/overview.png){ width="800"}
@@ -179,7 +179,7 @@ Then we can search for the term **"GEO"**; different papers have different requi
 
 By clicking on the GEO accession number for the experiment of interest, the GEO page for this experiment will open.
 
-### **Note: You may select a paper with multiple GEO accession numbers.** The authors may be analyzing multiple different types of data (RNA-Seq, Exome-Seq, WGS, etc). It is your responsibility to read the GEO page carefully to ensure you are downloading data for the desired experiment type.**  
+**Note: You may select a paper with multiple GEO accession numbers.** The authors may be analyzing multiple different types of data (RNA-Seq, Exome-Seq, WGS, etc). It is your responsibility to read the GEO page carefully to ensure you are downloading data for the desired experiment type.**  
 
 <figure markdown="span">
   ![MOV10 GEO](../img/mov10_geo.png){ width="700"}
