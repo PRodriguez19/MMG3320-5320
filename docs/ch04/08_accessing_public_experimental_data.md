@@ -16,7 +16,18 @@
   ![Overview](../img/overview.png){ width="800"}
 </figure>
 
-## Sequence formats 
+## Sequence file formats 
+
+Below is a cartoon displaying the (3) file types required to perform an RNA-Seq analysis. 
+
+  + FASTQ files will contain the raw sequence reads
+  + The reference genome will be in the form of a FASTA file
+  + Gene annotations will be in the form of a GTF file 
+
+<figure markdown="span">
+  ![File Inputs](../img/inputs.png){ width="600"}
+</figure>
+
 
 ### FASTA
 During an NGS experiment, the nucleotide sequences stored inside the raw FASTQ files, or "sequence reads", need to be mapped or aligned to the reference genome to determine from where these sequences originated. Therefore, we need a reference genome (in FASTA format) in which to align our sequences.
@@ -32,23 +43,19 @@ In addition, many NGS methods require knowing where known genes or exons are loc
   ![GTF](../img/GTF_file_example.jpg){ width="800"}
 </figure>
 
-To download reference data, there are a few different sources available:
+### FASTQ 
+These are the extension of FASTA files which contain quality scores and are output from the NGS technologies. 
+
+## Downloading file formats 
+
+To find and download NGS experimental data and associated reference data we will explore a few key repositories. For **finding reference data**, we will navigate the [Ensembl database](http://useast.ensembl.org/index.html). For **accessing experimental data**, we will explore the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/) and the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) repositories. 
 
 - **General biological databases:** Ensembl, NCBI, and UCSC
 - **Organism-specific biological databases:** Wormbase, Flybase, Cryptodb, etc. (often updated more frequently, so may be more comprehensive)
 
 *Note that these reference data sources are relevant to most types of genomic analyses not just NGS analyses.
 
-To find and download NGS experimental data and associated reference data we will explore a few key repositories. For **finding reference data**, we will navigate the [Ensembl database](http://useast.ensembl.org/index.html). For **accessing experimental data**, we will explore the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/) and the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) repositories. 
-
-<figure markdown="span">
-  ![GTF](../img/inputs.png){ width="600"}
-</figure>
-
-### FASTQ 
-These are the extension of FASTA files which contain quality scores and are output from the NGS technologies. 
-
-## General biological databases
+### General biological databases
 
 Biological databases for gene expression data store genome assemblies and provide annotations regarding where the genes, transcripts, and other genomic features are located on the genome. 
 
@@ -132,9 +139,13 @@ Navigate to the [Ensembl website](http://useast.ensembl.org/index.html) to view 
 
 ## Gene Expression Omnibus (GEO)
 
-To find public experimental sequencing data, the NCBI's Gene Expression Omnibus (GEO) website is a useful place to search. The requirement for many grants is that experimental data be uploaded to GEO and the sequence read archive (SRA); therefore, there are quite a few datasets on GEO available to search. The interface for finding data on GEO is relatively user-friendly and easily searchable.
+GEO is a database for curated functional genomics data, including gene expression datasets from microarrays, RNA-Seq, and other transcriptomic studies. It stores processed and analyzed data, such as gene expression matrices and differential expression results. This database provides access to data for tens of thousands of studies as it is a requirement for publication. For datasets containing sequencing data, GEO often links to the Sequence Read Archive (SRA) (also maintained by NCBI). Users can access the SRA database to download raw sequencing data files in the FASTQ format. 
 
-## Finding and accessing data on GEO
+To download FASTQ from GEO, you need the following: 
+
+a) A list of accession numbers (SRRXXXXXX format) for the files to download
+b) Knowledge of how to access and use `fastq-dump` 
+c) An understanding of how to submit a script using SLURM batch system 
 
 ### Searching GEO
 
