@@ -36,7 +36,7 @@ nav:
       - Overview: slides/index.md
   - Printouts: 
       - Overview: pdf_materials/index.md
-  - Unit 1: 
+  - Lessons: 
       - Week 1:
           - Overview: ch01/index.md
           - Introducing the Shell (L1): ch01/01_week1_mmg3320.md

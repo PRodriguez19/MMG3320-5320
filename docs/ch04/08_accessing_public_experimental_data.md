@@ -133,7 +133,7 @@ Navigate to the [Ensembl website](http://useast.ensembl.org/index.html) to view 
 *** 
 !!! example "Class Exercise" 
 
-    Amanda is an graduate student studying optimal breeding practices for cattle. They are interested in investigating transcriptional differences in cattle raised in tropical versus temperate conditions. To do this, Amanda needs to download the Bos taurus FASTA file to set up their pipeline on the VACC. Amanda comes to you for help. How would you download the Bos taurus FASTA file from Ensembl to use on the VACC?
+    Amanda is an graduate student studying optimal breeding practices for cattle. They are interested in investigating transcriptional differences in cattle raised in tropical versus temperate conditions. To do this, Amanda needs to download the Bos taurus FASTA file to set up their pipeline on the VACC. Amanda comes to you for help. How would you download the Bos taurus FASTA file from Ensembl to be used on the VACC?
 
 ***
 
@@ -143,9 +143,9 @@ GEO is a database for curated functional genomics data, including gene expressio
 
 To download FASTQ from GEO, you need the following: 
 
-a) A list of accession numbers (SRRXXXXXX format) for the files to download using **Run Selector**
-b) Knowledge of how to access and use `fastq-dump` 
-c) An understanding of how to submit a script using **SLURM** batch system 
+1) A list of accession numbers (SRRXXXXXX format) for the files to download using **Run Selector**
+2) Knowledge of how to access and use `fastq-dump` 
+3) An understanding of how to submit a script using **SLURM** batch system 
 
 
 ### Finding GEO data for a particular publication
@@ -248,20 +248,22 @@ Below this there is also a summary line detailing the total number of runs in th
 </figure>
 
 
-To fully understand what this means, we need to go back to the [sample](https://www.ncbi.nlm.nih.gov/sra?term=SRX342247) page for a sample. Notice that this sample was submitted for sequencing either twice or on two separate lanes. Therefore, for a single sample, there will be double the amount of sequencing files to process. 
+To fully understand what this means, we need to go back to the [sample](https://www.ncbi.nlm.nih.gov/sra?term=SRX342247) page for a sample. Notice that this sample was submitted for sequencing either twice or on two separate lanes.
 
 <figure markdown="span">
-  ![Run Selector Samples](../img/two-lanes.png){ width="600"}
+  ![Run Selector Samples](../img/two-lanes.png){ width="400"}
 </figure>
+
+Therefore, for a single sample, there will be double the amount of sequencing files to process. 
 
 <figure markdown="span">
-  ![Run Selector Samples](../img/more-files.png){ width="600"}
+  ![Run Selector Samples](../img/more-files.png){ width="400"}
 </figure>
 
-Next, let's download the **Metadata** and **Accession List** in text format. 
+It is on this page that we can download the **Metadata** and **Accession List** in text format. 
   
   + The **Metadata** is a very useful text summary of all metadata for all runs in the study
-  + The **Accession List** is a list of all the SRR accession numbers for the study. We will need this list to download the data with the script below. 
+  + The **Accession List** is a list of all the SRR accession numbers for the study. We will need this list to download the FASTQ files using the script below. 
 
 ***
 
@@ -269,21 +271,21 @@ Next, let's download the **Metadata** and **Accession List** in text format.
 
 The SRA Toolkit is a set of utilities developed by the National Center for Biotechnology Information (NCBI) for accessing data in the Sequence Read Archive (SRA), a database that stores raw sequencing data from various high-throughput sequencing platforms. The toolkit provides command-line tools for downloading, manipulating, and converting sequencing data stored in the SRA format, making it easier for researchers to work with large-scale genomic data. It's widely used in bioinformatics and genomics research for tasks such as sequence alignment, quality control, and data analysis.
 
-### Fastq-dump 
-Fastq-dump is a command-line tool included in the SRA Toolkit developed by the National Center for Biotechnology Information (NCBI). It's used to extract data from the Sequence Read Archive (SRA) and convert it into the FASTQ format, which is a standard file format used to store biological sequences and their corresponding quality scores from high-throughput sequencing experiments.
+### `fastq-dump` 
+`fastq-dump` is a command-line tool included in the SRA Toolkit developed by the National Center for Biotechnology Information (NCBI). It's used to extract data from the Sequence Read Archive (SRA) and convert it into the FASTQ format, which is a standard file format used to store biological sequences and their corresponding quality scores from high-throughput sequencing experiments.
 
-When you download sequencing data from the SRA using fastq-dump, it retrieves the raw sequencing reads along with quality information and saves them into one or more FASTQ files, making it easier for researchers to perform downstream analyses such as alignment, assembly, and variant calling. Fastq-dump is a crucial tool in bioinformatics pipelines for processing sequencing data stored in the SRA.
+When you download sequencing data from the SRA using `fastq-dump`, it retrieves the raw sequencing reads along with quality information and saves them into one or more FASTQ files, making it easier for researchers to perform downstream analyses such as alignment, assembly, and variant calling. `fastq-dump` is a crucial tool in bioinformatics pipelines for processing sequencing data stored in the SRA.
 
 ***
 
-### Using `fastq-dump` with the environmental module system 
+### Using `fastq-dump` with the Environmental Module System 
 
-We would like to run `fastq-dump` to download the fastq files. Let's type the following command: 
+We would like to run the program `fastq-dump` to download the fastq files. Let's type the following command: 
 
-```
+```bash
 fastq-dump --help
 ```
-If this does not work, it means that this program is not available in your current environment. However, a great work-around to downloading and configuring programs is to first check if they are available as library packages through the VACC environmental module system. 
+If this does not work it means that this program `fastq-dump` is not available in your current environment. However, a great work-around to downloading and configuring programs yourself is to first check if they are available as library packages through the Environmental Module System found within the VACC. 
 
 Environmental Modules provide a convenient way for VACC users to load and unload packages. These packages are maintained and updated by the VACC. 
 The following commands are necessary to work with modules: 
@@ -297,22 +299,29 @@ The following commands are necessary to work with modules:
 | `module purge` | Unload all loaded modules |
 | `module help` | Displays general help/information about modules |
 
-**Before we start using software, we have to load the module for each tool.** To load sratools 
+**Note:**Before using software, we have to load the software. You will have to load the software every time you would like to use it. 
 
-
-Let's load  
+Let's begin: 
 
 ```bash
-module load sratoolkit-2.9.6-gcc-7.3.0-65lpczt
+module load gcc/13.3.0-xp3epyt
+module load sratoolkit/3.0.0-y2rspiu
 ```
 
-Once a module for a tool is loaded, you have essentially made it directly available to you like any other basic shell command.
+Once a module for a tool is loaded, you have essentially made it directly available to you like any other basic shell command. We can check using the following command: 
 
 ```bash
 module list
 ```
 
-How do we know which argument to use?
+```
+Currently Loaded Modules:
+  1) gmp/6.2.1-ip3t4a7    3) mpc/1.3.1-dv3gprk       5) zstd/1.5.6-apl64xw   7) sratoolkit/3.0.0-y2rspiu
+  2) mpfr/4.2.1-344sqki   4) zlib-ng/2.1.6-ibq6yfi   6) gcc/13.3.0-xp3epyt
+```
+
+
+The SRAToolKit contains the program called `fastq-dump`. We would like to use this program to download FASTQ files. 
 
 ```bash
 fastq-dump  --help
@@ -333,36 +342,75 @@ INPUT
 
 ***
 
-## Using SRA-toolkit to download multiple SRR files 
-Unfortunately, SRA-toolkit doesn't have its own methods for downloading multiple SRR files at once in parallel. Lucky for us, the people at Harvard wrote a two scripts to do this for us. Before we write these scripts, lets discuss how to submit a job using the SLURM batch system. 
+## Submit a job using SLURM 
+Unfortunately, SRA-toolkit doesn't have its own methods for downloading multiple SRR files at once in parallel. To download multiple **SRR FASTQ** files sometimes takes hours. Lucky for us, we have a script we can run. Lets discuss how to submit a script to be run using the SLURM batch system. 
 
-## Submit a job using Slurm
+Submitting a job to an HPC machine is done using a workload manager called SLURM (Simple Linux Utility for Resource Management). SLURM handles job scheduling, resource allocation (nodes, processors, memory, GPUs), and job monitoring. Jobs can be put in queue and then run as resources become available.
 
-Submitting a job to an HPC machine (such as Bluemoon) is done using the batch system. The batch system allows users to submit jobs requesting the resources (nodes, processors, memory, GPUs) that they need. The jobs are queued and then run as resources become available.
+The basic steps you will follow include: 
 
-### Batch Computing 
-To run a batch job, you put the commands into a text file instead of typing them at the prompt. You submit this file to the batch system, called **SLURM**, which will run it as soon as resources become available. The output you would normally see on your display goes into a log file. You can check the status of your job interactively and/or receive emails when it begins and ends execution. The basic steps include: 
-
-1. Log-in to VACC
+1. Log into VACC
 2. Write job script 
-3. Submit Job 
-4. Monitor job and wait for it to run! 
+3. Submit job 
+4. Monitor job and wait for it to run
 5. Retrieve your output 
 
-A job script can be created using any text editor - such as Nano or Vim - or any GUI editor you may want to download! 
-To use the Slurm job scheduler, it requires Slurm directives. To learn more you can do: 
+A job script can be created using any text editor - such as Nano or Vim - or any GUI editor you may want to download. 
 
-```
-man sbatch
+To use the SLURM job scheduler, it requires **SLURM directives**. 
+
+### SLURM Directives 
+
+At the top of the job script will always be several lines that start with #SBATCH. The SLURM directives provide the job setup information used by SLURM, including resources to request. This information is then followed by the commands to be executed in the script. 
+
+Let's create our first job script.
+
+```bash
+nano test_job.sh
 ```
 
-## Slurm Directives 
-At the top of the job script will always be several lines that start with #SBATCH. The Slurm directives provide the job setup information used by Slurm, including resources to request. This information is then followed by the commands to be executed in the script. 
+We need to have a shebang line at the beginning of the script to specify the file is a shell script. 
+
+```bash
+#!/bin/sh
+```
+
+Next lets add the SLURM directives which must precede the executable section in your script.
+
+```bash
+# Run on the general partition 
+#SBATCH --partition=general
+
+# Request one node
+#SBATCH --nodes=1
+
+# Request one task
+#SBATCH --ntasks=1
+
+# Request 4GB of RAM
+#SBATCH --mem=4G
+
+# Run for a maximum of 30 minutes
+#SBATCH --time=30:00
+
+# Name of the job
+#SBATCH --job-name=fastq
+
+# Name the output file 
+#SBATCH --output=%x_%j.out
+
+# Set email address for notifications 
+#SBATCH --mail-user=netid@uvm.edu
+
+# Request email to be sent at both begin and end, and if job fails
+#SBATCH --mail-type=ALL
+```
+
 
 ### Partition
 First, we will need to specify a partition. A partition refers to a group of nodes which are characterized by their hardware. Specifying a partition is optional and if not specified the default partition is bluemoon. As practice we will specify bluemoon anyways using the following line: 
 
-```
+```bash
 #SBATCH --partition=bluemoon
 ```
 
@@ -370,27 +418,26 @@ Other Partitions:
 
 | Partition|  Intended Use  | Max Runtime |  
 |:-----------:|:----------:|:----------:| 
-|bluemoon | General computing – default partition |30 hours| 
+|general | General computing – default partition |30 hours| 
 |short | General computing with short runtime | 3 hours| 
 |week | General computing with longer runtime | 7 days | 
-|bigmem| Large memory requirements computing| 30 hours| 
-|bigmemwk | Large memory requirements with longer runtime | 7 days | 
+|nvgpu| NVIDIA GPU partition | 48 hours| 
 
 You can check partition usage using the following command: 
 
-```
+```bash
 sinfo -p partition_name
-sinfo -p bluemoon 
+sinfo -p general 
 ```
 
 ### Walltime 
-Walltime is the maximum amount of time your job will run. It’s the runtime of your job.
+Walltime is the maximum amount of time your job will run. 
 
-Your job may run for less time than you request (and you will only be charged for that amount of time), but it will not run for more time than you request.
+Your job may run for less time than you request, but it will not run for more time than you request.
 
 Walltime is requested with #SBATCH --time=<dd-hh:mm:ss>, where “dd” refers to day(s), “hh” to hour(s), “mm” to minute(s), and “ss” to second(s). You will replace each of these units with a two-digit numeral. Acceptable formats are: mm, mm:ss, hh:mm:ss, dd-hh, dd-hh:mm, dd-hh:mm:ss.
 
-```
+```bash
 # requesting 30 hours of walltime (hh:mm:ss)
 #SBATCH --time=30:00:00
 ```
@@ -403,9 +450,9 @@ The nodes, tasks, and core (CPU) resources you request depend on the type of job
     Task: A “task” is a process sent to a core. By default, 1 core is assigned per 1 task.
     Core/CPU: The terms “core” and “cpu” are used interchangeably in high-performance computing.
 
-The most common jobs on the Bluemoon cluster are serial jobs, which run as a single process. VACC recommend's that you begin with 1 node and 2 processes. As we move forward, we will change the number of nodes required for "bigger" jobs.
+VACC recommend's that you begin with 1 node and 2 processes. As we move forward, we will change the number of nodes required for "bigger" jobs.
 
-```
+```bash
 # requesting 1 compute node
 #SBATCH --nodes=1
 # requesting 2 processes
@@ -415,7 +462,7 @@ The most common jobs on the Bluemoon cluster are serial jobs, which run as a sin
 
 In order to receive emails, you must set what types of emails you would like to receive, using the flag --mail-type. The options include: BEGIN (when your job begins), END (when your job ends), FAIL (if your job fails), ALL. For example:
 
-```
+```bash
 #SBATCH --mail-type=ALL
 ```
 
@@ -427,7 +474,7 @@ Specifying a job name is not required. If you don’t supply a job name, the job
 
 However, if you do wish to specify a job name, use the --job-name flag. For example, where your job name is “myjob”:
 
-```
+```bash
 # replace "myjob" with YOUR chosen job name
 #SBATCH --job-name=myjob
 ```
@@ -435,7 +482,7 @@ However, if you do wish to specify a job name, use the --job-name flag. For exam
 ### Job Submission
 Once your job script is written, you can submit it. To submit your job, use the sbatch command with your filename. For example, where the filename is “myfilename”:
 
-```
+```bash
 # replace "myfilename" with YOUR filename
 sbatch myfilename
 ```
@@ -447,7 +494,126 @@ Submitted batch job 123456
 ```
 >Note your job ID! 
 
-### Summary of Header Lines 
+
+### SLURM Commands 
+
+|Command | What It Does | 
+|:----------|:-----------|
+|sbatch <file_name> | Submits a job, e.g., sbatch myjob | 
+|scontrol show job <job_id> | Detailed information about a particular job, e.g., scontrol show job 123456 | 
+|squeue | Checks status of all jobs in scheduling queue | 
+|squeue -u <username> | Checks status of all jobs belonging to the named user, e.g., squeue -u usr1234 | 
+|squeue --start -j <job_id> | Estimates earliest start time of a particular job, e.g., squeue --start -j 123456 | 
+|squeue --start -u <username> | Estimates earliest start time of all jobs belonging to the named user, e.g., squeue --start -u usr1234 | 
+|scancel -u <username> | Deletes/cancels all jobs belonging to the named user, e.g., scancel -u usr1234 | 
+|scancel <job_id> | Deletes/cancels a particular job, e.g., scancel 123456| 
+
+The first script is a loop that will go through your list of SRR's, and calls a second script at each iteration, passing it for each SRR number on the list. 
+
+```bash
+#!/bin/sh
+#SBATCH --partition=general
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --mem=4G
+#SBATCH --time=30:00
+#SBATCH --job-name=fastq
+#SBATCH --output=%x_%j.out
+#SBATCH --mail-user=netid@uvm.edu
+#SBATCH --mail-type=ALL
+
+#while there are lines in the list of SRRs file
+while read p
+do
+#call the bash script that does the fastq dump, passing it the SRR number next $
+sbatch inner_script.sh $p
+done <list_of_SRRs.txt
+```
+
+```bash
+#!/bin/sh
+#SBATCH --partition=general
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --mem=4G
+#SBATCH --time=30:00
+#SBATCH --job-name=fastq
+#SBATCH --output=%x_%j.out
+#SBATCH --mail-user=netid@uvm.edu
+#SBATCH --mail-type=ALL
+
+#for single end reads only
+fastq-dump --gzip $1
+```
+
+Estimated Memory Requirements 
+| Data Type | Memory Required (Approx.) |
+|:---------:|:-------------------------:|
+| Single-end small dataset (~1GB SRA file) | 4-8 GB|
+| Single-end large dataset (~10GB SRA file) | 8-16 GB|
+| Paired-end small dataset (~10-20GB SRA file)| 8-16 GB|
+| Paired-end large dataset (~50GB SRA file)| 16-32 GB+|
+
+
+To run the main script:
+
+```bash
+sbatch sra_fqdump.sh
+```
+
+### Paired end files
+Unlike the standard format for paired end data, where we normally find two fastq files labelled as sample1_001.fastq and sample1_002.fastq, SRR files can be very misleading in that even paired end reads are found in one single file, with sequence pairs concatenated alongside each other. Because of this format, paired files need to be split at the download step. SRA toolkit has an option for this called "--split-files". By using this, one single SRR file will download as SRRxxx_1.fastq and SRRxxx_2.fastq.
+
+Furthermore, there is a very helpful improvement on this function called "--split-3" which splits your SRR into 3 files: one for read 1, one for read 2, and one for any orphan reads (ie: reads that aren't present in both files). This is important for downstream analysis, as some aligners require your paired reads to be in sync (ie: present in each file at the same line number) and orphan reads can throw this order off. Change the inner_script.sh as follows if your reads are paired end:
+
+```bash
+#!/bin/sh
+#SBATCH --partition=general
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --mem=4G
+#SBATCH --time=30:00
+#SBATCH --job-name=fastq
+#SBATCH --output=%x_%j.out
+#SBATCH --mail-user=netid@uvm.edu
+#SBATCH --mail-type=ALL
+
+#splits paired read sra files into two normal fastq files plus a third for any orphaned reads, to keep paired files in sync
+fastq-dump --split-3  $1
+```
+
+*** 
+!!! example "Class Exercise" 
+
+    1. To check that you are able to download fastq files using the scripts above, please download the `SRR_download` folder: 
+
+    ```bash
+    /gpfs1/cl/mmg3320/course_materials/SRR_download
+    ```
+
+    2. Change **#SBATCH --mail-user=netid@uvm.edu** to your netid
+    
+    3. Run the `sra_fqdump.sh` script
+    
+    4. If this ran successfully, you should see two new fastq files and emails in your inbox. 
+
+    ```bash
+    SRR25462427.fastq.gz
+    SRR25462429.fastq.gz
+    ```
+
+    5. Check their sizes to see that SRR25462396 is 3.2MB and SRR25462427 is 4.6MB. 
+
+
+***
+
+### Bypassing storage issues with /scratch  
+When downloading large datasets to the server, it’s important to consider storage limits. If you download files to your home directory, the maximum storage allowed is 100GB. This can become an issue when handling tens or hundreds of FASTQ files because SRA-Toolkit does not download FASTQ files directly. Instead, it first writes an intermediate cache file of equal size, which is not automatically removed. As a result, you may quickly run into storage errors, causing incomplete downloads and error messages in your log file.
+
+To avoid this, use the scratch space on the VACC (/scratch). This location has a much larger storage limit (12TB) and is better suited for handling large downloads.
+
+
+## Summary of Header Lines 
 
 |Header Line| What It Does| Example| 
 |:--------------------:|:--------------------:|:--------------------:|
@@ -462,114 +628,6 @@ Submitted batch job 123456
 |#SBATCH --mail-user=<youremail@uvm.edu> | Sets email address where status emails are sent | #SBATCH --mail-user=usr1234@uvm.edu | 
 |#SBATCH --mail-type=<type> | Requests that a status email be sent. Options include: NONE, BEGIN, END, FAIL, REQUEUE, ALL. | #SBATCH --mail-type=ALL | 
 |#SBATCH --output=%x_%j.out | This command sets a custom output file name by using Slurm-assigned variables: %x = <jobname you have assigned> and %j = <job_id Slurm has assigned>| Output filed named: myjob_123456.out| 
-
-### Commands 
-
-|Command | What It Does | 
-|:----------|:-----------|
-|sbatch <file_name> | Submits a job, e.g., sbatch myjob | 
-|scontrol show job <job_id> | Detailed information about a particular job, e.g., scontrol show job 123456 | 
-|squeue | Checks status of all jobs in scheduling queue | 
-|squeue -u <username> | Checks status of all jobs belonging to the named user, e.g., squeue -u usr1234 | 
-|squeue --start -j <job_id> | Estimates earliest start time of a particular job, e.g., squeue --start -j 123456 | 
-|squeue --start -u <username> | Estimates earliest start time of all jobs belonging to the named user, e.g., squeue --start -u usr1234 | 
-|scancel -u <username> | Deletes/cancels all jobs belonging to the named user, e.g., scancel -u usr1234 | 
-|scancel <job_id> | Deletes/cancels a particular job, e.g., scancel 123456| 
-
-
-
-The first script is a loop, that will go through your list of SRR's, and calls a second script at each iteration, passing it for each SRR number on the list. 
-
-```bash
-nano sra_fqdump.sh
-```
-```bash
-#!/bin/bash
-#SBATCH --partition=bluemoon
-#SBATCH --nodes=1
-#SBATCH --ntasks=2
-#SBATCH --mem=50G
-#SBATCH --time=30:00:00
-#SBATCH --job-name=fastq 
-# %x=job-name %j=jobid
-#SBATCH --output=%x_%j.out
-
-#while there are lines in the list of SRRs file
-while read p
-do
-#call the bash script that does the fastq dump, passing it the SRR number next $
-sbatch inner_script.sh $p
-done <list_of_SRRs.txt
-```
-The script that is called inside the loop (inner_script.sh) is the one that takes the given SRR number and runs fastq-dump on it:
-
-```bash
-nano inner_script.sh
-```
-
-```bash
-#!/bin/bash
-#SBATCH --partition=bluemoon
-#SBATCH --nodes=1
-#SBATCH --ntasks=2
-#SBATCH --mem=50G
-#SBATCH --time=30:00:00
-#SBATCH --job-name=fastq
-# %x=job-name %j=jobid
-#SBATCH --output=%x_%j.out
-
-#for single end reads only
-fastq-dump --gzip $1
-```
-
-In this way (by calling a script within a script) we will start a new job for each SRR download, and download all the files at once in parallel. This is much quicker than if we had to wait for each one to run sequentially. To run the main script:
-
-```bash
-sbatch sra_fqdump.sh
-```
-
-### Paired end files
-Unlike the standard format for paired end data, where we normally find two fastq files labelled as sample1_001.fastq and sample1_002.fastq, SRR files can be very misleading in that even paired end reads are found in one single file, with sequence pairs concatenated alongside each other. Because of this format, paired files need to be split at the download step. SRA toolkit has an option for this called "--split-files". By using this, one single SRR file will download as SRRxxx_1.fastq and SRRxxx_2.fastq.
-
-Furthermore, there is a very helpful improvement on this function called "--split-3" which splits your SRR into 3 files: one for read 1, one for read 2, and one for any orphan reads (ie: reads that aren't present in both files). This is important for downstream analysis, as some aligners require your paired reads to be in sync (ie: present in each file at the same line number) and orphan reads can throw this order off. Change the inner_script.sh as follows if your reads are paired end:
-
-```bash
-#!/bin/bash
-#SBATCH --partition=bluemoon
-#SBATCH --nodes=1
-#SBATCH --ntasks=2
-#SBATCH --mem=50G
-#SBATCH --time=30:00:00
-#SBATCH --job-name=fastq
-# %x=job-name %j=jobid
-#SBATCH --output=%x_%j.out
-
-#splits paired read sra files into two normal fastq files plus a third for any orphaned reads, to keep paired files in sync
-fastq-dump --split-3  $1
-```
-
-### Bypassing storage issues with scratch 
-Another important consideration when downloading large datasets to the server, is the maximum storage limit in your location. If you are downloading files to your home directory, the maximum allowed storage is 100GB. This can be a problem when downloading tens or hundreds of fastq files, as SRA-toolkit does not download the fastq files directly but writes an intermediate (equally large) cache file first, which is not removed. Because of this, you may run into storage errors very quickly, and will notice your files not downloading completely, and storage errors writing to your run.e error file. If this is the case, the scratch space on the VACC (/scratch). This is a location with much greater storage (12TB limit), and a better place to run large downloads. 
-
-*** 
-!!! example "Class Exercise" 
-
-    1. To check that you are able to download fastq files using the scripts above, please download all contents from this location. This is an entire folder. 
-
-    ```
-    /gpfs1/cl/mmg3320/course_materials/SRR_download
-    ```
-
-    2. Run sbatch sra_fqdump.sh
-
-    3. If this ran successfully, you should see two new fastq files
-
-    ```
-    SRR25462427.fastq.gz
-    SRR25462429.fastq.gz
-    ```
-
-***
 
 ## Citation 
 
