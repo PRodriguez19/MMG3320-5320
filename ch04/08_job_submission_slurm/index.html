@@ -12,28 +12,24 @@
         <meta name="author" content="Princess Rodriguez">
       
       
-        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/pdf_materials/">
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch04/08_job_submission_slurm/">
       
       
-        <link rel="prev" href="../slides/">
       
       
-        <link rel="next" href="../ch01/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
-        <title>Overview - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>Submit a job using Slurm - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pdf-overview" class="md-skip">
+        <a href="#submit-a-job-using-slurm" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +88,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Submit a job using Slurm
             
           </span>
         </div>
@@ -172,7 +168,7 @@
     
     
       <li class="md-tabs__item">
-        <a href=".." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   About
@@ -190,7 +186,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../slides/" class="md-tabs__link">
+        <a href="../../slides/" class="md-tabs__link">
           
   
   Slides
@@ -204,13 +200,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../pdf_materials/" class="md-tabs__link">
           
   
   Printouts
@@ -234,7 +228,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../ch01/" class="md-tabs__link">
+        <a href="../../ch01/" class="md-tabs__link">
           
   
   Unit 1
@@ -255,7 +249,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../assignments/week1_assignment/" class="md-tabs__link">
+        <a href="../../assignments/week1_assignment/" class="md-tabs__link">
           
   
   Assignments
@@ -288,7 +282,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -344,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -365,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MMG3320-Spring-2025-Syllabus.pdf" class="md-nav__link">
+      <a href="../../MMG3320-Spring-2025-Syllabus.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -386,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MMG3320-5320-Spring-2025-Schedule.pdf" class="md-nav__link">
+      <a href="../../MMG3320-5320-Spring-2025-Schedule.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -407,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/gitbash-install/" class="md-nav__link">
+      <a href="../../ch01/gitbash-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -428,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/quick-start/" class="md-nav__link">
+      <a href="../../ch01/quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slides/" class="md-nav__link">
+      <a href="../../slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -519,28 +513,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -551,7 +540,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Printouts
@@ -562,28 +551,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../pdf_materials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -592,33 +563,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pdf-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      PDF Overview
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -714,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/" class="md-nav__link">
+      <a href="../../ch01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -735,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/01_week1_mmg3320/" class="md-nav__link">
+      <a href="../../ch01/01_week1_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -756,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/02_week1_mmg3320/" class="md-nav__link">
+      <a href="../../ch01/02_week1_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -823,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch02/" class="md-nav__link">
+      <a href="../../ch02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -844,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch02/03_week2_mmg3320/" class="md-nav__link">
+      <a href="../../ch02/03_week2_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -911,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch03/" class="md-nav__link">
+      <a href="../../ch03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -932,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch03/04_week3_mmg3320/" class="md-nav__link">
+      <a href="../../ch03/04_week3_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -953,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch03/05_week3_mmg3320/" class="md-nav__link">
+      <a href="../../ch03/05_week3_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1020,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1041,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04/06_week4_mmg3320/" class="md-nav__link">
+      <a href="../06_week4_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04/07_week4_intro-to-RNAseq/" class="md-nav__link">
+      <a href="../07_week4_intro-to-RNAseq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1136,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week1_assignment/" class="md-nav__link">
+      <a href="../../assignments/week1_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1157,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week2_assignment/" class="md-nav__link">
+      <a href="../../assignments/week2_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1178,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week3_assignment/" class="md-nav__link">
+      <a href="../../assignments/week3_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1199,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week4_assignment/" class="md-nav__link">
+      <a href="../../assignments/week4_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1220,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week5_assignment/" class="md-nav__link">
+      <a href="../../assignments/week5_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1279,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/" class="md-nav__link">
+      <a href="../../assignments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1325,6 +1269,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1333,11 +1279,80 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pdf-overview" class="md-nav__link">
+  <a href="#batch-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      PDF Overview
+      Batch Computing
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Directives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slurm Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walltime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Walltime
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodes-tasks-and-cores-cpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes, Tasks, and Cores (CPUs)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mail-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mail Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      JOB NAME
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Submission
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1356,23 +1371,230 @@
                   
 
 
-  <h1>Overview</h1>
+<div><h1 id="submit-a-job-using-slurm">Submit a job using Slurm</h1>
+<p>Submitting a job to an HPC machine (such as Bluemoon) is done using the batch system. The batch system allows users to submit jobs requesting the resources (nodes, processors, memory, GPUs) that they need. The jobs are queued and then run as resources become available.</p>
+<h2 id="batch-computing">Batch Computing</h2>
+<p>To run a batch job, you put the commands into a text file instead of typing them at the prompt. You submit this file to the batch system, called <strong>SLURM</strong>, which will run it as soon as resources become available. The output you would normally see on your display goes into a log file. You can check the status of your job interactively and/or receive emails when it begins and ends execution. The basic steps include: </p>
+<ol>
+<li>Log-in to VACC</li>
+<li>Write job script </li>
+<li>Submit Job </li>
+<li>Monitor job and wait for it to run! </li>
+<li>Retrieve your output </li>
+</ol>
+<p>A job script can be created using any text editor - such as Nano or Vim - or any GUI editor you may want to download! 
+To use the Slurm job scheduler, it requires Slurm directives. To learn more you can do: </p>
+<div class="highlight"><pre><span></span><code>man sbatch
+</code></pre></div>
+<h2 id="slurm-directives">Slurm Directives</h2>
+<p>At the top of the job script will always be several lines that start with #SBATCH. The Slurm directives provide the job setup information used by Slurm, including resources to request. This information is then followed by the commands to be executed in the script. </p>
+<h3 id="partition">Partition</h3>
+<p>First, we will need to specify a partition. A partition refers to a group of nodes which are characterized by their hardware. Specifying a partition is optional and if not specified the default partition is bluemoon. As practice we will specify bluemoon anyways using the following line: </p>
+<div class="highlight"><pre><span></span><code>#SBATCH --partition=bluemoon
+</code></pre></div>
+<p>Other Partitions: </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Partition</th>
+<th style="text-align: center;">Intended Use</th>
+<th style="text-align: center;">Max Runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">bluemoon</td>
+<td style="text-align: center;">General computing – default partition</td>
+<td style="text-align: center;">30 hours</td>
+</tr>
+<tr>
+<td style="text-align: center;">short</td>
+<td style="text-align: center;">General computing with short runtime</td>
+<td style="text-align: center;">3 hours</td>
+</tr>
+<tr>
+<td style="text-align: center;">week</td>
+<td style="text-align: center;">General computing with longer runtime</td>
+<td style="text-align: center;">7 days</td>
+</tr>
+<tr>
+<td style="text-align: center;">bigmem</td>
+<td style="text-align: center;">Large memory requirements computing</td>
+<td style="text-align: center;">30 hours</td>
+</tr>
+<tr>
+<td style="text-align: center;">bigmemwk</td>
+<td style="text-align: center;">Large memory requirements with longer runtime</td>
+<td style="text-align: center;">7 days</td>
+</tr>
+</tbody>
+</table>
+<p>You can check partition usage using the following command: </p>
+<div class="highlight"><pre><span></span><code>sinfo -p partition_name
+sinfo -p bluemoon 
+</code></pre></div>
+<h3 id="walltime">Walltime</h3>
+<p>Walltime is the maximum amount of time your job will run. It’s the runtime of your job.</p>
+<p>Your job may run for less time than you request (and you will only be charged for that amount of time), but it will not run for more time than you request.</p>
+<p>Walltime is requested with #SBATCH --time=<dd-hh:mm:ss>, where “dd” refers to day(s), “hh” to hour(s), “mm” to minute(s), and “ss” to second(s). You will replace each of these units with a two-digit numeral. Acceptable formats are: mm, mm:ss, hh:mm:ss, dd-hh, dd-hh:mm, dd-hh:mm:ss.</dd-hh:mm:ss></p>
+<div class="highlight"><pre><span></span><code># requesting 30 hours of walltime (hh:mm:ss)
+#SBATCH --time=30:00:00
+</code></pre></div>
+<h3 id="nodes-tasks-and-cores-cpus">Nodes, Tasks, and Cores (CPUs)</h3>
+<p>The nodes, tasks, and core (CPU) resources you request depend on the type of job you are running. Useful terms to understand are:</p>
+<pre><code>Node: A “node” is a server in the cluster. Each node has is configured with a certain number of cores (CPUs).
+Task: A “task” is a process sent to a core. By default, 1 core is assigned per 1 task.
+Core/CPU: The terms “core” and “cpu” are used interchangeably in high-performance computing.
+</code></pre>
+<p>The most common jobs on the Bluemoon cluster are serial jobs, which run as a single process. VACC recommend's that you begin with 1 node and 2 processes. As we move forward, we will change the number of nodes required for "bigger" jobs.</p>
+<div class="highlight"><pre><span></span><code># requesting 1 compute node
+#SBATCH --nodes=1
+# requesting 2 processes
+#SBATCH --ntasks=2
+</code></pre></div>
+<h3 id="mail-type">Mail Type</h3>
+<p>In order to receive emails, you must set what types of emails you would like to receive, using the flag --mail-type. The options include: BEGIN (when your job begins), END (when your job ends), FAIL (if your job fails), ALL. For example:</p>
+<div class="highlight"><pre><span></span><code>#SBATCH --mail-type=ALL
+</code></pre></div>
+<h3 id="job-name">JOB NAME</h3>
+<p>Job name is used as part of the name of the job log files. It also appears in lists of queued and running jobs.</p>
+<p>Specifying a job name is not required. If you don’t supply a job name, the job ID (supplied by Slurm) is used.</p>
+<p>However, if you do wish to specify a job name, use the --job-name flag. For example, where your job name is “myjob”:</p>
+<div class="highlight"><pre><span></span><code># replace "myjob" with YOUR chosen job name
+#SBATCH --job-name=myjob
+</code></pre></div>
+<h3 id="job-submission">Job Submission</h3>
+<p>Once your job script is written, you can submit it. To submit your job, use the sbatch command with your filename. For example, where the filename is “myfilename”:</p>
+<div class="highlight"><pre><span></span><code># replace "myfilename" with YOUR filename
+sbatch myfilename
+</code></pre></div>
+<p>When you submit your job, Slurm will respond with the job ID. For example, where the job ID Slurm assigns is “123456,” Slurm will respond:</p>
+<div class="highlight"><pre><span></span><code>Submitted batch job 123456
+</code></pre></div>
+<blockquote>
+<p>Note your job ID! </p>
+</blockquote>
+<h1 id="summary-of-header-lines">Summary of Header Lines</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Header Line</th>
+<th style="text-align: center;">What It Does</th>
+<th style="text-align: center;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">#SBATCH --partition=<partition_name></partition_name></td>
+<td style="text-align: center;">Specifies partition</td>
+<td style="text-align: center;">#SBATCH --partition=short or #SBATCH --partition=dggpu</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --nodes=<n></n></td>
+<td style="text-align: center;">Requests number of nodes (n)</td>
+<td style="text-align: center;">#SBATCH --nodes=1</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --ntasks=<n></n></td>
+<td style="text-align: center;">Requests number of processes to run</td>
+<td style="text-align: center;">#SBATCH --ntasks=4</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --gres=gpu:<n></n></td>
+<td style="text-align: center;">Requests GPUs</td>
+<td style="text-align: center;">#SBATCH --gres=gpu:1</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --mem=<amount></amount></td>
+<td style="text-align: center;">Requests memory for the entire job</td>
+<td style="text-align: center;">#SBATCH --mem=24G</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --mem-per-cpu=<amount></amount></td>
+<td style="text-align: center;">Requests memory for the entire job</td>
+<td style="text-align: center;">#SBATCH --mem-per-cpu=1G</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --time=<dd-hh:mm:ss></dd-hh:mm:ss></td>
+<td style="text-align: center;">Requests amount of time needed for job. Acceptable formats are: mm, mm:ss, hh:mm:ss, dd-hh, dd-hh:mm, dd-hh:mm:ss</td>
+<td style="text-align: center;">#SBATCH --time=01:00:00</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --job-name=<jobname></jobname></td>
+<td style="text-align: center;">Sets job name</td>
+<td style="text-align: center;">#SBATCH --job-name=myjob</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --mail-user=<a href="mailto:youremail@uvm.edu">youremail@uvm.edu</a></td>
+<td style="text-align: center;">Sets email address where status emails are sent</td>
+<td style="text-align: center;">#SBATCH --mail-user=usr1234@uvm.edu</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --mail-type=<type></type></td>
+<td style="text-align: center;">Requests that a status email be sent. Options include: NONE, BEGIN, END, FAIL, REQUEUE, ALL.</td>
+<td style="text-align: center;">#SBATCH --mail-type=ALL</td>
+</tr>
+<tr>
+<td style="text-align: center;">#SBATCH --output=%x_%j.out</td>
+<td style="text-align: center;">This command sets a custom output file name by using Slurm-assigned variables: %x = <jobname you have assigned> and %j = <job_id slurm has assigned></job_id></jobname></td>
+<td style="text-align: center;">Output filed named: myjob_123456.out</td>
+</tr>
+</tbody>
+</table>
+<h1 id="commands">Commands</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">sbatch <file_name></file_name></td>
+<td style="text-align: left;">Submits a job, e.g., sbatch myjob</td>
+</tr>
+<tr>
+<td style="text-align: left;">scontrol show job <job_id></job_id></td>
+<td style="text-align: left;">Detailed information about a particular job, e.g., scontrol show job 123456</td>
+</tr>
+<tr>
+<td style="text-align: left;">squeue</td>
+<td style="text-align: left;">Checks status of all jobs in scheduling queue</td>
+</tr>
+<tr>
+<td style="text-align: left;">squeue -u <username></username></td>
+<td style="text-align: left;">Checks status of all jobs belonging to the named user, e.g., squeue -u usr1234</td>
+</tr>
+<tr>
+<td style="text-align: left;">squeue --start -j <job_id></job_id></td>
+<td style="text-align: left;">Estimates earliest start time of a particular job, e.g., squeue --start -j 123456</td>
+</tr>
+<tr>
+<td style="text-align: left;">squeue --start -u <username></username></td>
+<td style="text-align: left;">Estimates earliest start time of all jobs belonging to the named user, e.g., squeue --start -u usr1234</td>
+</tr>
+<tr>
+<td style="text-align: left;">scancel -u <username></username></td>
+<td style="text-align: left;">Deletes/cancels all jobs belonging to the named user, e.g., scancel -u usr1234</td>
+</tr>
+<tr>
+<td style="text-align: left;">scancel <job_id></job_id></td>
+<td style="text-align: left;">Deletes/cancels a particular job, e.g., scancel 123456</td>
+</tr>
+</tbody>
+</table>
+<h2 id="citation">Citation</h2>
+<p><em>This lesson was developed using materials from the <a href="https://www.uvm.edu/vacc">Vermont Advanced Computing Center</a>. These materials are freely available.</em></p></div>
 
-<div><h2 id="pdf-overview">PDF Overview</h2>
-<p>Each tutorial will also be made available as PDF printout document. These lessons can be reviewed prior to class start. </p>
-<p><a href="01_week1_mmg3320-printout.pdf">Introducing the Shell (L1)</a></p>
-<p><a href="02_week1_mmg3320-printout.pdf">Navigating the Shell (L2)</a></p>
-<p><a href="03_week2_mmg3320-printout.pdf">Wildcards &amp; Nano (L3)</a></p>
-<p><a href="04_week3_mmg3320-printout.pdf">Searching &amp; Navigation (L4)</a></p>
-<p><a href="05_week3_mmg3320-printout.pdf">Intro to Shell Scripting (L5)</a></p>
-<p><a href="07_week4_intro-to-RNAseq-printout.pdf">RNA-Seq Overview (L7)</a></p>
-<p>[Accessing Public Data (L8)]</p></div>
 
 
 
 
 
 
+  
+  
 
 
 
@@ -1419,10 +1641,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
