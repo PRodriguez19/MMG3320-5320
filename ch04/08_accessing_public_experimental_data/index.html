@@ -2314,7 +2314,7 @@ INPUT
 <p>To use the SLURM job scheduler, it requires <strong>SLURM directives</strong>. </p>
 <h3 id="slurm-directives">SLURM Directives</h3>
 <p>At the top of the job script will always be several lines that start with #SBATCH. The SLURM directives provide the job setup information used by SLURM, including resources to request. This information is then followed by the commands to be executed in the script. </p>
-<p>Let's create our first job script.</p>
+<p>Create a script using nano: </p>
 <div class="highlight"><pre><span></span><code>nano<span class="w"> </span>test_job.sh
 </code></pre></div>
 <p>We need to have a shebang line at the beginning of the script to specify the file is a shell script. </p>
@@ -2342,15 +2342,12 @@ INPUT
 <span class="c1"># Name the output file </span>
 <span class="c1">#SBATCH --output=%x_%j.out</span>
 
-<span class="c1"># Set email address for notifications </span>
-<span class="c1">#SBATCH --mail-user=netid@uvm.edu</span>
-
 <span class="c1"># Request email to be sent at both begin and end, and if job fails</span>
-<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-type=END</span>
 </code></pre></div>
 <h3 id="partition">Partition</h3>
-<p>First, we will need to specify a partition. A partition refers to a group of nodes which are characterized by their hardware. Specifying a partition is optional and if not specified the default partition is bluemoon. As practice we will specify bluemoon anyways using the following line: </p>
-<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --partition=bluemoon</span>
+<p>First, we will need to specify a partition. A partition refers to a group of nodes which are characterized by their hardware. Specifying a partition is optional and if not specified the default partition is general. As practice we will specify general anyways using the following line: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --partition=general</span>
 </code></pre></div>
 <p>Other Partitions: </p>
 <table>
@@ -2396,11 +2393,10 @@ sinfo<span class="w"> </span>-p<span class="w"> </span>general<span class="w"> <
 <span class="c1">#SBATCH --time=30:00:00</span>
 </code></pre></div>
 <h3 id="nodes-tasks-and-cores-cpus">Nodes, Tasks, and Cores (CPUs)</h3>
-<p>The nodes, tasks, and core (CPU) resources you request depend on the type of job you are running. Useful terms to understand are:</p>
-<pre><code>Node: A “node” is a server in the cluster. Each node has is configured with a certain number of cores (CPUs).
-Task: A “task” is a process sent to a core. By default, 1 core is assigned per 1 task.
-Core/CPU: The terms “core” and “cpu” are used interchangeably in high-performance computing.
-</code></pre>
+<p>The nodes, tasks, and core (CPU) resources you request depend on the type of job you are running. </p>
+<p>Node: A “node” is a server in the cluster. Each node is configured with a certain number of cores (CPUs).</p>
+<p>Task: A “task” is a process sent to a core. By default, 1 core is assigned per 1 task.</p>
+<p>Core/CPU: The terms “core” and “cpu” are used interchangeably in high-performance computing.</p>
 <p>VACC recommend's that you begin with 1 node and 2 processes. As we move forward, we will change the number of nodes required for "bigger" jobs.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># requesting 1 compute node</span>
 <span class="c1">#SBATCH --nodes=1</span>
@@ -2481,8 +2477,7 @@ sbatch<span class="w"> </span>myfilename
 <span class="c1">#SBATCH --time=30:00</span>
 <span class="c1">#SBATCH --job-name=fastq</span>
 <span class="c1">#SBATCH --output=%x_%j.out</span>
-<span class="c1">#SBATCH --mail-user=netid@uvm.edu</span>
-<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-type=END</span>
 
 <span class="c1">#while there are lines in the list of SRRs file</span>
 <span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>p
@@ -2499,8 +2494,7 @@ sbatch<span class="w"> </span>inner_script.sh<span class="w"> </span><span class
 <span class="c1">#SBATCH --time=30:00</span>
 <span class="c1">#SBATCH --job-name=fastq</span>
 <span class="c1">#SBATCH --output=%x_%j.out</span>
-<span class="c1">#SBATCH --mail-user=netid@uvm.edu</span>
-<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-type=END</span>
 
 <span class="c1">#for single end reads only</span>
 fastq-dump<span class="w"> </span>--gzip<span class="w"> </span><span class="nv">$1</span>
@@ -2546,8 +2540,7 @@ fastq-dump<span class="w"> </span>--gzip<span class="w"> </span><span class="nv"
 <span class="c1">#SBATCH --time=30:00</span>
 <span class="c1">#SBATCH --job-name=fastq</span>
 <span class="c1">#SBATCH --output=%x_%j.out</span>
-<span class="c1">#SBATCH --mail-user=netid@uvm.edu</span>
-<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-type=END</span>
 
 <span class="c1">#splits paired read sra files into two normal fastq files plus a third for any orphaned reads, to keep paired files in sync</span>
 fastq-dump<span class="w"> </span>--split-3<span class="w">  </span><span class="nv">$1</span>
