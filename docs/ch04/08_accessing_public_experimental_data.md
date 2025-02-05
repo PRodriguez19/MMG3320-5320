@@ -600,8 +600,8 @@ fastq-dump --split-3  $1
     3. If this ran successfully, you should see two new fastq files and an email in your inbox. 
 
     ```bash
+    SRR25462396.fastq.gz
     SRR25462427.fastq.gz
-    SRR25462429.fastq.gz
     ```
 
     4. Check their sizes to see that SRR25462396 is 3.2MB and SRR25462427 is 4.6MB. 
