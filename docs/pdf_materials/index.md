@@ -14,4 +14,4 @@ Each tutorial will also be made available as PDF printout document. These lesson
 
 [RNA-Seq Overview (L7)](07_week4_intro-to-RNAseq-printout.pdf)
 
-[Accessing Public Data (L8)]
+[Accessing Public Data (L8)](08_accessing_public_experimental_printout.pdf)

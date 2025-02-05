@@ -10,7 +10,7 @@
     + Download part, not all, the data 
 
 
-## Where are we going? 
+## Where are we heading? 
 
 <figure markdown="span">
   ![Overview](../img/overview.png){ width="800"}
@@ -594,19 +594,19 @@ fastq-dump --split-3  $1
     ```bash
     /gpfs1/cl/mmg3320/course_materials/SRR_download
     ```
-
-    2. Change **#SBATCH --mail-user=netid@uvm.edu** to your netid
     
-    3. Run the `sra_fqdump.sh` script
+    2. Run the `sra_fqdump.sh` script
     
-    4. If this ran successfully, you should see two new fastq files and emails in your inbox. 
+    3. If this ran successfully, you should see two new fastq files and an email in your inbox. 
 
     ```bash
     SRR25462427.fastq.gz
     SRR25462429.fastq.gz
     ```
 
-    5. Check their sizes to see that SRR25462396 is 3.2MB and SRR25462427 is 4.6MB. 
+    4. Check their sizes to see that SRR25462396 is 3.2MB and SRR25462427 is 4.6MB. 
+
+    5. When you are finished show me your laptop. 
 
 
 ***
