@@ -74,3 +74,4 @@ markdown_extensions:
       custom_checkbox: true
 plugins:
   - mkdocs-pdf
+  - search
