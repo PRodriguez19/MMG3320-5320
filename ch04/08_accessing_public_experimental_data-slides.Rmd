@@ -1,22 +1,13 @@
 ---
 title: "Accessing Public Experimental Data"
-subtitle: "A Beginner's Guide"
 author: "Dr. Princess Rodriguez"
-date: "`r Sys.Date()`"
+date: "2025-01-29"
 output:
-  pdf_document:
-    toc: true
-    toc_depth: 2
-    number_sections: true
-fontsize: 12pt
-geometry: a4paper
-header-includes:
-  - \usepackage{titletoc}
-  - \setcounter{tocdepth}{2} % Control depth of ToC
-  - \usepackage{etoolbox}
-  - \patchcmd{\tableofcontents}{\chapter*}{\section*}{}{} % Makes ToC fit on the first page
-  - \usepackage{listings}
-  - \lstset{breaklines=true, breakatwhitespace=true}
+  beamer_presentation:
+    theme: AnnArbor
+    colortheme: dolphin
+    fonttheme: structurebold
+fontsize: 12pt # Sets the base font size
 ---
 
 # Learning Objectives
@@ -30,12 +21,15 @@ header-includes:
     + split files into forward and reverse reads 
     + Download part, not all, the data 
 
+----
 
 # Where are we heading? 
 
 <figure markdown="span">
   ![Overview](../img/overview.png){ width="600"}
 </figure>
+
+----
 
 # Sequence file formats 
 
@@ -50,37 +44,51 @@ Below is a cartoon displaying the (3) file types required to perform an RNA-Seq 
 </figure>
 
 
-## FASTA
+----
+
+# FASTA file
 During an NGS experiment, the nucleotide sequences stored inside the raw FASTQ files, or "sequence reads", need to be mapped or aligned to the reference genome to determine from where these sequences originated. Therefore, we need a reference genome (in FASTA format) in which to align our sequences.
 
 <figure markdown="span">
   ![FASTA format](../img/fasta.png){ width="600"}
 </figure>
 
-## GTF 
+----
+
+## GTF file
 In addition, many NGS methods require knowing where known genes or exons are located on the genome in order to quantify the number of reads aligning to different genome features, such as exons, introns, transcription start sites, etc. These analyses require reference data containing specific information about genomic coordinates of various genomic “features”, such as gene annotation files (in GTF, GFF, etc.). 
 
 <figure markdown="span">
   ![GTF format](../img/GTF_file_example.jpg){ width="600"}
 </figure>
 
-## FASTQ 
-These are the extension of FASTA files which contain quality scores and are output from the NGS technologies. 
+----
+
+# FASTQ file
+These are the extension of FASTA files which contain quality scores and are output from the NGS technologies.
+
+----
 
 # Downloading file formats 
 
-To find and download NGS experimental data and associated reference data we will explore a few key repositories. For **finding reference data**, we will navigate the [Ensembl database](http://useast.ensembl.org/index.html). For **accessing experimental data**, we will explore the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/) and the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) repositories. 
+To find and download NGS experimental data and associated reference data we will explore a few key repositories. 
+
++ For **finding reference data**, we will navigate the [Ensembl database](http://useast.ensembl.org/index.html). 
+
++ For **accessing experimental data**, we will explore the [Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/) and the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) repositories. 
+
+----
+
+# General vs organism-specific databases
 
 - **General biological databases:** Ensembl, NCBI, and UCSC
+
 - **Organism-specific biological databases:** Wormbase, Flybase, Cryptodb, etc. (often updated more frequently, so may be more comprehensive)
+  - Sometime's you will need to pay annual membership fee to access files and use organism specific tools. 
 
-*Note that these reference data sources are relevant to most types of genomic analyses not just NGS analyses.
+----
 
-## General biological databases
-
-Biological databases for gene expression data store genome assemblies and provide annotations regarding where the genes, transcripts, and other genomic features are located on the genome. 
-
-Genome assemblies give us the **nucleotide sequence of the reference genome**. Although the Human Genome Project was "completed" in 2003, small gaps in the sequence remained (estimated 1% of gene-containing portions). As technology improves and more genomes are sequenced, these gaps are filled, mistakes are corrected and alternate alleles are provided. Therefore, every several years a **new genome build** is released that contains these improvements. 
+# Human Reference Genome
 
 The **current genome build** is GRCh38/hg38 for the human, which was released in 2013 and is maintained by the Genome Reference Consortium (GRC). 
 
@@ -89,7 +97,9 @@ The **current genome build** is GRCh38/hg38 for the human, which was released in
 </figure>
 
 
-Usually the biological databases will include the updated versions as soon as they are stably released, in addition to access to archived versions.
+----
+
+# Differences from Biological Databases 
 
 Genome databases incorporate these genomes and generate the gene annotations with the following **similarities/differences**:
 
@@ -100,15 +110,27 @@ Genome databases incorporate these genomes and generate the gene annotations wit
 
 - **Always use the same biological database for all reference data!**
 
+----
+
 # Ensembl
 
-[*Ensembl*](http://useast.ensembl.org/index.html) provides a website that acts as a **single point of access to annotated genomes** for vertebrate species. For all other organisms there are additional Ensembl databases available through [Ensembl Genomes](http://ensemblgenomes.org/); however, they do not include viruses (NCBI does).
+[*Ensembl*](http://useast.ensembl.org/index.html) provides a website that acts as a **single point of access to annotated genomes** for vertebrate species. 
 
-- Genome assemblies/builds (reference genomes)
-	- New genome builds are released every several years or more depending on the species
-	- Genome assemblies are updated every two years to include patches, or less often depending on the species
+For all other organisms there are additional Ensembl databases available through [Ensembl Genomes](http://ensemblgenomes.org/); however, they do not include viruses (NCBI does).
 
-- Gene annotations
+----
+
+# Ensembl annotations updates
+
+- **Genome assemblies/builds (reference genomes)**
+	- New genome builds are released every few years or more depending on the species
+	- Genome assemblies are typically updated every two years to include patches, but sometimes less often depending on the species
+
+----
+
+# Ensembl annotations updates continued 
+
+- **Gene annotations**
 	- Gene annotations are created or updated using a variety of sources (ENA, UniProtKB, NCBI RefSeq, RFAM, miRBase, and tRNAscan-SE databases)
 	- Automatic annotation is performed for all species using identified proteins and transcripts
 	- Manual curation by the HAVANA group is performed for human, mouse, zebrafish, and rat species, providing better confidence of transcript annotations
