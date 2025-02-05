@@ -2129,6 +2129,7 @@
 <figure>
   <img alt="MOV10 Download" src="../../img/mov10_download.png" width="600">
 </figure>
+<hr>
 <h2 id="downloading-data-from-sra">Downloading data from SRA</h2>
 <p>The Sequence Read Archive (SRA) is an archive for high throughput sequencing data, publicly accessible, for the purpose of enhancing reproducibility in the scientific community.</p>
 <p>There are four hierarchical levels of SRA entities and their accessions:  </p>
@@ -2467,13 +2468,33 @@ sbatch<span class="w"> </span>inner_script.sh<span class="w"> </span><span class
 <span class="c1">#for single end reads only</span>
 fastq-dump<span class="w"> </span>--gzip<span class="w"> </span><span class="nv">$1</span>
 </code></pre></div>
-<p>Estimated Memory Requirements 
-| Data Type | Memory Required (Approx.) |
-|:---------:|:-------------------------:|
-| Single-end small dataset (~1GB SRA file) | 4-8 GB|
-| Single-end large dataset (~10GB SRA file) | 8-16 GB|
-| Paired-end small dataset (~10-20GB SRA file)| 8-16 GB|
-| Paired-end large dataset (~50GB SRA file)| 16-32 GB+|</p>
+<p><strong>Estimated Memory Requirements</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Data Type</th>
+<th style="text-align: center;">Memory Required (Approx.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Single-end small dataset (~1GB SRA file)</td>
+<td style="text-align: center;">4-8 GB</td>
+</tr>
+<tr>
+<td style="text-align: center;">Single-end large dataset (~10GB SRA file)</td>
+<td style="text-align: center;">8-16 GB</td>
+</tr>
+<tr>
+<td style="text-align: center;">Paired-end small dataset (~10-20GB SRA file)</td>
+<td style="text-align: center;">8-16 GB</td>
+</tr>
+<tr>
+<td style="text-align: center;">Paired-end large dataset (~50GB SRA file)</td>
+<td style="text-align: center;">16-32 GB+</td>
+</tr>
+</tbody>
+</table>
 <p>To run the main script:</p>
 <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>sra_fqdump.sh
 </code></pre></div>
