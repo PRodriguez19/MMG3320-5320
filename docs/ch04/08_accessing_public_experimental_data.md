@@ -186,6 +186,8 @@ In addition, if we were interested in **downloading the raw counts matrix (`GSE5
   ![MOV10 Download](../img/mov10_download.png){ width="600"}
 </figure>
 
+***
+
 ## Downloading data from SRA 
 
 The Sequence Read Archive (SRA) is an archive for high throughput sequencing data, publicly accessible, for the purpose of enhancing reproducibility in the scientific community.
@@ -228,6 +230,7 @@ To do this, scrolls to the bottom of the page and click **Send to**, select the 
 ***
 
 ## Run selector
+
 You'll notice that the run selector has aggregated all the information for the study samples, including a table of metadata at the top, giving information on: 
  
   + LibraryLayout - whether the reads were sequenced using single or paired end sequencing
@@ -546,7 +549,8 @@ done <list_of_SRRs.txt
 fastq-dump --gzip $1
 ```
 
-Estimated Memory Requirements 
+**Estimated Memory Requirements** 
+
 | Data Type | Memory Required (Approx.) |
 |:---------:|:-------------------------:|
 | Single-end small dataset (~1GB SRA file) | 4-8 GB|
