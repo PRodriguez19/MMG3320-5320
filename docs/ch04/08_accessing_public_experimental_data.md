@@ -366,7 +366,7 @@ To use the SLURM job scheduler, it requires **SLURM directives**.
 
 At the top of the job script will always be several lines that start with #SBATCH. The SLURM directives provide the job setup information used by SLURM, including resources to request. This information is then followed by the commands to be executed in the script. 
 
-Let's create our first job script.
+Create a script using nano: 
 
 ```bash
 nano test_job.sh
@@ -402,19 +402,16 @@ Next lets add the SLURM directives which must precede the executable section in 
 # Name the output file 
 #SBATCH --output=%x_%j.out
 
-# Set email address for notifications 
-#SBATCH --mail-user=netid@uvm.edu
-
 # Request email to be sent at both begin and end, and if job fails
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=END
 ```
 
 
 ### Partition
-First, we will need to specify a partition. A partition refers to a group of nodes which are characterized by their hardware. Specifying a partition is optional and if not specified the default partition is bluemoon. As practice we will specify bluemoon anyways using the following line: 
+First, we will need to specify a partition. A partition refers to a group of nodes which are characterized by their hardware. Specifying a partition is optional and if not specified the default partition is general. As practice we will specify general anyways using the following line: 
 
 ```bash
-#SBATCH --partition=bluemoon
+#SBATCH --partition=general
 ```
 
 Other Partitions: 
@@ -447,11 +444,16 @@ Walltime is requested with #SBATCH --time=<dd-hh:mm:ss>, where “dd” refers t
 
 ### Nodes, Tasks, and Cores (CPUs)
 
-The nodes, tasks, and core (CPU) resources you request depend on the type of job you are running. Useful terms to understand are:
+The nodes, tasks, and core (CPU) resources you request depend on the type of job you are running. 
 
-    Node: A “node” is a server in the cluster. Each node has is configured with a certain number of cores (CPUs).
-    Task: A “task” is a process sent to a core. By default, 1 core is assigned per 1 task.
-    Core/CPU: The terms “core” and “cpu” are used interchangeably in high-performance computing.
+Node: A “node” is a server in the cluster. Each node is configured with a certain number of cores (CPUs).
+
+Task: A “task” is a process sent to a core. By default, 1 core is assigned per 1 task.
+
+Core/CPU: The terms “core” and “cpu” are used interchangeably in high-performance computing.
+
+
+
 
 VACC recommend's that you begin with 1 node and 2 processes. As we move forward, we will change the number of nodes required for "bigger" jobs.
 
@@ -522,8 +524,7 @@ The first script is a loop that will go through your list of SRR's, and calls a 
 #SBATCH --time=30:00
 #SBATCH --job-name=fastq
 #SBATCH --output=%x_%j.out
-#SBATCH --mail-user=netid@uvm.edu
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=END
 
 #while there are lines in the list of SRRs file
 while read p
@@ -542,8 +543,7 @@ done <list_of_SRRs.txt
 #SBATCH --time=30:00
 #SBATCH --job-name=fastq
 #SBATCH --output=%x_%j.out
-#SBATCH --mail-user=netid@uvm.edu
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=END
 
 #for single end reads only
 fastq-dump --gzip $1
@@ -579,8 +579,7 @@ Furthermore, there is a very helpful improvement on this function called "--spli
 #SBATCH --time=30:00
 #SBATCH --job-name=fastq
 #SBATCH --output=%x_%j.out
-#SBATCH --mail-user=netid@uvm.edu
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=END
 
 #splits paired read sra files into two normal fastq files plus a third for any orphaned reads, to keep paired files in sync
 fastq-dump --split-3  $1
