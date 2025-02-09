@@ -10,25 +10,29 @@
 Batch job submission on an HPC (High-Performance Computing) system offers several advantages, particularly for computationally intensive tasks like bioinformatics, genomics, and large-scale data analysis.
 
 1. **Efficient Resource Management:**
-   + Jobs are queued and scheduled based on resource availability, ensuring optimal utilization of CPUs, memory, and GPUs.
-   + Users can specify resource requirements (e.g., nodes, cores, memory) to avoid wasting computational power.
+      
+      + Jobs are queued and scheduled based on resource availability, ensuring optimal utilization of CPUs, memory, and GPUs.
+      + Users can specify resource requirements (e.g., nodes, cores, memory) to avoid wasting computational power.
 
 2. **Scalability:**
-   + HPC clusters handle jobs of varying sizes, from single-threaded processes to massively parallel workloads.
-   + Batch processing supports running multiple jobs concurrently, improving overall throughput.
+      
+      + HPC clusters handle jobs of varying sizes, from single-threaded processes to massively parallel workloads.
+      + Batch processing supports running multiple jobs concurrently, improving overall throughput.
 
 3. **Parallel Execution:**
-   + Batch submission allows running thousands of jobs in parallel (e.g., processing multiple sequencing samples).
+      
+      + Batch submission allows running thousands of jobs in parallel (e.g., processing multiple sequencing samples).
 
 4. **Job Monitoring:**
-   + Provides insights into job status, resource usage, and debugging. 
+      
+      + Provides insights into job status, resource usage, and debugging. 
 
 ## Looking inside of `sra_fqdump.sh`
 
 Purpose: Is to download FASTQ files from the SRA. FASTQ files to be downloaded are listed in a text file with accession numbers provided by you! 
 
 <figure markdown="span">
-  ![Script Layout](../img/sra_fqdump.png){ width="500"}
+  ![Script Layout](../img/sra_fqdump.png){ width="600"}
 </figure>
 
 To submit a script use the command: 
@@ -38,18 +42,19 @@ sbatch your-script.sh
 ```
 
 <figure markdown="span">
-  ![Job Output](../img/job-output.png){ width="500"}
+  ![Job Output](../img/job-output.png){ width="600"}
 </figure>
 
 After submitting this script you will see `.out` files: 
 
 <figure markdown="span">
-  ![STDOUT files](../img/output-sra.png){ width="500"}
+  ![STDOUT files](../img/output-sra.png){ width="600"}
 </figure>
 
 ## STDOUT records the output of programs
 
 Three data streams exist for all Linux programs: 
+
 + STDIN	(Standard Input - a way to send data into the program)
 + STDOUT (Standard Output - a way to send expected data out of the program)
 + STDERR	(Standard Error - a way to send errors or warnings out of the program)
@@ -178,7 +183,7 @@ For each individual FASTQ file that is input to FastQC, there are **two output f
 
 !!! example "Class Exercise" 
 
-   Run FASTQC on all FASTQ files in `raw_fastq`. FASTQC allows you to redirect your output into a specified location with the `-o` parameter. Be sure to use this parameter in your final code. 
+      Run FASTQC on all FASTQ files in `raw_fastq`. FASTQC allows you to redirect your output into a specified location with the `-o` parameter. Be sure to use this parameter in your final code. 
 
 If successful, you will see the following outputs inside of the `fastqc` folder: 
 
@@ -200,11 +205,11 @@ Parameters for FASTQC:
 
 !!! example "Class Exercise" 
 
-   Grab the following folder from the location below. 
+      Grab the following folder from the location below. 
 
-   ```bash
-   /gpfs1/cl/mmg3320/course_materials/FASTQC_example
-   ```
+      ```bash
+      /gpfs1/cl/mmg3320/course_materials/FASTQC_example
+      ```
 
 
 ### Viewing the HTML report output from FASTQC 
@@ -213,22 +218,21 @@ All of the following are solutions that allow students to transfer files between
 
 1. An FTP application such as Filezilla
 
-<figure markdown="span">
-  ![Filezilla Interface](../img/filezilla-1.png){ width="500"}
-</figure>
+   <figure markdown="span">
+      ![Filezilla Interface](../img/filezilla-1.png){ width="500"}
+   </figure>
 
 2. RStudio (via VACC-OOD), you can export it or simply view it. 
 
-<figure markdown="span">
-  ![Filezilla Interface](../img/Rstudio-HTML.jpg){ width="500"}
-</figure>
-
+   <figure markdown="span">
+      ![Filezilla Interface](../img/Rstudio-HTML.jpg){ width="500"}
+   </figure>
 
 3. Using OpenOnDemand, use the "Download" button in File Explorer. 
 
-<figure markdown="span">
-  ![OOD-Download](../img/download.png){ width="500"}
-</figure>
+   <figure markdown="span">
+      ![OOD-Download](../img/download.png){ width="500"}
+   </figure>
 
 ## Interpreting the HTML report
 
@@ -245,7 +249,7 @@ Within our report, a summary of all of the modules is given on the left-hand sid
 The first module gives the basic statistics for the sample. Generally it is a good idea to keep track of the total number of reads sequenced for each sample and to make sure the read length and %GC content is as expected.
 
 <figure markdown="span">
-  ![FASTQC Basic Stats](../img/fastqc_basic_stats.png){ width="400"}
+  ![FASTQC Basic Stats](../img/fastqc_basic_stats.png){ width="500"}
 </figure>
 
 
@@ -256,7 +260,7 @@ One of the most important analysis modules is the **"Per base sequence quality"*
 This plot can alert us to whether there were any problems occuring during sequencing and whether we might need to contact the sequencing facility.
 
 <figure markdown="span">
-  ![FASTQC Sequence Quality](../img/FastQC_seq_qual.png){ width="400"}
+  ![FASTQC Sequence Quality](../img/FastQC_seq_qual.png){ width="500"}
 </figure>
 
 For example, the box plot at nucleotide 1 shows the distribution of quality scores for **the first nucleotide of all reads** in the `Mov10_oe_1` sample. The yellow box represents the 25th and 75th percentiles, with the red line as the median. The whiskers are the 10th and 90th percentiles. The blue line represents the average quality score for the nucleotide. Based on these metrics, the quality scores for the first nucleotide are quite high, with nearly all reads having scores above 28.
@@ -271,7 +275,7 @@ The quality scores appear to drop going from the beginning toward the end of the
 The **"Per sequence quality scores"** plot gives you the average quality score on the x-axis and the number of sequences with that average on the y-axis. We hope the majority of our reads have a high average quality score with no large bumps at the lower quality values.
 
 <figure markdown="span">
-  ![FASTQC Per Sequence Quality Scores](../img/fastqc_per_sequence_quality_scores.png){ width="400"}
+  ![FASTQC Per Sequence Quality Scores](../img/fastqc_per_sequence_quality_scores.png){ width="500"}
 </figure>
 
   
@@ -282,7 +286,7 @@ This data has a small bump at a mean quality of 12. Since it doesn't represent a
 The next plot gives the **"Per base sequence content"**, which always gives a FAIL for RNA-seq data. This is because the first 10-12 bases result from the 'random' hexamer priming that occurs during RNA-seq library preparation. This priming is not as random as we might hope giving an enrichment in particular bases for these intial nucleotides. 
 
 <figure markdown="span">
-  ![FASTQC Per Base Sequence Content](../img/fastqc_per_base_sequence_content.png){ width="400"}
+  ![FASTQC Per Base Sequence Content](../img/fastqc_per_base_sequence_content.png){ width="500"}
 </figure>
 
 ### Per sequence GC content
@@ -292,7 +296,7 @@ The **"Per sequence GC content"** plot gives the GC distribution over all sequen
 This plot would indicate some type of over-represented sequence with the sharp peaks, indicating either contamination or a highly over-expressed gene.
 
 <figure markdown="span">
-  ![FASTQC GC content](../img/fastqc_GC.png){ width="400"}
+  ![FASTQC GC content](../img/fastqc_GC.png){ width="500"}
 </figure>
 
 ### Sequence duplication
@@ -300,7 +304,7 @@ This plot would indicate some type of over-represented sequence with the sharp p
 The next module explores numbers of duplicated sequences in the library. This plot can help identify a low complexity library, which could result from too many cycles of PCR amplification or too little starting material. For RNA-seq we don't normally do anything to address this in the analysis, but if this were a pilot experiment, we might adjust the number of PCR cycles, amount of input, or amount of sequencing for future libraries. In this analysis we seem to have a large number of duplicated sequences, but this is expected due to the subset of data we are working with containing the over-expression of MOV10.
 
 <figure markdown="span">
-  ![FASTQC Duplication](../img/fastqc_duplication.png){ width="400"}
+  ![FASTQC Duplication](../img/fastqc_duplication.png){ width="500"}
 </figure>
 
 ### Over-represented sequences
@@ -310,7 +314,7 @@ The **"Overrepresented sequences"** table is another important module as it disp
 Since our data is just a subset of the original data and it contains the over-expressed MOV10 gene, if we BLAST the sequences we will find they belong to MOV10. For this experiment, these over-represented sequences are not concerning.
 
 <figure markdown="span">
-  ![FASTQC Over-represented Sequences](../img/FastQC_contam.png){ width="400"}
+  ![FASTQC Over-represented Sequences](../img/FastQC_contam.png){ width="500"}
 </figure>
 
 ***
