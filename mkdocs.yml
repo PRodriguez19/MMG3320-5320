@@ -57,7 +57,7 @@ nav:
       - Week 5:
           - Overview: ch05/index.md
           - QC with FASTQC (L9): ch05/09_assessing_fastqc_output.md
-          - MultiQC (L10): ch05/10_multiQC.md
+          #- MultiQC (L10): ch05/10_multiQC.md
   - Assignments:
       - Homework 1 (L2): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md
