@@ -12,13 +12,13 @@
         <meta name="author" content="Princess Rodriguez">
       
       
-        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch04/06_week4_mmg3320/">
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch05/09_assessing_fastqc_output/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../07_week4_intro-to-RNAseq/">
+        <link rel="next" href="../10_multiQC/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Loops (L6) - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>QC with FASTQC (L9) - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Loops (L6)
+              QC with FASTQC (L9)
             
           </span>
         </div>
@@ -994,6 +994,136 @@
                 
   
   
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Week 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04/06_week4_mmg3320/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loops (L6)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04/07_week4_intro-to-RNAseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RNA-Seq Overview (L7)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04/08_accessing_public_experimental_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing Public Data (L8)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1009,24 +1139,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Week 4
+    Week 5
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
-            Week 4
+            Week 5
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1069,7 +1199,7 @@
           
   
   <span class="md-ellipsis">
-    Loops (L6)
+    QC with FASTQC (L9)
   </span>
   
 
@@ -1080,7 +1210,7 @@
         
   
   <span class="md-ellipsis">
-    Loops (L6)
+    QC with FASTQC (L9)
   </span>
   
 
@@ -1102,94 +1232,100 @@
         <li class="md-nav__item">
   <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      Learning Objectives
+      Learning Objectives:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recap" class="md-nav__link">
+  <a href="#recap-advantages-of-batch-job-submissions" class="md-nav__link">
     <span class="md-ellipsis">
-      Recap
+      Recap: Advantages of Batch Job Submissions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#loops" class="md-nav__link">
+  <a href="#looking-inside-of-sra_fqdumpsh" class="md-nav__link">
     <span class="md-ellipsis">
-      Loops
+      Looking inside of sra_fqdump.sh
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Loops">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdout-records-the-output-of-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      STDOUT records the output of programs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-control-of-fastq-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Control of FASTQ files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-with-fastq-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting with FASTQ files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessing-quality-with-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessing quality with FastQC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running FastQC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastqc-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTQC Outputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessing-the-results-from-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessing the results from FastQC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessing the results from FastQC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-do-loops-work" class="md-nav__link">
+  <a href="#viewing-the-html-report-output-from-fastqc" class="md-nav__link">
     <span class="md-ellipsis">
-      How do loops work?
+      Viewing the HTML report output from FASTQC
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loopsh-explained" class="md-nav__link">
-    <span class="md-ellipsis">
-      Loop.sh explained
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Loop.sh explained">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#running-loops-at-the-command-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running loops at the command prompt
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-loops-using-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating loops using best practices
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating loops using best practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#meaningful-variable-names" class="md-nav__link">
-    <span class="md-ellipsis">
-      Meaningful variable names
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-the-wildcard-to-define-the-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the wildcard to define the list
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1199,55 +1335,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automating-more-with-scripts" class="md-nav__link">
+  <a href="#interpreting-the-html-report" class="md-nav__link">
     <span class="md-ellipsis">
-      Automating more with Scripts
+      Interpreting the HTML report
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Automating more with Scripts">
+    <nav class="md-nav" aria-label="Interpreting the HTML report">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-do-you-need-a-shebang-line" class="md-nav__link">
+  <a href="#per-base-sequence-quality" class="md-nav__link">
     <span class="md-ellipsis">
-      Why do you need a shebang line?
+      Per base sequence quality
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation-of-command-above" class="md-nav__link">
+  <a href="#per-sequence-quality-scores" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation of command above
+      Per sequence quality scores
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-are-we-using-curly-brackets-with-the-variable-name" class="md-nav__link">
+  <a href="#per-base-sequence-content" class="md-nav__link">
     <span class="md-ellipsis">
-      Why are we using curly brackets with the variable name?
+      Per base sequence content
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation-of-command-above_1" class="md-nav__link">
+  <a href="#per-sequence-gc-content" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation of command above
+      Per sequence GC content
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-do-we-know-if-your-script-worked" class="md-nav__link">
+  <a href="#sequence-duplication" class="md-nav__link">
     <span class="md-ellipsis">
-      How do we know if your script worked?
+      Sequence duplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#over-represented-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Over-represented sequences
     </span>
   </a>
   
@@ -1255,6 +1400,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
   
 </li>
       
@@ -1274,137 +1428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_week4_intro-to-RNAseq/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    RNA-Seq Overview (L7)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08_accessing_public_experimental_data/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Accessing Public Data (L8)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Week 5
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            Week 5
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ch05/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ch05/09_assessing_fastqc_output/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    QC with FASTQC (L9)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ch05/10_multiQC/" class="md-nav__link">
+      <a href="../10_multiQC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1677,94 +1701,100 @@
         <li class="md-nav__item">
   <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      Learning Objectives
+      Learning Objectives:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recap" class="md-nav__link">
+  <a href="#recap-advantages-of-batch-job-submissions" class="md-nav__link">
     <span class="md-ellipsis">
-      Recap
+      Recap: Advantages of Batch Job Submissions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#loops" class="md-nav__link">
+  <a href="#looking-inside-of-sra_fqdumpsh" class="md-nav__link">
     <span class="md-ellipsis">
-      Loops
+      Looking inside of sra_fqdump.sh
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Loops">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdout-records-the-output-of-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      STDOUT records the output of programs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-control-of-fastq-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Control of FASTQ files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-with-fastq-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting with FASTQ files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessing-quality-with-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessing quality with FastQC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running FastQC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastqc-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTQC Outputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessing-the-results-from-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessing the results from FastQC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessing the results from FastQC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-do-loops-work" class="md-nav__link">
+  <a href="#viewing-the-html-report-output-from-fastqc" class="md-nav__link">
     <span class="md-ellipsis">
-      How do loops work?
+      Viewing the HTML report output from FASTQC
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loopsh-explained" class="md-nav__link">
-    <span class="md-ellipsis">
-      Loop.sh explained
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Loop.sh explained">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#running-loops-at-the-command-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running loops at the command prompt
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-loops-using-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating loops using best practices
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating loops using best practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#meaningful-variable-names" class="md-nav__link">
-    <span class="md-ellipsis">
-      Meaningful variable names
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-the-wildcard-to-define-the-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the wildcard to define the list
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1774,55 +1804,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automating-more-with-scripts" class="md-nav__link">
+  <a href="#interpreting-the-html-report" class="md-nav__link">
     <span class="md-ellipsis">
-      Automating more with Scripts
+      Interpreting the HTML report
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Automating more with Scripts">
+    <nav class="md-nav" aria-label="Interpreting the HTML report">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-do-you-need-a-shebang-line" class="md-nav__link">
+  <a href="#per-base-sequence-quality" class="md-nav__link">
     <span class="md-ellipsis">
-      Why do you need a shebang line?
+      Per base sequence quality
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation-of-command-above" class="md-nav__link">
+  <a href="#per-sequence-quality-scores" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation of command above
+      Per sequence quality scores
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-are-we-using-curly-brackets-with-the-variable-name" class="md-nav__link">
+  <a href="#per-base-sequence-content" class="md-nav__link">
     <span class="md-ellipsis">
-      Why are we using curly brackets with the variable name?
+      Per base sequence content
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#explanation-of-command-above_1" class="md-nav__link">
+  <a href="#per-sequence-gc-content" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation of command above
+      Per sequence GC content
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-do-we-know-if-your-script-worked" class="md-nav__link">
+  <a href="#sequence-duplication" class="md-nav__link">
     <span class="md-ellipsis">
-      How do we know if your script worked?
+      Sequence duplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#over-represented-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Over-represented sequences
     </span>
   </a>
   
@@ -1830,6 +1869,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
   
 </li>
       
@@ -1848,268 +1896,280 @@
                   
 
 
-  <h1>Loops (L6)</h1>
+  <h1>QC with FASTQC (L9)</h1>
 
-<div><h2 id="learning-objectives">Learning Objectives</h2>
+<div><h2 id="learning-objectives">Learning Objectives:</h2>
 <ul>
-<li>Describe the concept of 'looping' to iterate commands over multiple items</li>
-<li>Automate a task by using a loop inside of a shell script</li>
+<li>Describe the contents and format of a FASTQ file</li>
+<li>Create a quality report using FASTQC</li>
+<li>Evaluate the quality of your NGS data using FastQC</li>
 </ul>
-<h2 id="recap">Recap</h2>
-<ul>
-<li>You can save commands in files (usually called shell scripts) for re-use.</li>
-<li><code>sh</code> [filename] will run the command saved within the shell script</li>
-<li>shell script end in <code>.sh</code></li>
-<li>You should place variables in backticks (`) if the values might have spaces in them</li>
-</ul>
-<hr>
-<div class="admonition example">
-<p class="admonition-title">Class Exercise</p>
-<p>Before moving on, please complete the following class activity below. You will have ~5 minutes to answer both questions.</p>
-<p><a href="https://forms.gle/vng9b1HvgabFr8Y66">Class-activity</a></p>
-</div>
-<hr>
-<h2 id="loops">Loops</h2>
-<p>Typically, when you are running analyses on the cluster, you are running multiple commands which correspond to individual steps in your workflow. We learned earlier that we can compile these commands into a single shell script to make this process more efficient. What if we could further increase our efficiency so that the same series of commands could be easily repeated for each sample in our dataset? We can do this with the use of loops in Shell!</p>
-<p>Looping is a concept shared by several programming languages, and its implementation in bash is very similar to other languages. </p>
-<p>The structure or the syntax of (<em>for</em>) loops in bash is as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="o">(</span>variable_name<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>list<span class="o">)</span>
-<span class="k">do</span>
-<span class="w"> </span><span class="o">(</span>command1<span class="w"> </span><span class="nv">$variable_name</span><span class="o">)</span>
-<span class="w"> </span><span class="o">(</span>command2<span class="w"> </span><span class="nv">$variable_name</span><span class="o">)</span>
-<span class="k">done</span>
-</code></pre></div>
-<p>The text that is <strong>bold, are parts of the loop structure that remain constant</strong>. That is, for every loop your create you will need to have the words: <code>for</code>, <code>in</code>, <code>do</code> and <code>done</code>. <em>This syntax/structure is virtually set in stone.</em> The text that goes in between those words will change depending on what it is you want your loop to do.</p>
+<h2 id="recap-advantages-of-batch-job-submissions">Recap: Advantages of Batch Job Submissions</h2>
+<p>Batch job submission on an HPC (High-Performance Computing) system offers several advantages, particularly for computationally intensive tasks like bioinformatics, genomics, and large-scale data analysis.</p>
+<ol>
+<li><strong>Efficient Resource Management:</strong></li>
+<li>Jobs are queued and scheduled based on resource availability, ensuring optimal utilization of CPUs, memory, and GPUs.</li>
+<li>
+<p>Users can specify resource requirements (e.g., nodes, cores, memory) to avoid wasting computational power.</p>
+</li>
+<li>
+<p><strong>Scalability:</strong></p>
+</li>
+<li>HPC clusters handle jobs of varying sizes, from single-threaded processes to massively parallel workloads.</li>
+<li>
+<p>Batch processing supports running multiple jobs concurrently, improving overall throughput.</p>
+</li>
+<li>
+<p><strong>Parallel Execution:</strong></p>
+</li>
+<li>
+<p>Batch submission allows running thousands of jobs in parallel (e.g., processing multiple sequencing samples).</p>
+</li>
+<li>
+<p><strong>Job Monitoring:</strong></p>
+</li>
+<li>Provides insights into job status, resource usage, and debugging. </li>
+</ol>
+<h2 id="looking-inside-of-sra_fqdumpsh">Looking inside of <code>sra_fqdump.sh</code></h2>
+<p>Purpose: Is to download FASTQ files from the SRA. FASTQ files to be downloaded are listed in a text file with accession numbers provided by you! </p>
 <figure>
-  <img alt="For Loop" src="../../img/for_loop.png" width="500">
+  <img alt="Script Layout" src="../../img/sra_fqdump.png" width="500">
 </figure>
-<h3 id="how-do-loops-work">How do loops work?</h3>
-<p>Let's use the example below to go through step-by-step how a loop is actually working.</p>
-<p>Together we will create a script called <code>loop.sh</code> in Nano: </p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>raw_fastq/
-
-<span class="k">for</span><span class="w"> </span>x<span class="w"> </span><span class="k">in</span><span class="w"> </span>Mov10_oe_1.subset.fq<span class="w"> </span>Mov10_oe_2.subset.fq<span class="w"> </span>Mov10_oe_3.subset.fq
-<span class="k">do</span>
-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$x</span>
-<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="nv">$x</span>
-<span class="k">done</span>
+<p>To submit a script use the command: </p>
+<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>your-script.sh
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Mov10_oe_1.subset.fq
- 1223600 Mov10_oe_1.subset.fq
-Mov10_oe_2.subset.fq
- 1110016 Mov10_oe_2.subset.fq
-Mov10_oe_3.subset.fq
-  690816 Mov10_oe_3.subset.fq
-</code></pre></div>
+<figure>
+  <img alt="Job Output" src="../../img/job-output.png" width="500">
+</figure>
+<p>After submitting this script you will see <code>.out</code> files: </p>
+<figure>
+  <img alt="STDOUT files" src="../../img/output-sra.png" width="500">
+</figure>
+<h2 id="stdout-records-the-output-of-programs">STDOUT records the output of programs</h2>
+<p>Three data streams exist for all Linux programs: 
++ STDIN (Standard Input - a way to send data into the program)
++ STDOUT (Standard Output - a way to send expected data out of the program)
++ STDERR    (Standard Error - a way to send errors or warnings out of the program)</p>
+<h2 id="quality-control-of-fastq-files">Quality Control of FASTQ files</h2>
+<p>When working with high-throughput sequencing data, the raw reads you get off the sequencer will need to pass through a number of different tools in order to generate the final output. The first step in the RNA-Seq pipeline is to assess the quality of the sequence reads retrieved from the sequencing facility. </p>
+<figure>
+  <img alt="Workflow" src="../../img/rnaseq_salmon_workflow.png" width="500">
+</figure>
+<h2 id="starting-with-fastq-files">Starting with FASTQ files</h2>
+<p>The FASTQ file format is the defacto file format for sequence reads generated from next-generation sequencing technologies. This file format evolved from FASTA in that it contains sequence data, but also contains quality information. Similar to FASTA, the FASTQ file begins with a header line. The difference is that the FASTQ header is denoted by a <code>@</code> character. For a single record (sequence read), there are four lines, each of which are described below:</p>
 <table>
 <thead>
 <tr>
-<th>Loop component</th>
-<th>Value</th>
+<th>Line</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong><em>variable_name</em></strong></td>
-<td><code>x</code></td>
+<td>1</td>
+<td>Always begins with '@', followed by information about the read</td>
 </tr>
 <tr>
-<td><strong>list</strong></td>
-<td><code>Mov10_oe</code> FASTQ files</td>
+<td>2</td>
+<td>The actual DNA sequence</td>
 </tr>
 <tr>
-<td><strong><em>body (commands to be executed)</em></strong></td>
-<td><code>echo</code> and <code>wc -l</code></td>
+<td>3</td>
+<td>Always begins with a '+', and sometimes the same info as in line 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Has a string of characters representing the quality scores; must have same number of characters as line 2</td>
 </tr>
 </tbody>
 </table>
-<h3 id="loopsh-explained">Loop.sh explained</h3>
+<p>Let's use the following read as an example:</p>
+<div class="highlight"><pre><span></span><code>@HWI-ST330:304:H045HADXX:1:1101:1111:61397
+CACTTGTAAGGGCAGGCCCCCTTCACCCTCCCGCTCCTGGGGGANNNNNNNNNNANNNCGAGGCCCTGGGGTAGAGGGNNNNNNNNNNNNNNGATCTTGG
++
+@?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF;FCGGI#########################################################
+</code></pre></div>
+<p>The line 4 has characters encoding the quality of each nucleotide in the read. The legend below provides the mapping of quality scores (Phred-33) to the quality encoding characters. <em>Different quality encoding scales exist (differing by offset in the ASCII table), but note the most commonly used one is fastqsanger, which is the scale output by Illumina since mid-2011.</em> 
+ <code>Quality encoding: !"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHI
+                   |         |         |         |         |
+    Quality score: 0........10........20........30........40</code></p>
+<p>Using the quality encoding character legend, the first nucelotide in the read (C) is called with a quality score of 31 (corresponding to encoding character <code>@</code>), and our Ns are called with a score of 2 (corresponding to encoding character <code>#</code>). <strong>As you can tell by now, this is a bad read.</strong> </p>
+<p>Each quality score represents the probability that the corresponding nucleotide call is incorrect. This quality score is logarithmically based and is calculated as:</p>
+<pre><code>Q = -10 x log10(P), where P is the probability that a base call is erroneous
+</code></pre>
+<p>These probabaility values are the results from the base calling algorithm and dependent on how much signal was captured for the base incorporation. The score values can be interpreted as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Phred Quality Score</th>
+<th style="text-align: center;">Probability of incorrect base call</th>
+<th style="text-align: center;">Base call accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1 in 10</td>
+<td style="text-align: center;">90%</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1 in 100</td>
+<td style="text-align: center;">99%</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">1 in 1000</td>
+<td style="text-align: center;">99.9%</td>
+</tr>
+<tr>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">1 in 10,000</td>
+<td style="text-align: center;">99.99%</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore, for the first nucleotide in the read (C), there is less than a 1 in 1000 chance that the base was called incorrectly. Whereas, for the the end of the read there is greater than 50% probabaility that the base is called incorrectly.</p>
+<h2 id="assessing-quality-with-fastqc">Assessing quality with FastQC</h2>
+<p>Now that we understand what information is stored in a FASTQ file, the next step is to examine quality metrics for our data.</p>
+<p><a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> provides a simple way to do some quality checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses, which you can use to obtain an impression of whether your data has any problems that you should be aware of before moving on to the next analysis.</p>
+<p>FastQC does the following:
+* accepts FASTQ files (or BAM files) as input
+* generates summary graphs and tables to help assess your data
+* generates an easy-to-view HTML-based report with the graphs and tables</p>
+<h2 id="running-fastqc">Running FastQC</h2>
+<p>We would like to run the FastQC tool on fastq files in the raw_fastq directory. However, if we were to run the following <code>fastqc</code> command now we would retrieve the following error:</p>
+<div class="highlight"><pre><span></span><code>fastqc<span class="w"> </span>--help
+
+-bash:<span class="w"> </span>fastqc:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
+</code></pre></div>
+<p>Let's load fastqc with the Environment Module System: </p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>gcc/13.3.0-xp3epyt
+module<span class="w"> </span>load<span class="w"> </span>fastqc/0.12.1-qxseug5
+</code></pre></div>
+<p>Once a module for a tool is loaded, you have essentially made it directly available to you like any other basic shell command. Check to see it is loaded with: </p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>list
+</code></pre></div>
+<p>Now, let's create a directory to store the output of FastQC:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>fastqc
+</code></pre></div>
+<p>How do we know which argument to type to properly use <code>fastqc</code>?</p>
+<div class="highlight"><pre><span></span><code>fastqc<span class="w"> </span>--help
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>SYNOPSIS
+
+    fastqc seqfile1 seqfile2 .. seqfileN
+
+    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] 
+           [-c contaminant file] seqfile1 .. seqfileN
+</code></pre></div>
+<p>Let's run fastqc on <code>Mov10_oe_1.subset.fq</code></p>
+<div class="highlight"><pre><span></span><code>fastqc<span class="w"> </span>Mov10_oe_1.subset.fq
+</code></pre></div>
+<h2 id="fastqc-outputs">FASTQC Outputs</h2>
+<p>For each individual FASTQ file that is input to FastQC, there are <strong>two output files that are generated</strong>. </p>
 <ol>
 <li>
-<p>When we start the loop, the temporary variable is initialized by taking the value of the first item in the list. </p>
-<blockquote>
-<p><strong>We don't explicitly see this, but the variable has been defined as <code>x=Mov10_oe_1.subset.fq</code>.</strong></p>
-</blockquote>
+<p>The first is <strong>an HTML file</strong> which is a self-contained document with various graphs embedded into it. Each of the graphs evaluate different quality aspects of our data, we will discuss in more detail in this lesson. </p>
 </li>
 <li>
-<p>Next, all of the commands in the body of the loop (between the <code>do</code> and <code>done</code>) are executed. Usually, the commands placed here will be using the temporary variable as input. <strong>Remember, if you are using the value stored in the variable you need to use $ to reference it!</strong> In the example, we are running two commands:</p>
-<ul>
-<li><code>echo $x</code>: print out the value stored in <code>x</code></li>
-<li><code>wc -l $x</code>: count/report the number of lines in <code>x</code></li>
-</ul>
-</li>
-<li>
-<p>Once those two commands are complete, the temporary variable is assigned a new value. It now takes the value of the second item in the list.</p>
-<blockquote>
-<p><strong>The variable is reassigned a value <code>x=Mov10_oe_2.subset.fq</code>.</strong></p>
-</blockquote>
-</li>
-<li>
-<p>Once again, all of the commands in between the <code>do</code> and <code>done</code> are executed. This time they are using the new value stored in <code>x</code> as input.</p>
-</li>
-<li>
-<p>The temporary variable then takes on the value of the third item in the list.</p>
-<blockquote>
-<p><strong>The variable is reassigned a value <code>x=Mov10_oe_3.subset.fq</code>.</strong></p>
-</blockquote>
-</li>
-<li>
-<p>Once again, all of the commands in between the <code>do</code> and <code>done</code> are executed using the new value stored in <code>x</code>. </p>
-</li>
-<li>
-<p>Now that we have gone through every item in the list, the loop is <code>done</code> and it exits. </p>
+<p>Alongside the HTML file is <strong>a zip file</strong> (with the same name as the HTML file, but with .zip added to the end). This file contains the different plots  from the report as separate image files but also contains data files which are designed to be easily parsed to allow for a more detailed and automated evaluation of the raw data on which the QC report is built.</p>
 </li>
 </ol>
-<p>Essentially, <strong>the number of items in the list = number of times the code will loop through</strong>. So in our case, we had three files listed and so the series of commands in the body of the loop were repeated three times. If we had provided all six files, the series of commands would be repeated six times.</p>
-<blockquote>
-<h4 id="running-loops-at-the-command-prompt">Running loops at the command prompt</h4>
-<p>In our materials, the for loop is written out using multiple lines rather than the single line commands we have been running so far. When running this at the command prompt begin by typing out the <code>for</code> statement, then press the return key. You will notice that you are not back at your command prompt. Rather than a <code>$</code>, you should see a <code>&gt;</code>. The shell has acknowledged that you have started a for loop and is waiting for you to complete it. Continue to type code line by line. Once you type in <code>done</code> and press return the shell will know you are done and will run the loop. </p>
-</blockquote>
-<h3 id="creating-loops-using-best-practices">Creating loops using best practices</h3>
-<h4 id="meaningful-variable-names">Meaningful variable names</h4>
-<p>It doesn't matter what variable name we use, but it is advisable to make it something more intuitive. In the long run, it's best to use a name that will help point out a variable's functionality, so your future self will understand what you are thinking now.</p>
-<h4 id="using-the-wildcard-to-define-the-list">Using the wildcard to define the list</h4>
-<p>In the example above, we typed out each item in the list leaving a space in between each item. This is usually fine for one or two items, but with larger lists this can become tedious and error-prone. If the list you are iterating over share some similarities in the naming we recommend using the wildcard shortcut to specify the list. </p>
-<hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
-<p>Change the for loop above so that:</p>
-<pre><code>1) `x` variable is given a more meaningful name
-2) the script runs on all six FASTQ files 
-3) and it prints out the first two lines of all six files
-</code></pre>
 </div>
-<hr>
-<h2 id="automating-more-with-scripts">Automating more with Scripts</h2>
-<p>Imagine, if you will, a script that would do the following for us each time we get a new data set:</p>
-<ul>
-<li>Use for loop to iterate over each FASTQ file</li>
-<li>Generate a prefix to use for naming our output files</li>
-<li>Dump out bad reads into a new file</li>
-<li>Get the count of the number of bad reads and report it to a running log file</li>
-</ul>
-<p>It might seem daunting, but everything outlined above is something that you know how to do. Let's get started...</p>
-<hr>
+<p>Run FASTQC on all FASTQ files in <code>raw_fastq</code>. FASTQC allows you to redirect your output into a specified location with the <code>-o</code> parameter. Be sure to use this parameter in your final code. </p>
+<p>If successful, you will see the following outputs inside of the <code>fastqc</code> folder: </p>
+<div class="highlight"><pre><span></span><code>Irrel_kd_1.subset_fastqc.html<span class="w">  </span>Irrel_kd_3.subset_fastqc.html<span class="w">  </span>Mov10_oe_2.subset_fastqc.html
+Irrel_kd_1.subset_fastqc.zip<span class="w">   </span>Irrel_kd_3.subset_fastqc.zip<span class="w">   </span>Mov10_oe_2.subset_fastqc.zip
+Irrel_kd_2.subset_fastqc.html<span class="w">  </span>Mov10_oe_1.subset_fastqc.html<span class="w">  </span>Mov10_oe_3.subset_fastqc.html
+Irrel_kd_2.subset_fastqc.zip<span class="w">   </span>Mov10_oe_1.subset_fastqc.zip<span class="w">   </span>Mov10_oe_3.subset_fastqc.zip
+</code></pre></div>
+<p><strong>Note:</strong> We are running FASTQC interactively. This is running on the login node relatively quickly. This is because this alignment for these FASTQ files was only performed for a small portion of the chromosome 1. Later on, this will take a lot longer. Therefore, you will need to generate a script. </p>
+<p>Parameters for FASTQC: 
++ 10G of memory is required
++ 1 node, 2 tasks </p>
+<h2 id="assessing-the-results-from-fastqc">Assessing the results from FastQC</h2>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise and Homework Assignment #4</p>
-<ol>
-<li>
-<p>Create a directory called <code>badreads</code> in <code>unit1_unix</code></p>
-</li>
-<li>
-<p>Use Jupyter Notebooks/Nano to create a new script called <code>generate_bad_reads_summary.sh</code> in <code>badreads/</code></p>
-</li>
-<li>
-<p>At the beginning of your script add a <strong>shebang line</strong>. </p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-</code></pre></div>
-<p>This line is the absolute path to the Bash interpreter. The shebang line ensures that the bash shell interprets the script even if it is executed using a different shell.</p>
-<blockquote>
-<h4 id="why-do-you-need-a-shebang-line">Why do you need a shebang line?</h4>
-<p>Having a shebang line is best practice. While your script will run fine without it in environments where bash is the default shell, it won't if the user of this script is using a different shell. To avoid any issues, we explicitly state that this script needs to executed using the bash shell.</p>
-</blockquote>
-</li>
-<li>
-<p>After the shebang line, skip a line and copy-and-paste the following in Line 3: </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># enter directory with raw FASTQs</span>
-</code></pre></div>
-</li>
-<li>
-<p>In line 4 write a command to change directories into the <code>raw_fastq</code> directory. </p>
-</li>
-<li>
-<p>Add the following comment as Line 6. </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># loop over each FASTQ file</span>
-</code></pre></div>
-</li>
-<li>
-<p>Now you are ready to begin writing the for loop. To create the first line of your for loop use the following: </p>
-<table>
-<thead>
-<tr>
-<th>Loop component</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong><em>variable_name</em></strong></td>
-<td><code>filename</code></td>
-</tr>
-<tr>
-<td><strong>list</strong></td>
-<td><strong>all</strong> FASTQ files</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Type <code>do</code> in Line 8. </p>
-</li>
-<li>
-<p>Skip a line. On line 10 copy-and-paste the following comment. Yes it is okay to skip a line! </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># create a prefix for all output files</span>
-</code></pre></div>
-</li>
-<li>
-<p>Now you are ready to move on to create a prefix for all (6) fastq files. These prefixes will be stored in a second variable called <code>samplename</code> in line 11. To write this line of code successfully, remember the following:</p>
-<div class="highlight"><pre><span></span><code>variable_name=value_of_variable
-</code></pre></div>
-<ul>
-<li>The value_of_variable should be equal to the <code>basename</code> of <code>filename</code>. </li>
-<li>Be sure to trim off the file extension <code>.subset.fq</code></li>
-</ul>
-<blockquote>
-<p>Why are we doing this? Storing the prefixes in <code>samplename</code> will allow us to uniquely label our output files later on! </p>
-</blockquote>
-</li>
-<li>
-<p>Copy-and-paste the following into lines 12 and 13. The <code>echo</code> statement will keep the user informed on which file is being processed in real-time. </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># tell us what file we're working on</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$filename</span>
-</code></pre></div>
-</li>
-<li>
-<p>Complete the command below to extract and save all "bad reads" into an output file. A read is considered "bad" if it contains 10 consecutive N's. Below, you are given the right side of the command, which specifies the output file location. Your task is to complete the left side of the command using <code>grep</code>. These will be lines 15 and 16 of your script.</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="c1"># Extract all bad read records and save them to a new file  </span>
-WRITE-THE-COMMAND-HERE<span class="w"> </span>&gt;<span class="w"> </span>~/unit1_unix/badreads/<span class="si">${</span><span class="nv">samplename</span><span class="si">}</span>_badreads.fq<span class="w">  </span>
-</code></pre></div>
-+ Ensure that all four lines of each matching sequence read are included in the output. 
-<h4 id="explanation-of-command-above">Explanation of command above</h4>
-<p>You are using <code>grep</code> to find all the bad reads (in this case, bad reads are defined as those with 10 consecutive N's), and then extracting the four lines associated with each sequence read and writing them to a file. The output file is named using the <code>samplename</code> variable you created earlier in the loop. You will also notice we are adding a path to redirect the output into the <code>badreads</code> directory.</p>
-<h4 id="why-are-we-using-curly-brackets-with-the-variable-name">Why are we using curly brackets with the variable name?</h4>
-<p>When we append a variable to some other free text, we need shell to know where our variable name ends. By encapsulating the variable name in curly brackets we are letting shell know that everything inside it is the variable name. This way when we reference it, shell knows to print the variable <code>$base</code> and not to look for a variable called <code>$base_badreads.fq</code>.</p>
-</li>
-<li>
-<p>You are almost finished! Copy and paste the lines below in lines 18-20. </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># grab the number of bad reads and write it to a summary file</span>
-grep<span class="w"> </span>-cH<span class="w"> </span>NNNNNNNNNN<span class="w"> </span><span class="nv">$filename</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/unit1_unix/badreads/badreads.count.summary
-<span class="k">done</span>
-</code></pre></div>
-<h4 id="explanation-of-command-above_1">Explanation of command above</h4>
-<p>Above, you are counting the number of identified bad reads using the count flag of <code>grep</code>, <code>-c</code>, which will return the number of matches rather than the actual matching lines. Here, you are using the <code>-H</code> flag; this will report the filename along with the count value. This is useful because you are writing this information to a running summary file. So rather than just reporting a count value you will also know which file it is associated with. You then closed the loop with <code>done</code>. </p>
-</li>
-<li>
-<p>Save and exit, and voila! You now have a script you can use to assess the quality of all your new datasets. </p>
-</li>
-</ol>
-<p>To run this script simply enter the following command:</p>
-<div class="highlight"><pre><span></span><code>sh<span class="w"> </span>generate_bad_reads_summary.sh
-</code></pre></div>
-<h4 id="how-do-we-know-if-your-script-worked">How do we know if your script worked?</h4>
-<p>Take a look inside the <code>badreads</code> directory. You should see that for every one of the original FASTQ files, one bad read file was created. You should also have a summary file documenting the total number of bad reads from each file.</p>
-<div class="highlight"><pre><span></span><code>badreads.count.summary  Irrel_kd_2_badreads.fq  Mov10_oe_1_badreads.fq  Mov10_oe_3_badreads.fq
-Irrel_kd_1_badreads.fq  Irrel_kd_3_badreads.fq  Mov10_oe_2_badreads.fq
-</code></pre></div>
+<p class="admonition-title">Class Exercise</p>
 </div>
+<p>Grab the following folder from the location below. </p>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/FASTQC_example
+</code></pre></div>
+<h3 id="viewing-the-html-report-output-from-fastqc">Viewing the HTML report output from FASTQC</h3>
+<p>All of the following are solutions that allow students to transfer files between remote (i.e. VACC) and local (i.e. your laptop) servers. </p>
+<ol>
+<li>An FTP application such as Filezilla</li>
+</ol>
+<figure>
+  <img alt="Filezilla Interface" src="../../img/filezilla-1.png" width="500">
+</figure>
+<ol>
+<li>RStudio (via VACC-OOD), you can export it or simply view it. </li>
+</ol>
+<figure>
+  <img alt="Filezilla Interface" src="../img/Rstudio-HTML.jpg" width="500">
+</figure>
+<ol>
+<li>Using OpenOnDemand, use the "Download" button in File Explorer. </li>
+</ol>
+<figure>
+  <img alt="OOD-Download" src="../img/download.png" width="500">
+</figure>
+<h2 id="interpreting-the-html-report">Interpreting the HTML report</h2>
+<p>Now we can take a look at the metrics and assess the quality of our sequencing data!</p>
+<p>FastQC has a really well documented <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">manual page</a> with <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/">detailed explanations</a> about every plot in the report. </p>
+<p>Within our report, a summary of all of the modules is given on the left-hand side of the report. Don't take the <strong>yellow "WARNING"s</strong> and <strong>red "FAIL"s</strong> too seriously; they should be interpreted as flags for modules to check out. </p>
+<figure>
+  <img alt="FASTQC Summary" src="../../img/fastqc_summary.png" width="200">
+</figure>
+<p>The first module gives the basic statistics for the sample. Generally it is a good idea to keep track of the total number of reads sequenced for each sample and to make sure the read length and %GC content is as expected.</p>
+<figure>
+  <img alt="FASTQC Basic Stats" src="../../img/fastqc_basic_stats.png" width="400">
+</figure>
+<h3 id="per-base-sequence-quality">Per base sequence quality</h3>
+<p>One of the most important analysis modules is the <strong>"Per base sequence quality"</strong> plot. This plot provides the distribution of quality scores at each position in the read across all reads. The y-axis gives the quality scores, while the x-axis represents the position in the read. The color coding of the plot denotes what are considered high, medium and low quality scores. </p>
+<p>This plot can alert us to whether there were any problems occuring during sequencing and whether we might need to contact the sequencing facility.</p>
+<figure>
+  <img alt="FASTQC Sequence Quality" src="../../img/FastQC_seq_qual.png" width="400">
+</figure>
+<p>For example, the box plot at nucleotide 1 shows the distribution of quality scores for <strong>the first nucleotide of all reads</strong> in the <code>Mov10_oe_1</code> sample. The yellow box represents the 25th and 75th percentiles, with the red line as the median. The whiskers are the 10th and 90th percentiles. The blue line represents the average quality score for the nucleotide. Based on these metrics, the quality scores for the first nucleotide are quite high, with nearly all reads having scores above 28.</p>
+<p>The quality scores appear to drop going from the beginning toward the end of the reads. For reads generated by Illumina sequencing, this is not alarming and there are known causes for this drop in quality. </p>
+<p><strong>For Illumina sequencing, the quality of the nucleotide base calls are related to the signal intensity and purity of the fluorescent signal</strong>. Low intensity fluorescence or the presence of multiple different fluorescent signals can lead to a drop in the quality score assigned to the nucleotide. Due to the nature of sequencing-by-synthesis there are some drops in quality that can be expected, but other quality issues can be indicative of a problem at the sequencing facility.</p>
+<h3 id="per-sequence-quality-scores">Per sequence quality scores</h3>
+<p>The <strong>"Per sequence quality scores"</strong> plot gives you the average quality score on the x-axis and the number of sequences with that average on the y-axis. We hope the majority of our reads have a high average quality score with no large bumps at the lower quality values.</p>
+<figure>
+  <img alt="FASTQC Per Sequence Quality Scores" src="../../img/fastqc_per_sequence_quality_scores.png" width="400">
+</figure>
+<p>This data has a small bump at a mean quality of 12. Since it doesn't represent a large proportion of the data, it isn't extremely worrisome, but it might be worth a quick check of the reads resulting in the poor quality scores.</p>
+<h3 id="per-base-sequence-content">Per base sequence content</h3>
+<p>The next plot gives the <strong>"Per base sequence content"</strong>, which always gives a FAIL for RNA-seq data. This is because the first 10-12 bases result from the 'random' hexamer priming that occurs during RNA-seq library preparation. This priming is not as random as we might hope giving an enrichment in particular bases for these intial nucleotides. </p>
+<figure>
+  <img alt="FASTQC Per Base Sequence Content" src="../../img/fastqc_per_base_sequence_content.png" width="400">
+</figure>
+<h3 id="per-sequence-gc-content">Per sequence GC content</h3>
+<p>The <strong>"Per sequence GC content"</strong> plot gives the GC distribution over all sequences. Generally is a good idea to note whether the GC content of the central peak corresponds to the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2909565/">expected % GC for the organism</a>. Also, the distribution should be normal unless over-represented sequences (sharp peaks on a normal distribution) or contamination with another organism (broad peak).</p>
+<p>This plot would indicate some type of over-represented sequence with the sharp peaks, indicating either contamination or a highly over-expressed gene.</p>
+<figure>
+  <img alt="FASTQC GC content" src="../../img/fastqc_GC.png" width="400">
+</figure>
+<h3 id="sequence-duplication">Sequence duplication</h3>
+<p>The next module explores numbers of duplicated sequences in the library. This plot can help identify a low complexity library, which could result from too many cycles of PCR amplification or too little starting material. For RNA-seq we don't normally do anything to address this in the analysis, but if this were a pilot experiment, we might adjust the number of PCR cycles, amount of input, or amount of sequencing for future libraries. In this analysis we seem to have a large number of duplicated sequences, but this is expected due to the subset of data we are working with containing the over-expression of MOV10.</p>
+<figure>
+  <img alt="FASTQC Duplication" src="../../img/fastqc_duplication.png" width="400">
+</figure>
+<h3 id="over-represented-sequences">Over-represented sequences</h3>
+<p>The <strong>"Overrepresented sequences"</strong> table is another important module as it displays the sequences (at least 20 bp) that occur in more than 0.1% of the total number of sequences. This table aids in identifying contamination, such as vector or adapter sequences. If the %GC content was off in the above module, this table can help identify the source. If not listed as a known adapter or vector, it can help to BLAST the sequence to determine the identity.</p>
+<p>Since our data is just a subset of the original data and it contains the over-expressed MOV10 gene, if we BLAST the sequences we will find they belong to MOV10. For this experiment, these over-represented sequences are not concerning.</p>
+<figure>
+  <img alt="FASTQC Over-represented Sequences" src="../../img/FastQC_contam.png" width="400">
+</figure>
 <hr>
+<h2 id="summary">Summary</h2>
+<p>As our report only represents a subset of reads (chromosome 1) for <code>Mov10_oe_1.subset.fq</code>, which can skew the QC results. If the quality of the raw data is acceptable, we can move on to the next step and quantify gene expression.</p>
 <hr>
-<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p>
-<ul>
-<li><em>The materials used in this lesson were derived from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
-All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</em></li>
-<li><em>Adapted from the lesson by Tracy Teal. Original contributors: Paul Wilson, Milad Fatenejad, Sasha Wood and Radhika Khetani for Software Carpentry (http://software-carpentry.org/)</em></li>
-</ul></div>
+<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p></div>
 
 
 
