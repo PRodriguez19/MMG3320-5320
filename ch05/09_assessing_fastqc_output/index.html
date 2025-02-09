@@ -2093,7 +2093,7 @@ Irrel_kd_2.subset_fastqc.html<span class="w">  </span>Mov10_oe_1.subset_fastqc.h
 Irrel_kd_2.subset_fastqc.zip<span class="w">   </span>Mov10_oe_1.subset_fastqc.zip<span class="w">   </span>Mov10_oe_3.subset_fastqc.zip
 </code></pre></div>
 <p><strong>Note:</strong> We are running FASTQC interactively. This is running on the login node relatively quickly. This is because this alignment for these FASTQ files was only performed for a small portion of the chromosome 1. Later on, this will take a lot longer. Therefore, you will need to generate a script. </p>
-<p>Parameters for FASTQC: </p>
+<p>Running Parameters for FASTQC: </p>
 <ul>
 <li>10G of memory is required</li>
 <li>1 node, 2 tasks </li>
@@ -2107,24 +2107,19 @@ Irrel_kd_2.subset_fastqc.zip<span class="w">   </span>Mov10_oe_1.subset_fastqc.z
 </div>
 <h3 id="viewing-the-html-report-output-from-fastqc">Viewing the HTML report output from FASTQC</h3>
 <p>All of the following are solutions that allow students to transfer files between remote (i.e. VACC) and local (i.e. your laptop) servers. </p>
-<ol>
-<li>An FTP application such as Filezilla</li>
-</ol>
-<figure markdown="span">
-     ![Filezilla Interface](../img/filezilla-1.png){ width="500"}
-   </figure>
-<ol>
-<li>RStudio (via VACC-OOD), you can export it or simply view it. </li>
-</ol>
-<figure markdown="span">
-     ![Filezilla Interface](../img/Rstudio-HTML.jpg){ width="500"}
-   </figure>
-<ol>
-<li>Using OpenOnDemand, use the "Download" button in File Explorer. </li>
-</ol>
-<figure markdown="span">
-     ![OOD-Download](../img/download.png){ width="500"}
-   </figure>
+<p><strong>An FTP application such as Filezilla</strong></p>
+<figure>
+  <img alt="Filezilla Interface" src="../../img/filezilla-1.png" width="500">
+</figure>
+<p><strong>RStudio (via VACC-OOD)</strong></p>
+<p>You can export it or simply view it using RStudio</p>
+<figure>
+  <img alt="RStudio" src="../../img/Rstudio-HTML.jpg" width="500">
+</figure>
+<p><strong>In File Explorer on OpenOnDemand, use the "Download" button</strong> </p>
+<figure>
+  <img alt="File Explorer" src="../../img/download.png" width="500">
+</figure>
 <h2 id="interpreting-the-html-report">Interpreting the HTML report</h2>
 <p>Now we can take a look at the metrics and assess the quality of our sequencing data!</p>
 <p>FastQC has a really well documented <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">manual page</a> with <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/">detailed explanations</a> about every plot in the report. </p>
