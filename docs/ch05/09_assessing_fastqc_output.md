@@ -196,7 +196,7 @@ Irrel_kd_2.subset_fastqc.zip   Mov10_oe_1.subset_fastqc.zip   Mov10_oe_3.subset_
 
 **Note:** We are running FASTQC interactively. This is running on the login node relatively quickly. This is because this alignment for these FASTQ files was only performed for a small portion of the chromosome 1. Later on, this will take a lot longer. Therefore, you will need to generate a script. 
 
-Parameters for FASTQC: 
+Running Parameters for FASTQC: 
 
 + 10G of memory is required
 + 1 node, 2 tasks 
@@ -217,23 +217,28 @@ Parameters for FASTQC:
 
 All of the following are solutions that allow students to transfer files between remote (i.e. VACC) and local (i.e. your laptop) servers. 
 
-1. An FTP application such as Filezilla
+**An FTP application such as Filezilla**
 
-   <figure markdown="span">
-     ![Filezilla Interface](../img/filezilla-1.png){ width="500"}
-   </figure>
+<figure markdown="span">
+  ![Filezilla Interface](../img/filezilla-1.png){ width="500"}
+</figure>
 
-2. RStudio (via VACC-OOD), you can export it or simply view it. 
 
-   <figure markdown="span">
-     ![Filezilla Interface](../img/Rstudio-HTML.jpg){ width="500"}
-   </figure>
+**RStudio (via VACC-OOD)**
 
-3. Using OpenOnDemand, use the "Download" button in File Explorer. 
+You can export it or simply view it using RStudio
 
-   <figure markdown="span">
-     ![OOD-Download](../img/download.png){ width="500"}
-   </figure>
+<figure markdown="span">
+  ![RStudio](../img/Rstudio-HTML.jpg){ width="500"}
+</figure>
+
+
+**In File Explorer on OpenOnDemand, use the "Download" button** 
+
+<figure markdown="span">
+  ![File Explorer](../img/download.png){ width="500"}
+</figure>
+
 
 ## Interpreting the HTML report
 
