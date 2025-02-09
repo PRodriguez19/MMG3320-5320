@@ -11,28 +11,28 @@ Batch job submission on an HPC (High-Performance Computing) system offers severa
 
 1. **Efficient Resource Management:**
       
-      + Jobs are queued and scheduled based on resource availability, ensuring optimal utilization of CPUs, memory, and GPUs.
-      + Users can specify resource requirements (e.g., nodes, cores, memory) to avoid wasting computational power.
+      * Jobs are queued and scheduled based on resource availability, ensuring optimal utilization of CPUs, memory, and GPUs.
+      * Users can specify resource requirements (e.g., nodes, cores, memory) to avoid wasting computational power.
 
 2. **Scalability:**
       
-      + HPC clusters handle jobs of varying sizes, from single-threaded processes to massively parallel workloads.
-      + Batch processing supports running multiple jobs concurrently, improving overall throughput.
+      * HPC clusters handle jobs of varying sizes, from single-threaded processes to massively parallel workloads.
+      * Batch processing supports running multiple jobs concurrently, improving overall throughput.
 
 3. **Parallel Execution:**
       
-      + Batch submission allows running thousands of jobs in parallel (e.g., processing multiple sequencing samples).
+      * Batch submission allows running thousands of jobs in parallel (e.g., processing multiple sequencing samples).
 
 4. **Job Monitoring:**
       
-      + Provides insights into job status, resource usage, and debugging. 
+      * Provides insights into job status, resource usage, and debugging. 
 
 ## Looking inside of `sra_fqdump.sh`
 
 Purpose: Is to download FASTQ files from the SRA. FASTQ files to be downloaded are listed in a text file with accession numbers provided by you! 
 
 <figure markdown="span">
-  ![Script Layout](../img/sra_fqdump.png){ width="600"}
+  ![Script Layout](../img/sra_fqdump.png){ width="700"}
 </figure>
 
 To submit a script use the command: 
@@ -42,7 +42,7 @@ sbatch your-script.sh
 ```
 
 <figure markdown="span">
-  ![Job Output](../img/job-output.png){ width="600"}
+  ![Job Output](../img/job-output.png){ width="700"}
 </figure>
 
 After submitting this script you will see `.out` files: 
@@ -64,7 +64,7 @@ Three data streams exist for all Linux programs:
 When working with high-throughput sequencing data, the raw reads you get off the sequencer will need to pass through a number of different tools in order to generate the final output. The first step in the RNA-Seq pipeline is to assess the quality of the sequence reads retrieved from the sequencing facility. 
 
 <figure markdown="span">
-  ![Workflow](../img/rnaseq_salmon_workflow.png){ width="500"}
+  ![Workflow](../img/rnaseq_salmon_workflow.png){ width="400"}
 </figure>
 
 
@@ -197,6 +197,7 @@ Irrel_kd_2.subset_fastqc.zip   Mov10_oe_1.subset_fastqc.zip   Mov10_oe_3.subset_
 **Note:** We are running FASTQC interactively. This is running on the login node relatively quickly. This is because this alignment for these FASTQ files was only performed for a small portion of the chromosome 1. Later on, this will take a lot longer. Therefore, you will need to generate a script. 
 
 Parameters for FASTQC: 
+
 + 10G of memory is required
 + 1 node, 2 tasks 
 
@@ -219,19 +220,19 @@ All of the following are solutions that allow students to transfer files between
 1. An FTP application such as Filezilla
 
    <figure markdown="span">
-      ![Filezilla Interface](../img/filezilla-1.png){ width="500"}
+     ![Filezilla Interface](../img/filezilla-1.png){ width="500"}
    </figure>
 
 2. RStudio (via VACC-OOD), you can export it or simply view it. 
 
    <figure markdown="span">
-      ![Filezilla Interface](../img/Rstudio-HTML.jpg){ width="500"}
+     ![Filezilla Interface](../img/Rstudio-HTML.jpg){ width="500"}
    </figure>
 
 3. Using OpenOnDemand, use the "Download" button in File Explorer. 
 
    <figure markdown="span">
-      ![OOD-Download](../img/download.png){ width="500"}
+     ![OOD-Download](../img/download.png){ width="500"}
    </figure>
 
 ## Interpreting the HTML report
