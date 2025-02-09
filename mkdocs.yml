@@ -54,12 +54,17 @@ nav:
           - Loops (L6): ch04/06_week4_mmg3320.md
           - RNA-Seq Overview (L7): ch04/07_week4_intro-to-RNAseq.md
           - Accessing Public Data (L8): ch04/08_accessing_public_experimental_data.md
+      - Week 5:
+          - Overview: ch05/index.md
+          - QC with FASTQC (L9): ch05/09_assessing_fastqc_output.md
+          - MULTIQC (L10): ch05/10_multiQC.md
   - Assignments:
       - Homework 1 (L2): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md
       - Homework 3 (L5): assignments/week3_assignment.md
       - Homework 4 (L6): assignments/week4_assignment.md
       - Homework 5: assignments/week5_assignment.md
+      #- Homework 6: assignments/week6_assignment.md
       - Final Project:
           - Overview: assignments/index.md
 
