@@ -89,19 +89,19 @@ Usage:
 
 This output shows us that we must first specify whether we have paired end (PE) or single end (SE) reads. Next, we specify what flag we would like to run. For example, you can specify threads to indicate the number of processors on your computer that you want Trimmomatic to use. In most cases using multiple threads (processors) can help to run the trimming faster. These flags are not necessary, but they can give you more control over the command. The flags are followed by positional arguments, meaning the order in which you specify them is important. In paired end mode, Trimmomatic expects the two input files, and then the names of the output files. These files are described below. While, in single end mode, Trimmomatic will expect 1 file as input, after which you can enter the optional settings and lastly the name of the output file.
 
-| option | meaning |
-|:------:|:-------:|
-| <inputFile1> | Input reads to be trimmed. Typically the file name will contain an _1 or _R1 in the name. |
-| <inputFile2> | Input reads to be trimmed. Typically the file name will contain an _2 or _R2 in the name. |
-| <outputFile1P> | Output file that contains surviving pairs from the _1 file. |
-| <outputFile1U> | Output file that contains orphaned reads from the _1 file. |
-| <outputFile2P> | Output file that contains surviving pairs from the _2 file. |
-| <outputFile2U> | Output file that contains orphaned reads from the _2 file. |
+| option       | meaning                                                                                   |
+|:------------ | :---------------------------------------------------------------------------------------- |
+| inputFile1 | Input reads to be trimmed. Typically the file name will contain an _1 or _R1 in the name. |
+| inputFile2 | Input reads to be trimmed. Typically the file name will contain an _2 or _R2 in the name. |
+| outputFile1P | Output file that contains surviving pairs from the _1 file. |
+| outputFile1U | Output file that contains orphaned reads from the _1 file. |
+| outputFile2P | Output file that contains surviving pairs from the _2 file. |
+| outputFile2U | Output file that contains orphaned reads from the _2 file. |
 
 In addition, trimmomatic expects to see is the trimming parameters:
 
-| step | meaning |
-|:----:|:-------:|
+| step         | meaning                  |
+|:------------ |:------------------------ |
 | ILLUMINACLIP | Perform adapter removal. |
 | SLIDINGWINDOW | Perform sliding window trimming, cutting once the average quality within the window falls below a threshold. |
 | LEADING | Cut bases off the start of a read, if below a threshold quality. |
@@ -125,8 +125,8 @@ trimmomatic PE SRR_1056_1.fastq SRR_1056_2.fastq  \
 
 In this example, we have told Trimmomatic:
 
-|code | meaning |
-|:---:|:------:|
+|code | meaning                                          |
+|:---|:------------------------------------------------- |
 | PE | that it will be taking a paired end file as input |
 | SRR_1056_1.fastq | the first input file name |
 | SRR_1056_2.fastq | the second input file name |
@@ -144,55 +144,55 @@ In this example, we have told Trimmomatic:
 
 !!! example "Class Exercise" 
 
-        This Exercise will take ~20 mins. Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. 
+    This Exercise will take ~20 mins. Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. 
 
-        Part A: Modify the script above to run trimmomatic on the samples provided in: 
+    Part A: Modify the script provided to run trimmomatic on the samples provided. The exercise materials can be found in this location: 
 
-        |code | meaning |
-        |:---:|:-------:|
-        | PE | that it will be taking a paired end file as input |
-        | <inputFile1> | SRR2589044_1.fastq.gz |
-        | <inputFile2> | SRR2589044_2.fastq.gz |
-        | <outputFile1P> | Output file that contains surviving pairs from the _1 file. |
-        | <outputFile1U> | Output file that contains orphaned reads from the _1 file. |
-        | <outputFile2P> | Output file that contains surviving pairs from the _2 file. |
-        | <outputFile2U> | Output file that contains orphaned reads from the _2 file. |
-        | SLIDINGWINDOW:4:20 | to use a sliding window of size 4 that will remove bases if their phred score is below 20 |  
-        | Adapters | NexteraPE-PE.fa | 
+    |code | meaning |
+    |:--- |:------------------------------------------------ |
+    | PE | that it will be taking a paired end file as input |
+    | <inputFile1> | SRR2589044_1.fastq.gz |
+    | <inputFile2> | SRR2589044_2.fastq.gz |
+    | <outputFile1P> | Output file that contains surviving pairs from the _1 file. |
+    | <outputFile1U> | Output file that contains orphaned reads from the _1 file. |
+    | <outputFile2P> | Output file that contains surviving pairs from the _2 file. |
+    | <outputFile2U> | Output file that contains orphaned reads from the _2 file. |
+    | SLIDINGWINDOW:4:20 | to use a sliding window of size 4 that will remove bases if their phred score is below 20 |  
+    | Adapters | NexteraPE-PE.fa | 
 
-        Once you have a working script run with:
+    Once you have a working script run with:
 
-        ```bash
-        sh trim.sh
-        ```
+    ```bash
+    sh trim.sh
+    ```
 
-        You will know your script is correct and working properly if you see the following: 
+    You will know your script is correct and working properly if you see the following: 
 
-        ```bash
-        TrimmomaticPE: Started with arguments:
-        SRR2589044_1.fastq.gz SRR2589044_2.fastq.gz SRR2589044_1.trim.fastq.gz SRR2589044_1un.trim.fastq.gz SRR2589044_2.trim.fastq.gz SRR2589044_2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:trimmomatic_adapters/NexteraPE-PE.fa:2:40:15
-        Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
-        Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
-        Using Long Clipping Sequence: 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'
-        Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC'
-        Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
-        ILLUMINACLIP: Using 1 prefix pairs, 4 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
-        Quality encoding detected as phred33
+    ```bash
+    TrimmomaticPE: Started with arguments:
+    SRR2589044_1.fastq.gz SRR2589044_2.fastq.gz SRR2589044_1.trim.fastq.gz SRR2589044_1un.trim.fastq.gz SRR2589044_2.trim.fastq.gz SRR2589044_2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:trimmomatic_adapters/NexteraPE-PE.fa:2:40:15
+    Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
+    Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
+    Using Long Clipping Sequence: 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'
+    Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC'
+    Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
+    ILLUMINACLIP: Using 1 prefix pairs, 4 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+    Quality encoding detected as phred33
 
-        Input Read Pairs: 1107090 Both Surviving: 885220 (79.96%) Forward Only Surviving: 216472 (19.55%) Reverse Only Surviving: 2850 (0.26%) Dropped: 2548 (0.23%)
-        TrimmomaticPE: Completed successfully
-        ```
+    Input Read Pairs: 1107090 Both Surviving: 885220 (79.96%) Forward Only Surviving: 216472 (19.55%) Reverse Only Surviving: 2850 (0.26%) Dropped: 2548 (0.23%)
+    TrimmomaticPE: Completed successfully
+    ```
 
-        Part B: Check that the files are the correct size
+    Part B: Check that the files are the correct size
 
-        ```bash
-        total 453M
-        -rw-r--r-- 1 pdrodrig pi-jdragon 124M Feb 11 14:30 SRR2589044_1.fastq.gz
-        -rw-r--r-- 1 pdrodrig pi-jdragon  94M Feb 11 18:32 SRR2589044_1.trim.fastq.gz
-        -rw-r--r-- 1 pdrodrig pi-jdragon  18M Feb 11 18:32 SRR2589044_1un.trim.fastq.gz
-        -rw-r--r-- 1 pdrodrig pi-jdragon 128M Feb 11 14:30 SRR2589044_2.fastq.gz
-        -rw-r--r-- 1 pdrodrig pi-jdragon  91M Feb 11 18:32 SRR2589044_2.trim.fastq.gz
-        -rw-r--r-- 1 pdrodrig pi-jdragon 271K Feb 11 18:32 SRR2589044_2un.trim.fastq.gz
-        ```
+    ```bash
+    total 453M
+    -rw-r--r-- 1 pdrodrig pi-jdragon 124M Feb 11 14:30 SRR2589044_1.fastq.gz
+    -rw-r--r-- 1 pdrodrig pi-jdragon  94M Feb 11 18:32 SRR2589044_1.trim.fastq.gz
+    -rw-r--r-- 1 pdrodrig pi-jdragon  18M Feb 11 18:32 SRR2589044_1un.trim.fastq.gz
+    -rw-r--r-- 1 pdrodrig pi-jdragon 128M Feb 11 14:30 SRR2589044_2.fastq.gz
+    -rw-r--r-- 1 pdrodrig pi-jdragon  91M Feb 11 18:32 SRR2589044_2.trim.fastq.gz
+    -rw-r--r-- 1 pdrodrig pi-jdragon 271K Feb 11 18:32 SRR2589044_2un.trim.fastq.gz
+    ```
 
-        Part C: Run FASTQC on all the *.gz files and visualize the HTML files to see whether your **per base sequence quality** is higher after trimming. 
+    Part C: Run FASTQC on all the *.gz files and visualize the HTML files to see whether your **per base sequence quality** is higher after trimming. 
