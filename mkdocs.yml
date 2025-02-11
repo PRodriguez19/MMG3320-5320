@@ -26,7 +26,7 @@ theme:
         name: Switch to light mode
 
 nav:
-  - About:
+  - Home:
       - Introduction: index.md
       - Syllabus: MMG3320-Spring-2025-Syllabus.pdf
       - Schedule: MMG3320-5320-Spring-2025-Schedule.pdf
@@ -57,6 +57,7 @@ nav:
       - Week 5:
           - Overview: ch05/index.md
           - QC with FASTQC (L9): ch05/09_assessing_fastqc_output.md
+          - Trimming and Filtering (L10): ch05/10_trimming.md
           #- MultiQC (L10): ch05/10_multiQC.md
   - Assignments:
       - Homework 1 (L2): assignments/week1_assignment.md
