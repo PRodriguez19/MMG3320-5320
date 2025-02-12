@@ -17,3 +17,5 @@ Slides will be made available as a PDF printout document. These lessons can be r
 [Accessing Public Data (L8)](08_accessing_public_experimental_data-slides.pdf)
 
 [Assessing FASTQC Outputs (L9)](09_assessing_fastqc_output-slides.pdf)
+
+[Trimming & Filtering (L10)](10_trimming-slides.pdf)
