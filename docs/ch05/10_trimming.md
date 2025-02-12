@@ -152,21 +152,22 @@ In this example, we have told Trimmomatic:
     /gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
     ```
     
-    **Part B:** Modify the `trim.sh` script using Jupyter Notebook or Nano to run `trimmomatic` on the FASTQ sample provided. Use the following parameters: 
+    **Part B:** Modify the `trim.sh` script using either Jupyter Notebook or Nano to run `trimmomatic` on the provided FASTQ sample. Ensure that you include the arguments listed below, using the **exact syntax** required by `trimmomatic`.otebook or Nano to run `trimmomatic` on the FASTQ sample provided. Use the following parameters: 
 
-    |code | meaning |
-    |:--- | :------------------------------------------------ |
-    | PE | that it will be taking a paired end file as input |
-    | inputFile1 | SRR2589044_1.fastq.gz |
-    | inputFile2 | SRR2589044_2.fastq.gz |
-    | outputFile1P | Output file that contains surviving pairs from the _1 file. |
-    | outputFile1U | Output file that contains orphaned reads from the _1 file. |
-    | outputFile2P | Output file that contains surviving pairs from the _2 file. |
-    | outputFile2U | Output file that contains orphaned reads from the _2 file. |
+    | argument to add    | meaning |
+    |:------------------ | :------------------------------------------------ |
+    | PE                 | that it will be taking a paired end file as input |
+    | inputFile1         | SRR2589044_1.fastq.gz |
+    | inputFile2         | SRR2589044_2.fastq.gz |
+    | outputFile1P       | Output file that contains surviving pairs from the _1 file. |
+    | outputFile1U       | Output file that contains orphaned reads from the _1 file. |
+    | outputFile2P       | Output file that contains surviving pairs from the _2 file. |
+    | outputFile2U       | Output file that contains orphaned reads from the _2 file. |
     | SLIDINGWINDOW:4:20 | to use a sliding window of size 4 that will remove bases if their phred score is below 20 |  
-    | Adapter | NexteraPE-PE.fa:2:40:15 | 
+    | filter short reads | drop an entire read if it is below 25 |
+    | adapter to add     | NexteraPE-PE.fa:2:40:15 | 
 
-    *We are adding additional parameters the NexteraPE-PE.Fa adapter*
+    *Note: We are adding additional parameters the NexteraPE-PE.Fa adapter*
 
     - NexteraPE-PE.fa : This is a FASTA file that contains adapter sequences specific to Nextera paired-end libraries.
     - `2:40:15` 
@@ -209,4 +210,4 @@ In this example, we have told Trimmomatic:
     -rw-r--r-- 1 pdrodrig pi-jdragon 271K Feb 11 18:32 SRR2589044_2un.trim.fastq.gz
     ```
 
-    **Part D:** Run FASTQC on all the *.gz files and visualize the HTML files to see whether your **per base sequence quality** is higher after trimming. In addition, please note if the **adapter content/contamination** has been removed. 
+    **Part D:** Run FASTQC on all the `.gz` files and visualize the HTML files to see whether your **per base sequence quality** is higher after trimming. In addition, please note if the **adapter content/contamination** has been removed. 

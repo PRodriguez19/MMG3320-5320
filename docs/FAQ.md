@@ -22,15 +22,15 @@ When running SRA Tools for the first time it is necessary to run `vdb-config --i
 
 ### Why do I see `Unable to locate a modulefile for 'gcc/'`? 
 
-It is most likely that you are logging into the "old" VACC cluster. This class has transitioned to using the "new" VACC cluster which can be assessed with: 
+It is most likely that you are logging into the "old" VACC cluster. This class has transitioned to using the "new" VACC cluster which can be accessed with: 
 
 ```
 ssh uvmid@login.vacc.uvm.edu
+
+#replace uvmid id with your netid
 ```
 
-The website for the new VACC cluster on OpenOnDemand is: 
-
-https://ondemand.vacc.uvm.edu/pun/sys/dashboard 
+The website for the new VACC cluster on OpenOnDemand can be found [here](https://ondemand.vacc.uvm.edu/pun/sys/dashboard)
 
 
 
