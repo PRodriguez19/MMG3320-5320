@@ -1883,7 +1883,10 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
 <p>This Exercise will take ~20 mins. Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. </p>
-<p>Part A: Modify the script provided to run trimmomatic on the samples provided. The exercise materials can be found in this location: </p>
+<p><strong>Part A:</strong> Make a copy of the exercise materials. The folder can be found in this location: </p>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
+</code></pre></div>
+<p><strong>Part B:</strong> Modify the <code>trim.sh</code> script using Jupyter Notebook or Nano to run <code>trimmomatic</code> on the FASTQ sample provided. Use the following parameters: </p>
 <table>
 <thead>
 <tr>
@@ -1897,27 +1900,27 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 <td style="text-align: left;">that it will be taking a paired end file as input</td>
 </tr>
 <tr>
-<td style="text-align: left;"><inputfile1></inputfile1></td>
+<td style="text-align: left;">inputFile1</td>
 <td style="text-align: left;">SRR2589044_1.fastq.gz</td>
 </tr>
 <tr>
-<td style="text-align: left;"><inputfile2></inputfile2></td>
+<td style="text-align: left;">inputFile2</td>
 <td style="text-align: left;">SRR2589044_2.fastq.gz</td>
 </tr>
 <tr>
-<td style="text-align: left;"><outputfile1p></outputfile1p></td>
+<td style="text-align: left;">outputFile1P</td>
 <td style="text-align: left;">Output file that contains surviving pairs from the _1 file.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><outputfile1u></outputfile1u></td>
+<td style="text-align: left;">outputFile1U</td>
 <td style="text-align: left;">Output file that contains orphaned reads from the _1 file.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><outputfile2p></outputfile2p></td>
+<td style="text-align: left;">outputFile2P</td>
 <td style="text-align: left;">Output file that contains surviving pairs from the _2 file.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><outputfile2u></outputfile2u></td>
+<td style="text-align: left;">outputFile2U</td>
 <td style="text-align: left;">Output file that contains orphaned reads from the _2 file.</td>
 </tr>
 <tr>
@@ -1925,15 +1928,25 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 <td style="text-align: left;">to use a sliding window of size 4 that will remove bases if their phred score is below 20</td>
 </tr>
 <tr>
-<td style="text-align: left;">Adapters</td>
-<td style="text-align: left;">NexteraPE-PE.fa</td>
+<td style="text-align: left;">Adapter</td>
+<td style="text-align: left;">NexteraPE-PE.fa:2:40:15</td>
 </tr>
 </tbody>
 </table>
-<p>Once you have a working script run with:</p>
+<p><em>We are adding additional parameters the NexteraPE-PE.Fa adapter</em></p>
+<ul>
+<li>NexteraPE-PE.fa : This is a FASTA file that contains adapter sequences specific to Nextera paired-end libraries.</li>
+<li><code>2:40:15</code> <ul>
+<li><code>2</code> : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).</li>
+<li><code>40</code> : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).</li>
+<li><code>15</code> : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).</li>
+</ul>
+</li>
+</ul>
+<p>Once you have a working script, run it with the following command:</p>
 <div class="highlight"><pre><span></span><code>sh<span class="w"> </span>trim.sh
 </code></pre></div>
-<p>You will know your script is correct and working properly if you see the following: </p>
+<p>You will know that your script is correct and working properly if you see the following output: </p>
 <div class="highlight"><pre><span></span><code>TrimmomaticPE:<span class="w"> </span>Started<span class="w"> </span>with<span class="w"> </span>arguments:
 SRR2589044_1.fastq.gz<span class="w"> </span>SRR2589044_2.fastq.gz<span class="w"> </span>SRR2589044_1.trim.fastq.gz<span class="w"> </span>SRR2589044_1un.trim.fastq.gz<span class="w"> </span>SRR2589044_2.trim.fastq.gz<span class="w"> </span>SRR2589044_2un.trim.fastq.gz<span class="w"> </span>SLIDINGWINDOW:4:20<span class="w"> </span>MINLEN:25<span class="w"> </span>ILLUMINACLIP:trimmomatic_adapters/NexteraPE-PE.fa:2:40:15
 Using<span class="w"> </span>PrefixPair:<span class="w"> </span><span class="s1">'AGATGTGTATAAGAGACAG'</span><span class="w"> </span>and<span class="w"> </span><span class="s1">'AGATGTGTATAAGAGACAG'</span>
@@ -1947,7 +1960,7 @@ Quality<span class="w"> </span>encoding<span class="w"> </span>detected<span cla
 Input<span class="w"> </span>Read<span class="w"> </span>Pairs:<span class="w"> </span><span class="m">1107090</span><span class="w"> </span>Both<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">885220</span><span class="w"> </span><span class="o">(</span><span class="m">79</span>.96%<span class="o">)</span><span class="w"> </span>Forward<span class="w"> </span>Only<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">216472</span><span class="w"> </span><span class="o">(</span><span class="m">19</span>.55%<span class="o">)</span><span class="w"> </span>Reverse<span class="w"> </span>Only<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">2850</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.26%<span class="o">)</span><span class="w"> </span>Dropped:<span class="w"> </span><span class="m">2548</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.23%<span class="o">)</span>
 TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfully
 </code></pre></div>
-<p>Part B: Check that the files are the correct size</p>
+<p><strong>Part C:</strong> Check that the file outputs are the correct size</p>
 <div class="highlight"><pre><span></span><code>total<span class="w"> </span>453M
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>124M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">14</span>:30<span class="w"> </span>SRR2589044_1.fastq.gz
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>94M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_1.trim.fastq.gz
@@ -1956,7 +1969,7 @@ TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfu
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>91M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2.trim.fastq.gz
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>271K<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2un.trim.fastq.gz
 </code></pre></div>
-<p>Part C: Run FASTQC on all the <em>.gz files and visualize the HTML files to see whether your </em><em>per base sequence quality</em>* is higher after trimming. </p>
+<p><strong>Part D:</strong> Run FASTQC on all the <em>.gz files and visualize the HTML files to see whether your </em><em>per base sequence quality</em><em> is higher after trimming. In addition, please note if the </em><em>adapter content/contamination</em>* has been removed. </p>
 </div></div>
 
 
