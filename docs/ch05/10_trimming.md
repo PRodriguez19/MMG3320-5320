@@ -152,7 +152,7 @@ In this example, we have told Trimmomatic:
     /gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
     ```
     
-    **Part B:** Modify the `trim.sh` script using either Jupyter Notebook or Nano to run `trimmomatic` on the provided FASTQ sample. Ensure that you include the arguments listed below, using the **exact syntax** required by `trimmomatic`.otebook or Nano to run `trimmomatic` on the FASTQ sample provided. Use the following parameters: 
+    **Part B:** Modify the `trim.sh` script using either Jupyter Notebook or Nano to run `trimmomatic` on the provided FASTQ sample. Ensure that you include the arguments listed below, using the **exact syntax** required by `trimmomatic`.
 
     | argument to add    | meaning |
     |:------------------ | :------------------------------------------------ |
