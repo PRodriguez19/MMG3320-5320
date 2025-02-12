@@ -146,27 +146,41 @@ In this example, we have told Trimmomatic:
 
     This Exercise will take ~20 mins. Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. 
 
-    Part A: Modify the script provided to run trimmomatic on the samples provided. The exercise materials can be found in this location: 
+    **Part A:** Make a copy of the exercise materials. The folder can be found in this location: 
+    
+    ```bash
+    /gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
+    ```
+    
+    **Part B:** Modify the `trim.sh` script using Jupyter Notebook or Nano to run `trimmomatic` on the FASTQ sample provided. Use the following parameters: 
 
     |code | meaning |
-    |:--- |:------------------------------------------------ |
+    |:--- | :------------------------------------------------ |
     | PE | that it will be taking a paired end file as input |
-    | <inputFile1> | SRR2589044_1.fastq.gz |
-    | <inputFile2> | SRR2589044_2.fastq.gz |
-    | <outputFile1P> | Output file that contains surviving pairs from the _1 file. |
-    | <outputFile1U> | Output file that contains orphaned reads from the _1 file. |
-    | <outputFile2P> | Output file that contains surviving pairs from the _2 file. |
-    | <outputFile2U> | Output file that contains orphaned reads from the _2 file. |
+    | inputFile1 | SRR2589044_1.fastq.gz |
+    | inputFile2 | SRR2589044_2.fastq.gz |
+    | outputFile1P | Output file that contains surviving pairs from the _1 file. |
+    | outputFile1U | Output file that contains orphaned reads from the _1 file. |
+    | outputFile2P | Output file that contains surviving pairs from the _2 file. |
+    | outputFile2U | Output file that contains orphaned reads from the _2 file. |
     | SLIDINGWINDOW:4:20 | to use a sliding window of size 4 that will remove bases if their phred score is below 20 |  
-    | Adapters | NexteraPE-PE.fa | 
+    | Adapter | NexteraPE-PE.fa:2:40:15 | 
 
-    Once you have a working script run with:
+    *We are adding additional parameters the NexteraPE-PE.Fa adapter*
+
+    - NexteraPE-PE.fa : This is a FASTA file that contains adapter sequences specific to Nextera paired-end libraries.
+    - `2:40:15` 
+        - `2` : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
+        - `40` : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
+        - `15` : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).
+    
+    Once you have a working script, run it with the following command:
 
     ```bash
     sh trim.sh
     ```
 
-    You will know your script is correct and working properly if you see the following: 
+    You will know that your script is correct and working properly if you see the following output: 
 
     ```bash
     TrimmomaticPE: Started with arguments:
@@ -183,7 +197,7 @@ In this example, we have told Trimmomatic:
     TrimmomaticPE: Completed successfully
     ```
 
-    Part B: Check that the files are the correct size
+    **Part C:** Check that the file outputs are the correct size
 
     ```bash
     total 453M
@@ -195,4 +209,4 @@ In this example, we have told Trimmomatic:
     -rw-r--r-- 1 pdrodrig pi-jdragon 271K Feb 11 18:32 SRR2589044_2un.trim.fastq.gz
     ```
 
-    Part C: Run FASTQC on all the *.gz files and visualize the HTML files to see whether your **per base sequence quality** is higher after trimming. 
+    **Part D:** Run FASTQC on all the *.gz files and visualize the HTML files to see whether your **per base sequence quality** is higher after trimming. In addition, please note if the **adapter content/contamination** has been removed. 
