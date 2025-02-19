@@ -59,6 +59,10 @@ nav:
           - QC with FASTQC (L9): ch05/09_assessing_fastqc_output.md
           - Trimming and Filtering (L10): ch05/10_trimming.md
           #- MultiQC (L10): ch05/10_multiQC.md
+      - Week 6:
+          - Submitting Alignment Script (CE1): ch06/11_ClassExercise_Align-Submission.md
+          - Indexing a Reference Genome (CE2): ch06/13_ClassExercise3_Index_Genome.md
+          - Modifying Alignment Script (CE3): ch06/12_ClassExercise2_Align-Modify.md
   - Assignments:
       - Homework 1 (L2): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md

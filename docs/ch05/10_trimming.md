@@ -165,7 +165,7 @@ In this example, we have told Trimmomatic:
     | outputFile2U       | Output file that contains orphaned reads from the _2 file. |
     | SLIDINGWINDOW:4:20 | to use a sliding window of size 4 that will remove bases if their phred score is below 20 |  
     | filter short reads | drop an entire read if it is below 25 |
-    | adapter to add     | NexteraPE-PE.fa:2:40:15 | 
+    | adapter to remove     | NexteraPE-PE.fa:2:40:15 | 
 
     *Note: We are adding additional parameters the NexteraPE-PE.Fa adapter*
 
