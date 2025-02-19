@@ -64,17 +64,17 @@ echo $DBDIR
 
 Let's start assembling our script. You will be copying and pasting the script in sections. 
 
-    + The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided. 
++ The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided. 
 
-    + Make a copy of the following folder located here: 
++ Make a copy of the following folder located here: 
 
-    ```bash
-    /gpfs1/cl/mmg3320/course_materials/HISAT2-modify
-    ```
+```bash
+/gpfs1/cl/mmg3320/course_materials/HISAT2-modify
+```
 
-    + You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`. 
++ You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`. 
     
-    + Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script `hisat2-modify-PE.sh`. Keep your terminal open as well. 
++ Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script `hisat2-modify-PE.sh`. Keep your terminal open as well. 
 
 1. In lines 1-9, provide the job submission parameters. Copy-and-paste the following section: 
 
@@ -208,4 +208,4 @@ Let's start assembling our script. You will be copying and pasting the script in
     JC1A.bam             JC1A_R1.fastq.gz  JC1A_sorted.bam   JC1A.txt
     ```
 
-    We will review these outputs during next class. 
+    **We will review these outputs during next class.** 
