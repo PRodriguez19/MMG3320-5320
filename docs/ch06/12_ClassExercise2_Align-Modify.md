@@ -180,34 +180,34 @@ Let's start assembling our script. You will be copying and pasting the script in
 
 9. Copy-and paste the last section starting in line 36. When you are done, submit the script. 
 
-```bash
-    # Convert SAM to BAM
-    samtools view ${SAMPLE}.sam \
-        --threads 2 \
-        -b \
-        -o ${SAMPLE}.bam
+    ```bash
+        # Convert SAM to BAM
+        samtools view ${SAMPLE}.sam \
+            --threads 2 \
+            -b \
+            -o ${SAMPLE}.bam
 
-    # Remove SAM file
-    rm ${SAMPLE}.sam
+        # Remove SAM file
+        rm ${SAMPLE}.sam
 
-    # Generate alignment statistics
-    samtools flagstat ${SAMPLE}.bam > ${SAMPLE}.txt
+        # Generate alignment statistics
+        samtools flagstat ${SAMPLE}.bam > ${SAMPLE}.txt
 
-    # Sort the BAM file by coordinates
-    samtools sort ${SAMPLE}.bam -o ${SAMPLE}_sorted.bam
+        # Sort the BAM file by coordinates
+        samtools sort ${SAMPLE}.bam -o ${SAMPLE}_sorted.bam
 
-    # Index the sorted BAM file
-    samtools index ${SAMPLE}_sorted.bam
+        # Index the sorted BAM file
+        samtools index ${SAMPLE}_sorted.bam
 
-    echo "Sample ${SAMPLE} processing complete."
-done
-```
+        echo "Sample ${SAMPLE} processing complete."
+    done
+    ```
 
-The final files output should include the following: 
+    The final files output should include the following: 
 
-```bash
-align_CD8_60836.out  JC1A.log          JC1A_R2.fastq.gz  JC1A_sorted.bam.bai  
-JC1A.bam             JC1A_R1.fastq.gz  JC1A_sorted.bam   JC1A.txt
-```
+    ```bash
+    align_CD8_60836.out  JC1A.log          JC1A_R2.fastq.gz  JC1A_sorted.bam.bai  
+    JC1A.bam             JC1A_R1.fastq.gz  JC1A_sorted.bam   JC1A.txt
+    ```
 
-We will review these outputs during next class. 
+    We will review these outputs during next class. 
