@@ -1,7 +1,9 @@
 
 ## Class Exercise #2: Indexing a Genomic Reference (FASTA)
 
-For this tutorial, we will be using an **Organism-specific biological database:** called [Cryptodb](https://cryptodb.org/cryptodb/app). These are often updated more frequently then Ensembl, so these tend to be more comprehensive. 
+For this tutorial, we will be using an **Organism-specific biological database** called [Cryptodb](https://cryptodb.org/cryptodb/app). These types of databases are updated more frequently than broader biological databases like Ensembl, especially for non-model organisms. As a result, they tend to be more comprehensive.
+
+If you are working with a non-model organism, it is important to check whether a dedicated database exists for your species, as it may provide more up-to-date and detailed information. 
 
 The steps we will perform include: 
 
