@@ -1807,19 +1807,23 @@ Often the <code>in</code> portion will be a directory instead of single files (A
 </code></pre></div>
 <h3 id="instructions">Instructions</h3>
 <p>Let's start assembling our script. You will be copying and pasting the script in sections. </p>
-<pre><code>+ The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided.
-
-+ Make a copy of the following folder located here:
-
-```bash
-/gpfs1/cl/mmg3320/course_materials/HISAT2-modify
-```
-
-+ You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`.
-
-+ Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script `hisat2-modify-PE.sh`. Keep your terminal open as well.
-</code></pre>
-<ol>
+<ul>
+<li>
+<p>The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided. </p>
+</li>
+<li>
+<p>Make a copy of the following folder located here: </p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/HISAT2-modify
+</code></pre></div>
+<ul>
+<li>
+<p>You will see two FASTQ files inside called <code>JC1A_R1.fastq.gz</code> and  <code>JC1A_R2.fastq.gz</code>. </p>
+</li>
+<li>
+<p>Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script <code>hisat2-modify-PE.sh</code>. Keep your terminal open as well. </p>
+</li>
 <li>
 <p>In lines 1-9, provide the job submission parameters. Copy-and-paste the following section: </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -1942,9 +1946,9 @@ hisat2<span class="w"> </span><span class="se">\</span>
 <div class="highlight"><pre><span></span><code>align_CD8_60836.out<span class="w">  </span>JC1A.log<span class="w">          </span>JC1A_R2.fastq.gz<span class="w">  </span>JC1A_sorted.bam.bai<span class="w">  </span>
 JC1A.bam<span class="w">             </span>JC1A_R1.fastq.gz<span class="w">  </span>JC1A_sorted.bam<span class="w">   </span>JC1A.txt
 </code></pre></div>
-<p>We will review these outputs during next class. </p>
+<p><strong>We will review these outputs during next class.</strong> </p>
 </li>
-</ol></div>
+</ul></div>
 
 
 
