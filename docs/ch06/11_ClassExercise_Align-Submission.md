@@ -24,7 +24,7 @@ Before we begin, we will submit the following script, which will map and align F
 
 3. Submit the `hisat2_align.sh` using the SLURM job submission system. 
 
-4. Check to see that your job is running with the `squeue -u net-id` command. You will see the following:
+4. Check to see that your job is running with the `squeue -u your-net-id` command. You will see the following:
 
 	```bash
     JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)

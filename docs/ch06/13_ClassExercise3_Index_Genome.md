@@ -24,89 +24,82 @@ For this example, we will be indexing the genome of the parasite *Cryptosporidiu
 
 2. Grab the correct FASTA file from the Cryptodb website and place inside of `indexed_genomes_example`.  
 
-```
-https://cryptodb.org/common/downloads/Current_Release/CparvumIOWA-ATCC/fasta/data/
-```
+    ```bash 
+    https://cryptodb.org/common/downloads/Current_Release/CparvumIOWA-ATCC/fasta/data/
+    ```
 
-+ Which file will you select? Think about the **TYPE** of aligner we are using. 
-+ Once you make a decision, right-click, select copy-link 
+    + Which file will you select? Think about the **TYPE** of aligner we are using. 
+    + Once you make a decision, right-click, select copy-link 
 
-Use the `wget` command 
+    Use the `wget` command 
 
-```
-wget path-you-copied
-```
+    ```
+    wget path-you-copied
+    ```
 
-You should see the following: 
+    You should see the following: 
 
-```bash
-Connecting to cryptodb.org (cryptodb.org)|128.192.21.13|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 9275167 (8.8M) [application/x-fasta]
-Saving to: ‘CryptoDB-67_CparvumIOWA-ATCC_Genome.fasta’
+    ```bash
+    Connecting to cryptodb.org (cryptodb.org)|128.192.21.13|:443... connected.
+    HTTP request sent, awaiting response... 200 OK
+    Length: 9275167 (8.8M) [application/x-fasta]
+    Saving to: ‘CryptoDB-67_CparvumIOWA-ATCC_Genome.fasta’
 
-100%[=================================================================>] 9,275,167   5.93MB/s   in 1.5s   
-```
+    100%[=================================================================>] 9,275,167   5.93MB/s   in 1.5s   
+    ```
 
-Check the file with `head` once the download is complete. 
+    Check the file with `head` once the download is complete. 
 
-```bash
->CP044422 | organism=Cryptosporidium_parvum_IOWA-ATCC | version=2022-10-21 | length=920510 | SO=chromosome
-AAACCCCTAAACCTAAACCTAAACCTAAACCTAAACCCTAAACCTAAACCTAAACCTAAA
-CCTAAAACCTAAACCTAAAACCTAAACCTAAAACCTAAAACCTAAACCTAAACCTAAACC
-CCTAAACCTAAACCTAAACCTAAAAACCTAAACCCTAAACCTAAACCTAAAAAACCTAAA
-CCTAAACCTAAACCTAAACCTAAACCTAAACCTAAACCTAAAAAACCTAAAACCTAAACC
-TAAACCTAAACCTAAACCTAAAACCTAAAAACCTAAACCTAAAAACCTAAAAAACCTAAA
-CCTAAAAAACCTAAACCTAAACCTAAAACCTAAAACCTAAACCTAAAACCTAAAACCTAA
-ACCTAAACTAAACCTAAAAAACCTAAAAACCTAAACCCCTAAACCTAAACCTAAAACCTA
-AACCTAAACCTAAACCTAAACCTAAAACCTAAACCTAAACCTAAAACCTAAACCTAAACC
-TAAACCTAAACCTCCTAAAAACCTAAACCTAAACCTAAACCTAAACCTAAAAAACCTAAA
-```
+    ```bash
+    >CP044422 | organism=Cryptosporidium_parvum_IOWA-ATCC | version=2022-10-21 | length=920510 | SO=chromosome
+    AAACCCCTAAACCTAAACCTAAACCTAAACCTAAACCCTAAACCTAAACCTAAACCTAAA
+    CCTAAAACCTAAACCTAAAACCTAAACCTAAAACCTAAAACCTAAACCTAAACCTAAACC
+    CCTAAACCTAAACCTAAACCTAAAAACCTAAACCCTAAACCTAAACCTAAAAAACCTAAA
+    CCTAAACCTAAACCTAAACCTAAACCTAAACCTAAACCTAAAAAACCTAAAACCTAAACC
+    TAAACCTAAACCTAAACCTAAAACCTAAAAACCTAAACCTAAAAACCTAAAAAACCTAAA
+    CCTAAAAAACCTAAACCTAAACCTAAAACCTAAAACCTAAACCTAAAACCTAAAACCTAA
+    ACCTAAACTAAACCTAAAAAACCTAAAAACCTAAACCCCTAAACCTAAACCTAAAACCTA
+    AACCTAAACCTAAACCTAAACCTAAAACCTAAACCTAAACCTAAAACCTAAACCTAAACC        
+    TAAACCTAAACCTCCTAAAAACCTAAACCTAAACCTAAACCTAAACCTAAAAAACCTAAA
+    ```
 
 3. Load the `hisat2` program using `module load` 
 
 
-```
-module load gcc/13.3.0-xp3epyt 
-module load hisat2/2.2.1-x7h4grf 
-```
+    ```bash
+    module load gcc/13.3.0-xp3epyt 
+    module load hisat2/2.2.1-x7h4grf 
+    ```
 
 
 4. Build the genome index using the `hisat2-build` program. `hisat2-build` can index reference genomes of any size. 
 
-```
-hisat2-build
-```
+    ```bash
+    hisat2-build
+    ```
 
-Output: 
+    Output: 
 
-```
-Usage: hisat2-build [options]* <reference_in> <ht2_index_base>
-    reference_in            comma-separated list of files with ref sequences
-    hisat2_index_base       write ht2 data to files with this dir/basename
-Options:
-    -c                      reference sequences given on cmd line (as
-                            <reference_in>)
-    --large-index           force generated index to be 'large', even if ref
-                            has fewer than 4 billion nucleotides
-    -a/--noauto             disable automatic -p/--bmax/--dcv memory-fitting
-    -p                      number of threads
-    --bmax <int>            max bucket sz for blockwise suffix-array builder
-    --bmaxdivn <int>        max bucket sz as divisor of ref len (default: 4)
-    --dcv <int>             diff-cover period for blockwise (default: 1024)
-```
+    ```
+    Usage: hisat2-build [options]* <reference_in> <ht2_index_base>
+        reference_in            comma-separated list of files with ref sequences
+        hisat2_index_base       write ht2 data to files with this dir/basename
+    Options:
+        -c                      reference sequences given on cmd line (as
+                                <reference_in>)
 
-To index a reference genome using hisat2-build, the basic command syntax is:
+    ```
 
-```bash
-hisat2-build input-fasta-file basename
+    To index a reference genome using hisat2-build, the basic command syntax is:
 
-```
+    ```bash
+    hisat2-build input-fasta-file basename
+    ```
 
-+ `input-fasta-file`: The reference genome FASTA file you want to index.
-+ `basename`: The prefix for the output index files. This is the "name" that will be used for all generated index files.
+    + `input-fasta-file`: The reference genome FASTA file you want to index.
+    + `basename`: The prefix for the output index files. This is the "name" that will be used for all generated index files.
 
-**For this case, use `CparvumIOWA_ATCC_v68` as the basename**
+    **For this case, use `CparvumIOWA_ATCC_v68` as the basename**
 
 ### Final Ouput
 
