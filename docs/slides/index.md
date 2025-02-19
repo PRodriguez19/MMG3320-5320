@@ -19,3 +19,5 @@ Slides will be made available as a PDF printout document. These lessons can be r
 [Assessing FASTQC Outputs (L9)](09_assessing_fastqc_output-slides.pdf)
 
 [Trimming & Filtering (L10)](10_trimming-slides.pdf)
+
+[Alignment (L11-13)](11_align-slides.pdf)
