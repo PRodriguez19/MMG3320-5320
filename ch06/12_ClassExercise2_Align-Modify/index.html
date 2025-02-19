@@ -12,28 +12,28 @@
         <meta name="author" content="Princess Rodriguez">
       
       
-        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/pdf_materials/">
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch06/12_ClassExercise2_Align-Modify/">
       
       
-        <link rel="prev" href="../slides/">
+        <link rel="prev" href="../13_ClassExercise3_Index_Genome/">
       
       
-        <link rel="next" href="../ch01/">
+        <link rel="next" href="../../assignments/week1_assignment/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
-        <title>Overview - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>Modifying Alignment Script (CE3) - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pdf-overview" class="md-skip">
+        <a href="#class-exercise-3-modifying-the-hisat2-alignment-script-for-pe-samples" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-header__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Modifying Alignment Script (CE3)
             
           </span>
         </div>
@@ -209,7 +209,7 @@
     
     
       <li class="md-tabs__item">
-        <a href=".." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   Home
@@ -227,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../slides/" class="md-tabs__link">
+        <a href="../../slides/" class="md-tabs__link">
           
   
   Slides
@@ -241,13 +241,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../pdf_materials/" class="md-tabs__link">
           
   
   Printouts
@@ -261,17 +259,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../ch01/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ch01/" class="md-tabs__link">
           
   
   Lessons
@@ -292,7 +294,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../assignments/week1_assignment/" class="md-tabs__link">
+        <a href="../../assignments/week1_assignment/" class="md-tabs__link">
           
   
   Assignments
@@ -325,7 +327,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
+    <a href="../.." title="MMG:3320/5320 Advanced Bioinformatics" class="md-nav__button md-logo" aria-label="MMG:3320/5320 Advanced Bioinformatics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -381,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -402,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MMG3320-Spring-2025-Syllabus.pdf" class="md-nav__link">
+      <a href="../../MMG3320-Spring-2025-Syllabus.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -423,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MMG3320-5320-Spring-2025-Schedule.pdf" class="md-nav__link">
+      <a href="../../MMG3320-5320-Spring-2025-Schedule.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -444,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/gitbash-install/" class="md-nav__link">
+      <a href="../../ch01/gitbash-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -465,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../FAQ/" class="md-nav__link">
+      <a href="../../FAQ/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -486,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/quick-start/" class="md-nav__link">
+      <a href="../../ch01/quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -552,7 +554,73 @@
   
   
     <li class="md-nav__item">
-      <a href="../slides/" class="md-nav__link">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Printouts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Printouts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pdf_materials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,121 +663,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Printouts
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Printouts
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pdf-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      PDF Overview
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -720,7 +677,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Lessons
@@ -772,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/" class="md-nav__link">
+      <a href="../../ch01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -793,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/01_week1_mmg3320/" class="md-nav__link">
+      <a href="../../ch01/01_week1_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -814,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch01/02_week1_mmg3320/" class="md-nav__link">
+      <a href="../../ch01/02_week1_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -881,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch02/" class="md-nav__link">
+      <a href="../../ch02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -902,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch02/03_week2_mmg3320/" class="md-nav__link">
+      <a href="../../ch02/03_week2_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -969,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch03/" class="md-nav__link">
+      <a href="../../ch03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -990,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch03/04_week3_mmg3320/" class="md-nav__link">
+      <a href="../../ch03/04_week3_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch03/05_week3_mmg3320/" class="md-nav__link">
+      <a href="../../ch03/05_week3_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1078,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04/" class="md-nav__link">
+      <a href="../../ch04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1099,7 +1056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04/06_week4_mmg3320/" class="md-nav__link">
+      <a href="../../ch04/06_week4_mmg3320/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1120,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04/07_week4_intro-to-RNAseq/" class="md-nav__link">
+      <a href="../../ch04/07_week4_intro-to-RNAseq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1141,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch04/08_accessing_public_experimental_data/" class="md-nav__link">
+      <a href="../../ch04/08_accessing_public_experimental_data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1208,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch05/" class="md-nav__link">
+      <a href="../../ch05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1229,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch05/09_assessing_fastqc_output/" class="md-nav__link">
+      <a href="../../ch05/09_assessing_fastqc_output/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1250,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch05/10_trimming/" class="md-nav__link">
+      <a href="../../ch05/10_trimming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1276,6 +1233,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1285,11 +1244,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
@@ -1303,7 +1262,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             Week 6
@@ -1317,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch06/11_ClassExercise_Align-Submission/" class="md-nav__link">
+      <a href="../11_ClassExercise_Align-Submission/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1338,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ch06/13_ClassExercise3_Index_Genome/" class="md-nav__link">
+      <a href="../13_ClassExercise3_Index_Genome/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1356,10 +1315,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ch06/12_ClassExercise2_Align-Modify/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Modifying Alignment Script (CE3)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1368,6 +1345,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-3-modifying-the-hisat2-alignment-script-for-pe-samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise 3: Modifying the HISAT2 alignment script for PE samples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Exercise 3: Modifying the HISAT2 alignment script for PE samples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      For loops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1433,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week1_assignment/" class="md-nav__link">
+      <a href="../../assignments/week1_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1454,7 +1500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week2_assignment/" class="md-nav__link">
+      <a href="../../assignments/week2_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1475,7 +1521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week3_assignment/" class="md-nav__link">
+      <a href="../../assignments/week3_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1496,7 +1542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week4_assignment/" class="md-nav__link">
+      <a href="../../assignments/week4_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1517,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/week5_assignment/" class="md-nav__link">
+      <a href="../../assignments/week5_assignment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1576,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignments/" class="md-nav__link">
+      <a href="../../assignments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1630,11 +1676,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pdf-overview" class="md-nav__link">
+  <a href="#class-exercise-3-modifying-the-hisat2-alignment-script-for-pe-samples" class="md-nav__link">
     <span class="md-ellipsis">
-      PDF Overview
+      Class Exercise 3: Modifying the HISAT2 alignment script for PE samples
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Class Exercise 3: Modifying the HISAT2 alignment script for PE samples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      For loops
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1653,19 +1741,208 @@
                   
 
 
-  <h1>Overview</h1>
+  <h1>Modifying Alignment Script (CE3)</h1>
 
-<div><h2 id="pdf-overview">PDF Overview</h2>
-<p>Each tutorial will also be made available as PDF printout document. These lessons can be reviewed prior to class start. </p>
-<p><a href="01_week1_mmg3320-printout.pdf">Introducing the Shell (L1)</a></p>
-<p><a href="02_week1_mmg3320-printout.pdf">Navigating the Shell (L2)</a></p>
-<p><a href="03_week2_mmg3320-printout.pdf">Wildcards &amp; Nano (L3)</a></p>
-<p><a href="04_week3_mmg3320-printout.pdf">Searching &amp; Navigation (L4)</a></p>
-<p><a href="05_week3_mmg3320-printout.pdf">Intro to Shell Scripting (L5)</a></p>
-<p><a href="07_week4_intro-to-RNAseq-printout.pdf">RNA-Seq Overview (L7)</a></p>
-<p><a href="08_accessing_public_experimental_printout.pdf">Accessing Public Data (L8)</a></p>
-<p><a href="09_assessing_fastqc_output-printout.pdf">Assessing FASTQC Outputs (L9)</a></p>
-<p><a href="10_trimming-printout.pdf">Trimming &amp; Filtering (L10)</a></p></div>
+<div><h2 id="class-exercise-3-modifying-the-hisat2-alignment-script-for-pe-samples">Class Exercise 3: Modifying the HISAT2 alignment script for PE samples</h2>
+<h3 id="overview">Overview</h3>
+<p>Everyone will download at least six FASTQ files from the GEO repository for their final project. To ensure that the alignment and downstream processing steps are performed consistently for each sample, it is best to apply the same line of code to all samples simultaneously. To achieve this, we can use loops — a feature of programming languages that allows us to execute a series of commands on multiple files at once.</p>
+<p>In addition to saving time, loops make your code more readable and concise. There are various types of loops, but we have focused on the for loop. At the end, you will be "creating" a script that could be used to align paired end samples using HISAT2. </p>
+<p>The final outputs will be in a form of a BAM file. BAM is the binary version of a SAM (Sequence Alignment Map) file. A SAM file is a tab-delimited text file that contains information about each individual read and its alignment to the genome. However, SAM files are not a desirable output due to their large size. Therefore, we will immediately convert them to BAM files using SAMtools.</p>
+<h3 id="for-loops">For loops</h3>
+<p>For loops are constructed with 4 basic words: </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Words</th>
+<th style="text-align: left;">What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">for</td>
+<td style="text-align: left;">set the loop variable name</td>
+</tr>
+<tr>
+<td style="text-align: center;">in</td>
+<td style="text-align: left;">specify whatever it is we are looping over</td>
+</tr>
+<tr>
+<td style="text-align: center;">do</td>
+<td style="text-align: left;">specify what we want to do with each item</td>
+</tr>
+<tr>
+<td style="text-align: center;">done</td>
+<td style="text-align: left;">tell the computer we are done</td>
+</tr>
+</tbody>
+</table>
+<p>putting these together, for loop syntax is as follows: </p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>VARIABLE<span class="w"> </span><span class="k">in</span><span class="w"> </span>file1<span class="w"> </span>file2<span class="w"> </span>file3
+<span class="k">do</span>
+<span class="w">  </span>command1<span class="w"> </span>on<span class="w"> </span><span class="nv">$VARIABLE</span>
+<span class="w">  </span>command2<span class="w"> </span>
+<span class="k">done</span>
+</code></pre></div>
+<p>A basic loop looks something like this when it’s written within a job script:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>A<span class="w"> </span>B<span class="w"> </span>C
+<span class="k">do</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span>
+<span class="k">done</span>
+</code></pre></div>
+<blockquote>
+<p>The VARIABLE could be any letter or word that is meaningful, but is commonly represented by a single letter like "i" for ease. 
+Often the <code>in</code> portion will be a directory instead of single files (A, B, C) - i.e. a directory that contains the FASTQ files you want to work with. </p>
+</blockquote>
+<h3 id="variables">Variables</h3>
+<p>The variable portion of a for loop is the item that we are going to iterate over and will change with every “new” loop. <strong>The action is typically being performed on each individual file.</strong> In their simplest form variables can look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">DIRECTORY</span><span class="o">=</span>PATH/TO/DIRECTORY
+
+<span class="nv">DBDIR</span><span class="o">=</span>/users/p/d/pdrodrig/genome_index
+</code></pre></div>
+<blockquote>
+<p>In the above example, this is showing a location to a specific directory </p>
+</blockquote>
+<p>As a reminder, if we want to make sure this assignment worked, use the <code>echo</code> command. This is a command that prints out whatever is provided to it, which can be really useful to test commands or report information back to yourself during a loop.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$DBDIR</span><span class="w"> </span>
+</code></pre></div>
+<h3 id="instructions">Instructions</h3>
+<p>Let's start assembling our script. You will be copying and pasting the script in sections. </p>
+<pre><code>+ The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided.
+
++ Make a copy of the following folder located here:
+
+```bash
+/gpfs1/cl/mmg3320/course_materials/HISAT2-modify
+```
+
++ You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`.
+
++ Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script `hisat2-modify-PE.sh`. Keep your terminal open as well.
+</code></pre>
+<ol>
+<li>
+<p>In lines 1-9, provide the job submission parameters. Copy-and-paste the following section: </p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=general</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=2</span>
+<span class="c1">#SBATCH --mem=10G</span>
+<span class="c1">#SBATCH --time=3:00:00</span>
+<span class="c1">#SBATCH --job-name=align_CD8</span>
+<span class="c1"># %x=job-name %j=jobid</span>
+<span class="c1">#SBATCH --output=%x_%j.out</span>
+</code></pre></div>
+</li>
+<li>
+<p>In lines 11-16, copy-and-paste the next section. The importance of this section is that it will allow you to process all FASTQ files <em>while</em> maintaining the file name for each file output.  </p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># Iterate through each fastq.gz file in the current directory</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>fastq_file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*fastq.gz<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+
+<span class="w">        </span><span class="c1"># Extract sample name from the file name</span>
+<span class="w">        </span><span class="nv">SAMPLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">fastq_file</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">"s/.fastq.gz//"</span><span class="k">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.fastq.gz<span class="w"> </span>
+</code></pre></div>
+<pre><code>**How does this maintain sample naming?**
+
++ We define the variable `SAMPLE` as the sample name by using the `sed` command to remove `.fastq.gz` from each filename.
+    + This allows us to create a variable that effectively stores a list of all sample names.
+    + For example, if the filename was `WT-REP1.fastq.gz`:
+        + The `sed` command removes `.fastq.gz`, leaving just `WT-REP1`.
+        + When we `echo $SAMPLE`, it returns `WT-REP1` instead of the full filename.
++ Using `echo`, we can check that each sample name is correctly extracted.
+</code></pre>
+<ol>
+<li>
+<p>Next, copy-and-paste the following section into lines 18-21. Make sure to use the <code>tab</code> key to indent. </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set database directory, genome, and processor count</span>
+<span class="nv">DBDIR</span><span class="o">=</span><span class="s2">"/gpfs1/cl/mmg3320/course_materials/genome_index/hisat2_index_mm10"</span>
+<span class="nv">GENOME</span><span class="o">=</span><span class="s2">"GRCm39"</span>
+<span class="nv">p</span><span class="o">=</span><span class="m">2</span>
+</code></pre></div>
+<p><strong>All of these are examples of variables. Each variable is assigned a specific value:</strong></p>
+<ul>
+<li><code>DBDIR</code> stores a file path to the genome index directory.</li>
+<li><code>GENOME</code> stores a character string representing the genome version (GRCm39).</li>
+<li><code>p</code> is set to a numeric value (2), which represents the number of processors to use.</li>
+</ul>
+<p><em>Variables help make the script more flexible and easier to modify by centralizing important parameters.</em></p>
+</li>
+<li>
+<p>Next, copy-and-paste the following section into lines 23-26. The script will not run unless the required modules are loaded. </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load required modules</span>
+module<span class="w"> </span>load<span class="w"> </span>gcc/13.3.0-xp3epyt
+module<span class="w"> </span>load<span class="w"> </span>hisat2/2.2.1-x7h4grf
+module<span class="w"> </span>load<span class="w"> </span>samtools/1.19.2-pfmpoam
+</code></pre></div>
+</li>
+<li>
+<p>Next, copy-and-paste the following section into lines 28-33. </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Align reads to the reference genome</span>
+hisat2<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">p</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-x<span class="w"> </span><span class="si">${</span><span class="nv">DBDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">GENOME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-U<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.fastq.gz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-S<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.sam<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.log
+</code></pre></div>
+</li>
+<li>
+<p>Move into your terminal tab. Do not close your script, we will return to it shortly. </p>
+</li>
+<li>
+<p>Run the following command in your terminal. </p>
+<div class="highlight"><pre><span></span><code>hisat2<span class="w"> </span>--help
+</code></pre></div>
+<ul>
+<li>What does <code>-U</code> mean? </li>
+<li>What does <code>-S</code> mean? </li>
+<li>What does <code>-x</code> mean? </li>
+</ul>
+<p><em>Its really important that you take some time to understand what these parameters do!</em></p>
+</li>
+<li>
+<p><strong>When you are ready, modify the script you copied-and-pasted to accommodate paired end reads</strong> </p>
+<p>The paired-end files in this directory are: </p>
+<div class="highlight"><pre><span></span><code>JC1A_R1.fastq.gz  JC1A_R2.fastq.gz
+</code></pre></div>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>The loop should iterate only over <code>_1.fastq.gz</code> files to ensure proper pairing. If the script loops over all <code>*.fastq.gz</code> files, it will process both <code>_1.fastq.gz</code> and <code>_2.fastq.gz</code> files individually.</li>
+<li>If the <code>SAMPLE</code> variable is set to <code>.fastq.gz</code> only, the samples will <strong>not</strong> distinguish between <code>_1.fastq.gz</code> and <code>_2.fastq.gz</code></li>
+<li>Use <code>_1.fastq.gz</code> for forward reads and <code>_2.fastq.gz</code> for reverse reads.</li>
+</ul>
+</li>
+<li>
+<p>Copy-and paste the last section starting in line 36. When you are done, submit the script. </p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># Convert SAM to BAM</span>
+<span class="w">    </span>samtools<span class="w"> </span>view<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.sam<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--threads<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-b<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-o<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.bam
+
+<span class="w">    </span><span class="c1"># Remove SAM file</span>
+<span class="w">    </span>rm<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.sam
+
+<span class="w">    </span><span class="c1"># Generate alignment statistics</span>
+<span class="w">    </span>samtools<span class="w"> </span>flagstat<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.bam<span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.txt
+
+<span class="w">    </span><span class="c1"># Sort the BAM file by coordinates</span>
+<span class="w">    </span>samtools<span class="w"> </span>sort<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.bam<span class="w"> </span>-o<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>_sorted.bam
+
+<span class="w">    </span><span class="c1"># Index the sorted BAM file</span>
+<span class="w">    </span>samtools<span class="w"> </span>index<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>_sorted.bam
+
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Sample </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span><span class="s2"> processing complete."</span>
+<span class="k">done</span>
+</code></pre></div>
+<p>The final files output should include the following: </p>
+<div class="highlight"><pre><span></span><code>align_CD8_60836.out<span class="w">  </span>JC1A.log<span class="w">          </span>JC1A_R2.fastq.gz<span class="w">  </span>JC1A_sorted.bam.bai<span class="w">  </span>
+JC1A.bam<span class="w">             </span>JC1A_R1.fastq.gz<span class="w">  </span>JC1A_sorted.bam<span class="w">   </span>JC1A.txt
+</code></pre></div>
+<p>We will review these outputs during next class. </p></div>
 
 
 
@@ -1718,10 +1995,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.code.select", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
