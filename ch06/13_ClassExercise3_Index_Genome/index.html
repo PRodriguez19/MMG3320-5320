@@ -1745,8 +1745,6 @@
 </li>
 <li>
 <p>Grab the correct FASTA file from the Cryptodb website and place inside of <code>indexed_genomes_example</code>.  </p>
-</li>
-</ol>
 <div class="highlight"><pre><span></span><code>https://cryptodb.org/common/downloads/Current_Release/CparvumIOWA-ATCC/fasta/data/
 </code></pre></div>
 <ul>
@@ -1773,18 +1771,18 @@ CCTAAACCTAAACCTAAACCTAAACCTAAACCTAAACCTAAAAAACCTAAAACCTAAACC
 TAAACCTAAACCTAAACCTAAAACCTAAAAACCTAAACCTAAAAACCTAAAAAACCTAAA
 CCTAAAAAACCTAAACCTAAACCTAAAACCTAAAACCTAAACCTAAAACCTAAAACCTAA
 ACCTAAACTAAACCTAAAAAACCTAAAAACCTAAACCCCTAAACCTAAACCTAAAACCTA
-AACCTAAACCTAAACCTAAACCTAAAACCTAAACCTAAACCTAAAACCTAAACCTAAACC
+AACCTAAACCTAAACCTAAACCTAAAACCTAAACCTAAACCTAAAACCTAAACCTAAACC<span class="w">        </span>
 TAAACCTAAACCTCCTAAAAACCTAAACCTAAACCTAAACCTAAACCTAAAAAACCTAAA
 </code></pre></div>
-<ol>
-<li>Load the <code>hisat2</code> program using <code>module load</code> </li>
-</ol>
-<div class="highlight"><pre><span></span><code>module load gcc/13.3.0-xp3epyt 
-module load hisat2/2.2.1-x7h4grf 
+</li>
+<li>
+<p>Load the <code>hisat2</code> program using <code>module load</code> </p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>gcc/13.3.0-xp3epyt<span class="w"> </span>
+module<span class="w"> </span>load<span class="w"> </span>hisat2/2.2.1-x7h4grf<span class="w"> </span>
 </code></pre></div>
-<ol>
-<li>Build the genome index using the <code>hisat2-build</code> program. <code>hisat2-build</code> can index reference genomes of any size. </li>
-</ol>
+</li>
+<li>
+<p>Build the genome index using the <code>hisat2-build</code> program. <code>hisat2-build</code> can index reference genomes of any size. </p>
 <div class="highlight"><pre><span></span><code>hisat2-build
 </code></pre></div>
 <p>Output: </p>
@@ -1794,13 +1792,6 @@ module load hisat2/2.2.1-x7h4grf
 Options:
     -c                      reference sequences given on cmd line (as
                             &lt;reference_in&gt;)
-    --large-index           force generated index to be 'large', even if ref
-                            has fewer than 4 billion nucleotides
-    -a/--noauto             disable automatic -p/--bmax/--dcv memory-fitting
-    -p                      number of threads
-    --bmax &lt;int&gt;            max bucket sz for blockwise suffix-array builder
-    --bmaxdivn &lt;int&gt;        max bucket sz as divisor of ref len (default: 4)
-    --dcv &lt;int&gt;             diff-cover period for blockwise (default: 1024)
 </code></pre></div>
 <p>To index a reference genome using hisat2-build, the basic command syntax is:</p>
 <div class="highlight"><pre><span></span><code>hisat2-build<span class="w"> </span>input-fasta-file<span class="w"> </span>basename
@@ -1810,6 +1801,8 @@ Options:
 <li><code>basename</code>: The prefix for the output index files. This is the "name" that will be used for all generated index files.</li>
 </ul>
 <p><strong>For this case, use <code>CparvumIOWA_ATCC_v68</code> as the basename</strong></p>
+</li>
+</ol>
 <h3 id="final-ouput">Final Ouput</h3>
 <p>Small indexes are stored in files with the <code>.ht2</code> extension. These files together constitute the index: they are all that is needed to align reads to that reference. The original sequence FASTA files is no longer used by <code>HISAT2</code> once the index is built.</p>
 <p>The final output should look similar to below once complete: </p>

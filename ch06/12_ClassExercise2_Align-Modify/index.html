@@ -1807,19 +1807,23 @@ Often the <code>in</code> portion will be a directory instead of single files (A
 </code></pre></div>
 <h3 id="instructions">Instructions</h3>
 <p>Let's start assembling our script. You will be copying and pasting the script in sections. </p>
-<pre><code>+ The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided.
-
-+ Make a copy of the following folder located here:
-
-```bash
-/gpfs1/cl/mmg3320/course_materials/HISAT2-modify
-```
-
-+ You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`.
-
-+ Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script `hisat2-modify-PE.sh`. Keep your terminal open as well.
-</code></pre>
-<ol>
+<ul>
+<li>
+<p>The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided. </p>
+</li>
+<li>
+<p>Make a copy of the following folder located here: </p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/HISAT2-modify
+</code></pre></div>
+<ul>
+<li>
+<p>You will see two FASTQ files inside called <code>JC1A_R1.fastq.gz</code> and  <code>JC1A_R2.fastq.gz</code>. </p>
+</li>
+<li>
+<p>Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script <code>hisat2-modify-PE.sh</code>. Keep your terminal open as well. </p>
+</li>
 <li>
 <p>In lines 1-9, provide the job submission parameters. Copy-and-paste the following section: </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -1835,25 +1839,27 @@ Often the <code>in</code> portion will be a directory instead of single files (A
 </li>
 <li>
 <p>In lines 11-16, copy-and-paste the next section. The importance of this section is that it will allow you to process all FASTQ files <em>while</em> maintaining the file name for each file output.  </p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># Iterate through each fastq.gz file in the current directory</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span>fastq_file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*fastq.gz<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Iterate through each fastq.gz file in the current directory</span>
+<span class="k">for</span><span class="w"> </span>fastq_file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*fastq.gz<span class="p">;</span><span class="w"> </span><span class="k">do</span>
 
-<span class="w">        </span><span class="c1"># Extract sample name from the file name</span>
-<span class="w">        </span><span class="nv">SAMPLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">fastq_file</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">"s/.fastq.gz//"</span><span class="k">)</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.fastq.gz<span class="w"> </span>
+<span class="w">    </span><span class="c1"># Extract sample name from the file name</span>
+<span class="w">    </span><span class="nv">SAMPLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">fastq_file</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">"s/.fastq.gz//"</span><span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.fastq.gz<span class="w"> </span>
 </code></pre></div>
-<pre><code>**How does this maintain sample naming?**
-
-+ We define the variable `SAMPLE` as the sample name by using the `sed` command to remove `.fastq.gz` from each filename.
-    + This allows us to create a variable that effectively stores a list of all sample names.
-    + For example, if the filename was `WT-REP1.fastq.gz`:
-        + The `sed` command removes `.fastq.gz`, leaving just `WT-REP1`.
-        + When we `echo $SAMPLE`, it returns `WT-REP1` instead of the full filename.
-+ Using `echo`, we can check that each sample name is correctly extracted.
-</code></pre>
-<ol>
+<p><strong>How does this maintain sample naming?</strong></p>
+<ul>
+<li>We define the variable <code>SAMPLE</code> as the sample name by using the <code>sed</code> command to remove <code>.fastq.gz</code> from each filename.<ul>
+<li>This allows us to create a variable that effectively stores a list of all sample names.</li>
+<li>For example, if the filename was <code>WT-REP1.fastq.gz</code>:<ul>
+<li>The <code>sed</code> command removes <code>.fastq.gz</code>, leaving just <code>WT-REP1</code>.</li>
+<li>When we <code>echo $SAMPLE</code>, it returns <code>WT-REP1</code> instead of the full filename.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using <code>echo</code>, we can check that each sample name is correctly extracted.</li>
+</ul>
+</li>
 <li>
 <p>Next, copy-and-paste the following section into lines 18-21. Make sure to use the <code>tab</code> key to indent. </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Set database directory, genome, and processor count</span>
@@ -1916,7 +1922,7 @@ hisat2<span class="w"> </span><span class="se">\</span>
 <li>
 <p>Copy-and paste the last section starting in line 36. When you are done, submit the script. </p>
 </li>
-</ol>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># Convert SAM to BAM</span>
 <span class="w">    </span>samtools<span class="w"> </span>view<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.sam<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--threads<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
