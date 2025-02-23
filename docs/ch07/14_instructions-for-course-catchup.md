@@ -1,17 +1,17 @@
 ## Instructions for Monday, February 24th 
 
-For today’s class, we will use this session as a **course catch-up day.** If you can answer **“yes”** to all the following questions, you do not need to attend as no new materials will be discussed:
+For today’s class, we will use this session as a **course catch-up day.** If you can answer **“yes”** to all the following questions, you do not need to attend class as no new materials will be discussed:
 
 1. Were you able to download the publicly available dataset for your final project? (*Note: not required yet but many have tried and are having trouble*)
 2. Do you feel confident copying data from the shared course directory during class?
-3. Are you confident in submitting scripts using the SLURM job submission system?
+3. Are you confident submitting scripts using the SLURM job submission system?
 4. Can you transfer files between the VACC and your local desktop?
-5. Can you read the sections below (before Wednesday's class) to understand what `conda` and `RSeQC` are and how these programs are used? 
-6. Can you follow the instructions provided in the next lesson to independently install the program `RSeQC` using `conda`? 
+5. Are you able to read the sections below (before Wednesday's class) to understand what `conda` and `RSeQC` are and how these programs are used? 
+6. Can you follow the instructions provided in the next lesson (L14) to independently install the program `RSeQC` using `conda`? 
 
-In Wednesday’s class, we will continue **using** `RSeQC` and reviewing outputs from `HISAT2`. Since `RSeQC` is not available via `module load`, you must install the program beforehand. 
+In Wednesday’s class, we will continue **using** `RSeQC` and reviewing outputs from `HISAT2`. Since `RSeQC` is not available via `module load`, you must install the program beforehand. You will not be able to participate in Wednesday class tutorial without installing the program first. 
 
-Below is background information on the `RSeQC` and `conda` programs. **Step-by-step instructions are provided in the next lesson.** Do not attempt to run the code shown below; it is for reading purposes only.
+Below is background information on the `RSeQC` and `conda` programs. **Step-by-step instructions are provided in the next lesson (L14).** Do not attempt to run the code shown below; it is for reading purposes only.
 
 ## Introducing Conda 
 
