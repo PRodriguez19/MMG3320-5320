@@ -64,8 +64,8 @@ nav:
           - Indexing a Reference Genome (L12): ch06/13_ClassExercise3_Index_Genome.md
           - Modifying Alignment Script (L13): ch06/12_ClassExercise2_Align-Modify.md
       - Week 7: 
-          - Course Catch Up Day (CCU): ch07: 14_instructions-for-course-catchup.md
-          - Installing RSeQC (L14): ch07: 15_installing-RSeQC-using-conda.md
+          - Course Catch Up Day (CCU): ch07/4_instructions-for-course-catchup.md
+          - Installing RSeQC (L14): ch07/15_installing-RSeQC-using-conda.md
   - Assignments:
       - Homework 1 (L2): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md
@@ -74,7 +74,7 @@ nav:
       - Homework 5: assignments/week5_assignment.md
       - Homework 6: assignments/week6_assignment.md
       - Final Project: assignments/index.md
-      
+
 markdown_extensions:
   - admonition
   - pymdownx.details
