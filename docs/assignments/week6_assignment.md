@@ -1,4 +1,4 @@
-## Homework Assignment #6 (100 points)
+## Homework Assignment #6 (120 points)
 
 **The due date for this homework is Friday, March 7th by 5pm.**
 
