@@ -41,7 +41,21 @@ Python 3.10.9
 conda 22.9.0
 ```
 
-### Step 4: Create a Conda Environment
+### Step 4: Initialize Conda for Your Shell 
+Run the following command to initialize Conda for your specific shell:
+
+`conda init` only needs to be run once after installing Conda. If the user has already initialized Conda, they don’t need to run it again.
+
+```bash
+conda init
+```
+
+Then reload your shell configuration.
+```bash
+exec $SHELL
+```
+
+### Step 5: Create a Conda Environment
 
 Create a dedicated Conda environment for `RSeQC` with Python 3.10:
 
@@ -85,7 +99,8 @@ Retrieving notices: ...working... done
 
 Now, proceed to Step 5.
 
-### Step 5: Activate the `rseqc_env` Envrionment
+
+### Step 6: Activate the `rseqc_env` Environment
 
 Activate the newly created Conda environment:
 
@@ -100,7 +115,7 @@ Once activated, your terminal prompt will change from (base) to (rseqc_env), ind
 (rseqc_env) [pdrodrig@vacc-login4 pdrodrig]
 ```
 
-### Step 6: Install `RSeQC` Using `pip`
+### Step 7: Install `RSeQC` Using `pip`
 
 With the environment activated, install RSeQC using pip:
 
@@ -114,7 +129,7 @@ Once installed successfully, you should see output similar to:
 Successfully installed RSeQC-5.0.4 bx-python-0.13.0 
 ```
 
-### Step 7: Verify the Installation
+### Step 8: Verify the Installation
 
 Test the installation by displaying the help page for read_distribution.py:
 
