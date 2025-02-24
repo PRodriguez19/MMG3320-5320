@@ -1485,36 +1485,45 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-create-a-conda-environment" class="md-nav__link">
+  <a href="#step-4-initialize-conda-for-your-shell" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Create a Conda Environment
+      Step 4: Initialize Conda for Your Shell
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-activate-the-rseqc_env-envrionment" class="md-nav__link">
+  <a href="#step-5-create-a-conda-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 5: Activate the rseqc_env Envrionment
+      Step 5: Create a Conda Environment
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-6-install-rseqc-using-pip" class="md-nav__link">
+  <a href="#step-6-activate-the-rseqc_env-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 6: Install RSeQC Using pip
+      Step 6: Activate the rseqc_env Environment
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-7-verify-the-installation" class="md-nav__link">
+  <a href="#step-7-install-rseqc-using-pip" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 7: Verify the Installation
+      Step 7: Install RSeQC Using pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-verify-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 8: Verify the Installation
     </span>
   </a>
   
@@ -1812,36 +1821,45 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-create-a-conda-environment" class="md-nav__link">
+  <a href="#step-4-initialize-conda-for-your-shell" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Create a Conda Environment
+      Step 4: Initialize Conda for Your Shell
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-activate-the-rseqc_env-envrionment" class="md-nav__link">
+  <a href="#step-5-create-a-conda-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 5: Activate the rseqc_env Envrionment
+      Step 5: Create a Conda Environment
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-6-install-rseqc-using-pip" class="md-nav__link">
+  <a href="#step-6-activate-the-rseqc_env-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 6: Install RSeQC Using pip
+      Step 6: Activate the rseqc_env Environment
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-7-verify-the-installation" class="md-nav__link">
+  <a href="#step-7-install-rseqc-using-pip" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 7: Verify the Installation
+      Step 7: Install RSeQC Using pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-verify-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 8: Verify the Installation
     </span>
   </a>
   
@@ -1901,7 +1919,15 @@ conda<span class="w"> </span>--version
 <div class="highlight"><pre><span></span><code>Python<span class="w"> </span><span class="m">3</span>.10.9
 conda<span class="w"> </span><span class="m">22</span>.9.0
 </code></pre></div>
-<h3 id="step-4-create-a-conda-environment">Step 4: Create a Conda Environment</h3>
+<h3 id="step-4-initialize-conda-for-your-shell">Step 4: Initialize Conda for Your Shell</h3>
+<p>Run the following command to initialize Conda for your specific shell:</p>
+<p><code>conda init</code> only needs to be run once after installing Conda. If the user has already initialized Conda, they don’t need to run it again.</p>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>init
+</code></pre></div>
+<p>Then reload your shell configuration.
+</p><div class="highlight"><pre><span></span><code><span class="nb">exec</span><span class="w"> </span><span class="nv">$SHELL</span>
+</code></pre></div>
+<h3 id="step-5-create-a-conda-environment">Step 5: Create a Conda Environment</h3>
 <p>Create a dedicated Conda environment for <code>RSeQC</code> with Python 3.10:</p>
 <div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>rseqc_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>-y
 </code></pre></div>
@@ -1932,7 +1958,7 @@ Executing<span class="w"> </span>transaction:<span class="w"> </span><span class
 Retrieving<span class="w"> </span>notices:<span class="w"> </span>...working...<span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 <p>Now, proceed to Step 5.</p>
-<h3 id="step-5-activate-the-rseqc_env-envrionment">Step 5: Activate the <code>rseqc_env</code> Envrionment</h3>
+<h3 id="step-6-activate-the-rseqc_env-environment">Step 6: Activate the <code>rseqc_env</code> Environment</h3>
 <p>Activate the newly created Conda environment:</p>
 <div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>rseqc_env
 </code></pre></div>
@@ -1940,14 +1966,14 @@ Retrieving<span class="w"> </span>notices:<span class="w"> </span>...working...<
 <div class="highlight"><pre><span></span><code><span class="o">[</span>pdrodrig@vacc-login4<span class="w"> </span>pdrodrig<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>rseqc_env<span class="w"> </span>
 <span class="o">(</span>rseqc_env<span class="o">)</span><span class="w"> </span><span class="o">[</span>pdrodrig@vacc-login4<span class="w"> </span>pdrodrig<span class="o">]</span>
 </code></pre></div>
-<h3 id="step-6-install-rseqc-using-pip">Step 6: Install <code>RSeQC</code> Using <code>pip</code></h3>
+<h3 id="step-7-install-rseqc-using-pip">Step 7: Install <code>RSeQC</code> Using <code>pip</code></h3>
 <p>With the environment activated, install RSeQC using pip:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>RSeQC
 </code></pre></div>
 <p>Once installed successfully, you should see output similar to:</p>
 <div class="highlight"><pre><span></span><code>Successfully<span class="w"> </span>installed<span class="w"> </span>RSeQC-5.0.4<span class="w"> </span>bx-python-0.13.0<span class="w"> </span>
 </code></pre></div>
-<h3 id="step-7-verify-the-installation">Step 7: Verify the Installation</h3>
+<h3 id="step-8-verify-the-installation">Step 8: Verify the Installation</h3>
 <p>Test the installation by displaying the help page for read_distribution.py:</p>
 <div class="highlight"><pre><span></span><code>read_distribution.py<span class="w"> </span>--help
 </code></pre></div>
