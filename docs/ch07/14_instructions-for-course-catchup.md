@@ -13,6 +13,16 @@ In Wednesday’s class, we will continue **using** `RSeQC` and reviewing outputs
 
 Below is background information on the `RSeQC` and `conda` programs. **Step-by-step instructions are provided in the next lesson (L14).** Do not attempt to run the code shown below; it is for reading purposes only.
 
+***
+
+!!! example "Class Survey"  
+    Please fill out this [google form](https://forms.gle/Xhc3jeGmNefFrJ8j9)
+
+***
+
+
+
+
 ## Introducing Conda 
 
 <figure markdown="span">
