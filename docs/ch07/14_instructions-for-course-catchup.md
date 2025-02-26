@@ -21,8 +21,6 @@ Below is background information on the `RSeQC` and `conda` programs. **Step-by-s
 ***
 
 
-
-
 ## Introducing Conda 
 
 <figure markdown="span">
