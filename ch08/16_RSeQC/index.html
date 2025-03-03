@@ -1593,9 +1593,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#splice-junction-annotation-class-exercise-4" class="md-nav__link">
+  <a href="#splice-junction-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Splice Junction Annotation (Class Exercise #4)
+      Splice Junction Annotation
     </span>
   </a>
   
@@ -1938,9 +1938,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#splice-junction-annotation-class-exercise-4" class="md-nav__link">
+  <a href="#splice-junction-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Splice Junction Annotation (Class Exercise #4)
+      Splice Junction Annotation
     </span>
   </a>
   
@@ -2063,8 +2063,10 @@ Options:
 <li>-i input.bam -&gt; specifies the sorted BAM file with aligned RNA-Seq reads </li>
 <li>-r ref.bed -&gt; specifies the BED file containing gene annotation (in BED12 format)</li>
 </ul>
-<p><strong>Expected Output:</strong>
-  + <code>.infer_experiment.txt</code>: File containing fraction of reads mapping to given strandedness configurations.</p>
+<p><strong>Expected Output:</strong></p>
+<ul>
+<li><code>.infer_experiment.txt</code>: File containing fraction of reads mapping to given strandedness configurations.</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #1: <code>infer_experiment.py</code></p>
 <ul>
@@ -2072,7 +2074,7 @@ Options:
 <li>Move <code>Irrel_kd_1.subset_sorted.bam</code> and <code>Irrel_kd_1.subset_sorted.bam.bai</code> into <code>IKD1_RSeQC</code></li>
 <li>Within the <code>RSeQC_exercise/IKD1_RSeQC</code> folder run <code>infer_experiment.py</code> on <code>Irrel_kd_1.subset_sorted.bam</code>. </li>
 <li>Use the hg38 bed12 file </li>
-<li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_infer.log</code></strong> You will need this file for our final step.  </li>
+<li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_infer.log</code>.</strong> You will need this file for our final step.  </li>
 </ul>
 </div>
 <h2 id="bam-statistics">BAM Statistics</h2>
@@ -2109,7 +2111,7 @@ Options:
 <p class="admonition-title">Class Exercise #2: <code>bam_stat.py</code></p>
 <ul>
 <li>Within the <code>RSeQC_exercise/IKD1_RSeQC</code> folder run <code>bam_stat.py</code> on <code>Irrel_kd_1.subset_sorted.bam</code>. </li>
-<li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_bamstat.log</code></strong> You will need this file for our final step. </li>
+<li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_bamstat.log</code>.</strong> You will need this file for our final step. </li>
 </ul>
 </div>
 <h2 id="splice-junction-detection">Splice Junction Detection</h2>
@@ -2132,12 +2134,16 @@ Options:
 <li>PDF file of Junction Saturation Plot; helps you assess whether sequencing depth is sufficient or if more reads are needed to discover new junctions </li>
 <li>The .r (R script) used to generate the PDF file </li>
 </ul>
-<p><strong>Interpretation:</strong>
-  + X-axis -&gt; Read depth (number of reads supporting a junction).
-  + Y-axis -&gt;  Number of detected splice junctions.
-  + Curve shape:
-    + If the curve plateaus -&gt; You have sufficient sequencing depth; additional reads won’t improve junction detection.
-    + If the curve keeps increasing -&gt; More sequencing might still reveal new junctions.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>X-axis -&gt; Read depth (number of reads supporting a junction).</li>
+<li>Y-axis -&gt;  Number of detected splice junctions.</li>
+<li>Curve shape:<ul>
+<li>If the curve plateaus -&gt; You have sufficient sequencing depth; additional reads won’t improve junction detection.</li>
+<li>If the curve keeps increasing -&gt; More sequencing might still reveal new junctions.</li>
+</ul>
+</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #3: <code>junction_saturation.py</code></p>
 <ul>
@@ -2146,12 +2152,14 @@ Options:
 <li><strong>Do not generate a .log file for this step</strong></li>
 </ul>
 </div>
-<h2 id="splice-junction-annotation-class-exercise-4">Splice Junction Annotation (Class Exercise #4)</h2>
+<h2 id="splice-junction-annotation">Splice Junction Annotation</h2>
 <p><strong>Purpose:</strong> Identifies and annotates splice junctions by comparing detected junctions to known junctions in a reference genome annotation (GTF/GFF)</p>
-<p><strong>Why use it?:</strong> 
-  + Validates detected splice sites against known annotations 
-  + Detects novel splice junctions, which may indicate alternative splicing or <em>sequencing errors</em><br>
-  + Identifies unexpected splicing patterns </p>
+<p><strong>Why use it?:</strong> </p>
+<ul>
+<li>Validates detected splice sites against known annotations </li>
+<li>Detects novel splice junctions, which may indicate alternative splicing or <em>sequencing errors</em>  </li>
+<li>Identifies unexpected splicing patterns </li>
+</ul>
 <p><strong>Basic Usage:</strong></p>
 <div class="highlight"><pre><span></span><code>junction_annotation.py<span class="w"> </span>-i<span class="w"> </span>input.bam<span class="w"> </span>-o<span class="w"> </span>output<span class="w"> </span>-r<span class="w"> </span>reference.bed
 </code></pre></div>
@@ -2169,21 +2177,25 @@ Options:
 </ul>
 </li>
 </ul>
-<p><strong>Interpretation:</strong>
-  + A high fraction of novel junctions may suggest alternative splicing events.
-  + Too many unannotated junctions may indicate alignment problems.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>A high fraction of novel junctions may suggest alternative splicing events.</li>
+<li>Too many unannotated junctions may indicate alignment problems.</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #4: <code>junction_annotation.py</code></p>
 <ul>
 <li>Within the <code>RSeQC_exercise/IKD1_RSeQC</code> folder run <code>junction_annotation.py</code> on <code>Irrel_kd_1.subset_sorted.bam</code>. </li>
 <li>Use <code>IKD1-output</code> as the output_prefix</li>
-<li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_janno.log</code></strong> You will need this file for our final step. </li>
+<li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_janno.log</code>.</strong> You will need this file for our final step. </li>
 </ul>
 </div>
 <h2 id="read-distribution-across-genomic-features-class-exercise-5">Read Distribution Across Genomic Features (Class Exercise #5)</h2>
 <p><strong>Purpose:</strong> Analyzes how reads are distributed across different genomic features (e.g., exons, introns, UTRs, intergenic regions).</p>
-<p><strong>Why use it?:</strong> 
-  + Ensures the expected proportion of reads falls within exons for RNA-Seq experiments</p>
+<p><strong>Why use it?:</strong> </p>
+<ul>
+<li>Ensures the expected proportion of reads falls within exons for RNA-Seq experiments</li>
+</ul>
 <p><strong>Basic Usage:</strong></p>
 <div class="highlight"><pre><span></span><code>read_distribution.py<span class="w"> </span>-i<span class="w"> </span>input.bam<span class="w"> </span>-r<span class="w"> </span>ref.bed
 </code></pre></div>
