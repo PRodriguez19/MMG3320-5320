@@ -110,6 +110,7 @@ infer_experiment.py -r ref.bed -i input.bam
   + -r ref.bed -> specifies the BED file containing gene annotation (in BED12 format)
 
 **Expected Output:**
+  
   + `.infer_experiment.txt`: File containing fraction of reads mapping to given strandedness configurations.
 
 !!! example "Class Exercise #1: `infer_experiment.py`" 
@@ -118,7 +119,7 @@ infer_experiment.py -r ref.bed -i input.bam
     + Move `Irrel_kd_1.subset_sorted.bam` and `Irrel_kd_1.subset_sorted.bam.bai` into `IKD1_RSeQC`
     + Within the `RSeQC_exercise/IKD1_RSeQC` folder run `infer_experiment.py` on `Irrel_kd_1.subset_sorted.bam`. 
     + Use the hg38 bed12 file 
-    + **Be sure to redirect the final output to `Irrel_kd_1.subset_infer.log`** You will need this file for our final step.  
+    + **Be sure to redirect the final output to `Irrel_kd_1.subset_infer.log`.** You will need this file for our final step.  
 
 
 ## BAM Statistics 
@@ -156,7 +157,7 @@ bam_stat.py -i input.bam
 !!! example "Class Exercise #2: `bam_stat.py`" 
 
     + Within the `RSeQC_exercise/IKD1_RSeQC` folder run `bam_stat.py` on `Irrel_kd_1.subset_sorted.bam`. 
-    + **Be sure to redirect the final output to `Irrel_kd_1.subset_bamstat.log`** You will need this file for our final step. 
+    + **Be sure to redirect the final output to `Irrel_kd_1.subset_bamstat.log`.** You will need this file for our final step. 
 
 
 ## Splice Junction Detection 
@@ -184,6 +185,7 @@ junction_saturation.py -i input.bam -r reference.bed -o output_prefix
   + The .r (R script) used to generate the PDF file 
 
 **Interpretation:**
+  
   + X-axis -> Read depth (number of reads supporting a junction).
   + Y-axis ->  Number of detected splice junctions.
   + Curve shape:
@@ -197,11 +199,12 @@ junction_saturation.py -i input.bam -r reference.bed -o output_prefix
     + **Do not generate a .log file for this step**
 
 
-## Splice Junction Annotation (Class Exercise #4)
+## Splice Junction Annotation
 
 **Purpose:** Identifies and annotates splice junctions by comparing detected junctions to known junctions in a reference genome annotation (GTF/GFF)
 
 **Why use it?:** 
+  
   + Validates detected splice sites against known annotations 
   + Detects novel splice junctions, which may indicate alternative splicing or *sequencing errors*  
   + Identifies unexpected splicing patterns 
@@ -224,6 +227,7 @@ junction_annotation.py -i input.bam -o output -r reference.bed
     + Unannotated (potential mapping issues)
 
 **Interpretation:**
+  
   + A high fraction of novel junctions may suggest alternative splicing events.
   + Too many unannotated junctions may indicate alignment problems.
 
@@ -231,7 +235,7 @@ junction_annotation.py -i input.bam -o output -r reference.bed
 
     + Within the `RSeQC_exercise/IKD1_RSeQC` folder run `junction_annotation.py` on `Irrel_kd_1.subset_sorted.bam`. 
     + Use `IKD1-output` as the output_prefix
-    + **Be sure to redirect the final output to `Irrel_kd_1.subset_janno.log`** You will need this file for our final step. 
+    + **Be sure to redirect the final output to `Irrel_kd_1.subset_janno.log`.** You will need this file for our final step. 
 
 
 ## Read Distribution Across Genomic Features (Class Exercise #5)
@@ -239,6 +243,7 @@ junction_annotation.py -i input.bam -o output -r reference.bed
 **Purpose:** Analyzes how reads are distributed across different genomic features (e.g., exons, introns, UTRs, intergenic regions).
 
 **Why use it?:** 
+  
   + Ensures the expected proportion of reads falls within exons for RNA-Seq experiments
 
 **Basic Usage:**
