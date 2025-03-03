@@ -1560,7 +1560,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#strand-specificity" class="md-nav__link">
     <span class="md-ellipsis">
       Strand-Specificity
@@ -1568,8 +1573,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#bam-statistics" class="md-nav__link">
     <span class="md-ellipsis">
       BAM Statistics
@@ -1577,8 +1582,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#splice-junction-detection" class="md-nav__link">
     <span class="md-ellipsis">
       Splice Junction Detection
@@ -1586,8 +1591,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#splice-junction-annotation-class-exercise-4" class="md-nav__link">
     <span class="md-ellipsis">
       Splice Junction Annotation (Class Exercise #4)
@@ -1595,8 +1600,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#read-distribution-across-genomic-features-class-exercise-5" class="md-nav__link">
     <span class="md-ellipsis">
       Read Distribution Across Genomic Features (Class Exercise #5)
@@ -1604,18 +1609,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#final-step-run-multiqc" class="md-nav__link">
     <span class="md-ellipsis">
       Final Step: Run MultiQC
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1905,7 +1905,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#strand-specificity" class="md-nav__link">
     <span class="md-ellipsis">
       Strand-Specificity
@@ -1913,8 +1918,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#bam-statistics" class="md-nav__link">
     <span class="md-ellipsis">
       BAM Statistics
@@ -1922,8 +1927,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#splice-junction-detection" class="md-nav__link">
     <span class="md-ellipsis">
       Splice Junction Detection
@@ -1931,8 +1936,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#splice-junction-annotation-class-exercise-4" class="md-nav__link">
     <span class="md-ellipsis">
       Splice Junction Annotation (Class Exercise #4)
@@ -1940,8 +1945,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#read-distribution-across-genomic-features-class-exercise-5" class="md-nav__link">
     <span class="md-ellipsis">
       Read Distribution Across Genomic Features (Class Exercise #5)
@@ -1949,18 +1954,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#final-step-run-multiqc" class="md-nav__link">
     <span class="md-ellipsis">
       Final Step: Run MultiQC
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1986,11 +1986,13 @@
 <li>Use of RSeQC (a package of scripts) to evaluate the quality of RNA-Seq data</li>
 </ul>
 <h2 id="recap-from-last-week">Recap from last week</h2>
-<p>HISAT2 produces multiple output files: 
-* <code>.bam</code>: unsorted bam file
-* <code>sorted.bam</code>: sorted bam file
-* <code>.bam.bai</code>: index for sorted bam file 
-* <code>.log</code>: log file with containing detailed information about the run. This file is most useful for troubleshooting and debugging. </p>
+<p>HISAT2 produces multiple output files: </p>
+<ul>
+<li><code>.bam</code>: unsorted bam file</li>
+<li><code>sorted.bam</code>: sorted bam file</li>
+<li><code>.bam.bai</code>: index for sorted bam file </li>
+<li><code>.log</code>: log file with containing detailed information about the run. This file is most useful for troubleshooting and debugging. </li>
+</ul>
 <h2 id="planning-and-organization">Planning and Organization</h2>
 <p>For each experiment you work on and analyze data for, it is considered best practice to get organized by creating a planned storage space (directory structure).</p>
 <p>The outputs from HISAT2 were many and looked like this:</p>
@@ -2047,30 +2049,22 @@ Options:
 <p><strong>Download dataset for today's lesson:</strong></p>
 <div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/RSeQC_exercise
 </code></pre></div>
-<h3 id="strand-specificity">Strand-Specificity</h3>
-<ul>
-<li>
+<h2 id="strand-specificity">Strand-Specificity</h2>
 <p><strong>Purpose:</strong> This script predicts the “strandedness” of the protocol (i.e. unstranded, sense or antisense) that was used to prepare the sample for sequencing by assessing the orientation in which aligned reads overlay gene features in the reference genome. This information is not always available in public datasets. </p>
-</li>
-<li>
 <p><strong>Why use it?:</strong></p>
-</li>
-<li>Crucial for differential expression analysis, as strand-specific libraries require correct orientation for accurate read assignment. </li>
-<li>
-<p>Avoids misinterpretation of gene expression levels caused by incorrect strand assignment </p>
-</li>
-<li>
-<p><strong>Basic Usage:</strong></p>
-</li>
-</ul>
-<p></p><div class="highlight"><pre><span></span><code>infer_experiment.py<span class="w"> </span>-r<span class="w"> </span>ref.bed<span class="w"> </span>-i<span class="w"> </span>input.bam
-</code></pre></div>
-  + -i input.bam -&gt; specifies the sorted BAM file with aligned RNA-Seq reads 
-  + -r ref.bed -&gt; specifies the BED file containing gene annotation (in BED12 format)
 <ul>
-<li><strong>Expected Output:</strong></li>
-<li><code>.infer_experiment.txt</code>: File containing fraction of reads mapping to given strandedness configurations.</li>
+<li>Crucial for differential expression analysis, as strand-specific libraries require correct orientation for accurate read assignment. </li>
+<li>Avoids misinterpretation of gene expression levels caused by incorrect strand assignment </li>
 </ul>
+<p><strong>Basic Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>infer_experiment.py<span class="w"> </span>-r<span class="w"> </span>ref.bed<span class="w"> </span>-i<span class="w"> </span>input.bam
+</code></pre></div>
+<ul>
+<li>-i input.bam -&gt; specifies the sorted BAM file with aligned RNA-Seq reads </li>
+<li>-r ref.bed -&gt; specifies the BED file containing gene annotation (in BED12 format)</li>
+</ul>
+<p><strong>Expected Output:</strong>
+  + <code>.infer_experiment.txt</code>: File containing fraction of reads mapping to given strandedness configurations.</p>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #1: <code>infer_experiment.py</code></p>
 <ul>
@@ -2081,33 +2075,23 @@ Options:
 <li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_infer.log</code></strong> You will need this file for our final step.  </li>
 </ul>
 </div>
-<h3 id="bam-statistics">BAM Statistics</h3>
-<ul>
-<li>
+<h2 id="bam-statistics">BAM Statistics</h2>
 <p><strong>Purpose:</strong> Provides a summary of the alignment results from a BAM file </p>
-</li>
-<li>
 <p><strong>Why use it?:</strong> </p>
-</li>
+<ul>
 <li>Quickly checks overall alignment quality</li>
 <li>Reports metrics such as total reads, mapped reads, properly paired reads (if appropriate), and uniquely mapped reads </li>
-<li>
-<p>Helps identify issues like low mapping rates </p>
-</li>
-<li>
-<p><strong>Basic Usage:</strong></p>
-</li>
+<li>Helps identify issues like low mapping rates </li>
 </ul>
-<p></p><div class="highlight"><pre><span></span><code>bam_stat.py<span class="w"> </span>-i<span class="w"> </span>input.bam
+<p><strong>Basic Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>bam_stat.py<span class="w"> </span>-i<span class="w"> </span>input.bam
 </code></pre></div>
-  + -i input.bam -&gt; specifies the sorted BAM file with aligned RNA-Seq reads 
 <ul>
-<li>
+<li>-i input.bam -&gt; specifies the sorted BAM file with aligned RNA-Seq reads </li>
+</ul>
 <p><strong>Expected Output:</strong></p>
-</li>
-<li>
-<p>Summary statistics of the BAM file, including:</p>
 <ul>
+<li>Summary statistics of the BAM file, including:<ul>
 <li>Total number of reads</li>
 <li>Mapped reads</li>
 <li>Properly paired reads</li>
@@ -2115,9 +2099,9 @@ Options:
 <li>Reads mapped to multiple loci</li>
 </ul>
 </li>
-<li>
+</ul>
 <p><strong>Interpretation:</strong></p>
-</li>
+<ul>
 <li>High mapping rates (~95%) are expected for well-prepared RNA-Seq libraries.</li>
 <li>A low mapping rate (&lt;80%) could indicate issues with genome annotation or contamination.</li>
 </ul>
@@ -2128,50 +2112,32 @@ Options:
 <li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_bamstat.log</code></strong> You will need this file for our final step. </li>
 </ul>
 </div>
-<h3 id="splice-junction-detection">Splice Junction Detection</h3>
-<ul>
-<li>
+<h2 id="splice-junction-detection">Splice Junction Detection</h2>
 <p><strong>Purpose:</strong> Used to assess the sequencing depth and completeness of splice junction detection in RNA-Seq data. It helps to determine whether an RNA-Seq experiment has sufficient coverage to detect splice junctions reliably. </p>
-</li>
-<li>
 <p><strong>Why use it?:</strong> </p>
-</li>
+<ul>
 <li>Aids in determining if additional sequencing would improve splice junction discovery</li>
-<li>
-<p>Ensures that the experiment is capturing enough splice junctions for meaningful downstream analysis</p>
-</li>
-<li>
-<p><strong>Basic Usage:</strong></p>
-</li>
+<li>Ensures that the experiment is capturing enough splice junctions for meaningful downstream analysis</li>
 </ul>
+<p><strong>Basic Usage:</strong></p>
 <div class="highlight"><pre><span></span><code>junction_saturation.py<span class="w"> </span>-i<span class="w"> </span>input.bam<span class="w"> </span>-r<span class="w"> </span>reference.bed<span class="w"> </span>-o<span class="w"> </span>output_prefix
 </code></pre></div>
 <ul>
 <li>-i input.bam -&gt; specifies the sorted BAM file with aligned RNA-Seq reads </li>
 <li>-r reference BED file with gene annotation</li>
-<li>
-<p>-o output_prefix -&gt; prefix of output files</p>
-</li>
-<li>
+<li>-o output_prefix -&gt; prefix of output files</li>
+</ul>
 <p><strong>Expected Output:</strong></p>
-</li>
-<li>
-<p>PDF file of Junction Saturation Plot; helps you assess whether sequencing depth is sufficient or if more reads are needed to discover new junctions </p>
-</li>
-<li>
-<p>The .r (R script) used to generate the PDF file </p>
-</li>
-<li>
-<p><strong>Interpretation:</strong></p>
-</li>
-<li>X-axis -&gt; Read depth (number of reads supporting a junction).</li>
-<li>Y-axis -&gt;  Number of detected splice junctions.</li>
-<li>Curve shape:<ul>
-<li>If the curve plateaus -&gt; You have sufficient sequencing depth; additional reads won’t improve junction detection.</li>
-<li>If the curve keeps increasing -&gt; More sequencing might still reveal new junctions.</li>
+<ul>
+<li>PDF file of Junction Saturation Plot; helps you assess whether sequencing depth is sufficient or if more reads are needed to discover new junctions </li>
+<li>The .r (R script) used to generate the PDF file </li>
 </ul>
-</li>
-</ul>
+<p><strong>Interpretation:</strong>
+  + X-axis -&gt; Read depth (number of reads supporting a junction).
+  + Y-axis -&gt;  Number of detected splice junctions.
+  + Curve shape:
+    + If the curve plateaus -&gt; You have sufficient sequencing depth; additional reads won’t improve junction detection.
+    + If the curve keeps increasing -&gt; More sequencing might still reveal new junctions.</p>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #3: <code>junction_saturation.py</code></p>
 <ul>
@@ -2180,48 +2146,32 @@ Options:
 <li><strong>Do not generate a .log file for this step</strong></li>
 </ul>
 </div>
-<h3 id="splice-junction-annotation-class-exercise-4">Splice Junction Annotation (Class Exercise #4)</h3>
-<ul>
-<li>
+<h2 id="splice-junction-annotation-class-exercise-4">Splice Junction Annotation (Class Exercise #4)</h2>
 <p><strong>Purpose:</strong> Identifies and annotates splice junctions by comparing detected junctions to known junctions in a reference genome annotation (GTF/GFF)</p>
-</li>
-<li>
-<p><strong>Why use it?:</strong> </p>
-</li>
-<li>Validates detected splice sites against known annotations </li>
-<li>Detects novel splice junctions, which may indicate alternative splicing or <em>sequencing errors</em>  </li>
-<li>
-<p>Identifies unexpected splicing patterns </p>
-</li>
-<li>
+<p><strong>Why use it?:</strong> 
+  + Validates detected splice sites against known annotations 
+  + Detects novel splice junctions, which may indicate alternative splicing or <em>sequencing errors</em><br>
+  + Identifies unexpected splicing patterns </p>
 <p><strong>Basic Usage:</strong></p>
-</li>
-</ul>
 <div class="highlight"><pre><span></span><code>junction_annotation.py<span class="w"> </span>-i<span class="w"> </span>input.bam<span class="w"> </span>-o<span class="w"> </span>output<span class="w"> </span>-r<span class="w"> </span>reference.bed
 </code></pre></div>
 <ul>
 <li>-i input.bam -&gt; specifies the sorted BAM file with aligned RNA-Seq reads </li>
 <li>-r reference.bed -&gt; specifies the BED file containing gene annotation (in BED12 format)</li>
-<li>
-<p>-o output_prefix -&gt; prefix of output files</p>
-</li>
-<li>
+<li>-o output_prefix -&gt; prefix of output files</li>
+</ul>
 <p><strong>Expected Output:</strong> </p>
-</li>
-<li>
-<p>A summary of detected splice junctions, categorized into:</p>
 <ul>
+<li>A summary of detected splice junctions, categorized into:<ul>
 <li>Known (found in the reference)</li>
 <li>Novel (newly identified)</li>
 <li>Unannotated (potential mapping issues)</li>
 </ul>
 </li>
-<li>
-<p><strong>Interpretation:</strong></p>
-</li>
-<li>A high fraction of novel junctions may suggest alternative splicing events.</li>
-<li>Too many unannotated junctions may indicate alignment problems.</li>
 </ul>
+<p><strong>Interpretation:</strong>
+  + A high fraction of novel junctions may suggest alternative splicing events.
+  + Too many unannotated junctions may indicate alignment problems.</p>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #4: <code>junction_annotation.py</code></p>
 <ul>
@@ -2230,43 +2180,29 @@ Options:
 <li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_janno.log</code></strong> You will need this file for our final step. </li>
 </ul>
 </div>
-<h3 id="read-distribution-across-genomic-features-class-exercise-5">Read Distribution Across Genomic Features (Class Exercise #5)</h3>
-<ul>
-<li>
+<h2 id="read-distribution-across-genomic-features-class-exercise-5">Read Distribution Across Genomic Features (Class Exercise #5)</h2>
 <p><strong>Purpose:</strong> Analyzes how reads are distributed across different genomic features (e.g., exons, introns, UTRs, intergenic regions).</p>
-</li>
-<li>
-<p><strong>Why use it?:</strong> </p>
-</li>
-<li>
-<p>Ensures the expected proportion of reads falls within exons for RNA-Seq experiments</p>
-</li>
-<li>
+<p><strong>Why use it?:</strong> 
+  + Ensures the expected proportion of reads falls within exons for RNA-Seq experiments</p>
 <p><strong>Basic Usage:</strong></p>
-</li>
-</ul>
 <div class="highlight"><pre><span></span><code>read_distribution.py<span class="w"> </span>-i<span class="w"> </span>input.bam<span class="w"> </span>-r<span class="w"> </span>ref.bed
 </code></pre></div>
 <ul>
 <li>-i input.bam -&gt; specifies the sorted BAM file with aligned RNA-Seq reads </li>
-<li>
-<p>-r reference.bed -&gt; specifies the BED file containing gene annotation (in BED12 format)</p>
-</li>
-<li>
+<li>-r reference.bed -&gt; specifies the BED file containing gene annotation (in BED12 format)</li>
+</ul>
 <p><strong>Expected Output:</strong> </p>
-</li>
-<li>
-<p>The fraction of reads mapping to different genomic regions, including:</p>
 <ul>
+<li>The fraction of reads mapping to different genomic regions, including:<ul>
 <li>Exons</li>
 <li>Introns</li>
 <li>Intergenic regions</li>
 <li>5' and 3' UTRs</li>
 </ul>
 </li>
-<li>
+</ul>
 <p><strong>Interpretation:</strong></p>
-</li>
+<ul>
 <li>For RNA-Seq, most reads (&gt;70%) should align to exons.</li>
 <li>A high proportion of intronic reads (&gt;30%) may indicate rRNA contamination or unprocessed RNA.</li>
 </ul>
@@ -2277,7 +2213,7 @@ Options:
 <li><strong>Be sure to redirect the final output to <code>Irrel_kd_1.subset_read.log</code></strong> You will need this file for our final step. </li>
 </ul>
 </div>
-<h3 id="final-step-run-multiqc">Final Step: Run MultiQC</h3>
+<h2 id="final-step-run-multiqc">Final Step: Run MultiQC</h2>
 <ol>
 <li>
 <p><strong>Navigate to top <code>RSeQC_exercise</code> folder.</strong> Make sure you are not in any of the subdirectories folders. </p>
