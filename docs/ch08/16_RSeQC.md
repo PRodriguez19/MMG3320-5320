@@ -5,6 +5,7 @@
 ## Recap from last week 
 
 HISAT2 produces multiple output files: 
+
 * `.bam`: unsorted bam file
 * `sorted.bam`: sorted bam file
 * `.bam.bai`: index for sorted bam file 
@@ -90,23 +91,25 @@ Options:
 ```
 
 
-### Strand-Specificity 
+## Strand-Specificity 
 
-+ **Purpose:** This script predicts the “strandedness” of the protocol (i.e. unstranded, sense or antisense) that was used to prepare the sample for sequencing by assessing the orientation in which aligned reads overlay gene features in the reference genome. This information is not always available in public datasets. 
+**Purpose:** This script predicts the “strandedness” of the protocol (i.e. unstranded, sense or antisense) that was used to prepare the sample for sequencing by assessing the orientation in which aligned reads overlay gene features in the reference genome. This information is not always available in public datasets. 
 
-+ **Why use it?:**
+**Why use it?:**
+  
   + Crucial for differential expression analysis, as strand-specific libraries require correct orientation for accurate read assignment. 
   + Avoids misinterpretation of gene expression levels caused by incorrect strand assignment 
 
-+ **Basic Usage:**
+**Basic Usage:**
 
 ```bash
 infer_experiment.py -r ref.bed -i input.bam
 ```
+
   + -i input.bam -> specifies the sorted BAM file with aligned RNA-Seq reads 
   + -r ref.bed -> specifies the BED file containing gene annotation (in BED12 format)
 
-+ **Expected Output:**
+**Expected Output:**
   + `.infer_experiment.txt`: File containing fraction of reads mapping to given strandedness configurations.
 
 !!! example "Class Exercise #1: `infer_experiment.py`" 
@@ -118,23 +121,25 @@ infer_experiment.py -r ref.bed -i input.bam
     + **Be sure to redirect the final output to `Irrel_kd_1.subset_infer.log`** You will need this file for our final step.  
 
 
-### BAM Statistics 
+## BAM Statistics 
 
-+ **Purpose:** Provides a summary of the alignment results from a BAM file 
+**Purpose:** Provides a summary of the alignment results from a BAM file 
 
-+ **Why use it?:** 
+**Why use it?:** 
+
   + Quickly checks overall alignment quality
   + Reports metrics such as total reads, mapped reads, properly paired reads (if appropriate), and uniquely mapped reads 
   + Helps identify issues like low mapping rates 
 
-+ **Basic Usage:**
+**Basic Usage:**
 
 ```bash
 bam_stat.py -i input.bam
 ```
+
   + -i input.bam -> specifies the sorted BAM file with aligned RNA-Seq reads 
 
-+ **Expected Output:**
+**Expected Output:**
 
   + Summary statistics of the BAM file, including:
     + Total number of reads
@@ -143,7 +148,8 @@ bam_stat.py -i input.bam
     + Uniquely mapped reads
     + Reads mapped to multiple loci
 
-+ **Interpretation:**
+**Interpretation:**
+  
   + High mapping rates (~95%) are expected for well-prepared RNA-Seq libraries.
   + A low mapping rate (<80%) could indicate issues with genome annotation or contamination.
 
@@ -152,15 +158,17 @@ bam_stat.py -i input.bam
     + Within the `RSeQC_exercise/IKD1_RSeQC` folder run `bam_stat.py` on `Irrel_kd_1.subset_sorted.bam`. 
     + **Be sure to redirect the final output to `Irrel_kd_1.subset_bamstat.log`** You will need this file for our final step. 
 
-### Splice Junction Detection 
 
-+ **Purpose:** Used to assess the sequencing depth and completeness of splice junction detection in RNA-Seq data. It helps to determine whether an RNA-Seq experiment has sufficient coverage to detect splice junctions reliably. 
+## Splice Junction Detection 
 
-+ **Why use it?:** 
+**Purpose:** Used to assess the sequencing depth and completeness of splice junction detection in RNA-Seq data. It helps to determine whether an RNA-Seq experiment has sufficient coverage to detect splice junctions reliably. 
+
+**Why use it?:** 
+  
   + Aids in determining if additional sequencing would improve splice junction discovery
   + Ensures that the experiment is capturing enough splice junctions for meaningful downstream analysis
 
-+ **Basic Usage:**
+**Basic Usage:**
 
 ```bash
 junction_saturation.py -i input.bam -r reference.bed -o output_prefix
@@ -170,12 +178,12 @@ junction_saturation.py -i input.bam -r reference.bed -o output_prefix
   + -r reference BED file with gene annotation
   + -o output_prefix -> prefix of output files
 
-+ **Expected Output:**
+**Expected Output:**
 
   + PDF file of Junction Saturation Plot; helps you assess whether sequencing depth is sufficient or if more reads are needed to discover new junctions 
   + The .r (R script) used to generate the PDF file 
 
-+ **Interpretation:**
+**Interpretation:**
   + X-axis -> Read depth (number of reads supporting a junction).
   + Y-axis ->  Number of detected splice junctions.
   + Curve shape:
@@ -189,16 +197,16 @@ junction_saturation.py -i input.bam -r reference.bed -o output_prefix
     + **Do not generate a .log file for this step**
 
 
-### Splice Junction Annotation (Class Exercise #4)
+## Splice Junction Annotation (Class Exercise #4)
 
-+ **Purpose:** Identifies and annotates splice junctions by comparing detected junctions to known junctions in a reference genome annotation (GTF/GFF)
+**Purpose:** Identifies and annotates splice junctions by comparing detected junctions to known junctions in a reference genome annotation (GTF/GFF)
 
-+ **Why use it?:** 
+**Why use it?:** 
   + Validates detected splice sites against known annotations 
   + Detects novel splice junctions, which may indicate alternative splicing or *sequencing errors*  
   + Identifies unexpected splicing patterns 
 
-+ **Basic Usage:**
+**Basic Usage:**
 
 ```bash
 junction_annotation.py -i input.bam -o output -r reference.bed
@@ -208,14 +216,14 @@ junction_annotation.py -i input.bam -o output -r reference.bed
   + -r reference.bed -> specifies the BED file containing gene annotation (in BED12 format)
   + -o output_prefix -> prefix of output files
 
-+ **Expected Output:** 
+**Expected Output:** 
 
   + A summary of detected splice junctions, categorized into:
     + Known (found in the reference)
     + Novel (newly identified)
     + Unannotated (potential mapping issues)
 
-+ **Interpretation:**
+**Interpretation:**
   + A high fraction of novel junctions may suggest alternative splicing events.
   + Too many unannotated junctions may indicate alignment problems.
 
@@ -226,14 +234,14 @@ junction_annotation.py -i input.bam -o output -r reference.bed
     + **Be sure to redirect the final output to `Irrel_kd_1.subset_janno.log`** You will need this file for our final step. 
 
 
-### Read Distribution Across Genomic Features (Class Exercise #5)
+## Read Distribution Across Genomic Features (Class Exercise #5)
 
-+ **Purpose:** Analyzes how reads are distributed across different genomic features (e.g., exons, introns, UTRs, intergenic regions).
+**Purpose:** Analyzes how reads are distributed across different genomic features (e.g., exons, introns, UTRs, intergenic regions).
 
-+ **Why use it?:** 
+**Why use it?:** 
   + Ensures the expected proportion of reads falls within exons for RNA-Seq experiments
 
-+ **Basic Usage:**
+**Basic Usage:**
 
 ```bash
 read_distribution.py -i input.bam -r ref.bed
@@ -242,7 +250,7 @@ read_distribution.py -i input.bam -r ref.bed
   + -i input.bam -> specifies the sorted BAM file with aligned RNA-Seq reads 
   + -r reference.bed -> specifies the BED file containing gene annotation (in BED12 format)
 
-+ **Expected Output:** 
+**Expected Output:** 
 
   + The fraction of reads mapping to different genomic regions, including:
     + Exons
@@ -250,7 +258,8 @@ read_distribution.py -i input.bam -r ref.bed
     + Intergenic regions
     + 5' and 3' UTRs
 
-+ **Interpretation:**
+**Interpretation:**
+  
   + For RNA-Seq, most reads (>70%) should align to exons.
   + A high proportion of intronic reads (>30%) may indicate rRNA contamination or unprocessed RNA.
 
@@ -260,7 +269,7 @@ read_distribution.py -i input.bam -r ref.bed
     + **Be sure to redirect the final output to `Irrel_kd_1.subset_read.log`** You will need this file for our final step. 
 
 
-### Final Step: Run MultiQC 
+## Final Step: Run MultiQC 
 
 1. **Navigate to top `RSeQC_exercise` folder.** Make sure you are not in any of the subdirectories folders. 
 
