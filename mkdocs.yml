@@ -65,7 +65,9 @@ nav:
           - Modifying Alignment Script (L13): ch06/12_ClassExercise2_Align-Modify.md
       - Week 7: 
           - Course Catch Up Day (CCU): ch07/14_instructions-for-course-catchup.md
-          - Installing RSeQC (L14): ch07/15_installing-RSeQC-using-conda.md
+          - Installing RSeQC (L15): ch07/15_installing-RSeQC-using-conda.md
+      - Week 8: 
+          - RSeQC (L16): ch08/16_RSeQC.md
   - Assignments:
       - Homework 1 (L2): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md
