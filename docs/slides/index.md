@@ -22,6 +22,6 @@ Slides will be made available as a PDF printout document. These lessons can be r
 
 [Alignment (L11-13)](11_align-slides.pdf)
 
-[Alignment Outputs](12_align-outputs.pdf)
+[Alignment Outputs (L15)](12_align-outputs.pdf)
 
-[RSeQC](13_rseqc.pdf)
+[RSeQC (L16)](13_rseqc.pdf)
