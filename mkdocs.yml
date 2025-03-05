@@ -76,6 +76,7 @@ nav:
       - Homework 5: assignments/week5_assignment.md
       - Homework 6: assignments/week6_assignment.md
       - Final Project: assignments/index.md
+      - Assignment Schedule: assignments/assignment_schedule.md
 
 markdown_extensions:
   - admonition

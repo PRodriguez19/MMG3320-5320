@@ -515,6 +515,8 @@ Submitted batch job 123456
 
 The first script is a loop that will go through your list of SRR's, and calls a second script at each iteration, passing it for each SRR number on the list. 
 
+**The script directly below is called `sra_fqdump.sh`**
+
 ```bash
 #!/bin/sh
 #SBATCH --partition=general
@@ -533,6 +535,8 @@ do
 sbatch inner_script.sh $p
 done <list_of_SRRs.txt
 ```
+
+**The script directly below is called `inner_script.sh`**
 
 ```bash
 #!/bin/sh
@@ -582,7 +586,7 @@ Furthermore, there is a very helpful improvement on this function called "--spli
 #SBATCH --mail-type=END
 
 #splits paired read sra files into two normal fastq files plus a third for any orphaned reads, to keep paired files in sync
-fastq-dump --split-3  $1
+fastq-dump --split-3 --gzip $1
 ```
 
 *** 
