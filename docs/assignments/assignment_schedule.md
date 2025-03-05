@@ -3,7 +3,7 @@
 *as of March 5, 2025 - please note these dates may change but provides a good overview of what to expect* 
 
 | Assignment | Tentative Due Date | 
-|:--------------------:|:--------------------:|
+|:-------------------|:-------------------|
 | Homework #6 (120 pts) FASTQC/MULTIQC | Friday, March 7th | 
 | Homework #7 (150 pts) Alignment & counting | Friday, March 28th | 
 | Primary Literature Review #1 (your paper) | Wednesday, April 30th | 
