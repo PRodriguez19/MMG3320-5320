@@ -2023,6 +2023,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/assignment_schedule/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment Schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2838,6 +2859,7 @@ sbatch<span class="w"> </span>myfilename
 </tbody>
 </table>
 <p>The first script is a loop that will go through your list of SRR's, and calls a second script at each iteration, passing it for each SRR number on the list. </p>
+<p><strong>The script directly below is called <code>sra_fqdump.sh</code></strong></p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 <span class="c1">#SBATCH --partition=general</span>
 <span class="c1">#SBATCH --nodes=1</span>
@@ -2855,6 +2877,7 @@ sbatch<span class="w"> </span>myfilename
 sbatch<span class="w"> </span>inner_script.sh<span class="w"> </span><span class="nv">$p</span>
 <span class="k">done</span><span class="w"> </span>&lt;list_of_SRRs.txt
 </code></pre></div>
+<p><strong>The script directly below is called <code>inner_script.sh</code></strong></p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 <span class="c1">#SBATCH --partition=general</span>
 <span class="c1">#SBATCH --nodes=1</span>
@@ -2912,7 +2935,7 @@ fastq-dump<span class="w"> </span>--gzip<span class="w"> </span><span class="nv"
 <span class="c1">#SBATCH --mail-type=END</span>
 
 <span class="c1">#splits paired read sra files into two normal fastq files plus a third for any orphaned reads, to keep paired files in sync</span>
-fastq-dump<span class="w"> </span>--split-3<span class="w">  </span><span class="nv">$1</span>
+fastq-dump<span class="w"> </span>--split-3<span class="w"> </span>--gzip<span class="w"> </span><span class="nv">$1</span>
 </code></pre></div>
 <hr>
 <div class="admonition example">
