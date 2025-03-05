@@ -59,7 +59,7 @@ Using `module avail` you will be able to view the list of modules that require t
 Navigate to the Files tab on OpenOnDemand, then Home Directory. Navigate to the file you would like to download and click on the white box beside it to select. Then click Download!
 
 <figure markdown="span">
-  ![home](../img/download_new.png){ width="500"}
+  ![home](../img/download_new.png){ width="700"}
 </figure>
 
 
