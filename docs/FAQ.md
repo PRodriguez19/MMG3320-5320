@@ -62,5 +62,14 @@ Navigate to the Files tab on OpenOnDemand, then Home Directory. Navigate to the 
   ![home](../img/download_new.png){ width="700"}
 </figure>
 
+### When using `hisat2-build` I encountered this error `Warning: Encountered reference sequence with only gaps`, what does it mean? 
 
+This program requires a FASTA file that is not compressed. To decompress the FASTA file perform:
+
+```bash 
+gunzip fasta-file.fa.gz
+
+## example
+gunzip Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+```
 
