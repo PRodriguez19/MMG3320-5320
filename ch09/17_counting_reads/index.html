@@ -2468,29 +2468,25 @@
 <ol>
 <li>
 <p>Union (Recommended for most cases):</p>
-</li>
-<li>
-<p>A read is assigned to a feature if any part of the read overlaps with it.</p>
-</li>
-<li>
-<p>If a read overlaps multiple features, it is not counted at all (to avoid ambiguity).</p>
+<ul>
+<li>A read is assigned to a feature if any part of the read overlaps with it.</li>
+<li>If a read overlaps multiple features, it is not counted at all (to avoid ambiguity).</li>
+</ul>
 </li>
 <li>
 <p>Intersection-strict:</p>
-</li>
-<li>
-<p>A read is assigned to a feature only if every position of the read overlaps with that feature.</p>
-</li>
-<li>
-<p>If a read overlaps multiple features but not completely within one, it is not counted.</p>
+<ul>
+<li>A read is assigned to a feature only if every position of the read overlaps with that feature.</li>
+<li>If a read overlaps multiple features but not completely within one, it is not counted.</li>
+</ul>
 </li>
 <li>
 <p>Intersection-nonempty:</p>
-</li>
-<li>
-<p>A read is assigned to a feature only if it overlaps with at least one feature at every position.</p>
-</li>
+<ul>
+<li>A read is assigned to a feature only if it overlaps with at least one feature at every position.</li>
 <li>Unlike intersection-strict, it ignores positions where no features are present.</li>
+</ul>
+</li>
 </ol>
 <p>The figure below illustrates the effect of these three modes: </p>
 <figure>
