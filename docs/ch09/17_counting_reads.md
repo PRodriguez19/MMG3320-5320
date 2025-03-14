@@ -65,19 +65,19 @@ Since our example data comes from an RNA-Seq experiment, we aim to count how man
 Special care must be taken when handling reads that align to or overlap with multiple features. The htseq-count script offers three different modes to handle such cases.
 
 1. Union (Recommended for most cases):
-
-  + A read is assigned to a feature if any part of the read overlaps with it.
-  + If a read overlaps multiple features, it is not counted at all (to avoid ambiguity).
+   
+    + A read is assigned to a feature if any part of the read overlaps with it.
+    + If a read overlaps multiple features, it is not counted at all (to avoid ambiguity).
 
 2. Intersection-strict:
-
-  + A read is assigned to a feature only if every position of the read overlaps with that feature.
-  + If a read overlaps multiple features but not completely within one, it is not counted.
+    
+    + A read is assigned to a feature only if every position of the read overlaps with that feature.
+    + If a read overlaps multiple features but not completely within one, it is not counted.
 
 3. Intersection-nonempty:
-
-  + A read is assigned to a feature only if it overlaps with at least one feature at every position.
-  + Unlike intersection-strict, it ignores positions where no features are present.
+    
+    + A read is assigned to a feature only if it overlaps with at least one feature at every position.
+    + Unlike intersection-strict, it ignores positions where no features are present.
 
 The figure below illustrates the effect of these three modes: 
 
