@@ -165,8 +165,10 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
   + It requires sorted BAM/SAM files.
   + Alternative tools like featureCounts (..which is faster) or Salmon/RSEM (for transcript-level quantification) may be preferred in some cases.
 
+
 ***
 
+## Class Exercise
 
 !!! example "Class Exercise: HTSeq-count Instructions and Script"  
 
@@ -176,12 +178,14 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
         + `-s no`, reads can map to either strand (unstranded)
         + `-s reverse`, reads are mapped to the opposite strand (anti-sense)
     3. **Generate and submit script:** You will need to add/specify/modify the following parameters:
-      + add the module 
-      + add the path to the GTF file: 
-      + `-s` options include yes, no, or reverse
-      + `-i` specify `gene_id`
+        + add the module 
+        + add the path to the GTF file: 
+        + `-s` options include yes, no, or reverse
+        + `-i` specify `gene_id`
     4. Submit the script when you are done using the example script below. 
     5. Rerun the script, this time change to `-i gene_name` instead. Be sure to change the name of the output file. What is the difference in the outputs? 
+    6. Read the `htseq-count` output section below
+    7. Now you are ready to generate a multiqc output from the `*.summary` files
     
 
 The example script below will get you started: 
@@ -214,24 +218,44 @@ for BAM_FILE in *.bam; do
     -s \  # Modify based on your library strandedness
     -i gene_id \
     -m union \
-    "$BAM_FILE" "$GTF_FILE" > "${NAME}.gene_id.count"
+    "$BAM_FILE" "$GTF_FILE" > "${NAME}.gene_id.count.txt" 2> "${NAME}.gene_id.summary"
 
 done
 ```
 
++ > → Redirects the gene counts output to results/counts/sample_counts.txt.
++ 2> → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.
 
-### `htseq-count` output
+## `htseq-count` output
 
-The output of this tool is 2 files, *a count matrix* and *a summary file* that tabulates how many the reads were "assigned" or counted and the reason they remained "unassigned". Let's take a look at the summary file:
-	
-``` bash
-$ less results/counts/Mov10_featurecounts.txt.summary
+The output of htseq-count consists of two main files for each sample:
+
++ A summary/log file that reports how many reads were assigned to features and why some reads were unassigned.
+  + View it with:
+
+```bash
+less results/counts/Mov10_counts.txt.summary
 ```
-Now let's look at the count matrix:
-	
-``` bash
-$ less results/counts/Mov10_featurecounts.txt
-```	
+
+```bash
+1500000 total reads  
+1400000 assigned reads  
+100000 __no_feature  
+5000 __ambiguous  
+```
+
++ A counts file that lists the number of reads mapped to each gene or feature. This is a tab-delimited file with gene IDs and their associated read counts. 
+  + View it with:
+
+```bash
+less results/counts/Mov10_counts.txt
+```
+
+```bash
+ENSG00000101234   150  
+ENSG00000256789   87
+```
+
 
 ## Resource Recommendations for `htseq-count`
 
