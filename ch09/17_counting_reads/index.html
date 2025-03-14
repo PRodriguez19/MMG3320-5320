@@ -12,13 +12,13 @@
         <meta name="author" content="Princess Rodriguez">
       
       
-        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/">
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch09/17_counting_reads/">
       
       
-        <link rel="prev" href="../09_assessing_fastqc_output/">
+        <link rel="prev" href="../../ch08/16_RSeQC/">
       
       
-        <link rel="next" href="../../ch06/11_ClassExercise_Align-Submission/">
+        <link rel="next" href="../../assignments/week1_assignment/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Trimming and Filtering (L10) - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>HTSeq (L17) - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Trimming and Filtering (L10)
+              HTSeq (L17)
             
           </span>
         </div>
@@ -1124,8 +1124,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1135,11 +1133,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
@@ -1153,7 +1151,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             Week 5
@@ -1167,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../ch05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1188,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_assessing_fastqc_output/" class="md-nav__link">
+      <a href="../../ch05/09_assessing_fastqc_output/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1206,28 +1204,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Trimming and Filtering (L10)
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ch05/10_trimming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1236,96 +1216,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#learning-objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learning Objectives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-does-this-unwanted-information-come-from" class="md-nav__link">
-    <span class="md-ellipsis">
-      Where does this "unwanted information" come from?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#steps-of-trimming-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps of trimming data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-for-trimming" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tools for Trimming
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trimming-is-not-always-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trimming is not always required
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trimmomatic-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trimmomatic options
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-trimmomatic" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Trimmomatic
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1607,6 +1497,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1616,11 +1508,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" checked>
         
           
           <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
@@ -1634,7 +1526,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_9">
             <span class="md-nav__icon md-icon"></span>
             Week 9
@@ -1645,10 +1537,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../ch09/17_counting_reads/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    HTSeq (L17)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1657,6 +1567,300 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-reads-as-a-measure-of-gene-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting reads as a measure of gene expression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Files:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-reads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting Reads:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-reads-in-features-with-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting reads in features with htseq-count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running htseq-count
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running htseq-count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-command-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Command Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Command Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations &amp; Alternatives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binbash" class="md-nav__link">
+    <span class="md-ellipsis">
+      !/bin/bash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-partitiongeneral" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --partition=general
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-nodes1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --nodes=1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-ntasks4" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --ntasks=4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-mem10g" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --mem=10G
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-time300000" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --time=30:00:00
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-job-namehtseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --job-name=htseq-count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-outputx_jout-xjob-name-jjobid" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --output=%x_%j.out # %x=job-name, %j=jobid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-htseq-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load HTSeq module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-path-to-the-gtf-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define the path to the GTF file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterate-through-all-bam-files-in-the-current-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterate through all BAM files in the current directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-the-filename-without-the-bam-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extract the filename without the .bam extension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run HTSeq-count
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run HTSeq-count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#htseq-count-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      htseq-count output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-recommendations-for-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Recommendations for htseq-count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-bigwig-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating bigWig files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1924,65 +2128,269 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#counting-reads-as-a-measure-of-gene-expression" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Counting reads as a measure of gene expression
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-does-this-unwanted-information-come-from" class="md-nav__link">
+  <a href="#basic-workflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Where does this "unwanted information" come from?
+      Basic Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Files:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-reads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting Reads:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-reads-in-features-with-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting reads in features with htseq-count
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#steps-of-trimming-data" class="md-nav__link">
+  <a href="#running-htseq-count" class="md-nav__link">
     <span class="md-ellipsis">
-      Steps of trimming data
+      Running htseq-count
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running htseq-count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-command-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Command Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Command Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Considerations
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tools-for-trimming" class="md-nav__link">
+  <a href="#limitations-alternatives" class="md-nav__link">
     <span class="md-ellipsis">
-      Tools for Trimming
+      Limitations &amp; Alternatives
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#trimming-is-not-always-required" class="md-nav__link">
+  <a href="#binbash" class="md-nav__link">
     <span class="md-ellipsis">
-      Trimming is not always required
+      !/bin/bash
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#trimmomatic-options" class="md-nav__link">
+  <a href="#sbatch-partitiongeneral" class="md-nav__link">
     <span class="md-ellipsis">
-      Trimmomatic options
+      SBATCH --partition=general
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-trimmomatic" class="md-nav__link">
+  <a href="#sbatch-nodes1" class="md-nav__link">
     <span class="md-ellipsis">
-      Running Trimmomatic
+      SBATCH --nodes=1
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-ntasks4" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --ntasks=4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-mem10g" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --mem=10G
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-time300000" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --time=30:00:00
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-job-namehtseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --job-name=htseq-count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbatch-outputx_jout-xjob-name-jjobid" class="md-nav__link">
+    <span class="md-ellipsis">
+      SBATCH --output=%x_%j.out # %x=job-name, %j=jobid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-htseq-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load HTSeq module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-path-to-the-gtf-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define the path to the GTF file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterate-through-all-bam-files-in-the-current-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterate through all BAM files in the current directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-the-filename-without-the-bam-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extract the filename without the .bam extension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run HTSeq-count
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run HTSeq-count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#htseq-count-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      htseq-count output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-recommendations-for-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Recommendations for htseq-count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-bigwig-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating bigWig files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2001,307 +2409,210 @@
                   
 
 
-  <h1>Trimming and Filtering (L10)</h1>
-
 <div><h2 id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Learn to clean FASTQ reads using Trimmomatic if required</li>
+<li>Conversion of BAM file to a counts file using <code>htseq-count</code></li>
+<li>Conversion of BAM file to a bigWig file using <code>deeptools</code> </li>
 </ul>
-<h2 id="introduction">Introduction</h2>
-<p>During the last class, we took a high-level look at the quality of each of our samples using FastQC. We visualized per-base quality graphs showing the distribution of read quality at each base across all reads in a sample and extracted information about which samples fail which quality checks. Some of our samples failed quite a few quality metrics used by FastQC. This does not mean, though, that our samples should be thrown out! It is very common to have some quality metrics fail, and this may or may not be a problem for your downstream application. </p>
-<p>Now, we want to make sure that as many reads as possible map or align accurately to the genome. To ensure accuracy, only a small number of mismatches between the read sequence and the genome sequence are allowed, and any read with more than a few mismatches will be marked as being unaligned.</p>
-<p>Therefore, to make sure that all the reads in the dataset have a chance to map/align to the genome, unwanted information can be trimmed off from every read, one read at a time. The types of unwanted information can include one or more of the following:</p>
-<ul>
-<li>leftover adapter sequences</li>
-<li>known contaminants (strings of As/Ts, other sequences)</li>
-<li>poor quality bases </li>
-</ul>
-<h2 id="where-does-this-unwanted-information-come-from">Where does this "unwanted information" come from?</h2>
+<h2 id="counting-reads-as-a-measure-of-gene-expression">Counting reads as a measure of gene expression</h2>
+<figure>
+  <img alt="shells" src="../../img/counts-workflow.png" width="400">
+</figure>
+<p>Once we have our reads aligned to the genome, the next step is to count how many reads have mapped to each gene. There are many tools that can use BAM files as input and output the number of reads (counts) associated with each feature of interest (genes, exons, transcripts, etc.). Two commonly used counting tools are <a href="http://bioinf.wehi.edu.au/featureCounts/">featureCounts</a> and <a href="http://www-huber.embl.de/users/anders/HTSeq/doc/count.html">htseq-count</a>. </p>
 <ul>
 <li>
-<p>During the sequencing process, adapter sequences are added to the ends of the reads. These sequences are used to attach the RNA molecules to the sequencing platform but they do not map to regions of the genome. These adapter sequences can interfere with downstream analysis and lead to inaccurate results. </p>
+<p>The above tools only report the "raw" counts of reads that <strong>map to a single location</strong> (uniquely mapping) and are best at counting at the <strong>gene level</strong>. Essentially, total read count associated with a gene (<em>meta-feature</em>) = the sum of reads associated with each of the exons (<em>feature</em>) that "belong" to that gene.</p>
 </li>
 <li>
-<p>RNA-seq data may contain low-quality reads that are caused by sequencing errors, PCR bias, or other factors such as poor sample quality. By removing these low-quality reads researcher can ensure that the data is of high quality. </p>
+<p>There are <strong>other tools</strong> available that are able to account for <strong>multiple transcripts</strong> for a given gene. In this case the counts are not whole numbers, but have fractions. In the simplest example case, if 1 read is associated with 2 transcripts, it can get counted as 0.5 and 0.5 and the resulting count for that transcript is not a whole number.</p>
+</li>
+<li>
+<p>In addition there are <strong>other tools that will count multimapping reads</strong>, but this is a dangerous thing to do since you will be overcounting the total number of reads which can cause issues with normalization and eventually with accuracy of differential gene expression results. </p>
 </li>
 </ul>
-<h2 id="steps-of-trimming-data">Steps of trimming data</h2>
-<p><strong>Step 1: Quality Control</strong></p>
-<p>The first step in trimming RNA-seq data is to assess the quality of the raw reads. This can be done using software such as FastQC, which generates a report that includes information on read length, GC content, base quality, and sequencing adapter contamination. If the data is of poor quality, it may need to be re-sequenced or excluded from further analysis.</p>
-<p><strong>Step 2: Adapter Trimming</strong>
-The next step is to remove adapter sequences from the reads. These sequences are added during library preparation and can interfere with downstream analysis. Many tools (some listed below) can be used to trim adapters from the reads by searching for the adapter sequence and removing it.</p>
-<p><strong>Step 2b: Quality Trimming</strong>
-During adapter trimming, we could also remove low-quality reads by setting a minimum quality threshold and removing any bases that fall below this threshold. Trimming tools often have built-in quality trimming options that can be used for this purpose.</p>
-<p><strong>Step 2c: Short read filtering</strong></p>
-<p>Reads that are too short <em>after trimming</em> can also be removed. This step is important to ensure that only high-quality reads are used for downstream analysis. Trimming tools also have this built-in option as well. </p>
-<h2 id="tools-for-trimming">Tools for Trimming</h2>
-<p>There are a number of tools that can be used for read trimming, some include:</p>
+<p><strong>Input for counting = multiple BAM files + 1 GTF file</strong></p>
+<p>Simply speaking, the genomic coordinates of where the read is mapped (BAM) are cross-referenced with the genomic coordinates of whichever feature you are interested in counting expression of (GTF), it can be exons, genes or transcripts.</p>
+<figure>
+  <img alt="shells" src="../../img/count-fig2.png" width="600">
+</figure>
+<p><strong>Output of counting = A count matrix, with genes as rows and samples are columns</strong></p>
+<p>These are the "raw" counts and will be used in statistical programs downstream for differential gene expression.</p>
+<figure>
+  <img alt="shells" src="../../img/count-matrix.png" width="300">
+</figure>
+<p>We will demonstrate the usage of HTSeq below. HTSeq-count is a command-line tool used in RNA-Seq data analysis to count the number of sequencing reads that align to specific genomic features, such as genes. It is part of the HTSeq Python package and is commonly used in differential gene expression analysis pipelines.</p>
+<h2 id="basic-workflow">Basic Workflow</h2>
+<h3 id="input-files">Input Files:</h3>
+<pre><code>SAM/BAM file: Contains aligned RNA-Seq reads (output from tools like HISAT2 or STAR).
+GTF/GFF file: Contains gene annotations specifying genomic coordinates.
+</code></pre>
+<h3 id="counting-reads">Counting Reads:</h3>
+<pre><code>HTSeq-count assigns each read to a genomic feature (usually a gene) based on predefined rules.
+It outputs a table listing each gene and the number of reads assigned to it.
+</code></pre>
+<h3 id="output">Output:</h3>
+<pre><code>A tab-delimited text file with two columns:
+  Gene ID
+  Read count
+</code></pre>
+<h2 id="counting-reads-in-features-with-htseq-count">Counting reads in features with <code>htseq-count</code></h2>
+<p>Given a file with aligned sequencing reads and a list of genomic features, a common task is to count how many reads map to each feature.</p>
+<p>A feature is here an interval (i.e., a range of positions) on a chromosome or a union of such intervals.</p>
+<p>As our example data is from an RNA-Seq experiment, we want to know how many reads fall into the exonic regions of each gene. For this purpose we first need to read in information about the positions of the exons. A convenient source of such information are the GTF files from Ensembl (to be found here).</p>
+<p>Special care must be taken to decide how to deal with reads that align to or overlap with more than one feature. The htseq-count script allows to choose between three modes. </p>
+<p>The three overlap resolution modes of htseq-count work as follows. For each position i in the read, a set S(i) is defined as the set of all features overlapping position i. Then, consider the set S, which is (with i running through all position within the read or a read pair)</p>
 <ul>
-<li><a href="https://cutadapt.readthedocs.io/en/stable/">Cutadapt</a></li>
-<li><a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a></li>
-<li><a href="https://github.com/OpenGene/fastp">fastp</a></li>
-<li><a href="https://github.com/FelixKrueger/TrimGalore/tree/master">Trim Galore</a> </li>
+<li>the union of all the sets S(i) for mode union. This mode is recommended for most use cases.</li>
+<li>the intersection of all the sets S(i) for mode intersection-strict.</li>
+<li>the intersection of all non-empty sets S(i) for mode intersection-nonempty.</li>
 </ul>
-<p>They have a varying range of clipping and trimming features, but for the most part they all work similarly. </p>
-<h2 id="trimming-is-not-always-required">Trimming is not always required</h2>
+<p>The figure below illustrates the effect of these three modes: </p>
+<figure>
+  <img alt="shells" src="../../img/union.png" width="600">
+</figure>
+<h2 id="running-htseq-count">Running <code>htseq-count</code></h2>
+<p>Begin by loading the <code>htseq-count</code> module with <code>module load</code></p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>gcc/13.3.0-xp3epyt<span class="w"> </span>
+py-htseq/2.0.3-mb7ap7s
+</code></pre></div>
+<p>Then run the following to see if the module is loaded</p>
+<div class="highlight"><pre><span></span><code>htseq-count<span class="w"> </span>--help
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>usage: htseq-count [-h] [--version] [-f {sam,bam,auto}] [-r {pos,name}] [--max-reads-in-buffer MAX_BUFFER_SIZE] [-s {yes,no,reverse}] [-a MINAQUAL]
+                   [-t FEATURE_TYPE] [-i IDATTR] [--additional-attr ADDITIONAL_ATTRIBUTES] [--add-chromosome-info]
+                   [-m {union,intersection-strict,intersection-nonempty}] [--nonunique {none,all,fraction,random}]
+                   [--secondary-alignments {score,ignore}] [--supplementary-alignments {score,ignore}] [-o SAMOUTS] [-p {SAM,BAM,sam,bam}]
+                   [-d OUTPUT_DELIMITER] [-c OUTPUT_FILENAME] [--counts-output-sparse] [--append-output] [-n NPROCESSES] [--feature-query FEATURE_QUERY]
+                   [-q] [--with-header]
+                   samfilenames [samfilenames ...] featuresfilename
+This script takes one or more alignment files in SAM/BAM format and a feature file in GFF format and calculates for each feature the number of reads
+mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
+</code></pre></div>
+<h3 id="basic-command-syntax">Basic Command Syntax</h3>
+<div class="highlight"><pre><span></span><code>htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w"> </span>-s<span class="w"> </span>no<span class="w"> </span>-i<span class="w"> </span>gene_id<span class="w"> </span>sample1.bam<span class="w"> </span>genes.gtf<span class="w"> </span>&gt;<span class="w"> </span>gene_counts.txt
+</code></pre></div>
 <ul>
-<li>There are some aligners that are available which will "soft-clip" low-quality bases or adapter sequences <em>during</em> alignment. If you are working with short reads (&lt;50 bp), trimming can actually prevent the aligner from discarding poor-quality reads. </li>
+<li><code>-f bam</code> → Specifies input format (can be <code>sam</code> or <code>bam</code>).</li>
+<li><code>-s no</code> → Defines strandedness (<code>yes</code>, <code>no</code>, or <code>reverse</code>).</li>
+<li><code>-i gene_id</code> → used to identify the GTF feature attribute (<code>gene_name</code> or <code>gene_id</code>)</li>
+<li><code>aligned_reads.bam</code> → Input file with mapped reads.</li>
+<li><code>genes.gtf</code> → Reference annotation file.</li>
+<li><code>&gt; gene_counts.txt</code> → Redirects output to a file.</li>
 </ul>
-<p><em>We will compare some aligners next week</em> </p>
-<p>In the below class exercise we will be using Trimmomatic. </p>
-<h2 id="trimmomatic-options">Trimmomatic options</h2>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>gcc/13.3.0-xp3epyt
-</code></pre></div>
-<p>Search for the module with: </p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail
-</code></pre></div>
-<p>Use the following to check that the program was loaded</p>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>list
-</code></pre></div>
-<p>Trimmomatic has a variety of options to trim your reads. If we run the following command, we can see some of our options.</p>
-<div class="highlight"><pre><span></span><code>trimmomatic
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>Usage:<span class="w"> </span>
-<span class="w">       </span>PE<span class="w"> </span><span class="o">[</span>-version<span class="o">]</span><span class="w"> </span><span class="o">[</span>-threads<span class="w"> </span>&lt;threads&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-phred33<span class="p">|</span>-phred64<span class="o">]</span><span class="w"> </span><span class="o">[</span>-trimlog<span class="w"> </span>&lt;trimLogFile&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-summary<span class="w"> </span>&lt;statsSummaryFile&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-quiet<span class="o">]</span><span class="w"> </span><span class="o">[</span>-validatePairs<span class="o">]</span><span class="w"> </span><span class="o">[</span>-basein<span class="w"> </span>&lt;inputBase&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>&lt;inputFile1&gt;<span class="w"> </span>&lt;inputFile2&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-baseout<span class="w"> </span>&lt;outputBase&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>&lt;outputFile1P&gt;<span class="w"> </span>&lt;outputFile1U&gt;<span class="w"> </span>&lt;outputFile2P&gt;<span class="w"> </span>&lt;outputFile2U&gt;<span class="o">]</span><span class="w"> </span>&lt;trimmer1&gt;...
-<span class="w">   </span>or:<span class="w"> </span>
-<span class="w">       </span>SE<span class="w"> </span><span class="o">[</span>-version<span class="o">]</span><span class="w"> </span><span class="o">[</span>-threads<span class="w"> </span>&lt;threads&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-phred33<span class="p">|</span>-phred64<span class="o">]</span><span class="w"> </span><span class="o">[</span>-trimlog<span class="w"> </span>&lt;trimLogFile&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-summary<span class="w"> </span>&lt;statsSummaryFile&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-quiet<span class="o">]</span><span class="w"> </span>&lt;inputFile&gt;<span class="w"> </span>&lt;outputFile&gt;<span class="w"> </span>&lt;trimmer1&gt;...
-</code></pre></div>
-<p>This output shows us that we must first specify whether we have paired end (PE) or single end (SE) reads. Next, we specify what flag we would like to run. For example, you can specify threads to indicate the number of processors on your computer that you want Trimmomatic to use. In most cases using multiple threads (processors) can help to run the trimming faster. These flags are not necessary, but they can give you more control over the command. The flags are followed by positional arguments, meaning the order in which you specify them is important. In paired end mode, Trimmomatic expects the two input files, and then the names of the output files. These files are described below. While, in single end mode, Trimmomatic will expect 1 file as input, after which you can enter the optional settings and lastly the name of the output file.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">option</th>
-<th style="text-align: left;">meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">inputFile1</td>
-<td style="text-align: left;">Input reads to be trimmed. Typically the file name will contain an _1 or _R1 in the name.</td>
-</tr>
-<tr>
-<td style="text-align: left;">inputFile2</td>
-<td style="text-align: left;">Input reads to be trimmed. Typically the file name will contain an _2 or _R2 in the name.</td>
-</tr>
-<tr>
-<td style="text-align: left;">outputFile1P</td>
-<td style="text-align: left;">Output file that contains surviving pairs from the _1 file.</td>
-</tr>
-<tr>
-<td style="text-align: left;">outputFile1U</td>
-<td style="text-align: left;">Output file that contains orphaned reads from the _1 file.</td>
-</tr>
-<tr>
-<td style="text-align: left;">outputFile2P</td>
-<td style="text-align: left;">Output file that contains surviving pairs from the _2 file.</td>
-</tr>
-<tr>
-<td style="text-align: left;">outputFile2U</td>
-<td style="text-align: left;">Output file that contains orphaned reads from the _2 file.</td>
-</tr>
-</tbody>
-</table>
-<p>In addition, trimmomatic expects to see is the trimming parameters:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">step</th>
-<th style="text-align: left;">meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">ILLUMINACLIP</td>
-<td style="text-align: left;">Perform adapter removal.</td>
-</tr>
-<tr>
-<td style="text-align: left;">SLIDINGWINDOW</td>
-<td style="text-align: left;">Perform sliding window trimming, cutting once the average quality within the window falls below a threshold.</td>
-</tr>
-<tr>
-<td style="text-align: left;">LEADING</td>
-<td style="text-align: left;">Cut bases off the start of a read, if below a threshold quality.</td>
-</tr>
-<tr>
-<td style="text-align: left;">TRAILING</td>
-<td style="text-align: left;">Cut bases off the end of a read, if below a threshold quality.</td>
-</tr>
-<tr>
-<td style="text-align: left;">CROP</td>
-<td style="text-align: left;">Cut the read to a specified length.</td>
-</tr>
-<tr>
-<td style="text-align: left;">HEADCROP</td>
-<td style="text-align: left;">Cut the specified number of bases from the start of the read.</td>
-</tr>
-<tr>
-<td style="text-align: left;">MINLEN</td>
-<td style="text-align: left;">Drop an entire read if it is below a specified length.</td>
-</tr>
-<tr>
-<td style="text-align: left;">TOPHRED33</td>
-<td style="text-align: left;">Convert quality scores to Phred-33.</td>
-</tr>
-<tr>
-<td style="text-align: left;">TOPHRED64</td>
-<td style="text-align: left;">Convert quality scores to Phred-64.</td>
-</tr>
-</tbody>
-</table>
-<p>We will use only a few of these options and trimming steps in our analysis. It is important to understand the steps you are using to clean your data. For more information about the Trimmomatic arguments and options, see the Trimmomatic manual.</p>
-<p>However, a complete command for Trimmomatic will look something like the command below. This command is an example and will not work, as we do not have the files it refers to:</p>
-<div class="highlight"><pre><span></span><code>trimmomatic<span class="w"> </span>PE<span class="w"> </span>SRR_1056_1.fastq<span class="w"> </span>SRR_1056_2.fastq<span class="w">  </span><span class="se">\</span>
-<span class="w">        </span>SRR_1056_1.trimmed.fastq<span class="w"> </span>SRR_1056_1un.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>SRR_1056_2.trimmed.fastq<span class="w"> </span>SRR_1056_2un.trimmed.fastq<span class="w"> </span><span class="se">\</span>
-<span class="w">        </span>SLIDINGWINDOW:4:20<span class="w"> </span>ILLUMINACLIP:SRR_adapters.fa<span class="w"> </span>
-</code></pre></div>
-<p>In this example, we have told Trimmomatic:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">code</th>
-<th style="text-align: left;">meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">PE</td>
-<td style="text-align: left;">that it will be taking a paired end file as input</td>
-</tr>
-<tr>
-<td style="text-align: left;">SRR_1056_1.fastq</td>
-<td style="text-align: left;">the first input file name</td>
-</tr>
-<tr>
-<td style="text-align: left;">SRR_1056_2.fastq</td>
-<td style="text-align: left;">the second input file name</td>
-</tr>
-<tr>
-<td style="text-align: left;">SRR_1056_1.trimmed.fastq</td>
-<td style="text-align: left;">the output file for surviving pairs from the _1 file</td>
-</tr>
-<tr>
-<td style="text-align: left;">SRR_1056_1un.trimmed.fastq</td>
-<td style="text-align: left;">the output file for orphaned reads from the _1 file</td>
-</tr>
-<tr>
-<td style="text-align: left;">SRR_1056_2.trimmed.fastq</td>
-<td style="text-align: left;">the output file for surviving pairs from the _2 file</td>
-</tr>
-<tr>
-<td style="text-align: left;">SRR_1056_2un.trimmed.fastq</td>
-<td style="text-align: left;">the output file for orphaned reads from the _2 file</td>
-</tr>
-<tr>
-<td style="text-align: left;">SLIDINGWINDOW:4:20</td>
-<td style="text-align: left;">to use a sliding window of size 4 that will remove bases if their phred score is below 20</td>
-</tr>
-<tr>
-<td style="text-align: left;">ILLUMINACLIP:SRR_adapters.fa</td>
-<td style="text-align: left;">to clip the Illumina adapters from the input file using the adapter sequences listed in SRR_adapters.fa</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Some of the commands we ran in this lesson are long! When typing a long command into your terminal, you can use the \ character to separate code chunks onto separate lines. This can make your code more readable.</p>
-</div>
-<h2 id="running-trimmomatic">Running Trimmomatic</h2>
-<div class="admonition example">
-<p class="admonition-title">Class Exercise</p>
-<p>This Exercise will take ~20 mins. Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. </p>
-<p><strong>Part A:</strong> Make a copy of the exercise materials. The folder can be found in this location: </p>
-<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
-</code></pre></div>
-<p><strong>Part B:</strong> Modify the <code>trim.sh</code> script using either Jupyter Notebook or Nano to run <code>trimmomatic</code> on the provided FASTQ sample. Ensure that you include the arguments listed below, using the <strong>exact syntax</strong> required by <code>trimmomatic</code>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">argument to add</th>
-<th style="text-align: left;">meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">PE</td>
-<td style="text-align: left;">that it will be taking a paired end file as input</td>
-</tr>
-<tr>
-<td style="text-align: left;">inputFile1</td>
-<td style="text-align: left;">SRR2589044_1.fastq.gz</td>
-</tr>
-<tr>
-<td style="text-align: left;">inputFile2</td>
-<td style="text-align: left;">SRR2589044_2.fastq.gz</td>
-</tr>
-<tr>
-<td style="text-align: left;">outputFile1P</td>
-<td style="text-align: left;">Output file that contains surviving pairs from the _1 file.</td>
-</tr>
-<tr>
-<td style="text-align: left;">outputFile1U</td>
-<td style="text-align: left;">Output file that contains orphaned reads from the _1 file.</td>
-</tr>
-<tr>
-<td style="text-align: left;">outputFile2P</td>
-<td style="text-align: left;">Output file that contains surviving pairs from the _2 file.</td>
-</tr>
-<tr>
-<td style="text-align: left;">outputFile2U</td>
-<td style="text-align: left;">Output file that contains orphaned reads from the _2 file.</td>
-</tr>
-<tr>
-<td style="text-align: left;">SLIDINGWINDOW:4:20</td>
-<td style="text-align: left;">to use a sliding window of size 4 that will remove bases if their phred score is below 20</td>
-</tr>
-<tr>
-<td style="text-align: left;">filter short reads</td>
-<td style="text-align: left;">drop an entire read if it is below 25</td>
-</tr>
-<tr>
-<td style="text-align: left;">adapter to remove</td>
-<td style="text-align: left;">NexteraPE-PE.fa:2:40:15</td>
-</tr>
-</tbody>
-</table>
-<p><em>Note: We are adding additional parameters the NexteraPE-PE.Fa adapter</em></p>
-<ul>
-<li>NexteraPE-PE.fa : This is a FASTA file that contains adapter sequences specific to Nextera paired-end libraries.</li>
-<li><code>2:40:15</code> <ul>
-<li><code>2</code> : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).</li>
-<li><code>40</code> : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).</li>
-<li><code>15</code> : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).</li>
-</ul>
-</li>
-</ul>
-<p>Once you have a working script, run it with the following command:</p>
-<div class="highlight"><pre><span></span><code>sh<span class="w"> </span>trim.sh
-</code></pre></div>
-<p>You will know that your script is correct and working properly if you see the following output: </p>
-<div class="highlight"><pre><span></span><code>TrimmomaticPE:<span class="w"> </span>Started<span class="w"> </span>with<span class="w"> </span>arguments:
-SRR2589044_1.fastq.gz<span class="w"> </span>SRR2589044_2.fastq.gz<span class="w"> </span>SRR2589044_1.trim.fastq.gz<span class="w"> </span>SRR2589044_1un.trim.fastq.gz<span class="w"> </span>SRR2589044_2.trim.fastq.gz<span class="w"> </span>SRR2589044_2un.trim.fastq.gz<span class="w"> </span>SLIDINGWINDOW:4:20<span class="w"> </span>MINLEN:25<span class="w"> </span>ILLUMINACLIP:trimmomatic_adapters/NexteraPE-PE.fa:2:40:15
-Using<span class="w"> </span>PrefixPair:<span class="w"> </span><span class="s1">'AGATGTGTATAAGAGACAG'</span><span class="w"> </span>and<span class="w"> </span><span class="s1">'AGATGTGTATAAGAGACAG'</span>
-Using<span class="w"> </span>Long<span class="w"> </span>Clipping<span class="w"> </span>Sequence:<span class="w"> </span><span class="s1">'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'</span>
-Using<span class="w"> </span>Long<span class="w"> </span>Clipping<span class="w"> </span>Sequence:<span class="w"> </span><span class="s1">'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'</span>
-Using<span class="w"> </span>Long<span class="w"> </span>Clipping<span class="w"> </span>Sequence:<span class="w"> </span><span class="s1">'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC'</span>
-Using<span class="w"> </span>Long<span class="w"> </span>Clipping<span class="w"> </span>Sequence:<span class="w"> </span><span class="s1">'CTGTCTCTTATACACATCTGACGCTGCCGACGA'</span>
-ILLUMINACLIP:<span class="w"> </span>Using<span class="w"> </span><span class="m">1</span><span class="w"> </span>prefix<span class="w"> </span>pairs,<span class="w"> </span><span class="m">4</span><span class="w"> </span>forward/reverse<span class="w"> </span>sequences,<span class="w"> </span><span class="m">0</span><span class="w"> </span>forward<span class="w"> </span>only<span class="w"> </span>sequences,<span class="w"> </span><span class="m">0</span><span class="w"> </span>reverse<span class="w"> </span>only<span class="w"> </span>sequences
-Quality<span class="w"> </span>encoding<span class="w"> </span>detected<span class="w"> </span>as<span class="w"> </span>phred33
+<h4 id="options">Options</h4>
+<div class="highlight"><pre><span></span><code>-f<span class="w"> </span>&lt;format&gt;,<span class="w"> </span>--format<span class="o">=</span>&lt;format&gt;
 
-Input<span class="w"> </span>Read<span class="w"> </span>Pairs:<span class="w"> </span><span class="m">1107090</span><span class="w"> </span>Both<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">885220</span><span class="w"> </span><span class="o">(</span><span class="m">79</span>.96%<span class="o">)</span><span class="w"> </span>Forward<span class="w"> </span>Only<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">216472</span><span class="w"> </span><span class="o">(</span><span class="m">19</span>.55%<span class="o">)</span><span class="w"> </span>Reverse<span class="w"> </span>Only<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">2850</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.26%<span class="o">)</span><span class="w"> </span>Dropped:<span class="w"> </span><span class="m">2548</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.23%<span class="o">)</span>
-TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfully
+<span class="w">    </span>Format<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>input<span class="w"> </span>data.<span class="w"> </span>Possible<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>sam<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w"> </span>text<span class="w"> </span>SAM<span class="w"> </span>files<span class="o">)</span><span class="w"> </span>and<span class="w"> </span>bam<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w"> </span>binary<span class="w"> </span>BAM<span class="w"> </span>files<span class="o">)</span>.<span class="w"> </span>Default<span class="w"> </span>is<span class="w"> </span>sam.
 </code></pre></div>
-<p><strong>Part C:</strong> Check that the file outputs are the correct size</p>
-<div class="highlight"><pre><span></span><code>total<span class="w"> </span>453M
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>124M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">14</span>:30<span class="w"> </span>SRR2589044_1.fastq.gz
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>94M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_1.trim.fastq.gz
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>18M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_1un.trim.fastq.gz
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>128M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">14</span>:30<span class="w"> </span>SRR2589044_2.fastq.gz
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>91M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2.trim.fastq.gz
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>271K<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2un.trim.fastq.gz
+<div class="highlight"><pre><span></span><code>-s<span class="w"> </span>&lt;yes/no/reverse&gt;,<span class="w"> </span>--stranded<span class="o">=</span>&lt;yes/no/reverse&gt;
+
+<span class="w">    </span>whether<span class="w"> </span>the<span class="w"> </span>data<span class="w"> </span>is<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>strand-specific<span class="w"> </span>assay<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="sb">`</span>yes<span class="sb">`</span><span class="o">)</span>
+
+<span class="w">    </span>For<span class="w"> </span><span class="nv">stranded</span><span class="o">=</span>no,<span class="w"> </span>a<span class="w"> </span><span class="nb">read</span><span class="w"> </span>is<span class="w"> </span>considered<span class="w"> </span>overlapping<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>feature<span class="w"> </span>regardless<span class="w"> </span>of<span class="w"> </span>whether<span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>mapped<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>or<span class="w"> </span>the<span class="w"> </span>opposite<span class="w"> </span>strand<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>feature.<span class="w"> </span>For<span class="w"> </span><span class="nv">stranded</span><span class="o">=</span>yes<span class="w"> </span>and<span class="w"> </span>single-end<span class="w"> </span>reads,<span class="w"> </span>the<span class="w"> </span><span class="nb">read</span><span class="w"> </span>has<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>mapped<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>strand<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>feature.<span class="w"> </span>For<span class="w"> </span>paired-end<span class="w"> </span>reads,<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span><span class="nb">read</span><span class="w"> </span>has<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>strand<span class="w"> </span>and<span class="w"> </span>the<span class="w"> </span>second<span class="w"> </span><span class="nb">read</span><span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>opposite<span class="w"> </span>strand.<span class="w"> </span>For<span class="w"> </span><span class="nv">stranded</span><span class="o">=</span>reverse,<span class="w"> </span>these<span class="w"> </span>rules<span class="w"> </span>are<span class="w"> </span>reversed.
 </code></pre></div>
-<p><strong>Part D:</strong> Run FASTQC on all the <code>.gz</code> files and visualize the HTML files to see whether your <strong>per base sequence quality</strong> is higher after trimming. In addition, please note if the <strong>adapter content/contamination</strong> has been removed. </p>
-</div></div>
+<div class="highlight"><pre><span></span><code>-i<span class="w"> </span>&lt;id<span class="w"> </span>attribute&gt;,<span class="w"> </span>--idattr<span class="o">=</span>&lt;id<span class="w"> </span>attribute&gt;
+
+<span class="w">    </span>GFF<span class="w"> </span>attribute<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>as<span class="w"> </span>feature<span class="w"> </span>ID.<span class="w"> </span>Several<span class="w"> </span>GFF<span class="w"> </span>lines<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>feature<span class="w"> </span>ID<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>considered<span class="w"> </span>as<span class="w"> </span>parts<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>feature.<span class="w"> </span>The<span class="w"> </span>feature<span class="w"> </span>ID<span class="w"> </span>is<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>identity<span class="w"> </span>the<span class="w"> </span>counts<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>output<span class="w"> </span>table.<span class="w"> </span>The<span class="w"> </span>default,<span class="w"> </span>suitable<span class="w"> </span><span class="k">for</span><span class="w"> </span>RNA-Seq<span class="w"> </span>analysis<span class="w"> </span>using<span class="w"> </span>an<span class="w"> </span>Ensembl<span class="w"> </span>GTF<span class="w"> </span>file,<span class="w"> </span>is<span class="w"> </span><span class="sb">`</span>gene_id<span class="sb">`</span>.
+</code></pre></div>
+<h2 id="key-considerations">Key Considerations</h2>
+<ul>
+<li>
+<p>Stranded vs. Unstranded Data:</p>
+<ul>
+<li>Many RNA-Seq protocols preserve strand information. Setting -s yes or -s reverse ensures proper assignment.</li>
+</ul>
+</li>
+<li>
+<p>Feature Type:</p>
+<ul>
+<li>HTSeq-count assigns reads based on featuretype (default is exon in GTF). If needed, use -t to specify other features.</li>
+</ul>
+</li>
+<li>
+<p>Overlap Mode:</p>
+<ul>
+<li>Some reads may overlap multiple features; the -m flag determines how they are assigned (union, intersection-strict, intersection-nonempty).</li>
+</ul>
+</li>
+</ul>
+<h2 id="limitations-alternatives">Limitations &amp; Alternatives</h2>
+<ul>
+<li>HTSeq-count is a gene-level summarization tool; it does not handle transcript-level quantification.</li>
+<li>It requires sorted BAM/SAM files.</li>
+<li>Alternative tools like featureCounts (faster) or Salmon/RSEM (for transcript-level quantification) may be preferred in some cases.</li>
+</ul>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise: HTSeq-count Instructions and Script</p>
+<ol>
+<li><strong>Copy Folder:</strong> Make a copy of the following folder into your home directory: </li>
+<li><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. The options are:<ul>
+<li><code>-s yes</code>, reads are mapped to the same strand as the sense strand </li>
+<li><code>-s no</code>, reads can map to either strand (unstranded)</li>
+<li><code>-s reverse</code>, reads are mapped to the opposite strand (anti-sense)</li>
+</ul>
+</li>
+<li><strong>Generate and submit script:</strong> You will need to add/specify/modify the following parameters:</li>
+<li>add the module </li>
+<li>add the path to the GTF file: </li>
+<li><code>-s</code> options include yes, no, or reverse</li>
+<li><code>-i</code> specify <code>gene_id</code></li>
+<li>Submit the script when you are done using the example script below. </li>
+<li>Rerun the script, this time change to <code>-i gene_name</code> instead. Be sure to change the name of the output file. What is the difference in the outputs? </li>
+</ol>
+<p>The example script below will get you started: </p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="sbatch-partitiongeneral">SBATCH --partition=general</h1>
+<h1 id="sbatch-nodes1">SBATCH --nodes=1</h1>
+<h1 id="sbatch-ntasks4">SBATCH --ntasks=4</h1>
+<h1 id="sbatch-mem10g">SBATCH --mem=10G</h1>
+<h1 id="sbatch-time300000">SBATCH --time=30:00:00</h1>
+<h1 id="sbatch-job-namehtseq-count">SBATCH --job-name=htseq-count</h1>
+<h1 id="sbatch-outputx_jout-xjob-name-jjobid">SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid</h1>
+<h1 id="load-htseq-module">Load HTSeq module</h1>
+<h1 id="define-the-path-to-the-gtf-file">Define the path to the GTF file</h1>
+<p>GTF_FILE=</p>
+<h1 id="iterate-through-all-bam-files-in-the-current-directory">Iterate through all BAM files in the current directory</h1>
+<p>for BAM_FILE in *.bam; do</p>
+<h1 id="extract-the-filename-without-the-bam-extension">Extract the filename without the .bam extension</h1>
+<p>NAME=$(basename "$BAM_FILE" .bam)
+echo "Processing: $NAME"</p>
+<h1 id="run-htseq-count">Run HTSeq-count</h1>
+<p>htseq-count -f bam \
+    -s \  # Modify based on your library strandedness
+    -i gene_id \
+    -m union \
+    "$BAM_FILE" "$GTF_FILE" &gt; "${NAME}.gene_id.count"</p>
+<p>done</p>
+</div>
+<h3 id="htseq-count-output"><code>htseq-count</code> output</h3>
+<p>The output of this tool is 2 files, <em>a count matrix</em> and <em>a summary file</em> that tabulates how many the reads were "assigned" or counted and the reason they remained "unassigned". Let's take a look at the summary file:</p>
+<p></p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>less<span class="w"> </span>results/counts/Mov10_featurecounts.txt.summary
+</code></pre></div>
+Now let's look at the count matrix:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>less<span class="w"> </span>results/counts/Mov10_featurecounts.txt
+</code></pre></div>
+<h2 id="resource-recommendations-for-htseq-count">Resource Recommendations for <code>htseq-count</code></h2>
+<p>An array will submit independent jobs and process each BAM file independently. </p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=general</span>
+<span class="c1">#SBATCH --array=1-8  # Adjust for the number of samples (1 per sample)</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=1  </span>
+<span class="c1">#SBATCH --mem=4G  # 2-6GB, 4GB is typically enough but specify 6GB for 100M+ reads</span>
+<span class="c1">#SBATCH --time=2:00:00</span>
+<span class="c1">#SBATCH --job-name=htseq-array</span>
+<span class="c1">#SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID</span>
+</code></pre></div>
+<h2 id="creating-bigwig-files">Creating bigWig files</h2>
+<p>We will now take our BAM files and convert them into bigWig files. The bigWig format is an indexed binary format useful for dense, continuous data that will be displayed in a genome browser as a graph/track, but also is used as input for some of the visualization commands we will be running in <code>deepTools</code>. </p>
+<p><a href="http://deeptools.readthedocs.org/en/latest/content/list_of_tools.html"><code>deepTools</code></a>, is a suite of Python tools developed for the efficient analysis of high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq. <code>deepTools</code> has a wide variety of commands that go beyond those that are covered in this lesson. We encourage you to look through the documentation and explore on your own time. </p>
+<figure>
+  <img alt="shells" src="../../img/bam_to_bigwig.png" width="700">
+</figure>
+<p><em>Image acquired from <a href="http://deeptools.readthedocs.io/en/latest/content/tools/bamCoverage.html?highlight=bigwig">deepTools documentation</a> pages</em></p>
+<hr>
+<p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p></div>
 
 
 
