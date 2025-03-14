@@ -58,22 +58,31 @@ We will begin by demonstrating the usage of HTSeq. HTSeq-count is a command-line
 
 Given a file with aligned sequencing reads and a list of genomic features, a common task is to count how many reads map to each feature.
 
-A feature is here an interval (i.e., a range of positions) on a chromosome or a union of such intervals.
+Here, a feature refers to a specific interval (i.e., a range of positions) on a chromosome or a union of such intervals.
 
-As our example data is from an RNA-Seq experiment, we want to know how many reads fall into the exonic regions of each gene. For this purpose we first need to read in information about the positions of the exons. A convenient source of such information are the GTF files from Ensembl (to be found here).
+Since our example data comes from an RNA-Seq experiment, we aim to count how many reads fall within the exonic regions of each gene. To do this, we first need information about exon positions, which can be obtained from GTF files—a common format provided by Ensembl (available here).
 
-Special care must be taken to decide how to deal with reads that align to or overlap with more than one feature. The htseq-count script allows to choose between three modes. 
+Special care must be taken when handling reads that align to or overlap with multiple features. The htseq-count script offers three different modes to handle such cases.
 
-The three overlap resolution modes of htseq-count work as follows. For each position i in the read, a set S(i) is defined as the set of all features overlapping position i. Then, consider the set S, which is (with i running through all position within the read or a read pair)
+1. Union (Recommended for most cases):
 
- + the union of all the sets S(i) for mode union. This mode is recommended for most use cases.
- + the intersection of all the sets S(i) for mode intersection-strict.
- + the intersection of all non-empty sets S(i) for mode intersection-nonempty.
+  + A read is assigned to a feature if any part of the read overlaps with it.
+  + If a read overlaps multiple features, it is not counted at all (to avoid ambiguity).
+
+2. Intersection-strict:
+
+  + A read is assigned to a feature only if every position of the read overlaps with that feature.
+  + If a read overlaps multiple features but not completely within one, it is not counted.
+
+3. Intersection-nonempty:
+
+  + A read is assigned to a feature only if it overlaps with at least one feature at every position.
+  + Unlike intersection-strict, it ignores positions where no features are present.
 
 The figure below illustrates the effect of these three modes: 
 
 <figure markdown="span">
-  ![shells](../img/union.png){ width="600" }
+  ![shells](../img/union.png){ width="400" }
 </figure>
 
 
