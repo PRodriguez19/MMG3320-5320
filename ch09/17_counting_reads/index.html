@@ -1705,20 +1705,23 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Limitations & Alternatives">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#htseq-count-output" class="md-nav__link">
     <span class="md-ellipsis">
       htseq-count output
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2125,20 +2128,23 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Limitations & Alternatives">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#htseq-count-output" class="md-nav__link">
     <span class="md-ellipsis">
       htseq-count output
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2318,6 +2324,7 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <li>Alternative tools like featureCounts (..which is faster) or Salmon/RSEM (for transcript-level quantification) may be preferred in some cases.</li>
 </ul>
 <hr>
+<h2 id="class-exercise">Class Exercise</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: HTSeq-count Instructions and Script</p>
 <ol>
@@ -2328,13 +2335,17 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <li><code>-s reverse</code>, reads are mapped to the opposite strand (anti-sense)</li>
 </ul>
 </li>
-<li><strong>Generate and submit script:</strong> You will need to add/specify/modify the following parameters:</li>
+<li><strong>Generate and submit script:</strong> You will need to add/specify/modify the following parameters:<ul>
 <li>add the module </li>
 <li>add the path to the GTF file: </li>
 <li><code>-s</code> options include yes, no, or reverse</li>
 <li><code>-i</code> specify <code>gene_id</code></li>
+</ul>
+</li>
 <li>Submit the script when you are done using the example script below. </li>
 <li>Rerun the script, this time change to <code>-i gene_name</code> instead. Be sure to change the name of the output file. What is the difference in the outputs? </li>
+<li>Read the <code>htseq-count</code> output section below</li>
+<li>Now you are ready to generate a multiqc output from the <code>*.summary</code> files</li>
 </ol>
 </div>
 <p>The example script below will get you started: </p>
@@ -2365,16 +2376,39 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <span class="w">    </span>-s<span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="c1"># Modify based on your library strandedness</span>
 <span class="w">    </span>-i<span class="w"> </span>gene_id<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-m<span class="w"> </span>union<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$GTF_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.count"</span>
+<span class="w">    </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$GTF_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.count.txt"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.summary"</span>
 
 <span class="k">done</span>
 </code></pre></div>
-<h3 id="htseq-count-output"><code>htseq-count</code> output</h3>
-<p>The output of this tool is 2 files, <em>a count matrix</em> and <em>a summary file</em> that tabulates how many the reads were "assigned" or counted and the reason they remained "unassigned". Let's take a look at the summary file:</p>
-<p></p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>less<span class="w"> </span>results/counts/Mov10_featurecounts.txt.summary
+<ul>
+<li>
+<blockquote>
+<p>→ Redirects the gene counts output to results/counts/sample_counts.txt.</p>
+</blockquote>
+</li>
+<li>2&gt; → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.</li>
+</ul>
+<h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
+<p>The output of htseq-count consists of two main files for each sample:</p>
+<ul>
+<li>A summary/log file that reports how many reads were assigned to features and why some reads were unassigned.</li>
+<li>View it with:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>less<span class="w"> </span>results/counts/Mov10_counts.txt.summary
 </code></pre></div>
-Now let's look at the count matrix:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>less<span class="w"> </span>results/counts/Mov10_featurecounts.txt
+<div class="highlight"><pre><span></span><code><span class="m">1500000</span><span class="w"> </span>total<span class="w"> </span>reads<span class="w">  </span>
+<span class="m">1400000</span><span class="w"> </span>assigned<span class="w"> </span>reads<span class="w">  </span>
+<span class="m">100000</span><span class="w"> </span>__no_feature<span class="w">  </span>
+<span class="m">5000</span><span class="w"> </span>__ambiguous<span class="w">  </span>
+</code></pre></div>
+<ul>
+<li>A counts file that lists the number of reads mapped to each gene or feature. This is a tab-delimited file with gene IDs and their associated read counts. </li>
+<li>View it with:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>less<span class="w"> </span>results/counts/Mov10_counts.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ENSG00000101234<span class="w">   </span><span class="m">150</span><span class="w">  </span>
+ENSG00000256789<span class="w">   </span><span class="m">87</span>
 </code></pre></div>
 <h2 id="resource-recommendations-for-htseq-count">Resource Recommendations for <code>htseq-count</code></h2>
 <p>An array will submit independent jobs and process each BAM file independently. </p>
