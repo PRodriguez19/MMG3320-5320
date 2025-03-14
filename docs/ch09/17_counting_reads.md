@@ -1,22 +1,22 @@
+
 ## Learning Objectives
 
 * Conversion of BAM file to a counts file using `htseq-count`
 * Conversion of BAM file to a bigWig file using `deeptools` 
 
-
 ## Counting reads as a measure of gene expression
+
+Once we have our reads aligned to the genome, the next step is to count how many reads have mapped to each gene. Many tools can take BAM files as input and output the number of reads (counts) associated with each feature of interest (genes, exons, transcripts, etc.). Two commonly used counting tools are featureCounts and [htseq-count](https://htseq.readthedocs.io/en/release_0.11.1/count.html).
 
 <figure markdown="span">
   ![shells](../img/counts-workflow.png){ width="400" }
 </figure>
 
-Once we have our reads aligned to the genome, the next step is to count how many reads have mapped to each gene. There are many tools that can use BAM files as input and output the number of reads (counts) associated with each feature of interest (genes, exons, transcripts, etc.). Two commonly used counting tools are [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) and [htseq-count](http://www-huber.embl.de/users/anders/HTSeq/doc/count.html). 
+* These tools report raw counts, meaning they only count reads that map uniquely to a single location in the genome. They are most effective for counting at the gene level. In this approach, the total read count for a gene (meta-feature) is the sum of reads assigned to each of its exons (features).
 
-* The above tools only report the "raw" counts of reads that **map to a single location** (uniquely mapping) and are best at counting at the **gene level**. Essentially, total read count associated with a gene (*meta-feature*) = the sum of reads associated with each of the exons (*feature*) that "belong" to that gene.
+* Some other tools account for multiple transcripts per gene, assigning fractional counts instead of whole numbers. For example, if one read aligns to two transcripts, it may be counted as 0.5 for each transcript rather than a whole number.
 
-* There are **other tools** available that are able to account for **multiple transcripts** for a given gene. In this case the counts are not whole numbers, but have fractions. In the simplest example case, if 1 read is associated with 2 transcripts, it can get counted as 0.5 and 0.5 and the resulting count for that transcript is not a whole number.
-
-* In addition there are **other tools that will count multimapping reads**, but this is a dangerous thing to do since you will be overcounting the total number of reads which can cause issues with normalization and eventually with accuracy of differential gene expression results. 
+* There are also tools that count multimapping reads, but this approach can lead to overcounting, which affects normalization and ultimately compromises the accuracy of differential gene expression analysis.
 
 **Input for counting = multiple BAM files + 1 GTF file**
 
@@ -28,29 +28,31 @@ Simply speaking, the genomic coordinates of where the read is mapped (BAM) are c
 
 **Output of counting = A count matrix, with genes as rows and samples are columns**
 
-These are the "raw" counts and will be used in statistical programs downstream for differential gene expression.
+These are the "raw" counts and will be used in statistical programs downstream for differential gene expression. Below is a representative counts matrix. 
 
 <figure markdown="span">
-  ![shells](../img/count-matrix.png){ width="300" }
+  ![shells](../img/count-matrix.png){ width="400" }
 </figure>
 
-We will demonstrate the usage of HTSeq below. HTSeq-count is a command-line tool used in RNA-Seq data analysis to count the number of sequencing reads that align to specific genomic features, such as genes. It is part of the HTSeq Python package and is commonly used in differential gene expression analysis pipelines.
+We will begin by demonstrating the usage of HTSeq. HTSeq-count is a command-line tool used in RNA-Seq data analysis to count the number of sequencing reads that align to specific genomic features, such as genes. It is part of the HTSeq Python package and is commonly used in differential gene expression analysis pipelines.
 
 ## Basic Workflow
 
 ### Input Files:
     
-    SAM/BAM file: Contains aligned RNA-Seq reads (output from tools like HISAT2 or STAR).
-    GTF/GFF file: Contains gene annotations specifying genomic coordinates.
+  + SAM/BAM file: Contains aligned RNA-Seq reads (output from tools like HISAT2 or STAR).
+  + GTF/GFF file: Contains gene annotations specifying genomic coordinates.
 
 ### Counting Reads:
-    HTSeq-count assigns each read to a genomic feature (usually a gene) based on predefined rules.
-    It outputs a table listing each gene and the number of reads assigned to it.
+  
+  + HTSeq-count assigns each read to a genomic feature (usually a gene) based on predefined rules.
+  + It outputs a table listing each gene and the number of reads assigned to it.
 
 ### Output:
-    A tab-delimited text file with two columns:
-      Gene ID
-      Read count
+  
+  + A tab-delimited text file with two columns:
+    + Gene ID
+    + Read count
 
 ## Counting reads in features with `htseq-count` 
 
