@@ -2462,18 +2462,39 @@
 </ul>
 <h2 id="counting-reads-in-features-with-htseq-count">Counting reads in features with <code>htseq-count</code></h2>
 <p>Given a file with aligned sequencing reads and a list of genomic features, a common task is to count how many reads map to each feature.</p>
-<p>A feature is here an interval (i.e., a range of positions) on a chromosome or a union of such intervals.</p>
-<p>As our example data is from an RNA-Seq experiment, we want to know how many reads fall into the exonic regions of each gene. For this purpose we first need to read in information about the positions of the exons. A convenient source of such information are the GTF files from Ensembl (to be found here).</p>
-<p>Special care must be taken to decide how to deal with reads that align to or overlap with more than one feature. The htseq-count script allows to choose between three modes. </p>
-<p>The three overlap resolution modes of htseq-count work as follows. For each position i in the read, a set S(i) is defined as the set of all features overlapping position i. Then, consider the set S, which is (with i running through all position within the read or a read pair)</p>
-<ul>
-<li>the union of all the sets S(i) for mode union. This mode is recommended for most use cases.</li>
-<li>the intersection of all the sets S(i) for mode intersection-strict.</li>
-<li>the intersection of all non-empty sets S(i) for mode intersection-nonempty.</li>
-</ul>
+<p>Here, a feature refers to a specific interval (i.e., a range of positions) on a chromosome or a union of such intervals.</p>
+<p>Since our example data comes from an RNA-Seq experiment, we aim to count how many reads fall within the exonic regions of each gene. To do this, we first need information about exon positions, which can be obtained from GTF files—a common format provided by Ensembl (available here).</p>
+<p>Special care must be taken when handling reads that align to or overlap with multiple features. The htseq-count script offers three different modes to handle such cases.</p>
+<ol>
+<li>
+<p>Union (Recommended for most cases):</p>
+</li>
+<li>
+<p>A read is assigned to a feature if any part of the read overlaps with it.</p>
+</li>
+<li>
+<p>If a read overlaps multiple features, it is not counted at all (to avoid ambiguity).</p>
+</li>
+<li>
+<p>Intersection-strict:</p>
+</li>
+<li>
+<p>A read is assigned to a feature only if every position of the read overlaps with that feature.</p>
+</li>
+<li>
+<p>If a read overlaps multiple features but not completely within one, it is not counted.</p>
+</li>
+<li>
+<p>Intersection-nonempty:</p>
+</li>
+<li>
+<p>A read is assigned to a feature only if it overlaps with at least one feature at every position.</p>
+</li>
+<li>Unlike intersection-strict, it ignores positions where no features are present.</li>
+</ol>
 <p>The figure below illustrates the effect of these three modes: </p>
 <figure>
-  <img alt="shells" src="../../img/union.png" width="600">
+  <img alt="shells" src="../../img/union.png" width="400">
 </figure>
 <h2 id="running-htseq-count">Running <code>htseq-count</code></h2>
 <p>Begin by loading the <code>htseq-count</code> module with <code>module load</code></p>
