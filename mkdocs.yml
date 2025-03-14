@@ -68,6 +68,8 @@ nav:
           - Installing RSeQC (L14): ch07/14_installing-RSeQC-using-conda.md
       - Week 8: 
           - RSeQC (L16): ch08/16_RSeQC.md
+      - Week 9:
+          - HTSeq (L17): ch09/17_counting_reads.md
   - Assignments:
       - Homework 1 (L2): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md
