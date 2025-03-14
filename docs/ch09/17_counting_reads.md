@@ -62,19 +62,19 @@ Here, a feature refers to a specific interval (i.e., a range of positions) on a 
 
 Since our example data comes from an RNA-Seq experiment, we aim to count how many reads fall within the exonic regions of each gene. To do this, we first need information about exon positions, which can be obtained from GTF files—a common format provided by Ensembl (available here).
 
-Special care must be taken when handling reads that align to or overlap with multiple features. The htseq-count script offers three different modes to handle such cases.
+Special care must be taken when handling reads that align to or overlap with multiple features. The htseq-count script offers **three different modes** to handle such cases.
 
-1. Union (Recommended for most cases):
+1. **Union (Recommended for most cases):**
    
     + A read is assigned to a feature if any part of the read overlaps with it.
     + If a read overlaps multiple features, it is not counted at all (to avoid ambiguity).
 
-2. Intersection-strict:
+2. **Intersection-strict:**
     
     + A read is assigned to a feature only if every position of the read overlaps with that feature.
     + If a read overlaps multiple features but not completely within one, it is not counted.
 
-3. Intersection-nonempty:
+3. **Intersection-nonempty:**
     
     + A read is assigned to a feature only if it overlaps with at least one feature at every position.
     + Unlike intersection-strict, it ignores positions where no features are present.
@@ -82,7 +82,7 @@ Special care must be taken when handling reads that align to or overlap with mul
 The figure below illustrates the effect of these three modes: 
 
 <figure markdown="span">
-  ![shells](../img/union.png){ width="400" }
+  ![shells](../img/count_modes.png){ width="400" }
 </figure>
 
 
@@ -95,7 +95,7 @@ module load gcc/13.3.0-xp3epyt
 py-htseq/2.0.3-mb7ap7s
 ```
 
-Then run the following to see if the module is loaded
+Run the following to check the module is loaded: 
 
 ```bash
 htseq-count --help
@@ -150,20 +150,20 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
 
 ## Key Considerations
 
-  + Stranded vs. Unstranded Data:
-    + Many RNA-Seq protocols preserve strand information. Setting -s yes or -s reverse ensures proper assignment.
+**Stranded vs. Unstranded Data:**
+  + Many RNA-Seq protocols preserve strand information. Setting -s yes or -s reverse ensures proper assignment.
 
-  + Feature Type:
-    + HTSeq-count assigns reads based on featuretype (default is exon in GTF). If needed, use -t to specify other features.
+**Feature Type:**
+  + HTSeq-count assigns reads based on featuretype (default is exon in GTF). If needed, use -t to specify other features.
 
-  + Overlap Mode:
-    + Some reads may overlap multiple features; the -m flag determines how they are assigned (union, intersection-strict, intersection-nonempty).
+**Overlap Mode:**
+  + Some reads may overlap multiple features; the -m flag determines how they are assigned (union, intersection-strict, intersection-nonempty).
 
 ## Limitations & Alternatives
 
   + HTSeq-count is a gene-level summarization tool; it does not handle transcript-level quantification.
   + It requires sorted BAM/SAM files.
-  + Alternative tools like featureCounts (faster) or Salmon/RSEM (for transcript-level quantification) may be preferred in some cases.
+  + Alternative tools like featureCounts (..which is faster) or Salmon/RSEM (for transcript-level quantification) may be preferred in some cases.
 
 ***
 
@@ -183,39 +183,41 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
     4. Submit the script when you are done using the example script below. 
     5. Rerun the script, this time change to `-i gene_name` instead. Be sure to change the name of the output file. What is the difference in the outputs? 
     
-    The example script below will get you started: 
 
-    #!/bin/bash
-    #SBATCH --partition=general 
-    #SBATCH --nodes=1
-    #SBATCH --ntasks=4
-    #SBATCH --mem=10G
-    #SBATCH --time=30:00:00
-    #SBATCH --job-name=htseq-count    
-    #SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid
+The example script below will get you started: 
 
-    # Load HTSeq module
+```bash
+#!/bin/bash
+#SBATCH --partition=general 
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --mem=10G
+#SBATCH --time=30:00:00
+#SBATCH --job-name=htseq-count    
+#SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid
+
+# Load HTSeq module
 
 
-    # Define the path to the GTF file
-    GTF_FILE=
+# Define the path to the GTF file
+GTF_FILE=
 
-    # Iterate through all BAM files in the current directory
-    for BAM_FILE in *.bam; do
+# Iterate through all BAM files in the current directory
+for BAM_FILE in *.bam; do
 
-    # Extract the filename without the .bam extension
-    NAME=$(basename "$BAM_FILE" .bam)
-    echo "Processing: $NAME"
+  # Extract the filename without the .bam extension
+  NAME=$(basename "$BAM_FILE" .bam)
+  echo "Processing: $NAME"
 
-    # Run HTSeq-count
-    htseq-count -f bam \
-        -s \  # Modify based on your library strandedness
-        -i gene_id \
-        -m union \
-        "$BAM_FILE" "$GTF_FILE" > "${NAME}.gene_id.count"
+  # Run HTSeq-count
+  htseq-count -f bam \
+    -s \  # Modify based on your library strandedness
+    -i gene_id \
+    -m union \
+    "$BAM_FILE" "$GTF_FILE" > "${NAME}.gene_id.count"
 
-    done
-
+done
+```
 
 
 ### `htseq-count` output
