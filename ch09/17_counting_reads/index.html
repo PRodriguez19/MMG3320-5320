@@ -1708,9 +1708,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-exercise" class="md-nav__link">
+  <a href="#class-exercise-part-a" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Exercise
+      Class Exercise Part A
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-part-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part B
     </span>
   </a>
   
@@ -2131,9 +2140,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-exercise" class="md-nav__link">
+  <a href="#class-exercise-part-a" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Exercise
+      Class Exercise Part A
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-part-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part B
     </span>
   </a>
   
@@ -2330,25 +2348,111 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <li>Alternative tools like featureCounts (..which is faster) or Salmon/RSEM (for transcript-level quantification) may be preferred in some cases.</li>
 </ul>
 <hr>
-<h2 id="class-exercise">Class Exercise</h2>
+<h2 id="class-exercise-part-a">Class Exercise Part A</h2>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise: HTSeq-count Instructions and Script</p>
+<p class="admonition-title">Class Exercise: Running RSeQC</p>
 <ol>
 <li><strong>Copy Folder:</strong> Make a copy of the following folder into your home directory: </li>
-<li><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. The options are:<ul>
+<li><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine which of the following three options to specify (... see the notes below on <em>how-to</em> run <code>RSeQC</code>): <ul>
 <li><code>-s yes</code>, reads are mapped to the same strand as the sense strand </li>
 <li><code>-s no</code>, reads can map to either strand (unstranded)</li>
 <li><code>-s reverse</code>, reads are mapped to the opposite strand (anti-sense)</li>
 </ul>
 </li>
-<li><strong>Generate and submit script:</strong> You will need to add/specify/modify the following parameters:<ul>
+<li>
+</ol>
+</div>
+<p><strong>How To Run RSeQC:</strong></p>
+<ul>
+<li>Activate conda environment </li>
+</ul>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>rseqc_env
+</code></pre></div>
+<ul>
+<li>Test that <code>RSeQC</code> is loaded:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>infer_experiment.py<span class="w"> </span>--help
+</code></pre></div>
+<p><strong>Expected Output:</strong> 
+</p><div class="highlight"><pre><span></span><code>Usage: infer_experiment.py [options]
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -i INPUT_FILE, --input-file=INPUT_FILE
+                        Input alignment file in SAM or BAM format
+  -r REFGENE_BED, --refgene=REFGENE_BED
+                        Reference gene model in bed fomat.
+</code></pre></div>
+<ul>
+<li>The <code>rseqc-loop.sh</code> script is provided below. Make a copy and modify the path for variables <code>BAM_DIR</code> and <code>BED_FILE</code>. </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=general</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=1  # Single task running sequentially</span>
+<span class="c1">#SBATCH --mem=2G  # Adjust based on the number of BAM files</span>
+<span class="c1">#SBATCH --time=1:00:00</span>
+<span class="c1">#SBATCH --job-name=rseqc-loop</span>
+<span class="c1">#SBATCH --output=run-%x_%j.out  # %x=job name, %j=job ID</span>
+
+<span class="c1"># Define input directory (update if needed)</span>
+<span class="nv">BAM_DIR</span><span class="o">=</span><span class="s2">"/users/p/d/pdrodrig/htseq_2025/bams"</span>
+<span class="nv">BED_FILE</span><span class="o">=</span><span class="s2">"/users/p/d/pdrodrig/htseq_2025/refseq.hg19.bed12"</span>
+<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">"rseqc_results"</span>
+
+<span class="c1"># Create output directory if it doesn't exist</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">"</span>
+
+<span class="c1"># Loop through all BAM files in the directory</span>
+<span class="k">for</span><span class="w"> </span>BAM_FILE<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_DIR</span><span class="s2">"</span>/*.bam<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="c1"># Extract filename without extension</span>
+<span class="w">    </span><span class="nv">NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>.bam<span class="k">)</span>
+
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Processing: </span><span class="nv">$NAME</span><span class="s2">"</span>
+
+<span class="w">    </span><span class="c1"># Run infer_experiment.py</span>
+<span class="w">    </span>infer_experiment.py<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.infer_experiment.txt"</span>
+
+<span class="w">    </span><span class="c1"># Run read_distribution.py</span>
+<span class="w">    </span>read_distribution.py<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.read_distribution.txt"</span>
+<span class="k">done</span>
+</code></pre></div>
+<ul>
+<li>Submit the script and then check your outputs are the same size. This script will take ~5 minutes to run. </li>
+</ul>
+<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:38<span class="w"> </span>KO_hg19_rep2_sorted.infer_experiment.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:39<span class="w"> </span>KO_hg19_rep2_sorted.read_distribution.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>KO_hg19_rep3_sorted.infer_experiment.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>KO_hg19_rep3_sorted.read_distribution.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:41<span class="w"> </span>WT_hg19_rep1_sorted.infer_experiment.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:41<span class="w"> </span>WT_hg19_rep1_sorted.read_distribution.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:42<span class="w"> </span>WT_hg19_rep2_sorted.infer_experiment.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:42<span class="w"> </span>WT_hg19_rep2_sorted.read_distribution.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:43<span class="w"> </span>WT_hg19_rep3_sorted.infer_experiment.log
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:44<span class="w"> </span>WT_hg19_rep3_sorted.read_distribution.log
+</code></pre></div>
+<ul>
+<li>Deactivate the conda environment <strong>before</strong> running multiqc. </li>
+</ul>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>deactivate
+</code></pre></div>
+<ul>
+<li>Run Multiqc in the <code>rseqc_results/</code> folder determine strandedness of the fastq files. <strong>Note:</strong> I tried running the multiqc-rseqc module yesterday and continued to get the issue: <code>The 'rseqc' MultiQC module broke...</code> </li>
+</ul>
+<p>If this happens to you, please download the <code>rseqc_results</code> folder and use the site: https://seqera.io/multiqc/
+<strong>I will need to work with the VACC to find a permanent solution.</strong></p>
+<h2 id="class-exercise-part-b">Class Exercise Part B</h2>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise: HTSeq-count Instructions and Script</p>
+<ol>
+<li><strong>Modify <code>htseq-count.sh</code> script:</strong> While #2 is running (~5 mins), modify the the <code>htseq-count.sh</code> script; you will need to alter the following:<ul>
 <li>add the module </li>
 <li>add the path to the GTF file: </li>
 <li><code>-s</code> options include yes, no, or reverse</li>
 <li><code>-i</code> specify <code>gene_id</code></li>
 </ul>
 </li>
-<li>Submit the <code>htseq-count.sh</code> script after modifying it (see below) </li>
+<li>Submit the <code>htseq-count.sh</code> script after modifying it </li>
 <li>Then Rerun the <code>htseq-count.sh</code> script, but this time change to <code>-i gene_name</code> instead. Be sure to change the name of the output file as well. What is the difference in the outputs? </li>
 <li>Read the section below titled <strong><code>htseq-count</code> output</strong></li>
 <li>Now you are ready to generate a multiqc output from the <code>*.summary</code> files</li>
