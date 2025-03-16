@@ -330,17 +330,10 @@ done
 
 ## Class Exercise Part C
 
-!!! example "Class Exercise: Final Multiqc & Interpretation"  
+!!! example "Class Exercise: Multiqc break"  
 
-    1. **Modify `htseq-count.sh` script:** You will need to alter the following:
-        + add the required program modules 
-        + add the correct path to the GTF file 
-        + `-s` options include yes, no, or reverse
-        + `-i` specify `gene_id`
-    2. Submit the `htseq-count.sh` script after modifying it 
-    3. Then Rerun the `htseq-count.sh` script, but this time change to `-i gene_name` instead. Be sure to change the name of the output file as well. What is the difference in the outputs? 
-    4. Read the section below titled **`htseq-count` output**
-    5. Generate a final multiqc output. This time run multiqc 
+    1. Read the section below titled **`htseq-count` output**
+    2. Generate a final multiqc output; this time do so inside of the `bams\` folder.  **This should work with no issue, it was only the RSeQC Module which is broken**
 
 ## `htseq-count` output
 
@@ -350,26 +343,45 @@ The output of htseq-count consists of two main files for each sample:
   + View it with:
 
 ```bash
-less results/counts/Mov10_counts.summary
+head KO_hg19_rep2_sorted.gene_id.summary 
 ```
 
 ```bash
-1500000 total reads  
-1400000 assigned reads  
-100000 __no_feature  
-5000 __ambiguous  
+76767 GFF lines processed.
+100000 alignment records processed.
+199252 alignment records processed.
 ```
 
 + A counts file that lists the number of reads mapped to each gene or feature. This is a tab-delimited file with gene IDs and their associated read counts. 
   + View it with:
 
 ```bash
-less results/counts/Mov10_counts.txt
+head KO_hg19_rep2_sorted.gene_id.count.txt
 ```
 
 ```bash
-ENSG00000101234   150  
-ENSG00000256789   87
+AADACL3 0
+AADACL4 0
+ABCA4   0
+ABCB10  0
+ABCD3   1
+ABL2    0
+ACADM   0
+ACAP3   0
+ACBD3   0
+ACBD6   1
+```
+
+```bash
+tail KO_hg19_rep2_sorted.gene_id.count.txt
+```
+
+```bash
+__no_feature    32813
+__ambiguous     4372
+__too_low_aQual 0
+__not_aligned   15209
+__alignment_not_unique  3667
 ```
 
 
@@ -388,6 +400,14 @@ An array will submit independent jobs and process each BAM file independently.
 #SBATCH --job-name=htseq-array
 #SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID
 ```
+
+## Class Exercise Part C
+
+!!! example "Class Exercise: Multiqc break"  
+
+    1. Read the section below titled **`htseq-count` output**
+    2. Generate a final multiqc output; this time do so inside of the `bams\` folder.  **This should work with no issue, it was only the RSeQC Module which is broken**
+
 
 
 ## Creating bigWig files
