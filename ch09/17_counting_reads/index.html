@@ -1768,6 +1768,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#class-exercise-part-c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part C
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#creating-bigwig-files" class="md-nav__link">
     <span class="md-ellipsis">
       Creating bigWig files
@@ -2224,6 +2233,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#class-exercise-part-c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part C
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#creating-bigwig-files" class="md-nav__link">
     <span class="md-ellipsis">
       Creating bigWig files
@@ -2549,19 +2567,10 @@ htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">
 </ul>
 <h2 id="class-exercise-part-c">Class Exercise Part C</h2>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise: Final Multiqc &amp; Interpretation</p>
+<p class="admonition-title">Class Exercise: Multiqc break</p>
 <ol>
-<li><strong>Modify <code>htseq-count.sh</code> script:</strong> You will need to alter the following:<ul>
-<li>add the required program modules </li>
-<li>add the correct path to the GTF file </li>
-<li><code>-s</code> options include yes, no, or reverse</li>
-<li><code>-i</code> specify <code>gene_id</code></li>
-</ul>
-</li>
-<li>Submit the <code>htseq-count.sh</code> script after modifying it </li>
-<li>Then Rerun the <code>htseq-count.sh</code> script, but this time change to <code>-i gene_name</code> instead. Be sure to change the name of the output file as well. What is the difference in the outputs? </li>
 <li>Read the section below titled <strong><code>htseq-count</code> output</strong></li>
-<li>Generate a final multiqc output. This time run multiqc </li>
+<li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  <strong>This should work with no issue, it was only the RSeQC Module which is broken</strong></li>
 </ol>
 </div>
 <h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
@@ -2570,21 +2579,36 @@ htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">
 <li>A summary/log file that reports how many reads were assigned to features and why some reads were unassigned.</li>
 <li>View it with:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>less<span class="w"> </span>results/counts/Mov10_counts.summary
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.summary<span class="w"> </span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="m">1500000</span><span class="w"> </span>total<span class="w"> </span>reads<span class="w">  </span>
-<span class="m">1400000</span><span class="w"> </span>assigned<span class="w"> </span>reads<span class="w">  </span>
-<span class="m">100000</span><span class="w"> </span>__no_feature<span class="w">  </span>
-<span class="m">5000</span><span class="w"> </span>__ambiguous<span class="w">  </span>
+<div class="highlight"><pre><span></span><code><span class="m">76767</span><span class="w"> </span>GFF<span class="w"> </span>lines<span class="w"> </span>processed.
+<span class="m">100000</span><span class="w"> </span>alignment<span class="w"> </span>records<span class="w"> </span>processed.
+<span class="m">199252</span><span class="w"> </span>alignment<span class="w"> </span>records<span class="w"> </span>processed.
 </code></pre></div>
 <ul>
 <li>A counts file that lists the number of reads mapped to each gene or feature. This is a tab-delimited file with gene IDs and their associated read counts. </li>
 <li>View it with:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>less<span class="w"> </span>results/counts/Mov10_counts.txt
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>ENSG00000101234<span class="w">   </span><span class="m">150</span><span class="w">  </span>
-ENSG00000256789<span class="w">   </span><span class="m">87</span>
+<div class="highlight"><pre><span></span><code>AADACL3<span class="w"> </span><span class="m">0</span>
+AADACL4<span class="w"> </span><span class="m">0</span>
+ABCA4<span class="w">   </span><span class="m">0</span>
+ABCB10<span class="w">  </span><span class="m">0</span>
+ABCD3<span class="w">   </span><span class="m">1</span>
+ABL2<span class="w">    </span><span class="m">0</span>
+ACADM<span class="w">   </span><span class="m">0</span>
+ACAP3<span class="w">   </span><span class="m">0</span>
+ACBD3<span class="w">   </span><span class="m">0</span>
+ACBD6<span class="w">   </span><span class="m">1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>__no_feature<span class="w">    </span><span class="m">32813</span>
+__ambiguous<span class="w">     </span><span class="m">4372</span>
+__too_low_aQual<span class="w"> </span><span class="m">0</span>
+__not_aligned<span class="w">   </span><span class="m">15209</span>
+__alignment_not_unique<span class="w">  </span><span class="m">3667</span>
 </code></pre></div>
 <h2 id="resource-recommendations-for-htseq-count">Resource Recommendations for <code>htseq-count</code></h2>
 <p>An array will submit independent jobs and process each BAM file independently. </p>
@@ -2598,6 +2622,14 @@ ENSG00000256789<span class="w">   </span><span class="m">87</span>
 <span class="c1">#SBATCH --job-name=htseq-array</span>
 <span class="c1">#SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID</span>
 </code></pre></div>
+<h2 id="class-exercise-part-c_1">Class Exercise Part C</h2>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise: Multiqc break</p>
+<ol>
+<li>Read the section below titled <strong><code>htseq-count</code> output</strong></li>
+<li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  <strong>This should work with no issue, it was only the RSeQC Module which is broken</strong></li>
+</ol>
+</div>
 <h2 id="creating-bigwig-files">Creating bigWig files</h2>
 <p>We will now take our BAM files and convert them into bigWig files. The bigWig format is an indexed binary format useful for dense, continuous data that will be displayed in a genome browser as a graph/track, but also is used as input for some of the visualization commands we will be running in <code>deepTools</code>. </p>
 <p><a href="http://deeptools.readthedocs.org/en/latest/content/list_of_tools.html"><code>deepTools</code></a>, is a suite of Python tools developed for the efficient analysis of high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq. <code>deepTools</code> has a wide variety of commands that go beyond those that are covered in this lesson. We encourage you to look through the documentation and explore on your own time. </p>
