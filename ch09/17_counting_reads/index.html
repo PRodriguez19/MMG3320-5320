@@ -2443,9 +2443,9 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <strong>I will need to work with the VACC to find a permanent solution.</strong></p>
 <h2 id="class-exercise-part-b">Class Exercise Part B</h2>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise: HTSeq-count Instructions and Script</p>
+<p class="admonition-title">Class Exercise: Running HTSeq-count</p>
 <ol>
-<li><strong>Modify <code>htseq-count.sh</code> script:</strong> While #2 is running (~5 mins), modify the the <code>htseq-count.sh</code> script; you will need to alter the following:<ul>
+<li><strong>Modify <code>htseq-count.sh</code> script:</strong> You will need to alter the following:<ul>
 <li>add the module </li>
 <li>add the path to the GTF file: </li>
 <li><code>-s</code> options include yes, no, or reverse</li>
@@ -2455,40 +2455,11 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <li>Submit the <code>htseq-count.sh</code> script after modifying it </li>
 <li>Then Rerun the <code>htseq-count.sh</code> script, but this time change to <code>-i gene_name</code> instead. Be sure to change the name of the output file as well. What is the difference in the outputs? </li>
 <li>Read the section below titled <strong><code>htseq-count</code> output</strong></li>
-<li>Now you are ready to generate a multiqc output from the <code>*.summary</code> files</li>
+<li>Generate a final multiqc output. This time run multiqc </li>
 </ol>
 </div>
 <p>The <code>htseq-count.sh</code> script below will get you started: </p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --partition=general </span>
-<span class="c1">#SBATCH --nodes=1</span>
-<span class="c1">#SBATCH --ntasks=4</span>
-<span class="c1">#SBATCH --mem=10G</span>
-<span class="c1">#SBATCH --time=30:00:00</span>
-<span class="c1">#SBATCH --job-name=htseq-count    </span>
-<span class="c1">#SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid</span>
-
-<span class="c1"># Load HTSeq module</span>
-
-
-<span class="c1"># Define the path to the GTF file</span>
-<span class="nv">GTF_FILE</span><span class="o">=</span>
-
-<span class="c1"># Iterate through all BAM files in the current directory</span>
-<span class="k">for</span><span class="w"> </span>BAM_FILE<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.bam<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-
-<span class="w">  </span><span class="c1"># Extract the filename without the .bam extension</span>
-<span class="w">  </span><span class="nv">NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>.bam<span class="k">)</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Processing: </span><span class="nv">$NAME</span><span class="s2">"</span>
-
-<span class="w">  </span><span class="c1"># Run HTSeq-count</span>
-<span class="w">  </span>htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-s<span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="c1"># Modify based on your library strandedness</span>
-<span class="w">    </span>-i<span class="w"> </span>gene_id<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-m<span class="w"> </span>union<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$GTF_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.count.txt"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.summary"</span>
-
-<span class="k">done</span>
+<div class="highlight"><pre><span></span><code><span class="nb">test</span>
 </code></pre></div>
 <ul>
 <li>
