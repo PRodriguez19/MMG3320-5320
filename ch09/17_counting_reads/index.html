@@ -2311,12 +2311,18 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <span class="w">    </span>GFF<span class="w"> </span>attribute<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span>as<span class="w"> </span>feature<span class="w"> </span>ID.<span class="w"> </span>Several<span class="w"> </span>GFF<span class="w"> </span>lines<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>feature<span class="w"> </span>ID<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>considered<span class="w"> </span>as<span class="w"> </span>parts<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>feature.<span class="w"> </span>The<span class="w"> </span>feature<span class="w"> </span>ID<span class="w"> </span>is<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>identity<span class="w"> </span>the<span class="w"> </span>counts<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>output<span class="w"> </span>table.<span class="w"> </span>The<span class="w"> </span>default,<span class="w"> </span>suitable<span class="w"> </span><span class="k">for</span><span class="w"> </span>RNA-Seq<span class="w"> </span>analysis<span class="w"> </span>using<span class="w"> </span>an<span class="w"> </span>Ensembl<span class="w"> </span>GTF<span class="w"> </span>file,<span class="w"> </span>is<span class="w"> </span><span class="sb">`</span>gene_id<span class="sb">`</span>.
 </code></pre></div>
 <h2 id="key-considerations">Key Considerations</h2>
-<p><strong>Stranded vs. Unstranded Data:</strong>
-  + Many RNA-Seq protocols preserve strand information. Setting -s yes or -s reverse ensures proper assignment.</p>
-<p><strong>Feature Type:</strong>
-  + HTSeq-count assigns reads based on featuretype (default is exon in GTF). If needed, use -t to specify other features.</p>
-<p><strong>Overlap Mode:</strong>
-  + Some reads may overlap multiple features; the -m flag determines how they are assigned (union, intersection-strict, intersection-nonempty).</p>
+<p><strong>Stranded vs. Unstranded Data:</strong></p>
+<ul>
+<li>Many RNA-Seq protocols preserve strand information. Setting -s yes or -s reverse ensures proper assignment.</li>
+</ul>
+<p><strong>Feature Type:</strong></p>
+<ul>
+<li>HTSeq-count assigns reads based on featuretype (default is exon in GTF). If needed, use -t to specify other features.</li>
+</ul>
+<p><strong>Overlap Mode:</strong></p>
+<ul>
+<li>Some reads may overlap multiple features; the -m flag determines how they are assigned (union, intersection-strict, intersection-nonempty).</li>
+</ul>
 <h2 id="limitations-alternatives">Limitations &amp; Alternatives</h2>
 <ul>
 <li>HTSeq-count is a gene-level summarization tool; it does not handle transcript-level quantification.</li>
@@ -2342,13 +2348,13 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <li><code>-i</code> specify <code>gene_id</code></li>
 </ul>
 </li>
-<li>Submit the script when you are done using the example script below. </li>
-<li>Rerun the script, this time change to <code>-i gene_name</code> instead. Be sure to change the name of the output file. What is the difference in the outputs? </li>
-<li>Read the <code>htseq-count</code> output section below</li>
+<li>Submit the <code>htseq-count.sh</code> script after modifying it (see below) </li>
+<li>Then Rerun the <code>htseq-count.sh</code> script, but this time change to <code>-i gene_name</code> instead. Be sure to change the name of the output file as well. What is the difference in the outputs? </li>
+<li>Read the section below titled <strong><code>htseq-count</code> output</strong></li>
 <li>Now you are ready to generate a multiqc output from the <code>*.summary</code> files</li>
 </ol>
 </div>
-<p>The example script below will get you started: </p>
+<p>The <code>htseq-count.sh</code> script below will get you started: </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=general </span>
 <span class="c1">#SBATCH --nodes=1</span>
@@ -2394,7 +2400,7 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <li>A summary/log file that reports how many reads were assigned to features and why some reads were unassigned.</li>
 <li>View it with:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>less<span class="w"> </span>results/counts/Mov10_counts.txt.summary
+<div class="highlight"><pre><span></span><code>less<span class="w"> </span>results/counts/Mov10_counts.summary
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="m">1500000</span><span class="w"> </span>total<span class="w"> </span>reads<span class="w">  </span>
 <span class="m">1400000</span><span class="w"> </span>assigned<span class="w"> </span>reads<span class="w">  </span>
