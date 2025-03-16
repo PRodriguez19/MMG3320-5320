@@ -182,7 +182,7 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
         + `-s reverse`, reads are mapped to the opposite strand (anti-sense)
     
 
-**How To Run RSeQC:**
+### How To Run RSeQC: 
 
 + Activate conda environment 
 
@@ -265,9 +265,11 @@ done
 conda deactivate
 ```
 
-+ Run Multiqc in the `rseqc_results/` folder determine strandedness of the fastq files. **Note:** I tried running the multiqc-rseqc module yesterday and continued to get the issue: `The 'rseqc' MultiQC module broke...` 
++ Run Multiqc in the `rseqc_results/` folder determine strandedness of the fastq files. 
 
-If this happens to you, please download the `rseqc_results` folder and use the site [Seqera-Multiqc](https://seqera.io/multiqc/)
++ **Note:** I tried running the multiqc-rseqc module yesterday and continued to get the issue: `The 'rseqc' MultiQC module broke...` 
+
+If this happens to you, please download the `rseqc_results` folder and use the site [Seqera-Multiqc](https://seqera.io/multiqc/) instead. 
 
 **I will need to work with the VACC to find a permanent solution.**
 
@@ -277,25 +279,68 @@ If this happens to you, please download the `rseqc_results` folder and use the s
 !!! example "Class Exercise: Running HTSeq-count"  
 
     1. **Modify `htseq-count.sh` script:** You will need to alter the following:
-        + add the module 
-        + add the path to the GTF file: 
+        + add the required program modules 
+        + add the correct path to the GTF file 
+        + `-s` options include yes, no, or reverse
+        + `-i` specify `gene_id`
+    2. Submit the `htseq-count.sh` script after modifying it. This should only take a few minutes. 
+    3. Look inside of the `htseq-count_XXXXXX.out` file after the job completed. It should appear identical as below: 
+
+    ```bash
+    Processing: KO_hg19_rep2_sorted
+    Processing: KO_hg19_rep3_sorted
+    Processing: WT_hg19_rep1_sorted
+    Processing: WT_hg19_rep2_sorted
+    Processing: WT_hg19_rep3_sorted
+    ```
+
+
+The `htseq-count.sh` script is below: 
+
+```bash
+#!/bin/bash
+#SBATCH --partition=general 
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --mem=10G
+#SBATCH --time=30:00:00
+#SBATCH --job-name=htseq-count    
+#SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid
+
+# Load HTSeq module
+
+
+# Iterate through all BAM files in the current directory
+for BAM_FILE in *.bam; do
+
+# Extract the filename without the .bam extension
+NAME=$(basename "$BAM_FILE" .bam)
+echo "Processing: $NAME"
+
+# Run HTSeq-count
+htseq-count -f bam  -s -i -m union "$BAM_FILE" /users/p/d/pdrodrig/htseq_2025/chr1-hg19_genes.gtf > "${NAME}.gene_id.count.txt" 2> "${NAME}.gene_id.summary"
+
+done
+```
+
++ > → Redirects the gene counts output to results/counts/sample_counts.txt.
++ 2> → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.
+
+
+
+## Class Exercise Part C
+
+!!! example "Class Exercise: Final Multiqc & Interpretation"  
+
+    1. **Modify `htseq-count.sh` script:** You will need to alter the following:
+        + add the required program modules 
+        + add the correct path to the GTF file 
         + `-s` options include yes, no, or reverse
         + `-i` specify `gene_id`
     2. Submit the `htseq-count.sh` script after modifying it 
     3. Then Rerun the `htseq-count.sh` script, but this time change to `-i gene_name` instead. Be sure to change the name of the output file as well. What is the difference in the outputs? 
     4. Read the section below titled **`htseq-count` output**
     5. Generate a final multiqc output. This time run multiqc 
-
-
-
-The `htseq-count.sh` script below will get you started: 
-
-```bash
-test
-```
-
-+ > → Redirects the gene counts output to results/counts/sample_counts.txt.
-+ 2> → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.
 
 ## `htseq-count` output
 
