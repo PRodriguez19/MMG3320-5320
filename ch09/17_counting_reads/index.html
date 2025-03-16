@@ -2353,13 +2353,12 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <p class="admonition-title">Class Exercise: Running RSeQC</p>
 <ol>
 <li><strong>Copy Folder:</strong> Make a copy of the following folder into your home directory: </li>
-<li><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine which of the following three options to specify (... see the notes below on <em>how-to</em> run <code>RSeQC</code>): <ul>
+<li><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine which of the following three options to specify (see the notes below on <em>how-to</em> run <code>RSeQC</code>): <ul>
 <li><code>-s yes</code>, reads are mapped to the same strand as the sense strand </li>
 <li><code>-s no</code>, reads can map to either strand (unstranded)</li>
 <li><code>-s reverse</code>, reads are mapped to the opposite strand (anti-sense)</li>
 </ul>
 </li>
-<li>
 </ol>
 </div>
 <p><strong>How To Run RSeQC:</strong></p>
@@ -2373,7 +2372,7 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 </ul>
 <div class="highlight"><pre><span></span><code>infer_experiment.py<span class="w"> </span>--help
 </code></pre></div>
-<p><strong>Expected Output:</strong> 
+<p>Expected Output:
 </p><div class="highlight"><pre><span></span><code>Usage: infer_experiment.py [options]
 Options:
   --version             show program's version number and exit
@@ -2439,8 +2438,8 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <ul>
 <li>Run Multiqc in the <code>rseqc_results/</code> folder determine strandedness of the fastq files. <strong>Note:</strong> I tried running the multiqc-rseqc module yesterday and continued to get the issue: <code>The 'rseqc' MultiQC module broke...</code> </li>
 </ul>
-<p>If this happens to you, please download the <code>rseqc_results</code> folder and use the site: https://seqera.io/multiqc/
-<strong>I will need to work with the VACC to find a permanent solution.</strong></p>
+<p>If this happens to you, please download the <code>rseqc_results</code> folder and use the site <a href="https://seqera.io/multiqc/">Seqera-Multiqc</a></p>
+<p><strong>I will need to work with the VACC to find a permanent solution.</strong></p>
 <h2 id="class-exercise-part-b">Class Exercise Part B</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: Running HTSeq-count</p>
