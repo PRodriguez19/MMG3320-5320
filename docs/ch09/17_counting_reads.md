@@ -151,12 +151,15 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
 ## Key Considerations
 
 **Stranded vs. Unstranded Data:**
+  
   + Many RNA-Seq protocols preserve strand information. Setting -s yes or -s reverse ensures proper assignment.
 
 **Feature Type:**
+  
   + HTSeq-count assigns reads based on featuretype (default is exon in GTF). If needed, use -t to specify other features.
 
 **Overlap Mode:**
+  
   + Some reads may overlap multiple features; the -m flag determines how they are assigned (union, intersection-strict, intersection-nonempty).
 
 ## Limitations & Alternatives
@@ -182,13 +185,13 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
         + add the path to the GTF file: 
         + `-s` options include yes, no, or reverse
         + `-i` specify `gene_id`
-    4. Submit the script when you are done using the example script below. 
-    5. Rerun the script, this time change to `-i gene_name` instead. Be sure to change the name of the output file. What is the difference in the outputs? 
-    6. Read the `htseq-count` output section below
+    4. Submit the `htseq-count.sh` script after modifying it (see below) 
+    5. Then Rerun the `htseq-count.sh` script, but this time change to `-i gene_name` instead. Be sure to change the name of the output file as well. What is the difference in the outputs? 
+    6. Read the section below titled **`htseq-count` output**
     7. Now you are ready to generate a multiqc output from the `*.summary` files
     
 
-The example script below will get you started: 
+The `htseq-count.sh` script below will get you started: 
 
 ```bash
 #!/bin/bash
@@ -234,7 +237,7 @@ The output of htseq-count consists of two main files for each sample:
   + View it with:
 
 ```bash
-less results/counts/Mov10_counts.txt.summary
+less results/counts/Mov10_counts.summary
 ```
 
 ```bash
