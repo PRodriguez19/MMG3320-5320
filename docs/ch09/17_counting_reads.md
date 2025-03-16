@@ -176,11 +176,10 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
 !!! example "Class Exercise: Running RSeQC"  
 
     1. **Copy Folder:** Make a copy of the following folder into your home directory: 
-    2. **Determine Strandedness:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine which of the following three options to specify (... see the notes below on *how-to* run `RSeQC`): 
+    2. **Determine Strandedness:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine which of the following three options to specify (see the notes below on *how-to* run `RSeQC`): 
         + `-s yes`, reads are mapped to the same strand as the sense strand 
         + `-s no`, reads can map to either strand (unstranded)
         + `-s reverse`, reads are mapped to the opposite strand (anti-sense)
-    3. 
     
 
 **How To Run RSeQC:**
@@ -197,7 +196,7 @@ conda activate rseqc_env
 infer_experiment.py --help
 ```
 
-**Expected Output:** 
+Expected Output:
 ```
 Usage: infer_experiment.py [options]
 Options:
@@ -268,7 +267,8 @@ conda deactivate
 
 + Run Multiqc in the `rseqc_results/` folder determine strandedness of the fastq files. **Note:** I tried running the multiqc-rseqc module yesterday and continued to get the issue: `The 'rseqc' MultiQC module broke...` 
 
-If this happens to you, please download the `rseqc_results` folder and use the site: https://seqera.io/multiqc/
+If this happens to you, please download the `rseqc_results` folder and use the site [Seqera-Multiqc](https://seqera.io/multiqc/)
+
 **I will need to work with the VACC to find a permanent solution.**
 
 
