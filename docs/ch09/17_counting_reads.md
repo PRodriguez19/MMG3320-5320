@@ -274,9 +274,9 @@ If this happens to you, please download the `rseqc_results` folder and use the s
 
 ## Class Exercise Part B
 
-!!! example "Class Exercise: HTSeq-count Instructions and Script"  
+!!! example "Class Exercise: Running HTSeq-count"  
 
-    1. **Modify `htseq-count.sh` script:** While #2 is running (~5 mins), modify the the `htseq-count.sh` script; you will need to alter the following:
+    1. **Modify `htseq-count.sh` script:** You will need to alter the following:
         + add the module 
         + add the path to the GTF file: 
         + `-s` options include yes, no, or reverse
@@ -284,43 +284,14 @@ If this happens to you, please download the `rseqc_results` folder and use the s
     2. Submit the `htseq-count.sh` script after modifying it 
     3. Then Rerun the `htseq-count.sh` script, but this time change to `-i gene_name` instead. Be sure to change the name of the output file as well. What is the difference in the outputs? 
     4. Read the section below titled **`htseq-count` output**
-    5. Now you are ready to generate a multiqc output from the `*.summary` files
+    5. Generate a final multiqc output. This time run multiqc 
 
 
 
 The `htseq-count.sh` script below will get you started: 
 
 ```bash
-#!/bin/bash
-#SBATCH --partition=general 
-#SBATCH --nodes=1
-#SBATCH --ntasks=4
-#SBATCH --mem=10G
-#SBATCH --time=30:00:00
-#SBATCH --job-name=htseq-count    
-#SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid
-
-# Load HTSeq module
-
-
-# Define the path to the GTF file
-GTF_FILE=
-
-# Iterate through all BAM files in the current directory
-for BAM_FILE in *.bam; do
-
-  # Extract the filename without the .bam extension
-  NAME=$(basename "$BAM_FILE" .bam)
-  echo "Processing: $NAME"
-
-  # Run HTSeq-count
-  htseq-count -f bam \
-    -s \  # Modify based on your library strandedness
-    -i gene_id \
-    -m union \
-    "$BAM_FILE" "$GTF_FILE" > "${NAME}.gene_id.count.txt" 2> "${NAME}.gene_id.summary"
-
-done
+test
 ```
 
 + > → Redirects the gene counts output to results/counts/sample_counts.txt.
