@@ -1714,12 +1714,36 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Class Exercise Part A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-run-rseqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Run RSeQC:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#class-exercise-part-b" class="md-nav__link">
     <span class="md-ellipsis">
       Class Exercise Part B
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-part-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part C
     </span>
   </a>
   
@@ -2146,12 +2170,36 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Class Exercise Part A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-run-rseqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Run RSeQC:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#class-exercise-part-b" class="md-nav__link">
     <span class="md-ellipsis">
       Class Exercise Part B
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-part-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part C
     </span>
   </a>
   
@@ -2361,7 +2409,7 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 </li>
 </ol>
 </div>
-<p><strong>How To Run RSeQC:</strong></p>
+<h3 id="how-to-run-rseqc">How To Run RSeQC:</h3>
 <ul>
 <li>Activate conda environment </li>
 </ul>
@@ -2436,17 +2484,76 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <div class="highlight"><pre><span></span><code>conda<span class="w"> </span>deactivate
 </code></pre></div>
 <ul>
-<li>Run Multiqc in the <code>rseqc_results/</code> folder determine strandedness of the fastq files. <strong>Note:</strong> I tried running the multiqc-rseqc module yesterday and continued to get the issue: <code>The 'rseqc' MultiQC module broke...</code> </li>
+<li>
+<p>Run Multiqc in the <code>rseqc_results/</code> folder determine strandedness of the fastq files. </p>
+</li>
+<li>
+<p><strong>Note:</strong> I tried running the multiqc-rseqc module yesterday and continued to get the issue: <code>The 'rseqc' MultiQC module broke...</code> </p>
+</li>
 </ul>
-<p>If this happens to you, please download the <code>rseqc_results</code> folder and use the site <a href="https://seqera.io/multiqc/">Seqera-Multiqc</a></p>
+<p>If this happens to you, please download the <code>rseqc_results</code> folder and use the site <a href="https://seqera.io/multiqc/">Seqera-Multiqc</a> instead. </p>
 <p><strong>I will need to work with the VACC to find a permanent solution.</strong></p>
 <h2 id="class-exercise-part-b">Class Exercise Part B</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: Running HTSeq-count</p>
 <ol>
 <li><strong>Modify <code>htseq-count.sh</code> script:</strong> You will need to alter the following:<ul>
-<li>add the module </li>
-<li>add the path to the GTF file: </li>
+<li>add the required program modules </li>
+<li>add the correct path to the GTF file </li>
+<li><code>-s</code> options include yes, no, or reverse</li>
+<li><code>-i</code> specify <code>gene_id</code></li>
+</ul>
+</li>
+<li>Submit the <code>htseq-count.sh</code> script after modifying it. This should only take a few minutes. </li>
+<li>Look inside of the <code>htseq-count_XXXXXX.out</code> file after the job completed. It should appear identical as below: </li>
+</ol>
+<div class="highlight"><pre><span></span><code>Processing:<span class="w"> </span>KO_hg19_rep2_sorted
+Processing:<span class="w"> </span>KO_hg19_rep3_sorted
+Processing:<span class="w"> </span>WT_hg19_rep1_sorted
+Processing:<span class="w"> </span>WT_hg19_rep2_sorted
+Processing:<span class="w"> </span>WT_hg19_rep3_sorted
+</code></pre></div>
+</div>
+<p>The <code>htseq-count.sh</code> script is below: </p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=general </span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks=4</span>
+<span class="c1">#SBATCH --mem=10G</span>
+<span class="c1">#SBATCH --time=30:00:00</span>
+<span class="c1">#SBATCH --job-name=htseq-count    </span>
+<span class="c1">#SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid</span>
+
+<span class="c1"># Load HTSeq module</span>
+
+
+<span class="c1"># Iterate through all BAM files in the current directory</span>
+<span class="k">for</span><span class="w"> </span>BAM_FILE<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.bam<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+
+<span class="c1"># Extract the filename without the .bam extension</span>
+<span class="nv">NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>.bam<span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Processing: </span><span class="nv">$NAME</span><span class="s2">"</span>
+
+<span class="c1"># Run HTSeq-count</span>
+htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">  </span>-s<span class="w"> </span>-i<span class="w"> </span>-m<span class="w"> </span>union<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>/users/p/d/pdrodrig/htseq_2025/chr1-hg19_genes.gtf<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.count.txt"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.summary"</span>
+
+<span class="k">done</span>
+</code></pre></div>
+<ul>
+<li>
+<blockquote>
+<p>→ Redirects the gene counts output to results/counts/sample_counts.txt.</p>
+</blockquote>
+</li>
+<li>2&gt; → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.</li>
+</ul>
+<h2 id="class-exercise-part-c">Class Exercise Part C</h2>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise: Final Multiqc &amp; Interpretation</p>
+<ol>
+<li><strong>Modify <code>htseq-count.sh</code> script:</strong> You will need to alter the following:<ul>
+<li>add the required program modules </li>
+<li>add the correct path to the GTF file </li>
 <li><code>-s</code> options include yes, no, or reverse</li>
 <li><code>-i</code> specify <code>gene_id</code></li>
 </ul>
@@ -2457,17 +2564,6 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <li>Generate a final multiqc output. This time run multiqc </li>
 </ol>
 </div>
-<p>The <code>htseq-count.sh</code> script below will get you started: </p>
-<div class="highlight"><pre><span></span><code><span class="nb">test</span>
-</code></pre></div>
-<ul>
-<li>
-<blockquote>
-<p>→ Redirects the gene counts output to results/counts/sample_counts.txt.</p>
-</blockquote>
-</li>
-<li>2&gt; → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.</li>
-</ul>
 <h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
 <p>The output of htseq-count consists of two main files for each sample:</p>
 <ul>
