@@ -485,17 +485,18 @@ These are some parameters of bamCoverage that are worth considering:
 
 We will be using the bare minimum of parameters as shown in the code below. We decrease the bin size to increase the resolution of the track (this also means larger file size). If you are interested, feel free to test out some of the other parameters to create different bigWig files. You can load them into a genome viewer like IGV and observe the differences.
 
-Let's create a bigWig file for `KO_hg19_rep2_sorted.bam` and `WT_hg19_rep2_sorted.bam`: 
+!!! example "Class Exercise: Running deeptools/bamCoverage"  
 
-```bash
-module load deeptools/3.5.5 
-```
+    Let's create a bigWig file for `KO_hg19_rep2_sorted.bam` and `WT_hg19_rep2_sorted.bam`: 
 
-```bash
-bamCoverage -b KO_hg19_rep2_sorted.bam -o KO_hg19_rep2_sorted.bw 
-```
+    ```bash
+    module load deeptools/3.5.5 
+    ```
 
-*Note: Normally, this command can take up to 10 minutes to complete.*
+    ```bash
+    bamCoverage -b KO_hg19_rep2_sorted.bam -o KO_hg19_rep2_sorted.bw 
+    ```
+    *Note: Normally, this command can take up to 10 minutes to complete.*
 
 
 **Visualize with IGV:**
