@@ -1708,6 +1708,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#class-exercise-folder-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Folder Content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#class-exercise-part-a" class="md-nav__link">
     <span class="md-ellipsis">
       Class Exercise Part A
@@ -2173,6 +2182,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#class-exercise-folder-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Folder Content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#class-exercise-part-a" class="md-nav__link">
     <span class="md-ellipsis">
       Class Exercise Part A
@@ -2414,12 +2432,43 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <li>Alternative tools like featureCounts (..which is faster) or Salmon/RSEM (for transcript-level quantification) may be preferred in some cases.</li>
 </ul>
 <hr>
+<h2 id="class-exercise-folder-content">Class Exercise Folder Content</h2>
+<p>├── bams
+│   ├── KO_hg19_rep2_sorted.bam
+│   ├── KO_hg19_rep2_sorted.bam.bai
+│   ├── KO_hg19_rep3_sorted.bam
+│   ├── KO_hg19_rep3_sorted.bam.bai
+│   ├── WT_hg19_rep1_sorted.bam
+│   ├── WT_hg19_rep1_sorted.bam.bai
+│   ├── WT_hg19_rep2_sorted.bam
+│   ├── WT_hg19_rep2_sorted.bam.bai
+│   ├── WT_hg19_rep3_sorted.bam
+│   └── WT_hg19_rep3_sorted.bam.bai
+├── chr1-hg19_genes.gtf
+├── logs
+│   ├── KO_hg19_rep1.log
+│   ├── KO_hg19_rep1.txt
+│   ├── KO_hg19_rep2.log
+│   ├── KO_hg19_rep2.txt
+│   ├── KO_hg19_rep3.log
+│   ├── KO_hg19_rep3.txt
+│   ├── WT_hg19_rep1.log
+│   ├── WT_hg19_rep1.txt
+│   ├── WT_hg19_rep2.log
+│   ├── WT_hg19_rep2.txt
+│   ├── WT_hg19_rep3.log
+│   └── WT_hg19_rep3.txt
+└── refseq.hg19.bed12</p>
 <h2 id="class-exercise-part-a">Class Exercise Part A</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: Running RSeQC</p>
 <ol>
 <li><strong>Copy Folder:</strong> Make a copy of the following folder into your home directory: </li>
-<li><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine which of the following three options to specify (see the notes below on <em>how-to</em> run <code>RSeQC</code>): <ul>
+</ol>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/htseq_2025_demo
+</code></pre></div>
+<ol>
+<li><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: <ul>
 <li><code>-s yes</code>, reads are mapped to the same strand as the sense strand </li>
 <li><code>-s no</code>, reads can map to either strand (unstranded)</li>
 <li><code>-s reverse</code>, reads are mapped to the opposite strand (anti-sense)</li>
@@ -2503,13 +2552,14 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 </code></pre></div>
 <ul>
 <li>
-<p>Run Multiqc in the <code>rseqc_results/</code> folder determine strandedness of the fastq files. </p>
+<p>Run multiqc in the <code>rseqc_results/</code> folder to determine strandedness of the FASTQ files. </p>
 </li>
 <li>
 <p><strong>Note:</strong> I tried running the multiqc-rseqc module yesterday and continued to get the issue: <code>The 'rseqc' MultiQC module broke...</code> </p>
 </li>
 </ul>
-<p>If this happens to you, please download the <code>rseqc_results</code> folder and use the site <a href="https://seqera.io/multiqc/">Seqera-Multiqc</a> instead. </p>
+<p>If this happens to you, please download the <code>rseqc_results</code> folder and use the site <a href="https://seqera.io/multiqc/">Seqera-Multiqc</a> instead. 
+<em>Did you forget how to download files? Go to Frequently Asked Questions</em></p>
 <p><strong>I will need to work with the VACC to find a permanent solution.</strong></p>
 <h2 id="class-exercise-part-b">Class Exercise Part B</h2>
 <div class="admonition example">
@@ -2522,8 +2572,8 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 <li><code>-i</code> specify <code>gene_id</code></li>
 </ul>
 </li>
-<li>Submit the <code>htseq-count.sh</code> script after modifying it. This should only take a few minutes. </li>
-<li>Look inside of the <code>htseq-count_XXXXXX.out</code> file after the job completed. It should appear identical as below: </li>
+<li><strong>Submit the <code>htseq-count.sh</code> script</strong> after modifying it. This should only take a few minutes. </li>
+<li><strong>Look inside</strong> of the <code>htseq-count_XXXXXX.out</code> file after the job is completed. It should appear identical as below: </li>
 </ol>
 <div class="highlight"><pre><span></span><code>Processing:<span class="w"> </span>KO_hg19_rep2_sorted
 Processing:<span class="w"> </span>KO_hg19_rep3_sorted
@@ -2558,19 +2608,15 @@ htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">
 <span class="k">done</span>
 </code></pre></div>
 <ul>
-<li>
-<blockquote>
-<p>→ Redirects the gene counts output to results/counts/sample_counts.txt.</p>
-</blockquote>
-</li>
-<li>2&gt; → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.</li>
+<li><code>&gt;</code> → Redirects the gene counts output to results/counts/sample_counts.txt.</li>
+<li><code>2&gt;</code> → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.</li>
 </ul>
 <h2 id="class-exercise-part-c">Class Exercise Part C</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: Multiqc break</p>
 <ol>
-<li>Read the section below titled <strong><code>htseq-count</code> output</strong></li>
-<li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  <strong>This should work with no issue, it was only the RSeQC Module which is broken</strong></li>
+<li>Read the section below titled htseq-count` output</li>
+<li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  <em>This should work with no issue, it was only the RSeQC Module which is broken</em></li>
 </ol>
 </div>
 <h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
