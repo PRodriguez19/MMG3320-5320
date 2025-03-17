@@ -173,6 +173,7 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
 
 ## Class Exercise Folder Content
 
+```bash
 ├── bams
 │   ├── KO_hg19_rep2_sorted.bam
 │   ├── KO_hg19_rep2_sorted.bam.bai
@@ -199,6 +200,8 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
 │   ├── WT_hg19_rep3.log
 │   └── WT_hg19_rep3.txt
 └── refseq.hg19.bed12
+
+```
 
 
 ## Class Exercise Part A
