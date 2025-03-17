@@ -171,12 +171,47 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
 
 ***
 
+## Class Exercise Folder Content
+
+├── bams
+│   ├── KO_hg19_rep2_sorted.bam
+│   ├── KO_hg19_rep2_sorted.bam.bai
+│   ├── KO_hg19_rep3_sorted.bam
+│   ├── KO_hg19_rep3_sorted.bam.bai
+│   ├── WT_hg19_rep1_sorted.bam
+│   ├── WT_hg19_rep1_sorted.bam.bai
+│   ├── WT_hg19_rep2_sorted.bam
+│   ├── WT_hg19_rep2_sorted.bam.bai
+│   ├── WT_hg19_rep3_sorted.bam
+│   └── WT_hg19_rep3_sorted.bam.bai
+├── chr1-hg19_genes.gtf
+├── logs
+│   ├── KO_hg19_rep1.log
+│   ├── KO_hg19_rep1.txt
+│   ├── KO_hg19_rep2.log
+│   ├── KO_hg19_rep2.txt
+│   ├── KO_hg19_rep3.log
+│   ├── KO_hg19_rep3.txt
+│   ├── WT_hg19_rep1.log
+│   ├── WT_hg19_rep1.txt
+│   ├── WT_hg19_rep2.log
+│   ├── WT_hg19_rep2.txt
+│   ├── WT_hg19_rep3.log
+│   └── WT_hg19_rep3.txt
+└── refseq.hg19.bed12
+
+
 ## Class Exercise Part A
 
 !!! example "Class Exercise: Running RSeQC"  
 
     1. **Copy Folder:** Make a copy of the following folder into your home directory: 
-    2. **Determine Strandedness:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine which of the following three options to specify (see the notes below on *how-to* run `RSeQC`): 
+       
+       ```bash
+       /gpfs1/cl/mmg3320/course_materials/htseq_2025_demo
+       ```
+
+    2. **Determine Strandedness:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: 
         + `-s yes`, reads are mapped to the same strand as the sense strand 
         + `-s no`, reads can map to either strand (unstranded)
         + `-s reverse`, reads are mapped to the opposite strand (anti-sense)
@@ -265,11 +300,12 @@ done
 conda deactivate
 ```
 
-+ Run Multiqc in the `rseqc_results/` folder determine strandedness of the fastq files. 
++ Run multiqc in the `rseqc_results/` folder to determine strandedness of the FASTQ files. 
 
 + **Note:** I tried running the multiqc-rseqc module yesterday and continued to get the issue: `The 'rseqc' MultiQC module broke...` 
 
 If this happens to you, please download the `rseqc_results` folder and use the site [Seqera-Multiqc](https://seqera.io/multiqc/) instead. 
+*Did you forget how to download files? Go to Frequently Asked Questions*
 
 **I will need to work with the VACC to find a permanent solution.**
 
@@ -283,8 +319,8 @@ If this happens to you, please download the `rseqc_results` folder and use the s
         + add the correct path to the GTF file 
         + `-s` options include yes, no, or reverse
         + `-i` specify `gene_id`
-    2. Submit the `htseq-count.sh` script after modifying it. This should only take a few minutes. 
-    3. Look inside of the `htseq-count_XXXXXX.out` file after the job completed. It should appear identical as below: 
+    2. **Submit the `htseq-count.sh` script** after modifying it. This should only take a few minutes. 
+    3. **Look inside** of the `htseq-count_XXXXXX.out` file after the job is completed. It should appear identical as below: 
 
     ```bash
     Processing: KO_hg19_rep2_sorted
@@ -323,8 +359,8 @@ htseq-count -f bam  -s -i -m union "$BAM_FILE" /users/p/d/pdrodrig/htseq_2025/ch
 done
 ```
 
-+ > → Redirects the gene counts output to results/counts/sample_counts.txt.
-+ 2> → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.
++ `>` → Redirects the gene counts output to results/counts/sample_counts.txt.
++ `2>` → Redirects the summary of assigned/unassigned reads to results/counts/sample_counts.summary.
 
 
 
@@ -332,8 +368,8 @@ done
 
 !!! example "Class Exercise: Multiqc break"  
 
-    1. Read the section below titled **`htseq-count` output**
-    2. Generate a final multiqc output; this time do so inside of the `bams\` folder.  **This should work with no issue, it was only the RSeQC Module which is broken**
+    1. Read the section below titled htseq-count` output
+    2. Generate a final multiqc output; this time do so inside of the `bams\` folder.  *This should work with no issue, it was only the RSeQC Module which is broken*
 
 ## `htseq-count` output
 
