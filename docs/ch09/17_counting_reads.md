@@ -494,12 +494,12 @@ module load deeptools/3.5.5
 bamCoverage -b KO_hg19_rep2_sorted.bam -o KO_hg19_rep2_sorted.bw 
 ```
 
-**Note: Normally, this command can take up to 10 minutes to complete.**
+*Note: Normally, this command can take up to 10 minutes to complete.*
 
 
-Visualize with IGV: 
+**Visualize with IGV:**
 
-  + **Start IGV:** You may have this previously installed on your laptop. If not no worries, use the [IGV Web App](https://igv.org/). 
+  + Start IGV, You may have this previously installed on your laptop. If not no worries, use the [IGV Web App](https://igv.org/). 
   + Load the Human genome (hg19) into IGV using the dropdown menu at the top left of your screen. 
   + Load the .bw file using the “Load from File…“ or "Tracks" option. 
   + Type MOV10 into the search bar.
