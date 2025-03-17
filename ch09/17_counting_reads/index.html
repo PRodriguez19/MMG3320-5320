@@ -2740,12 +2740,15 @@ __alignment_not_unique<span class="w">  </span><span class="m">3667</span>
 </li>
 </ul>
 <p>We will be using the bare minimum of parameters as shown in the code below. We decrease the bin size to increase the resolution of the track (this also means larger file size). If you are interested, feel free to test out some of the other parameters to create different bigWig files. You can load them into a genome viewer like IGV and observe the differences.</p>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise: Running deeptools/bamCoverage</p>
 <p>Let's create a bigWig file for <code>KO_hg19_rep2_sorted.bam</code> and <code>WT_hg19_rep2_sorted.bam</code>: </p>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>deeptools/3.5.5<span class="w"> </span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>bamCoverage<span class="w"> </span>-b<span class="w"> </span>KO_hg19_rep2_sorted.bam<span class="w"> </span>-o<span class="w"> </span>KO_hg19_rep2_sorted.bw<span class="w"> </span>
+<p></p><div class="highlight"><pre><span></span><code>bamCoverage<span class="w"> </span>-b<span class="w"> </span>KO_hg19_rep2_sorted.bam<span class="w"> </span>-o<span class="w"> </span>KO_hg19_rep2_sorted.bw<span class="w"> </span>
 </code></pre></div>
-<p><em>Note: Normally, this command can take up to 10 minutes to complete.</em></p>
+<em>Note: Normally, this command can take up to 10 minutes to complete.</em>
+</div>
 <p><strong>Visualize with IGV:</strong></p>
 <ul>
 <li>Start IGV, You may have this previously installed on your laptop. If not no worries, use the <a href="https://igv.org/">IGV Web App</a>. </li>
