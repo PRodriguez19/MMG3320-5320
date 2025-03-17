@@ -462,6 +462,7 @@ As a reminder, we used [SAMtools](http://samtools.sourceforge.net/), specificall
 This command takes a **BAM file as input** and evaluates which areas of the genome have reads associated with them, i.e. how much of the genome is "covered" with reads. The coverage is calculated as the number of reads per bin, where bins are short consecutive sections of the genome (bins) that can be defined by the user. The **output of this command is a bigWig file**. 
 
 These are some parameters of bamCoverage that are worth considering:
+
 * `normalizeUsing`: Possible choices: RPKM, CPM, BPM, RPGC. By default, no normalization is applied. More on this below. 
 * `binSize`: size of bins in bases (default is 50)
 * `--effectiveGenomeSize`: the portion of the genome that is mappable. It is useful to consider this when computing your scaling factor.
@@ -471,15 +472,15 @@ These are some parameters of bamCoverage that are worth considering:
 **Selecting Normalization method:** The methods for bigWig creation (`bamCoverage` and `bamCompare`) allows for normalization, which is great if we want **to compare different samples to each other and they vary in terms of sequencing depth**. DeepTools offers different **methods of normalization** as listed below, each is perfomed per bin. The default is no normalization.
 
 * Reads Per Kilobase per Million mapped reads (RPKM)
-  * number of reads per bin / (number of mapped reads (in millions) * bin length (kb))
+    * number of reads per bin / (number of mapped reads (in millions) * bin length (kb))
 * Counts per million (CPM); this is similar to CPM in RNA-seq
-  * number of reads per bin / number of mapped reads (in millions)
+    * number of reads per bin / number of mapped reads (in millions)
 * Bins Per Million mapped reads (BPM); same as TPM in RNA-seq
-  * number of reads per bin / sum of all reads per bin (in millions)
+    * number of reads per bin / sum of all reads per bin (in millions)
 * Reads per genomic content (RPGC)
-  * number of reads per bin / scaling factor for 1x average coverage 
-  * scaling factor is determined from the sequencing depth: total number of mapped reads * fragment length) / effective genome size
-  * this option requires an effectiveGenomeSize
+    * number of reads per bin / scaling factor for 1x average coverage 
+    * scaling factor is determined from the sequencing depth: total number of mapped reads * fragment length) / effective genome size
+    * this option requires an effectiveGenomeSize
 
 
 We will be using the bare minimum of parameters as shown in the code below. We decrease the bin size to increase the resolution of the track (this also means larger file size). If you are interested, feel free to test out some of the other parameters to create different bigWig files. You can load them into a genome viewer like IGV and observe the differences.
