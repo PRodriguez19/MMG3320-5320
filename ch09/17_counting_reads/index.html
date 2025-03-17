@@ -1777,20 +1777,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-exercise-part-c_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Exercise Part C
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#creating-bigwig-files" class="md-nav__link">
     <span class="md-ellipsis">
       Creating bigWig files
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Creating bigWig files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bamcoverage-from-deeptools" class="md-nav__link">
+    <span class="md-ellipsis">
+      bamCoverage from deepTools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2251,20 +2266,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-exercise-part-c_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Exercise Part C
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#creating-bigwig-files" class="md-nav__link">
     <span class="md-ellipsis">
       Creating bigWig files
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Creating bigWig files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bamcoverage-from-deeptools" class="md-nav__link">
+    <span class="md-ellipsis">
+      bamCoverage from deepTools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2616,7 +2646,7 @@ htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: Multiqc break</p>
 <ol>
-<li>Read the section below titled htseq-count` output</li>
+<li>Read the section below titled <code>htseq-count</code> output</li>
 <li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  <em>This should work with no issue, it was only the RSeQC Module which is broken</em></li>
 </ol>
 </div>
@@ -2669,21 +2699,50 @@ __alignment_not_unique<span class="w">  </span><span class="m">3667</span>
 <span class="c1">#SBATCH --job-name=htseq-array</span>
 <span class="c1">#SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID</span>
 </code></pre></div>
-<h2 id="class-exercise-part-c_1">Class Exercise Part C</h2>
-<div class="admonition example">
-<p class="admonition-title">Class Exercise: Multiqc break</p>
-<ol>
-<li>Read the section below titled <strong><code>htseq-count</code> output</strong></li>
-<li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  <strong>This should work with no issue, it was only the RSeQC Module which is broken</strong></li>
-</ol>
-</div>
 <h2 id="creating-bigwig-files">Creating bigWig files</h2>
-<p>We will now take our BAM files and convert them into bigWig files. The bigWig format is an indexed binary format useful for dense, continuous data that will be displayed in a genome browser as a graph/track, but also is used as input for some of the visualization commands we will be running in <code>deepTools</code>. </p>
-<p><a href="http://deeptools.readthedocs.org/en/latest/content/list_of_tools.html"><code>deepTools</code></a>, is a suite of Python tools developed for the efficient analysis of high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq. <code>deepTools</code> has a wide variety of commands that go beyond those that are covered in this lesson. We encourage you to look through the documentation and explore on your own time. </p>
+<p>We will now take our BAM files and convert them into bigWig files. The bigWig format is an indexed binary format useful for dense, continuous data that can be displayed in a genome browser as a graph/track.</p>
+<p>To create bigWig files we will use <a href="http://deeptools.readthedocs.org/en/latest/content/list_of_tools.html"><code>deepTools</code></a>, a suite of Python tools developed for the efficient analysis of high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq. <code>deepTools</code> has a wide variety of commands that go beyond what we will cover today. </p>
 <figure>
   <img alt="shells" src="../../img/bam_to_bigwig.png" width="700">
 </figure>
-<p><em>Image acquired from <a href="http://deeptools.readthedocs.io/en/latest/content/tools/bamCoverage.html?highlight=bigwig">deepTools documentation</a> pages</em></p>
+<h3 id="setting-up">Setting up</h3>
+<p><strong>Checking/Creating index file for the BAM file:</strong> Often, when working with BAM files you will find that many tools require an index (an associated <code>.bai</code> file). You can think of an index similar to that which is located at the back of a textbook - when you are interested in a particular subject, you look for the keyword in the index and identify the pages that contain the relevant information. Similarily, indexing the BAM file aims to achieve fast retrieval of alignments overlapping a specified region without going through the whole alignment file. Essentially, a <code>bai</code> file along with the <code>bam</code> ensures that downstream applications are able to use the information with the <code>bam</code> file much more speedily.</p>
+<p>As a reminder, we used <a href="http://samtools.sourceforge.net/">SAMtools</a>, specifically the <strong><code>samtools index</code></strong> command, to index the BAM files.</p>
+<h3 id="bamcoverage-from-deeptools">bamCoverage from deepTools</h3>
+<p>This command takes a <strong>BAM file as input</strong> and evaluates which areas of the genome have reads associated with them, i.e. how much of the genome is "covered" with reads. The coverage is calculated as the number of reads per bin, where bins are short consecutive sections of the genome (bins) that can be defined by the user. The <strong>output of this command is a bigWig file</strong>. </p>
+<p>These are some parameters of bamCoverage that are worth considering:
+* <code>normalizeUsing</code>: Possible choices: RPKM, CPM, BPM, RPGC. By default, no normalization is applied. More on this below. 
+* <code>binSize</code>: size of bins in bases (default is 50)
+* <code>--effectiveGenomeSize</code>: the portion of the genome that is mappable. It is useful to consider this when computing your scaling factor.
+* <code>smoothLength</code>: defines a window, larger than the <code>binSize</code>, to average the number of reads over. This helps produce a more continuous plot.
+* <code>centerReads</code>: reads are centered with respect to the fragment length as specified by <code>extendReads</code>. This option is useful to get a sharper signal around enriched regions.</p>
+<p><strong>Selecting Normalization method:</strong> The methods for bigWig creation (<code>bamCoverage</code> and <code>bamCompare</code>) allows for normalization, which is great if we want <strong>to compare different samples to each other and they vary in terms of sequencing depth</strong>. DeepTools offers different <strong>methods of normalization</strong> as listed below, each is perfomed per bin. The default is no normalization.</p>
+<ul>
+<li>Reads Per Kilobase per Million mapped reads (RPKM)</li>
+<li>number of reads per bin / (number of mapped reads (in millions) * bin length (kb))</li>
+<li>Counts per million (CPM); this is similar to CPM in RNA-seq</li>
+<li>number of reads per bin / number of mapped reads (in millions)</li>
+<li>Bins Per Million mapped reads (BPM); same as TPM in RNA-seq</li>
+<li>number of reads per bin / sum of all reads per bin (in millions)</li>
+<li>Reads per genomic content (RPGC)</li>
+<li>number of reads per bin / scaling factor for 1x average coverage </li>
+<li>scaling factor is determined from the sequencing depth: total number of mapped reads * fragment length) / effective genome size</li>
+<li>this option requires an effectiveGenomeSize</li>
+</ul>
+<p>We will be using the bare minimum of parameters as shown in the code below. We decrease the bin size to increase the resolution of the track (this also means larger file size). If you are interested, feel free to test out some of the other parameters to create different bigWig files. You can load them into a genome viewer like IGV and observe the differences.</p>
+<p>Let's create a bigWig file for <code>KO_hg19_rep2_sorted.bam</code> and <code>WT_hg19_rep2_sorted.bam</code>: </p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>deeptools/3.5.5<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>bamCoverage<span class="w"> </span>-b<span class="w"> </span>KO_hg19_rep2_sorted.bam<span class="w"> </span>-o<span class="w"> </span>KO_hg19_rep2_sorted.bw<span class="w"> </span>
+</code></pre></div>
+<p><strong>Note: Normally, this command can take up to 10 minutes to complete.</strong></p>
+<p>Visualize with IGV: </p>
+<ul>
+<li><strong>Start IGV:</strong> You may have this previously installed on your laptop. If not no worries, use the <a href="https://igv.org/">IGV Web App</a>. </li>
+<li>Load the Human genome (hg19) into IGV using the dropdown menu at the top left of your screen. </li>
+<li>Load the .bw file using the “Load from File…“ or "Tracks" option. </li>
+<li>Type MOV10 into the search bar.</li>
+</ul>
 <hr>
 <p><em>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</em></p></div>
 
