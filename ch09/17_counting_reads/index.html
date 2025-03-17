@@ -2710,24 +2710,34 @@ __alignment_not_unique<span class="w">  </span><span class="m">3667</span>
 <p>As a reminder, we used <a href="http://samtools.sourceforge.net/">SAMtools</a>, specifically the <strong><code>samtools index</code></strong> command, to index the BAM files.</p>
 <h3 id="bamcoverage-from-deeptools">bamCoverage from deepTools</h3>
 <p>This command takes a <strong>BAM file as input</strong> and evaluates which areas of the genome have reads associated with them, i.e. how much of the genome is "covered" with reads. The coverage is calculated as the number of reads per bin, where bins are short consecutive sections of the genome (bins) that can be defined by the user. The <strong>output of this command is a bigWig file</strong>. </p>
-<p>These are some parameters of bamCoverage that are worth considering:
-* <code>normalizeUsing</code>: Possible choices: RPKM, CPM, BPM, RPGC. By default, no normalization is applied. More on this below. 
-* <code>binSize</code>: size of bins in bases (default is 50)
-* <code>--effectiveGenomeSize</code>: the portion of the genome that is mappable. It is useful to consider this when computing your scaling factor.
-* <code>smoothLength</code>: defines a window, larger than the <code>binSize</code>, to average the number of reads over. This helps produce a more continuous plot.
-* <code>centerReads</code>: reads are centered with respect to the fragment length as specified by <code>extendReads</code>. This option is useful to get a sharper signal around enriched regions.</p>
+<p>These are some parameters of bamCoverage that are worth considering:</p>
+<ul>
+<li><code>normalizeUsing</code>: Possible choices: RPKM, CPM, BPM, RPGC. By default, no normalization is applied. More on this below. </li>
+<li><code>binSize</code>: size of bins in bases (default is 50)</li>
+<li><code>--effectiveGenomeSize</code>: the portion of the genome that is mappable. It is useful to consider this when computing your scaling factor.</li>
+<li><code>smoothLength</code>: defines a window, larger than the <code>binSize</code>, to average the number of reads over. This helps produce a more continuous plot.</li>
+<li><code>centerReads</code>: reads are centered with respect to the fragment length as specified by <code>extendReads</code>. This option is useful to get a sharper signal around enriched regions.</li>
+</ul>
 <p><strong>Selecting Normalization method:</strong> The methods for bigWig creation (<code>bamCoverage</code> and <code>bamCompare</code>) allows for normalization, which is great if we want <strong>to compare different samples to each other and they vary in terms of sequencing depth</strong>. DeepTools offers different <strong>methods of normalization</strong> as listed below, each is perfomed per bin. The default is no normalization.</p>
 <ul>
-<li>Reads Per Kilobase per Million mapped reads (RPKM)</li>
+<li>Reads Per Kilobase per Million mapped reads (RPKM)<ul>
 <li>number of reads per bin / (number of mapped reads (in millions) * bin length (kb))</li>
-<li>Counts per million (CPM); this is similar to CPM in RNA-seq</li>
+</ul>
+</li>
+<li>Counts per million (CPM); this is similar to CPM in RNA-seq<ul>
 <li>number of reads per bin / number of mapped reads (in millions)</li>
-<li>Bins Per Million mapped reads (BPM); same as TPM in RNA-seq</li>
+</ul>
+</li>
+<li>Bins Per Million mapped reads (BPM); same as TPM in RNA-seq<ul>
 <li>number of reads per bin / sum of all reads per bin (in millions)</li>
-<li>Reads per genomic content (RPGC)</li>
+</ul>
+</li>
+<li>Reads per genomic content (RPGC)<ul>
 <li>number of reads per bin / scaling factor for 1x average coverage </li>
 <li>scaling factor is determined from the sequencing depth: total number of mapped reads * fragment length) / effective genome size</li>
 <li>this option requires an effectiveGenomeSize</li>
+</ul>
+</li>
 </ul>
 <p>We will be using the bare minimum of parameters as shown in the code below. We decrease the bin size to increase the resolution of the track (this also means larger file size). If you are interested, feel free to test out some of the other parameters to create different bigWig files. You can load them into a genome viewer like IGV and observe the differences.</p>
 <p>Let's create a bigWig file for <code>KO_hg19_rep2_sorted.bam</code> and <code>WT_hg19_rep2_sorted.bam</code>: </p>
