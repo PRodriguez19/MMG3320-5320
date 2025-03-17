@@ -371,7 +371,7 @@ done
 
 !!! example "Class Exercise: Multiqc break"  
 
-    1. Read the section below titled htseq-count` output
+    1. Read the section below titled `htseq-count` output
     2. Generate a final multiqc output; this time do so inside of the `bams\` folder.  *This should work with no issue, it was only the RSeQC Module which is broken*
 
 ## `htseq-count` output
@@ -440,29 +440,69 @@ An array will submit independent jobs and process each BAM file independently.
 #SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID
 ```
 
-## Class Exercise Part C
-
-!!! example "Class Exercise: Multiqc break"  
-
-    1. Read the section below titled **`htseq-count` output**
-    2. Generate a final multiqc output; this time do so inside of the `bams\` folder.  **This should work with no issue, it was only the RSeQC Module which is broken**
-
-
 
 ## Creating bigWig files
 
-We will now take our BAM files and convert them into bigWig files. The bigWig format is an indexed binary format useful for dense, continuous data that will be displayed in a genome browser as a graph/track, but also is used as input for some of the visualization commands we will be running in `deepTools`. 
+We will now take our BAM files and convert them into bigWig files. The bigWig format is an indexed binary format useful for dense, continuous data that can be displayed in a genome browser as a graph/track.
 
-[`deepTools`](http://deeptools.readthedocs.org/en/latest/content/list_of_tools.html), is a suite of Python tools developed for the efficient analysis of high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq. `deepTools` has a wide variety of commands that go beyond those that are covered in this lesson. We encourage you to look through the documentation and explore on your own time. 
+To create bigWig files we will use [`deepTools`](http://deeptools.readthedocs.org/en/latest/content/list_of_tools.html), a suite of Python tools developed for the efficient analysis of high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq. `deepTools` has a wide variety of commands that go beyond what we will cover today. 
 
 <figure markdown="span">
   ![shells](../img/bam_to_bigwig.png){ width="700" }
 </figure>
 
-*Image acquired from [deepTools documentation](http://deeptools.readthedocs.io/en/latest/content/tools/bamCoverage.html?highlight=bigwig) pages*
+### Setting up 
+
+**Checking/Creating index file for the BAM file:** Often, when working with BAM files you will find that many tools require an index (an associated `.bai` file). You can think of an index similar to that which is located at the back of a textbook - when you are interested in a particular subject, you look for the keyword in the index and identify the pages that contain the relevant information. Similarily, indexing the BAM file aims to achieve fast retrieval of alignments overlapping a specified region without going through the whole alignment file. Essentially, a `bai` file along with the `bam` ensures that downstream applications are able to use the information with the `bam` file much more speedily.
+
+As a reminder, we used [SAMtools](http://samtools.sourceforge.net/), specifically the **`samtools index`** command, to index the BAM files.
+  
+### bamCoverage from deepTools
+
+This command takes a **BAM file as input** and evaluates which areas of the genome have reads associated with them, i.e. how much of the genome is "covered" with reads. The coverage is calculated as the number of reads per bin, where bins are short consecutive sections of the genome (bins) that can be defined by the user. The **output of this command is a bigWig file**. 
+
+These are some parameters of bamCoverage that are worth considering:
+* `normalizeUsing`: Possible choices: RPKM, CPM, BPM, RPGC. By default, no normalization is applied. More on this below. 
+* `binSize`: size of bins in bases (default is 50)
+* `--effectiveGenomeSize`: the portion of the genome that is mappable. It is useful to consider this when computing your scaling factor.
+* `smoothLength`: defines a window, larger than the `binSize`, to average the number of reads over. This helps produce a more continuous plot.
+* `centerReads`: reads are centered with respect to the fragment length as specified by `extendReads`. This option is useful to get a sharper signal around enriched regions.
+
+**Selecting Normalization method:** The methods for bigWig creation (`bamCoverage` and `bamCompare`) allows for normalization, which is great if we want **to compare different samples to each other and they vary in terms of sequencing depth**. DeepTools offers different **methods of normalization** as listed below, each is perfomed per bin. The default is no normalization.
+
+* Reads Per Kilobase per Million mapped reads (RPKM)
+  * number of reads per bin / (number of mapped reads (in millions) * bin length (kb))
+* Counts per million (CPM); this is similar to CPM in RNA-seq
+  * number of reads per bin / number of mapped reads (in millions)
+* Bins Per Million mapped reads (BPM); same as TPM in RNA-seq
+  * number of reads per bin / sum of all reads per bin (in millions)
+* Reads per genomic content (RPGC)
+  * number of reads per bin / scaling factor for 1x average coverage 
+  * scaling factor is determined from the sequencing depth: total number of mapped reads * fragment length) / effective genome size
+  * this option requires an effectiveGenomeSize
 
 
+We will be using the bare minimum of parameters as shown in the code below. We decrease the bin size to increase the resolution of the track (this also means larger file size). If you are interested, feel free to test out some of the other parameters to create different bigWig files. You can load them into a genome viewer like IGV and observe the differences.
 
+Let's create a bigWig file for `KO_hg19_rep2_sorted.bam` and `WT_hg19_rep2_sorted.bam`: 
+
+```bash
+module load deeptools/3.5.5 
+```
+
+```bash
+bamCoverage -b KO_hg19_rep2_sorted.bam -o KO_hg19_rep2_sorted.bw 
+```
+
+**Note: Normally, this command can take up to 10 minutes to complete.**
+
+
+Visualize with IGV: 
+
+  + **Start IGV:** You may have this previously installed on your laptop. If not no worries, use the [IGV Web App](https://igv.org/). 
+  + Load the Human genome (hg19) into IGV using the dropdown menu at the top left of your screen. 
+  + Load the .bw file using the “Load from File…“ or "Tracks" option. 
+  + Type MOV10 into the search bar.
 
 
 ---
