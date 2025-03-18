@@ -12,7 +12,7 @@
         <meta name="author" content="Princess Rodriguez">
       
       
-        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/assignments/genome_index-2025/">
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/assignments/Helpful_Tips_HW7/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Genome index 2025 - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>Helpful Tips HW7 - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#genomes-available-for-mmg3320-spring-2025" class="md-skip">
+        <a href="#helpful-tips-for-hw7" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Genome index 2025
+              Helpful Tips HW7
             
           </span>
         </div>
@@ -1792,28 +1792,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#genomes-available-for-mmg3320-spring-2025" class="md-nav__link">
+  <a href="#helpful-tips-for-hw7" class="md-nav__link">
     <span class="md-ellipsis">
-      Genomes Available for MMG3320 (Spring 2025)
+      Helpful Tips for HW#7
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Genomes Available for MMG3320 (Spring 2025)">
+    <nav class="md-nav" aria-label="Helpful Tips for HW#7">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#information-about-the-indexed-reference-genomes-and-gtf" class="md-nav__link">
+  <a href="#step-1-is-trimming-required-or-not" class="md-nav__link">
     <span class="md-ellipsis">
-      Information about the Indexed Reference Genomes and GTF
+      Step 1: Is Trimming Required or Not?
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#file-paths" class="md-nav__link">
+  <a href="#step-2-aligning-using-hisat2" class="md-nav__link">
     <span class="md-ellipsis">
-      File Paths
+      Step 2: Aligning using HISAT2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Aligning using HISAT2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-specify-strandedness-in-hisat2" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Specify Strandedness in HISAT2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rseqc-and-multiqc-struggles" class="md-nav__link">
+    <span class="md-ellipsis">
+      RSeQC and MultiQC Struggles
     </span>
   </a>
   
@@ -1823,55 +1842,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#information-about-gtf-fasta-files-downloaded-from-ensembl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Information about GTF &amp; FASTA files downloaded from Ensembl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-information-about-the-gtf-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      More information about the GTF file
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="More information about the GTF file">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fields
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Attributes
-    </span>
-  </a>
-  
-</li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#information-about-gtf-fasta-files-downloaded-from-gencode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Information about GTF &amp; FASTA files downloaded from Gencode
-    </span>
-  </a>
   
 </li>
       
@@ -1890,168 +1863,74 @@
                   
 
 
-  <h1>Genome index 2025</h1>
+  <h1>Helpful Tips HW7</h1>
 
-<div><h2 id="genomes-available-for-mmg3320-spring-2025">Genomes Available for MMG3320 (Spring 2025)</h2>
-<p>For the <em>alignment stage</em>, you will need to specify the location of an <em>indexed</em> reference genome. Then during the <em>counting stage</em> you will need to specify the location of the GTF annotation file. The locations to these files can be found on the <code>mmg3320/course_materials</code> folder in the paths specified below. </p>
-<h3 id="information-about-the-indexed-reference-genomes-and-gtf">Information about the Indexed Reference Genomes and GTF</h3>
-<p>The reference genome have been <em>indexed</em> and are available for the following organisms: human, mouse, thale cress, and rice. The FASTA files for these organisms were downloaded from either <a href="https://www.gencodegenes.org/">Gencode</a> or <a href="https://useast.ensembl.org/info/data/ftp/index.html">Ensembl</a>. </p>
-<p>Below is a depiction of the folder structure and location for the reference indexes. </p>
-<p><strong>YOU WILL NOT NEED TO MAKE A COPY OF ANY REFERENCE INDEXES IN YOUR HOME DIRECTORY</strong></p>
-<p><strong>Simply specify the location of the reference genome/GTF file of interest in your script!</strong></p>
-<h3 id="file-paths">File Paths</h3>
-<p>GTF &amp; FASTA files</p>
-<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>Arabidopsis_thaliana.TAIR10.60.gtf
-├──<span class="w"> </span>Arabidopsis_thaliana.TAIR10.dna.toplevel.fa
-├──<span class="w"> </span>Homo_sapiens.GRCh38.113.gtf
-├──<span class="w"> </span>Homo_sapiens.GRCh38.dna.primary_assembly.fa
-├──<span class="w"> </span>Mus_musculus.GRCm39.113.gtf
-├──<span class="w"> </span>Mus_musculus.GRCm39.dna.primary_assembly.fa
-├──<span class="w"> </span>Oryza_sativa.IRGSP-1.0.60.gtf
-└──<span class="w"> </span>Oryza_sativa.IRGSP-1.0.dna.toplevel.fa
-</code></pre></div>
-<p>Location of GTF &amp; FASTA files
-</p><div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/genome_reference
-</code></pre></div>
-<p>Human Reference Index, GRCh38</p>
-<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>Homo_sapiens.GRCh38.1.ht2
-├──<span class="w"> </span>Homo_sapiens.GRCh38.2.ht2
-├──<span class="w"> </span>Homo_sapiens.GRCh38.3.ht2
-├──<span class="w"> </span>Homo_sapiens.GRCh38.4.ht2
-├──<span class="w"> </span>Homo_sapiens.GRCh38.5.ht2
-├──<span class="w"> </span>Homo_sapiens.GRCh38.6.ht2
-├──<span class="w"> </span>Homo_sapiens.GRCh38.7.ht2
-└──<span class="w"> </span>Homo_sapiens.GRCh38.8.ht2
-</code></pre></div>
-<p>Location of Human Reference Index, GRCh38</p>
-<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/HISAT2_indexes/Ensembl/Hsapiens_GRCh38
-</code></pre></div>
-<p>Mouse Reference Index, GRCm39</p>
-<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>Mus_musculus.GRCm39.1.ht2
-├──<span class="w"> </span>Mus_musculus.GRCm39.2.ht2
-├──<span class="w"> </span>Mus_musculus.GRCm39.3.ht2
-├──<span class="w"> </span>Mus_musculus.GRCm39.4.ht2
-├──<span class="w"> </span>Mus_musculus.GRCm39.5.ht2
-├──<span class="w"> </span>Mus_musculus.GRCm39.6.ht2
-├──<span class="w"> </span>Mus_musculus.GRCm39.7.ht2
-└──<span class="w"> </span>Mus_musculus.GRCm39.8.ht2
-</code></pre></div>
-<p>Location of Mouse Reference Index, GRCm39</p>
-<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/HISAT2_indexes/Ensembl/Mmus_GRCm39
-</code></pre></div>
-<p>Rice Reference Index, OSativa</p>
-<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>Osativa_v60.1.ht2
-├──<span class="w"> </span>Osativa_v60.2.ht2
-├──<span class="w"> </span>Osativa_v60.3.ht2
-├──<span class="w"> </span>Osativa_v60.4.ht2
-├──<span class="w"> </span>Osativa_v60.5.ht2
-├──<span class="w"> </span>Osativa_v60.6.ht2
-├──<span class="w"> </span>Osativa_v60.7.ht2
-└──<span class="w"> </span>Osativa_v60.8.ht2
-</code></pre></div>
-<p>Location of Rice Reference Index, OSativa</p>
-<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/HISAT2_indexes/Ensembl/Osativa_IRGSP
-</code></pre></div>
-<p>Thale Cress Reference Index, TAIR10</p>
-<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>TAIR10-v60.1.ht2
-├──<span class="w"> </span>TAIR10-v60.2.ht2
-├──<span class="w"> </span>TAIR10-v60.3.ht2
-├──<span class="w"> </span>TAIR10-v60.4.ht2
-├──<span class="w"> </span>TAIR10-v60.5.ht2
-├──<span class="w"> </span>TAIR10-v60.6.ht2
-├──<span class="w"> </span>TAIR10-v60.7.ht2
-└──<span class="w"> </span>TAIR10-v60.8.ht2
-</code></pre></div>
-<p>Location of Thale Cress Reference Index, TAIR10</p>
-<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/HISAT2_indexes/Ensembl/TAIR10_v60
-</code></pre></div>
-<h2 id="information-about-gtf-fasta-files-downloaded-from-ensembl">Information about GTF &amp; FASTA files downloaded from Ensembl</h2>
-<p><strong>Organisms included: Rice, Thale Cress, Human and Mouse</strong></p>
-<p>Website: 
-https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/gtf/
-https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/fasta/</p>
-<p>Files:
-    + Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
-    + Arabidopsis_thaliana.TAIR10.60.gtf.gz 
-    + Oryza_sativa.IRGSP-1.0.dna.toplevel.fa.gz
-    + Oryza_sativa.IRGSP-1.0.60.gtf.gz</p>
-<p>File naming for Ensembl: </p>
-<p>Files are consistently named following this pattern:
-   <species>.<assembly>.<version>.gtf.gz</version></assembly></species></p>
-<p><species>:       The systematic name of the species.
-<assembly>:      The assembly build name.
-<version>:       The version of Ensembl from which the data was exported.
-gtf : All files in these directories are in GTF format
-gz : All files are compacted with GNU Zip for storage efficiency.</version></assembly></species></p>
-<p>Toplevel:These files contains all sequence regions flagged as toplevel in an Ensembl
-schema. This includes chromsomes, regions not assembled into chromosomes and
-N padded haplotype/patch regions.</p>
-<h2 id="more-information-about-the-gtf-file">More information about the GTF file</h2>
-<p>The GTF (General Transfer Format) is an extension of GFF version 2 and used to represent transcription models. GFF (General Feature Format) consists of one line per feature, each containing 9 columns of data. </p>
-<h3 id="fields">Fields</h3>
-<p>Fields are tab-separated. Also, all but the final field in each feature line must contain a value; "empty" columns are denoted with a '.'</p>
-<pre><code>seqname   - name of the chromosome or scaffold; chromosome names 
-            without a 'chr' 
-source    - name of the program that generated this feature, or 
-            the data source (database or project name)
-feature   - feature type name. Current allowed features are
-            {gene, transcript, exon, CDS, Selenocysteine, start_codon,
-            stop_codon and UTR}
-start     - start position of the feature, with sequence numbering 
-            starting at 1.
-end       - end position of the feature, with sequence numbering 
-            starting at 1.
-score     - a floating point value indiciating the score of a feature
-strand    - defined as + (forward) or - (reverse).
-frame     - one of '0', '1' or '2'. Frame indicates the number of base pairs
-            before you encounter a full codon. '0' indicates the feature 
-            begins with a whole codon. '1' indicates there is an extra
-            base (the 3rd base of the prior codon) at the start of this feature.
-            '2' indicates there are two extra bases (2nd and 3rd base of the 
-            prior exon) before the first codon. All values are given with
-            relation to the 5' end.
-attribute - a semicolon-separated list of tag-value pairs (separated by a space), 
-            providing additional information about each feature. A key can be
-            repeated multiple times.
-</code></pre>
-<h3 id="attributes">Attributes</h3>
-<p>The following attributes are available. All attributes are semi-colon separated pairs of keys and values.</p>
+<div><h2 id="helpful-tips-for-hw7">Helpful Tips for HW#7</h2>
+<h3 id="step-1-is-trimming-required-or-not"><strong>Step 1: Is Trimming Required or Not?</strong></h3>
+<p>Determine whether your samples require trimming. If trimming is necessary, we covered this process <a href="https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/">here.</a> </p>
 <ul>
-<li>gene_id: The stable identifier for the gene</li>
-<li>gene_version: The stable identifier version for the gene</li>
-<li>gene_name: The official symbol of this gene</li>
-<li>gene_source: The annotation source for this gene</li>
-<li>gene_biotype: The biotype of this gene</li>
-<li>transcript_id: The stable identifier for this transcript</li>
-<li>transcript_version: The stable identifier version for this transcript</li>
-<li>transcript_name: The symbold for this transcript derived from the gene name</li>
-<li>transcript_source: The annotation source for this transcript</li>
-<li>transcript_biotype: The biotype for this transcript</li>
-<li>exon_id: The stable identifier for this exon</li>
-<li>exon_version: The stable identifier version for this exon</li>
-<li>exon_number: Position of this exon in the transcript</li>
-<li>ccds_id: CCDS identifier linked to this transcript</li>
-<li>protein_id: Stable identifier for this transcript's protein</li>
-<li>protein_version: Stable identifier version for this transcript's protein</li>
-<li>tag: A collection of additional key value tags</li>
-<li>transcript_support_level: Ranking to assess how well a transcript is supported (from 1 to 5)</li>
+<li>Inside the <code>trimmomatic_exercise/</code> folder, there is a subfolder called <code>trimmomatic_adapters/</code><ul>
+<li>You will need to specify the path to this folder along with the appropriate FASTA file containing the adapters to trim.</li>
 </ul>
-<hr>
-<h2 id="information-about-gtf-fasta-files-downloaded-from-gencode">Information about GTF &amp; FASTA files downloaded from Gencode</h2>
-<p><strong>Organisms included: Human and Mouse</strong></p>
-<p>Website: https://www.gencodegenes.org/mouse/release_M36.html </p>
-<p>Version: 
-+ GRCm39/mm39 - version M36
-+ GRCh38/hg38 - version 47 </p>
-<p>Description of files:  </p>
-<p>FASTA information
-Genome sequence, primary assembly (GRCm39) </p>
-<pre><code>+ Nucleotide sequence of the GRCm39 primary genome assembly (chromosomes and scaffolds)
-+ The sequence region names are the same as in the GTF/GFF3 files
+</li>
+</ul>
+<figure>
+  <img alt="home" src="../../img/trimmomatic_adapters.png" width="600">
+</figure>
+<h3 id="step-2-aligning-using-hisat2"><strong>Step 2: Aligning using HISAT2</strong></h3>
+<p>During Week 6, we covered the aligner HISAT2. There were two key exercises:</p>
+<pre><code>+ `HISAT2_example` (L11) – For single-end (SE) samples
++ `HISAT2_modify` (L13) – For paired-end (PE) samples
 </code></pre>
-<p>GTF information </p>
-<pre><code>+ It contains the comprehensive gene annotation on the primary assembly (chromosomes and scaffolds) sequence regions
+<p>Use the appropriate script based on your sample type:</p>
+<pre><code>+ SE samples → Use the script in `HISAT2_example`
++ PE samples → Use the modified script in `HISAT2_modify`
+</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<pre><code>Need a refresher? Review the slides on Alignment Outputs (L15) to revisit the differences between these scripts.
+</code></pre>
+</div>
+<p>During alignment, you will need to specify the location to the Genomic Index. More information regarding the indexes and where to find them can be found here: </p>
+<div class="highlight"><pre><span></span><code>ddd
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<pre><code>You will ONLY need to specify the LOCATION/PATH of the Genomic Index when running HISAT2.
+Please DO NOT make a copy of these indexes! They are extremely large and should not be duplicated.
+</code></pre>
+</div>
+<div class="admonition danger">
+<p class="admonition-title"><strong>Strandedness: Don't Forget this Step!</strong></p>
+<pre><code>Before aligning your full dataset: Run the alignment on one sample first to determine the strandedness of your samples.
+If you do not specify `--rna-strandness` during alignment, HISAT2 assumes unstranded data, which can lead to incorrect alignments and downstream errors.
+</code></pre>
+</div>
+<h4 id="how-to-specify-strandedness-in-hisat2">How to Specify Strandedness in HISAT2</h4>
+<div class="highlight"><pre><span></span><code>--rna-strandness<span class="w"> </span>&lt;string&gt;
+</code></pre></div>
+<p>For single-end reads, use F or R.</p>
+<pre><code>+ ‘F’ means a read corresponds to a transcript.
++ ‘R’ means a read corresponds to the reverse complement.
+</code></pre>
+<p>For paired-end reads, use either FR or RF.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<pre><code>Need a refresher? Review the slides on Alignment Outputs (L15) to revisit the differences between these scripts.
+</code></pre>
+</div>
+<h4 id="rseqc-and-multiqc-struggles">RSeQC and MultiQC Struggles</h4>
+<p>MultiQC sometimes struggles with processing RSeQC outputs.
++ To determine strandedness, continue using the <a href="https://seqera.io/multiqc/">Sequera.io MultiQC</a> website.</p>
+<p><strong>Step 3: Counting Reads</strong></p>
+<ul>
+<li>Your <code>htseq_2025_demo</code> folder contains the script you created to run htseq-count on your samples.</li>
+<li>Each sample takes approximately 30 minutes to process.<ul>
+<li>To be safe, request 24:00:00 for time.</li>
+</ul>
+</li>
+<li>More information regarding the GTF file and its location can be found: </li>
+</ul></div>
 
 
 
