@@ -3,12 +3,12 @@
 
 **The due date for this homework is Friday, April 4th by 5pm.**
 
-PART A (50 points): BASH script (.sh) used to perform the alignment and create BAM file
-PART B (50 points): BASH script (.sh) used to count reads or other downstream processing files.
-PART C (50 points): Final MULTIQC (.html) output displaying plots from the alignment, counting, and RSeQC stage. 
-PART D (50 points):  Fill out the table below for your samples. Submit the filled-out table in a separate Microsoft Word document (.docx).
++ PART A (50 points): BASH script (.sh) used to perform the alignment and create BAM file
++ PART B (50 points): BASH script (.sh) used to count reads or other downstream processing files.
++ PART C (50 points): Final MULTIQC (.html) output displaying plots from the alignment, counting, and RSeQC stage. 
++ PART D (50 points):  Fill out the table below for your samples. Submit the filled-out table in a separate Microsoft Word document (.docx).
 
-Most of these file types will not be accepted by Brightspace, therefore, please send me ONE email with PART A-D included. Late homework will be docked 10% of the overall grade for every day that the assignment is late. An assignment is considered late if it is not submitted by the date and time specified. Three days past the due date (weekend included), the assignment will no longer be accepted, and the student(s) will receive a ZERO.
+Most of these file types will not be accepted by Brightspace, therefore, please send me ONE email with PARTS A-D included. Late homework will be docked 10% of the overall grade for every day that the assignment is late. An assignment is considered late if it is not submitted by the date and time specified. Three days past the due date (weekend included), the assignment will no longer be accepted, and the student(s) will receive a ZERO.
 
 [Homework #7 Guidelines](MMG3320-Homework7-2025.pdf)
 
