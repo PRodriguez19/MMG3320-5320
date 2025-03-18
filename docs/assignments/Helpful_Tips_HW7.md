@@ -46,8 +46,8 @@ During alignment, you will need to specify the location to the Genomic Index. Mo
 
 For single-end reads, use `F` or `R`.
 
-+ ‘F’ means a read corresponds to a transcript.
-+ ‘R’ means a read corresponds to the reverse complement. 
++ `F` means a read corresponds to a transcript.
++ `R` means a read corresponds to the reverse complement. 
 
 For paired-end reads, use either `FR` or `RF`.
 
@@ -58,12 +58,13 @@ For paired-end reads, use either `FR` or `RF`.
 #### RSeQC and MultiQC Struggles
 
 MultiQC sometimes struggles with processing RSeQC outputs.
-+ To determine strandedness, continue using the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
+
+    + To determine strandedness, continue using the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
 
 
 ### **Step 3: Counting Reads**
 
 + Your `htseq_2025_demo` folder contains the script you created to run htseq-count on your samples.
 + Each sample takes approximately 30 minutes to process.
-    + To be safe, request 24:00:00 for time.
+    + To be safe, request `24:00:00` for time.
 + More information regarding the GTF file and its location can be found: 

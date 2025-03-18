@@ -8,9 +8,11 @@ The reference genome have been *indexed* and are available for the following org
 
 Below is a depiction of the folder structure and location for the reference indexes. 
 
-**YOU WILL NOT NEED TO MAKE A COPY OF ANY REFERENCE INDEXES IN YOUR HOME DIRECTORY**
+!!! warning 
+    
+    **YOU WILL NOT NEED TO MAKE A COPY OF ANY REFERENCE INDEXES IN YOUR HOME DIRECTORY**
 
-**Simply specify the location of the reference genome/GTF file of interest in your script!**
+    **Simply specify the location of the reference genome/GTF file of interest in your script!**
 
 
 ### File Paths 
@@ -115,11 +117,13 @@ Location of Thale Cress Reference Index, TAIR10
 **Organisms included: Rice, Thale Cress, Human and Mouse**
 
 Website: 
+
 https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/gtf/
 https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/fasta/
 
 Files:
-	+ Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+	
+    + Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
     + Arabidopsis_thaliana.TAIR10.60.gtf.gz	
     + Oryza_sativa.IRGSP-1.0.dna.toplevel.fa.gz
     + Oryza_sativa.IRGSP-1.0.60.gtf.gz
@@ -127,17 +131,21 @@ Files:
 File naming for Ensembl: 
 
 Files are consistently named following this pattern:
-   <species>.<assembly>.<version>.gtf.gz
+   
+```
+<species>.<assembly>.<version>.gtf.gz
+```
 
+```
 <species>:       The systematic name of the species.
 <assembly>:      The assembly build name.
 <version>:       The version of Ensembl from which the data was exported.
+```
+
 gtf : All files in these directories are in GTF format
 gz : All files are compacted with GNU Zip for storage efficiency.
 
-Toplevel:These files contains all sequence regions flagged as toplevel in an Ensembl
-schema. This includes chromsomes, regions not assembled into chromosomes and
-N padded haplotype/patch regions.
+Toplevel:These files contains all sequence regions flagged as toplevel in an Ensembl schema. This includes chromsomes, regions not assembled into chromosomes and N padded haplotype/patch regions.
 
 
 ## More information about the GTF file
@@ -201,9 +209,12 @@ The following attributes are available. All attributes are semi-colon separated 
 
 **Organisms included: Human and Mouse**
 
-Website: https://www.gencodegenes.org/mouse/release_M36.html 
+Website: 
+
+https://www.gencodegenes.org/mouse/release_M36.html 
 
 Version: 
+
 + GRCm39/mm39 - version M36
 + GRCh38/hg38 - version 47 
 
