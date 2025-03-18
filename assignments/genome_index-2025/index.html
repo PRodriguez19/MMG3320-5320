@@ -1918,8 +1918,11 @@
 <h3 id="information-about-the-indexed-reference-genomes-and-gtf">Information about the Indexed Reference Genomes and GTF</h3>
 <p>The reference genome have been <em>indexed</em> and are available for the following organisms: human, mouse, thale cress, and rice. The FASTA files for these organisms were downloaded from either <a href="https://www.gencodegenes.org/">Gencode</a> or <a href="https://useast.ensembl.org/info/data/ftp/index.html">Ensembl</a>. </p>
 <p>Below is a depiction of the folder structure and location for the reference indexes. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p><strong>YOU WILL NOT NEED TO MAKE A COPY OF ANY REFERENCE INDEXES IN YOUR HOME DIRECTORY</strong></p>
 <p><strong>Simply specify the location of the reference genome/GTF file of interest in your script!</strong></p>
+</div>
 <h3 id="file-paths">File Paths</h3>
 <p>GTF &amp; FASTA files</p>
 <div class="highlight"><pre><span></span><code>├──<span class="w"> </span>Arabidopsis_thaliana.TAIR10.60.gtf
@@ -1988,25 +1991,26 @@
 </code></pre></div>
 <h2 id="information-about-gtf-fasta-files-downloaded-from-ensembl">Information about GTF &amp; FASTA files downloaded from Ensembl</h2>
 <p><strong>Organisms included: Rice, Thale Cress, Human and Mouse</strong></p>
-<p>Website: 
-https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/gtf/
+<p>Website: </p>
+<p>https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/gtf/
 https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/fasta/</p>
-<p>Files:
-    + Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
-    + Arabidopsis_thaliana.TAIR10.60.gtf.gz 
-    + Oryza_sativa.IRGSP-1.0.dna.toplevel.fa.gz
-    + Oryza_sativa.IRGSP-1.0.60.gtf.gz</p>
+<p>Files:</p>
+<pre><code>+ Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
++ Arabidopsis_thaliana.TAIR10.60.gtf.gz 
++ Oryza_sativa.IRGSP-1.0.dna.toplevel.fa.gz
++ Oryza_sativa.IRGSP-1.0.60.gtf.gz
+</code></pre>
 <p>File naming for Ensembl: </p>
-<p>Files are consistently named following this pattern:
-   <species>.<assembly>.<version>.gtf.gz</version></assembly></species></p>
-<p><species>:       The systematic name of the species.
-<assembly>:      The assembly build name.
-<version>:       The version of Ensembl from which the data was exported.
-gtf : All files in these directories are in GTF format
-gz : All files are compacted with GNU Zip for storage efficiency.</version></assembly></species></p>
-<p>Toplevel:These files contains all sequence regions flagged as toplevel in an Ensembl
-schema. This includes chromsomes, regions not assembled into chromosomes and
-N padded haplotype/patch regions.</p>
+<p>Files are consistently named following this pattern:</p>
+<div class="highlight"><pre><span></span><code>&lt;species&gt;.&lt;assembly&gt;.&lt;version&gt;.gtf.gz
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;species&gt;:       The systematic name of the species.
+&lt;assembly&gt;:      The assembly build name.
+&lt;version&gt;:       The version of Ensembl from which the data was exported.
+</code></pre></div>
+<p>gtf : All files in these directories are in GTF format
+gz : All files are compacted with GNU Zip for storage efficiency.</p>
+<p>Toplevel:These files contains all sequence regions flagged as toplevel in an Ensembl schema. This includes chromsomes, regions not assembled into chromosomes and N padded haplotype/patch regions.</p>
 <h2 id="more-information-about-the-gtf-file">More information about the GTF file</h2>
 <p>The GTF (General Transfer Format) is an extension of GFF version 2 and used to represent transcription models. GFF (General Feature Format) consists of one line per feature, each containing 9 columns of data. </p>
 <h3 id="fields">Fields</h3>
@@ -2060,10 +2064,13 @@ attribute - a semicolon-separated list of tag-value pairs (separated by a space)
 <hr>
 <h2 id="information-about-gtf-fasta-files-downloaded-from-gencode">Information about GTF &amp; FASTA files downloaded from Gencode</h2>
 <p><strong>Organisms included: Human and Mouse</strong></p>
-<p>Website: https://www.gencodegenes.org/mouse/release_M36.html </p>
-<p>Version: 
-+ GRCm39/mm39 - version M36
-+ GRCh38/hg38 - version 47 </p>
+<p>Website: </p>
+<p>https://www.gencodegenes.org/mouse/release_M36.html </p>
+<p>Version: </p>
+<ul>
+<li>GRCm39/mm39 - version M36</li>
+<li>GRCh38/hg38 - version 47 </li>
+</ul>
 <p>Description of files:  </p>
 <p>FASTA information
 Genome sequence, primary assembly (GRCm39) </p>

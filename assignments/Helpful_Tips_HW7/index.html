@@ -1938,8 +1938,8 @@ Please DO NOT make a copy of these indexes! They are extremely large and should 
 </code></pre></div>
 <p>For single-end reads, use <code>F</code> or <code>R</code>.</p>
 <ul>
-<li>‘F’ means a read corresponds to a transcript.</li>
-<li>‘R’ means a read corresponds to the reverse complement. </li>
+<li><code>F</code> means a read corresponds to a transcript.</li>
+<li><code>R</code> means a read corresponds to the reverse complement. </li>
 </ul>
 <p>For paired-end reads, use either <code>FR</code> or <code>RF</code>.</p>
 <div class="admonition tip">
@@ -1947,13 +1947,14 @@ Please DO NOT make a copy of these indexes! They are extremely large and should 
 <p>Need a refresher? Review the slides on Alignment Outputs (L15) to revisit the differences between these scripts. </p>
 </div>
 <h4 id="rseqc-and-multiqc-struggles">RSeQC and MultiQC Struggles</h4>
-<p>MultiQC sometimes struggles with processing RSeQC outputs.
-+ To determine strandedness, continue using the <a href="https://seqera.io/multiqc/">Sequera.io MultiQC</a> website.</p>
+<p>MultiQC sometimes struggles with processing RSeQC outputs.</p>
+<pre><code>+ To determine strandedness, continue using the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
+</code></pre>
 <h3 id="step-3-counting-reads"><strong>Step 3: Counting Reads</strong></h3>
 <ul>
 <li>Your <code>htseq_2025_demo</code> folder contains the script you created to run htseq-count on your samples.</li>
 <li>Each sample takes approximately 30 minutes to process.<ul>
-<li>To be safe, request 24:00:00 for time.</li>
+<li>To be safe, request <code>24:00:00</code> for time.</li>
 </ul>
 </li>
 <li>More information regarding the GTF file and its location can be found: </li>
