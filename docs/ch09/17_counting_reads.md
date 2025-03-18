@@ -2,7 +2,7 @@
 ## Learning Objectives
 
 * Conversion of BAM file to a counts file using `htseq-count`
-* Conversion of BAM file to a bigWig file using `deeptools` 
+* Conversion of BAM file to a bigWig file using `deeptools`
 
 ## Counting reads as a measure of gene expression
 
