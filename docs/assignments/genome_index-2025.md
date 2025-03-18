@@ -1,76 +1,118 @@
-## Genome Indexing Information for 2025 
 
-For the alignment stage, you will require an *indexed* reference genome. The reference genome has been *indexed* for the following organisms: human, mouse, thale cress, and rice. Each genomics programs has a specific indexing strategy and therefore, requires to be indexed separately. Therefore, you will see indexes created for each organism for each the HISAT2 and STAR programs. The fasta files for these organisms were downloaded from either Gencode or Ensembl. 
+## Genomes Available for MMG3320 (Spring 2025) 
 
-Indexes can be found in this location: 
+For the *alignment stage*, you will need to specify the location of an *indexed* reference genome. Then during the *counting stage* you will need to specify the location of the GTF annotation file. The locations to these files can be found on the `mmg3320/course_materials` folder in the paths specified below. 
 
-Please note, that the top directory contains all indexes for all organisms. Please take the index file only for the organism you require: 
-list file paths 
+### Information about the Indexed Reference Genomes and GTF 
+The reference genome have been *indexed* and are available for the following organisms: human, mouse, thale cress, and rice. The FASTA files for these organisms were downloaded from either [Gencode](https://www.gencodegenes.org/) or [Ensembl](https://useast.ensembl.org/info/data/ftp/index.html). 
 
-Below is a depiction of the folder structure: 
+Below is a depiction of the folder structure and location for the reference indexes. 
 
-**ADD HG19**
+**YOU WILL NOT NEED TO MAKE A COPY OF ANY REFERENCE INDEXES IN YOUR HOME DIRECTORY**
 
-├── HISAT2_indexes
-│   ├── Ensembl
-│   │   ├── Osativa_IRGSP
-│   │   │   ├── Oryza_sativa.IRGSP-1.0.60.gtf
-│   │   │   ├── Oryza_sativa.IRGSP-1.0.dna.toplevel.fa
-│   │   │   ├── Osativa_v60.1.ht2
-│   │   │   ├── Osativa_v60.2.ht2
-│   │   │   ├── Osativa_v60.3.ht2
-│   │   │   ├── Osativa_v60.4.ht2
-│   │   │   ├── Osativa_v60.5.ht2
-│   │   │   ├── Osativa_v60.6.ht2
-│   │   │   ├── Osativa_v60.7.ht2
-│   │   │   └── Osativa_v60.8.ht2
-│   │   └── TAIR10_v60
-│   │       ├── Arabidopsis_thaliana.TAIR10.60.gtf
-│   │       ├── Arabidopsis_thaliana.TAIR10.dna.toplevel.fa
-│   │       ├── TAIR10-v60.1.ht2
-│   │       ├── TAIR10-v60.2.ht2
-│   │       ├── TAIR10-v60.3.ht2
-│   │       ├── TAIR10-v60.4.ht2
-│   │       ├── TAIR10-v60.5.ht2
-│   │       ├── TAIR10-v60.6.ht2
-│   │       ├── TAIR10-v60.7.ht2
-│   │       └── TAIR10-v60.8.ht2
-│   └── Gencode
-│       ├── hg38_v47
-│       │   ├── gencode.v47.primary_assembly.annotation.gtf.gz
-│       │   └── GRCh38.primary_assembly.genome.fa.gz
-│       └── mm39_v36
-│           ├── gencode.vM36.primary_assembly.annotation.gtf.gz
-│           └── GRCm39.primary_assembly.genome.fa.gz
-└── STAR_indexes
+**Simply specify the location of the reference genome/GTF file of interest in your script!**
 
 
+### File Paths 
 
-## Information about GTF & FASTA files downloaded from Gencode
+GTF & FASTA files
 
-**Organisms included: Human and Mouse**
+```bash
+├── Arabidopsis_thaliana.TAIR10.60.gtf
+├── Arabidopsis_thaliana.TAIR10.dna.toplevel.fa
+├── Homo_sapiens.GRCh38.113.gtf
+├── Homo_sapiens.GRCh38.dna.primary_assembly.fa
+├── Mus_musculus.GRCm39.113.gtf
+├── Mus_musculus.GRCm39.dna.primary_assembly.fa
+├── Oryza_sativa.IRGSP-1.0.60.gtf
+└── Oryza_sativa.IRGSP-1.0.dna.toplevel.fa
+```
 
-Website: https://www.gencodegenes.org/mouse/release_M36.html 
+Location of GTF & FASTA files
+```
+/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/genome_reference
+```
 
-Version: 
-+ GRCm39/mm39 - version M36
-+ GRCh38/hg38 - version 47 
+Human Reference Index, GRCh38
 
-Description of files:  
+```bash
+├── Homo_sapiens.GRCh38.1.ht2
+├── Homo_sapiens.GRCh38.2.ht2
+├── Homo_sapiens.GRCh38.3.ht2
+├── Homo_sapiens.GRCh38.4.ht2
+├── Homo_sapiens.GRCh38.5.ht2
+├── Homo_sapiens.GRCh38.6.ht2
+├── Homo_sapiens.GRCh38.7.ht2
+└── Homo_sapiens.GRCh38.8.ht2
+```
 
-FASTA information
-Genome sequence, primary assembly (GRCm39) 
+Location of Human Reference Index, GRCh38
 
-    + Nucleotide sequence of the GRCm39 primary genome assembly (chromosomes and scaffolds)
-    + The sequence region names are the same as in the GTF/GFF3 files
+```bash
+/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/HISAT2_indexes/Ensembl/Hsapiens_GRCh38
+```
 
-GTF information 
-    
-    + It contains the comprehensive gene annotation on the primary assembly (chromosomes and scaffolds) sequence regions 
+Mouse Reference Index, GRCm39
+
+```bash
+├── Mus_musculus.GRCm39.1.ht2
+├── Mus_musculus.GRCm39.2.ht2
+├── Mus_musculus.GRCm39.3.ht2
+├── Mus_musculus.GRCm39.4.ht2
+├── Mus_musculus.GRCm39.5.ht2
+├── Mus_musculus.GRCm39.6.ht2
+├── Mus_musculus.GRCm39.7.ht2
+└── Mus_musculus.GRCm39.8.ht2
+```
+
+Location of Mouse Reference Index, GRCm39
+
+```bash
+/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/HISAT2_indexes/Ensembl/Mmus_GRCm39
+```
+
+Rice Reference Index, OSativa
+
+```bash
+├── Osativa_v60.1.ht2
+├── Osativa_v60.2.ht2
+├── Osativa_v60.3.ht2
+├── Osativa_v60.4.ht2
+├── Osativa_v60.5.ht2
+├── Osativa_v60.6.ht2
+├── Osativa_v60.7.ht2
+└── Osativa_v60.8.ht2
+```
+
+Location of Rice Reference Index, OSativa
+
+```bash
+/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/HISAT2_indexes/Ensembl/Osativa_IRGSP
+```
+
+Thale Cress Reference Index, TAIR10
+
+```bash
+├── TAIR10-v60.1.ht2
+├── TAIR10-v60.2.ht2
+├── TAIR10-v60.3.ht2
+├── TAIR10-v60.4.ht2
+├── TAIR10-v60.5.ht2
+├── TAIR10-v60.6.ht2
+├── TAIR10-v60.7.ht2
+└── TAIR10-v60.8.ht2
+```
+
+Location of Thale Cress Reference Index, TAIR10
+
+```bash
+/gpfs1/cl/mmg3320/course_materials/genome_index_mmg3320/HISAT2_indexes/Ensembl/TAIR10_v60
+```
+
 
 ## Information about GTF & FASTA files downloaded from Ensembl 
 
-**Organisms included: Rice and Thale Cress**
+**Organisms included: Rice, Thale Cress, Human and Mouse**
 
 Website: 
 https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/gtf/
@@ -100,15 +142,11 @@ N padded haplotype/patch regions.
 
 ## More information about the GTF file
 
-The GTF (General Transfer Format) is an extension of GFF version 2 
-and used to represent transcription models. GFF (General Feature Format) 
-consists of one line per feature, each containing 9 columns of data. 
+The GTF (General Transfer Format) is an extension of GFF version 2 and used to represent transcription models. GFF (General Feature Format) consists of one line per feature, each containing 9 columns of data. 
 
 ### Fields
 
-Fields are tab-separated. Also, all but the final field in each 
-feature line must contain a value; "empty" columns are denoted 
-with a '.'
+Fields are tab-separated. Also, all but the final field in each feature line must contain a value; "empty" columns are denoted with a '.'
 
     seqname   - name of the chromosome or scaffold; chromosome names 
                 without a 'chr' 
@@ -136,8 +174,7 @@ with a '.'
 
 ### Attributes
 
-The following attributes are available. All attributes are semi-colon
-separated pairs of keys and values.
+The following attributes are available. All attributes are semi-colon separated pairs of keys and values.
 
 - gene_id: The stable identifier for the gene
 - gene_version: The stable identifier version for the gene
@@ -157,3 +194,27 @@ separated pairs of keys and values.
 - protein_version: Stable identifier version for this transcript's protein
 - tag: A collection of additional key value tags
 - transcript_support_level: Ranking to assess how well a transcript is supported (from 1 to 5)
+
+***
+
+## Information about GTF & FASTA files downloaded from Gencode
+
+**Organisms included: Human and Mouse**
+
+Website: https://www.gencodegenes.org/mouse/release_M36.html 
+
+Version: 
++ GRCm39/mm39 - version M36
++ GRCh38/hg38 - version 47 
+
+Description of files:  
+
+FASTA information
+Genome sequence, primary assembly (GRCm39) 
+
+    + Nucleotide sequence of the GRCm39 primary genome assembly (chromosomes and scaffolds)
+    + The sequence region names are the same as in the GTF/GFF3 files
+
+GTF information 
+    
+    + It contains the comprehensive gene annotation on the primary assembly (chromosomes and scaffolds) sequence regions 
