@@ -120,3 +120,5 @@ commands. For now, simply follow the instructions below:
 install.packages(c("BiocManager"))
 BiocManager::install(c("tidyverse", "DESeq2"))
 ```
+
+The tutorial we will be following for today's basics in R class can be found [here](https://prodriguez19.github.io/metagenomics-R/) 
