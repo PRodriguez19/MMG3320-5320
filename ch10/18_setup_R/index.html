@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch10/18_setup_R/">
       
       
+        <link rel="prev" href="../../ch09/17_counting_reads/">
+      
+      
+        <link rel="next" href="../../assignments/week1_assignment/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>18 setup R - MMG:3320/5320 Advanced Bioinformatics</title>
+        <title>R Basics (L18) - MMG:3320/5320 Advanced Bioinformatics</title>
       
     
     
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              18 setup R
+              R Basics (L18)
             
           </span>
         </div>
@@ -255,16 +259,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../ch01/" class="md-tabs__link">
           
   
@@ -637,23 +645,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -664,7 +677,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Lessons
@@ -1547,6 +1560,234 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 10
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Week 10
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    R Basics (L18)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    R Basics (L18)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r-and-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      R and RStudio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#you-are-running-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      You are running Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-already-have-r-and-rstudio-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you already have R and RStudio installed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-dont-have-r-and-rstudio-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you don't have R and RStudio installed
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="If you don't have R and RStudio installed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-are-running-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      You are running macOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-already-have-r-and-rstudio-installed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you already have R and RStudio installed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-you-dont-have-r-and-rstudio-installed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      If you don't have R and RStudio installed
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="If you don't have R and RStudio installed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-are-running-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      You are running Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-r-using-your-package-manager-and-rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install R using your package manager and RStudio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install R using your package manager and RStudio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-everyone" class="md-nav__link">
+    <span class="md-ellipsis">
+      For everyone
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1950,7 +2191,7 @@
                   
 
 
-  <h1>18 setup R</h1>
+  <h1>R Basics (L18)</h1>
 
 <div><h2 id="setup">Setup</h2>
 <h3 id="r-and-rstudio">R and RStudio</h3>
