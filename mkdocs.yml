@@ -72,6 +72,8 @@ nav:
           - HTSeq (L17): ch09/17_counting_reads.md
       - Week 10: 
           - R Basics (L18): ch10/18_setup_R.md
+      - Week 11: 
+          - Introduction to Tidyverse (L19): ch11/19_intro-to-tidy.md
   - Assignments:
       - Homework 1 (L2): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md
