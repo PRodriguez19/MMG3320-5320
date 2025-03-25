@@ -1,0 +1,5 @@
+## Completed Lessons
+
+Here, I will make available the completed Rmarkdown HTML file for each lesson, starting on Monday March 24th. These will be made available AFTER the lesson is taught. 
+
+[Introduction to Tidyverse (L19) - March 24, 2025](Intro_to_Tidyverse.html)
