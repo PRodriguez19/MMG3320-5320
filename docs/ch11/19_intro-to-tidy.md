@@ -24,7 +24,7 @@ install.packages("palmerpenguins")
 install.packages("tidyverse")
 ```
 
-For March, 26th class:
+## For March, 26th class 
 
 Please copy the file into your Intro-to-tidyverse folder
 
