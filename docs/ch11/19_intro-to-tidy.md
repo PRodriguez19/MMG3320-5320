@@ -23,3 +23,11 @@ The Tidyverse suite of integrated packages are designed to work together to make
 install.packages("palmerpenguins")
 install.packages("tidyverse")
 ```
+
+For March, 26th class:
+
+Please copy the file into your Intro-to-tidyverse folder
+
+```bash
+/gpfs1/cl/mmg3320/course_materials/Intro-to-tidyverse/Intro_to_Tidyverse_partII_edit.Rmd
+```
