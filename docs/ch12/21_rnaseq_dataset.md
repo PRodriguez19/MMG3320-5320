@@ -5,9 +5,9 @@ For today's lesson we will be working with RNA-seq data from a recent publicatio
 
 So what does the count data actually represent? The count data used for differential expression analysis represents the number of sequence reads that originated from a particular gene. The higher the number of counts, the more reads associated with that gene, and the assumption that there was a higher level of expression of that gene in the sample. 
 
-<p align="center">
-<img src="../img/deseq_counts_overview.png" width="600">
-</p>
+<figure markdown="span">
+  ![deseq_counts](../img/deseq_counts_overview.png){ width="600" }
+</figure>
 
 
 Our overall goal is to **identify a list of genes that are statistically distinct between the groups being compared**. 
@@ -15,17 +15,16 @@ Our overall goal is to **identify a list of genes that are statistically distinc
 ## The publication
  
  T cell identity is established during thymic development, but how it is maintained in the periphery remains unknown. 
- 
- <p align="center">
-<img src="../img/tcell_dev.jpg" width="500">
-</p>
+
+<figure markdown="span">
+  ![tcell](../img/tcell_dev.jpg){ width="500" }
+</figure>
  
  The authors in this paper discover that by ablating Tcf1 and Lef1 transcription factors in mature CD8+ T cells this induces the expression of genes from non-T cell lineages. We will focus on analyzing the Tcf7 dataset. Specifically, Tcf7 fl/fl mice were crossed with hCD2-Cre mice to create mature CD8+ T cells that lacked *Tcf7*. The protein coded by *Tcf7* is Tcf1. 
 
-<p align="center">
-<img src="../img/graphical_abstract.png" width="800">
-</p>
-
+<figure markdown="span">
+  ![graphical_abstract](../img/graphical_abstract.png){ width="800" }
+</figure>
 
 ### The figures we will create and interpret 
 
