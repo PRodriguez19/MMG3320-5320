@@ -2220,22 +2220,19 @@
 <div><h1 id="deseq2-dataset">DESeq2 dataset</h1>
 <p>For today's lesson we will be working with RNA-seq data from a recent publication in Nature Communications by <a href="https://doi.org/10.1038/s41467-021-26159-1">Shan et al. (2021)</a>. Before spring break, our final end product was the creation of counts files using HTSeq-count. </p>
 <p>So what does the count data actually represent? The count data used for differential expression analysis represents the number of sequence reads that originated from a particular gene. The higher the number of counts, the more reads associated with that gene, and the assumption that there was a higher level of expression of that gene in the sample. </p>
-<p align="center">
-<img src="../img/deseq_counts_overview.png" width="600">
-</p>
-
+<figure>
+  <img alt="deseq_counts" src="../../img/deseq_counts_overview.png" width="600">
+</figure>
 <p>Our overall goal is to <strong>identify a list of genes that are statistically distinct between the groups being compared</strong>. </p>
 <h2 id="the-publication">The publication</h2>
 <p>T cell identity is established during thymic development, but how it is maintained in the periphery remains unknown. </p>
-<p align="center">
-<img src="../img/tcell_dev.jpg" width="500">
-</p>
-
+<figure>
+  <img alt="tcell" src="../../img/tcell_dev.jpg" width="500">
+</figure>
 <p>The authors in this paper discover that by ablating Tcf1 and Lef1 transcription factors in mature CD8+ T cells this induces the expression of genes from non-T cell lineages. We will focus on analyzing the Tcf7 dataset. Specifically, Tcf7 fl/fl mice were crossed with hCD2-Cre mice to create mature CD8+ T cells that lacked <em>Tcf7</em>. The protein coded by <em>Tcf7</em> is Tcf1. </p>
-<p align="center">
-<img src="../img/graphical_abstract.png" width="800">
-</p>
-
+<figure>
+  <img alt="graphical_abstract" src="../../img/graphical_abstract.png" width="800">
+</figure>
 <h3 id="the-figures-we-will-create-and-interpret">The figures we will create and interpret</h3>
 <ul>
 <li><strong>PCA &amp; correlation heatmap</strong> to show clusters of samples based on their similarity </li>
