@@ -75,7 +75,7 @@ nav:
       - Week 11: 
           - Introduction to Tidyverse (L19): ch11/19_intro-to-tidy.md
       - Week 12: 
-          - DESeq2 (L21): ch12/21_rnaseq_dataset
+          - DESeq2 (L21): ch12/21_rnaseq_dataset.md
   - R Code: 
       - Rmarkdown files: answers/index.md
   - Assignments:
