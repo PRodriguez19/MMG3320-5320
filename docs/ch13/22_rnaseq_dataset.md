@@ -36,4 +36,5 @@ Copy this folder into your home directory:
 ```bash 
 /gpfs1/cl/mmg3320/course_materials/R_tutorials/ENSM_counts
 ```
+  
   + Open the file **RNA-Seq_DESeq2_PartII_EDIT.Rmd** to start. 
