@@ -12,19 +12,21 @@ For today's lesson we will be working with RNA-seq data from another recent publ
 **Experimental Design:** The authors isolated bone marrow derived dendritic cells from B6, c11.2, and PWD mice and then either left them unstimulated or stimulated with LPS. 
 
 This experiment has:
+  
   + Two treatments: `untreated`, `LPS`
   + Three genotypes: `B6`, `c11.2`, and `PWD` 
   
 The goal:
+  
   + To test how LPS stimulation affects each genotype 
   + Whether the response to LPS differs between genotype 
 
 
 ### The figures we will create will be: 
 
-+ Figure 2, panel H: LPS treated (PWD vs B6) Volcano Plot
-+ Figure 5, panel B: PCA of the three strains used in this experiment
-+ Figure 3, boxplot representation for IL6 expression 
+  + Figure 2, panel H: LPS treated (PWD vs B6) Volcano Plot
+  + Figure 5, panel B: PCA of the three strains used in this experiment
+  + Figure 3, boxplot representation for IL6 expression 
 
 
 # Getting Started 
@@ -34,4 +36,4 @@ Copy this folder into your home directory:
 ```bash 
 /gpfs1/cl/mmg3320/course_materials/R_tutorials/ENSM_counts
 ```
-+ Open the file **RNA-Seq_DESeq2_PartII_EDIT.Rmd** to start. 
+  + Open the file **RNA-Seq_DESeq2_PartII_EDIT.Rmd** to start. 
