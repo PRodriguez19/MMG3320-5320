@@ -77,7 +77,7 @@ nav:
       - Week 12: 
           - DESeq2 (L21): ch12/21_rnaseq_dataset.md
       - Week 13: 
-          - Visualizing RNA-Seq Data (L22): ch13/22_rnaseq_dataset
+          - Visualizing RNA-Seq Data (L22): ch13/22_rnaseq_dataset.md
   - R Code: 
       - Rmarkdown files: answers/index.md
   - Assignments:
