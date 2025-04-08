@@ -2903,15 +2903,22 @@ Options:
 </code></pre></div>
 <ul>
 <li>The <code>rseqc-loop.sh</code> script is provided below. Make a copy and modify the path for variables <code>BAM_DIR</code> and <code>BED_FILE</code>. </li>
+<li>This was recently updated as of April 8, 2025 to mirror the updated script for RseQC. </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=general</span>
 <span class="c1">#SBATCH --nodes=1</span>
-<span class="c1">#SBATCH --ntasks=1  # Single task running sequentially</span>
-<span class="c1">#SBATCH --mem=2G  # Adjust based on the number of BAM files</span>
-<span class="c1">#SBATCH --time=1:00:00</span>
+<span class="c1">#SBATCH --ntasks=8  # Single task running sequentially</span>
+<span class="c1">#SBATCH --mem=20G  # Adjust based on the number of BAM files</span>
+<span class="c1">#SBATCH --time=24:00:00</span>
 <span class="c1">#SBATCH --job-name=rseqc-loop</span>
 <span class="c1">#SBATCH --output=run-%x_%j.out  # %x=job name, %j=job ID</span>
+
+<span class="c1"># Load the Apptainer module</span>
+module<span class="w"> </span>load<span class="w"> </span>apptainer/1.3.4
+
+<span class="c1"># Path to the RSeQC container</span>
+<span class="nv">CONTAINER_PATH</span><span class="o">=</span><span class="s2">"/gpfs1/cl/mmg3320/course_materials/containers/rseqc.sif"</span>
 
 <span class="c1"># Define input directory (update if needed)</span>
 <span class="nv">BAM_DIR</span><span class="o">=</span><span class="s2">"/users/p/d/pdrodrig/htseq_2025/bams"</span>
@@ -2928,11 +2935,11 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Processing: </span><span class="nv">$NAME</span><span class="s2">"</span>
 
-<span class="w">    </span><span class="c1"># Run infer_experiment.py</span>
-<span class="w">    </span>infer_experiment.py<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.infer_experiment.txt"</span>
+<span class="w">    </span><span class="c1"># Run infer_experiment.py inside the Apptainer container</span>
+<span class="w">    </span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">"</span><span class="nv">$CONTAINER_PATH</span><span class="s2">"</span><span class="w"> </span>infer_experiment.py<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.infer_experiment.txt"</span>
 
-<span class="w">    </span><span class="c1"># Run read_distribution.py</span>
-<span class="w">    </span>read_distribution.py<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.read_distribution.txt"</span>
+<span class="w">    </span><span class="c1"># Run read_distribution.py inside the Apptainer container</span>
+<span class="w">    </span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">"</span><span class="nv">$CONTAINER_PATH</span><span class="s2">"</span><span class="w"> </span>read_distribution.py<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.read_distribution.txt"</span>
 <span class="k">done</span>
 </code></pre></div>
 <ul>
