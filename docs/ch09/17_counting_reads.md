@@ -304,12 +304,6 @@ done
 -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:44 WT_hg19_rep3_sorted.read_distribution.log
 ```
 
-+ Deactivate the conda environment **before** running multiqc. 
-
-```bash
-conda deactivate
-```
-
 + Run multiqc in the `rseqc_results/` folder to determine strandedness of the FASTQ files. 
 
 + **Note:** I tried running the multiqc-rseqc module yesterday and continued to get the issue: `The 'rseqc' MultiQC module broke...` 
