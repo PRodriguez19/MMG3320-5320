@@ -247,16 +247,23 @@ Options:
 ```
 
 + The `rseqc-loop.sh` script is provided below. Make a copy and modify the path for variables `BAM_DIR` and `BED_FILE`. 
++ This was recently updated as of April 8, 2025 to mirror the updated script for RseQC. 
 
 ```bash
 #!/bin/bash
 #SBATCH --partition=general
 #SBATCH --nodes=1
-#SBATCH --ntasks=1  # Single task running sequentially
-#SBATCH --mem=2G  # Adjust based on the number of BAM files
-#SBATCH --time=1:00:00
+#SBATCH --ntasks=8  # Single task running sequentially
+#SBATCH --mem=20G  # Adjust based on the number of BAM files
+#SBATCH --time=24:00:00
 #SBATCH --job-name=rseqc-loop
 #SBATCH --output=run-%x_%j.out  # %x=job name, %j=job ID
+
+# Load the Apptainer module
+module load apptainer/1.3.4
+
+# Path to the RSeQC container
+CONTAINER_PATH="/gpfs1/cl/mmg3320/course_materials/containers/rseqc.sif"
 
 # Define input directory (update if needed)
 BAM_DIR="/users/p/d/pdrodrig/htseq_2025/bams"
@@ -273,11 +280,11 @@ for BAM_FILE in "$BAM_DIR"/*.bam; do
 
     echo "Processing: $NAME"
 
-    # Run infer_experiment.py
-    infer_experiment.py -r "$BED_FILE" -i "$BAM_FILE" > "$OUTPUT_DIR/${NAME}.infer_experiment.txt"
+    # Run infer_experiment.py inside the Apptainer container
+    apptainer exec "$CONTAINER_PATH" infer_experiment.py -r "$BED_FILE" -i "$BAM_FILE" > "$OUTPUT_DIR/${NAME}.infer_experiment.txt"
 
-    # Run read_distribution.py
-    read_distribution.py -r "$BED_FILE" -i "$BAM_FILE" > "$OUTPUT_DIR/${NAME}.read_distribution.txt"
+    # Run read_distribution.py inside the Apptainer container
+    apptainer exec "$CONTAINER_PATH" read_distribution.py -r "$BED_FILE" -i "$BAM_FILE" > "$OUTPUT_DIR/${NAME}.read_distribution.txt"
 done
 
 ```
