@@ -21,14 +21,7 @@ The goal:
   + To test how LPS stimulation affects each genotype 
   + Whether the response to LPS differs between genotype 
 
-
-### The figures we will create will be: 
-
-  + Figure 2, panel H: LPS treated (PWD vs B6) Volcano Plot
-  + Figure 5, panel B: PCA of the three strains used in this experiment
-
-
-## Getting Started: Monday, April 7th 
+# Getting Started: Monday, April 7th 
 
 Copy this folder into your home directory:
 
@@ -37,6 +30,11 @@ Copy this folder into your home directory:
 ```
   
   + Open the file **RNA-Seq_DESeq2_PartII_EDIT.Rmd** to start. 
+
+### The figures we will create will be: 
+
+  + Figure 2, panel H: LPS treated (PWD vs B6) Volcano Plot
+  + Figure 5, panel B: PCA of the three strains used in this experiment
 
 # Getting Started: Wednesday, April 9th 
 
