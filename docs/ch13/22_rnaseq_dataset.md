@@ -26,10 +26,9 @@ The goal:
 
   + Figure 2, panel H: LPS treated (PWD vs B6) Volcano Plot
   + Figure 5, panel B: PCA of the three strains used in this experiment
-  + Figure 3, boxplot representation for IL6 expression 
 
 
-# Getting Started 
+## Getting Started: Monday, April 7th 
 
 Copy this folder into your home directory:
 
@@ -38,3 +37,19 @@ Copy this folder into your home directory:
 ```
   
   + Open the file **RNA-Seq_DESeq2_PartII_EDIT.Rmd** to start. 
+
+# Getting Started: Wednesday, April 9th 
+
+Copy this folder into your home directory:
+
+```bash
+/gpfs1/cl/mmg3320/course_materials/R_tutorials/ENSM_partIII
+```
+
+  + Open the file **RNA-Seq_Visualization_PartIII_EDIT.Rmd** to start. 
+  + We will need to check if `dds.RDS` is usable. 
+
+### The figures we will create will be: 
+
+  + Figure 3, boxplot representation for IL6 and Nos2 expression 
+  + Heatmap of all +5,000 DE genes (PWD_LPS vs B6_LPS)
