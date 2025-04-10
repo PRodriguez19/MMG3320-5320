@@ -6,6 +6,8 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson, s
 
 [Introduction to Tidyverse Part II (L20) - March 26, 2025](Intro_to_Tidyverse_partII.html)
 
-[DESeq2 (L21) - April 2, 2025](RNA-Seq_DESeq2_tutorial_040225.html)
+[DESeq2 Part I(L21) - April 2, 2025](RNA-Seq_DESeq2_tutorial_040225.html)
 
-[RNA-Seq Visualizations (L22) - April 7, 2025](RNA-Seq_DESeq2_PartII_post.html)
+[RNA-Seq Visualizations Part II (L22) - April 7, 2025](RNA-Seq_DESeq2_PartII_post.html)
+
+[RNA-Seq Visualizations Part III (L23) - April 9, 2025](RNA-Seq_Visualization_PartIII_Post.html)
