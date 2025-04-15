@@ -21,7 +21,7 @@ The goal:
   + To test how LPS stimulation affects each genotype 
   + Whether the response to LPS differs between genotype 
 
-# Getting Started: Monday, April 14th 
+## Getting Started: Monday, April 14th 
 
 Copy this folder into your home directory:
 
@@ -32,7 +32,7 @@ Copy this folder into your home directory:
   + Open the file **RNASeq_Visualizations_PartIV_EDIT.Rmd** to start. 
   + Slides discussed can be found [here](this-week-mmg3320.pdf)
 
-# Getting Started: Wednesday, April 15th 
+## Getting Started: Wednesday, April 16th 
 
   + No in-person class (see Monday's slides for details)
 
