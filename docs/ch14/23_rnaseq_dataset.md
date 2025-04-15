@@ -30,4 +30,10 @@ Copy this folder into your home directory:
 ```
   
   + Open the file **RNASeq_Visualizations_PartIV_EDIT.Rmd** to start. 
+  + Slides discussed can be found [here](this-week-mmg3320.pdf)
+
+# Getting Started: Wednesday, April 15th 
+
+  + No in-person class (see Monday's slides for details)
+
 
