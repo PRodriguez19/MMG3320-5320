@@ -80,6 +80,7 @@ nav:
           - Visualizing RNA-Seq Data (L22): ch13/22_rnaseq_dataset.md
       - Week 14: 
           - Visualizing RNA-Seq Data (L23): ch14/23_rnaseq_dataset.md
+          - Choose Your Adventure (L24): ch14/Choose_Your_Adventure.md
   - R Code: 
       - Rmarkdown files: answers/index.md
   - Assignments:
