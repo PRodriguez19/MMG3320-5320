@@ -1,5 +1,7 @@
 
-## Choose Your Own Adventure
+## Choose Your Own Adventure 
+
+**Class: Wednesday, April 16th *no in-person class***
 
 You’ve built a strong foundation in R—now it’s time to put those skills to work! In these quick challenges, you can choose to do 1, 2, or all of them! 
 
