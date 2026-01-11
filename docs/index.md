@@ -1,4 +1,4 @@
-# MMG3320/5320: Advanced Bioinformatics 
+# MMG3320: Advanced Bioinformatics 
 
 ## Introduction 
 
