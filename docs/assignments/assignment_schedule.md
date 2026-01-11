@@ -1,16 +1,18 @@
-## Future Assignment Schedule 
+## Assignment Schedule 
 
-*as of April 10, 2025 - please note these dates may change but provides a good overview of what to expect* 
+*Please note these dates may change but provides a good overview of what to expect* 
 
 | Assignment | Tentative Due Date | 
 |:-------------------|:-------------------|
-| Primary Literature Review #1 <br> (your paper) <br> *Instructions on Brightspace* | Wednesday, April 30th | 
-| Final Project <br> *Undergraduates only* | Wednesday, April 30th | 
-| Final Project <br> *Graduates only* | Monday, April 28th <br> & Wednesday, April 30th| 
-
-+ Homeworks (7 total) = 55%
-+ Primary Literature Review (1 total) = 10%
-+ Final Project = 25%
-+ Participation = 10% 
+| Homework Assignment #1 | Wednesday, January 21st | 
+| Homework Assignment #2 | Wednesday, January 28th | 
+| Homework Assignment #3 | Wednesday, February 4th | 
+| Homework Assignment #4 | Wednesday, February 11th | 
+| Homework Assignment #5 | Friday, February 20th | 
+| Homework Assignment #6 | Friday, March 6th | 
+| Homework Assignment #7 | Monday, April 6th | 
+| Primary Literature Review #1 <br> (RNA-Seq paper) | Friday, March 27th | 
+| Primary Literature Review #2 <br> (your paper) | Friday, April 24th | 
+| Final Project <br> | Wednesday, April 27th | 
 
 

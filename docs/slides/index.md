@@ -8,22 +8,22 @@ Slides will be made available as a PDF printout document. These lessons can be r
 
 [Wildcards & Nano (L3)](03_week2_mmg3320-slides.pdf)
 
-[Searching & Redirection (L4)](04_week3_mmg3320-slides.pdf)
+#Searching & Redirection (L4)](04_week3_mmg3320-slides.pdf)
 
-[Intro to Shell Scripting (L5)](05_week3_mmg3320-slides.pdf)
+#Intro to Shell Scripting (L5)](05_week3_mmg3320-slides.pdf)
 
-[RNA-Seq Overview (L7)](07_week4_intro-to-RNAseq-slides.pdf)
+#RNA-Seq Overview (L7)](07_week4_intro-to-RNAseq-slides.pdf)
 
-[Accessing Public Data (L8)](08_accessing_public_experimental_data-slides.pdf)
+#Accessing Public Data (L8)](08_accessing_public_experimental_data-slides.pdf)
 
-[Assessing FASTQC Outputs (L9)](09_assessing_fastqc_output-slides.pdf)
+#Assessing FASTQC Outputs (L9)](09_assessing_fastqc_output-slides.pdf)
 
-[Trimming & Filtering (L10)](10_trimming-slides.pdf)
+#Trimming & Filtering (L10)](10_trimming-slides.pdf)
 
-[Alignment (L11-13)](11_align-slides.pdf)
+#Alignment (L11-13)](11_align-slides.pdf)
 
-[Alignment Outputs (L15)](12_align-outputs.pdf)
+#Alignment Outputs (L15)](12_align-outputs.pdf)
 
-[RSeQC (L16)](13_rseqc.pdf)
+#RSeQC (L16)](13_rseqc.pdf)
 
-[Counting Reads (L17)](14_counting_reads-slides.pdf)
+#Counting Reads (L17)](14_counting_reads-slides.pdf)
