@@ -8,9 +8,9 @@ Slides will be made available as a PDF printout document. These lessons can be r
 
 [Wildcards & Nano (L3)](03_week2_mmg3320-slides.pdf)
 
-#Searching & Redirection (L4)](04_week3_mmg3320-slides.pdf)
+[Searching & Redirection (L4)](04_week3_mmg3320-slides.pdf)
 
-#Intro to Shell Scripting (L5)](05_week3_mmg3320-slides.pdf)
+[Intro to Shell Scripting (L5)](05_week3_mmg3320-slides.pdf)
 
 #RNA-Seq Overview (L7)](07_week4_intro-to-RNAseq-slides.pdf)
 

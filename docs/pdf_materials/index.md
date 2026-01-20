@@ -8,9 +8,9 @@ Each tutorial will also be made available as PDF printout document. These lesson
 
 [Wildcards & Nano (L3)](03_week2_mmg3320-printout.pdf)
 
-#Searching & Navigation (L4)](04_week3_mmg3320-printout.pdf)
+[Searching & Navigation (L4)](04_week3_mmg3320-printout.pdf)
 
-#Intro to Shell Scripting (L5)](05_week3_mmg3320-printout.pdf)
+[Intro to Shell Scripting (L5)](05_week3_mmg3320-printout.pdf)
 
 #RNA-Seq Overview (L7)](07_week4_intro-to-RNAseq-printout.pdf)
 
