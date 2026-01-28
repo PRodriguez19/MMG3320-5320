@@ -1589,7 +1589,7 @@
 </ul>
 <hr>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise: Participation Grade</p>
+<p class="admonition-title">Class Exercise</p>
 <p>Before moving on, please complete the following class activity below. You will have ~5 minutes to answer all questions. Please submit the quiz without answering the last question. </p>
 <p><a href="https://forms.gle/jfEXWCkfBo5oPa4R7">Class-activity</a></p>
 </div>
@@ -1735,11 +1735,12 @@ B?@DDDDDDHHH?GH:?FCBGGB@C?DBEGIIIIAEF;FCGGI#####################################
 </tbody>
 </table>
 </blockquote>
-<p>So what happens if the sequencer is unable to make a decision on which base (A, G, C, T) is the correct one? In this case, the sequencer will designate an <strong>N</strong>. </p>
+<p>So what happens if the sequencer is unable to decide which base (A, G, C, T) is the correct one? In this case, the sequencer will designate an <strong>N</strong>. </p>
 <hr>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise</p>
-<p>Let's suppose we want to see how many reads in our file <code>Mov10_oe_1.subset.fq</code> contain "bad" data, i.e. reads with 10 consecutive Ns (<code>NNNNNNNNNN</code>). Go ahead and perform the command for this. </p>
+<p>Suppose we want to find the exact line(s) in the file Mov10_oe_1.subset.fq that contain 10 consecutive Ns (NNNNNNNNNN).</p>
+<p>Perform the appropriate command and be ready to report the line number of the first match.</p>
 </div>
 <hr>
 <p>Notice, that this output will only return the lines that contain the <code>NNNNNNNNNN</code>. However, each read in the FASTQ file is made up of 4 lines (as discussed above).   </p>
@@ -1792,24 +1793,10 @@ CACAAATCGGCTCAGGAGGCTTGTAGAAAAGCTCAGCTTGACANNNNNNNNNNNNNNNNNGNGNACGAAACNNNNGNNNN
 <p class="admonition-title">Class Exercise</p>
 <ol>
 <li>
-<p>Using <code>grep</code> search for the sequence CTCAATGAGCCA in <code>Mov10_oe_1.subset.fq</code>. How many sequences do you find? Use the <code>-n</code> argument to distinguish the number of reads that contain this sequence. </p>
+<p>Use <code>grep</code> to search for the sequence CTCAATGAGCCA in <code>Mov10_oe_1.subset.fq</code>. Write the command so that only the read name and sequence are shown.</p>
 </li>
 <li>
-<p>How can you modify the command you typed above so that your search also returns the name of the sequence?</p>
-</li>
-<li>
-<p>If you want to search for the above sequence in <strong>all</strong> Mov10 replicate fastq files, what command would you use?</p>
-<p><details>
-    <summary><b><i>Answers</i></b></summary>
-    <p><i>Question 1</i><br>
-    <code>grep -n CTCAATGAGCCA Mov10_oe_1.subset.fq</code><br>
-    The output returns 5 sequences.</p>
-    <p><i>Question 2</i><br>
-        <code>grep -B 1 CTCAATGAGCCA Mov10_oe_1.subset.fq</code></p>
-    <p><i>Question 3</i><br>
-    <code>grep CTCAATGAGCCA Mov10*</code><br>
-    The output returns 5 sequences for Mov10_oe_1 and 3 sequences for Mov10_oe_2.</p>
-</details></p>
+<p>If you wanted to search for the above sequence in <strong>all</strong> Mov10 replicate fastq files, what command would you use? Which FASTQ file contains the most reads with the 'CTCAATGAGCCA' barcode?</p>
 </li>
 </ol>
 </div>
