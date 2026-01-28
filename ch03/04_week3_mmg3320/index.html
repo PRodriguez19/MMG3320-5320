@@ -1156,15 +1156,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cut-sort" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cut &amp; Sort
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       Summary
@@ -1521,15 +1512,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cut-sort" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cut &amp; Sort
-    </span>
-  </a>
   
 </li>
       
@@ -1945,43 +1927,27 @@ chr1    unknown exon    24738   24891   .       -       .       gene_id "WASH7P
 </code></pre></div>
 <p>This search returns two different transcripts of the same gene, NM_001160184 and NM_032129, that contain the same exon.</p>
 <hr>
-<h2 id="cut-sort">Cut &amp; Sort</h2>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise: Cut</p>
+<p><strong><code>cut</code> is a command that extracts columns from files.</strong> Use <code>cut</code> with the <code>-f</code> argument to specify which specific fields or columns from the dataset you want to extract. </p>
+<p>Identify all entries in <code>chr1-hg19_genes.gtf</code> that correspond to the gene PLEKHN1.</p>
+<pre><code>From those entries, extract:
++ Column 1 -&gt; chromosome
++ Column 4 -&gt; start coordinate
+Column 5 -&gt; end coordinate
+</code></pre>
+<p>Save the output to a new file named: <strong>coordinates_PLEKHN1.txt</strong></p>
+</div>
+<hr>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">Class Exercise: Sort</p>
+<p>You have generated a file called: coordinates_PLEKHN1.txt. This file contains genomic coordinates for the gene PLEKHN1, extracted from a GTF annotation file.</p>
 <ul>
-<li><strong><code>cut</code> is a command that extracts columns from files.</strong> </li>
+<li>First, determine how many total coordinate entries exist for PLEKHN1. </li>
+<li>Then, determine how many unique coordinate entries exist using the sort command. </li>
 </ul>
-<p>We will use <code>cut</code> with the <code>-f</code> argument to specify which specific fields or columns from the dataset we want to extract. Let's say we want to get the 1st column (chromosome number) and the 4th column (starting genomic position) and 5th column (ending genomic position) from <code>chr1-hg19_genes.gtf</code> file, we can say:</p>
-<p></p><div class="highlight"><pre><span></span><code>grep<span class="w"> </span>PLEKHN1<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4,5<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
-</code></pre></div>
-How can we output this to a different document? 
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>PLEKHN1<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4,5<span class="w"> </span>&gt;<span class="w"> </span>coordinates_PLEKHN1.txt
-</code></pre></div>
-<blockquote>
-<p>Note: The <code>cut</code> command assumes our data columns are separated by tabs (i.e. tab-delimited). The <code>chr1-hg19_genes.gtf</code> is a tab-delimited file, so the default <code>cut</code> command works for us. However, data can be separated by other types of delimiters like "," or ";". If your data is not tab delimited, there is an argument you can add to your <code>cut</code> command, <code>-d</code> to specify the delimiter (e.g. <code>-d ","</code> with a .csv file).</p>
-</blockquote>
-<ul>
-<li><strong><code>sort</code> is a command used to sort the contents of a file in a particular order.</strong> It has arguments that let you pick which column to sort by (<code>-k</code>), what kind of sorting you want to do (numeric <code>n</code>) and also if the result of the sorting should only return unique (<code>-u</code>) values. These are just 2 of the many features of the sort command. </li>
-</ul>
-<p>Let's run the following command first before using <code>sort</code>: </p>
-<p></p><div class="highlight"><pre><span></span><code>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
-</code></pre></div>
-<em>How many lines are returned to you?</em>
-<details>
-    <summary><b><i>Click here to check your output</i></b></summary>
-    <p>Your command should have returned 76,767 lines.</p>
-</details>
-
-<p>Pipe the output to <code>less</code> - notice all the duplicates! </p>
-<div class="highlight"><pre><span></span><code>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
-</code></pre></div>
-<p>Now apply the <code>sort -u</code> command before counting the lines.</p>
-<p></p><div class="highlight"><pre><span></span><code>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,4<span class="w"> </span>chr1-hg19_genes.gtf<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
-</code></pre></div>
-<em>How many lines do you see now? Also be sure to actually look at the output!</em>
-<details>
-    <summary><b><i>Click here to check your output</i></b></summary>
-    <p>Your command should have returned 27,852 lines.</p>
-</details>
-
+</div>
 <hr>
 <h2 id="summary">Summary</h2>
 <div class="highlight"><pre><span></span><code>grep          # Allows for searching within files without opening them
