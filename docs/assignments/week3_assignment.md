@@ -1,11 +1,12 @@
 ## Homework Assignment #3 (50 points)
-**For this assignment you will have until 5PM on Monday, February 3rd to submit on Brightspace. Late assignments will NOT be accepted.**
+
+**For this assignment you will have until 5PM on Friday, February 6th to submit on Brightspace. Late assignments will NOT be accepted.**
 
 ### Directions for Students: 
 Open a new Microsoft Word Document and submit answers to the questions below. The first four lines of your document should contain the following:  
 
 + Your name
-+ MMG3320/5320
++ MMG3320
 + Today's date
 + Homework Assignment #3
 
@@ -39,7 +40,8 @@ Finally, redirect the output to a new file and call it `chr1-hg19_exons.txt`. Do
 
 ***Report the entire command you have at this stage, the number of lines output, and the file size*** in your homework as an answer for Part 1. 
 
-## Part B: Jupiter Notebook Class Exercise #6 (25 points)
+## Part B: Jupiter Notebook Class Exercise #6 (25 points) - Intro to Shell Scripting (L5)
+
 **Directions for Part 2:** Submit two screenshots. 
 
 + One of your final script (output from #11). 

@@ -12,9 +12,9 @@ Slides will be made available as a PDF printout document. These lessons can be r
 
 [Intro to Shell Scripting (L5)](05_week3_mmg3320-slides.pdf)
 
-#RNA-Seq Overview (L7)](07_week4_intro-to-RNAseq-slides.pdf)
+[RNA-Seq Overview (L7)](07_week4_intro-to-RNAseq-slides.pdf)
 
-#Accessing Public Data (L8)](08_accessing_public_experimental_data-slides.pdf)
+[Accessing Public Data (L8)](08_accessing_public_experimental_data-slides.pdf)
 
 #Assessing FASTQC Outputs (L9)](09_assessing_fastqc_output-slides.pdf)
 

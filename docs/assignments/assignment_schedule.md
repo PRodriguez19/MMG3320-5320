@@ -6,7 +6,7 @@
 |:-------------------|:-------------------|
 | Homework Assignment #1 | Wednesday, January 21st | 
 | Homework Assignment #2 | Wednesday, January 28th | 
-| Homework Assignment #3 | Wednesday, February 4th | 
+| Homework Assignment #3 | Friday, February 6th | 
 | Homework Assignment #4 | Wednesday, February 11th | 
 | Homework Assignment #5 | Friday, February 20th | 
 | Homework Assignment #6 | Friday, March 6th | 
