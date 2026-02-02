@@ -59,7 +59,7 @@ nav:
       - Homework 2 (L3): assignments/week2_assignment.md
       - Homework 3 (L5): assignments/week3_assignment.md
       - Assignment Schedule: assignments/assignment_schedule.md
-      - Final Project: assignment/index.md
+      - Final Project: assignments/index.md
 
 markdown_extensions:
   - admonition
