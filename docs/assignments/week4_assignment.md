@@ -9,7 +9,7 @@ Open a new Microsoft Word Document and submit answers to the questions below. Th
 + Today's date
 + Homework Assignment #4
 
-### Instructions: Submit two screenshots. One of your final script (output from #14). The second screenshot will be of your terminal screen after opening `badreads.count.summary`.  
+### Instructions: Please review lesson L6 - Loops. After reviewing, follow the prompts below and then submit two screenshots. One screenshot will be of your final script (output from #14). The second screenshot will be of your terminal screen after opening `badreads.count.summary`.  
 
 !!! example "Homework Assignment #4"  
 
