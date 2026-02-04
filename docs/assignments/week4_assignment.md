@@ -1,11 +1,11 @@
 ## Homework Assignment #4 (50 points)
-**For this assignment you will have until 5PM on Friday, February 7th to submit on Brightspace. Late assignments will NOT be accepted.**
+**For this assignment you will have until 1PM on Wednesday, February 11th to submit on Brightspace. Late assignments will NOT be accepted.**
 
 ### Directions for Students: 
 Open a new Microsoft Word Document and submit answers to the questions below. The first four lines of your document should contain the following:  
 
 + Your name
-+ MMG3320/5320
++ MMG3320
 + Today's date
 + Homework Assignment #4
 
