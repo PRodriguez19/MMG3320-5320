@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch05/09_assessing_fastqc_output/">
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../10_trimming/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>09 assessing fastqc output - MMG:3320 Advanced Bioinformatics</title>
+        <title>QC with FASTQC (L9) - MMG:3320 Advanced Bioinformatics</title>
       
     
     
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              09 assessing fastqc output
+              QC with FASTQC (L9)
             
           </span>
         </div>
@@ -255,16 +259,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../ch01/" class="md-tabs__link">
           
   
@@ -637,23 +645,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -664,7 +677,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Lessons
@@ -1107,6 +1120,336 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Week 5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Week 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    QC with FASTQC (L9)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    QC with FASTQC (L9)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-advantages-of-batch-job-submissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap: Advantages of Batch Job Submissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-inside-of-sra_fqdumpsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Looking inside of sra_fqdump.sh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdout-records-the-output-of-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      STDOUT records the output of programs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-control-of-fastq-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Control of FASTQ files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-with-fastq-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting with FASTQ files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessing-quality-with-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessing quality with FastQC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running FastQC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastqc-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      FASTQC Outputs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessing-the-results-from-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessing the results from FastQC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessing the results from FastQC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-html-report-output-from-fastqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing the HTML report output from FASTQC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpreting-the-html-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting the HTML report
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpreting the HTML report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-base-sequence-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per base sequence quality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-sequence-quality-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per sequence quality scores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-base-sequence-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per base sequence content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-sequence-gc-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per sequence GC content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-duplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequence duplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#over-represented-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Over-represented sequences
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_trimming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trimming and Filtering (L10)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1528,7 +1871,7 @@
                   
 
 
-  <h1>09 assessing fastqc output</h1>
+  <h1>QC with FASTQC (L9)</h1>
 
 <div><h2 id="learning-objectives">Learning Objectives:</h2>
 <ul>
