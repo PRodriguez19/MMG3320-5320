@@ -1936,10 +1936,11 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 <p><strong>Estimated Time:</strong> ~20 minutes</p>
 <p><strong>Collaboration:</strong> Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. </p>
 <p><strong>Learning goal:</strong> By the end of this exercise, you should be able to:</p>
-<pre><code>- Understand what each Trimmmomatic argument does 
-- Successfully trim FASTQ files
-- Verify trimming success using FastQC results
-</code></pre>
+<ul>
+<li>Understand what each Trimmmomatic argument does </li>
+<li>Successfully trim FASTQ files</li>
+<li>Verify trimming success using FastQC results</li>
+</ul>
 <p><strong>Part A:</strong> Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. </p>
 <div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
 </code></pre></div>
@@ -2034,9 +2035,10 @@ TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfu
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>271K<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2un.trim.fastq.gz
 </code></pre></div>
 <p><strong>Part D: Quality control with FASTQC</strong> Run FASTQC on all the <code>.gz</code> files (raw and trimmed), then open the HTML reports. When reviewing the FASTQC results, focus on: </p>
-<pre><code>- Per base sequence quality
-- Adapter content
-</code></pre>
+<ul>
+<li>Per base sequence quality</li>
+<li>Adapter content </li>
+</ul>
 </div>
 <p>The following questions will be included in HW#6. Please be sure you are able to answer them. </p>
 <p>1) How many reads were trimmed in <code>SRR2589044_1</code> and <code>SRR2589044_2</code>, respectively. State which files were used to answer this question. </p>
@@ -2115,21 +2117,24 @@ TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfu
 <p><strong>Estimated Time:</strong> ~10 minutes</p>
 <p><strong>Collaboration:</strong> Please work with your neighbor if you have questions.</p>
 <p><strong>Learning goal:</strong> By the end of this exercise, you should be able to:</p>
-<pre><code>- Use Trim Galore to perform adapter and quality trimming
-- Verify successful trimming using post-trimming FastQC results
-</code></pre>
+<ul>
+<li>Use Trim Galore to perform adapter and quality trimming</li>
+<li>Verify successful trimming using post-trimming FastQC results</li>
+</ul>
 <p><strong>Part A:</strong> Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. </p>
 <div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/trim_galore_exercise
 </code></pre></div>
 <p><strong>Part B:</strong> Run Trim Galore on <code>Test_adapter_contamination.fq.gz</code>. Before running Trim Galore, make sure you:</p>
-<pre><code>- Load the Trim Galore module
-- Load the Cutadapt module
-- Load the FastQC module
-</code></pre>
+<ul>
+<li>Load the Trim Galore module</li>
+<li>Load the Cutadapt module</li>
+<li>Load the FastQC module</li>
+</ul>
 <p><strong>Trimming Instructions</strong> Your trim-galore command should:  </p>
-<pre><code>- Use the `--illumina` option
-- Run FASTQC automatically on the trimmed FASTQ file
-</code></pre>
+<ul>
+<li>Use the <code>--illumina</code> option</li>
+<li>Run FASTQC automatically on the trimmed FASTQ file</li>
+</ul>
 <p>Run the command from the directory containing the FASTQ file.</p>
 </div>
 <p>The following questions will be included in HW#6. Please be sure you are able to answer them. </p>
