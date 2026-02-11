@@ -1933,12 +1933,13 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 <h2 id="running-trimmomatic">Running Trimmomatic</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #1</p>
-<p>Estimated Time: ~20 minutes
-Collaboration: Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. </p>
-<p>Learning goal: By the end of this exercise, you should be able to:
-    + Understand what each Trimmmomatic argument does 
-    + Successfully trim FASTQ files
-    + Verify trimming success using FastQC results</p>
+<p><strong>Estimated Time:</strong> ~20 minutes
+<strong>Collaboration:</strong> Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. </p>
+<p><strong>Learning goal:</strong> By the end of this exercise, you should be able to:</p>
+<pre><code>+ Understand what each Trimmmomatic argument does 
++ Successfully trim FASTQ files
++ Verify trimming success using FastQC results
+</code></pre>
 <p><strong>Part A:</strong> Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. </p>
 <div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
 </code></pre></div>
@@ -1978,66 +1979,64 @@ Collaboration: Please work with your neighbor if you have questions. I will begi
 </tr>
 </tbody>
 </table>
-</div>
 <p>You will need to identify two additional arguments to:  </p>
-<pre><code>| argument to add    | meaning |
-|:------------------ | :------------------------------------------------ | 
-| filter short reads | drop an entire read if it is below 25 |
-| remove adapter  | Identify which adapter to remove using FastQC output |
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">argument to add</th>
+<th style="text-align: left;">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">filter short reads</td>
+<td style="text-align: left;">drop an entire read if it is below 25</td>
+</tr>
+<tr>
+<td style="text-align: left;">remove adapter</td>
+<td style="text-align: left;">Identify which adapter to remove using FastQC output</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: We will be adding additional parameters the adapter file specified. Once you reach this point, please ask me for help. These parameters control how aggressively adapters are detected and removed.</em>
+- <code>2:40:15</code> 
+    - <code>2</code> : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
+    - <code>40</code> : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
+    - <code>15</code> : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).</p>
+<p>Once your script is complete, run the script using:</p>
+<div class="highlight"><pre><span></span><code>sh<span class="w"> </span>trim.sh
+</code></pre></div>
+<p><em>Expected Output:</em> You will know that your script is working correctly if you see output similar to the following,</p>
+<div class="highlight"><pre><span></span><code>TrimmomaticPE:<span class="w"> </span>Started<span class="w"> </span>with<span class="w"> </span>arguments:
+SRR2589044_1.fastq.gz<span class="w"> </span>SRR2589044_2.fastq.gz<span class="w"> </span>SRR2589044_1.trim.fastq.gz<span class="w"> </span>SRR2589044_1un.trim.fastq.gz<span class="w"> </span>SRR2589044_2.trim.fastq.gz<span class="w"> </span>SRR2589044_2un.trim.fastq.gz<span class="w"> </span>SLIDINGWINDOW:4:20<span class="w"> </span>MINLEN:25<span class="w"> </span>ILLUMINACLIP:trimmomatic_adapters/NexteraPE-PE.fa:2:40:15
+Using<span class="w"> </span>PrefixPair:<span class="w"> </span><span class="s1">'AGATGTGTATAAGAGACAG'</span><span class="w"> </span>and<span class="w"> </span><span class="s1">'AGATGTGTATAAGAGACAG'</span>
+Using<span class="w"> </span>Long<span class="w"> </span>Clipping<span class="w"> </span>Sequence:<span class="w"> </span><span class="s1">'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'</span>
+Using<span class="w"> </span>Long<span class="w"> </span>Clipping<span class="w"> </span>Sequence:<span class="w"> </span><span class="s1">'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'</span>
+Using<span class="w"> </span>Long<span class="w"> </span>Clipping<span class="w"> </span>Sequence:<span class="w"> </span><span class="s1">'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC'</span>
+Using<span class="w"> </span>Long<span class="w"> </span>Clipping<span class="w"> </span>Sequence:<span class="w"> </span><span class="s1">'CTGTCTCTTATACACATCTGACGCTGCCGACGA'</span>
+ILLUMINACLIP:<span class="w"> </span>Using<span class="w"> </span><span class="m">1</span><span class="w"> </span>prefix<span class="w"> </span>pairs,<span class="w"> </span><span class="m">4</span><span class="w"> </span>forward/reverse<span class="w"> </span>sequences,<span class="w"> </span><span class="m">0</span><span class="w"> </span>forward<span class="w"> </span>only<span class="w"> </span>sequences,<span class="w"> </span><span class="m">0</span><span class="w"> </span>reverse<span class="w"> </span>only<span class="w"> </span>sequences
+Quality<span class="w"> </span>encoding<span class="w"> </span>detected<span class="w"> </span>as<span class="w"> </span>phred33
 
-*Note: We will be adding additional parameters the adapter file specified. Once you reach this point, please ask me for help. These parameters control how aggressively adapters are detected and removed.*
-- `2:40:15` 
-    - `2` : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
-    - `40` : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
-    - `15` : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).
-
-Once your script is complete, run the script using:
-
-```bash
-sh trim.sh
-```
-
-*Expected Output:* You will know that your script is working correctly if you see output similar to the following,
-
-```bash
-TrimmomaticPE: Started with arguments:
-SRR2589044_1.fastq.gz SRR2589044_2.fastq.gz SRR2589044_1.trim.fastq.gz SRR2589044_1un.trim.fastq.gz SRR2589044_2.trim.fastq.gz SRR2589044_2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:trimmomatic_adapters/NexteraPE-PE.fa:2:40:15
-Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
-Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
-Using Long Clipping Sequence: 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'
-Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC'
-Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
-ILLUMINACLIP: Using 1 prefix pairs, 4 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
-Quality encoding detected as phred33
-
-Input Read Pairs: 1107090 Both Surviving: 885220 (79.96%) Forward Only Surviving: 216472 (19.55%) Reverse Only Surviving: 2850 (0.26%) Dropped: 2548 (0.23%)
-TrimmomaticPE: Completed successfully
-```
-
-**Part C:** Check output file sizes
-
-```bash
-total 453M
--rw-r--r-- 1 pdrodrig pi-jdragon 124M Feb 11 14:30 SRR2589044_1.fastq.gz
--rw-r--r-- 1 pdrodrig pi-jdragon  94M Feb 11 18:32 SRR2589044_1.trim.fastq.gz
--rw-r--r-- 1 pdrodrig pi-jdragon  18M Feb 11 18:32 SRR2589044_1un.trim.fastq.gz
--rw-r--r-- 1 pdrodrig pi-jdragon 128M Feb 11 14:30 SRR2589044_2.fastq.gz
--rw-r--r-- 1 pdrodrig pi-jdragon  91M Feb 11 18:32 SRR2589044_2.trim.fastq.gz
--rw-r--r-- 1 pdrodrig pi-jdragon 271K Feb 11 18:32 SRR2589044_2un.trim.fastq.gz
-```
-
-**Part D: Quality control with FASTQC** Run FASTQC on all the `.gz` files (raw and trimmed), then open the HTML reports. When reviewing the FASTQC results, focus on: 
+Input<span class="w"> </span>Read<span class="w"> </span>Pairs:<span class="w"> </span><span class="m">1107090</span><span class="w"> </span>Both<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">885220</span><span class="w"> </span><span class="o">(</span><span class="m">79</span>.96%<span class="o">)</span><span class="w"> </span>Forward<span class="w"> </span>Only<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">216472</span><span class="w"> </span><span class="o">(</span><span class="m">19</span>.55%<span class="o">)</span><span class="w"> </span>Reverse<span class="w"> </span>Only<span class="w"> </span>Surviving:<span class="w"> </span><span class="m">2850</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.26%<span class="o">)</span><span class="w"> </span>Dropped:<span class="w"> </span><span class="m">2548</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.23%<span class="o">)</span>
+TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfully
+</code></pre></div>
+<p><strong>Part C:</strong> Check output file sizes</p>
+<div class="highlight"><pre><span></span><code>total<span class="w"> </span>453M
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>124M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">14</span>:30<span class="w"> </span>SRR2589044_1.fastq.gz
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>94M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_1.trim.fastq.gz
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>18M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_1un.trim.fastq.gz
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>128M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">14</span>:30<span class="w"> </span>SRR2589044_2.fastq.gz
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>91M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2.trim.fastq.gz
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>271K<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2un.trim.fastq.gz
+</code></pre></div>
+<p><strong>Part D: Quality control with FASTQC</strong> Run FASTQC on all the <code>.gz</code> files (raw and trimmed), then open the HTML reports. When reviewing the FASTQC results, focus on: 
     + Per base sequence quality
-    + Adapter content
-
-The following questions will be included in HW#6. Please be sure you are able to answer them.
-
-1) How many reads were trimmed in `SRR2589044_1` and `SRR2589044_2`, respectively. State which files were used to answer this question.
-
-2) Did the per base sequence quality improve after trimming? If so, at which positions was the biggest improvement?
-
-3) Was adapter content reduced or eliminated after trimming? In your answer, please state the name of the adapter that was altered.
-</code></pre>
+    + Adapter content </p>
+</div>
+<p>The following questions will be included in HW#6. Please be sure you are able to answer them. </p>
+<p>1) How many reads were trimmed in <code>SRR2589044_1</code> and <code>SRR2589044_2</code>, respectively. State which files were used to answer this question. </p>
+<p>2) Did the per base sequence quality improve after trimming? If so, at which positions was the biggest improvement? </p>
+<p>3) Was adapter content reduced or eliminated after trimming? In your answer, please state the name of the adapter that was altered. </p>
 <h2 id="option-2-trim-galore">Option 2: Trim Galore</h2>
 <p>In the next example we will be using Trim Galore. Trim Galor is a wrapper tool that combines Cutadapt (adapter and quality trimming) and FastQC.  </p>
 <p><strong>BASIC USAGE:</strong> <code>trim_galore [options] &lt;filename(s)&gt;</code></p>
@@ -2045,89 +2044,94 @@ The following questions will be included in HW#6. Please be sure you are able to
 <h3 id="some-general-options">Some general options:</h3>
 <p><strong>More options</strong> can be found <a href="https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md">here</a></p>
 <ul>
-<li><code>-h/--help</code></li>
 <li>
-<p>Print this help message and exits.</p>
+<p><code>-h/--help</code></p>
+<ul>
+<li>Print this help message and exits.</li>
+</ul>
 </li>
 <li>
 <p><code>-q/--quality &lt;INT&gt;</code></p>
-</li>
+<ul>
 <li>Trim low-quality ends from reads in addition to adapter removal. For RRBS samples, quality trimming will be performed first, and adapter trimming is carried in a second round. Other files are quality and adapter trimmed in a single pass. The algorithm is the same as the one used by BWA (Subtract INT from all qualities; compute partial sums from all indices to the end of the sequence; cut sequence at the index at which the sum is minimal).</li>
-<li>
-<p>Default Phred score: <code>20</code></p>
+<li>Default Phred score: <code>20</code></li>
+</ul>
 </li>
 <li>
 <p><code>--phred33</code></p>
-</li>
+<ul>
 <li>Instructs Cutadapt to use <code>ASCII+33</code> quality scores as Phred scores (Sanger/Illumina 1.9+ encoding) for quality trimming.</li>
-<li>
-<p>Default: <code>ON</code></p>
+<li>Default: <code>ON</code></li>
+</ul>
 </li>
 <li>
 <p><code>--fastqc</code></p>
-</li>
-<li>
-<p>Run FastQC in the default mode on the FastQ file once trimming is complete.</p>
+<ul>
+<li>Run FastQC in the default mode on the FastQ file once trimming is complete.</li>
+</ul>
 </li>
 <li>
 <p><code>--fastqc_args "&lt;ARGS&gt;"</code></p>
-</li>
+<ul>
 <li>Passes extra arguments to FastQC. If more than one argument is to be passed to FastQC they must be in the form <code>arg1 arg2 [..]</code>.</li>
 <li>An example would be: <code>--fastqc_args "--nogroup --outdir /home/"</code>.</li>
-<li>
-<p>Passing extra arguments will automatically invoke FastQC, so <code>--fastqc</code> does not have to be specified separately.</p>
+<li>Passing extra arguments will automatically invoke FastQC, so <code>--fastqc</code> does not have to be specified separately.</li>
+</ul>
 </li>
 <li>
 <p><code>--illumina</code></p>
-</li>
-<li>
-<p>Adapter sequence to be trimmed is the first 13bp of the Illumina universal adapter <code>AGATCGGAAGAGC</code> instead of the default auto-detection of adapter sequence.</p>
+<ul>
+<li>Adapter sequence to be trimmed is the first 13bp of the Illumina universal adapter <code>AGATCGGAAGAGC</code> instead of the default auto-detection of adapter sequence.</li>
+</ul>
 </li>
 <li>
 <p><code>--gzip</code></p>
-</li>
+<ul>
 <li>Compress the output file with <code>gzip</code>.</li>
-<li>
-<p>If the input files are gzip-compressed the output files will be automatically gzip compressed as well.</p>
+<li>If the input files are gzip-compressed the output files will be automatically gzip compressed as well.</li>
+</ul>
 </li>
 <li>
 <p><code>--dont_gzip</code></p>
-</li>
-<li>
-<p>Output files won't be compressed with gzip. This overrides <code>--gzip</code>.</p>
+<ul>
+<li>Output files won't be compressed with gzip. This overrides <code>--gzip</code>.</li>
+</ul>
 </li>
 <li>
 <p><code>-o/--output_dir &lt;DIR&gt;</code></p>
-</li>
+<ul>
 <li>If specified all output will be written to this directory instead of the current directory. If the directory doesn't exist it will be created for you.</li>
+</ul>
+</li>
 </ul>
 <h2 id="running-trim-galore">Running Trim Galore</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #2</p>
-<p>Estimated Time: ~10 minutes
-Collaboration: Please work with your neighbor if you have questions.</p>
-<p>Learning goal: By the end of this exercise, you should be able to:
-    + Use Trim Galore to perform adapter and quality trimming
-    + Verify successful trimming using post-trimming FastQC results</p>
+<p><strong>Estimated Time:</strong> ~10 minutes
+<strong>Collaboration:</strong> Please work with your neighbor if you have questions.</p>
+<p><strong>Learning goal:</strong> By the end of this exercise, you should be able to:</p>
+<pre><code>+ Use Trim Galore to perform adapter and quality trimming
++ Verify successful trimming using post-trimming FastQC results
+</code></pre>
 <p><strong>Part A:</strong> Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. </p>
 <div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/trim_galore_exercise
 </code></pre></div>
-<p><strong>Part B:</strong> Run Trim Galore on <code>Test_adapter_contamination.fq.gz</code>. Before running Trim Galore, make sure you:
-    + Load the Trim Galore module
-    + Load the Cutadapt module
-    + Load the FastQC module</p>
-<p><strong>Trimming Instructions</strong> Your trim-galore command should:<br>
-    + Use the <code>--illumina</code> option
-    + Run FASTQC automatically on the trimmed FASTQ file</p>
+<p><strong>Part B:</strong> Run Trim Galore on <code>Test_adapter_contamination.fq.gz</code>. Before running Trim Galore, make sure you:</p>
+<pre><code>+ Load the Trim Galore module
++ Load the Cutadapt module
++ Load the FastQC module
+</code></pre>
+<p><strong>Trimming Instructions</strong> Your trim-galore command should:  </p>
+<pre><code>+ Use the `--illumina` option
++ Run FASTQC automatically on the trimmed FASTQ file
+</code></pre>
 <p>Run the command from the directory containing the FASTQ file.</p>
 </div>
 <p>The following questions will be included in HW#6. Please be sure you are able to answer them. </p>
-<pre><code>1) Comparing the FASTQC reports before and after trimming, report how the sequence length changes.
-
-2) Which FastQC modules showed the most improvement after trimming? Be sure to report which adapter was reduced/eliminated after trimming.
-
-3) If you examine the Overrepresented Sequences table, do any contaminants remain? *You may notice that some overrepresented sequences persist even after trimming. In practice, this can be addressed by modifying or extending the adapter FASTA file to include additional contaminant sequences.*
-</code></pre></div>
+<p>1) Comparing the FASTQC reports before and after trimming, report how the sequence length changes. </p>
+<p>2) Which FastQC modules showed the most improvement after trimming? Be sure to report which adapter was reduced/eliminated after trimming. </p>
+<p>3) If you examine the Overrepresented Sequences table, do any contaminants remain? </p>
+<p><em>You may notice that some overrepresented sequences persist even after trimming. In practice, this can be addressed by modifying or extending the adapter FASTA file to include additional contaminant sequences.</em></p></div>
 
 
 
