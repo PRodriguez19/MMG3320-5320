@@ -145,6 +145,7 @@ In this example, we have told Trimmomatic:
 !!! example "Class Exercise #1" 
 
     **Estimated Time:** ~20 minutes
+    
     **Collaboration:** Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. 
 
     **Learning goal:** By the end of this exercise, you should be able to:
@@ -181,10 +182,11 @@ In this example, we have told Trimmomatic:
     | remove adapter  | Identify which adapter to remove using FastQC output | 
 
     *Note: We will be adding additional parameters the adapter file specified. Once you reach this point, please ask me for help. These parameters control how aggressively adapters are detected and removed.*
+      
       - `2:40:15` 
-          - `2` : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
-          - `40` : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
-         - `15` : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).
+        - `2` : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
+        - `40` : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
+        - `15` : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).
     
     Once your script is complete, run the script using:
 
@@ -285,6 +287,7 @@ Trim Galore automatically detects adapters by default, but for this exercise we 
 !!! example "Class Exercise #2" 
 
     **Estimated Time:** ~10 minutes
+    
     **Collaboration:** Please work with your neighbor if you have questions.
 
     **Learning goal:** By the end of this exercise, you should be able to:
