@@ -1933,8 +1933,8 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 <h2 id="running-trimmomatic">Running Trimmomatic</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #1</p>
-<p><strong>Estimated Time:</strong> ~20 minutes
-<strong>Collaboration:</strong> Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. </p>
+<p><strong>Estimated Time:</strong> ~20 minutes</p>
+<p><strong>Collaboration:</strong> Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. </p>
 <p><strong>Learning goal:</strong> By the end of this exercise, you should be able to:</p>
 <pre><code>* Understand what each Trimmmomatic argument does 
 * Successfully trim FASTQ files
@@ -1998,11 +1998,15 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 </tr>
 </tbody>
 </table>
-<p><em>Note: We will be adding additional parameters the adapter file specified. Once you reach this point, please ask me for help. These parameters control how aggressively adapters are detected and removed.</em>
-  - <code>2:40:15</code> 
-      - <code>2</code> : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
-      - <code>40</code> : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
-     - <code>15</code> : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).</p>
+<p><em>Note: We will be adding additional parameters the adapter file specified. Once you reach this point, please ask me for help. These parameters control how aggressively adapters are detected and removed.</em></p>
+<ul>
+<li><code>2:40:15</code> <ul>
+<li><code>2</code> : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).</li>
+<li><code>40</code> : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).</li>
+<li><code>15</code> : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).</li>
+</ul>
+</li>
+</ul>
 <p>Once your script is complete, run the script using:</p>
 <div class="highlight"><pre><span></span><code>sh<span class="w"> </span>trim.sh
 </code></pre></div>
@@ -2108,8 +2112,8 @@ TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfu
 <h2 id="running-trim-galore">Running Trim Galore</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise #2</p>
-<p><strong>Estimated Time:</strong> ~10 minutes
-<strong>Collaboration:</strong> Please work with your neighbor if you have questions.</p>
+<p><strong>Estimated Time:</strong> ~10 minutes</p>
+<p><strong>Collaboration:</strong> Please work with your neighbor if you have questions.</p>
 <p><strong>Learning goal:</strong> By the end of this exercise, you should be able to:</p>
 <pre><code>+ Use Trim Galore to perform adapter and quality trimming
 + Verify successful trimming using post-trimming FastQC results
