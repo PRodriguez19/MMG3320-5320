@@ -149,9 +149,9 @@ In this example, we have told Trimmomatic:
 
     **Learning goal:** By the end of this exercise, you should be able to:
         
-        + Understand what each Trimmmomatic argument does 
-        + Successfully trim FASTQ files
-        + Verify trimming success using FastQC results
+        * Understand what each Trimmmomatic argument does 
+        * Successfully trim FASTQ files
+        * Verify trimming success using FastQC results
 
     **Part A:** Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. 
     
@@ -181,10 +181,10 @@ In this example, we have told Trimmomatic:
     | remove adapter  | Identify which adapter to remove using FastQC output | 
 
     *Note: We will be adding additional parameters the adapter file specified. Once you reach this point, please ask me for help. These parameters control how aggressively adapters are detected and removed.*
-    - `2:40:15` 
-        - `2` : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
-        - `40` : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
-        - `15` : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).
+      - `2:40:15` 
+          - `2` : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
+          - `40` : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
+         - `15` : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).
     
     Once your script is complete, run the script using:
 
@@ -222,8 +222,9 @@ In this example, we have told Trimmomatic:
     ```
 
     **Part D: Quality control with FASTQC** Run FASTQC on all the `.gz` files (raw and trimmed), then open the HTML reports. When reviewing the FASTQC results, focus on: 
-        + Per base sequence quality
-        + Adapter content 
+        
+        * Per base sequence quality
+        * Adapter content 
     
 
 The following questions will be included in HW#6. Please be sure you are able to answer them. 
@@ -300,14 +301,14 @@ Trim Galore automatically detects adapters by default, but for this exercise we 
 
     **Part B:** Run Trim Galore on `Test_adapter_contamination.fq.gz`. Before running Trim Galore, make sure you:
         
-        + Load the Trim Galore module
-        + Load the Cutadapt module
-        + Load the FastQC module
+        * Load the Trim Galore module
+        * Load the Cutadapt module
+        * Load the FastQC module
 
     **Trimming Instructions** Your trim-galore command should:  
         
-        + Use the `--illumina` option
-        + Run FASTQC automatically on the trimmed FASTQ file
+        * Use the `--illumina` option
+        * Run FASTQC automatically on the trimmed FASTQ file
 
     Run the command from the directory containing the FASTQ file.
 
