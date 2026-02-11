@@ -144,19 +144,20 @@ In this example, we have told Trimmomatic:
 
 !!! example "Class Exercise #1" 
 
-    Estimated Time: ~20 minutes
-    Collaboration: Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. 
+    **Estimated Time:** ~20 minutes
+    **Collaboration:** Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. 
 
-    Learning goal: By the end of this exercise, you should be able to:
+    **Learning goal:** By the end of this exercise, you should be able to:
+        
         + Understand what each Trimmmomatic argument does 
         + Successfully trim FASTQ files
         + Verify trimming success using FastQC results
 
     **Part A:** Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. 
     
-    ```bash
-    /gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
-    ```
+      ```bash
+      /gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
+      ```
     
     **Part B:** Modify the `trim.sh` script using Jupyter Notebook, Nano, or your preferred text editor. Your goal is to run `trimmomatic` on the provided FASTQ files. 
 
@@ -171,7 +172,8 @@ In this example, we have told Trimmomatic:
     | outputFile2U       | Output file that contains orphaned reads from the _2 file. |
     | SLIDINGWINDOW:4:20 | Uses a sliding window of size 4; trims when average Phred score <20> |  
    
- You will need to identify two additional arguments to:  
+    
+    You will need to identify two additional arguments to:  
     
     | argument to add    | meaning |
     |:------------------ | :------------------------------------------------ | 
@@ -186,9 +188,9 @@ In this example, we have told Trimmomatic:
     
     Once your script is complete, run the script using:
 
-    ```bash
-    sh trim.sh
-    ```
+      ```bash
+      sh trim.sh
+      ```
 
     *Expected Output:* You will know that your script is working correctly if you see output similar to the following,
 
@@ -223,13 +225,14 @@ In this example, we have told Trimmomatic:
         + Per base sequence quality
         + Adapter content 
     
-    The following questions will be included in HW#6. Please be sure you are able to answer them. 
 
-    1) How many reads were trimmed in `SRR2589044_1` and `SRR2589044_2`, respectively. State which files were used to answer this question. 
+The following questions will be included in HW#6. Please be sure you are able to answer them. 
 
-    2) Did the per base sequence quality improve after trimming? If so, at which positions was the biggest improvement? 
+1) How many reads were trimmed in `SRR2589044_1` and `SRR2589044_2`, respectively. State which files were used to answer this question. 
 
-    3) Was adapter content reduced or eliminated after trimming? In your answer, please state the name of the adapter that was altered. 
+2) Did the per base sequence quality improve after trimming? If so, at which positions was the biggest improvement? 
+
+3) Was adapter content reduced or eliminated after trimming? In your answer, please state the name of the adapter that was altered. 
 
 
 ## Option 2: Trim Galore 
@@ -245,45 +248,46 @@ Trim Galore automatically detects adapters by default, but for this exercise we 
 **More options** can be found [here](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md)
 
 * `-h/--help`
-  * Print this help message and exits.
+    * Print this help message and exits.
  
 * `-q/--quality <INT>`
-  * Trim low-quality ends from reads in addition to adapter removal. For RRBS samples, quality trimming will be performed first, and adapter trimming is carried in a second round. Other files are quality and adapter trimmed in a single pass. The algorithm is the same as the one used by BWA (Subtract INT from all qualities; compute partial sums from all indices to the end of the sequence; cut sequence at the index at which the sum is minimal).
-  * Default Phred score: `20`
+    * Trim low-quality ends from reads in addition to adapter removal. For RRBS samples, quality trimming will be performed first, and adapter trimming is carried in a second round. Other files are quality and adapter trimmed in a single pass. The algorithm is the same as the one used by BWA (Subtract INT from all qualities; compute partial sums from all indices to the end of the sequence; cut sequence at the index at which the sum is minimal).
+    * Default Phred score: `20`
   
 * `--phred33`
-  * Instructs Cutadapt to use `ASCII+33` quality scores as Phred scores (Sanger/Illumina 1.9+ encoding) for quality trimming.
-  * Default: `ON`
+    * Instructs Cutadapt to use `ASCII+33` quality scores as Phred scores (Sanger/Illumina 1.9+ encoding) for quality trimming.
+    * Default: `ON`
   
 * `--fastqc`
-  * Run FastQC in the default mode on the FastQ file once trimming is complete.
+    * Run FastQC in the default mode on the FastQ file once trimming is complete.
   
 * `--fastqc_args "<ARGS>"`
-  * Passes extra arguments to FastQC. If more than one argument is to be passed to FastQC they must be in the form `arg1 arg2 [..]`.
-  * An example would be: `--fastqc_args "--nogroup --outdir /home/"`.
-  * Passing extra arguments will automatically invoke FastQC, so `--fastqc` does not have to be specified separately.
+    * Passes extra arguments to FastQC. If more than one argument is to be passed to FastQC they must be in the form `arg1 arg2 [..]`.
+    * An example would be: `--fastqc_args "--nogroup --outdir /home/"`.
+    * Passing extra arguments will automatically invoke FastQC, so `--fastqc` does not have to be specified separately.
 
 * `--illumina`
-  * Adapter sequence to be trimmed is the first 13bp of the Illumina universal adapter `AGATCGGAAGAGC` instead of the default auto-detection of adapter sequence.
+    * Adapter sequence to be trimmed is the first 13bp of the Illumina universal adapter `AGATCGGAAGAGC` instead of the default auto-detection of adapter sequence.
 
 * `--gzip`
-  * Compress the output file with `gzip`.
-  * If the input files are gzip-compressed the output files will be automatically gzip compressed as well.
+    * Compress the output file with `gzip`.
+    * If the input files are gzip-compressed the output files will be automatically gzip compressed as well.
 
 * `--dont_gzip`
-  * Output files won't be compressed with gzip. This overrides `--gzip`.
+    * Output files won't be compressed with gzip. This overrides `--gzip`.
 
 * `-o/--output_dir <DIR>`
-  * If specified all output will be written to this directory instead of the current directory. If the directory doesn't exist it will be created for you.
+    * If specified all output will be written to this directory instead of the current directory. If the directory doesn't exist it will be created for you.
 
 ## Running Trim Galore
 
 !!! example "Class Exercise #2" 
 
-    Estimated Time: ~10 minutes
-    Collaboration: Please work with your neighbor if you have questions.
+    **Estimated Time:** ~10 minutes
+    **Collaboration:** Please work with your neighbor if you have questions.
 
-    Learning goal: By the end of this exercise, you should be able to:
+    **Learning goal:** By the end of this exercise, you should be able to:
+        
         + Use Trim Galore to perform adapter and quality trimming
         + Verify successful trimming using post-trimming FastQC results
     
@@ -295,11 +299,13 @@ Trim Galore automatically detects adapters by default, but for this exercise we 
     ```
 
     **Part B:** Run Trim Galore on `Test_adapter_contamination.fq.gz`. Before running Trim Galore, make sure you:
+        
         + Load the Trim Galore module
         + Load the Cutadapt module
         + Load the FastQC module
 
     **Trimming Instructions** Your trim-galore command should:  
+        
         + Use the `--illumina` option
         + Run FASTQC automatically on the trimmed FASTQ file
 
@@ -308,10 +314,12 @@ Trim Galore automatically detects adapters by default, but for this exercise we 
 
 The following questions will be included in HW#6. Please be sure you are able to answer them. 
 
-    1) Comparing the FASTQC reports before and after trimming, report how the sequence length changes. 
+1) Comparing the FASTQC reports before and after trimming, report how the sequence length changes. 
 
-    2) Which FastQC modules showed the most improvement after trimming? Be sure to report which adapter was reduced/eliminated after trimming. 
+2) Which FastQC modules showed the most improvement after trimming? Be sure to report which adapter was reduced/eliminated after trimming. 
 
-    3) If you examine the Overrepresented Sequences table, do any contaminants remain? *You may notice that some overrepresented sequences persist even after trimming. In practice, this can be addressed by modifying or extending the adapter FASTA file to include additional contaminant sequences.*
+3) If you examine the Overrepresented Sequences table, do any contaminants remain? 
+
+*You may notice that some overrepresented sequences persist even after trimming. In practice, this can be addressed by modifying or extending the adapter FASTA file to include additional contaminant sequences.*
 
 
