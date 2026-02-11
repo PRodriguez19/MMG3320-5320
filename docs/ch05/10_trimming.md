@@ -54,9 +54,9 @@ They have a varying range of clipping and trimming features, but for the most pa
 
 *We will compare some aligners next week* 
 
-In the below class exercise we will be using Trimmomatic. 
+In the class exercises below, we will be using Trimmomatic and Trim Galore. 
 
-## Trimmomatic options
+# Option 1: Trimmomatic
 
 ```bash
 module load gcc/13.3.0-xp3epyt
@@ -142,46 +142,55 @@ In this example, we have told Trimmomatic:
     
 ## Running Trimmomatic
 
-!!! example "Class Exercise" 
+!!! example "Class Exercise #1" 
 
-    This Exercise will take ~20 mins. Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. 
+    Estimated Time: ~20 minutes
+    Collaboration: Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. 
 
-    **Part A:** Make a copy of the exercise materials. The folder can be found in this location: 
+    Learning goal: By the end of this exercise, you should be able to:
+        + Understand what each Trimmmomatic argument does 
+        + Successfully trim FASTQ files
+        + Verify trimming success using FastQC results
+
+    **Part A:** Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. 
     
     ```bash
     /gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
     ```
     
-    **Part B:** Modify the `trim.sh` script using either Jupyter Notebook or Nano to run `trimmomatic` on the provided FASTQ sample. Ensure that you include the arguments listed below, using the **exact syntax** required by `trimmomatic`.
+    **Part B:** Modify the `trim.sh` script using Jupyter Notebook, Nano, or your preferred text editor. Your goal is to run `trimmomatic` on the provided FASTQ files. 
+
+    **Important reminder:** Trimmomatic arguments must be provided in the correct order starting with input files, output files, and remaining arguments. 
 
     | argument to add    | meaning |
     |:------------------ | :------------------------------------------------ |
-    | PE                 | that it will be taking a paired end file as input |
-    | inputFile1         | SRR2589044_1.fastq.gz |
-    | inputFile2         | SRR2589044_2.fastq.gz |
+    | SE or PE           | single end or paired end file as input |
     | outputFile1P       | Output file that contains surviving pairs from the _1 file. |
     | outputFile1U       | Output file that contains orphaned reads from the _1 file. |
     | outputFile2P       | Output file that contains surviving pairs from the _2 file. |
     | outputFile2U       | Output file that contains orphaned reads from the _2 file. |
-    | SLIDINGWINDOW:4:20 | to use a sliding window of size 4 that will remove bases if their phred score is below 20 |  
+    | SLIDINGWINDOW:4:20 | Uses a sliding window of size 4; trims when average Phred score <20> |  
+   
+ You will need to identify two additional arguments to:  
+    
+    | argument to add    | meaning |
+    |:------------------ | :------------------------------------------------ | 
     | filter short reads | drop an entire read if it is below 25 |
-    | adapter to remove     | NexteraPE-PE.fa:2:40:15 | 
+    | remove adapter  | Identify which adapter to remove using FastQC output | 
 
-    *Note: We are adding additional parameters the NexteraPE-PE.Fa adapter*
-
-    - NexteraPE-PE.fa : This is a FASTA file that contains adapter sequences specific to Nextera paired-end libraries.
+    *Note: We will be adding additional parameters the adapter file specified. Once you reach this point, please ask me for help. These parameters control how aggressively adapters are detected and removed.*
     - `2:40:15` 
         - `2` : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
         - `40` : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
         - `15` : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).
     
-    Once you have a working script, run it with the following command:
+    Once your script is complete, run the script using:
 
     ```bash
     sh trim.sh
     ```
 
-    You will know that your script is correct and working properly if you see the following output: 
+    *Expected Output:* You will know that your script is working correctly if you see output similar to the following,
 
     ```bash
     TrimmomaticPE: Started with arguments:
@@ -198,7 +207,7 @@ In this example, we have told Trimmomatic:
     TrimmomaticPE: Completed successfully
     ```
 
-    **Part C:** Check that the file outputs are the correct size
+    **Part C:** Check output file sizes
 
     ```bash
     total 453M
@@ -210,4 +219,99 @@ In this example, we have told Trimmomatic:
     -rw-r--r-- 1 pdrodrig pi-jdragon 271K Feb 11 18:32 SRR2589044_2un.trim.fastq.gz
     ```
 
-    **Part D:** Run FASTQC on all the `.gz` files and visualize the HTML files to see whether your **per base sequence quality** is higher after trimming. In addition, please note if the **adapter content/contamination** has been removed. 
+    **Part D: Quality control with FASTQC** Run FASTQC on all the `.gz` files (raw and trimmed), then open the HTML reports. When reviewing the FASTQC results, focus on: 
+        + Per base sequence quality
+        + Adapter content 
+    
+    The following questions will be included in HW#6. Please be sure you are able to answer them. 
+
+    1) How many reads were trimmed in `SRR2589044_1` and `SRR2589044_2`, respectively. State which files were used to answer this question. 
+
+    2) Did the per base sequence quality improve after trimming? If so, at which positions was the biggest improvement? 
+
+    3) Was adapter content reduced or eliminated after trimming? In your answer, please state the name of the adapter that was altered. 
+
+
+## Option 2: Trim Galore 
+
+In the next example we will be using Trim Galore. Trim Galor is a wrapper tool that combines Cutadapt (adapter and quality trimming) and FastQC.  
+
+**BASIC USAGE:** `trim_galore [options] <filename(s)>`
+
+Trim Galore automatically detects adapters by default, but for this exercise we will explicitly specify Illumina adapters.
+
+### Some general options: 
+
+**More options** can be found [here](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md)
+
+* `-h/--help`
+  * Print this help message and exits.
+ 
+* `-q/--quality <INT>`
+  * Trim low-quality ends from reads in addition to adapter removal. For RRBS samples, quality trimming will be performed first, and adapter trimming is carried in a second round. Other files are quality and adapter trimmed in a single pass. The algorithm is the same as the one used by BWA (Subtract INT from all qualities; compute partial sums from all indices to the end of the sequence; cut sequence at the index at which the sum is minimal).
+  * Default Phred score: `20`
+  
+* `--phred33`
+  * Instructs Cutadapt to use `ASCII+33` quality scores as Phred scores (Sanger/Illumina 1.9+ encoding) for quality trimming.
+  * Default: `ON`
+  
+* `--fastqc`
+  * Run FastQC in the default mode on the FastQ file once trimming is complete.
+  
+* `--fastqc_args "<ARGS>"`
+  * Passes extra arguments to FastQC. If more than one argument is to be passed to FastQC they must be in the form `arg1 arg2 [..]`.
+  * An example would be: `--fastqc_args "--nogroup --outdir /home/"`.
+  * Passing extra arguments will automatically invoke FastQC, so `--fastqc` does not have to be specified separately.
+
+* `--illumina`
+  * Adapter sequence to be trimmed is the first 13bp of the Illumina universal adapter `AGATCGGAAGAGC` instead of the default auto-detection of adapter sequence.
+
+* `--gzip`
+  * Compress the output file with `gzip`.
+  * If the input files are gzip-compressed the output files will be automatically gzip compressed as well.
+
+* `--dont_gzip`
+  * Output files won't be compressed with gzip. This overrides `--gzip`.
+
+* `-o/--output_dir <DIR>`
+  * If specified all output will be written to this directory instead of the current directory. If the directory doesn't exist it will be created for you.
+
+## Running Trim Galore
+
+!!! example "Class Exercise #2" 
+
+    Estimated Time: ~10 minutes
+    Collaboration: Please work with your neighbor if you have questions.
+
+    Learning goal: By the end of this exercise, you should be able to:
+        + Use Trim Galore to perform adapter and quality trimming
+        + Verify successful trimming using post-trimming FastQC results
+    
+    
+    **Part A:** Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. 
+
+    ```bash
+    /gpfs1/cl/mmg3320/course_materials/trim_galore_exercise
+    ```
+
+    **Part B:** Run Trim Galore on `Test_adapter_contamination.fq.gz`. Before running Trim Galore, make sure you:
+        + Load the Trim Galore module
+        + Load the Cutadapt module
+        + Load the FastQC module
+
+    **Trimming Instructions** Your trim-galore command should:  
+        + Use the `--illumina` option
+        + Run FASTQC automatically on the trimmed FASTQ file
+
+    Run the command from the directory containing the FASTQ file.
+
+
+The following questions will be included in HW#6. Please be sure you are able to answer them. 
+
+    1) Comparing the FASTQC reports before and after trimming, report how the sequence length changes. 
+
+    2) Which FastQC modules showed the most improvement after trimming? Be sure to report which adapter was reduced/eliminated after trimming. 
+
+    3) If you examine the Overrepresented Sequences table, do any contaminants remain? *You may notice that some overrepresented sequences persist even after trimming. In practice, this can be addressed by modifying or extending the adapter FASTA file to include additional contaminant sequences.*
+
+
