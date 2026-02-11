@@ -1936,9 +1936,9 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 <p><strong>Estimated Time:</strong> ~20 minutes
 <strong>Collaboration:</strong> Please work with your neighbor if you have questions. I will begin answering questions at the 5 minute mark. </p>
 <p><strong>Learning goal:</strong> By the end of this exercise, you should be able to:</p>
-<pre><code>+ Understand what each Trimmmomatic argument does 
-+ Successfully trim FASTQ files
-+ Verify trimming success using FastQC results
+<pre><code>* Understand what each Trimmmomatic argument does 
+* Successfully trim FASTQ files
+* Verify trimming success using FastQC results
 </code></pre>
 <p><strong>Part A:</strong> Make a copy of the exercise materials into your current working directory. The folder can be found in the location below. Confirm that the folder is copied into your VACC working directory before continuing. </p>
 <div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/trimmomatic_exercise
@@ -1999,10 +1999,10 @@ During adapter trimming, we could also remove low-quality reads by setting a min
 </tbody>
 </table>
 <p><em>Note: We will be adding additional parameters the adapter file specified. Once you reach this point, please ask me for help. These parameters control how aggressively adapters are detected and removed.</em>
-- <code>2:40:15</code> 
-    - <code>2</code> : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
-    - <code>40</code> : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
-    - <code>15</code> : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).</p>
+  - <code>2:40:15</code> 
+      - <code>2</code> : Seed mismatch threshold (maximum number of mismatches allowed in the adapter sequence match).
+      - <code>40</code> : Palindrome mode threshold (minimum match length for identifying adapter sequences when the paired-end reads overlap).
+     - <code>15</code> : Simple adapter trimming threshold (minimum length of a match required to trigger adapter removal).</p>
 <p>Once your script is complete, run the script using:</p>
 <div class="highlight"><pre><span></span><code>sh<span class="w"> </span>trim.sh
 </code></pre></div>
@@ -2029,9 +2029,10 @@ TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfu
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span>91M<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2.trim.fastq.gz
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span>271K<span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">18</span>:32<span class="w"> </span>SRR2589044_2un.trim.fastq.gz
 </code></pre></div>
-<p><strong>Part D: Quality control with FASTQC</strong> Run FASTQC on all the <code>.gz</code> files (raw and trimmed), then open the HTML reports. When reviewing the FASTQC results, focus on: 
-    + Per base sequence quality
-    + Adapter content </p>
+<p><strong>Part D: Quality control with FASTQC</strong> Run FASTQC on all the <code>.gz</code> files (raw and trimmed), then open the HTML reports. When reviewing the FASTQC results, focus on: </p>
+<pre><code>* Per base sequence quality
+* Adapter content
+</code></pre>
 </div>
 <p>The following questions will be included in HW#6. Please be sure you are able to answer them. </p>
 <p>1) How many reads were trimmed in <code>SRR2589044_1</code> and <code>SRR2589044_2</code>, respectively. State which files were used to answer this question. </p>
@@ -2117,13 +2118,13 @@ TrimmomaticPE:<span class="w"> </span>Completed<span class="w"> </span>successfu
 <div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/trim_galore_exercise
 </code></pre></div>
 <p><strong>Part B:</strong> Run Trim Galore on <code>Test_adapter_contamination.fq.gz</code>. Before running Trim Galore, make sure you:</p>
-<pre><code>+ Load the Trim Galore module
-+ Load the Cutadapt module
-+ Load the FastQC module
+<pre><code>* Load the Trim Galore module
+* Load the Cutadapt module
+* Load the FastQC module
 </code></pre>
 <p><strong>Trimming Instructions</strong> Your trim-galore command should:  </p>
-<pre><code>+ Use the `--illumina` option
-+ Run FASTQC automatically on the trimmed FASTQ file
+<pre><code>* Use the `--illumina` option
+* Run FASTQC automatically on the trimmed FASTQ file
 </code></pre>
 <p>Run the command from the directory containing the FASTQ file.</p>
 </div>
