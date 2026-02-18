@@ -66,17 +66,18 @@ echo $DBDIR
 
 Let's start assembling our script. You will be copying and pasting the script in sections. 
 
-    + The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided. 
++ The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided. 
 
-    + Make a copy of the following folder located here: 
++ Make a copy of the following folder located here: 
 
-    ```bash
-    /gpfs1/cl/mmg3320/course_materials/HISAT2-example2
-    ```
+```bash
+/gpfs1/cl/mmg3320/course_materials/HISAT2-example2
+```
 
-    + You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`. 
++ You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`. 
     
-    + Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script `hisat2-modify-PE.sh`. Keep your terminal open as well. 
++ Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script `hisat2-modify-PE.sh`. Keep your terminal open as well. 
+
 
 1. In lines 1-9, provide the job submission parameters. Copy-and-paste the following section: 
 
@@ -150,6 +151,8 @@ Let's start assembling our script. You will be copying and pasting the script in
         -S ${SAMPLE}.sam &> ${SAMPLE}.log
     ```
 
+**Please note: the command above is written for single-end reads using `-U`. You will need to modify this for paired-end data.**
+
 6. Move into your terminal tab. Do not close your script, we will return to it shortly. 
 
 7. Run the following command in your terminal. 
@@ -166,17 +169,28 @@ Let's start assembling our script. You will be copying and pasting the script in
 	
 8. **When you are ready, modify the script you copied-and-pasted to accommodate paired end reads** 
     
-    The paired-end files in this directory are: 
+    The FASTQ files in this directory are: 
 
     ```
     JC1A_R1.fastq.gz  JC1A_R2.fastq.gz
     ```
 
+    In paired-end sequencing:
+    + `_R1` = forward reads
+    + `_R2` = reverse reads 
+
     **Hints:**
 
-    + The loop should iterate only over `_R1.fastq.gz` files to ensure proper pairing. If the script loops over all `*.fastq.gz` files, it will process both `_R1.fastq.gz` and `_R2.fastq.gz` files individually.
-    + If the `SAMPLE` variable is set to `.fastq.gz` only, the samples will **not** distinguish between `_R1.fastq.gz` and `_R2.fastq.gz`
-    + Use `_R1.fastq.gz` for forward reads and `_R2.fastq.gz` for reverse reads.
+    + If your script iterates over all `*.fastq.gz` files, it will process both `JC1A_R1.fastq.gz` and `JC1A_R2.fastq.gz` as separate files, which is incorrect. 
+    + Instead, loop over only `_R1.fastq.gz`. This will automatically infer matching with `_R2.fastq.gz`
+    + Change the sed command to remove `_R1.fastq.gz`
+    + Carefully interpret hisat2 usage
+
+    ```bash
+    Usage: 
+    hisat2 [options]* -x <ht2-idx> {-1 <m1> -2 <m2> | -U <r>} [-S <sam>]
+    ```
+    For more information, please refer to the hisat2 manual and main arguments section found [here](https://daehwankimlab.github.io/hisat2/manual/) 
 
 9. Copy-and paste the last section starting in line 36. When you are done, submit the script. 
 
