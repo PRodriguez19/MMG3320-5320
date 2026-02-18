@@ -176,6 +176,7 @@ Let's start assembling our script. You will be copying and pasting the script in
     ```
 
     In paired-end sequencing:
+    
     + `_R1` = forward reads
     + `_R2` = reverse reads 
 
