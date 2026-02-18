@@ -1801,19 +1801,23 @@ Often the <code>in</code> portion will be a directory instead of single files (A
 </code></pre></div>
 <h3 id="instructions">Instructions</h3>
 <p>Let's start assembling our script. You will be copying and pasting the script in sections. </p>
-<pre><code>+ The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided.
-
-+ Make a copy of the following folder located here:
-
-```bash
-/gpfs1/cl/mmg3320/course_materials/HISAT2-example2
-```
-
-+ You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`.
-
-+ Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script `hisat2-modify-PE.sh`. Keep your terminal open as well.
-</code></pre>
-<ol>
+<ul>
+<li>
+<p>The purpose of this exercise is the understand how the alignment script was composed. Therefore, take the time to read any of the descriptions provided. </p>
+</li>
+<li>
+<p>Make a copy of the following folder located here: </p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/HISAT2-example2
+</code></pre></div>
+<ul>
+<li>
+<p>You will see two FASTQ files inside called <code>JC1A_R1.fastq.gz</code> and  <code>JC1A_R2.fastq.gz</code>. </p>
+</li>
+<li>
+<p>Open Jupyter Notebooks to "write" your alignment script using the step by step instructions below. Call the script <code>hisat2-modify-PE.sh</code>. Keep your terminal open as well. </p>
+</li>
 <li>
 <p>In lines 1-9, provide the job submission parameters. Copy-and-paste the following section: </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -1883,6 +1887,9 @@ hisat2<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-S<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.sam<span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">SAMPLE</span><span class="si">}</span>.log
 </code></pre></div>
 </li>
+</ul>
+<p><strong>Please note: the command above is written for single-end reads using <code>-U</code>. You will need to modify this for paired-end data.</strong></p>
+<ol>
 <li>
 <p>Move into your terminal tab. Do not close your script, we will return to it shortly. </p>
 </li>
@@ -1899,15 +1906,23 @@ hisat2<span class="w"> </span><span class="se">\</span>
 </li>
 <li>
 <p><strong>When you are ready, modify the script you copied-and-pasted to accommodate paired end reads</strong> </p>
-<p>The paired-end files in this directory are: </p>
+<p>The FASTQ files in this directory are: </p>
 <div class="highlight"><pre><span></span><code>JC1A_R1.fastq.gz  JC1A_R2.fastq.gz
 </code></pre></div>
+<p>In paired-end sequencing:
++ <code>_R1</code> = forward reads
++ <code>_R2</code> = reverse reads </p>
 <p><strong>Hints:</strong></p>
 <ul>
-<li>The loop should iterate only over <code>_R1.fastq.gz</code> files to ensure proper pairing. If the script loops over all <code>*.fastq.gz</code> files, it will process both <code>_R1.fastq.gz</code> and <code>_R2.fastq.gz</code> files individually.</li>
-<li>If the <code>SAMPLE</code> variable is set to <code>.fastq.gz</code> only, the samples will <strong>not</strong> distinguish between <code>_R1.fastq.gz</code> and <code>_R2.fastq.gz</code></li>
-<li>Use <code>_R1.fastq.gz</code> for forward reads and <code>_R2.fastq.gz</code> for reverse reads.</li>
+<li>If your script iterates over all <code>*.fastq.gz</code> files, it will process both <code>JC1A_R1.fastq.gz</code> and <code>JC1A_R2.fastq.gz</code> as separate files, which is incorrect. </li>
+<li>Instead, loop over only <code>_R1.fastq.gz</code>. This will automatically infer matching with <code>_R2.fastq.gz</code></li>
+<li>Change the sed command to remove <code>_R1.fastq.gz</code></li>
+<li>Carefully interpret hisat2 usage</li>
 </ul>
+<p></p><div class="highlight"><pre><span></span><code>Usage:<span class="w"> </span>
+hisat2<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>*<span class="w"> </span>-x<span class="w"> </span>&lt;ht2-idx&gt;<span class="w"> </span><span class="o">{</span>-1<span class="w"> </span>&lt;m1&gt;<span class="w"> </span>-2<span class="w"> </span>&lt;m2&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>-U<span class="w"> </span>&lt;r&gt;<span class="o">}</span><span class="w"> </span><span class="o">[</span>-S<span class="w"> </span>&lt;sam&gt;<span class="o">]</span>
+</code></pre></div>
+For more information, please refer to the hisat2 manual and main arguments section found <a href="https://daehwankimlab.github.io/hisat2/manual/">here</a> 
 </li>
 <li>
 <p>Copy-and paste the last section starting in line 36. When you are done, submit the script. </p>
