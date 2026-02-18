@@ -1,4 +1,6 @@
-## Class Exercise 1: Script submission for aligning with HISAT2 
+## Class Exercise 1: HISAT2_example1
+
+### Script submission for aligning with HISAT2 
 
 Before we begin, we will submit the following script, which will map and align FASTQ files to the provided reference genome using the HISAT2 aligner. By the end of the lecture, it will be clear why this aligner was chosen. The script will run for approximately 40 minutes to run. We will most likely review the results together during the next class. 
 
@@ -7,10 +9,10 @@ Before we begin, we will submit the following script, which will map and align F
 
 ### Instructions: 
 
-1. Make a copy of the following folder located here: 
+1. Make a copy of the following folder in your home directory. The file path is shown below:
 
 	```bash
-	/gpfs1/cl/mmg3320/course_materials/HISAT2_example 
+	/gpfs1/cl/mmg3320/course_materials/HISAT2_example1
 	```
 
 2. Check to see that your file sizes are correct. 

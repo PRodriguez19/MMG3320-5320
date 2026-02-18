@@ -20,9 +20,9 @@ Slides will be made available as a PDF printout document. These lessons can be r
 
 + File Path to CE2: /gpfs1/cl/mmg3320/course_materials/FASTQC_example
 
-#Trimming & Filtering (L10)](10_trimming-slides.pdf)
+[Trimming & Filtering (L10)](10_trimming-slides.pdf)
 
-#Alignment (L11-13)](11_align-slides.pdf)
+[Alignment (L11-13)](11_align-slides.pdf)
 
 #Alignment Outputs (L15)](12_align-outputs.pdf)
 

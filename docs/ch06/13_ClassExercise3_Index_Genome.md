@@ -24,13 +24,13 @@ For this example, we will be indexing the genome of the parasite *Cryptosporidiu
 
 1.  Make a directory called `indexed_genomes_example`
 
-2. Grab the correct FASTA file from the Cryptodb website and place inside of `indexed_genomes_example`.  
+2. Grab the correct FASTA file from the Cryptodb website and place inside of `indexed_genomes_example`. Ultimately, the goal will be to align using a splice-aware aligner. 
 
     ```bash 
     https://cryptodb.org/common/downloads/Current_Release/CparvumIOWA-ATCC/fasta/data/
     ```
 
-    + Which file will you select? Think about the **TYPE** of aligner we are using. 
+    + Which file will you select? 
     + Once you make a decision, right-click, select copy-link 
 
     Use the `wget` command 

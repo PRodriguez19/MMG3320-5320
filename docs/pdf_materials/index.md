@@ -16,6 +16,6 @@ Each tutorial will also be made available as PDF printout document. These lesson
 
 [Accessing Public Data (L8)](08_accessing_public_experimental_printout.pdf)
 
-#Assessing FASTQC Outputs (L9)](09_assessing_fastqc_output-printout.pdf)
+[Assessing FASTQC Outputs (L9)](09_assessing_fastqc_output-printout.pdf)
 
-#Trimming & Filtering (L10)](10_trimming-printout.pdf)
+[Trimming & Filtering (L10)](10_trimming-printout.pdf)

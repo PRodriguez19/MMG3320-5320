@@ -1,4 +1,6 @@
-## Class Exercise 3: Modifying the HISAT2 alignment script for PE samples
+## Class Exercise 3: HISAT2-example2
+
+### Modifying the HISAT2 alignment script for PE samples
 
 ### Overview 
 
@@ -69,7 +71,7 @@ Let's start assembling our script. You will be copying and pasting the script in
     + Make a copy of the following folder located here: 
 
     ```bash
-    /gpfs1/cl/mmg3320/course_materials/HISAT2-modify
+    /gpfs1/cl/mmg3320/course_materials/HISAT2-example2
     ```
 
     + You will see two FASTQ files inside called `JC1A_R1.fastq.gz` and  `JC1A_R2.fastq.gz`. 
@@ -85,7 +87,7 @@ Let's start assembling our script. You will be copying and pasting the script in
     #SBATCH --ntasks=2
     #SBATCH --mem=10G
     #SBATCH --time=3:00:00
-    #SBATCH --job-name=align_CD8
+    #SBATCH --job-name=align_JC1A
     # %x=job-name %j=jobid
     #SBATCH --output=%x_%j.out
     ```
@@ -172,9 +174,9 @@ Let's start assembling our script. You will be copying and pasting the script in
 
     **Hints:**
 
-    + The loop should iterate only over `_1.fastq.gz` files to ensure proper pairing. If the script loops over all `*.fastq.gz` files, it will process both `_1.fastq.gz` and `_2.fastq.gz` files individually.
-    + If the `SAMPLE` variable is set to `.fastq.gz` only, the samples will **not** distinguish between `_1.fastq.gz` and `_2.fastq.gz`
-    + Use `_1.fastq.gz` for forward reads and `_2.fastq.gz` for reverse reads.
+    + The loop should iterate only over `_R1.fastq.gz` files to ensure proper pairing. If the script loops over all `*.fastq.gz` files, it will process both `_R1.fastq.gz` and `_R2.fastq.gz` files individually.
+    + If the `SAMPLE` variable is set to `.fastq.gz` only, the samples will **not** distinguish between `_R1.fastq.gz` and `_R2.fastq.gz`
+    + Use `_R1.fastq.gz` for forward reads and `_R2.fastq.gz` for reverse reads.
 
 9. Copy-and paste the last section starting in line 36. When you are done, submit the script. 
 
