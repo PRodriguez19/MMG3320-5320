@@ -67,15 +67,15 @@ The main metrics to explore first are:
 
 > Note: If you don't see exact columns as ours, you may need to configure the columns, which is a button just underneath the 'General Statistics' heading. 
 
-<p align="center">
-<img src="../img/multiqc_table.png" width="750">
-  </p>
+<figure markdown="span">
+  ![multiqc_table](../img/multiqc_table.png){ width="750"}
+</figure>
 
 Using `Configure Columns` button, we are going to choose the following columns:
 
-<p align="center">
-<img src="../img/multiqc_columns.png" width="600">
-  </p>
+<figure markdown="span">
+  ![multiqc_columns](../img/multiqc_columns.png){ width="600"}
+</figure>
 
 In the above image, the description column is helpful in interpretating the table. For example, the total number of raw reads is given in the `M Seqs` column on the far right of the table. 
 
@@ -90,9 +90,9 @@ GC bias could be caused by low-complexity libraries, differences in amplificatio
 Sequence counts for each sample. Duplicate read counts are an estimate only.
 See duplication section below. 
 
-<p align="center">
-<img src="../img/sequence_counts1.png" width="600">
-  </p>
+<figure markdown="span">
+  ![sequence_counts](../img/sequence_counts1.png){ width="600"}
+</figure>
 
 ### Sequence Quality Histograms 
 Notice the box-and-whisker plots are missing from the aggregated plot output from Multiqc. 
@@ -104,9 +104,9 @@ It is normal with all Illumina sequencers for the median quality score to start 
 Why does the quality decrease over the read in Illumina? 
 [Check out this answer](https://www.ecseq.com/support/ngs/why-does-the-sequence-quality-decrease-over-the-read-in-illumina)
 
-<p align="center">
-<img src="../img/sequence_quality2.png" width="600">
-  </p>
+<figure markdown="span">
+  ![sequence_quality](../img/sequence_quality2.png){ width="600"}
+</figure>
 
 ### Per Sequence Quality Scores 
 
@@ -115,9 +115,9 @@ A plot of the total number of reads vs the average quality score over full lengt
 **What to look for:**
 The distribution of average read quality should be fairly tight in the upper range of the plot.
 
-<p align="center">
-<img src="../img/perseqquality3.png" width="600">
-  </p>
+<figure markdown="span">
+  ![per-seq-quality](../img/perseqquality3.png){ width="600"}
+</figure>
 
 ### Per Base Sequence Content 
 
@@ -128,9 +128,9 @@ This plot reports the percent of bases called for each of the four nucleotides a
 **What to look for:**   
 With most RNA-Seq library preparation protocols there is clear non-uniform distribution of bases for the first 10-15 nucleotides; this is normal and expected depending on the type of library kit used (e.g. TruSeq RNA Library Preparation). This is totally normal for RNA-sequencing data even after removal of the adapter sequences. The random hexamer primers, which are used to generate the cDNA library from the RNA transcripts were shown to not bind completly random. This non-random binding leads to this bias in "per base sequence content" from base 1-15. RNA-Seq data showing this non-uniform base composition will always be classified as Failed by FastQC for this module even though the sequence is perfectly good.
 
-<p align="center">
-<img src="../img/perbaseseq4.png" width="600">
-  </p>
+<figure markdown="span">
+  ![per-base-seq](../img/perbaseseq4.png){ width="600"}
+</figure>
 
 ### Per Sequence GC Content 
 
@@ -144,9 +144,9 @@ The expectation is that the GC content of all reads should form a normal distrib
 More information about the expected % GC content in an organism can be found here: 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2909565/ 
 
-<p align="center">
-<img src="../img/pergc5.png" width="600">
-  </p>
+<figure markdown="span">
+  ![per-gc](../img/pergc5.png){ width="600"}
+</figure>
 
 ### Per Base N Content 
 
@@ -155,9 +155,9 @@ Percent of bases at each position or bin with no base call, i.e. ‘N’.
 **What to expect:**  
 You should never see any point where this curve rises noticeably above zero. If it does this indicates a problem occurred during the sequencing run.  
 
-<p align="center">
-<img src="../img/perbaseN6.png" width="600">
-  </p>
+<figure markdown="span">
+  ![per-base](../img/perbaseN6.png){ width="600"}
+</figure>
 
 
 ### Sequence Duplication Levels 
@@ -169,9 +169,10 @@ For whole genome shotgun data it is expected that nearly 100% of your reads will
 
 In addition, when sequencing RNA there will be some very highly abundant transcripts and some lowly abundant. For example, it is not uncommon that 50 % of all reads align to the ten most highly expressed genes. The extremely high-read coverage for the particular highly expressed transcripts for RNA-seq data can easily lead to FASTQC read duplication levels of 70% or higher. Therefore, for RNA-Seq data this may be flagged as Failed by FastQC even though the duplication is expected.
 
-<p align="center">
-<img src="../img/seqdups.png" width="600">
-  </p>
+<figure markdown="span">
+  ![seqdups](../img/seqdups.png){ width="600"}
+</figure>
+
 
 ### Overrepresented sequences 
 
@@ -191,9 +192,9 @@ Ideally Illumina sequence data should not have any adapter sequence present, how
 
 Comprehensive view of all metrics in one plot. 
 
-<p align="center">
-<img src="../img/status_check.png" width="600">
-  </p>
+<figure markdown="span">
+  ![status_check](../img/status_check.png){ width="600"}
+</figure>
 
 ## Summary of Common issues
 
