@@ -62,6 +62,8 @@ nav:
           - Submitting Alignment Script (L11): ch06/11_ClassExercise_Align-Submission.md
           - Indexing a Reference Genome (L12): ch06/13_ClassExercise3_Index_Genome.md
           - Modifying Alignment Script (L13): ch06/12_ClassExercise2_Align-Modify.md
+      - Week 7: 
+          - MultiQC (L14): ch07/10_multiQC.md
   - Assignments:
       - Homework 1 (L1): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md
