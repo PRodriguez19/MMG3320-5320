@@ -2090,15 +2090,13 @@ GSM5017679<span class="w">  </span>Tcf1/Lef1-deficient<span class="w"> </span>CD
 <blockquote>
 <p>Note: If you don't see exact columns as ours, you may need to configure the columns, which is a button just underneath the 'General Statistics' heading. </p>
 </blockquote>
-<p align="center">
-<img src="../img/multiqc_table.png" width="750">
-  </p>
-
+<figure>
+  <img alt="multiqc_table" src="../../img/multiqc_table.png" width="750">
+</figure>
 <p>Using <code>Configure Columns</code> button, we are going to choose the following columns:</p>
-<p align="center">
-<img src="../img/multiqc_columns.png" width="600">
-  </p>
-
+<figure>
+  <img alt="multiqc_columns" src="../../img/multiqc_columns.png" width="600">
+</figure>
 <p>In the above image, the description column is helpful in interpretating the table. For example, the total number of raw reads is given in the <code>M Seqs</code> column on the far right of the table. </p>
 <h3 id="complexity">Complexity</h3>
 <p>The complexity of the RNA-seq library can be explored with the <code>%Dups</code> column. If a large percentage of the library is duplicated, then this could indicate a library of either low complexity or over-amplification. If huge differences of <code>%Dups</code> exist between samples, this may lead to biases in the data, such as different %GC content.</p>
@@ -2106,37 +2104,33 @@ GSM5017679<span class="w">  </span>Tcf1/Lef1-deficient<span class="w"> </span>CD
 <h3 id="sequence-counts">Sequence Counts</h3>
 <p>Sequence counts for each sample. Duplicate read counts are an estimate only.
 See duplication section below. </p>
-<p align="center">
-<img src="../img/sequence_counts1.png" width="600">
-  </p>
-
+<figure>
+  <img alt="sequence_counts" src="../../img/sequence_counts1.png" width="600">
+</figure>
 <h3 id="sequence-quality-histograms">Sequence Quality Histograms</h3>
 <p>Notice the box-and-whisker plots are missing from the aggregated plot output from Multiqc. </p>
 <p><strong>What to look for:</strong>  </p>
 <p>It is normal with all Illumina sequencers for the median quality score to start out lower over the first 5-7 bases and to then rise. The average quality score will then steadily drop over the length of the read. With paired end reads the average quality scores for read 1 will almost always be higher than for read 2.</p>
 <p>Why does the quality decrease over the read in Illumina? 
 <a href="https://www.ecseq.com/support/ngs/why-does-the-sequence-quality-decrease-over-the-read-in-illumina">Check out this answer</a></p>
-<p align="center">
-<img src="../img/sequence_quality2.png" width="600">
-  </p>
-
+<figure>
+  <img alt="sequence_quality" src="../../img/sequence_quality2.png" width="600">
+</figure>
 <h3 id="per-sequence-quality-scores">Per Sequence Quality Scores</h3>
 <p>A plot of the total number of reads vs the average quality score over full length of that read.</p>
 <p><strong>What to look for:</strong>
 The distribution of average read quality should be fairly tight in the upper range of the plot.</p>
-<p align="center">
-<img src="../img/perseqquality3.png" width="600">
-  </p>
-
+<figure>
+  <img alt="per-seq-quality" src="../../img/perseqquality3.png" width="600">
+</figure>
 <h3 id="per-base-sequence-content">Per Base Sequence Content</h3>
 <p>Note, this plot looks very different from the FASTQC output! </p>
 <p>This plot reports the percent of bases called for each of the four nucleotides at each position across all reads in the file.</p>
 <p><strong>What to look for:</strong> <br>
 With most RNA-Seq library preparation protocols there is clear non-uniform distribution of bases for the first 10-15 nucleotides; this is normal and expected depending on the type of library kit used (e.g. TruSeq RNA Library Preparation). This is totally normal for RNA-sequencing data even after removal of the adapter sequences. The random hexamer primers, which are used to generate the cDNA library from the RNA transcripts were shown to not bind completly random. This non-random binding leads to this bias in "per base sequence content" from base 1-15. RNA-Seq data showing this non-uniform base composition will always be classified as Failed by FastQC for this module even though the sequence is perfectly good.</p>
-<p align="center">
-<img src="../img/perbaseseq4.png" width="600">
-  </p>
-
+<figure>
+  <img alt="per-base-seq" src="../../img/perbaseseq4.png" width="600">
+</figure>
 <h3 id="per-sequence-gc-content">Per Sequence GC Content</h3>
 <p>Plot of the number of reads vs. GC% per read. The displayed Theoretical Distribution assumes a uniform GC content for all reads.</p>
 <p><strong>What to look for:</strong><br>
@@ -2145,27 +2139,24 @@ The expectation is that the GC content of all reads should form a normal distrib
 * If you have rRNA contamination in your data you may see a shifted GC content peak.</p>
 <p>More information about the expected % GC content in an organism can be found here: 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2909565/ </p>
-<p align="center">
-<img src="../img/pergc5.png" width="600">
-  </p>
-
+<figure>
+  <img alt="per-gc" src="../../img/pergc5.png" width="600">
+</figure>
 <h3 id="per-base-n-content">Per Base N Content</h3>
 <p>Percent of bases at each position or bin with no base call, i.e. ‘N’.</p>
 <p><strong>What to expect:</strong><br>
 You should never see any point where this curve rises noticeably above zero. If it does this indicates a problem occurred during the sequencing run.  </p>
-<p align="center">
-<img src="../img/perbaseN6.png" width="600">
-  </p>
-
+<figure>
+  <img alt="per-base" src="../../img/perbaseN6.png" width="600">
+</figure>
 <h3 id="sequence-duplication-levels">Sequence Duplication Levels</h3>
 <p>Percentage of reads of a given sequence in the file which are present a given number of times in the file. </p>
 <p><strong>What to expect:</strong><br>
 For whole genome shotgun data it is expected that nearly 100% of your reads will be unique (appearing only 1 time in the sequence data). This indicates a highly diverse library that was not over sequenced. If the sequencing output is extremely deep (e.g. &gt; 100X the size of your genome) you will start to see some sequence duplication; this is inevitable as there are in theory only a finite number of completely unique sequence reads which can be obtained from any given input DNA sample.</p>
 <p>In addition, when sequencing RNA there will be some very highly abundant transcripts and some lowly abundant. For example, it is not uncommon that 50 % of all reads align to the ten most highly expressed genes. The extremely high-read coverage for the particular highly expressed transcripts for RNA-seq data can easily lead to FASTQC read duplication levels of 70% or higher. Therefore, for RNA-Seq data this may be flagged as Failed by FastQC even though the duplication is expected.</p>
-<p align="center">
-<img src="../img/seqdups.png" width="600">
-  </p>
-
+<figure>
+  <img alt="seqdups" src="../../img/seqdups.png" width="600">
+</figure>
 <h3 id="overrepresented-sequences">Overrepresented sequences</h3>
 <p>Provides a list of sequences which appear more than expected in the file. Only the first 50bp are considered. A sequence is considered overrepresented if it accounts for ≥ 0.1% of the total reads.</p>
 <p><strong>What to expect:</strong> <br>
@@ -2176,10 +2167,9 @@ For RNA-Seq data it is possible that there may be some transcripts that are so a
 Ideally Illumina sequence data should not have any adapter sequence present, however when using long read lengths it is possible that some of the library inserts are shorter than the read length resulting in read-through to the adapter at the 3’ end of the read. </p>
 <h3 id="status-check">Status Check</h3>
 <p>Comprehensive view of all metrics in one plot. </p>
-<p align="center">
-<img src="../img/status_check.png" width="600">
-  </p>
-
+<figure>
+  <img alt="status_check" src="../../img/status_check.png" width="600">
+</figure>
 <h2 id="summary-of-common-issues">Summary of Common issues</h2>
 <ul>
 <li>Unexpected %GC for organism and/or % of each nucleotide does not remain similar across the read (except for first 10-12 bases for RNA-Seq)  </li>
