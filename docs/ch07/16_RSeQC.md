@@ -55,7 +55,7 @@ We will run the following scripts: `infer_experiment.py`, `read_distribution.py`
 
 The majority of RSeQC scripts generate output files which can be plotted and summarized in the MultiQC report.
 
-### Getting Started 
+### Class Exercise 
 
   1. Create a working directory called `rseqc`. This will keep all scripts and output files organized in this location. 
 
@@ -114,7 +114,34 @@ apptainer exec --cleanenv "$MULTIQC_PATH" \
     multiqc "$OUTPUT_DIR"
 ```
 
-**More information about `infer_experiment.py` is provided below.**
+## Script Breakdown 
+
+### What is Apptainer?
+
+Apptainer is a container platform commonly used in high-performance computing (HPC) environments. It allows you to run software in a self-contained environment that includes all required dependencies, libraries, and tools. This ensures that analyses are reproducible and eliminates issues caused by software version conflicts across different systems.
+
+### What is a .sif file and how are containers used?
+
+A .sif (Singularity Image Format) file is a container image used by Apptainer. It contains a complete, packaged software environment.
+
+When you run:
+
+```bash
+apptainer exec rseqc.sif <command>
+```
+
+you are executing a program inside the container, not on the host system. 
+
+This ensures that:
+
++ The correct version of the software is used
++ Dependencies are consistent
++ Your workflow is reproducible across systems
+
+In this script, both RSeQC and MultiQC are run from their respective .sif container images, guaranteeing consistent behavior across all users in the course.
+
+*Why might using containers be especially important in bioinformatics workflows?*
+
 
 ## Strand-Specificity (`infer_experiment.py`)
 
