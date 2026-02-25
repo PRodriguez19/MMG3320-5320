@@ -12,7 +12,7 @@
         <meta name="author" content="Princess Rodriguez">
       
       
-        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch10/18_setup_R/">
+        <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch10/19_intro-to-tidy/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>18 setup R - MMG:3320 Advanced Bioinformatics</title>
+        <title>19 intro to tidy - MMG:3320 Advanced Bioinformatics</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup" class="md-skip">
+        <a href="#introduction-to-tidyverse" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              18 setup R
+              19 intro to tidy
             
           </span>
         </div>
@@ -1384,6 +1384,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch07/16_RSeQC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RSeQC (L15)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1637,123 +1658,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#introduction-to-tidyverse" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
+      Introduction to Tidyverse
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#r-and-rstudio" class="md-nav__link">
-    <span class="md-ellipsis">
-      R and RStudio
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#you-are-running-windows" class="md-nav__link">
+  <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
-      You are running Windows
+      Getting Started
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="You are running Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#if-you-already-have-r-and-rstudio-installed" class="md-nav__link">
-    <span class="md-ellipsis">
-      If you already have R and RStudio installed
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#if-you-dont-have-r-and-rstudio-installed" class="md-nav__link">
-    <span class="md-ellipsis">
-      If you don't have R and RStudio installed
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#you-are-running-macos" class="md-nav__link">
+  <a href="#for-march-26th-class" class="md-nav__link">
     <span class="md-ellipsis">
-      You are running macOS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="You are running macOS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#if-you-already-have-r-and-rstudio-installed_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      If you already have R and RStudio installed
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#if-you-dont-have-r-and-rstudio-installed_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      If you don't have R and RStudio installed
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#you-are-running-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      You are running Linux
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="You are running Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-r-using-your-package-manager-and-rstudio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install R using your package manager and RStudio
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#for-everyone" class="md-nav__link">
-    <span class="md-ellipsis">
-      For everyone
+      For March, 26th class
     </span>
   </a>
   
@@ -1774,146 +1699,34 @@
                   
 
 
-  <h1>18 setup R</h1>
+  <h1>19 intro to tidy</h1>
 
-<div><h2 id="setup">Setup</h2>
-<h3 id="r-and-rstudio">R and RStudio</h3>
-<ul>
-<li>R and RStudio are separate downloads and installations. R is the underlying statistical computing environment, but using R alone is no fun. RStudio is a graphical integrated development environment (IDE) that makes using R much easier and more interactive. You need to install R before you install RStudio. After installing both programs, you will need to install some specific R packages within RStudio. Follow the instructions below for your operating system, and then follow the instructions to install packages.</li>
-</ul>
-<h2 id="you-are-running-windows">You are running Windows</h2>
-<h3 id="if-you-already-have-r-and-rstudio-installed">If you already have R and RStudio installed</h3>
-<ul>
-<li>
-<p>Open RStudio, and click on "Help" &gt; "Check for updates". If a new version is
-  available, quit RStudio, and download the latest version for RStudio.</p>
-</li>
-<li>
-<p>To check which version of R you are using, start RStudio and the first thing
-  that appears in the console indicates the version of R you are
-  running. Alternatively, you can type <code>sessionInfo()</code>, which will also display
-  which version of R you are running. Go on
-  the <a href="https://cran.r-project.org/bin/windows/base/">CRAN website</a> and check
-  whether a more recent version is available. If so, please download and install
-  it. You can <a href="https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-UNinstall-R_003f">check here</a> for
-  more information on how to remove old versions from your system if you wish to do so.</p>
-</li>
-<li>
-<p>Follow the steps in the instructions <a href="#for-everyone">for everyone</a> at the
-  bottom of this page.</p>
-</li>
-</ul>
-<h3 id="if-you-dont-have-r-and-rstudio-installed">If you don't have R and RStudio installed</h3>
-<ul>
-<li>
-<p>Download R from
-  the <a href="https://cran.r-project.org/bin/windows/base/release.htm">CRAN website</a>.</p>
-</li>
-<li>
-<p>Run the <code>.exe</code> file that was just downloaded</p>
-</li>
-<li>
-<p>Go to the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio download page</a></p>
-</li>
-<li>
-<p>Under <em>All Installers</em> select <strong>RStudio xxxx.yy.zz-uuu.exe - Windows 10/11</strong> (where x, y, z, and u represent version numbers)</p>
-</li>
-<li>
-<p>Double click the file to install it</p>
-</li>
-<li>
-<p>Once it's installed, open RStudio to make sure it works and you don't get any
-  error messages</p>
-</li>
-<li>
-<p>Follow the steps in the instructions <a href="#for-everyone">for everyone</a> at the
-  bottom of this page.</p>
-</li>
-</ul>
-<h2 id="you-are-running-macos">You are running macOS</h2>
-<h3 id="if-you-already-have-r-and-rstudio-installed_1">If you already have R and RStudio installed</h3>
-<ul>
-<li>
-<p>Open RStudio, and click on "Help" &gt; "Check for updates". If a new version is
-  available, quit RStudio, and download the latest version for RStudio.</p>
-</li>
-<li>
-<p>To check the version of R you are using, start RStudio and the first thing
-  that appears on the terminal indicates the version of R you are running. Alternatively, you can type <code>sessionInfo()</code>, which will
-  also display which version of R you are running. Go on
-  the <a href="https://cran.r-project.org/bin/macosx/">CRAN website</a> and check
-  whether a more recent version is available. If so, please download and install
-  it.</p>
-</li>
-<li>
-<p>Follow the steps in the instructions <a href="#for-everyone">for everyone</a> at the
-  bottom of this page.</p>
-</li>
-</ul>
-<h3 id="if-you-dont-have-r-and-rstudio-installed_1">If you don't have R and RStudio installed</h3>
-<ul>
-<li>
-<p>Download R from
-  the <a href="https://cran.r-project.org/bin/macosx/">CRAN website</a>.</p>
-</li>
-<li>
-<p>Select the <code>.pkg</code> file for the latest R version</p>
-</li>
-<li>
-<p>Double click on the downloaded file to install R</p>
-</li>
-<li>
-<p>It is also a good idea to install <a href="https://www.xquartz.org/">XQuartz</a> (needed
-  by some packages)</p>
-</li>
-<li>
-<p>Go to the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio download page</a></p>
-</li>
-<li>
-<p>Under <em>All Installers</em> select <strong>RStudio xxxx.yy.zz-uuu.dmg - macOS 10.15+</strong> (where x, y, z, and u represent version numbers)</p>
-</li>
-<li>
-<p>Double click the file to install RStudio</p>
-</li>
-<li>
-<p>Once it's installed, open RStudio to make sure it works and you don't get any
-  error messages.</p>
-</li>
-<li>
-<p>Follow the steps in the instructions <a href="#for-everyone">for everyone</a> at the
-  bottom of this page.</p>
-</li>
-</ul>
-<h2 id="you-are-running-linux">You are running Linux</h2>
-<h3 id="install-r-using-your-package-manager-and-rstudio">Install R using your package manager and RStudio</h3>
-<ul>
-<li>Follow the instructions for your distribution
-  from <a href="https://cloud.r-project.org/bin/linux">CRAN</a>, they provide information
-  to get the most recent version of R for common distributions. For most
-  distributions, you could use your package manager (e.g., for Debian/Ubuntu run
-  <code>sudo apt-get install r-base</code>, and for Fedora <code>sudo yum install R</code>), but we
-  don't recommend this approach as the versions provided by this are
-  usually out of date. In any case, make sure you have at least R 4.2.0.</li>
-<li>Go to the <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio download
-  page</a></li>
-<li>Under <em>All Installers</em> select the version that matches your distribution, and
-  install it with your preferred method (e.g., with Debian/Ubuntu <code>sudo dpkg -i rstudio-xxxx.yy.zz-uuu-amd64.deb</code> at the terminal).</li>
-<li>Once it's installed, open RStudio to make sure it works and you don't get any
-  error messages.</li>
-<li>Follow the steps in the <a href="#for-everyone">instructions for everyone</a></li>
-</ul>
-<h2 id="for-everyone">For everyone</h2>
-<p>After installing R and RStudio, you need to install a couple of
-packages that will use for the semester. We will also learn
-about package installation during the course to explain the following
-commands. For now, simply follow the instructions below:</p>
-<ul>
-<li>Start RStudio by double-clicking the icon and then type:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"BiocManager"</span><span class="p">))</span>
-<span class="n">BiocManager</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"tidyverse"</span><span class="p">,</span><span class="w"> </span><span class="s">"DESeq2"</span><span class="p">))</span>
+<div><h2 id="introduction-to-tidyverse">Introduction to Tidyverse</h2>
+<p>The Tidyverse suite of integrated packages are designed to work together to make common data science operations more user friendly. The packages have functions for data wrangling, tidying, reading/writing, parsing, and visualizing, among others. There is a freely available book, R for Data Science, with detailed descriptions and practical examples of the tools available and how they work together. We will explore the basic syntax for working with these packages, as well as, specific functions for data wrangling with the ‘dplyr’ package and data visualization with the ‘ggplot2’ package. </p>
+<figure>
+  <img alt="shells" src="../../img/tidyverse_website.png" width="800">
+</figure>
+<h2 id="getting-started">Getting Started</h2>
+<ol>
+<li>Please make a copy of the following folder:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/Intro-to-tidyverse
 </code></pre></div>
-<p>The tutorial we will be following for today's basics in R class can be found <a href="https://prodriguez19.github.io/metagenomics-R/">here</a> </p></div>
+<ol>
+<li>
+<p>Open <code>.Rmd</code> file in R/RStudio </p>
+</li>
+<li>
+<p>Install the following R packages: </p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">"palmerpenguins"</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">"tidyverse"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="for-march-26th-class">For March, 26th class</h2>
+<p>Please copy the file into your Intro-to-tidyverse folder</p>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/Intro-to-tidyverse/Intro_to_Tidyverse_partII_edit.Rmd
+</code></pre></div></div>
 
 
 
