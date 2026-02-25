@@ -65,6 +65,8 @@ nav:
       - Week 7: 
           - MultiQC (L14): ch07/10_multiQC.md
           - RSeQC (L15): ch07/16_RSeQC.md
+      - Week 8:
+          - Course Catch-up Day (L17): ch08/14_instructions-for-course-catchup.md
   - Assignments:
       - Homework 1 (L1): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md
