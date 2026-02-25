@@ -26,6 +26,6 @@ Slides will be made available as a PDF printout document. These lessons can be r
 
 [Alignment Outputs (L14)](12_align-outputs.pdf)
 
-#RSeQC (L16)](13_rseqc.pdf)
+[RSeQC (L15)](14_rseqc.pdf)
 
 #Counting Reads (L17)](14_counting_reads-slides.pdf)
