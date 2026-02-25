@@ -1485,9 +1485,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#class-exercise" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Started
+      Class Exercise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script Breakdown
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-apptainer" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Apptainer?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-sif-file-and-how-are-containers-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a .sif file and how are containers used?
     </span>
   </a>
   
@@ -1815,9 +1848,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#class-exercise" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Started
+      Class Exercise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script Breakdown
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-apptainer" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Apptainer?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-sif-file-and-how-are-containers-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a .sif file and how are containers used?
     </span>
   </a>
   
@@ -1911,7 +1977,7 @@ Irrel_kd_2.subset_sorted.bam                                        Mov10_oe_2.s
 <p>RSeQC is a collection of Python scripts that evaluate whether aligned RNA-Seq reads behave as expected relative to known gene annotations.
 We will run the following scripts: <code>infer_experiment.py</code>, <code>read_distribution.py</code>.</p>
 <p>The majority of RSeQC scripts generate output files which can be plotted and summarized in the MultiQC report.</p>
-<h3 id="getting-started">Getting Started</h3>
+<h3 id="class-exercise">Class Exercise</h3>
 <ol>
 <li>
 <p>Create a working directory called <code>rseqc</code>. This will keep all scripts and output files organized in this location. </p>
@@ -1973,7 +2039,23 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--cleanenv<span class="w"> </span><span class="s2">"</span><span class="nv">$MULTIQC_PATH</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>multiqc<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">"</span>
 </code></pre></div>
-<p><strong>More information about <code>infer_experiment.py</code> is provided below.</strong></p>
+<h2 id="script-breakdown">Script Breakdown</h2>
+<h3 id="what-is-apptainer">What is Apptainer?</h3>
+<p>Apptainer is a container platform commonly used in high-performance computing (HPC) environments. It allows you to run software in a self-contained environment that includes all required dependencies, libraries, and tools. This ensures that analyses are reproducible and eliminates issues caused by software version conflicts across different systems.</p>
+<h3 id="what-is-a-sif-file-and-how-are-containers-used">What is a .sif file and how are containers used?</h3>
+<p>A .sif (Singularity Image Format) file is a container image used by Apptainer. It contains a complete, packaged software environment.</p>
+<p>When you run:</p>
+<div class="highlight"><pre><span></span><code>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rseqc.sif<span class="w"> </span>&lt;command&gt;
+</code></pre></div>
+<p>you are executing a program inside the container, not on the host system. </p>
+<p>This ensures that:</p>
+<ul>
+<li>The correct version of the software is used</li>
+<li>Dependencies are consistent</li>
+<li>Your workflow is reproducible across systems</li>
+</ul>
+<p>In this script, both RSeQC and MultiQC are run from their respective .sif container images, guaranteeing consistent behavior across all users in the course.</p>
+<p><em>Why might using containers be especially important in bioinformatics workflows?</em></p>
 <h2 id="strand-specificity-infer_experimentpy">Strand-Specificity (<code>infer_experiment.py</code>)</h2>
 <p><strong>Purpose:</strong> This script predicts the “strandedness” of the protocol (i.e. unstranded, sense or antisense) that was used to prepare the sample for sequencing by assessing the orientation in which aligned reads overlay gene features in the reference genome. This information is not always available in public datasets. <em>If strandedness is mis-specified during quantification (e.g., in htseq-counts, featureCounts, or Salmon), reads may be assigned to the wrong genes, especially when genes overlap on opposite strands.</em></p>
 <p><strong>Why use it?:</strong></p>
