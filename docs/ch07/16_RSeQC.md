@@ -57,15 +57,24 @@ The majority of RSeQC scripts generate output files which can be plotted and sum
 
 ### Getting Started 
 
-1. Make a directory called `rseqc`
+  1. Create a working directory called `rseqc`. This will keep all scripts and output files organized in this location. 
 
-2. Navigate inside the directory. 
+  2. Navigate into this directory. 
 
-3. Make a copy of the script shown below and call it `rseqc.sh`. 
+  3. Create a SLURM script by making a copy of the script shown below and save it `rseqc.sh`. This script will:
+      
+      + Load the required software module
+      + Loop through all BAM files
+      + Run RSeQC on each file
+      + Summarize results with MultiQC 
 
-4. Make the script executable by carrying out the following command `chmod +x rseqc.sh`. 
+4. Make the script executable. Before submitting a script, you must make it executable by carrying out the following command. The `chmod` command changes file permissions in Linux. The `-x` add execute permissions, which allows the operating system to run the file as program rather than treating it as a plain text. 
+      
+      ```bash
+       `chmod +x rseqc.sh
+      ``` 
 
-5. Submit the script. 
+5. Submit the job to the SLURM job submission system.  
 
 ```bash
 #!/bin/bash
@@ -184,5 +193,5 @@ read_distribution.py -i input.bam -r ref.bed
 
 !!! example "Class Exercise: `read_distribution.py`" 
 
-    + Modify the SLURM script provided above so that `read_distribution.py` runs for each BAM file. To modify the script, open it with Juptyer Notebooks. This script will take ~5 minutes to run once submitted. Be sure to open the multiQC file to interpret.  
+    Modify the SLURM script provided above so that `read_distribution.py` runs for each BAM file. To modify the script, open it with Juptyer Notebooks. This script will take ~5 minutes to run once submitted. Be sure to open the multiQC file to interpret. Turn in the "homework-mini-2" assignment posted on Brightspace. Once you are finished, you are free to go. 
 
