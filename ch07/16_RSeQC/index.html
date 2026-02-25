@@ -1914,19 +1914,27 @@ We will run the following scripts: <code>infer_experiment.py</code>, <code>read_
 <h3 id="getting-started">Getting Started</h3>
 <ol>
 <li>
-<p>Make a directory called <code>rseqc</code></p>
+<p>Create a working directory called <code>rseqc</code>. This will keep all scripts and output files organized in this location. </p>
 </li>
 <li>
-<p>Navigate inside the directory. </p>
+<p>Navigate into this directory. </p>
 </li>
 <li>
-<p>Make a copy of the script shown below and call it <code>rseqc.sh</code>. </p>
+<p>Create a SLURM script by making a copy of the script shown below and save it <code>rseqc.sh</code>. This script will:</p>
+<ul>
+<li>Load the required software module</li>
+<li>Loop through all BAM files</li>
+<li>Run RSeQC on each file</li>
+<li>Summarize results with MultiQC </li>
+</ul>
 </li>
 <li>
-<p>Make the script executable by carrying out the following command <code>chmod +x rseqc.sh</code>. </p>
+<p>Make the script executable. Before submitting a script, you must make it executable by carrying out the following command. The <code>chmod</code> command changes file permissions in Linux. The <code>-x</code> add execute permissions, which allows the operating system to run the file as program rather than treating it as a plain text. </p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="sb">`</span>chmod<span class="w"> </span>+x<span class="w"> </span>rseqc.sh
+</code></pre></div>
 </li>
 <li>
-<p>Submit the script. </p>
+<p>Submit the job to the SLURM job submission system.  </p>
 </li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2042,9 +2050,7 @@ Options:
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: <code>read_distribution.py</code></p>
-<ul>
-<li>Modify the SLURM script provided above so that <code>read_distribution.py</code> runs for each BAM file. To modify the script, open it with Juptyer Notebooks. This script will take ~5 minutes to run once submitted. Be sure to open the multiQC file to interpret.  </li>
-</ul>
+<p>Modify the SLURM script provided above so that <code>read_distribution.py</code> runs for each BAM file. To modify the script, open it with Juptyer Notebooks. This script will take ~5 minutes to run once submitted. Be sure to open the multiQC file to interpret. Turn in the "homework-mini-2" assignment posted on Brightspace. Once you are finished, you are free to go. </p>
 </div></div>
 
 
