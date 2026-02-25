@@ -64,6 +64,7 @@ nav:
           - Modifying Alignment Script (L13): ch06/12_ClassExercise2_Align-Modify.md
       - Week 7: 
           - MultiQC (L14): ch07/10_multiQC.md
+          - RSeQC (L15): ch07/16_RSeQC.md
   - Assignments:
       - Homework 1 (L1): assignments/week1_assignment.md
       - Homework 2 (L3): assignments/week2_assignment.md

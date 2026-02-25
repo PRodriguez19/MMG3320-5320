@@ -49,9 +49,6 @@ The bed12 files can be found in this location:
 /gpfs1/cl/mmg3320/course_materials/RseQC_bed12
 ```
 
-## I get this error when running multiqc "Oops! The 'rseqc' MultiQC module broke..."
-
-Please use the [sequera.io website](https://seqera.io/multiqc/) to aid in your interpretations of the `infer_experiment.txt` and `read_distribution.txt` outputs. 
 
 
 
