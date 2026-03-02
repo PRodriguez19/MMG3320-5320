@@ -360,26 +360,26 @@ When running HTSeq, two output files are generated for each sample.
   
   You can view the beginning of the summary file using: 
 
-    ```bash
-    head KO_hg19_rep2_sorted.gene_id.summary 
-    ```
+  ```bash
+  head KO_hg19_rep2_sorted.gene_id.summary 
+  ```
     
-    Example output: 
+  Example output: 
     
-    ```bash
-    76767 GFF lines processed.
-    100000 alignment records processed.
-    199252 alignment records processed.
-    ```
-    What this means? 
+  ```bash
+  76767 GFF lines processed.
+  100000 alignment records processed.
+  199252 alignment records processed.
+  ```
+  What this means? 
   
-    + GFF lines processed: Number of annotation entries read from the GTF/GFF file. 
-    + Alignment records processed: Number of reads (or read pairs) examined from the BAM file. 
-        + For paired-end data, each mate is counted separately. 
-    + This file helps diagnose:
-        + Whether the annotation file loaded correctly
-        + Whether the BAM file was read successfully
-        + Whether the expected number of alignments were processed 
+  + GFF lines processed: Number of annotation entries read from the GTF/GFF file. 
+  + Alignment records processed: Number of reads (or read pairs) examined from the BAM file. 
+      + For paired-end data, each mate is counted separately. 
+  + This file helps diagnose:
+      + Whether the annotation file loaded correctly
+      + Whether the BAM file was read successfully
+      + Whether the expected number of alignments were processed 
 
 2. **Counts File (*.count.txt):**
 
@@ -387,21 +387,21 @@ When running HTSeq, two output files are generated for each sample.
   
   You can view the top of the file using: 
 
-    ```bash
-    head KO_hg19_rep2_sorted.gene_id.count.txt
-    ```
+  ```bash
+  head KO_hg19_rep2_sorted.gene_id.count.txt
+  ```
 
-    ```bash
-    AADACL3 0
-    AADACL4 0
-    ABCA4   0
-    ABCB10  0
-    ABCD3   1
-    ABL2    0
-    ACADM   0
-    ACAP3   0
-    ACBD3   0
-    ACBD6   1
+  ```bash
+  AADACL3 0
+  AADACL4 0
+  ABCA4   0
+  ABCB10  0
+  ABCD3   1
+  ABL2    0
+  ACADM   0
+  ACAP3   0
+  ACBD3   0
+  ACBD6   1
     ```
 
   Interpretation:
@@ -440,11 +440,10 @@ An array will submit independent jobs and process each BAM file independently.
 ```bash
 #!/bin/bash
 #SBATCH --partition=general
-#SBATCH --array=1-8  # Adjust for the number of samples (1 per sample)
 #SBATCH --nodes=1
-#SBATCH --ntasks=1  
+#SBATCH --cpus-per-task=4  
 #SBATCH --mem=4G  # 2-6GB, 4GB is typically enough but specify 6GB for 100M+ reads
-#SBATCH --time=2:00:00
+#SBATCH --time=2:00:00 # adjust time up to 30hrs 
 #SBATCH --job-name=htseq-array
 #SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID
 ```
