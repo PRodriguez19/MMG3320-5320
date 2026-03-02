@@ -357,9 +357,9 @@ When running HTSeq, two output files are generated for each sample.
 
 **File 1: Summary File (*.summary):**
 
-  This file contains processing statistics and reports how many reads were assigned or not assigned to features. 
+  This file contains processing statistics and reports how many reads were assigned or not assigned to features. **If your job fails, please look inside this file as any error messages will be written here.**
   
-  You can view the beginning of the summary file using: 
+  Once the job is complete, you can view the beginning of the summary file using: 
 
   ```bash
   head KO_hg19_rep2_sorted.gene_id.summary 
