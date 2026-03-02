@@ -1,8 +1,10 @@
 
 ## Learning Objectives
 
-* Conversion of BAM file to a counts file using `htseq-count`
-* Conversion of BAM file to a bigWig file using `deeptools`
+* Understand the purpose of read counting in RNA-Seq analysis 
+* Describe how HTseq assigns reads to genomic features 
+* Distinguish between union, intersection-strict, and intersection-nonempty counting modes
+* Interpret HTSeq output files 
 
 ## Counting reads as a measure of gene expression
 
@@ -173,7 +175,7 @@ htseq-count -f bam -s no -i gene_id sample.bam genes.gtf > gene_counts.txt
 
 ## Class Exercise Part A
 
-### Class Exercise Folder Content `htseq_demo` 
+**Folder Content `htseq_demo`** 
 
 ```bash
 ├── bams
@@ -209,9 +211,9 @@ htseq-count -f bam -s no -i gene_id sample.bam genes.gtf > gene_counts.txt
 
   1. **Copy Folder:** Make a copy of the following folder into your home directory: 
        
-       ```bash
-       /gpfs1/cl/mmg3320/course_materials/htseq_demo
-       ```
+      ```bash
+      /gpfs1/cl/mmg3320/course_materials/htseq_demo
+      ```
 
   2. **Determine Strandedness:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: 
         
@@ -276,11 +278,12 @@ htseq-count -f bam -s no -i gene_id sample.bam genes.gtf > gene_counts.txt
 
 !!! example "Class Exercise: Running HTSeq-count"  
 
-  1. **Modify `htseq-count.sh` script:** You will need to alter the following:
+  1. **Modify `htseq-count.sh` script found below:** You will need to designate the following parameters:
       
       + the correct path to the GTF file 
-      + specify the `-s` option to either yes, no, or reverse
-      + for `-i` specify `gene_id`
+      + the `-f` option to either bam or sam
+      + the `-s` option to either yes, no, or reverse
+      + the `-i` to `gene_id`
   
   2. **Submit the `htseq-count.sh` script** after modifying it. This script will take a few minutes to run. 
   
@@ -341,10 +344,11 @@ done
 
 ## Class Exercise Part C
 
-!!! example "Class Exercise: MultiQC"  
+!!! example "Class Exercise: Interpreting the final MultiQC"  
 
-    1. Read the section below titled `htseq-count` output
-    2. Generate one final multiQC output 
+    1. While you are running HTSeq, read the section below titled `htseq-count` output
+    2. Generate and interpret one final multiQC output with `htseq` module included
+    3. Submit the final multiQC in brightspace for **Homework-mini-3** 
 
 ## `htseq-count` output
 
