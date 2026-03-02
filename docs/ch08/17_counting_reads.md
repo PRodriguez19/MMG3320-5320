@@ -354,7 +354,7 @@ done
 
 When running HTSeq, two output files are generated for each sample. 
 
-1. **Summary File (*.summary):**
+**File 1: Summary File (*.summary):**
 
   This file contains processing statistics and reports how many reads were assigned or not assigned to features. 
   
@@ -381,7 +381,7 @@ When running HTSeq, two output files are generated for each sample.
       + Whether the BAM file was read successfully
       + Whether the expected number of alignments were processed 
 
-2. **Counts File (*.count.txt):**
+**File 2: Counts File (*.count.txt):**
 
 This is the main output file. It contains the raw read counts per gene or feature. 
   
