@@ -383,57 +383,57 @@ When running HTSeq, two output files are generated for each sample.
 
 2. **Counts File (*.count.txt):**
 
-  This is the main output file. It contains the raw read counts per gene or feature. 
+This is the main output file. It contains the raw read counts per gene or feature. 
   
-  You can view the top of the file using: 
+You can view the top of the file using: 
 
-  ```bash
-  head KO_hg19_rep2_sorted.gene_id.count.txt
-  ```
+```bash
+head KO_hg19_rep2_sorted.gene_id.count.txt
+```
 
-  ```bash
-  AADACL3 0
-  AADACL4 0
-  ABCA4   0
-  ABCB10  0
-  ABCD3   1
-  ABL2    0
-  ACADM   0
-  ACAP3   0
-  ACBD3   0
-  ACBD6   1
-    ```
+```bash
+AADACL3 0
+AADACL4 0
+ABCA4   0
+ABCB10  0
+ABCD3   1
+ABL2    0
+ACADM   0
+ACAP3   0
+ACBD3   0
+ACBD6   1
+```
 
-  Interpretation:
+Interpretation:
   
-  + First column: Gene ID (from the `gene_id` attribute in the GTF file)
-  + Second column: Number of reads assigned to that gene 
++ First column: Gene ID (from the `gene_id` attribute in the GTF file)
++ Second column: Number of reads assigned to that gene 
 
-  These are raw integers counts used as input for differential expression tools such as DESeq2. 
+These are raw integers counts used as input for differential expression tools such as DESeq2. 
 
-  At the bottom of the counts files are special summary rows. View them with: 
+At the bottom of the counts files are special summary rows. View them with: 
 
-  ```bash
-  tail KO_hg19_rep2_sorted.gene_id.count.txt
-  ```
+```bash
+tail KO_hg19_rep2_sorted.gene_id.count.txt
+```
 
-  ```bash
-  __no_feature    32813
-  __ambiguous     4372
-  __too_low_aQual 0
-  __not_aligned   15209
-  __alignment_not_unique  3667
-  ```
+```bash
+__no_feature    32813
+__ambiguous     4372
+__too_low_aQual 0
+__not_aligned   15209
+__alignment_not_unique  3667
+```
 
-  **What these Mean:**
+**What these Mean:**
   
-  + `__no_feature`: Reads aligned to the genome but did not overlap any annotated feature being counted (i.e. intronic, intergenic regions, annotation mismatch, wrong strandedness)
-  + `__ambiguous`: Reads overlapped more than one gene and could not be uniquely assigned. 
-  + `__too_low_aQual`: Reads with alignment quality below the specified threshold (controlled by `-a`).
-  + `__not_aligned`: Reads that did not align to the reference genome 
-  + `__alignment_not_unique`: Reads that aligned to multiple genomic locations. 
++ `__no_feature`: Reads aligned to the genome but did not overlap any annotated feature being counted (i.e. intronic, intergenic regions, annotation mismatch, wrong strandedness)
++ `__ambiguous`: Reads overlapped more than one gene and could not be uniquely assigned. 
++ `__too_low_aQual`: Reads with alignment quality below the specified threshold (controlled by `-a`).
++ `__not_aligned`: Reads that did not align to the reference genome 
++ `__alignment_not_unique`: Reads that aligned to multiple genomic locations. 
 
-## Resource Recommendations for `htseq-count`
+### Resource Recommendations for `htseq-count`
 
 An array will submit independent jobs and process each BAM file independently. 
 
@@ -448,8 +448,7 @@ An array will submit independent jobs and process each BAM file independently.
 #SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID
 ```
 
-
-## Creating bigWig files
+## Creating bigWig files with `deepTools`
 
 We will now take our BAM files and convert them into bigWig files. The bigWig format is an indexed binary format useful for dense, continuous data that can be displayed in a genome browser as a graph/track.
 
