@@ -171,7 +171,9 @@ htseq-count -f bam -s no -i gene_id sample.bam genes.gtf > gene_counts.txt
 
 ***
 
-## Class Exercise Folder Content
+## Class Exercise Part A
+
+### Class Exercise Folder Content `htseq_demo` 
 
 ```bash
 ├── bams
@@ -203,80 +205,75 @@ htseq-count -f bam -s no -i gene_id sample.bam genes.gtf > gene_counts.txt
 
 ```
 
-
-## Class Exercise Part A
-
 !!! example "Class Exercise: Running RSeQC"  
 
-    1. **Copy Folder:** Make a copy of the following folder into your home directory: 
+  1. **Copy Folder:** Make a copy of the following folder into your home directory: 
        
        ```bash
-       /gpfs1/cl/mmg3320/course_materials/htseq_2025_demo
+       /gpfs1/cl/mmg3320/course_materials/htseq_demo
        ```
 
-    2. **Determine Strandedness on One Sample:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: 
+  2. **Determine Strandedness:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: 
+        
         + `-s yes`, reads are mapped to the same strand as the sense strand 
         + `-s no`, reads can map to either strand (unstranded)
         + `-s reverse`, reads are mapped to the opposite strand (anti-sense)
     
-+ The `rseqc-loop.sh` script is provided below. Make a copy and modify the path for variables `BAM_DIR` and `BED_FILE`. 
+      + The `rseqc-loop.sh` script is provided below. Make a copy and modify the path for variables `BAM_DIR` and `BED_FILE`. 
 
-```bash
-#!/bin/bash
-#SBATCH --partition=general
-#SBATCH --nodes=1
-#SBATCH --ntasks=8  # Single task running sequentially
-#SBATCH --mem=20G  # Adjust based on the number of BAM files
-#SBATCH --time=24:00:00
-#SBATCH --job-name=rseqc-loop
-#SBATCH --output=run-%x_%j.out  # %x=job name, %j=job ID
+      ```bash
+      #!/bin/bash
+      #SBATCH --partition=general
+      #SBATCH --nodes=1
+      #SBATCH --ntasks=8
+      #SBATCH --mem=20G
+      #SBATCH --time=24:00:00
+      #SBATCH --job-name=rseqc-loop
+      #SBATCH --output=run-%x_%j.out
 
-# Load the Apptainer module
-module load apptainer/1.3.4
+      module load apptainer/1.3.4
 
-# Path to the RSeQC container
-CONTAINER_PATH="/gpfs1/cl/mmg3320/course_materials/containers/rseqc.sif"
+      CONTAINER_PATH="/gpfs1/cl/mmg3320/course_materials/containers/rseqc.sif"
+      MULTIQC_PATH="/gpfs1/cl/mmg3320/course_materials/containers/multiqc-1.20.sif"
 
-# Define input directory (update if needed)
-BAM_DIR="/users/p/d/pdrodrig/htseq_2025/bams"
-BED_FILE="/users/p/d/pdrodrig/htseq_2025/refseq.hg19.bed12"
-OUTPUT_DIR="rseqc_results"
+      BAM_DIR="/path/to/bams"
+      BED_FILE="/path/to/bed12"
+      OUTPUT_DIR="rseqc_data"
 
-# Create output directory if it doesn't exist
-mkdir -p "$OUTPUT_DIR"
+      mkdir -p "$OUTPUT_DIR"
 
-# Loop through all BAM files in the directory
-for BAM_FILE in "$BAM_DIR"/*.bam; do
-    # Extract filename without extension
-    NAME=$(basename "$BAM_FILE" .bam)
+      for BAM_FILE in "$BAM_DIR"/*.bam; do
+          NAME=$(basename "$BAM_FILE" .bam)
 
-    echo "Processing: $NAME"
+          echo "Processing: $NAME"
 
-    # Run infer_experiment.py inside the Apptainer container
-    apptainer exec "$CONTAINER_PATH" infer_experiment.py -r "$BED_FILE" -i "$BAM_FILE" > "$OUTPUT_DIR/${NAME}.infer_experiment.txt"
+          apptainer exec --cleanenv "$CONTAINER_PATH" \
+              infer_experiment.py \
+              -r "$BED_FILE" \
+              -i "$BAM_FILE" \
+              > "$OUTPUT_DIR/${NAME}.infer_experiment.txt"
+      done
 
-    # Run read_distribution.py inside the Apptainer container
-    apptainer exec "$CONTAINER_PATH" read_distribution.py -r "$BED_FILE" -i "$BAM_FILE" > "$OUTPUT_DIR/${NAME}.read_distribution.txt"
-done
+      # Run MultiQC
+      apptainer exec --cleanenv "$MULTIQC_PATH" \
+          multiqc "$OUTPUT_DIR"
+      ```
+    
+  3. Submit the finalized script and then check your outputs are the same size. This script will take ~5 minutes to run. If correct, your output will look similar to below. 
 
-```
-
-+ Submit the script and then check your outputs are the same size. This script will take ~5 minutes to run. 
-
-```bash
--rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:38 KO_hg19_rep2_sorted.infer_experiment.log
--rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:39 KO_hg19_rep2_sorted.read_distribution.log
--rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:40 KO_hg19_rep3_sorted.infer_experiment.log
--rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:40 KO_hg19_rep3_sorted.read_distribution.log
--rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:41 WT_hg19_rep1_sorted.infer_experiment.log
--rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:41 WT_hg19_rep1_sorted.read_distribution.log
--rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:42 WT_hg19_rep2_sorted.infer_experiment.log
--rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:42 WT_hg19_rep2_sorted.read_distribution.log
--rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:43 WT_hg19_rep3_sorted.infer_experiment.log
--rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:44 WT_hg19_rep3_sorted.read_distribution.log
-```
-
-+ Interpret the multiQC output in the `rseqc_results/` folder to determine strandedness of the FASTQ files. 
+    ```bash
+    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:38 KO_hg19_rep2_sorted.infer_experiment.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:39 KO_hg19_rep2_sorted.read_distribution.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:40 KO_hg19_rep3_sorted.infer_experiment.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:40 KO_hg19_rep3_sorted.read_distribution.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:41 WT_hg19_rep1_sorted.infer_experiment.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:41 WT_hg19_rep1_sorted.read_distribution.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:42 WT_hg19_rep2_sorted.infer_experiment.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:42 WT_hg19_rep2_sorted.read_distribution.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:43 WT_hg19_rep3_sorted.infer_experiment.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:44 WT_hg19_rep3_sorted.read_distribution.log
+    ```
+  4. Interpret the multiQC output in the `rseqc_results/` folder to determine strandedness of the FASTQ files. 
 
 
 
@@ -284,13 +281,15 @@ done
 
 !!! example "Class Exercise: Running HTSeq-count"  
 
-    1. **Modify `htseq-count.sh` script:** You will need to alter the following:
-        + add the required program modules 
-        + add the correct path to the GTF file 
-        + `-s` options include yes, no, or reverse
-        + `-i` specify `gene_id`
-    2. **Submit the `htseq-count.sh` script** after modifying it. This should only take a few minutes. 
-    3. **Look inside** of the `htseq-count_XXXXXX.out` file after the job is completed. It should appear identical as below: 
+  1. **Modify `htseq-count.sh` script:** You will need to alter the following:
+      
+      + the correct path to the GTF file 
+      + specify the `-s` option to either yes, no, or reverse
+      + for `-i` specify `gene_id`
+  
+  2. **Submit the `htseq-count.sh` script** after modifying it. This script will take a few minutes to run. 
+  
+  3. **Look inside** of the `htseq-count_XXXXXX.out` file after the job is completed. It should appear identical as below: 
 
     ```bash
     Processing: KO_hg19_rep2_sorted
@@ -300,21 +299,24 @@ done
     Processing: WT_hg19_rep3_sorted
     ```
 
-
-The `htseq-count.sh` script is below: 
+The **incomplete** `htseq-count.sh` script is provided: 
 
 ```bash
 #!/bin/bash
 #SBATCH --partition=general 
 #SBATCH --nodes=1
-#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=4
 #SBATCH --mem=10G
 #SBATCH --time=30:00:00
 #SBATCH --job-name=htseq-count    
 #SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid
 
 # Load HTSeq module
+module load gcc/13.3.0-xp3epyt
+module load py-htseq/2.0.3-mb7ap7s
 
+# Specify PATH to GTF file
+GTF="/path/to/gtf"
 
 # Iterate through all BAM files in the current directory
 for BAM_FILE in *.bam; do
@@ -324,15 +326,17 @@ NAME=$(basename "$BAM_FILE" .bam)
 echo "Processing: $NAME"
 
 # Run HTSeq-count
-htseq-count -f bam  \
--s \
--i \
--m union \
-"$BAM_FILE" /users/p/d/pdrodrig/htseq_2025/chr1-hg19_genes.gtf \
-> "${NAME}.gene_id.count.txt" \
-2> "${NAME}.gene_id.summary"
+htseq-count \
+    -f \
+    -s \
+    -i \
+    -m union \
+    "$BAM_FILE" "$GTF" \
+    > "${NAME}.gene_id.count.txt" \
+    2> "${NAME}.gene_id.summary"
 
 done
+
 ```
 
 + `>` → Redirects the gene counts output to results/counts/sample_counts.txt.
