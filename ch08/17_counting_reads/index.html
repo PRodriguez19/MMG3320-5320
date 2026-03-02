@@ -2575,9 +2575,9 @@ htseq-count<span class="w"> </span><span class="se">\</span>
 <h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
 <p>When running HTSeq, two output files are generated for each sample. </p>
 <ol>
-<li><strong>Summary File (*.summary)</strong> 
-  This file contains processing statistics and reports how many reads were assigned or not assigned to features. </li>
+<li><strong>Summary File (*.summary):</strong></li>
 </ol>
+<p>This file contains processing statistics and reports how many reads were assigned or not assigned to features. </p>
 <p>You can view the beginning of the summary file using: </p>
 <pre><code>```bash
 head KO_hg19_rep2_sorted.gene_id.summary 
@@ -2590,27 +2590,20 @@ Example output:
 100000 alignment records processed.
 199252 alignment records processed.
 ```
+What this means?
+
++ GFF lines processed: Number of annotation entries read from the GTF/GFF file. 
++ Alignment records processed: Number of reads (or read pairs) examined from the BAM file. 
+    + For paired-end data, each mate is counted separately. 
++ This file helps diagnose:
+    + Whether the annotation file loaded correctly
+    + Whether the BAM file was read successfully
+    + Whether the expected number of alignments were processed
 </code></pre>
-<p>What this means? </p>
-<ul>
-<li>GFF lines processed: Number of annotation entries read from the GTF/GFF file. </li>
-<li>Alignment records processed: Number of reads (or read pairs) examined from the BAM file. <ul>
-<li>For paired-end data, each mate is counted separately. </li>
-</ul>
-</li>
-<li>
-<p>This file helps diagnose:</p>
-<ul>
-<li>Whether the annotation file loaded correctly</li>
-<li>Whether the BAM file was read successfully</li>
-<li>Whether the expected number of alignments were processed </li>
-</ul>
-</li>
-<li>
-<p><strong>Counts File (*.count.txt)</strong> 
-  This is the main output file. It contains the raw read counts per gene or feature. </p>
-</li>
-</ul>
+<ol>
+<li><strong>Counts File (*.count.txt):</strong></li>
+</ol>
+<p>This is the main output file. It contains the raw read counts per gene or feature. </p>
 <p>You can view the top of the file using: </p>
 <pre><code>```bash
 head KO_hg19_rep2_sorted.gene_id.count.txt
@@ -2629,30 +2622,29 @@ ACBD3   0
 ACBD6   1
 ```
 </code></pre>
-<p>Interpretation:
-  + First column: Gene ID (from the <code>gene_id</code> attribute in the GTF file)
-  + Second column: Number of reads assigned to that gene </p>
+<p>Interpretation:</p>
+<ul>
+<li>First column: Gene ID (from the <code>gene_id</code> attribute in the GTF file)</li>
+<li>Second column: Number of reads assigned to that gene </li>
+</ul>
 <p>These are raw integers counts used as input for differential expression tools such as DESeq2. </p>
 <p>At the bottom of the counts files are special summary rows. View them with: </p>
-<pre><code>```bash
-tail KO_hg19_rep2_sorted.gene_id.count.txt
-```
-
-```bash
-__no_feature    32813
-__ambiguous     4372
-__too_low_aQual 0
-__not_aligned   15209
-__alignment_not_unique  3667
-```
-
-**What these Mean:**
-+ `__no_feature`: Reads aligned to the genome but did not overlap any annotated feature being counted (i.e. intronic, intergenic regions, annotation mismatch, wrong strandedness)
-+ `__ambiguous`: Reads overlapped more than one gene and could not be uniquely assigned. 
-+ `__too_low_aQual`: Reads with alignment quality below the specified threshold (controlled by `-a`).
-+ `__not_aligned`: Reads that did not align to the reference genome 
-+ `__alignment_not_unique`: Reads that aligned to multiple genomic locations.
-</code></pre>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>__no_feature<span class="w">    </span><span class="m">32813</span>
+__ambiguous<span class="w">     </span><span class="m">4372</span>
+__too_low_aQual<span class="w"> </span><span class="m">0</span>
+__not_aligned<span class="w">   </span><span class="m">15209</span>
+__alignment_not_unique<span class="w">  </span><span class="m">3667</span>
+</code></pre></div>
+<p><strong>What these Mean:</strong></p>
+<ul>
+<li><code>__no_feature</code>: Reads aligned to the genome but did not overlap any annotated feature being counted (i.e. intronic, intergenic regions, annotation mismatch, wrong strandedness)</li>
+<li><code>__ambiguous</code>: Reads overlapped more than one gene and could not be uniquely assigned. </li>
+<li><code>__too_low_aQual</code>: Reads with alignment quality below the specified threshold (controlled by <code>-a</code>).</li>
+<li><code>__not_aligned</code>: Reads that did not align to the reference genome </li>
+<li><code>__alignment_not_unique</code>: Reads that aligned to multiple genomic locations. </li>
+</ul>
 <h2 id="resource-recommendations-for-htseq-count">Resource Recommendations for <code>htseq-count</code></h2>
 <p>An array will submit independent jobs and process each BAM file independently. </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
