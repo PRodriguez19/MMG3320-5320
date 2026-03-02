@@ -1647,21 +1647,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Class Exercise Part A">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#class-exercise-folder-content-htseq_demo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Exercise Folder Content htseq_demo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2148,21 +2133,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Class Exercise Part A">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#class-exercise-folder-content-htseq_demo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Exercise Folder Content htseq_demo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2253,8 +2223,10 @@
 
 <div><h2 id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Conversion of BAM file to a counts file using <code>htseq-count</code></li>
-<li>Conversion of BAM file to a bigWig file using <code>deeptools</code></li>
+<li>Understand the purpose of read counting in RNA-Seq analysis </li>
+<li>Describe how HTseq assigns reads to genomic features </li>
+<li>Distinguish between union, intersection-strict, and intersection-nonempty counting modes</li>
+<li>Interpret HTSeq output files </li>
 </ul>
 <h2 id="counting-reads-as-a-measure-of-gene-expression">Counting reads as a measure of gene expression</h2>
 <p>Once we have our reads aligned to the genome, the next step is to count how many reads have mapped to each gene. Many tools can take BAM files as input and output the number of reads (counts) associated with each feature of interest (genes, exons, transcripts, etc.). Two commonly used counting tools are featureCounts and <a href="https://htseq.readthedocs.io/en/release_0.11.1/count.html">htseq-count</a>.</p>
@@ -2399,7 +2371,7 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 </ul>
 <hr>
 <h2 id="class-exercise-part-a">Class Exercise Part A</h2>
-<h3 id="class-exercise-folder-content-htseq_demo">Class Exercise Folder Content <code>htseq_demo</code></h3>
+<p><strong>Folder Content <code>htseq_demo</code></strong> </p>
 <div class="highlight"><pre><span></span><code>├──<span class="w"> </span>bams
 │<span class="w">   </span>├──<span class="w"> </span>KO_hg19_rep2_sorted.bam
 │<span class="w">   </span>├──<span class="w"> </span>KO_hg19_rep2_sorted.bam.bai
@@ -2502,11 +2474,12 @@ apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </
 </div>
 <ol>
 <li>
-<p><strong>Modify <code>htseq-count.sh</code> script:</strong> You will need to alter the following:</p>
+<p><strong>Modify <code>htseq-count.sh</code> script found below:</strong> You will need to designate the following parameters:</p>
 <ul>
 <li>the correct path to the GTF file </li>
-<li>specify the <code>-s</code> option to either yes, no, or reverse</li>
-<li>for <code>-i</code> specify <code>gene_id</code></li>
+<li>the <code>-f</code> option to either bam or sam</li>
+<li>the <code>-s</code> option to either yes, no, or reverse</li>
+<li>the <code>-i</code> to <code>gene_id</code></li>
 </ul>
 </li>
 <li>
@@ -2564,10 +2537,11 @@ htseq-count<span class="w"> </span><span class="se">\</span>
 </ul>
 <h2 id="class-exercise-part-c">Class Exercise Part C</h2>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise: MultiQC</p>
+<p class="admonition-title">Class Exercise: Interpreting the final MultiQC</p>
 <ol>
-<li>Read the section below titled <code>htseq-count</code> output</li>
-<li>Generate one final multiQC output </li>
+<li>While you are running HTSeq, read the section below titled <code>htseq-count</code> output</li>
+<li>Generate and interpret one final multiQC output with <code>htseq</code> module included</li>
+<li>Submit the final multiQC in brightspace for <strong>Homework-mini-3</strong> </li>
 </ol>
 </div>
 <h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
