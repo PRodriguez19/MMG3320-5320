@@ -215,9 +215,9 @@ htseq-count -f bam -s no -i gene_id sample.bam genes.gtf > gene_counts.txt
 
   2. **Determine Strandedness:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: 
         
-        + `-s yes`, reads are mapped to the same strand as the sense strand 
-        + `-s no`, reads can map to either strand (unstranded)
-        + `-s reverse`, reads are mapped to the opposite strand (anti-sense)
+      + `-s yes`, reads are mapped to the same strand as the sense strand (sense)
+      + `-s no`, reads can map to either strand (unstranded/undetermined)
+      + `-s reverse`, reads are mapped to the opposite strand (anti-sense)
     
       + The `rseqc-loop.sh` script is provided below. Make a copy and modify the path for variables `BAM_DIR` and `BED_FILE`. 
 
@@ -262,18 +262,13 @@ htseq-count -f bam -s no -i gene_id sample.bam genes.gtf > gene_counts.txt
   3. Submit the finalized script and then check your outputs are the same size. This script will take ~5 minutes to run. If correct, your output will look similar to below. 
 
     ```bash
-    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:38 KO_hg19_rep2_sorted.infer_experiment.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:39 KO_hg19_rep2_sorted.read_distribution.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:40 KO_hg19_rep3_sorted.infer_experiment.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:40 KO_hg19_rep3_sorted.read_distribution.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:41 WT_hg19_rep1_sorted.infer_experiment.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:41 WT_hg19_rep1_sorted.read_distribution.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:42 WT_hg19_rep2_sorted.infer_experiment.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:42 WT_hg19_rep2_sorted.read_distribution.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon  165 Mar 16 11:43 WT_hg19_rep3_sorted.infer_experiment.log
-    -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:44 WT_hg19_rep3_sorted.read_distribution.log
+    -rw-r--r-- 1 pdrodrig pi-jdragon 165 Mar  2 10:37 KO_hg19_rep2_sorted.infer_experiment.txt
+    -rw-r--r-- 1 pdrodrig pi-jdragon 165 Mar  2 10:37 KO_hg19_rep3_sorted.infer_experiment.txt
+    -rw-r--r-- 1 pdrodrig pi-jdragon 165 Mar  2 10:37 WT_hg19_rep1_sorted.infer_experiment.txt
+    -rw-r--r-- 1 pdrodrig pi-jdragon 165 Mar  2 10:37 WT_hg19_rep2_sorted.infer_experiment.txt
+    -rw-r--r-- 1 pdrodrig pi-jdragon 165 Mar  2 10:37 WT_hg19_rep3_sorted.infer_experiment.txt
     ```
-  4. Interpret the multiQC output in the `rseqc_results/` folder to determine strandedness of the FASTQ files. 
+  4. Interpret the multiQC output to determine strandedness of the BAM files. 
 
 
 
