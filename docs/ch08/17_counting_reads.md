@@ -325,13 +325,13 @@ echo "Processing: $NAME"
 
 # Run HTSeq-count
 htseq-count \
-    -f \
-    -s \
-    -i \
-    -m union \
-    "$BAM_FILE" "$GTF" \
-    > "${NAME}.gene_id.count.txt" \
-    2> "${NAME}.gene_id.summary"
+  -f \
+  -s \
+  -i \
+  -m union \
+  "$BAM_FILE" "$GTF" \
+  > "${NAME}.gene_id.count.txt" \
+  2> "${NAME}.gene_id.summary"
 
 done
 
@@ -346,9 +346,10 @@ done
 
 !!! example "Class Exercise: Interpreting the final MultiQC"  
 
-    1. While you are running HTSeq, read the section below titled `htseq-count` output
-    2. Generate and interpret one final multiQC output with `htseq` module included
-    3. Submit the final multiQC in brightspace for **Homework-mini-3** 
+    1. While the `htseq-count.sh` is running, read the section below titled `htseq-count` output. 
+    2. Once the `htseq-count.sh` script is finished, **navigate into the `bams` folder**
+    3. Now, generate one final multiQC output
+    4. Submit the final multiQC to Brightspace for **Homework-mini-3** 
 
 ## `htseq-count` output
 
