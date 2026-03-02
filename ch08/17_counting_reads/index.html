@@ -1674,9 +1674,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="htseq-count output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#resource-recommendations-for-htseq-count" class="md-nav__link">
     <span class="md-ellipsis">
       Resource Recommendations for htseq-count
@@ -1684,15 +1685,20 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#creating-bigwig-files" class="md-nav__link">
+  <a href="#creating-bigwig-files-with-deeptools" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating bigWig files
+      Creating bigWig files with deepTools
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Creating bigWig files">
+    <nav class="md-nav" aria-label="Creating bigWig files with deepTools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2160,9 +2166,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="htseq-count output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#resource-recommendations-for-htseq-count" class="md-nav__link">
     <span class="md-ellipsis">
       Resource Recommendations for htseq-count
@@ -2170,15 +2177,20 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#creating-bigwig-files" class="md-nav__link">
+  <a href="#creating-bigwig-files-with-deeptools" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating bigWig files
+      Creating bigWig files with deepTools
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Creating bigWig files">
+    <nav class="md-nav" aria-label="Creating bigWig files with deepTools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2591,19 +2603,15 @@ ACADM<span class="w">   </span><span class="m">0</span>
 ACAP3<span class="w">   </span><span class="m">0</span>
 ACBD3<span class="w">   </span><span class="m">0</span>
 ACBD6<span class="w">   </span><span class="m">1</span>
-<span class="w">  </span><span class="sb">```</span>
-
-Interpretation:
-
-+<span class="w"> </span>First<span class="w"> </span>column:<span class="w"> </span>Gene<span class="w"> </span>ID<span class="w"> </span><span class="o">(</span>from<span class="w"> </span>the<span class="w"> </span><span class="sb">`</span>gene_id<span class="sb">`</span><span class="w"> </span>attribute<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>GTF<span class="w"> </span>file<span class="o">)</span>
-+<span class="w"> </span>Second<span class="w"> </span>column:<span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>reads<span class="w"> </span>assigned<span class="w"> </span>to<span class="w"> </span>that<span class="w"> </span>gene<span class="w"> </span>
-
-These<span class="w"> </span>are<span class="w"> </span>raw<span class="w"> </span>integers<span class="w"> </span>counts<span class="w"> </span>used<span class="w"> </span>as<span class="w"> </span>input<span class="w"> </span><span class="k">for</span><span class="w"> </span>differential<span class="w"> </span>expression<span class="w"> </span>tools<span class="w"> </span>such<span class="w"> </span>as<span class="w"> </span>DESeq2.<span class="w"> </span>
-
-At<span class="w"> </span>the<span class="w"> </span>bottom<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>counts<span class="w"> </span>files<span class="w"> </span>are<span class="w"> </span>special<span class="w"> </span>summary<span class="w"> </span>rows.<span class="w"> </span>View<span class="w"> </span>them<span class="w"> </span>with:<span class="w"> </span>
-
-<span class="sb">```</span>bash
-tail<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
+</code></pre></div>
+<p>Interpretation:</p>
+<ul>
+<li>First column: Gene ID (from the <code>gene_id</code> attribute in the GTF file)</li>
+<li>Second column: Number of reads assigned to that gene </li>
+</ul>
+<p>These are raw integers counts used as input for differential expression tools such as DESeq2. </p>
+<p>At the bottom of the counts files are special summary rows. View them with: </p>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>__no_feature<span class="w">    </span><span class="m">32813</span>
 __ambiguous<span class="w">     </span><span class="m">4372</span>
@@ -2619,7 +2627,7 @@ __alignment_not_unique<span class="w">  </span><span class="m">3667</span>
 <li><code>__not_aligned</code>: Reads that did not align to the reference genome </li>
 <li><code>__alignment_not_unique</code>: Reads that aligned to multiple genomic locations. </li>
 </ul>
-<h2 id="resource-recommendations-for-htseq-count">Resource Recommendations for <code>htseq-count</code></h2>
+<h3 id="resource-recommendations-for-htseq-count">Resource Recommendations for <code>htseq-count</code></h3>
 <p>An array will submit independent jobs and process each BAM file independently. </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=general</span>
@@ -2630,7 +2638,7 @@ __alignment_not_unique<span class="w">  </span><span class="m">3667</span>
 <span class="c1">#SBATCH --job-name=htseq-array</span>
 <span class="c1">#SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID</span>
 </code></pre></div>
-<h2 id="creating-bigwig-files">Creating bigWig files</h2>
+<h2 id="creating-bigwig-files-with-deeptools">Creating bigWig files with <code>deepTools</code></h2>
 <p>We will now take our BAM files and convert them into bigWig files. The bigWig format is an indexed binary format useful for dense, continuous data that can be displayed in a genome browser as a graph/track.</p>
 <p>To create bigWig files we will use <a href="http://deeptools.readthedocs.org/en/latest/content/list_of_tools.html"><code>deepTools</code></a>, a suite of Python tools developed for the efficient analysis of high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq. <code>deepTools</code> has a wide variety of commands that go beyond what we will cover today. </p>
 <figure>
