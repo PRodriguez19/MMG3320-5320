@@ -355,7 +355,8 @@ done
 
 When running HTSeq, two output files are generated for each sample. 
 
-1. **Summary File (*.summary)** 
+1. **Summary File (*.summary):**
+
   This file contains processing statistics and reports how many reads were assigned or not assigned to features. 
   
   You can view the beginning of the summary file using: 
@@ -371,17 +372,18 @@ When running HTSeq, two output files are generated for each sample.
     100000 alignment records processed.
     199252 alignment records processed.
     ```
-  What this means? 
+    What this means? 
   
-  + GFF lines processed: Number of annotation entries read from the GTF/GFF file. 
-  + Alignment records processed: Number of reads (or read pairs) examined from the BAM file. 
-      + For paired-end data, each mate is counted separately. 
-  + This file helps diagnose:
-      + Whether the annotation file loaded correctly
-      + Whether the BAM file was read successfully
-      + Whether the expected number of alignments were processed 
+    + GFF lines processed: Number of annotation entries read from the GTF/GFF file. 
+    + Alignment records processed: Number of reads (or read pairs) examined from the BAM file. 
+        + For paired-end data, each mate is counted separately. 
+    + This file helps diagnose:
+        + Whether the annotation file loaded correctly
+        + Whether the BAM file was read successfully
+        + Whether the expected number of alignments were processed 
 
-2. **Counts File (*.count.txt)** 
+2. **Counts File (*.count.txt):**
+
   This is the main output file. It contains the raw read counts per gene or feature. 
   
   You can view the top of the file using: 
@@ -404,6 +406,7 @@ When running HTSeq, two output files are generated for each sample.
     ```
 
   Interpretation:
+  
   + First column: Gene ID (from the `gene_id` attribute in the GTF file)
   + Second column: Number of reads assigned to that gene 
 
@@ -411,24 +414,25 @@ When running HTSeq, two output files are generated for each sample.
 
   At the bottom of the counts files are special summary rows. View them with: 
 
-    ```bash
-    tail KO_hg19_rep2_sorted.gene_id.count.txt
-    ```
+  ```bash
+  tail KO_hg19_rep2_sorted.gene_id.count.txt
+  ```
 
-    ```bash
-    __no_feature    32813
-    __ambiguous     4372
-    __too_low_aQual 0
-    __not_aligned   15209
-    __alignment_not_unique  3667
-    ```
+  ```bash
+  __no_feature    32813
+  __ambiguous     4372
+  __too_low_aQual 0
+  __not_aligned   15209
+  __alignment_not_unique  3667
+  ```
 
-    **What these Mean:**
-    + `__no_feature`: Reads aligned to the genome but did not overlap any annotated feature being counted (i.e. intronic, intergenic regions, annotation mismatch, wrong strandedness)
-    + `__ambiguous`: Reads overlapped more than one gene and could not be uniquely assigned. 
-    + `__too_low_aQual`: Reads with alignment quality below the specified threshold (controlled by `-a`).
-    + `__not_aligned`: Reads that did not align to the reference genome 
-    + `__alignment_not_unique`: Reads that aligned to multiple genomic locations. 
+  **What these Mean:**
+  
+  + `__no_feature`: Reads aligned to the genome but did not overlap any annotated feature being counted (i.e. intronic, intergenic regions, annotation mismatch, wrong strandedness)
+  + `__ambiguous`: Reads overlapped more than one gene and could not be uniquely assigned. 
+  + `__too_low_aQual`: Reads with alignment quality below the specified threshold (controlled by `-a`).
+  + `__not_aligned`: Reads that did not align to the reference genome 
+  + `__alignment_not_unique`: Reads that aligned to multiple genomic locations. 
 
 ## Resource Recommendations for `htseq-count`
 
