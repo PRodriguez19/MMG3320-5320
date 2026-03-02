@@ -2438,12 +2438,15 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 </li>
 <li>
 <p><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: </p>
-<pre><code>+ `-s yes`, reads are mapped to the same strand as the sense strand 
-+ `-s no`, reads can map to either strand (unstranded)
-+ `-s reverse`, reads are mapped to the opposite strand (anti-sense)
-</code></pre>
 <ul>
-<li>The <code>rseqc-loop.sh</code> script is provided below. Make a copy and modify the path for variables <code>BAM_DIR</code> and <code>BED_FILE</code>. </li>
+<li><code>-s yes</code>, reads are mapped to the same strand as the sense strand (sense)</li>
+<li><code>-s no</code>, reads can map to either strand (unstranded/undetermined)</li>
+<li>
+<p><code>-s reverse</code>, reads are mapped to the opposite strand (anti-sense)</p>
+</li>
+<li>
+<p>The <code>rseqc-loop.sh</code> script is provided below. Make a copy and modify the path for variables <code>BAM_DIR</code> and <code>BED_FILE</code>. </p>
+</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=general</span>
@@ -2484,18 +2487,13 @@ apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </
 </li>
 <li>
 <p>Submit the finalized script and then check your outputs are the same size. This script will take ~5 minutes to run. If correct, your output will look similar to below. </p>
-<p></p><div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:38<span class="w"> </span>KO_hg19_rep2_sorted.infer_experiment.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:39<span class="w"> </span>KO_hg19_rep2_sorted.read_distribution.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>KO_hg19_rep3_sorted.infer_experiment.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>KO_hg19_rep3_sorted.read_distribution.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:41<span class="w"> </span>WT_hg19_rep1_sorted.infer_experiment.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:41<span class="w"> </span>WT_hg19_rep1_sorted.read_distribution.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:42<span class="w"> </span>WT_hg19_rep2_sorted.infer_experiment.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:42<span class="w"> </span>WT_hg19_rep2_sorted.read_distribution.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:43<span class="w"> </span>WT_hg19_rep3_sorted.infer_experiment.log
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:44<span class="w"> </span>WT_hg19_rep3_sorted.read_distribution.log
+<p></p><div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">165</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">10</span>:37<span class="w"> </span>KO_hg19_rep2_sorted.infer_experiment.txt
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">165</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">10</span>:37<span class="w"> </span>KO_hg19_rep3_sorted.infer_experiment.txt
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">165</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">10</span>:37<span class="w"> </span>WT_hg19_rep1_sorted.infer_experiment.txt
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">165</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">10</span>:37<span class="w"> </span>WT_hg19_rep2_sorted.infer_experiment.txt
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">165</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">10</span>:37<span class="w"> </span>WT_hg19_rep3_sorted.infer_experiment.txt
 </code></pre></div>
-  4. Interpret the multiQC output in the <code>rseqc_results/</code> folder to determine strandedness of the FASTQ files. 
+  4. Interpret the multiQC output to determine strandedness of the BAM files. 
 </li>
 </ol>
 <h2 id="class-exercise-part-b">Class Exercise Part B</h2>
