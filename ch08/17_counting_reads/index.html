@@ -1641,20 +1641,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-exercise-folder-content" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Exercise Folder Content
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#class-exercise-part-a" class="md-nav__link">
     <span class="md-ellipsis">
       Class Exercise Part A
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Class Exercise Part A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise-folder-content-htseq_demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Folder Content htseq_demo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2136,20 +2142,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#class-exercise-folder-content" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Exercise Folder Content
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#class-exercise-part-a" class="md-nav__link">
     <span class="md-ellipsis">
       Class Exercise Part A
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Class Exercise Part A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-exercise-folder-content-htseq_demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Folder Content htseq_demo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2386,7 +2398,8 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <li>Alternative tools like featureCounts (..which is faster) or Salmon/RSEM (for transcript-level quantification) may be preferred in some cases.</li>
 </ul>
 <hr>
-<h2 id="class-exercise-folder-content">Class Exercise Folder Content</h2>
+<h2 id="class-exercise-part-a">Class Exercise Part A</h2>
+<h3 id="class-exercise-folder-content-htseq_demo">Class Exercise Folder Content <code>htseq_demo</code></h3>
 <div class="highlight"><pre><span></span><code>├──<span class="w"> </span>bams
 │<span class="w">   </span>├──<span class="w"> </span>KO_hg19_rep2_sorted.bam
 │<span class="w">   </span>├──<span class="w"> </span>KO_hg19_rep2_sorted.bam.bai
@@ -2414,67 +2427,64 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 │<span class="w">   </span>└──<span class="w"> </span>WT_hg19_rep3.txt
 └──<span class="w"> </span>refseq.hg19.bed12
 </code></pre></div>
-<h2 id="class-exercise-part-a">Class Exercise Part A</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: Running RSeQC</p>
-<ol>
-<li><strong>Copy Folder:</strong> Make a copy of the following folder into your home directory: </li>
-</ol>
-<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/htseq_2025_demo
-</code></pre></div>
-<ol>
-<li><strong>Determine Strandedness on One Sample:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: <ul>
-<li><code>-s yes</code>, reads are mapped to the same strand as the sense strand </li>
-<li><code>-s no</code>, reads can map to either strand (unstranded)</li>
-<li><code>-s reverse</code>, reads are mapped to the opposite strand (anti-sense)</li>
-</ul>
-</li>
-</ol>
 </div>
+<ol>
+<li>
+<p><strong>Copy Folder:</strong> Make a copy of the following folder into your home directory: </p>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/htseq_demo
+</code></pre></div>
+</li>
+<li>
+<p><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: </p>
+<pre><code>+ `-s yes`, reads are mapped to the same strand as the sense strand 
++ `-s no`, reads can map to either strand (unstranded)
++ `-s reverse`, reads are mapped to the opposite strand (anti-sense)
+</code></pre>
 <ul>
 <li>The <code>rseqc-loop.sh</code> script is provided below. Make a copy and modify the path for variables <code>BAM_DIR</code> and <code>BED_FILE</code>. </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=general</span>
 <span class="c1">#SBATCH --nodes=1</span>
-<span class="c1">#SBATCH --ntasks=8  # Single task running sequentially</span>
-<span class="c1">#SBATCH --mem=20G  # Adjust based on the number of BAM files</span>
+<span class="c1">#SBATCH --ntasks=8</span>
+<span class="c1">#SBATCH --mem=20G</span>
 <span class="c1">#SBATCH --time=24:00:00</span>
 <span class="c1">#SBATCH --job-name=rseqc-loop</span>
-<span class="c1">#SBATCH --output=run-%x_%j.out  # %x=job name, %j=job ID</span>
+<span class="c1">#SBATCH --output=run-%x_%j.out</span>
 
-<span class="c1"># Load the Apptainer module</span>
 module<span class="w"> </span>load<span class="w"> </span>apptainer/1.3.4
 
-<span class="c1"># Path to the RSeQC container</span>
 <span class="nv">CONTAINER_PATH</span><span class="o">=</span><span class="s2">"/gpfs1/cl/mmg3320/course_materials/containers/rseqc.sif"</span>
+<span class="nv">MULTIQC_PATH</span><span class="o">=</span><span class="s2">"/gpfs1/cl/mmg3320/course_materials/containers/multiqc-1.20.sif"</span>
 
-<span class="c1"># Define input directory (update if needed)</span>
-<span class="nv">BAM_DIR</span><span class="o">=</span><span class="s2">"/users/p/d/pdrodrig/htseq_2025/bams"</span>
-<span class="nv">BED_FILE</span><span class="o">=</span><span class="s2">"/users/p/d/pdrodrig/htseq_2025/refseq.hg19.bed12"</span>
-<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">"rseqc_results"</span>
+<span class="nv">BAM_DIR</span><span class="o">=</span><span class="s2">"/path/to/bams"</span>
+<span class="nv">BED_FILE</span><span class="o">=</span><span class="s2">"/path/to/bed12"</span>
+<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">"rseqc_data"</span>
 
-<span class="c1"># Create output directory if it doesn't exist</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">"</span>
 
-<span class="c1"># Loop through all BAM files in the directory</span>
 <span class="k">for</span><span class="w"> </span>BAM_FILE<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_DIR</span><span class="s2">"</span>/*.bam<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="c1"># Extract filename without extension</span>
 <span class="w">    </span><span class="nv">NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>.bam<span class="k">)</span>
 
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Processing: </span><span class="nv">$NAME</span><span class="s2">"</span>
 
-<span class="w">    </span><span class="c1"># Run infer_experiment.py inside the Apptainer container</span>
-<span class="w">    </span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">"</span><span class="nv">$CONTAINER_PATH</span><span class="s2">"</span><span class="w"> </span>infer_experiment.py<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.infer_experiment.txt"</span>
-
-<span class="w">    </span><span class="c1"># Run read_distribution.py inside the Apptainer container</span>
-<span class="w">    </span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">"</span><span class="nv">$CONTAINER_PATH</span><span class="s2">"</span><span class="w"> </span>read_distribution.py<span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.read_distribution.txt"</span>
+<span class="w">    </span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--cleanenv<span class="w"> </span><span class="s2">"</span><span class="nv">$CONTAINER_PATH</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>infer_experiment.py<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$BED_FILE</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-i<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.infer_experiment.txt"</span>
 <span class="k">done</span>
+
+<span class="c1"># Run MultiQC</span>
+apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--cleanenv<span class="w"> </span><span class="s2">"</span><span class="nv">$MULTIQC_PATH</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>multiqc<span class="w"> </span><span class="s2">"</span><span class="nv">$OUTPUT_DIR</span><span class="s2">"</span>
 </code></pre></div>
-<ul>
-<li>Submit the script and then check your outputs are the same size. This script will take ~5 minutes to run. </li>
-</ul>
-<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:38<span class="w"> </span>KO_hg19_rep2_sorted.infer_experiment.log
+</li>
+<li>
+<p>Submit the finalized script and then check your outputs are the same size. This script will take ~5 minutes to run. If correct, your output will look similar to below. </p>
+<p></p><div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:38<span class="w"> </span>KO_hg19_rep2_sorted.infer_experiment.log
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:39<span class="w"> </span>KO_hg19_rep2_sorted.read_distribution.log
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>KO_hg19_rep3_sorted.infer_experiment.log
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>KO_hg19_rep3_sorted.read_distribution.log
@@ -2485,42 +2495,51 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w">  </span><span class="m">165</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:43<span class="w"> </span>WT_hg19_rep3_sorted.infer_experiment.log
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:44<span class="w"> </span>WT_hg19_rep3_sorted.read_distribution.log
 </code></pre></div>
-<ul>
-<li>Interpret the multiQC output in the <code>rseqc_results/</code> folder to determine strandedness of the FASTQ files. </li>
-</ul>
+  4. Interpret the multiQC output in the <code>rseqc_results/</code> folder to determine strandedness of the FASTQ files. 
+</li>
+</ol>
 <h2 id="class-exercise-part-b">Class Exercise Part B</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: Running HTSeq-count</p>
+</div>
 <ol>
-<li><strong>Modify <code>htseq-count.sh</code> script:</strong> You will need to alter the following:<ul>
-<li>add the required program modules </li>
-<li>add the correct path to the GTF file </li>
-<li><code>-s</code> options include yes, no, or reverse</li>
-<li><code>-i</code> specify <code>gene_id</code></li>
+<li>
+<p><strong>Modify <code>htseq-count.sh</code> script:</strong> You will need to alter the following:</p>
+<ul>
+<li>the correct path to the GTF file </li>
+<li>specify the <code>-s</code> option to either yes, no, or reverse</li>
+<li>for <code>-i</code> specify <code>gene_id</code></li>
 </ul>
 </li>
-<li><strong>Submit the <code>htseq-count.sh</code> script</strong> after modifying it. This should only take a few minutes. </li>
-<li><strong>Look inside</strong> of the <code>htseq-count_XXXXXX.out</code> file after the job is completed. It should appear identical as below: </li>
-</ol>
+<li>
+<p><strong>Submit the <code>htseq-count.sh</code> script</strong> after modifying it. This script will take a few minutes to run. </p>
+</li>
+<li>
+<p><strong>Look inside</strong> of the <code>htseq-count_XXXXXX.out</code> file after the job is completed. It should appear identical as below: </p>
 <div class="highlight"><pre><span></span><code>Processing:<span class="w"> </span>KO_hg19_rep2_sorted
 Processing:<span class="w"> </span>KO_hg19_rep3_sorted
 Processing:<span class="w"> </span>WT_hg19_rep1_sorted
 Processing:<span class="w"> </span>WT_hg19_rep2_sorted
 Processing:<span class="w"> </span>WT_hg19_rep3_sorted
 </code></pre></div>
-</div>
-<p>The <code>htseq-count.sh</code> script is below: </p>
+</li>
+</ol>
+<p>The <strong>incomplete</strong> <code>htseq-count.sh</code> script is provided: </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=general </span>
 <span class="c1">#SBATCH --nodes=1</span>
-<span class="c1">#SBATCH --ntasks=4</span>
+<span class="c1">#SBATCH --cpus-per-task=4</span>
 <span class="c1">#SBATCH --mem=10G</span>
 <span class="c1">#SBATCH --time=30:00:00</span>
 <span class="c1">#SBATCH --job-name=htseq-count    </span>
 <span class="c1">#SBATCH --output=%x_%j.out  # %x=job-name, %j=jobid</span>
 
 <span class="c1"># Load HTSeq module</span>
+module<span class="w"> </span>load<span class="w"> </span>gcc/13.3.0-xp3epyt
+module<span class="w"> </span>load<span class="w"> </span>py-htseq/2.0.3-mb7ap7s
 
+<span class="c1"># Specify PATH to GTF file</span>
+<span class="nv">GTF</span><span class="o">=</span><span class="s2">"/path/to/gtf"</span>
 
 <span class="c1"># Iterate through all BAM files in the current directory</span>
 <span class="k">for</span><span class="w"> </span>BAM_FILE<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.bam<span class="p">;</span><span class="w"> </span><span class="k">do</span>
@@ -2530,13 +2549,14 @@ Processing:<span class="w"> </span>WT_hg19_rep3_sorted
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Processing: </span><span class="nv">$NAME</span><span class="s2">"</span>
 
 <span class="c1"># Run HTSeq-count</span>
-htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">  </span><span class="se">\</span>
--s<span class="w"> </span><span class="se">\</span>
--i<span class="w"> </span><span class="se">\</span>
--m<span class="w"> </span>union<span class="w"> </span><span class="se">\</span>
-<span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>/users/p/d/pdrodrig/htseq_2025/chr1-hg19_genes.gtf<span class="w"> </span><span class="se">\</span>
-&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.count.txt"</span><span class="w"> </span><span class="se">\</span>
-<span class="m">2</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.summary"</span>
+htseq-count<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-f<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-s<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-i<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-m<span class="w"> </span>union<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$GTF</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.count.txt"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="m">2</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.summary"</span>
 
 <span class="k">done</span>
 </code></pre></div>
