@@ -16,7 +16,7 @@ Once we have our reads aligned to the genome, the next step is to count how many
 
 * Some other tools account for multiple transcripts per gene, assigning fractional counts instead of whole numbers. For example, if one read aligns to two transcripts, it may be counted as 0.5 for each transcript rather than a whole number.
 
-* There are also tools that count multimapping reads, but this approach can lead to overcounting, which affects normalization and ultimately compromises the accuracy of differential gene expression analysis.
+* There are also tools that count multi-mapping reads, but this approach can lead to over-counting, which affects normalization and ultimately compromises the accuracy of differential gene expression analysis.
 
 **Input for counting = multiple BAM files + 1 GTF file**
 
@@ -116,7 +116,7 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 ### Basic Command Syntax 
 
 ```bash
-htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
+htseq-count -f bam -s no -i gene_id sample.bam genes.gtf > gene_counts.txt
 ```
 
 + `-f bam` → Specifies input format (can be `sam` or `bam`).
@@ -156,7 +156,7 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
 
 **Feature Type:**
   
-  + HTSeq-count assigns reads based on featuretype (default is exon in GTF). If needed, use -t to specify other features.
+  + HTSeq-count assigns reads based on feature-type (default is exon in GTF). If needed, use -t to specify other features.
 
 **Overlap Mode:**
   
@@ -214,40 +214,12 @@ htseq-count -f bam -s no -i gene_id sample1.bam genes.gtf > gene_counts.txt
        /gpfs1/cl/mmg3320/course_materials/htseq_2025_demo
        ```
 
-    2. **Determine Strandedness:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: 
+    2. **Determine Strandedness on One Sample:** HtSeq-count requires setting the `-s` parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: 
         + `-s yes`, reads are mapped to the same strand as the sense strand 
         + `-s no`, reads can map to either strand (unstranded)
         + `-s reverse`, reads are mapped to the opposite strand (anti-sense)
     
-
-### How To Run RSeQC: 
-
-+ Activate conda environment 
-
-```bash
-conda activate rseqc_env
-```
-
-+ Test that `RSeQC` is loaded:
-
-```bash
-infer_experiment.py --help
-```
-
-Expected Output:
-```
-Usage: infer_experiment.py [options]
-Options:
-  --version             show program's version number and exit
-  -h, --help            show this help message and exit
-  -i INPUT_FILE, --input-file=INPUT_FILE
-                        Input alignment file in SAM or BAM format
-  -r REFGENE_BED, --refgene=REFGENE_BED
-                        Reference gene model in bed fomat.
-```
-
 + The `rseqc-loop.sh` script is provided below. Make a copy and modify the path for variables `BAM_DIR` and `BED_FILE`. 
-+ This was recently updated as of April 8, 2025 to mirror the updated script for RseQC. 
 
 ```bash
 #!/bin/bash
@@ -304,14 +276,8 @@ done
 -rw-r--r-- 1 pdrodrig pi-jdragon 1.1K Mar 16 11:44 WT_hg19_rep3_sorted.read_distribution.log
 ```
 
-+ Run multiqc in the `rseqc_results/` folder to determine strandedness of the FASTQ files. 
++ Interpret the multiQC output in the `rseqc_results/` folder to determine strandedness of the FASTQ files. 
 
-+ **Note:** I tried running the multiqc-rseqc module yesterday and continued to get the issue: `The 'rseqc' MultiQC module broke...` 
-
-If this happens to you, please download the `rseqc_results` folder and use the site [Seqera-Multiqc](https://seqera.io/multiqc/) instead. 
-*Did you forget how to download files? Go to Frequently Asked Questions*
-
-**I will need to work with the VACC to find a permanent solution.**
 
 
 ## Class Exercise Part B
@@ -358,7 +324,13 @@ NAME=$(basename "$BAM_FILE" .bam)
 echo "Processing: $NAME"
 
 # Run HTSeq-count
-htseq-count -f bam  -s -i -m union "$BAM_FILE" /users/p/d/pdrodrig/htseq_2025/chr1-hg19_genes.gtf > "${NAME}.gene_id.count.txt" 2> "${NAME}.gene_id.summary"
+htseq-count -f bam  \
+-s \
+-i \
+-m union \
+"$BAM_FILE" /users/p/d/pdrodrig/htseq_2025/chr1-hg19_genes.gtf \
+> "${NAME}.gene_id.count.txt" \
+2> "${NAME}.gene_id.summary"
 
 done
 ```
@@ -370,10 +342,10 @@ done
 
 ## Class Exercise Part C
 
-!!! example "Class Exercise: Multiqc break"  
+!!! example "Class Exercise: MultiQC break"  
 
     1. Read the section below titled `htseq-count` output
-    2. Generate a final multiqc output; this time do so inside of the `bams\` folder.  *This should work with no issue, it was only the RSeQC Module which is broken*
+    2. Generate a final multiqc output; this time do so inside of the `bams\` folder.  
 
 ## `htseq-count` output
 

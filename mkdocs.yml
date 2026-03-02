@@ -66,6 +66,7 @@ nav:
           - MultiQC (L14): ch07/10_multiQC.md
           - RSeQC (L15): ch07/16_RSeQC.md
       - Week 8:
+          - HTSeq & deepTools (L16): ch08/17_counting_reads.md
           - Course Catch-up Day (L17): ch08/14_instructions-for-course-catchup.md
   - Assignments:
       - Homework 1 (L1): assignments/week1_assignment.md
