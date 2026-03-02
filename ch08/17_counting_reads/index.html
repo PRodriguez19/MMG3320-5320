@@ -2566,49 +2566,93 @@ htseq-count<span class="w"> </span><span class="se">\</span>
 </ul>
 <h2 id="class-exercise-part-c">Class Exercise Part C</h2>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise: MultiQC break</p>
+<p class="admonition-title">Class Exercise: MultiQC</p>
 <ol>
 <li>Read the section below titled <code>htseq-count</code> output</li>
-<li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  </li>
+<li>Generate one final multiQC output </li>
 </ol>
 </div>
 <h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
-<p>The output of htseq-count consists of two main files for each sample:</p>
+<p>When running HTSeq, two output files are generated for each sample. </p>
+<ol>
+<li><strong>Summary File (*.summary)</strong> 
+  This file contains processing statistics and reports how many reads were assigned or not assigned to features. </li>
+</ol>
+<p>You can view the beginning of the summary file using: </p>
+<pre><code>```bash
+head KO_hg19_rep2_sorted.gene_id.summary 
+```
+
+Example output:
+
+```bash
+76767 GFF lines processed.
+100000 alignment records processed.
+199252 alignment records processed.
+```
+</code></pre>
+<p>What this means? </p>
 <ul>
-<li>A summary/log file that reports how many reads were assigned to features and why some reads were unassigned.</li>
-<li>View it with:</li>
+<li>GFF lines processed: Number of annotation entries read from the GTF/GFF file. </li>
+<li>Alignment records processed: Number of reads (or read pairs) examined from the BAM file. <ul>
+<li>For paired-end data, each mate is counted separately. </li>
 </ul>
-<div class="highlight"><pre><span></span><code>head<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.summary<span class="w"> </span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="m">76767</span><span class="w"> </span>GFF<span class="w"> </span>lines<span class="w"> </span>processed.
-<span class="m">100000</span><span class="w"> </span>alignment<span class="w"> </span>records<span class="w"> </span>processed.
-<span class="m">199252</span><span class="w"> </span>alignment<span class="w"> </span>records<span class="w"> </span>processed.
-</code></pre></div>
+</li>
+<li>
+<p>This file helps diagnose:</p>
 <ul>
-<li>A counts file that lists the number of reads mapped to each gene or feature. This is a tab-delimited file with gene IDs and their associated read counts. </li>
-<li>View it with:</li>
+<li>Whether the annotation file loaded correctly</li>
+<li>Whether the BAM file was read successfully</li>
+<li>Whether the expected number of alignments were processed </li>
 </ul>
-<div class="highlight"><pre><span></span><code>head<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>AADACL3<span class="w"> </span><span class="m">0</span>
-AADACL4<span class="w"> </span><span class="m">0</span>
-ABCA4<span class="w">   </span><span class="m">0</span>
-ABCB10<span class="w">  </span><span class="m">0</span>
-ABCD3<span class="w">   </span><span class="m">1</span>
-ABL2<span class="w">    </span><span class="m">0</span>
-ACADM<span class="w">   </span><span class="m">0</span>
-ACAP3<span class="w">   </span><span class="m">0</span>
-ACBD3<span class="w">   </span><span class="m">0</span>
-ACBD6<span class="w">   </span><span class="m">1</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>__no_feature<span class="w">    </span><span class="m">32813</span>
-__ambiguous<span class="w">     </span><span class="m">4372</span>
-__too_low_aQual<span class="w"> </span><span class="m">0</span>
-__not_aligned<span class="w">   </span><span class="m">15209</span>
-__alignment_not_unique<span class="w">  </span><span class="m">3667</span>
-</code></pre></div>
+</li>
+<li>
+<p><strong>Counts File (*.count.txt)</strong> 
+  This is the main output file. It contains the raw read counts per gene or feature. </p>
+</li>
+</ul>
+<p>You can view the top of the file using: </p>
+<pre><code>```bash
+head KO_hg19_rep2_sorted.gene_id.count.txt
+```
+
+```bash
+AADACL3 0
+AADACL4 0
+ABCA4   0
+ABCB10  0
+ABCD3   1
+ABL2    0
+ACADM   0
+ACAP3   0
+ACBD3   0
+ACBD6   1
+```
+</code></pre>
+<p>Interpretation:
+  + First column: Gene ID (from the <code>gene_id</code> attribute in the GTF file)
+  + Second column: Number of reads assigned to that gene </p>
+<p>These are raw integers counts used as input for differential expression tools such as DESeq2. </p>
+<p>At the bottom of the counts files are special summary rows. View them with: </p>
+<pre><code>```bash
+tail KO_hg19_rep2_sorted.gene_id.count.txt
+```
+
+```bash
+__no_feature    32813
+__ambiguous     4372
+__too_low_aQual 0
+__not_aligned   15209
+__alignment_not_unique  3667
+```
+
+**What these Mean:**
++ `__no_feature`: Reads aligned to the genome but did not overlap any annotated feature being counted (i.e. intronic, intergenic regions, annotation mismatch, wrong strandedness)
++ `__ambiguous`: Reads overlapped more than one gene and could not be uniquely assigned. 
++ `__too_low_aQual`: Reads with alignment quality below the specified threshold (controlled by `-a`).
++ `__not_aligned`: Reads that did not align to the reference genome 
++ `__alignment_not_unique`: Reads that aligned to multiple genomic locations.
+</code></pre>
 <h2 id="resource-recommendations-for-htseq-count">Resource Recommendations for <code>htseq-count</code></h2>
 <p>An array will submit independent jobs and process each BAM file independently. </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
