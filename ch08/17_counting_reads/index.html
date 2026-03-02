@@ -2551,57 +2551,59 @@ htseq-count<span class="w"> </span><span class="se">\</span>
 </ol>
 <p>This file contains processing statistics and reports how many reads were assigned or not assigned to features. </p>
 <p>You can view the beginning of the summary file using: </p>
-<pre><code>```bash
-head KO_hg19_rep2_sorted.gene_id.summary 
-```
-
-Example output:
-
-```bash
-76767 GFF lines processed.
-100000 alignment records processed.
-199252 alignment records processed.
-```
-What this means?
-
-+ GFF lines processed: Number of annotation entries read from the GTF/GFF file. 
-+ Alignment records processed: Number of reads (or read pairs) examined from the BAM file. 
-    + For paired-end data, each mate is counted separately. 
-+ This file helps diagnose:
-    + Whether the annotation file loaded correctly
-    + Whether the BAM file was read successfully
-    + Whether the expected number of alignments were processed
-</code></pre>
-<ol>
-<li><strong>Counts File (*.count.txt):</strong></li>
-</ol>
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.summary<span class="w"> </span>
+</code></pre></div>
+<p>Example output: </p>
+<p></p><div class="highlight"><pre><span></span><code><span class="m">76767</span><span class="w"> </span>GFF<span class="w"> </span>lines<span class="w"> </span>processed.
+<span class="m">100000</span><span class="w"> </span>alignment<span class="w"> </span>records<span class="w"> </span>processed.
+<span class="m">199252</span><span class="w"> </span>alignment<span class="w"> </span>records<span class="w"> </span>processed.
+</code></pre></div>
+  What this means? 
+<ul>
+<li>GFF lines processed: Number of annotation entries read from the GTF/GFF file. </li>
+<li>Alignment records processed: Number of reads (or read pairs) examined from the BAM file. <ul>
+<li>For paired-end data, each mate is counted separately. </li>
+</ul>
+</li>
+<li>
+<p>This file helps diagnose:</p>
+<ul>
+<li>Whether the annotation file loaded correctly</li>
+<li>Whether the BAM file was read successfully</li>
+<li>Whether the expected number of alignments were processed </li>
+</ul>
+</li>
+<li>
+<p><strong>Counts File (*.count.txt):</strong></p>
+</li>
+</ul>
 <p>This is the main output file. It contains the raw read counts per gene or feature. </p>
 <p>You can view the top of the file using: </p>
-<pre><code>```bash
-head KO_hg19_rep2_sorted.gene_id.count.txt
-```
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>AADACL3<span class="w"> </span><span class="m">0</span>
+AADACL4<span class="w"> </span><span class="m">0</span>
+ABCA4<span class="w">   </span><span class="m">0</span>
+ABCB10<span class="w">  </span><span class="m">0</span>
+ABCD3<span class="w">   </span><span class="m">1</span>
+ABL2<span class="w">    </span><span class="m">0</span>
+ACADM<span class="w">   </span><span class="m">0</span>
+ACAP3<span class="w">   </span><span class="m">0</span>
+ACBD3<span class="w">   </span><span class="m">0</span>
+ACBD6<span class="w">   </span><span class="m">1</span>
+<span class="w">  </span><span class="sb">```</span>
 
-```bash
-AADACL3 0
-AADACL4 0
-ABCA4   0
-ABCB10  0
-ABCD3   1
-ABL2    0
-ACADM   0
-ACAP3   0
-ACBD3   0
-ACBD6   1
-```
-</code></pre>
-<p>Interpretation:</p>
-<ul>
-<li>First column: Gene ID (from the <code>gene_id</code> attribute in the GTF file)</li>
-<li>Second column: Number of reads assigned to that gene </li>
-</ul>
-<p>These are raw integers counts used as input for differential expression tools such as DESeq2. </p>
-<p>At the bottom of the counts files are special summary rows. View them with: </p>
-<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
+Interpretation:
+
++<span class="w"> </span>First<span class="w"> </span>column:<span class="w"> </span>Gene<span class="w"> </span>ID<span class="w"> </span><span class="o">(</span>from<span class="w"> </span>the<span class="w"> </span><span class="sb">`</span>gene_id<span class="sb">`</span><span class="w"> </span>attribute<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>GTF<span class="w"> </span>file<span class="o">)</span>
++<span class="w"> </span>Second<span class="w"> </span>column:<span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>reads<span class="w"> </span>assigned<span class="w"> </span>to<span class="w"> </span>that<span class="w"> </span>gene<span class="w"> </span>
+
+These<span class="w"> </span>are<span class="w"> </span>raw<span class="w"> </span>integers<span class="w"> </span>counts<span class="w"> </span>used<span class="w"> </span>as<span class="w"> </span>input<span class="w"> </span><span class="k">for</span><span class="w"> </span>differential<span class="w"> </span>expression<span class="w"> </span>tools<span class="w"> </span>such<span class="w"> </span>as<span class="w"> </span>DESeq2.<span class="w"> </span>
+
+At<span class="w"> </span>the<span class="w"> </span>bottom<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>counts<span class="w"> </span>files<span class="w"> </span>are<span class="w"> </span>special<span class="w"> </span>summary<span class="w"> </span>rows.<span class="w"> </span>View<span class="w"> </span>them<span class="w"> </span>with:<span class="w"> </span>
+
+<span class="sb">```</span>bash
+tail<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.count.txt
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>__no_feature<span class="w">    </span><span class="m">32813</span>
 __ambiguous<span class="w">     </span><span class="m">4372</span>
@@ -2621,11 +2623,10 @@ __alignment_not_unique<span class="w">  </span><span class="m">3667</span>
 <p>An array will submit independent jobs and process each BAM file independently. </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=general</span>
-<span class="c1">#SBATCH --array=1-8  # Adjust for the number of samples (1 per sample)</span>
 <span class="c1">#SBATCH --nodes=1</span>
-<span class="c1">#SBATCH --ntasks=1  </span>
+<span class="c1">#SBATCH --cpus-per-task=4  </span>
 <span class="c1">#SBATCH --mem=4G  # 2-6GB, 4GB is typically enough but specify 6GB for 100M+ reads</span>
-<span class="c1">#SBATCH --time=2:00:00</span>
+<span class="c1">#SBATCH --time=2:00:00 # adjust time up to 30hrs </span>
 <span class="c1">#SBATCH --job-name=htseq-array</span>
 <span class="c1">#SBATCH --output=htseq-%A_%a.out  # %A = job ID, %a = array task ID</span>
 </code></pre></div>
