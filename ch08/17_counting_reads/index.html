@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://prodriguez19.github.io/MMG3320-5320/ch08/17_counting_reads/">
       
       
+        <link rel="prev" href="../../ch07/16_RSeQC/">
+      
+      
+        <link rel="next" href="../14_instructions-for-course-catchup/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>17 counting reads - MMG:3320 Advanced Bioinformatics</title>
+        <title>HTSeq & deepTools (L16) - MMG:3320 Advanced Bioinformatics</title>
       
     
     
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              17 counting reads
+              HTSeq & deepTools (L16)
             
           </span>
         </div>
@@ -255,16 +259,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../ch01/" class="md-tabs__link">
           
   
@@ -637,23 +645,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -664,7 +677,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Lessons
@@ -1417,6 +1430,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1426,11 +1441,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
         
           
           <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
@@ -1444,12 +1459,282 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Week 8
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    HTSeq & deepTools (L16)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    HTSeq & deepTools (L16)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-reads-as-a-measure-of-gene-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting reads as a measure of gene expression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Files:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-reads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting Reads:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-reads-in-features-with-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting reads in features with htseq-count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running htseq-count
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running htseq-count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-command-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Command Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Command Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations &amp; Alternatives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-folder-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Folder Content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-part-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part A
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-part-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part B
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-exercise-part-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Exercise Part C
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#htseq-count-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      htseq-count output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-recommendations-for-htseq-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Recommendations for htseq-count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-bigwig-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating bigWig files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating bigWig files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bamcoverage-from-deeptools" class="md-nav__link">
+    <span class="md-ellipsis">
+      bamCoverage from deepTools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
             
               
                 
@@ -1866,21 +2151,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Class Exercise Part A">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-run-rseqc" class="md-nav__link">
-    <span class="md-ellipsis">
-      How To Run RSeQC:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1967,7 +2237,7 @@
                   
 
 
-  <h1>17 counting reads</h1>
+  <h1>HTSeq & deepTools (L16)</h1>
 
 <div><h2 id="learning-objectives">Learning Objectives</h2>
 <ul>
@@ -1987,7 +2257,7 @@
 <p>Some other tools account for multiple transcripts per gene, assigning fractional counts instead of whole numbers. For example, if one read aligns to two transcripts, it may be counted as 0.5 for each transcript rather than a whole number.</p>
 </li>
 <li>
-<p>There are also tools that count multimapping reads, but this approach can lead to overcounting, which affects normalization and ultimately compromises the accuracy of differential gene expression analysis.</p>
+<p>There are also tools that count multi-mapping reads, but this approach can lead to over-counting, which affects normalization and ultimately compromises the accuracy of differential gene expression analysis.</p>
 </li>
 </ul>
 <p><strong>Input for counting = multiple BAM files + 1 GTF file</strong></p>
@@ -2071,7 +2341,7 @@ This script takes one or more alignment files in SAM/BAM format and a feature fi
 mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 </code></pre></div>
 <h3 id="basic-command-syntax">Basic Command Syntax</h3>
-<div class="highlight"><pre><span></span><code>htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w"> </span>-s<span class="w"> </span>no<span class="w"> </span>-i<span class="w"> </span>gene_id<span class="w"> </span>sample1.bam<span class="w"> </span>genes.gtf<span class="w"> </span>&gt;<span class="w"> </span>gene_counts.txt
+<div class="highlight"><pre><span></span><code>htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w"> </span>-s<span class="w"> </span>no<span class="w"> </span>-i<span class="w"> </span>gene_id<span class="w"> </span>sample.bam<span class="w"> </span>genes.gtf<span class="w"> </span>&gt;<span class="w"> </span>gene_counts.txt
 </code></pre></div>
 <ul>
 <li><code>-f bam</code> → Specifies input format (can be <code>sam</code> or <code>bam</code>).</li>
@@ -2103,7 +2373,7 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 </ul>
 <p><strong>Feature Type:</strong></p>
 <ul>
-<li>HTSeq-count assigns reads based on featuretype (default is exon in GTF). If needed, use -t to specify other features.</li>
+<li>HTSeq-count assigns reads based on feature-type (default is exon in GTF). If needed, use -t to specify other features.</li>
 </ul>
 <p><strong>Overlap Mode:</strong></p>
 <ul>
@@ -2153,7 +2423,7 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 <div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/htseq_2025_demo
 </code></pre></div>
 <ol>
-<li><strong>Determine Strandedness:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: <ul>
+<li><strong>Determine Strandedness on One Sample:</strong> HtSeq-count requires setting the <code>-s</code> parameter based on the RNA-Seq library preparation protocol. You will need to run RSeQC to determine strandedness of the demo data. There are three options to select from: <ul>
 <li><code>-s yes</code>, reads are mapped to the same strand as the sense strand </li>
 <li><code>-s no</code>, reads can map to either strand (unstranded)</li>
 <li><code>-s reverse</code>, reads are mapped to the opposite strand (anti-sense)</li>
@@ -2161,30 +2431,8 @@ mapping to it. See http://htseq.readthedocs.io/en/master/count.html for details.
 </li>
 </ol>
 </div>
-<h3 id="how-to-run-rseqc">How To Run RSeQC:</h3>
-<ul>
-<li>Activate conda environment </li>
-</ul>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>rseqc_env
-</code></pre></div>
-<ul>
-<li>Test that <code>RSeQC</code> is loaded:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>infer_experiment.py<span class="w"> </span>--help
-</code></pre></div>
-<p>Expected Output:
-</p><div class="highlight"><pre><span></span><code>Usage: infer_experiment.py [options]
-Options:
-  --version             show program's version number and exit
-  -h, --help            show this help message and exit
-  -i INPUT_FILE, --input-file=INPUT_FILE
-                        Input alignment file in SAM or BAM format
-  -r REFGENE_BED, --refgene=REFGENE_BED
-                        Reference gene model in bed fomat.
-</code></pre></div>
 <ul>
 <li>The <code>rseqc-loop.sh</code> script is provided below. Make a copy and modify the path for variables <code>BAM_DIR</code> and <code>BED_FILE</code>. </li>
-<li>This was recently updated as of April 8, 2025 to mirror the updated script for RseQC. </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --partition=general</span>
@@ -2238,16 +2486,8 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span>
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>pdrodrig<span class="w"> </span>pi-jdragon<span class="w"> </span><span class="m">1</span>.1K<span class="w"> </span>Mar<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">11</span>:44<span class="w"> </span>WT_hg19_rep3_sorted.read_distribution.log
 </code></pre></div>
 <ul>
-<li>
-<p>Run multiqc in the <code>rseqc_results/</code> folder to determine strandedness of the FASTQ files. </p>
-</li>
-<li>
-<p><strong>Note:</strong> I tried running the multiqc-rseqc module yesterday and continued to get the issue: <code>The 'rseqc' MultiQC module broke...</code> </p>
-</li>
+<li>Interpret the multiQC output in the <code>rseqc_results/</code> folder to determine strandedness of the FASTQ files. </li>
 </ul>
-<p>If this happens to you, please download the <code>rseqc_results</code> folder and use the site <a href="https://seqera.io/multiqc/">Seqera-Multiqc</a> instead. 
-<em>Did you forget how to download files? Go to Frequently Asked Questions</em></p>
-<p><strong>I will need to work with the VACC to find a permanent solution.</strong></p>
 <h2 id="class-exercise-part-b">Class Exercise Part B</h2>
 <div class="admonition example">
 <p class="admonition-title">Class Exercise: Running HTSeq-count</p>
@@ -2290,7 +2530,13 @@ Processing:<span class="w"> </span>WT_hg19_rep3_sorted
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Processing: </span><span class="nv">$NAME</span><span class="s2">"</span>
 
 <span class="c1"># Run HTSeq-count</span>
-htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">  </span>-s<span class="w"> </span>-i<span class="w"> </span>-m<span class="w"> </span>union<span class="w"> </span><span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>/users/p/d/pdrodrig/htseq_2025/chr1-hg19_genes.gtf<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.count.txt"</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.summary"</span>
+htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">  </span><span class="se">\</span>
+-s<span class="w"> </span><span class="se">\</span>
+-i<span class="w"> </span><span class="se">\</span>
+-m<span class="w"> </span>union<span class="w"> </span><span class="se">\</span>
+<span class="s2">"</span><span class="nv">$BAM_FILE</span><span class="s2">"</span><span class="w"> </span>/users/p/d/pdrodrig/htseq_2025/chr1-hg19_genes.gtf<span class="w"> </span><span class="se">\</span>
+&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.count.txt"</span><span class="w"> </span><span class="se">\</span>
+<span class="m">2</span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">.gene_id.summary"</span>
 
 <span class="k">done</span>
 </code></pre></div>
@@ -2300,10 +2546,10 @@ htseq-count<span class="w"> </span>-f<span class="w"> </span>bam<span class="w">
 </ul>
 <h2 id="class-exercise-part-c">Class Exercise Part C</h2>
 <div class="admonition example">
-<p class="admonition-title">Class Exercise: Multiqc break</p>
+<p class="admonition-title">Class Exercise: MultiQC break</p>
 <ol>
 <li>Read the section below titled <code>htseq-count</code> output</li>
-<li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  <em>This should work with no issue, it was only the RSeQC Module which is broken</em></li>
+<li>Generate a final multiqc output; this time do so inside of the <code>bams\</code> folder.  </li>
 </ol>
 </div>
 <h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
