@@ -2560,8 +2560,8 @@ htseq-count<span class="w"> </span><span class="se">\</span>
 <h2 id="htseq-count-output"><code>htseq-count</code> output</h2>
 <p>When running HTSeq, two output files are generated for each sample. </p>
 <p><strong>File 1: Summary File (*.summary):</strong></p>
-<p>This file contains processing statistics and reports how many reads were assigned or not assigned to features. </p>
-<p>You can view the beginning of the summary file using: </p>
+<p>This file contains processing statistics and reports how many reads were assigned or not assigned to features. <strong>If your job fails, please look inside this file as any error messages will be written here.</strong></p>
+<p>Once the job is complete, you can view the beginning of the summary file using: </p>
 <div class="highlight"><pre><span></span><code>head<span class="w"> </span>KO_hg19_rep2_sorted.gene_id.summary<span class="w"> </span>
 </code></pre></div>
 <p>Example output: </p>
