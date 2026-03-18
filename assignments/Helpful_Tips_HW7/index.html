@@ -297,6 +297,24 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../answers/" class="md-tabs__link">
+          
+  
+  R Lessons
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1721,6 +1739,72 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    R Lessons
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            R Lessons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R Lessons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1830,24 +1914,20 @@
 
 <div><h2 id="helpful-tips-for-hw7">Helpful Tips for HW#7</h2>
 <h3 id="step-1-is-trimming-required-or-not"><strong>Step 1: Is Trimming Required or Not?</strong></h3>
-<p>Determine whether your samples require trimming. If trimming is necessary, we covered this process <a href="https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/">here.</a>. In this tutorial, you were asked to make a copy of the <code>trimmomatic_exercise/</code> folder. This folder contains a subfolder called <code>trimmomatic_adapters/</code>. You will need to specify the path to <code>trimmomatic_adapters/</code> along with the appropriate FASTA file containing the adapters to trim. See your options below: </p>
+<p>Determine whether your samples require trimming. Trimming was covered <a href="https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/">here.</a>. In this tutorial, you were asked to make a copy of the <code>trimmomatic_exercise/</code> folder. This folder contains a subfolder called <code>trimmomatic_adapters/</code>. You will need to specify the path to <code>trimmomatic_adapters/</code> along with the appropriate FASTA file containing the adapters to trim. See your options below: </p>
 <figure>
   <img alt="home" src="../../img/trimmomatic_adapters.png" width="400">
 </figure>
 <h3 id="step-2-aligning-using-hisat2"><strong>Step 2: Aligning using HISAT2</strong></h3>
 <p>During Week 6, we covered the aligner HISAT2. There were two key exercises:</p>
 <ul>
-<li><code>HISAT2_example</code> (L11) – For single-end (SE) samples</li>
-<li><code>HISAT2_modify</code> (L13) – For paired-end (PE) samples</li>
+<li><code>HISAT2_example1</code> (L11) – For single-end (SE) samples</li>
+<li><code>HISAT2_example2</code> (L13) – For paired-end (PE) samples</li>
 </ul>
-<p>Use the appropriate script based on your sample type:</p>
-<ul>
-<li>SE samples → Use the script in <code>HISAT2_example</code></li>
-<li>PE samples → Use the modified script in <code>HISAT2_modify</code></li>
-</ul>
+<p>Use the appropriate script based on your sample type.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Need a refresher? Review the slides on Alignment Outputs (L15) to revisit the differences between these scripts. </p>
+<p>Need a refresher? Review the slides on Alignment Outputs (L14) to revisit the differences between these scripts. </p>
 </div>
 <p>During alignment, you will need to specify the location to the Genomic Index. More information regarding the indexes and where to find them can be found <a href="../genome_index-2025/">here</a>. </p>
 <div class="admonition warning">
@@ -1882,6 +1962,7 @@ Please DO NOT make a copy of these indexes! They are extremely large and should 
 <h4 id="rseqc-and-multiqc-struggles">RSeQC and MultiQC Struggles</h4>
 <p>MultiQC sometimes struggles with processing RSeQC outputs.</p>
 <pre><code>+ To determine strandedness, continue using the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
++ You can also use
 </code></pre>
 <h3 id="step-3-counting-reads"><strong>Step 3: Counting Reads</strong></h3>
 <ul>
