@@ -5,3 +5,8 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 ### Monday, March 16th 
 
 [Lession 1: Introduction to R/RStudio](IntroR-and-RStudio-MMG3320_2026.html) 
+
+### Wednesday, March 18th 
+
+[Lession 2: Subsetting data vs Manipulating data with dplyr](MMG3320_Lesson2.html) 
+
