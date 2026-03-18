@@ -2,7 +2,7 @@
 
 ### **Step 1: Is Trimming Required or Not?** 
 
-Determine whether your samples require trimming. If trimming is necessary, we covered this process [here.](https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/). In this tutorial, you were asked to make a copy of the `trimmomatic_exercise/` folder. This folder contains a subfolder called `trimmomatic_adapters/`. You will need to specify the path to `trimmomatic_adapters/` along with the appropriate FASTA file containing the adapters to trim. See your options below: 
+Determine whether your samples require trimming. Trimming was covered [here.](https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/). In this tutorial, you were asked to make a copy of the `trimmomatic_exercise/` folder. This folder contains a subfolder called `trimmomatic_adapters/`. You will need to specify the path to `trimmomatic_adapters/` along with the appropriate FASTA file containing the adapters to trim. See your options below: 
 
 <figure markdown="span">
   ![home](../img/trimmomatic_adapters.png){ width="400"}
@@ -12,17 +12,14 @@ Determine whether your samples require trimming. If trimming is necessary, we co
 
 During Week 6, we covered the aligner HISAT2. There were two key exercises:
 
-+ `HISAT2_example` (L11) – For single-end (SE) samples
-+ `HISAT2_modify` (L13) – For paired-end (PE) samples
++ `HISAT2_example1` (L11) – For single-end (SE) samples
++ `HISAT2_example2` (L13) – For paired-end (PE) samples
 
-Use the appropriate script based on your sample type:
-
-+ SE samples → Use the script in `HISAT2_example`
-+ PE samples → Use the modified script in `HISAT2_modify`
+Use the appropriate script based on your sample type.
 
 !!! tip 
   
-    Need a refresher? Review the slides on Alignment Outputs (L15) to revisit the differences between these scripts. 
+    Need a refresher? Review the slides on Alignment Outputs (L14) to revisit the differences between these scripts. 
 
 During alignment, you will need to specify the location to the Genomic Index. More information regarding the indexes and where to find them can be found [here](genome_index-2025.md). 
 
@@ -60,6 +57,7 @@ For paired-end reads, use either `FR` or `RF`.
 MultiQC sometimes struggles with processing RSeQC outputs.
 
     + To determine strandedness, continue using the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
+    + You can also use 
 
 
 ### **Step 3: Counting Reads**

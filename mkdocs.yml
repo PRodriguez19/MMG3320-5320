@@ -77,6 +77,8 @@ nav:
       - Homework 6 (L9/L10): assignments/week6_assignment.md
       - Assignment Schedule: assignments/assignment_schedule.md
       - Final Project: assignments/index.md
+  - R Lessons: 
+      - R Lessons: answers/index.md
 
 markdown_extensions:
   - admonition
