@@ -56,8 +56,8 @@ For paired-end reads, use either `FR` or `RF`.
 
 MultiQC sometimes struggles with processing RSeQC outputs.
 
-    + To determine strandedness, you can use the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
-    + Or you can use the multiQC container (i.e."/gpfs1/cl/mmg3320/course_materials/containers/multiqc-1.20.sif"). This was covered in L15. 
++ To determine strandedness, you can use the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
++ Or you can use the multiQC container (i.e."/gpfs1/cl/mmg3320/course_materials/containers/multiqc-1.20.sif"). This was covered in L15. 
 
 The bed12 files to be used with RseQC can be found in this location: 
 

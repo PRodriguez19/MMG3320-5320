@@ -123,10 +123,10 @@ https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/fasta/
 
 Files:
 	
-    + Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
-    + Arabidopsis_thaliana.TAIR10.60.gtf.gz	
-    + Oryza_sativa.IRGSP-1.0.dna.toplevel.fa.gz
-    + Oryza_sativa.IRGSP-1.0.60.gtf.gz
++ Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
++ Arabidopsis_thaliana.TAIR10.60.gtf.gz	
++ Oryza_sativa.IRGSP-1.0.dna.toplevel.fa.gz
++ Oryza_sativa.IRGSP-1.0.60.gtf.gz
 
 File naming for Ensembl: 
 
@@ -223,9 +223,9 @@ Description of files:
 FASTA information
 Genome sequence, primary assembly (GRCm39) 
 
-    + Nucleotide sequence of the GRCm39 primary genome assembly (chromosomes and scaffolds)
-    + The sequence region names are the same as in the GTF/GFF3 files
++ Nucleotide sequence of the GRCm39 primary genome assembly (chromosomes and scaffolds)
++ The sequence region names are the same as in the GTF/GFF3 files
 
 GTF information 
     
-    + It contains the comprehensive gene annotation on the primary assembly (chromosomes and scaffolds) sequence regions 
++ It contains the comprehensive gene annotation on the primary assembly (chromosomes and scaffolds) sequence regions 
