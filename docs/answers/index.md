@@ -10,3 +10,7 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 
 [Lession 2: Subsetting data vs Manipulating data with dplyr](MMG3320_Lesson2.html) 
 
+### Monday, March 23rd 
+
+[Lession 3: Manipulating Data with `dplyr` Part II](MMG3320_Lesson3.html) 
+
