@@ -2,7 +2,7 @@
 
 ### **Step 1: Is Trimming Required or Not?** 
 
-Determine whether your samples require trimming. Trimming was covered [here.](https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/). In this tutorial, you were asked to make a copy of the `trimmomatic_exercise/` folder. This folder contains a subfolder called `trimmomatic_adapters/`. You will need to specify the path to `trimmomatic_adapters/` along with the appropriate FASTA file containing the adapters to trim. See your options below: 
+Determine whether your samples require trimming. Trimming was covered [here](https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/). In this tutorial, you were asked to make a copy of the `trimmomatic_exercise/` folder. This folder contains a subfolder called `trimmomatic_adapters/`. You will need to specify the path to `trimmomatic_adapters/` along with the appropriate FASTA file containing the adapters to trim. See your options below: 
 
 <figure markdown="span">
   ![home](../img/trimmomatic_adapters.png){ width="400"}
@@ -56,13 +56,19 @@ For paired-end reads, use either `FR` or `RF`.
 
 MultiQC sometimes struggles with processing RSeQC outputs.
 
-    + To determine strandedness, continue using the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
-    + You can also use 
+    + To determine strandedness, you can use the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
+    + Or you can use the multiQC container (i.e."/gpfs1/cl/mmg3320/course_materials/containers/multiqc-1.20.sif"). This was covered in L15. 
+
+The bed12 files to be used with RseQC can be found in this location: 
+
+```bash
+/gpfs1/cl/mmg3320/course_materials/RseQC_bed12
+```
 
 
 ### **Step 3: Counting Reads**
 
-+ Your `htseq_2025_demo` folder contains the script you created to run htseq-count on your samples.
++ The `htseq_demo` folder contains the script you created to run `htseq-count` on samples.
 + Each sample takes approximately 30 minutes to process.
     + To be safe, request `24:00:00` for time.
 + More information regarding the GTF file and its location can be found: 
