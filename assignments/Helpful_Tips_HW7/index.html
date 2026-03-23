@@ -1697,6 +1697,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../week9_assignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homework 7 (L11-L13)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../assignment_schedule/" class="md-nav__link">
         
   
@@ -1914,7 +1935,7 @@
 
 <div><h2 id="helpful-tips-for-hw7">Helpful Tips for HW#7</h2>
 <h3 id="step-1-is-trimming-required-or-not"><strong>Step 1: Is Trimming Required or Not?</strong></h3>
-<p>Determine whether your samples require trimming. Trimming was covered <a href="https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/">here.</a>. In this tutorial, you were asked to make a copy of the <code>trimmomatic_exercise/</code> folder. This folder contains a subfolder called <code>trimmomatic_adapters/</code>. You will need to specify the path to <code>trimmomatic_adapters/</code> along with the appropriate FASTA file containing the adapters to trim. See your options below: </p>
+<p>Determine whether your samples require trimming. Trimming was covered <a href="https://prodriguez19.github.io/MMG3320-5320/ch05/10_trimming/">here</a>. In this tutorial, you were asked to make a copy of the <code>trimmomatic_exercise/</code> folder. This folder contains a subfolder called <code>trimmomatic_adapters/</code>. You will need to specify the path to <code>trimmomatic_adapters/</code> along with the appropriate FASTA file containing the adapters to trim. See your options below: </p>
 <figure>
   <img alt="home" src="../../img/trimmomatic_adapters.png" width="400">
 </figure>
@@ -1961,12 +1982,15 @@ Please DO NOT make a copy of these indexes! They are extremely large and should 
 </div>
 <h4 id="rseqc-and-multiqc-struggles">RSeQC and MultiQC Struggles</h4>
 <p>MultiQC sometimes struggles with processing RSeQC outputs.</p>
-<pre><code>+ To determine strandedness, continue using the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
-+ You can also use
+<pre><code>+ To determine strandedness, you can use the [Sequera.io MultiQC](https://seqera.io/multiqc/) website.
++ Or you can use the multiQC container (i.e."/gpfs1/cl/mmg3320/course_materials/containers/multiqc-1.20.sif"). This was covered in L15.
 </code></pre>
+<p>The bed12 files to be used with RseQC can be found in this location: </p>
+<div class="highlight"><pre><span></span><code>/gpfs1/cl/mmg3320/course_materials/RseQC_bed12
+</code></pre></div>
 <h3 id="step-3-counting-reads"><strong>Step 3: Counting Reads</strong></h3>
 <ul>
-<li>Your <code>htseq_2025_demo</code> folder contains the script you created to run htseq-count on your samples.</li>
+<li>The <code>htseq_demo</code> folder contains the script you created to run <code>htseq-count</code> on samples.</li>
 <li>Each sample takes approximately 30 minutes to process.<ul>
 <li>To be safe, request <code>24:00:00</code> for time.</li>
 </ul>
