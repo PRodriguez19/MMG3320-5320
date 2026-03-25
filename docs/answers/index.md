@@ -14,3 +14,8 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 
 [Lession 3: Manipulating Data with `dplyr` Part II](MMG3320_Lesson3.html) 
 
+### Wednesday, March 25th
+
+[Lession 4: Data Visualization](MMG3320_Lesson4.html) 
+
+

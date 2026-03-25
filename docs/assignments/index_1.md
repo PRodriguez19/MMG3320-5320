@@ -18,12 +18,15 @@ For the green trail, the goal is to recreate a figure or figure panel from a pub
   ![home](../img/green_trail.png){ width="400" }
 </figure>
 
-[Green Trail Example #1]
+[Green Trail Example #1](Berglund.html)
 
-[Green Trail Example #2]
+[Green Trail Example #2](Fig1B.html)
 
-[Green Trail Example #3]
+[Green Trail Example #3](final_proj_plant_RVV_YO.html)
 
+[Green Trail Example #4](Final_proj.html)
+
+[Green Trail Example #5](Final_Project.html)
 
 ### Blue Trail Examples 
 
@@ -33,7 +36,7 @@ For the blue trail, the goal is compare bioinformatic programs and contrast resu
   ![home](../img/blue_trail.png){ width="400" }
 </figure>
 
-[Blue Trail Example #1]
+[Blue Trail Example #1](AsreesFinalProject.html)
 
 [Blue Trail Example #2]
 
