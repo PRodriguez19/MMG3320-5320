@@ -26,4 +26,4 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 
 ### Wednesday, April 1st
 
-[Lession 6: Analyzing RNA-Seq with DESeq2 Part II]
+[Lession 6: Analyzing RNA-Seq with DESeq2 Part II](MMG3320_Lesson6.html) 
