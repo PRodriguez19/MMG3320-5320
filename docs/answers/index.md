@@ -22,10 +22,8 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 
 [Lession 5: Analyzing RNA-Seq with DESeq2](MMG3320_Lesson5.html) 
 
-**There is no post-class exercise for this week** 
+**There is no post-class exercise for this class** 
 
 ### Wednesday, April 1st
 
 [Lession 6: Analyzing RNA-Seq with DESeq2 Part II]
-
-**There is no post-class exercise for this week** 
