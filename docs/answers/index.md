@@ -18,4 +18,14 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 
 [Lession 4: Data Visualization](MMG3320_Lesson4.html) 
 
+### Monday, March 30th
 
+[Lession 5: Analyzing RNA-Seq with DESeq2](MMG3320_Lesson5.html) 
+
+**There is no post-class exercise for this week** 
+
+### Wednesday, April 1st
+
+[Lession 6: Analyzing RNA-Seq with DESeq2 Part II]
+
+**There is no post-class exercise for this week** 
