@@ -11,8 +11,7 @@
 | Homework Assignment #5 | Friday, February 20th | 
 | Homework Assignment #6 | Friday, March 6th | 
 | Homework Assignment #7 | Monday, April 6th | 
-| Primary Literature Review #1 <br> (RNA-Seq paper) | Friday, March 27th | 
-| Primary Literature Review #2 <br> (your paper) | Friday, April 24th | 
+| Primary Literature Review <br> (your paper) | Friday, April 24th | 
 | Final Project <br> | Wednesday, April 27th | 
 
 

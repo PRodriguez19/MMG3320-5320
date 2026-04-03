@@ -2,17 +2,17 @@
 
 Final Project Materials will be made available here as well as Brightspace. 
 
-+ Final Project Overview PowerPoint
++ [Final Project Overview PowerPoint](Final-Project-Discussion-mmg3320-JAN2026.pdf)
 
-+ Final Project Guidelines PDF
++ [Final Project Guidelines PDF](Guidelines-for-Final-Project.pdf)
 
 ## Past Final Project Submissions 
 
-Below are examples of final project submissions from previous years. Please note that the guidelines and rubric have changed for Spring 2026—these examples are provided only for general reference. They are intended to illustrate the green, blue, and black trail projects, not to serve as templates for formatting or content.
+Below are examples of final project submissions from previous years. Please note that the guidelines and rubric have changed for Spring 2026 — these examples are provided only as a general reference. They are intended to illustrate the green, blue, and black trail projects, not to serve as templates for formatting or content.
 
 ### Green Trail Examples 
 
-For the green trail, the goal is to recreate a figure or figure panel from a publication. In the Green Trail Example #1, this student was able to recreate Figure 1 from [Xian et al. 2022](https://link.springer.com/article/10.1007/s13402-022-00707-3)
+For the green trail, the goal is to recreate a figure or figure panel from a publication. For example, in the Green Trail Example #7, this student was able to recreate Figure 1 from [Xian et al. 2022](https://link.springer.com/article/10.1007/s13402-022-00707-3)
 
 <figure markdown="span">
   ![home](../img/green_trail.png){ width="400" }
@@ -28,6 +28,10 @@ For the green trail, the goal is to recreate a figure or figure panel from a pub
 
 [Green Trail Example #5](Final_Project.html)
 
+[Green Trail Example #6](Final-Project-3320.html)
+
+[Green Trail Example #7](HCC_figure.html)
+
 ### Blue Trail Examples 
 
 For the blue trail, the goal is compare bioinformatic programs and contrast results. In the Blue Trail Example #1 & #2, the students successfully compared a genomic (STAR) vs transcriptomic (SALMON) aligner or fast-aligner (HISAT2). In Blue Trail Example #2, the students used [nf-core/rnaseq](https://nf-co.re/rnaseq/3.14.0/) to compare multiple aligners at once. 
@@ -38,16 +42,19 @@ For the blue trail, the goal is compare bioinformatic programs and contrast resu
 
 [Blue Trail Example #1](AsreesFinalProject.html)
 
-[Blue Trail Example #2]
+[Blue Trail Example #2](MMG5320_finalproject_IHastomo.html)
 
-[Blue Trail Example #3]
 
 ### Black Trail Examples 
 
-For the black trail, the goal is to test an original hypothesis and to generate results not seen in the published manuscript. The powerpoint presentation given by the student for Black Trail Example #1 are provided [here](Kmiecik_MMG232_Final_Bear.pdf). Please note that all of these analysis contained multiple parts since the students did multiple pairwise comparisons. 
+For the black trail, the goal is to test an original hypothesis and to generate results not seen in the published manuscript. For example, in Black Trail Example #3 the dataset contained samples isolated from kidneys from bears pre- and post-hibernation. The student attempted to answer which DEGs in bear kidneys are related to cardiac pathways as there was a strong connection between the heart and kidneys. Please note that all of these analysis contained multiple parts (multiple HTMLs) since multiple comparisons were tested. 
 
-[Black Trail Example #1]
+[Black Trail Example #1](Rmarkdown_Blackwell.Patch_MMG3320.5320_Final_Project_Part.II.html)
 
-[Black Trail Example #2]
+[Black Trail Example #2](Project_Analysis.html)
 
-[Black Trail Example #3]
+[Black Trail Example #3](Kmiecik_MMG232_Bear_Project.html)
+
+[Black Trail Example #4](lilie_frankie.nb.html)
+
+[Black Trail Example #5](Gullickson_MMG232_Final_Part2_M1andM1T863_VS_M0.html)
