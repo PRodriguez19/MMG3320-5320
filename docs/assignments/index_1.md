@@ -4,7 +4,9 @@ Final Project Materials will be made available here as well as Brightspace.
 
 + [Final Project Overview PowerPoint](Final-Project-Discussion-mmg3320-JAN2026.pdf)
 
-+ [Final Project Guidelines PDF](Guidelines-for-Final-Project.pdf)
++ [Getting Started: Final Project Guidelines PDF - Jan 2026](Guidelines-for-Final-Project.pdf)
+
++ [Final Project Guidelines PDF - April 2026](Guidelines-Final-Project_April_2026.pdf)
 
 ## Past Final Project Submissions 
 
