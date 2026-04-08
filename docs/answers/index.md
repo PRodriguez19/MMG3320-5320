@@ -35,4 +35,4 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 
 ### Wednesday, April 8th
 
-[Lession 8: `ampvis2`: Visualizing 16S amplicon data]
+[Lession 8: `ampvis2`: Visualizing 16S amplicon data](ampvis2_T1D_2026.html)
