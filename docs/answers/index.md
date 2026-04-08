@@ -27,3 +27,12 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 ### Wednesday, April 1st
 
 [Lession 6: Analyzing RNA-Seq with DESeq2 Part II](MMG3320_Lesson6.html) 
+
+### Monday, April 6th
+
+[Lession 7: Analyzing RNA-Seq with DESeq2 Part III](MMG3320_Lesson7.html) 
+
+
+### Wednesday, April 8th
+
+[Lession 8: `ampvis2`: Visualizing 16S amplicon data]
