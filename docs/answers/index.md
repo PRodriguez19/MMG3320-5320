@@ -36,3 +36,14 @@ Here, I will make available the completed Rmarkdown HTML file for each lesson. T
 ### Wednesday, April 8th
 
 [Lession 8: `ampvis2`: Visualizing 16S amplicon data](ampvis2_T1D_2026.html)
+
+### Monday, April 13th
+
+[Lesson 9: scrnaseq analysis with `SingleCellExperiment`](scrnaseq_lesson_mmg3320.html)
+
+
+### Wednesday, April 15th
+
+On April 15th, in lieu of in-person instruction, please attend the Student Research Conference at the Davis Center anytime from 9AM to 5PM. During your visit, attend at least (2) poster and/or oral presentations that you intend to write about.
+
+After attending, write a brief 1-2 paragraph summary of your experience detailing two presentations. **Please include the title and presenter name, the research question being addressed, one key method used in their study, and an explanation why this presentation stood out to you. Have fun!**
